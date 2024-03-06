@@ -20,12 +20,13 @@ kotlin {
         it.binaries.framework {
             baseName = "shared"
             isStatic = true
+            export(projects.featureA)
         }
     }
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            api(projects.featureA)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
