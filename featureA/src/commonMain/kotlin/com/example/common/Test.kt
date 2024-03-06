@@ -2,6 +2,8 @@ package com.example.common
 
 class Test {
     fun sayHello(): String {
-        return "Hellooooooooooo"
+        return hello()
     }
 }
+
+expect fun hello(): String
