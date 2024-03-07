@@ -1,12 +1,14 @@
 import SwiftUI
 import shared
+import TestPackage
 
 struct ContentView: View {
 	let greet = Greeting().greet()
     let hello = Test()
+    let spmGreetings = Greeter().getGreetings()
 
 	var body: some View {
-        Text(hello.sayHello())
+        Text(spmGreetings)
 	}
 }
 
