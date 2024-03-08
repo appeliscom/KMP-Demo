@@ -9,6 +9,6 @@ public class Greeter {
     }
     
     public func getGreetings() -> String {
-        return "Greetings from SPM Package \(Greeting().greet()) \(Test().sayHello())"
+        return "Greetings from SPM Package \(Greeting().greet()) \(Test().sayHello()) \(Test().alternative2())"
     }
 }

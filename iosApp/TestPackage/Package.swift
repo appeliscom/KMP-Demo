@@ -14,14 +14,14 @@ let package = Package(
     dependencies: [
             // Dependencies declare other packages that this package depends on.
             // Specify the path to PackageB relative to this file's location.
-            .package(path: "../FeatureA")
+            .package(path: "../Shared")
         ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "TestPackage",
-            dependencies: ["FeatureA"]),
+            dependencies: ["Shared"]),
         .testTarget(
             name: "TestPackageTests",
             dependencies: ["TestPackage"]),
