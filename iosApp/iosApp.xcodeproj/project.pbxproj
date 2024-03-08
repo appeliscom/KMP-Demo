@@ -3,16 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		7EE668462B9AE4DA00319C99 /* TestPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 7EE668452B9AE4DA00319C99 /* TestPackage */; };
-		7EF03B7F2B9AFBA700C9C57A /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 7EF03B7E2B9AFBA700C9C57A /* Shared */; };
+		7EFC09EC2B9B19D800F0BBB0 /* SolarisTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = 7EFC09EB2B9B19D800F0BBB0 /* SolarisTemplate */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +31,10 @@
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF03B7C2B9AFB4700C9C57A /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = SOURCE_ROOT; };
-		7EF8E6642B98744C0008EF9B /* TestPackage */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPackage; sourceTree = SOURCE_ROOT; };
+		7EFC09E62B9B134600F0BBB0 /* Template */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Template; sourceTree = SOURCE_ROOT; };
+		7EFC09E82B9B16DB00F0BBB0 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EE668462B9AE4DA00319C99 /* TestPackage in Frameworks */,
-				7EF03B7F2B9AFBA700C9C57A /* Shared in Frameworks */,
+				7EFC09EC2B9B19D800F0BBB0 /* SolarisTemplate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +77,10 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				7EFC09E82B9B16DB00F0BBB0 /* Features */,
+				7EFC09E62B9B134600F0BBB0 /* Template */,
 				7EF03B7C2B9AFB4700C9C57A /* Shared */,
-				7EF8E6642B98744C0008EF9B /* TestPackage */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
@@ -117,8 +114,7 @@
 			);
 			name = iosApp;
 			packageProductDependencies = (
-				7EE668452B9AE4DA00319C99 /* TestPackage */,
-				7EF03B7E2B9AFBA700C9C57A /* Shared */,
+				7EFC09EB2B9B19D800F0BBB0 /* SolarisTemplate */,
 			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
@@ -149,8 +145,6 @@
 			);
 			mainGroup = 7555FF72242A565900829871;
 			packageReferences = (
-				7EE668442B9AE4DA00319C99 /* XCLocalSwiftPackageReference "TestPackage" */,
-				7EF03B7D2B9AFBA700C9C57A /* XCLocalSwiftPackageReference "Shared" */,
 			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
@@ -199,7 +193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,25 +397,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		7EE668442B9AE4DA00319C99 /* XCLocalSwiftPackageReference "TestPackage" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = TestPackage;
-		};
-		7EF03B7D2B9AFBA700C9C57A /* XCLocalSwiftPackageReference "Shared" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Shared;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		7EE668452B9AE4DA00319C99 /* TestPackage */ = {
+		7EFC09EB2B9B19D800F0BBB0 /* SolarisTemplate */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = TestPackage;
-		};
-		7EF03B7E2B9AFBA700C9C57A /* Shared */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Shared;
+			productName = SolarisTemplate;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
