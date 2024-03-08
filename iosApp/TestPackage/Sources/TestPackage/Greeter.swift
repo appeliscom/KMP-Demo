@@ -5,7 +5,7 @@ import Shared
 
 public class Greeter {
     public init(){
-       
+        Greeting().greetTwo()
     }
     
     public func getGreetings() -> String {
