@@ -1,4 +1,5 @@
 import SwiftUI
+import SolarisTemplate
 
 @main
 struct iOSApp: App {
