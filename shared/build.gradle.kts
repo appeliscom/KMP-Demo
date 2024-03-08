@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.codegen.StackValue.Shared
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -11,16 +14,19 @@ kotlin {
             }
         }
     }
-    
+
+    val xc = XCFramework(xcFrameworkName = "Shared")
+
     listOf(
         iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "shared"
+            baseName="Shared"
             isStatic = true
             export(projects.featureA)
+            xc.add(this)
         }
     }
 
