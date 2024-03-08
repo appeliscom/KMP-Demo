@@ -51,3 +51,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
+val updateSharedFramework by tasks.registering(Copy::class) {
+    dependsOn("assembleSharedDebugXCFramework")
+    val sourceXCFrameworkDir = layout.buildDirectory.dir("XCFrameworks/debug")
+    val targetDir = "$rootDir/iosApp/Shared"
+    from(sourceXCFrameworkDir)
+    into(targetDir)
+}
+
+val updateSharedFrameworkRelease by tasks.registering(Copy::class) {
+    dependsOn("assembleSharedReleaseXCFramework")
+    val sourceXCFrameworkDir = layout.buildDirectory.dir("XCFrameworks/release")
+    val targetDir = "$rootDir/iosApp/Shared"
+    from(sourceXCFrameworkDir)
+    into(targetDir)
+}

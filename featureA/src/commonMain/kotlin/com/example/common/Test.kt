@@ -5,7 +5,7 @@ class Test {
         return hello()
     }
 
-    fun alternative2(): String {
+    fun alternativeX(): String {
         return "alternative"
     }
 }
