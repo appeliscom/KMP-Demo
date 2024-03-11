@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/retail_menu_v1";
+
+package appelis.retail.menu.data.v1;
+
+import "appelis/uuid.proto";
+import "appelis/timerange.proto";
+import "google/protobuf/timestamp.proto";
+
+message MealExtras {
+  message Extra {
+    string translation_key = 1;
+    repeated string meal_ids = 2;
+  }
+  repeated Extra extras = 1;
+}
+
+message Settings {
+  appelis.UUID id = 1;
+  map<string, appelis.TimeRange> timeranges = 2;
+  map<string, SettingsMealGroup> meal_groups = 3;
+  map<string, int32> menu_blocks = 4;
+}
+
+message SettingsMealGroup{
+  map<string, int32> meal_groups = 1;
+}
+
+message MenuTimerangeInput{
+  map<string, appelis.TimeRange> timerange = 1;
+}
+
+message MenuTimerange {
+  string translation_key = 1;
+  appelis.TimeRange timerange = 2;
+}
+
+message Menu {
+  google.protobuf.Timestamp day = 1; // Utorok 16.11 ...
+  map<string, DayTimeGroup> day_time_groups = 2; // breakfast, lunch, dinner...
+}
+
+message DayMenu {
+  appelis.UUID id = 1;
+  google.protobuf.Timestamp day = 2; // Utorok 16.11 ...
+  map<string, DayTimeGroup> day_time_groups = 3; // breakfast, lunch, dinner...
+}
+
+message SourceMenuListItem {
+  appelis.UUID id = 1;
+  bool active = 2;
+  string translation_key = 3;
+  appelis.TimeRange timerange = 4; // Utorok 16.11 ...
+}
+
+message SourceMenu {
+  appelis.UUID id = 1;
+  bool active = 2;
+  string translation_key = 3;
+  appelis.TimeRange timerange = 4; // Utorok 16.11 ...
+  map<string, DayTimeGroup> day_time_groups = 5; // breakfast, lunch, dinner...
+}
+
+message DayTimeGroup {
+  appelis.TimeRange timerange = 1;
+  map<string, MenuBlock> menu_blocks = 2; // daily menu, weekly Menu, weekend menu...
+}
+
+message MenuBlock {
+  map<string, MealGroup> meal_groups = 1; // soups, main_dishes, desserts...
+  int32 order = 2;
+  appelis.TimeRange timerange = 3;
+}
+
+message MealGroup {
+  repeated string meal_ids = 1; // soup_1, soup_2...
+  int32 order = 2;
+}
+
+message MenuInput {
+  appelis.TimeRange timerange = 1; // in day menu should be one day range, in weekly should be set to at least few days.
+  map<string, DayTimeGroup> day_time_groups = 2; // breakfast, lunch, dinner...
+  string business_id = 3;
+  string translation_key = 4; // Denne menu, Tyzdenne menu, Vikendove menu...
+}

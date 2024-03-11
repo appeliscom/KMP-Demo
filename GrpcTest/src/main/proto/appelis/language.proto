@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+enum Language {
+    UNKNOWN = 0;
+    CS = 1;
+    SK = 2;
+    EN = 3;
+}
+

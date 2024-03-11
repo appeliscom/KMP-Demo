@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appbuild";
+
+package appelis.appbuild.v1;
+
+import "appbuild_service/appBuildData.v1.proto";
+import "google/protobuf/timestamp.proto";
+import "appelis/semver.proto";
+
+message Build {
+  string id = 1;
+  string projectId = 2;
+  BuildConfiguration config = 3;
+
+
+  google.protobuf.Timestamp createdAt = 4;
+  // TODO Artifacts
+
+  // TODO per platform logs
+
+  // TODO some build things
+  // TODO keepalive in case that connection will be lost or what ever...
+}
+
+message BuildConfiguration {
+  TemplateDataV1 template = 1;
+  AndroidConfiguration android = 2;
+  IosConfiguration ios = 3;
+}
+
+message AndroidConfiguration {
+  string packageName = 1;
+  GitConfiguration git = 2;
+  ReleaseCertificate releaseCertificate = 3;
+  bytes googleServicesJson = 4;
+  uint64 versionCode = 5;
+  appelis.SemVer version = 6;
+}
+
+message ReleaseCertificate {
+  string keyAlias = 1;
+  string keyPassword = 2;
+  string storePassword = 3;
+  bytes content = 4;
+}
+
+
+message IosConfiguration {
+  string bundleId = 1;
+  GitConfiguration git = 2;
+  bytes releaseCertificate = 3;
+  bytes googleServicesPlist = 4;
+}
+
+message GitConfiguration {
+  string repositoryUrl = 2;
+  string ref = 3;
+  google.protobuf.Timestamp updatedAt = 4;
+}
+
+service BuildAdmin {
+  // Get builds
+
+  // Get single build
+
+  // Start Build
+
+  // Set app buildConfiguration
+}

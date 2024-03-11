@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/article_service";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+package appelis.articles.v1;
+
+
+message AttributeValue {
+    int64 idAttributeValue = 1;
+    int64 idAttribute = 2;
+    string value = 3;
+    google.protobuf.StringValue color = 4;
+    google.protobuf.StringValue icon = 5;
+}
+
+enum PriceType {
+    PRICE_TYPE_UNSPECIFIED = 0;
+    STANDARD = 1;
+    ACTION = 2;
+}
+
+message Price {
+    PriceType priceType = 1;
+    // Price for one piece of Article
+    double unitTax = 2;
+    double unit = 3;
+
+    // Makro unit
+    double munitTax = 4;
+    double munit = 5;
+
+    // Price of pack
+    double packTax = 6;
+    double pack = 7;
+
+    // validity of price
+    google.protobuf.Timestamp validityFrom = 8;
+    google.protobuf.Timestamp validityTo = 9;
+
+    string idBusiness = 10;
+}
+
+enum MediaDataType {
+    MEDIA_DATA_TYPE_UNSPECIFIED = 0;
+    VIDEO = 1;
+    PICTURE = 2;
+    YOUTUBE_VIDEO = 3;
+}
+
+message Media {
+    uint32 orderIndex = 1;
+    MediaDataType type = 2;
+    string url = 3;
+    google.protobuf.Int32Value height = 4;
+    google.protobuf.Int32Value width = 5;
+}

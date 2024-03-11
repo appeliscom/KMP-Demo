@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+// Represents position on earth.
+message Location {
+    double latitude = 1;
+    double longitude = 2;
+}
+

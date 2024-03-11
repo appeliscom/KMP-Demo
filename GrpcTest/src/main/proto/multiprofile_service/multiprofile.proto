@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/multiprofile_service";
+option java_package = "com.appelis.multiprofile";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "identity_service/common.proto";
+
+package appelis.multiprofile.v1;
+
+// Private service for adding authenticated users...
+service AdminProfiles {
+  // Add profile(user) to device authenticated profiles. And also login user to that profile.
+  rpc CreateProfile (CreateProfileRequest) returns (Profile) {
+  }
+
+  rpc CreateProfiles(CreateProfilesRequest) returns (CreateProfilesResponse) {
+  }
+
+  rpc DeleteUserProfiles(DeleteUserProfilesRequest) returns(google.protobuf.Empty) {
+  }
+}
+
+message CreateProfilesResponse {
+  repeated Profile data = 1;
+}
+
+message CreateProfilesRequest {
+  repeated CreateProfileRequest data = 1;
+}
+
+message DeleteUserProfilesRequest {
+  repeated int64 mobileUserIds = 1;
+}
+
+message CreateProfileRequest {
+  int64 deviceId = 1;
+  int64 mobileUserId = 2;
+}
+
+// Public Service for devices to list profiles attached to device id.
+service DeviceProfiles {
+  // Login profile user on selected profile defined by id.
+  rpc LogIn (LogInRequest) returns (LogInResponse) {
+  }
+  // Log out user in auth server and deletes profile
+  rpc Logout (LogoutRequest) returns (LogoutResponse) {
+  }
+  // Log out user in auth server and delete all profiles
+  rpc LogoutAll (appelis.identity.common.v1.Token) returns (LogoutResponse) {
+  }
+}
+
+message LogoutResponse {
+  // Optional if there was no error, should be nil.
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+  }
+}
+
+message LogoutRequest {
+  appelis.identity.common.v1.Token token = 1;
+  int64 selectedProfileId = 2;
+}
+
+
+message LogInResponse {
+  enum Error {
+    UNKNOWN = 0;
+    // When profile is not bind to device id.
+    UNAUTHORIZED = 2;
+  }
+
+  oneof payload {
+    Profile data = 1;
+    Error error = 2;
+    appelis.identity.common.v1.TokenError tokenErr = 3;
+  }
+}
+
+message LogInRequest {
+  appelis.identity.common.v1.Token token = 1;
+  int64 selectedProfileId = 2;
+}
+
+message Profiles {
+  repeated Profile data = 1;
+}
+
+message Profile {
+  int64 id = 1;
+  int64 mobileUserId = 2;
+
+  google.protobuf.Timestamp createdAt = 10;
+  google.protobuf.Timestamp selectedAt = 11;
+}

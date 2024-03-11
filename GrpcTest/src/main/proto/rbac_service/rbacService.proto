@@ -1,0 +1,223 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/rbac_service";
+package appelis.rbacService.v1;
+// Private api without using token authorization logic.
+service RbacPrivateService {
+  rpc ListProjects (ListProjectsRequest) returns (ListProjectsResponse) {
+  }
+  // Returns distinct list of web user ids, which are associated with given project.
+  rpc ListProjectUserIds(ListProjectUserIdsRequest) returns (ListProjectUserIdsResponse) {
+  }
+}
+
+message ListProjectUserIdsRequest {
+  string projectId = 1;
+}
+
+message ListProjectUserIdsResponse{
+  repeated string userIds = 1;
+}
+
+
+service RbacService {
+  rpc HasPermissions (HasPermissionsRequest) returns (HasPermissionsResponse) {
+  }
+  rpc AddPermissions (ManagePermissionsRequest) returns (ManagePermissionsResponse) {
+  }
+  rpc RemovePermissions (ManagePermissionsRequest) returns (ManagePermissionsResponse) {
+  }
+}
+
+message Token {
+  string data = 1;
+}
+
+message ListProjectsRequest {
+  string webUserId = 1;
+}
+
+message ListProjectsResponse {
+  repeated string projectIds = 1;
+}
+
+message HasPermissionsResponse {
+  enum Error {
+    UNSPECIFIED = 0;
+    INVALID_TOKEN = 1;
+  }
+
+  message ValidatedPermission {
+    Permission permission = 1;
+    bool value = 2;
+  }
+
+  message ValidatedPermissions {
+    repeated ValidatedPermission data = 1;
+  }
+
+  oneof payload {
+    Error error = 1;
+    ValidatedPermissions data = 2;
+  }
+}
+
+message HasPermissionsRequest {
+  Token token = 1;
+  repeated Permission permissions = 3;
+}
+
+message ManagePermissionsRequest {
+  Token token = 1;
+  string idUser = 2;
+  repeated Permission permissions = 4;
+}
+
+message ManagePermissionsResponse {
+  message PermissionsPayload {
+    string idUser = 1;
+    repeated PermissionStatus permissionsStatus = 3;
+  }
+
+  message PermissionStatus {
+    Permission permission = 1;
+    bool status = 2;
+  }
+
+  enum Error {
+    UNSPECIFIED = 0;
+    INVALID_TOKEN = 1;
+    UNAUTHORIZED = 2;
+  }
+
+  oneof payload {
+    Error error = 1;
+    PermissionsPayload data = 2;
+  }
+}
+
+enum Permission {
+  UNSPECIFIED = 0;
+
+  ARTICLE_ARTICLE_CREATE = 100;
+  ARTICLE_ARTICLE_READ = 101;
+  ARTICLE_ARTICLE_DELETE = 103;
+  ARTICLE_CATEGORYMAP_CREATE = 102;
+  ARTICLE_ATTRIBUTES_CREATE = 104;
+  ARTICLE_ATTRIBUTES_DELETE = 105;
+  ARTICLE_ATTRIBUTES_READ = 106;
+  ARTICLE_ATTRIBUTEVALUE_READ = 107;
+  ARTICLE_ATTRIBUTEVALUE_CREATE = 108;
+  ARTICLE_ATTRIBUTEVALUE_DELETE = 109;
+  ARTICLE_CURRENCY_CREATE = 110;
+  ARTICLE_PACKAGE_CREATE = 111;
+  ARTICLE_PACKAGE_READ = 112;
+  ARTICLE_PACKAGE_DELETE = 113;
+  ARTICLE_PACKAGE_ASSIGN = 114;
+
+  BANNER_BANNER_CREATE = 200;
+  BANNER_BANNER_READ = 201;
+  BANNER_COLLECTION_CREATE = 202;
+  BANNER_COLLECTION_READ = 203;
+  BANNER_COLLECTIONMAP_CREATE = 204;
+  BANNER_CATEGORYMAP_CREATE = 205;
+
+  BEACON_BEACON_CREATE = 300;
+  BEACON_BEACON_READ = 301;
+  BEACON_ACTION_CREATE = 302;
+  BEACON_ACTION_READ = 303;
+  BEACON_ACTIONMAP_CREATE = 304;
+
+  BUSINESS_BUSINESS_CREATE = 400;
+  BUSINESS_BUSINESS_READ = 401;
+
+  CATEGORY_CATEGORY_CREATE = 500;
+  CATEGORY_CATEGORY_READ = 501;
+  CATEGORY_BUSINESSMAP_CREATE = 502;
+  CATEGORY_BANNERCOLLECTIONMAP_CREATE = 503;
+
+  GROUP_GROUP_CREATE = 600;
+  GROUP_GROUP_READ = 601;
+
+  MOBILEUSER_USER_CREATE = 700;
+  MOBILEUSER_USER_READ = 701;
+  MOBILEUSER_GROUPMAP_CREATE = 702;
+  MOBILEUSER_USER_DELETE = 703;
+  MOBILEUSER_GROUPMAP_DELETE = 704;
+
+  MYOFFERS_ARTICLE_CREATE = 800;
+  MYOFFERS_ARTICLE_READ = 801;
+  MYOOFERS_CATEGORY_CREATE = 802;
+  MYOFFERS_CATEGORY_READ = 803;
+
+  NOTIFICATION_NOTIFICATION_CREATE = 900;
+  NOTIFICATION_NOTIFICATION_READ = 901;
+
+  PROJECT_PROJECT_CREATE = 1000;
+  PROJECT_PROJECT_READ = 1001;
+
+  RBAC_PERMISSION_CREATE = 1100;
+
+  RETAILORDER_LOCATION_CREATE = 1200;
+  RETAILORDER_KITCHEN_READ = 1201;
+  RETAILORDER_CASHDESK_READ = 1202;
+
+  DELIVERY_ORDERS_READ = 1250;
+  DELIVERY_BUSINESS_DELIVERYHOURS_READ = 1251;
+  DELIVERY_BUSINESS_DELIVERYHOURS_CREATE = 1252;
+  DELIVERY_BUSINESS_DELIVERYHOURS_DELETE = 1253;
+
+  USER_USER_CREATE = 1300;
+  USER_USER_READ = 1301;
+  USER_PASSWORD_CREATE = 1302;
+
+  CLICKCOLLECT_REGISTRATION_READ = 1400;
+  CLICKCOLLECT_REGISTRATION_UPDATE = 1401;
+  CLICKCOLLECT_REGISTRATION_DELETE = 1402;
+
+  TRANSLATIONS_CREATE = 1500;
+  TRANSLATIONS_DELETE = 1501;
+  TRANSLATIONS_READ = 1502;
+
+  STARCLUB_CAMPAIGN_READ = 1600;
+  STARCLUB_CAMPAIGN_CREATE = 1601;
+
+  RETAIL_MENU_SETTINGS_CREATE = 1700;
+  RETAIL_MENU_SETTINGS_READ = 1701;
+  RETAIL_MENU_SETTINGS_UPDATE = 1702;
+  RETAIL_MENU_SOURCE_MENU_CREATE = 1703;
+  RETAIL_MENU_SOURCE_MENU_READ = 1704;
+  RETAIL_MENU_SOURCE_MENU_UPDATE = 1705;
+  RETAIL_MENU_SOURCE_MENU_DELETE = 1706;
+
+  CONTACTS_CONTACTS_READ = 1800;
+  CONTACTS_CONTACTS_CREATE = 1801;
+  CONTACTS_CONTACTS_DELETE = 1802;
+
+  RETAILCART_PAYMENTRATES_READ = 1900;
+  RETAILCART_PAYMENTRATES_CREATE = 1901;
+  RETAILCART_PAYMENTRATES_DELETE = 1902;
+
+  RETAILCART_SHIPPINGRATES_READ = 2000;
+  RETAILCART_SHIPPINGRATES_CREATE = 2001;
+  RETAILCART_SHIPPINGRATES_DELETE = 2002;
+
+  PAYMENTS_CSOB_READ = 2100;
+  PAYMENTS_CSOB_CREATE = 2101;
+
+  PROJECT_SETTINGS_READ = 2200;
+  PROJECT_SETTINGS_CREATE = 2201;
+
+  NEWSFEED_ITEMS_READ = 2300;
+  NEWSFEED_ITEMS_CREATE = 2301;
+  NEWSFEED_ITEMS_DELETE = 2302;
+
+  STATISTICS_READ = 2400;
+
+  LOYALTY_READ = 2500;
+  LOYALTY_WRITE = 2501;
+  LOYALTY_ACADEMY_CODES_WRITE = 2502;
+
+  UNVERIFIED_CARD_READ = 2600;
+  UNVERIFIED_CARD_WRITE = 2601;
+}

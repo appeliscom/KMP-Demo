@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/retail_cart_service";
+
+package appelis.retail.cart.v1;
+
+import "identity_service/common.proto";
+import "appelis/price.proto";
+
+// Service will be enforcing web user token claims.
+service ShippingRateAdmin {
+  // Rpc gets all shipping rates from database.
+  rpc GetRates(GetRatesRequest) returns (GetRatesResponse) {}
+  // Set rate. If id exists data will be updated.
+  rpc SetRate (SetRateRequest) returns (SetRateResponse) {}
+  // Deletes rate when exists.
+  rpc DeleteRate (DeleteRateRequest) returns (DeleteRateResponse) {}
+}
+
+message GetRatesRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+enum ShippingType {
+  UNKNOWN_SHIPPING_TYPE = 0;
+  ADDRESS_DELIVERY = 1;
+  PERSONAL_PICKUP = 2;
+}
+
+message ShippingRate {
+  string id = 1;
+  string name = 2;
+  ShippingType type = 3;
+  PriceValue price = 4;
+}
+
+message ShippingArray {
+  repeated ShippingRate array = 1;
+}
+
+message GetRatesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    ShippingArray data = 3;
+  }
+}
+
+message SetRateRequest {
+  appelis.identity.common.v1.Token token = 1;
+  ShippingRate rate = 2;
+}
+
+message SetRateResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message DeleteRateRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string id = 2;
+}
+
+message DeleteRateResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}

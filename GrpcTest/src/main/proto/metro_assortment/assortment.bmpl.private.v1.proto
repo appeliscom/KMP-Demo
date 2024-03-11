@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "metro_assortment/assortment.bmpl.v1.proto";
+
+
+service PrivateBmpl {
+  rpc GetArticlesBmplPrices(GetArticlesBmplPricesRequest) returns (GetArticlesBmplPricesResponse) {
+
+  }
+}
+
+message GetArticlesBmplPricesRequest {
+  repeated string articleIds = 1;
+}
+
+message GetArticlesBmplPricesResponse {
+  BmplPricesArray data = 1;
+}

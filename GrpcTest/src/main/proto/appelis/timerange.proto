@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+option java_outer_classname = "appelisTimerange";
+
+import "google/protobuf/timestamp.proto";
+
+package appelis;
+
+message TimeRange {
+  google.protobuf.Timestamp from = 1;
+  google.protobuf.Timestamp to = 2;
+}

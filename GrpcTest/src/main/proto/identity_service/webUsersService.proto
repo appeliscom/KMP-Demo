@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/identity_service";
+option java_package = "com.appelis.identity";
+
+package appelis.identity.webUser.v1;
+
+import "identity_service/common.proto";
+import "google/protobuf/empty.proto";
+
+service WebUsersService {
+    rpc GetTokenUser (appelis.identity.common.v1.Token) returns (GetTokenUserResponse) {
+    }
+}
+
+service WebUsersPrivateService {
+    rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
+    }
+    // Gets WebUser for loginToken used in jobs on background services.
+    rpc GetUserForLoginToken(GetUserForLoginTokenRequest) returns (UserResponse) {
+    }
+    // Gets WebUser for email/login field.
+    rpc GetUserForLogin(GetUserForLoginRequest) returns (UserResponse) {
+    }
+    // Deletes more users from database.
+    rpc DeleteUsers(DeleteUserRequest) returns (google.protobuf.Empty) {
+    }
+    // Add or update user in database. If is will be 0 new user will be added.
+    // Rpc will respect unique login field across all users.
+    rpc AddOrUpdateUser(AddOrUpdateUserRequest) returns (UserResponse) {
+    }
+}
+
+message AddOrUpdateUserRequest {
+    // User to be updated or added.
+    WebUser user = 1;
+}
+
+message DeleteUserRequest {
+    repeated int64 userIds = 1;
+}
+
+message GetUserForLoginRequest{
+    string login = 1;
+}
+
+message GetUserForLoginTokenRequest{
+    string loginToken = 1;
+}
+
+message UserResponse {
+    // User can be null if not found.
+    WebUser user = 1;
+}
+
+message GetUsersResponse {
+    map<int64, WebUser> data = 1;
+}
+
+message GetUsersRequest {
+    repeated int64 ids = 1;
+}
+
+message WebUserCredentialsData {
+    string login = 1;
+    string pass = 2;
+    string loginToken = 3;
+}
+
+message WebUserCredentials {
+    uint64 idCredentials = 1;
+    WebUserCredentialsData data = 2;
+}
+
+message WebUserData {
+    string name = 1;
+    string surname = 2;
+    // This field represents default project for selection in background services.
+    string projectId = 3;
+}
+
+message WebUser {
+    // Primary for WebUser.
+    uint64 idUser = 1;
+    WebUserData data = 2;
+    WebUserCredentials credentials = 3;
+}
+// Rpc call response
+message GetTokenUserResponse {
+    oneof payload {
+        // If token is wrong, INVALID_TOKEN will be returned.
+        appelis.identity.common.v1.TokenError error = 1;
+        // If user doesn't exist, user will not be set.
+        WebUser user = 2;
+    }
+}

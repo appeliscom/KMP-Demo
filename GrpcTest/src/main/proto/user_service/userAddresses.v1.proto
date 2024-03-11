@@ -1,0 +1,101 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/user_service";
+option java_package = "com.appelis.userservice";
+
+package appelis.userService.address.v1;
+
+import "identity_service/common.proto";
+
+// Service will be checking user id in token. if user id won't be found in token, service will return empty reponses.
+service UserAddresses {
+  // Gets all addresses that belongs to user on token. If there is no user returns empty list.
+  rpc GetAllAddresses(GetAllAddressesRequest) returns (GetAllAddressesResponse) {}
+  // Sets address for user on token. If address with same ID already exists, it will be overwritten.
+  rpc SetAddress(SetAddressRequest) returns (SetAddressResponse) {}
+  // Delete Address by id from user addresses.
+  rpc DeleteAddress(DeleteAddressRequest) returns (DeleteAddressResponse) {}
+  // Rpc default address settings for user on token.
+  rpc GetUserDefaults(GetUserDefaultsRequest) returns (GetUserDefaultsResponse) {}
+  // Sets default addresses for user on token. All data will be overwritten.
+  rpc SetUserDefaults(SetUserDefaultsRequest) returns (SetUserDefaultsResponse) {}
+}
+
+message SetUserDefaultsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  Defaults defaults = 2;
+}
+
+message SetUserDefaultsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+  }
+}
+
+message Defaults {
+  string defaultShippingAddrId = 1;
+  string defaultBillingAddrId = 2;
+}
+
+message GetUserDefaultsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    Defaults defaults = 2;
+  }
+}
+
+message GetUserDefaultsRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message DeleteAddressRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string addressId = 2;
+}
+
+message DeleteAddressResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+  }
+}
+
+message SetAddressRequest {
+  appelis.identity.common.v1.Token token = 1;
+  Address address = 2;
+}
+
+message SetAddressResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+  }
+}
+
+message GetAllAddressesRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message GetAllAddressesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    AddressArray data = 2;
+  }
+}
+
+message AddressArray {
+  repeated Address addresses = 1;
+}
+
+message Address {
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string company = 4;
+  string companyId = 5;
+  string vatNumber = 6;
+
+  string address = 7;
+  string address2 = 8;
+  string city = 9;
+  string zipCode = 10;
+  string country = 11;
+}

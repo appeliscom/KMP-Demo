@@ -1,0 +1,151 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_signIn_service";
+option java_package = "metro.unverifiedCard.v1";
+
+package metro.unverifiedCard.public.v1;
+
+import "google/protobuf/timestamp.proto";
+import "identity_service/common.proto";
+import "metro_signIn_service/unverifiedCard.data.v1.proto";
+
+service UnverifiedCardPublic {
+    rpc AddCard(
+        AddCardRequest) returns (
+            AddCardResponse
+        ) {}
+
+    rpc GetCard(
+        GetCardRequest) returns (
+            GetCardResponse
+        ) {}
+
+    rpc RemoveCard(
+        RemoveCardRequest) returns (
+            RemoveCardResponse
+        ) {}
+
+    rpc SetWaitingForContactInfo(
+        SetWaitingForContactInfoRequest
+    ) returns (
+        SetWaitingForContactInfoResponse
+    ) {}
+    
+    // UpdateCard is used by UserJob to update card timestamps 
+    // token with a web claim with UNVERIFIED_CARD_WRITE permission is needed
+    rpc UpdateCard(
+        UpdateCardRequest
+    ) returns (
+        UpdateCardResponse
+    ) {}
+
+    // GetActiveCards is used by UserJob to get all the active cards for
+    // a cardHolder. This info is needed to determine which timestamps to update
+    // when new information about the cardHolder is available.
+    // token with a web claim with UNVERIFIED_CARD_READ permission is needed
+    rpc GetActiveCards(
+        GetActiveCardsRequest
+    ) returns (
+        GetActiveCardsResponse
+    ) {}
+}
+
+message AddCardRequest {
+    appelis.identity.common.v1.Token token = 1;
+    string barcode = 2;
+}
+
+message AddCardResponse {
+    enum AddCardError {
+        UNKNOWN = 0;
+        INVALID_BARDCODE = 1;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError token_err = 1;
+        AddCardError add_card_error = 2;
+    } 
+}
+
+message UpdateCardRequest {
+    appelis.identity.common.v1.Token token = 1;
+    uint32 store_no = 2;
+    uint32 cust_no = 3;
+    uint32 cardholder_no = 4;
+    metro.unverifiedCard.data.v1.CardTimestampKey timestamp_key = 5;
+    google.protobuf.Timestamp timestamp = 6;
+}
+
+message UpdateCardResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError token_err = 1;
+        appelis.identity.common.v1.PermissionError perm_err = 2;
+    }
+}
+
+message GetCardRequest {
+    appelis.identity.common.v1.Token token = 1;
+}
+
+message GetCardResponse {
+    enum ContactType {
+        CONTACT_TYPE_UNKNOWN = 0;
+        CONTACT_TYPE_PHONE = 1;
+        CONTACT_TYPE_EMAIL = 2;
+    }
+
+    message Card {
+        string barcode = 1;
+        metro.unverifiedCard.data.v1.CardStatus status = 2;
+        ContactType contact_type = 3;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError token_err = 1;
+        Card card = 2;
+    }
+}
+
+message RemoveCardRequest {
+    appelis.identity.common.v1.Token token = 1;
+}
+
+message RemoveCardResponse {
+    optional appelis.identity.common.v1.TokenError token_err = 1;
+}
+
+message SetWaitingForContactInfoRequest {
+    appelis.identity.common.v1.Token token = 1;
+}
+
+message SetWaitingForContactInfoResponse {
+    optional appelis.identity.common.v1.TokenError token_err = 1;
+}
+
+message GetActiveCardsRequest {
+    appelis.identity.common.v1.Token token = 1;
+}
+
+message GetActiveCardsResponse {
+    message UnverifiedCard {
+        uint32 store_no = 1;
+        uint32 cust_no = 2;
+        uint32 cardholder_no = 3;
+
+        google.protobuf.Timestamp email_ready_at = 4;
+        google.protobuf.Timestamp phone_ready_at = 5;
+        google.protobuf.Timestamp missing_contact_info_at = 6;
+        google.protobuf.Timestamp blocked_at = 7;
+    }
+
+    message UnverifiedCardList {
+        repeated UnverifiedCard cards = 1;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError token_err = 1;
+        appelis.identity.common.v1.PermissionError perm_err = 2;
+        UnverifiedCardList card_list = 3;
+    }
+
+}

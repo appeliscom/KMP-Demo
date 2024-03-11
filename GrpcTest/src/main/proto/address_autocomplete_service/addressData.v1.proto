@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/address_autocomplete_service";
+
+import "appelis/location.proto";
+
+package appelis.address.autocomplete.v1;
+
+message AutoCompleteResult {
+  string description = 1;
+  string placeId = 2;
+  StructuredFormatting structuredFormatting = 3;
+  repeated PlaceType type = 4;
+}
+
+// If we need more type look here: https://developers.google.com/places/web-service/supported_types
+enum PlaceType {
+  PLACE_TYPE_UNKNOWN = 0;
+  ROUTE = 1;
+  GEOCODE = 2;
+  STREET_ADDRESS = 3;
+  // ... Many more on google.apis
+}
+
+// Provides pre-formatted text that can be shown in your autocomplete results, and contains the following subfields:
+message StructuredFormatting {
+  // Contains the main text of a prediction, usually the name of the place.
+  string mainText = 1;
+  // Contains the secondary text of a prediction, usually the location of the place.
+  string secondaryText = 2;
+  // Contains an array with offset value and length.
+  // These describe the location of the entered term in the prediction result text, so that the term can be highlighted if desired.
+  repeated SubStringMatch mainTextMatchedSubstrings = 3;
+}
+
+message SubStringMatch {
+  int64 offset = 1;
+  int32 length = 2;
+}
+
+
+message AddressComponent {
+  string shortName = 1;
+  string longName = 2;
+}
+
+message AddressComponents {
+  AddressComponent streetNumber = 1;
+  AddressComponent route = 2;
+  AddressComponent subLocality = 3;
+  AddressComponent administrativeAreaLv2 = 4;
+  AddressComponent administrativeAreaLv1 = 5;
+  AddressComponent country = 6;
+  AddressComponent postalCode = 7;
+}
+
+message PlaceDetails {
+  string placeId = 1;
+  string name = 2;
+  AddressComponents addr = 3;
+  Location location = 4;
+  repeated PlaceType types = 5;
+}

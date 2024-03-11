@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/meeting_service";
+
+package metro.meeting.data.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Meeting {
+  string id = 1;
+  Reason reason = 4;
+  State state = 5;
+  google.protobuf.Timestamp startDate = 6;
+  google.protobuf.Timestamp endDate = 7;
+  google.protobuf.Timestamp createdAt = 8;
+  google.protobuf.Timestamp updatedAt = 9;
+}
+
+message MeetingDetail {
+  string id = 1;
+  Reason reason = 4;
+  State state = 5;
+  google.protobuf.Timestamp startDate = 6;
+  google.protobuf.Timestamp endDate = 7;
+  google.protobuf.Timestamp createdAt = 8;
+  google.protobuf.Timestamp updatedAt = 9;
+  repeated MeetingHistory history = 10;
+}
+
+message MeetingHistory {
+  Event event = 1;
+  google.protobuf.Timestamp createdAt = 2;
+  google.protobuf.Timestamp startDateOriginal = 3;
+  google.protobuf.Timestamp endDateOriginal = 4;
+  google.protobuf.Timestamp startDateNew = 5;
+  google.protobuf.Timestamp endDateNew = 6;
+}
+
+enum Reason {
+  UNKNOWN_REASON = 0;
+  COMPANY_PROFILE_CHANGE = 1;
+  USER_PROFILE_CHANGE = 2;
+  BONUS_PROGRAM = 3;
+  CIP = 4;
+  VOUCHERS = 5;
+  CREDIT_SYSTEM = 6;
+  NO_REASON = 7;
+  CLICK_AND_COLLECT = 8;
+}
+
+enum State {
+  UNKNOWN_STATE = 0;
+  ACCEPTED = 1;
+  WAITING = 2;
+  MOVED = 3;
+  CANCELLED = 4;
+}
+
+enum Event {
+  UNKNOWN_EVENT = 0;
+  USER_SCHEDULED = 1;
+  ADMIN_MOVED = 2;
+  USER_MOVED = 3;
+  ADMIN_CONFIRMED = 4;
+  USER_CANCELLED = 5;
+}
+
+enum SortKey {
+  UNKNOWN_KEY = 0;
+  IDENTIFIER = 1;
+  START_DATE = 2;
+}

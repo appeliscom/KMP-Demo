@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/user_service";
+option java_package = "com.appelis.userservice";
+
+package appelis.userService.pictures.v1;
+
+import "identity_service/common.proto";
+import "appelis/picture.proto";
+import "appelis/file.proto";
+
+service Pictures {
+  // Get user (from token) picture. Response can be empty...
+  rpc GetUserPicture(GetUserPictureRequest) returns (GetUserPictureResponse) {}
+  // Rpc will store picture to external service and save data for user picture.
+  // If processing finish without error payload will be null.
+  rpc SetUserPicture(SetUserPictureRequest) returns (SetUserPictureResponse) {}
+}
+
+message GetUserPictureRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message GetUserPictureResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.Picture pic = 2;
+  }
+}
+
+message SetUserPictureRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.File picture = 2;
+}
+
+message SetUserPictureResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    string processingError = 2;
+  }
+}

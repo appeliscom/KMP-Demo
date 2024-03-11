@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_sluno_login_proxy";
+
+import "identity_service/common.proto";
+
+package metro.sluno.signin.v1;
+
+service WebLogin {
+  rpc LoginWithToken(LoginWithTokenRequest) returns (LoginWithTokenResponse) {}
+}
+
+message LoginWithTokenRequest{
+  appelis.identity.common.v1.Token token = 1;
+  string sessionId = 2;
+}
+
+enum LoginError {
+  UNKNOWN_LOGIN_ERROR = 0;
+  USER_NOT_LOGGED = 1;
+}
+
+message SlunoError {
+  int32 originalCode = 1;
+  string message = 2;
+}
+
+message LoginWithTokenResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    LoginError loginErr = 2;
+    SlunoError slunoErr = 3;
+  }
+}

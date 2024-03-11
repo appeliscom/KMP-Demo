@@ -1,0 +1,345 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_starclub_v2";
+
+import "identity_service/common.proto";
+import "appelis/uuid.proto";
+import "appelis/language.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "metro_starclub_service_2.0/starclub.v2.proto";
+
+package metro.starclub.v2;
+
+service StarClubAdmin {
+  rpc SetCampaign(SetCampaignRequest) returns (SetCampaignResponse) {}
+
+  rpc GetCampaignById(GetCampaignByIdRequest) returns (GetCampaignByIdResponse) {}
+  // Get project campaigns.
+  rpc GetCampaigns(GetCampaignsRequest) returns (GetCampaignsResponse) {}
+  // Paged accounts per campaign
+  rpc PagedAccounts(PagedAccountsRequest) returns (PagedAccountsResponse) {}
+  // Get single account with movements.
+  rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {}
+  // Add correction movement to account.
+  rpc AddAccountCorrection(AddAccountCorrectionRequest) returns (AddAccountCorrectionResponse) {}
+  // Stream all policy approves for export to 3rd party.
+  rpc StreamPolicyApproves(StreamPolicyApprovesRequest) returns (stream StreamPolicyApprovesResponse) {}
+  // Stream all projects spending movements for all campaigns.
+  rpc StreamSpendingMovements(StreamSpendingMovementsRequest) returns (stream StreamSpendingMovementsResponse) {}
+}
+
+message AdminSpendingMovement {
+  string id = 1;
+  int32 pointsSpent = 2;
+  string couponName = 3;
+  string couponEan = 4;
+  google.protobuf.Timestamp createdAt = 5;
+  int64 companyId = 6;
+  int64 userId = 7;
+}
+
+message AdminSpendingMovementsArray {
+  repeated AdminSpendingMovement data = 1;
+}
+
+message StreamSpendingMovementsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    AdminSpendingMovementsArray data = 2;
+  }
+}
+
+message PolicyApproveArray {
+  repeated PolicyApprove data = 1;
+}
+
+message PolicyApprove {
+  string id = 1;
+  string policyId = 2;
+  int64 companyId = 3;
+  int64 mobileUserId = 4;
+  google.protobuf.Timestamp createdAt = 5;
+}
+
+message StreamPolicyApprovesRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message StreamSpendingMovementsRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message StreamPolicyApprovesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    PolicyApproveArray data = 2;
+  }
+}
+
+message AddAccountCorrectionRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID accountId = 2;
+  message CorrectionData {
+    int32 points = 1;
+    string description = 2;
+  }
+
+  CorrectionData data = 3;
+}
+
+// If all was ok payload will be returned nil.
+message AddAccountCorrectionResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+  }
+}
+
+message GetAccountRequest{
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID accountId = 2;
+}
+
+message GetAccountResponse{
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+    CompanyAccount account = 4;
+  }
+}
+
+
+message PagedAccountsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID campaignId = 2;
+  int64 first = 3;
+  oneof cursor {
+    string after = 4;
+  }
+  // If filterKeyword will be provided. Results will be filtered by registrationNo using prefix search from "filterKeyword". Field is optional.
+  google.protobuf.StringValue filterKeyword = 5;
+}
+
+message PagedAccountsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+    NodesPage page = 2;
+  }
+
+  message NodesPage {
+    repeated Node nodes = 1;
+    int64 totalCount = 2;
+  }
+
+  message Node {
+    CompanyAccountPreview data = 1;
+    string cursor = 2;
+  }
+}
+
+message CompanyAccount {
+  appelis.UUID id = 1;
+  google.protobuf.Timestamp updatedAt = 2;
+  int64 companyId = 3;
+  string companyName = 4;
+  int32  actualBalance = 5;
+  uint32 totalCollected = 6;
+  uint32 totalSpent = 7;
+  string registrationNo = 8;
+
+  repeated AdminPointMovement movements = 9;
+}
+
+message AdminPointMovement {
+  message CollectingData {
+    int32 pointsCollected = 1;
+    double amount = 2;
+    oneof Data {
+      PointMovement.CollectingData.File fileData = 3;
+      PointMovement.CollectingData.Invoice invoiceData = 4;
+    }
+    string userName = 5;
+  }
+
+  message SpendingData {
+    int32 pointsSpent = 1;
+    appelis.UUID couponId = 2;
+    string couponName = 3;
+    int64 userId = 4;
+    string username = 5;
+  }
+
+  message CorrectionData {
+    int32 points = 1;
+    string description = 2;
+    string adminName = 3;
+  }
+
+  appelis.UUID id = 1;
+  google.protobuf.Timestamp createdAt = 2;
+  oneof data {
+    CollectingData collect = 3;
+    SpendingData spending = 4;
+    CorrectionData correction = 5;
+  }
+}
+
+message CompanyAccountPreview  {
+  appelis.UUID id = 1;
+  google.protobuf.Timestamp updatedAt = 2;
+  int64 companyId = 3;
+  string companyName = 4;
+  int32  actualBalance = 5;
+  uint32 totalCollected = 6;
+  uint32 totalSpent = 7;
+  string registrationNo = 8;
+}
+
+message GetCampaignsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  int64 first = 2;
+  oneof cursor {
+    string after = 3;
+  }
+}
+
+message GetCampaignsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+    NodesPage page = 2;
+  }
+
+  message NodesPage {
+    repeated Node nodes = 1;
+    int64 totalCount = 2;
+  }
+
+  message Node {
+    AdminCampaignPreview data = 1;
+    string cursor = 2;
+  }
+}
+
+message GetActiveCampaignRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message GetCampaignByIdRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID id = 2;
+}
+
+// If payload is not set campaign doesn't exist.
+message GetCampaignByIdResponse {
+  oneof payload{
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+    AdminCampaign campaign = 2;
+  }
+}
+
+message AdminCampaignPreview {
+  appelis.UUID id = 1;
+  string name = 2;
+  CampaignRange validity = 3;
+}
+
+message AdminCampaign {
+  appelis.UUID id = 1;
+  CampaignData data = 2;
+}
+
+message SetCampaignRequest {
+  appelis.identity.common.v1.Token token = 1;
+  AdminCampaign data = 2;
+}
+
+message SetCampaignResponse {
+  enum SetError {
+    UNKNOWN_SET_ERROR = 0;
+    INVALID_RULES = 1;
+    INVALID_VALIDITY = 2;
+    EMPTY_COUPONS = 3;
+    EMPTY_PICTURE_URL = 4;
+    INVALID_CONDITIONS = 5;
+  }
+  oneof payload {
+    SetError err = 1;
+    appelis.identity.common.v1.TokenError tokenErr = 2;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+  }
+}
+
+message CampaignData {
+  string name = 1;
+  // Must be sent not null. Or error will be returned.
+  string pictureUrl = 2;
+  // Url with full rules of campaign.
+  string rulesUrl = 3;
+  // Time validity of campaign.
+  CampaignRange validity = 4;
+  // Translated description of campaign in HTML text.
+  repeated TranslatedContent descriptions = 5;
+
+  Rule rule = 6;
+
+  repeated RewardCoupon rewardCatalog = 7;
+
+  int64 userGroup = 8;
+
+  oneof datasource {
+    FileDataSource files = 9;
+    InvoiceDataSource invoice = 10;
+  }
+  NotificationTexts notifConfig = 11;
+
+  google.protobuf.Int64Value minCollectedThreshold = 12;
+}
+
+message NotificationTexts {
+  NotificationData purchase = 1;
+  NotificationData couponHit = 2;
+}
+message NotificationData {
+  string title = 1;
+  string text = 2;
+}
+
+message FileDataSource {
+  string fileType = 1;
+}
+
+message InvoiceDataSource {
+}
+
+message RewardCoupon {
+  appelis.UUID id = 1;
+  string name = 2;
+  string ean = 3;
+  int32 eanValiditySeconds = 4;
+  google.protobuf.StringValue pictureUrl = 5;
+  Price standardPrice = 6;
+  Price starclubPrice = 7;
+  uint32 starpointsPrice = 8;
+  string actionText = 9;
+  bytes description = 10;
+  ApplicationIdentifier applicationIdentified = 11;
+  CouponUsageType usageType = 12;
+  uint32 maximalUse = 13;
+  // Optional usage place
+  CouponUsagePlace usagePlace = 14;
+}
+
+
+message Rule {
+  double invoiceAmount = 1;
+  int32 clubPoints = 2;
+  string description = 3;
+}
+message TranslatedContent {
+  appelis.Language lang = 1;
+  bytes content = 2;
+}

@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_signIn_service";
+
+package metro.signin.v2;
+
+
+import "identity_service/common.proto";
+import "user_service/userService.proto";
+import "user_service/userCompanyService.proto";
+import "metro_registration_metadata/blockcodes.private.v1.proto";
+
+service MultiLoginVerification {
+  // here will be only our email verification
+  rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse) {}
+}
+
+message SendVerificationEmailRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string email = 2;
+}
+
+message SendVerificationEmailResponse {
+  enum VerifyError {
+    UNKNOWN_VERIFY_ERROR = 0;
+    WRONG_EMAIL = 1;
+    NO_USERS = 2;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    VerifyError verifyError = 2;
+  }
+}
+
+service MultiLoginUserListing {
+  // Listing users for verified email
+  rpc GetUsersForEmail(GetUsersForEmailRequest) returns (GetUsersForEmailResponse) {
+  }
+  // listing users for firebase verified
+  rpc GetUsersForFirebaseToken(GetUsersForFirebaseTokenRequest) returns (GetUsersForFirebaseTokenResponse) {
+  }
+}
+
+enum FirebaseListingError {
+  UNKNOWN_FIREBASE_LISTING_ERROR = 0;
+  WRONG_FB_TOKEN = 1;
+}
+
+message GetUsersForFirebaseTokenResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    FirebaseListingError listingErr = 2;
+    UserDataArray data = 3;
+  }
+}
+
+message GetUsersForFirebaseTokenRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string firebaseToken = 2;
+}
+
+message GetUsersForEmailRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string code = 2;
+}
+
+
+enum ListingError {
+  UNKNOWN_LISTING_ERROR = 0;
+  WRONG_CODE = 1;
+}
+
+message GetUsersForEmailResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    ListingError listingErr = 2;
+    UserDataArray data = 3;
+  }
+}
+
+message UserDataArray {
+  repeated UserData data = 1;
+}
+
+message UserData {
+  appelis.userService.users.v1.MobileUser user = 1;
+  appelis.userService.companies.v1.Company company = 2;
+  metro.blockcodes.v1.BlockCodes blockCodes = 3;
+  // Is blocked is calculated from block codes.
+  bool isBlocked = 4;
+}
+
+
+service MultiLogin {
+  // login with email verification
+  rpc EmailLogin(EmailLoginRequest) returns (EmailLoginResponse) {
+  }
+
+  // login with firebase token
+  rpc FirebaseMultiLogin(FirebaseMultiLoginRequest) returns (FirebaseMultiLoginResponse) {
+  }
+}
+
+message FirebaseMultiLoginResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    FirebaseListingError listingErr = 2;
+    LoginError loginErr = 3;
+  }
+}
+
+message FirebaseMultiLoginRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string firebaseToken = 2;
+  repeated int64 userIds = 3;
+}
+
+message EmailLoginRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string code = 2;
+  repeated int64 userIds = 3;
+}
+
+enum LoginError {
+  UNKNOWN_LOGIN_ERROR = 0;
+  USER_NOT_FOUND = 1;
+  USER_BLOCKED = 2; // When cardholder or customer have block codes setup.
+}
+
+message EmailLoginResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    ListingError listingErr = 2;
+    LoginError loginErr = 3;
+  }
+}

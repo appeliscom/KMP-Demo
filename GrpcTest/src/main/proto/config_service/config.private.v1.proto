@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "appelis/config_v1";
+option java_package = "com.appelis.config";
+
+import "config_service/config.data.v1.proto";
+
+package appelis.config.v1;
+
+service PrivateService {
+  rpc GetConfiguration (GetConfigurationRequest) returns (GetConfigurationResponse) {}
+  rpc SetConfiguration (SetConfigurationRequest) returns (ErrorResponse) {}
+}
+
+message GetConfigurationResponse {
+  Configuration config = 1;
+}
+
+message GetConfigurationRequest {
+  string idProject = 1;
+}
+
+message SetConfigurationRequest {
+  Configuration config = 1;
+}
+
+message ErrorResponse {}
+
+

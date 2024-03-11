@@ -1,0 +1,244 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/retail_menu_v1";
+
+package appelis.retail.menu.v1;
+
+import "appelis/uuid.proto";
+import "appelis/timerange.proto";
+import "identity_service/common.proto";
+import "retail_food_menu_service/retailFoodMenuData.v1.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+service MenuService {
+  // Returns actual menu block for selected day and business.
+  rpc GetMenu(GetMenuRequest) returns (GetMenuResponse){}
+  // Returns all menu blocks for selected day and business.
+  rpc GetMealExtras(GetMealExtrasRequest) returns (GetMealExtrasResponse){}
+}
+
+message GetMealExtrasRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  string id = 3;
+}
+
+message GetMealExtrasResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+    appelis.retail.menu.data.v1.MealExtras meal_extras = 2;
+  }
+}
+
+message GetMenuRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  google.protobuf.Timestamp date = 3;
+}
+
+message GetMenuResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+    appelis.retail.menu.data.v1.Menu menu = 2;
+  }
+}
+
+service MenuAdminService {
+  // Creates source menu, where all days within its range have same meals
+  rpc CreateSourceMenu (CreateSourceMenuRequest) returns (CreateSourceMenuResponse) {}
+  // Sets source menu by id, overwriting all days within its range
+  rpc SetSourceMenu (SetSourceMenuRequest) returns (SetSourceMenuResponse) {}
+  // Deletes source menu by id
+  rpc DeleteSourceMenu (DeleteSourceMenuRequest) returns (DeleteSourceMenuResponse) {}
+  // Activates source menu by id
+  rpc ActivateSourceMenu (ChangeSourceMenuStatusRequest) returns (ChangeSourceMenuStatusResponse) {}
+  // Deactivates source menu by id
+  rpc DeactivateSourceMenu (ChangeSourceMenuStatusRequest) returns (ChangeSourceMenuStatusResponse) {}
+  // List source menus, filtered
+  rpc ListSourceMenus(ListSourceMenusRequest) returns (ListSourceMenusResponse) {}
+  // List all source menus, both active and inactive, filtered
+  rpc ListAllSourceMenus(ListAllSourceMenusRequest) returns (ListAllSourceMenusResponse) {}
+  // Get source menu
+  rpc GetSourceMenu(GetSourceMenuRequest) returns (GetSourceMenuResponse) {}
+
+  rpc GetActiveSourceMenus(GetActiveSourceMenusRequest) returns (GetActiveSourceMenusResponse) {}
+
+  // Creates settings
+  rpc CreateSettings (CreateSettingsRequest) returns (CreateSettingsResponse) {}
+  // Set settings by id
+  rpc SetSettings (SetSettingsRequest) returns (SetSettingsResponse) {}
+  // Get settings by id
+  rpc GetSettings (GetSettingsRequest) returns (GetSettingsResponse) {}
+}
+
+message GetActiveSourceMenusRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  string translation_key = 3;
+}
+
+message GetActiveSourceMenusResponse {
+  message ActiveSourceMenu {
+    oneof active_source_menu {
+      appelis.retail.menu.data.v1.SourceMenu source_menu = 1; 
+      appelis.retail.menu.data.v1.SourceMenuListItem source_menus_list_item = 2;
+    }
+  }
+
+  message ActiveSourceMenus {
+    repeated ActiveSourceMenu active_source_menus = 1;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    ActiveSourceMenus active_source_menus = 3;
+  }
+}
+
+message ListSourceMenusRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  string translation_key = 3;
+  bool active = 4;
+  appelis.TimeRange timerange = 5;
+}
+
+message ListSourceMenusResponse {
+  message SourceMenusList {
+    repeated appelis.retail.menu.data.v1.SourceMenuListItem source_menus = 1;
+  }
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    SourceMenusList source_menu_list = 3;
+  }
+}
+
+message ListAllSourceMenusRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  string translation_key = 3;
+  appelis.TimeRange timerange = 4;
+}
+
+message ListAllSourceMenusResponse {
+  message SourceMenusList {
+    repeated appelis.retail.menu.data.v1.SourceMenuListItem source_menus = 1;
+  }
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    SourceMenusList source_menu_list = 3;
+  }
+}
+
+message GetSourceMenuRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  appelis.UUID id = 3;
+}
+
+message GetSourceMenuResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    appelis.retail.menu.data.v1.SourceMenu source_menu = 3;
+  }
+}
+
+message ChangeSourceMenuStatusRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID id = 2;
+  string translationKey = 3;
+}
+
+message ChangeSourceMenuStatusResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+  }
+}
+
+message CreateSourceMenuRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.retail.menu.data.v1.MenuInput data = 2;
+}
+
+message CreateSourceMenuResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    google.protobuf.StringValue payload_err = 3;
+  }
+}
+
+message SetSourceMenuRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID id = 2;
+  appelis.retail.menu.data.v1.MenuInput data = 3;
+}
+
+message SetSourceMenuResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    google.protobuf.StringValue payload_err = 3;
+  }
+}
+
+message DeleteSourceMenuRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID id = 2;
+}
+
+message DeleteSourceMenuResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+  }
+}
+
+message GetSettingsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+}
+
+message GetSettingsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+    appelis.retail.menu.data.v1.Settings settings = 3;
+  }
+}
+
+message CreateSettingsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string business_id = 2;
+  map<string, appelis.retail.menu.data.v1.SettingsMealGroup> meal_groups = 3;
+  map<string, appelis.TimeRange> timeranges = 4;
+  map<string, int32> menu_blocks = 5;
+}
+
+message CreateSettingsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+  }
+}
+
+message SetSettingsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.UUID id = 2;
+  map<string, appelis.retail.menu.data.v1.SettingsMealGroup> meal_groups = 3;
+  map<string, appelis.TimeRange> timeranges = 4;
+  map<string, int32> menu_blocks = 5;
+}
+
+message SetSettingsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError token_err = 1;
+    appelis.identity.common.v1.PermissionError perm_err = 2;
+  }
+}

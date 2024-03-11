@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/newsfeed_service";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "appelis/objectid.proto";
+import "appelis/picture.proto";
+import "appelis/timerange.proto";
+
+package appelis.newsfeed.data.v1;
+
+message NewsFeedItem {
+    message BusinessIds {
+        repeated string business_ids = 1;
+    }
+
+    message Dates {
+        google.protobuf.Timestamp created = 1;
+        google.protobuf.Timestamp modified = 2;
+        google.protobuf.Timestamp published = 3;
+    }
+
+    message Author {
+        google.protobuf.StringValue id = 1;
+        string name = 2;
+    }
+
+    appelis.ObjectId id = 1;
+    google.protobuf.Int64Value index = 2;
+    Author author = 3;
+    string title = 4;
+    string perex = 5;
+    google.protobuf.BytesValue body = 6;
+    BusinessIds business_ids = 7;
+    repeated appelis.Picture pictures = 8;
+    Dates dates = 9;
+    appelis.TimeRange validity = 10;
+    google.protobuf.BoolValue display = 11;
+}

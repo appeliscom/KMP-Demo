@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/clickandcollect_metro_services";
+
+import "google/protobuf/timestamp.proto";
+import "identity_service/common.proto";
+import "user_service/userService.proto";
+
+package appelis.clickandcollect.metro.v1;
+
+// Should be used by ordinary cardholders to create request for executive.
+service UserApprovals {
+    // EXECUTIVE RPCS
+
+    // Used by executive to get all approvals of users.
+    rpc GetCompanyRequestApprovals (appelis.identity.common.v1.Token) returns (ApprovalsResponse) {
+
+    }
+    // Used by executive to change status for one or more approvals.
+    rpc ChangeUserApproval (ChangeUserApprovalRequest) returns (ApprovalsResponse) {
+
+    }
+    // Used by executive to create approval for user
+    rpc CreateApprovalForUser (CreateApprovalForUserRequest) returns (CreateApprovalForUserResponse) {
+
+    }
+
+    // NON EXECUTIVE RPCS
+    // Get already created approval for user logged in token. If there is no records returns null.
+    rpc GetMyRequestApproval (appelis.identity.common.v1.Token) returns (ApprovalResponse) {
+
+    }
+
+    // Create request for approval for user logged in token. If there is already created request returns data of request.
+    // If registration have auto-approve then user will be auto approved (and notification will be send ???).
+    rpc CreateUserApproval (appelis.identity.common.v1.Token) returns (ApprovalResponse) {
+
+    }
+}
+
+message CreateApprovalForUserRequest {
+    appelis.identity.common.v1.Token token = 1;
+    int64 userId = 2;
+    ApprovalStatus status = 3;
+}
+
+message CreateApprovalForUserResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError err = 1;
+        appelis.identity.common.v1.PermissionError permErr = 2;
+        OptionalUserApproval data = 3;
+    }
+}
+
+message ApprovalResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError err = 1;
+        OptionalUserApproval data = 2;
+    }
+}
+
+message OptionalUserApproval {
+    UserApproval approval = 1;
+}
+
+message ChangeUserApprovalRequest {
+    appelis.identity.common.v1.Token token = 1;
+    repeated int64 approvalIds = 2;
+    ApprovalStatus status = 3;
+}
+
+message ApprovalsResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError err = 1;
+        appelis.identity.common.v1.PermissionError createErr = 2;
+        UserApprovalArray data = 3;
+    }
+}
+
+message UserApprovalArray {
+    repeated UserApproval data = 1;
+}
+
+enum ApprovalStatus {
+    UNKNOWN = 0;
+    BLOCKED = 1;
+    APPROVED = 2;
+    PENDING = 3;
+}
+
+message UserApproval {
+    int64 approvalId = 1;
+    int64 mobileUserId = 2;
+    int64 companyId = 3;
+    google.protobuf.Timestamp createdAt = 4;
+    // Used to show if user was already approved
+    ApprovalStatus status = 5;
+
+    appelis.userService.users.v1.MobileUser user = 6;
+
+    google.protobuf.Timestamp updatedAt = 7;
+
+    // Its optional mobile user that changed status of user approval
+    appelis.userService.users.v1.MobileUser managedBy = 8;
+}

@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/user_service";
+option java_package = "com.appelis.userservice";
+
+package appelis.userService.companies.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "identity_service/common.proto";
+import "user_service/userCompanyService.proto";
+
+service CompanyPublic {
+  rpc GetTokenCompany(GetTokenCompanyRequest) returns (GetTokenCompanyResponse) {}
+}
+
+message GetTokenCompanyRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // FieldMask will be used to load nested object in company.
+  // Create fieldMask with nested object paths. ("Business", "IcoProfile")
+  google.protobuf.FieldMask fieldMask = 2;
+}
+
+message GetTokenCompanyResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    Company data = 2;
+  }
+}
+
+
+service CompanyPublicAdmin {
+  rpc StreamCompanies(StreamCompaniesRequest) returns (stream StreamCompaniesResponse){
+  }
+
+  rpc SetCompanies(SetCompaniesRequest) returns (SetCompaniesResponse) {
+  }
+
+  rpc DeleteCompanies(DeleteCompaniesRequest) returns (DeleteCompaniesResponse) {
+  }
+}
+
+message StreamCompaniesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  google.protobuf.FieldMask fieldmask = 2;
+}
+
+message StreamCompaniesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    GetCompaniesResponse data = 2;
+  }
+}
+
+message SetCompaniesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated CompanyInput data = 2;
+}
+
+message DeleteCompaniesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated int64 ids = 2;
+}
+
+message DeleteCompaniesResponse{
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+  }
+}
+
+message SetCompaniesResponse{
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+  }
+}
+
+message CompanyInput {
+  appelis.userService.companies.v1.Company.CompanyType type = 1;
+  int64 idCompany = 2;
+  int64 idBusiness = 3;
+  bool active = 4;
+  string projectId = 5;
+  bool prospectSendActive = 6;
+  appelis.userService.companies.v1.Company.SystemStatus bonusSystemStatus = 7;
+  appelis.userService.companies.v1.Company.SystemStatus creditSystemStatus = 8;
+  google.protobuf.StringValue ico = 9;
+  google.protobuf.StringValue prospectSendAddress = 10;
+  google.protobuf.StringValue externalId = 11;
+  google.protobuf.StringValue externalCheckDig = 12;
+  google.protobuf.StringValue externalCatId = 13;
+  google.protobuf.StringValue advisorId = 14;
+  google.protobuf.Timestamp timeRegistration = 15;
+}

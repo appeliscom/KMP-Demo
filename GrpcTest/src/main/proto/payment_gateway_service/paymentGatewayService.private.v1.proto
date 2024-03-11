@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/payment_gateway_service";
+
+import "google/protobuf/timestamp.proto";
+import "appelis/language.proto";
+import "appelis/currency.proto";
+import "appelis/uuid.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+package appelis.payment.gateway.v1;
+
+// PrivateApi used by order service to manipulate with payments.
+service PrivateGatewayPayments {
+  // Rpc used to create payment on 3rd party gate.
+  rpc Create (CreatePaymentRequest) returns (google.protobuf.Empty) {
+  }
+  // Rpc will returns actual state of payment on 3rd party gate.
+  rpc Changes (ChangesRequest) returns (stream PaymentResponse) {
+  }
+}
+
+enum PaymentStatus {
+  UNKNOWN = 0;
+  CREATED = 1;
+  PROCESSING = 2;
+  // Canceled by user
+  CANCELED = 3;
+  CONFIRMED = 4;
+
+  REVOKED = 5;
+  // Probably denied because of card.
+  DENIED = 6;
+
+  WAITING_FOR_CHARGING = 7;
+  CHARGED = 8;
+
+  REFUND_PROCESSING = 9;
+  REFUNDED = 10;
+}
+
+message Gateway {
+  string id = 1;
+  string projectId = 2;
+}
+
+message ChangesRequest {
+  // Payment ID to watch
+  appelis.UUID paymentId = 3;
+}
+
+message PaymentInput {
+  string orderNo = 1;
+  double totalAmount = 2;
+  appelis.Language lang = 3;
+  appelis.Currency currency = 4;
+  repeated PayItem items = 5;
+}
+
+message PayItem {
+  string name = 1;
+  int32 quantity = 2;
+  double amount = 3;
+  string description = 4;
+}
+
+message CreatePaymentRequest {
+  Gateway gw = 1;
+  PaymentInput data = 2;
+  // Payment ID to create
+  appelis.UUID paymentId = 3;
+}
+
+message PaymentResponse {
+  Payment data = 1;
+}
+
+message Payment {
+  appelis.UUID paymentId = 1;
+  google.protobuf.Timestamp createdAt = 2;
+  PaymentStatus status = 3;
+  // Pay url is available only for limited time...
+  google.protobuf.StringValue payUrl = 4;
+}

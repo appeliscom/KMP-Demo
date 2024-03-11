@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_registration_metadata";
+
+import "metro_common/metroCommon.data.v1.proto";
+
+package metro.blockcodes.v1;
+
+service BlockCodesService {
+  rpc GetCardholderBlockCodes(GetCardholderBlockCodesRequest) returns (GetCardholderBlockCodesResponse) {}
+}
+
+message GetCardholderBlockCodesRequest {
+  repeated metro.common.data.v1.CardholderId ids = 1;
+  string projectId = 2;
+}
+
+message BlockCodes {
+  CardholderBlockCodes userCodes = 1;
+  CompanyBlockCodes companyCodes = 2;
+}
+
+message IdBlockCode {
+  metro.common.data.v1.CardholderId id = 1;
+  BlockCodes blockCodes = 2;
+}
+
+message GetCardholderBlockCodesResponse {
+  repeated IdBlockCode data = 1;
+}
+
+enum CardholderStatus {
+  CARDHOLDER_STATUS_UNKNOWN = 0;
+  CARDHOLDER_STATUS_INACTIVE = 5; // (neaktivní)
+  CARDHOLDER_STATUS_CANCELED = 9; // (zrušen)
+}
+
+enum CardholderBlockCode {
+  CARDHOLDER_BLOCK_CODE_UNKNOWN = 0;
+  CARDHOLDER_BLOCK_CODE_S = 1; // (krádež v obchode)
+  CARDHOLDER_BLOCK_CODE_L = 2; // (ztracená nebo ukradnuta karta)
+}
+
+message CardholderBlockCodes {
+  CardholderStatus status = 1;
+  CardholderBlockCode blockCode = 2;
+}
+
+
+enum CustomerStatus {
+  CUSTOMER_STATUS_UNKNOWN = 0;
+  CUSTOMER_STATUS_INACTIVE = 5; // (neaktivní)
+  CUSTOMER_STATUS_CANCELED = 9; // (zrušen)
+}
+
+enum CustomerBlockCode {
+  CUSTOMER_BLOCK_CODE_UNKNOWN = 0;
+  CUSTOMER_BLOCK_CODE_S = 1; // (krádež v obchode)
+}
+
+message CompanyBlockCodes {
+  CustomerStatus status = 1;
+  CustomerBlockCode blockCode = 2;
+}

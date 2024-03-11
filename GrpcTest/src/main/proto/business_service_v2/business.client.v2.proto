@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/business_service_v2";
+
+package appelis.business.v2;
+
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/wrappers.proto";
+import "identity_service/common.proto";
+import "appelis/paging.proto";
+import "appelis/location.proto";
+import "business_service_v2/business.data.v2.proto";
+
+// Service used by client devices.
+service BusinessCatalog {
+  // Gets one business by ID. Used by clients for detail view.
+  rpc GetBusinessByID(GetClientBusinessRequest) returns (GetClientBusinessResponse) {}
+
+  // Gets range of businesses according to filter, paging options. Used for clients list preview.
+  rpc GetBusinesses(GetClientBusinessesRequest) returns (GetClientBusinessesResponse) {}
+
+  //Gets range of businesses sorted by location, nearest. Used for clients list location sorted preview.
+  rpc GetBusinessesWithLocation(GetBusinessesWithLocationRequest) returns (GetBusinessesWithLocationResponse) {}
+}
+
+message GetClientBusinessRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string businessId = 2;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 3;
+}
+
+message GetClientBusinessResponse {
+  oneof payload{
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.business.v2.Business business = 2;
+  }
+}
+
+message GetClientBusinessesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  BusinessFilter filter = 2;
+  appelis.CursorForwardPagingParams paging = 3;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 4;
+}
+
+message GetClientBusinessesResponse {
+  message BusinessNode {
+    string cursor = 1;
+    Business business = 2;
+  }
+
+  message BusinessPage {
+    appelis.PageInfo info = 1;
+    repeated BusinessNode node = 2;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    BusinessPage page = 2;
+  }
+}
+
+message BusinessFilter {
+  google.protobuf.StringValue keyword = 1;
+  repeated string businessId = 2;
+}
+
+message GetBusinessesWithLocationRequest {
+  appelis.identity.common.v1.Token token = 1;
+  BusinessFilter filter = 2;
+  appelis.CursorForwardPagingParams paging = 3;
+  appelis.Location location = 4;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 5;
+}
+
+message GetBusinessesWithLocationResponse {
+  message BusinessWithLocationDistance {
+    Business business = 1;
+    double distance = 2;
+  }
+
+  message BusinessNode {
+    string cursor = 1;
+    BusinessWithLocationDistance data = 2;
+  }
+
+  message BusinessPage {
+    appelis.PageInfo info = 1;
+    repeated BusinessNode node = 2;
+  }
+
+  oneof payload{
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    BusinessPage page = 2;
+  }
+}

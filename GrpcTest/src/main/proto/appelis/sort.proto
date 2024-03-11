@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+enum SortOrder {
+  UNKNOWN_SORT = 0;
+  ASC = 1;
+  DESC = 2;
+}

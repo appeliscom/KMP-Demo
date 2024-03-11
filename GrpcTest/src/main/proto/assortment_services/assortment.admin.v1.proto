@@ -1,0 +1,168 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/assortment_services";
+
+import "google/protobuf/field_mask.proto";
+
+import "identity_service/common.proto";
+import "assortment_services/assortment.data.v1.proto";
+import "appelis/paging.proto";
+import "google/protobuf/wrappers.proto";
+
+package appelis.assortment.v1;
+
+
+service AssortmentAdmin {
+  rpc SetArticles(SetArticlesRequest) returns (SetArticlesResponse) {}
+
+  rpc DeleteArticles(DeleteArticlesRequest) returns (DeleteArticlesResponse) {}
+
+  rpc StreamArticleIds(StreamArticleIdsRequest) returns (stream StreamArticleIdsResponse){}
+
+  rpc GetArticles(GetAdminArticlesRequest) returns(GetAdminArticlesResponse) {}
+
+  rpc PagedArticles(PagedArticlesRequest) returns(PagedArticlesResponse) {}
+
+  rpc PagedArticlesNoCategory (PagedArticlesNoCategoryRequest) returns(PagedArticlesResponse) {}
+
+  rpc GetArticleCountByCategoryIds(GetAdminArticleCountByCategoryIdsRequest) returns (GetAdminArticleCountByCategoryIdsResponse){}
+
+  rpc GetArticleCount(GetAdminArticleCountByCategoryIdsRequest) returns (GetAdminArticleCountResponse){}
+
+  rpc GetArticleCountNoCategory(GetArticleCountNoCategoryRequest) returns (GetArticleCountNoCategoryResponse){}
+}
+
+message GetArticleCountNoCategoryRequest {
+  appelis.identity.common.v1.Token token = 1;
+  google.protobuf.StringValue keyword = 2;
+}
+
+message GetArticleCountNoCategoryResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    uint64 data = 3;
+  }
+}
+
+message GetAdminArticleCountByCategoryIdsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // Ids of categories for which client wants article counts.
+  repeated int64 categoryIds = 2;
+
+  google.protobuf.StringValue keyword = 3;
+}
+
+message GetAdminArticleCountByCategoryIdsResponse {
+  message ArticleCount{
+    // Per selected category ids, as value article count.
+    map<int64, uint64> articleCounts = 1;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    ArticleCount data = 3;
+  }
+}
+
+message GetAdminArticleCountResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    uint64 cnt = 3;
+  }
+}
+
+
+message GetAdminArticlesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 3;
+  // Id of articles that client wants.
+  repeated string articleIds = 2;
+}
+
+message GetAdminArticlesResponse{
+  oneof payload{
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    appelis.assortment.data.v1.AdminArticleArray data = 3;
+  }
+}
+
+message AdminArticleFilter {
+  google.protobuf.StringValue keyword = 1;
+  repeated int64 categoryIds = 2;
+}
+
+message PagedArticlesNoCategoryRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.PagingParams paging = 2;
+  google.protobuf.StringValue keyword = 3;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 4;
+}
+
+message PagedArticlesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.PagingParams paging = 2;
+  AdminArticleFilter filter = 3;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 4;
+}
+
+message PagedArticlesResponse {
+  message ArticleNode {
+    string cursor = 1;
+    appelis.assortment.data.v1.AdminArticle node = 2;
+  }
+
+  message ArticlePage {
+    bool hasNext = 1;
+    repeated ArticleNode nodes = 2;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    ArticlePage page = 3;
+  }
+}
+
+
+message StreamArticleIdsRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message StreamArticleIdsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    appelis.assortment.data.v1.StringArray ids = 3;
+  }
+}
+
+message DeleteArticlesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated string articleIds = 2;
+}
+
+message DeleteArticlesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message SetArticlesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated appelis.assortment.data.v1.AdminArticle articles = 2;
+}
+
+message SetArticlesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}

@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/meeting_service";
+
+import "google/protobuf/timestamp.proto";
+import "meeting_service/meeting.data.v1.proto";
+import "identity_service/common.proto";
+import "appelis/timerange.proto";
+import "appelis/paging.proto";
+import "appelis/sort.proto";
+
+package metro.meeting.admin.v1;
+
+service MeetingsAdminService {
+    rpc RescheduleMeeting (RescheduleMeetingRequest) returns (MeetingResponse) {
+    }
+    rpc ConfirmMeeting (MeetingIdRequest) returns (MeetingResponse) {
+    }
+    rpc GetMeetingById (MeetingIdRequest) returns (MeetingResponse) {
+    }
+    rpc GetMeetings (GetMeetingsRequest) returns (MeetingsListResponse) {
+    }
+    rpc GetMeetingsByRange (GetMeetingsByRangeRequest) returns (MeetingsListResponse) {
+    }
+}
+
+message RescheduleMeetingRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string meetingId = 2;
+  google.protobuf.Timestamp startDate = 3;
+  google.protobuf.Timestamp endDate = 4;
+}
+
+message MeetingIdRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string meetingId = 2;
+}
+
+message MeetingResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    metro.meeting.data.v1.MeetingDetail meeting = 3;
+  }
+}
+
+message GetMeetingsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  Filter filter = 2;
+  SortBy sort = 3;
+  appelis.PagingParams paging = 4;
+}
+
+message Filter {
+  string businessId = 1;
+  string userExternalId = 2;
+  string status = 3;
+  appelis.TimeRange range = 4;
+}
+
+message SortBy {
+  metro.meeting.data.v1.SortKey key = 1;
+  appelis.SortOrder order = 2;
+}
+
+message GetMeetingsByRangeRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string businessId = 2;
+  appelis.TimeRange range = 3;
+}
+
+message MeetingsListResponse {
+  message Node {
+    string cursor = 1;
+    metro.meeting.data.v1.Meeting data = 2;
+  }
+
+  message Page {
+    appelis.PageInfo pageInfo = 1;
+    repeated Node nodes = 2;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    Page page = 3;
+  }
+}

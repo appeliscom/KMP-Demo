@@ -1,0 +1,128 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/identity_service";
+option java_package = "com.appelis.identity";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "identity_service/project.v1.proto";
+
+package appelis.identity.v1;
+
+// Private api without tokens and auth logic...
+service DeviceAdmin {
+  // Rpc will be used to logout or login users.
+  rpc UpdateDevice (UpdateDeviceRequest) returns (DeviceResponse) {
+  }
+  // Rpc will be listing device data for server usage
+  rpc GetDevice (GetDeviceRequest) returns (DeviceResponse) {
+  }
+  // Rpc will be listing device data for server usage
+  rpc GetDevices (GetDevicesRequest) returns (DevicesResponse) {
+  }
+  // Rpc for getting all devices for requested users.
+  rpc GetUsersDevices (GetUsersDevicesRequest) returns (GetUsersDevicesResponse) {
+  }
+  // Rpc will be streaming all devices for project
+  rpc GetProjectDevices (ProjectRequest) returns (stream DevicesResponse) {
+  }
+  // Rpc gets devices for project by temporary id. Used by getting device for token generation
+  rpc GetDeviceByTemporaryId(GetDeviceByTemporaryIdRequest) returns (DeviceResponse) {
+  }
+  // Logout users from all their devices
+  rpc LogoutUsers(LogoutUsersRequest) returns (google.protobuf.Empty) {
+  }
+}
+
+message LogoutUsersRequest {
+  repeated int64 userIds = 1;
+  // Optional. Will be checked to ""
+  string reason = 3;
+}
+
+message GetDeviceByTemporaryIdRequest {
+  string temporaryId = 1;
+  string projectId = 2;
+}
+
+message DevicesResponse {
+  map<int64, MobileDevice> data = 1;
+}
+
+message GetUsersDevicesResponse {
+  map<int64, MobileDevicesArray> data = 1;
+}
+
+message GetUsersDevicesRequest {
+  repeated int64 users = 1;
+}
+message GetDevicesRequest {
+  repeated int64 idMobileDevice = 1;
+}
+
+message GetDeviceRequest {
+  int64 idMobileDevice = 1;
+}
+
+message DeviceResponse {
+  enum Error {
+    UNKNOWN = 0;
+    NOT_FOUND = 1;
+  }
+
+  oneof payload {
+    Error error = 1;
+    MobileDevice data = 2;
+  }
+}
+
+message UpdateDeviceRequest {
+  int64 idMobileDevice = 1;
+  UpdateDeviceData data = 2;
+  // Optional. Will be checked to ""
+  string reason = 3;
+}
+
+message UpdateDeviceData {
+  google.protobuf.Int64Value idMobileUser = 10;
+}
+
+
+message MobileDevicesArray {
+  repeated MobileDevice data = 1;
+}
+
+message MobileDevice {
+  // Id of device.
+  int64 idMobileDevice = 1;
+  // Data have own message without id, to distinct what is primary for device model.
+  DeviceData data = 2;
+}
+
+enum DeviceLang {
+  UNKNOWN = 0;
+  EN = 1;
+  SK = 2;
+  CZ = 3;
+}
+
+enum DeviceType {
+  UNKNOWN_DEVICE_TYPE = 0;
+  ANDROID_V5 = 1;
+  IOS_V5 = 2;
+  WEB_V1 = 3;
+}
+
+message DeviceData {
+  int32 idCustomer = 1;
+  string deviceTemporaryId = 2;
+  google.protobuf.Timestamp timeCreate = 3;
+  DeviceLang lang = 4;
+  // Info about which platform registers device.
+  DeviceType deviceType = 5;
+  google.protobuf.Int64Value idMobileUser = 10;
+  google.protobuf.StringValue notificationToken = 11;
+  google.protobuf.Timestamp notificationTokenLastUpdate = 12;
+  // There are other fields that are not used...
+}

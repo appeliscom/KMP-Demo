@@ -1,0 +1,259 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/loyalty";
+option java_package = "metro.loyalty.v1";
+
+package metro.loyalty.v1;
+
+import "appelis/paging.proto";
+import "appelis/uuid.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "loyalty/loyalty.data.v1.proto";
+
+service LoyaltyPrivate {
+  rpc SetAccountStatus(
+    SetAccountStatusRequest
+  ) returns (
+    SetAccountStatusResponse
+  ) {}
+  rpc AddAdminCorrection(
+    AddAdminCorrectionRequest
+  ) returns (
+    AddAdminCorrectionResponse
+  ) {}
+  rpc GetAccountsPaged(
+    GetAccountsPagedRequest
+  ) returns (
+    GetAccountsPagedResponse
+  ) {}
+  rpc GetAccountDetail(
+    GetAccountDetailRequest
+  ) returns (
+    GetAccountDetailResponse
+  ) {}
+  rpc GetPointMovementsPagedPrivate(
+    GetPointMovementsPagedPrivateRequest
+  ) returns (
+    GetPointMovementsPagedPrivateResponse
+  ) {}
+  rpc GetRewards(
+    GetRewardsRequest
+  ) returns (
+    GetRewardsResponse
+  ) {}
+  rpc GetRewardDetail(
+    GetRewardDetailRequest
+  ) returns (
+    GetRewardDetailResponse
+  ) {}
+  rpc SetRewardDetail(
+    SetRewardDetailRequest
+  ) returns (
+    SetRewardDetailResponse
+  ) {}
+  rpc DeleteReward(
+    DeleteRewardRequest
+  ) returns (
+    google.protobuf.Empty
+  ) {}
+  rpc GetCampaign(
+    GetCampaignRequest
+  ) returns (
+    GetCampaignResponse
+  ) {}
+  rpc UpdateCampaign(
+    UpdateCampaignRequest
+  ) returns (
+    UpdateCampaignResponse
+  ) {}
+}
+
+message GetRewardsRequest {
+  string id_project = 1;
+}
+
+message GetRewardsResponse {
+  enum GetRewardsError {
+    UNKNOWN = 0;
+    PROJECT_NOT_FOUND = 1;
+  }
+
+  message Rewards {
+    repeated loyalty.data.v1.Reward rewards = 1;
+  }
+
+  oneof payload {
+    GetRewardsError error = 1;
+    Rewards rewards = 2;
+  }
+}
+
+message GetRewardDetailRequest {
+  string id_project = 1;
+  appelis.UUID id = 2;
+}
+
+message GetRewardDetailResponse {
+  enum GetRewardError {
+    UNKNOWN = 0;
+    REWARD_NOT_FOUND = 1;
+  }
+
+  oneof payload {
+    GetRewardError error = 1;
+    loyalty.data.v1.Reward reward = 2;
+  }
+}
+
+message SetRewardDetailRequest {
+  string id_project = 1;
+  uint32 level = 2;
+  loyalty.data.v1.Reward reward = 3;
+}
+
+message SetRewardDetailResponse {
+  enum SetRewardError {
+    UNKNOWN = 0;
+    PROJECT_NOT_FOUND = 1;
+  }
+
+  optional SetRewardError error = 1;
+}
+
+message DeleteRewardRequest {
+  string id_project = 1;
+  appelis.UUID id = 2;
+}
+
+message GetPointMovementsPagedPrivateRequest {
+  string id_project = 1;
+  appelis.UUID id_account = 2;
+  appelis.CursorForwardPagingParams paging = 3;
+  google.protobuf.StringValue client_version = 4;
+}
+
+message GetPointMovementsPagedPrivateResponse {
+  message Node {
+    string cursor = 1;
+    loyalty.data.v1.PointMovement data = 2;
+  }
+
+  message Page {
+    bool has_next = 1;
+    repeated Node nodes = 2;
+  }
+
+  Page data = 1;
+}
+
+message SetAccountStatusRequest {
+  string id_project = 1;
+  appelis.UUID id_account = 2;
+  loyalty.data.v1.UserLoyaltyStatus status = 3;
+}
+
+message SetAccountStatusResponse {
+  enum SetAccountStatusError {
+    UNKNOWN = 0;
+    CAMPAIGN_NOT_FOUND = 1;
+    ACCOUNT_NOT_FOUND = 2;
+  }
+
+  optional SetAccountStatusError error = 1;
+}
+
+message AddAdminCorrectionRequest {
+  message CorrectionData {
+    int64 points = 1;
+    string description = 2;
+    string id_admin = 3;
+    google.protobuf.Timestamp expiration_at = 4;
+  }
+  
+  appelis.UUID id_account = 1;
+  string id_project = 2;
+  CorrectionData data = 3;
+}
+
+message AddAdminCorrectionResponse {
+  enum AddAdminCorrectionError {
+    UNKNOWN = 0;
+    CAMPAIGN_NOT_FOUND = 1;
+    ACCOUNT_NOT_FOUND = 2;
+  }
+
+  optional AddAdminCorrectionError error = 1;
+}
+
+message GetAccountsPagedRequest {
+  string id_project = 1;
+  appelis.UUID id_campaign = 2;
+  appelis.CursorForwardPagingParams paging = 3;
+  // If filterKeyword will be provided. Results will
+  // be filtered by registrationNo using prefix search
+  // from "filterKeyword". Field is optional.
+  google.protobuf.StringValue filterKeyword = 4;
+}
+
+message GetAccountsPagedResponse {
+  message Node {
+    appelis.UUID cursor = 1;
+    loyalty.data.v1.AccountPreview data = 2;
+  }
+
+  message Page {
+    bool has_next = 1;
+    repeated Node nodes = 2;
+  }
+  
+  enum GetAccountsPagedError {
+    UNKNOWN = 0;
+    CAMPAIGN_NOT_FOUND = 1;
+  }
+
+  oneof payload {
+    GetAccountsPagedError error = 1;
+    Page page = 2;
+  }
+}
+
+message GetAccountDetailRequest {
+  string id_project = 1;
+  appelis.UUID id_account = 2;
+}
+
+message GetAccountDetailResponse {
+  loyalty.data.v1.AccountDetail detail = 1;
+}
+
+message GetCampaignRequest {
+  string id_project = 1;
+}
+
+message GetCampaignResponse {
+  enum GetCampaignError {
+    UNKNOWN = 0;
+    CAMPAIGN_NOT_FOUND = 1;
+  }
+
+  oneof payload {
+    GetCampaignError error = 1;
+    loyalty.data.v1.Campaign campaign = 2;
+  }
+}
+
+message UpdateCampaignRequest {
+  string id_project = 1;
+  loyalty.data.v1.Campaign campaign = 2;
+}
+
+message UpdateCampaignResponse {
+  enum UpdateCampaignError {
+    UNKNOWN = 0;
+    CAMPAIGN_NOT_FOUND = 1;
+  }
+
+  optional UpdateCampaignError error = 1;
+}

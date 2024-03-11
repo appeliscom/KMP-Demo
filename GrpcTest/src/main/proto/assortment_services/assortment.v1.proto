@@ -1,0 +1,226 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/assortment_services";
+
+import "google/protobuf/field_mask.proto";
+
+import "identity_service/common.proto";
+import "appelis/price.proto";
+import "appelis/paging.proto";
+import "appelis/sort.proto";
+import "assortment_services/assortment.data.v1.proto";
+import "assortment_services/attributes.data.v1.proto";
+import "google/protobuf/wrappers.proto";
+
+package appelis.assortment.v1;
+
+// Service will be protected by jwt device claims.
+// Catalog can be used to browse articles and filter according to provided data.
+service AssortmentCatalog {
+  // Returns filter data for searching and filtering assortment page
+  rpc GetAssortmentFilter(GetAssortmentFilterRequest) returns (GetAssortmentFilterResponse) {}
+  // Rpc gets article count per selected category.
+  // Result is filtered according to selected businessId and optionally by availability status.
+  rpc GetArticleCountByCategoryIds(GetArticleCountByCategoryIdsRequest) returns (GetArticleCountByCategoryIdsResponse){}
+  // Gets assortment articles that are filtered according to provided parameters.
+  // If rpc is called with logged user, prices will be filtered according to user price_level.
+  rpc GetAssortment(GetAssortmentRequest) returns (GetAssortmentResponse) {}
+  // Get article extras. Returns only ids. Ids can be used for getting articles from different rpc call.
+  // Extras are articles which can be bought together with original article.
+  rpc GetArticleExtras(GetArticleExtrasRequest) returns (GetArticleExtrasResponse) {}
+  // Gets article from db. if article is valid. Filters prices according to user price level.
+  // If case of missing article response will be returned empty.
+  rpc GetArticles(GetArticlesRequest) returns (GetArticleResponse) {}
+  // Get article description. Standalone call to get big html content
+  rpc GetArticleDescription(GetArticleDescriptionRequest) returns (GetArticleDescriptionResponse) {}
+  // Gets related articles to parent article defined by "articleId".
+  // Related association is defined by similarities in name of articles.
+  // Articles MUST be from same categories as parent article.
+  // Parent article is not part of output.
+  // Impl desc: keyword of article if processed with whitelist, also attributes are part of whitelisting function
+  // Impl desc: articles are also filtered by business prices not only availability
+  rpc GetArticleRelatedArticles(GetArticleRelatedArticlesRequest) returns (GetArticleResponse) {}
+}
+
+message GetAssortmentFilterRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // Id of category. if empty returns empty results.
+  int64 categoryIds = 2;
+  // if empty returns empty results.
+  string businessId = 3;
+  // Optional: keyword when user searches for articles before using filter.
+  google.protobuf.StringValue keyword = 4;
+  // Optional: if default value will be sent status will not be used in filtering.
+  appelis.assortment.data.v1.StockStatus status = 5;
+  // Optional: if used filter attributes will be filtered according to this value
+  appelis.PriceValue priceFrom = 6;
+  // Optional: if used filter attributes will be filtered according to this value
+  appelis.PriceValue priceTo = 7;
+}
+
+message GetAssortmentFilterResponse {
+  message FilterAttributeValue {
+    appelis.assortment.data.v1.AttributeValue value = 1;
+    uint64 articleCount = 2;
+  }
+
+  message FilterAttribute {
+    appelis.assortment.data.v1.Attribute attribute = 1;
+    repeated FilterAttributeValue values = 2;
+  }
+
+  message AssortmentFilter {
+    appelis.PriceValue priceFrom = 1;
+    appelis.PriceValue priceTo = 2;
+    repeated FilterAttribute attributes = 3;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    AssortmentFilter filter = 2;
+  }
+}
+
+message ArticleCountFilter {
+  repeated appelis.assortment.data.v1.StockStatus status = 1;
+  google.protobuf.StringValue keyword = 2;
+  string idBusiness = 4;
+  PriceFilter price = 5;
+  repeated int64 attributeValueIds = 6;
+}
+
+message GetArticleCountByCategoryIdsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // Ids of categories for which client wants article counts.
+  repeated int64 categoryIds = 2;
+  // Count of articles will be dependent of filter setup.
+  ArticleCountFilter filter = 3;
+}
+
+message GetArticleCountByCategoryIdsResponse {
+  message ArticleCount{
+    // Per selected category ids, as value article count.
+    map<int64, uint64> articleCounts = 1;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    ArticleCount data = 2;
+  }
+}
+
+message GetAssortmentRequest {
+  appelis.identity.common.v1.Token token = 1;
+  SortingFlags sorting = 2;
+  FilterFlags filtering = 3;
+  appelis.CursorForwardPagingParams paging = 4;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 5;
+}
+
+enum SortField {
+  UNKNOWN_SORT_TYPE = 0;
+  NAME = 1;
+  TIME_CREATE = 2;
+  PRICE = 3;
+  RELEVANCE = 4;
+}
+
+message SortingFlags {
+  SortOrder type = 1;
+  SortField field = 2;
+}
+
+message PriceFilter {
+  appelis.PriceValue priceFrom = 1;
+  appelis.PriceValue priceTo = 2;
+  appelis.assortment.data.v1.PriceType type = 3;
+  bool taxValue = 4;
+}
+
+message FilterFlags {
+  repeated appelis.assortment.data.v1.StockStatus status = 1;
+  google.protobuf.StringValue keyword = 2;
+  int64 idCategory = 3;
+  string idBusiness = 4;
+  PriceFilter price = 5;
+  repeated int64 attributeValueIds = 6;
+}
+
+message GetAssortmentResponse {
+  message AssortmentNode {
+    string cursor = 1;
+    appelis.assortment.data.v1.Article data = 2;
+  }
+
+  message AssortmentPage {
+    bool hasNext = 1;
+    repeated AssortmentNode nodes = 2;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    AssortmentPage page = 2;
+  }
+}
+
+message GetArticleExtrasRequest {
+  // Token representing client. If MobileUser is in claims, then prices will be filtered according to user price level.
+  appelis.identity.common.v1.Token token = 1;
+  // Id of article that client wants and its parent to related association.
+  string articleId = 2;
+}
+
+
+message GetArticleExtrasResponse {
+  oneof payload{
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.assortment.data.v1.StringArray ids = 2;
+  }
+}
+
+message GetArticleRelatedArticlesRequest {
+  // Token representing client. If MobileUser is in claims, then prices will be filtered according to user price level.
+  appelis.identity.common.v1.Token token = 1;
+  // Id of article that client wants and its parent to related association.
+  string articleId = 2;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 3;
+  // Maximum length of output array.
+  uint32 size = 4;
+  // Optional: if business if provided impl does filtering on business availability and status=available.
+  google.protobuf.StringValue businessId = 5;
+}
+
+message GetArticleDescriptionRequest {
+  // Token representing client.
+  appelis.identity.common.v1.Token token = 1;
+  // Id of article that client wants.
+  string articleId = 2;
+}
+
+message GetArticleDescriptionResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    bytes data = 2;
+  }
+}
+
+
+message GetArticlesRequest {
+  // Token representing client. If MobileUser is in claims, then prices will be filtered according to user price level.
+  appelis.identity.common.v1.Token token = 1;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 3;
+  // Id of articles that client wants.
+  repeated string articleIds = 2;
+}
+
+message GetArticleResponse {
+  oneof payload{
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.assortment.data.v1.ArticleArray data = 2;
+  }
+}
+
+

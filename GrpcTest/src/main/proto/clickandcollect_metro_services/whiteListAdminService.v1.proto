@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/clickandcollect_metro_services";
+
+import "identity_service/common.proto";
+
+
+package appelis.clickandcollect.metro.v1;
+
+// Service for handling whitelist of companies that can use Click&Collect service.
+service WhiteListAdmin {
+  rpc GetWhiteList(GetWhitelistRequest) returns (stream GetWhitelistResponse) {}
+
+  rpc SetWhiteListValues(WhitelistValuesRequest) returns (WhiteListValuesResponse) {}
+
+  rpc DeleteWhiteListValues(WhitelistValuesRequest) returns (WhiteListValuesResponse) {}
+}
+
+message WhiteListValuesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+  }
+}
+
+message GetWhitelistRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message CompanyIdsArray {
+  repeated int64 companyIds = 1;
+}
+
+message GetWhitelistResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    CompanyIdsArray data = 2;
+  }
+}
+
+message WhitelistValuesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  CompanyIdsArray data = 2;
+}

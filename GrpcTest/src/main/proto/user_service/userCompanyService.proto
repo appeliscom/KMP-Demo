@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/user_service";
+option java_package = "com.appelis.userservice";
+
+package appelis.userService.companies.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "metro_common/metroCommon.data.v1.proto";
+
+service CompanyPrivateAdmin {
+    // List Company by external identifiers.
+    rpc ByExternal (ByExternalRequest) returns (ByExternalResponse) {}
+    // Get Company by id
+    rpc GetCompany (GetCompanyRequest) returns (GetCompanyResponse) {}
+    // Get Companies by ids
+    rpc GetCompanies (GetCompaniesRequest) returns (GetCompaniesResponse) {}
+
+    // Get segment (SCO/HORECA/TRADERS) of idMobileUser
+    rpc GetCompanySegmentsByMobileUserIds(
+        GetCompanySegmentsByMobileUserIdsRequest
+    ) returns(
+        GetCompanySegmentsByMobileUserIdsResponse
+    ) {}
+
+    // Get map of segment counts (SCO/HORECA/TRADERS) of idMobileUsers
+    rpc GetCompanySegmentsMapByMobileUserIds(
+        GetCompanySegmentsMapByMobileUserIdsRequest
+    ) returns(
+        GetCompanySegmentsMapByMobileUserIdsResponse
+    ) {}
+}
+
+message GetCompaniesRequest {
+    repeated int64 id = 1;
+}
+
+message GetCompaniesResponse {
+    repeated Company data = 1;
+}
+
+message GetCompanyRequest {
+    int64 id = 1;
+}
+
+message ByExternalRequest {
+    string projectId = 1;
+    string companyExternalId = 2;
+    string businessExternalId = 3;
+}
+
+message GetCompanyResponse {
+    Company company = 1;
+}
+
+message ByExternalResponse {
+    Company company = 1;
+}
+
+message CompanyBusiness {
+    int64 idBusiness = 1;
+    string name = 2;
+    google.protobuf.StringValue externalId = 3;
+}
+
+message Company {
+    enum SystemStatus {
+        STATUS_UNKNOWN = 0;
+        ACTIVE = 1;
+        NOT_ACTIVE = 2;
+        BLOCKED = 3;
+    }
+
+    enum CompanyType {
+        TYPE_UNKNOWN = 0;
+        GOLD = 1;
+        SILVER = 2;
+        NORMAL = 3;
+        DELIVERY = 4;
+        VIP = 5;
+        STAFF = 6;
+        PEB = 7;
+    }
+    CompanyType type = 1;
+    int64 idCompany = 2;
+    int64 idBusiness = 3;
+    bool active = 4;
+    string projectId = 5;
+    bool prospectSendActive = 6;
+    SystemStatus bonusSystemStatus = 7;
+    SystemStatus creditSystemStatus = 8;
+
+    google.protobuf.StringValue ico = 9;
+    google.protobuf.StringValue prospectSendAddress = 10;
+    google.protobuf.StringValue externalId = 11;
+    google.protobuf.StringValue externalCheckDig = 12;
+    google.protobuf.StringValue externalCatId = 13;
+    google.protobuf.StringValue advisorId = 14;
+    google.protobuf.Timestamp timeRegistration = 15;
+    CompanyBusiness Business = 16;
+    IcoProfile icoProfile = 17;
+}
+
+
+message IcoProfile {
+    // Primary for IcoProfile
+    string ico = 1;
+    string dic = 2;
+    string address = 3;
+    string name = 4;
+    string companyCeo = 5;
+
+}
+
+message GetCompanySegmentsByMobileUserIdsRequest {
+  repeated int64 ids = 1;
+}
+
+message GetCompanySegmentsByMobileUserIdsResponse {
+  map<int64, metro.common.data.v1.CompanySegment> data = 1;
+}
+
+message GetCompanySegmentsMapByMobileUserIdsRequest {
+    repeated int64 ids = 1;
+}
+
+message GetCompanySegmentsMapByMobileUserIdsResponse {
+    repeated metro.common.data.v1.CompanySegmentMapEntry data = 1;
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/watchdogs";
+option java_package = "com.appelis.watchdogs";
+
+package appelis.watchdogs.v1;
+
+import "identity_service/common.proto";
+import "appelis/timerange.proto";
+
+service Analytics {
+    // GetMostWatched returns the most watched article items for a given time range.
+    // The result is limited by size param and can be sorted by all the times the item was watched,
+    // or by the new (diff) watchings in the given time range
+    rpc GetMostWatched (GetMostWatchedRequest) returns (GetMostWatchedResponse) {}
+}
+
+message GetMostWatchedRequest {
+    appelis.identity.common.v1.Token token = 1;
+    int64 size = 2;
+    appelis.TimeRange timerange = 3;
+    bool sortByDiff = 4;
+}
+
+message GetMostWatchedResponse {
+    message MostWatchedList {
+        message WatchedCount {
+            string idItem = 1;
+            int64 all = 2;
+            int64 diff = 3;
+        }
+
+        repeated WatchedCount watchedCount = 1;
+    }
+
+    oneof payload{
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        MostWatchedList data = 2;
+    }
+}

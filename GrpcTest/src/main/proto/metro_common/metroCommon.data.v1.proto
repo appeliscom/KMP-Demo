@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_common";
+option java_package = "com.appelis.metrocommon";
+
+package metro.common.data.v1;
+
+enum CompanySegment {
+  UNKNOWN = 0;
+  HORECA = 1;
+  SCO = 2;
+  TRADERS = 3;
+}
+
+message CompanySegmentMapEntry {
+  CompanySegment company_segment = 1;
+  int64 count = 2;
+}
+
+message CardholderId {
+  string custNo = 1;
+  string storeNo = 2;
+  string cardholderNo = 3;
+}

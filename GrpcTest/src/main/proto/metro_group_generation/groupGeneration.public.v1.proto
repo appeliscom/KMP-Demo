@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_group_generation";
+
+import "identity_service/common.proto";
+import "appelis/file.proto";
+
+package cz.makro.group.generation.v1;
+
+
+service GroupGenerator {
+  rpc Generate(GenerateRequest) returns (GenerateResponse){}
+}
+
+
+enum GenerateError {
+  UNKNOWN_GENERATE_ERROR = 0;
+  BAD_FORMAT = 1;
+}
+
+message GenerateRequest {
+  appelis.identity.common.v1.Token token = 1;
+  int64 groupId = 2;
+  appelis.File file = 3;
+}
+
+message GenerateResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    GenerateError genErr = 2;
+  }
+}

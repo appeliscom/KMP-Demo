@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/business_service_v2";
+
+package appelis.business.v2;
+
+import "appelis/address.proto";
+import "appelis/picture.proto";
+import "appelis/timerange.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message BusinessArray {
+  repeated Business data = 1;
+}
+
+message Business {
+  string idBusiness = 1;
+  // external id of business. optional id.
+  google.protobuf.StringValue externalId = 2;
+  string name = 3;
+  string description = 4;
+  appelis.Address address = 5;
+  // Static map image of business location
+  appelis.Picture staticMap = 6;
+  google.protobuf.Timestamp createdAt = 7;
+  // Selected first picture from pictures field.
+  appelis.Picture topPicture = 8;
+  // Pictures of business.
+  repeated appelis.Picture pictures = 9;
+  // Open hours of business.
+  repeated HoursRange openHours = 10;
+  // OpenHour for today or null
+  HoursRange todayOpenHour = 11;
+  // Limited opening hours due to vacation, holidays etc.
+  repeated LimitedOpenHours limitedOpenHours = 12;
+  // Contacts for business
+  repeated BusinessContact contacts = 13;
+}
+
+// Days enumeration for opening/delivery hours.
+enum WeekDay {
+  UNKNOWN_WEEK_DAY = 0;
+  MONDAY = 1;
+  TUESDAY = 2;
+  WEDNESDAY = 3;
+  THURSDAY = 4;
+  FRIDAY = 5;
+  SATURDAY = 6;
+  SUNDAY = 7;
+}
+
+enum SortKey {
+  UNKNOWN_KEY = 0;
+  IDENTIFIER = 1;
+  NAME = 2;
+}
+
+// OpenHour describes opening hours of business
+message HoursRange {
+  WeekDay day = 1;
+  string openFrom = 2;
+  string openTo = 3;
+}
+
+message BusinessContact {
+  string id = 1;
+  string name = 2;
+  string key = 3;
+  string email = 4;
+  string phone = 5;
+}
+
+message LimitedOpenHours {
+  appelis.TimeRange limitRange = 1;
+  string openFrom = 2;
+  string openTo = 3;
+}
+

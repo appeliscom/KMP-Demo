@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "appelis/timerange.proto";
+
+service OpenedItems {
+  rpc GetMostOpenedItems(GetMostOpenedItemsRequest) returns (GetMostOpenedItemsResponse) {}
+}
+
+message GetMostOpenedItemsRequest {
+  string projectId = 1;
+  int64 size = 2;
+  appelis.TimeRange timerange = 3;
+}
+
+message GetMostOpenedItemsResponse {
+  message MostOpenedItemWithCount {
+    string id = 1;
+    string name = 2;
+    int64 count = 3;
+  }
+  message MostOpenedItemsWithCount {
+    repeated MostOpenedItemWithCount items = 1;
+  }
+  MostOpenedItemsWithCount data = 2;
+}
+
+service SearchKeywords{
+  rpc GetMostSearchedKeywords(GetMostSearchedKeywordsRequest) returns (GetMostSearchedKeywordsResponse) {}
+}
+
+message GetMostSearchedKeywordsRequest {
+  string projectId = 1;
+  int64 size = 2;
+  appelis.TimeRange timerange = 3;
+}
+
+message GetMostSearchedKeywordsResponse {
+  message MostSearchedKeywordWithCount {
+    string value = 1;
+    int64 count = 2;
+  }
+  message MostSearchedKeywordsWithCount {
+    repeated MostSearchedKeywordWithCount items = 1;
+  }
+  MostSearchedKeywordsWithCount data = 2;
+}

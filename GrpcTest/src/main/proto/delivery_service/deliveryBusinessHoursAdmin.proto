@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+option go_package = "appelis/delivery_v1";
+
+package appelis.order.delivery.v1;
+
+import "identity_service/common.proto";
+import "appelis/weekday.proto";
+import "delivery_service/deliveryBusinessHoursData.proto";
+
+service DeliveryHoursAdmin {
+  // Gets delivery hours for selected business
+  rpc GetBusinessDeliveryHours(GetBusinessDeliveryHoursRequest) returns (GetBusinessDeliveryHoursResponse) {}
+  // Rpc is idempotent. Can be retried.
+  rpc SetBusinessDeliveryHours(SetBusinessDeliveryHoursRequest) returns (SetBusinessDeliveryHoursResponse) {}
+  // Deletes business delivery hours selected by DeliveryHourPk data.
+  rpc DeleteDeliveryHours(DeleteDeliveryHoursRequest) returns (DeleteDeliveryHoursResponse) {}
+}
+
+message DeleteDeliveryHoursRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated DeliveryHourPk data = 2;
+}
+
+message DeleteDeliveryHoursResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message SetBusinessDeliveryHoursRequest {
+  appelis.identity.common.v1.Token token = 1;
+  DeliveryHours hours = 2;
+}
+
+message SetBusinessDeliveryHoursResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message GetBusinessDeliveryHoursRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated string businessId = 2;
+}
+
+message GetBusinessDeliveryHoursResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    DeliveryHours deliveryHours = 2;
+    appelis.identity.common.v1.PermissionError permErr = 3;
+  }
+}
+
+message DeliveryHourPk {
+  string businessId = 1;
+  appelis.WeekDay day = 2;
+}

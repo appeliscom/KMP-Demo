@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/clickandcollect_metro_services";
+
+import "appelis/timerange.proto";
+
+package appelis.clickandcollect.metro.v1;
+
+service Analytics {
+    rpc GetRegistrationsCountByBusinessId (GetRegistrationsCountByBusinessIdRequest) returns (GetRegistrationsCountByBusinessIdResponse) {}
+}
+
+message GetRegistrationsCountByBusinessIdRequest {
+    string idProject = 1;
+    appelis.TimeRange timerange = 2;
+    bool sortByDiff = 3;
+}
+
+message RecordsByStore {
+    string idStore = 1;
+    uint32 all = 2;
+    uint32 diff = 3;
+}
+
+message GetRegistrationsCountByBusinessIdResponse {
+    repeated RecordsByStore records = 1;
+}

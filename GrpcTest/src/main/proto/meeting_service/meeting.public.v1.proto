@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/meeting_service";
+
+import "google/protobuf/timestamp.proto";
+import "meeting_service/meeting.data.v1.proto";
+import "identity_service/common.proto";
+import "appelis/paging.proto";
+
+package metro.meeting.public.v1;
+
+service MeetingsPublicService {
+    // Create new meeting
+    rpc ScheduleMeeting (ScheduleMeetingRequest) returns (StatusResponse) {
+    }
+    // Move meeting to different time.
+    rpc RescheduleMeeting (RescheduleMeetingRequest) returns (StatusResponse) {
+    }
+    // Accept admin made time changes to meeting.
+    rpc ConfirmMeeting (MeetingIdRequest) returns (StatusResponse) {
+    }
+    // Cancel meeting.
+    rpc CancelMeeting (MeetingIdRequest) returns (StatusResponse) {
+    }
+    // List meeting by id.
+    rpc GetMeetingById (MeetingIdRequest) returns (MeetingResponse) {
+    }
+    // List meetings, limit to page size. Sort
+    rpc GetMeetings (GetMeetingsRequest) returns (MeetingsListResponse) {
+    }
+}
+
+message ScheduleMeetingRequest {
+    appelis.identity.common.v1.Token token = 1;
+    ScheduleMeeting meeting = 2;
+}
+
+message ScheduleMeeting {
+    string businessId = 1;
+    metro.meeting.data.v1.Reason reason = 2;
+    google.protobuf.Timestamp startDate = 3;
+}
+
+message RescheduleMeetingRequest {
+    appelis.identity.common.v1.Token token = 1;
+    string meetingId = 2;
+    google.protobuf.Timestamp startDate = 3;
+}
+
+message MeetingIdRequest {
+    appelis.identity.common.v1.Token token = 1;
+    string meetingId = 2;
+}
+
+message StatusResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        // Result of operation.
+        Status response = 2;
+    }
+}
+
+enum Status {
+    UNKNOWN_STATUS = 0;
+    // Created or moved successfully.
+    SCHEDULED = 1;
+    // Invalid data for create, move meeting.
+    INVALID_DATA = 2;
+    // Confirm, cancel meeting operation accepted.
+    ACCEPTED = 3;
+    // Confirm, cancel meeting operation rejected. Eg. trying to confirm cancelled meeting.
+    REJECTED = 4;
+}
+
+message MeetingResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        metro.meeting.data.v1.MeetingDetail meeting = 3;
+    }
+}
+
+message GetMeetingsRequest {
+    appelis.identity.common.v1.Token token = 1;
+    appelis.PagingParams paging = 2;
+}
+
+message MeetingsListResponse {
+    message Node {
+        string cursor = 1;
+        metro.meeting.data.v1.Meeting data = 2;
+    }
+
+    message Page {
+        appelis.PageInfo pageInfo = 1;
+        repeated Node nodes = 2;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        Page page = 3;
+    }
+}

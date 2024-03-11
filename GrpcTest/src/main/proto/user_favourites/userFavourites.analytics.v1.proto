@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/favourites";
+option java_package = "com.appelis.favourites";
+
+package appelis.favourites.v1;
+
+import "appelis/timerange.proto";
+
+service Analytics {
+    rpc GetMostFavourited(
+        GetMostFavouritedRequest
+    ) returns (GetMostFavouritedResponse) {}
+}
+
+message GetMostFavouritedRequest {
+    string idProject = 1;
+    int64 size = 2;
+    appelis.TimeRange timerange = 3;
+    bool sortByDiff = 4;
+}
+
+message FavouritedWithCounts {
+    string id = 1;
+    int64 all = 2;
+    int64 diff = 3;
+}
+
+message GetMostFavouritedResponse {
+    message MostFavouritedData {
+        repeated FavouritedWithCounts data = 1;
+    }
+
+    MostFavouritedData mostFavourited = 1;
+}

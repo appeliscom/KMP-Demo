@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "appelis/delivery_v1";
+
+package appelis.order.delivery.v1;
+
+import "appelis/weekday.proto";
+
+message DeliveryHours {
+  repeated DeliveryHour hours = 1;
+}
+
+message DeliveryHour  {
+  string businessId = 1; // part of pk
+  appelis.WeekDay day = 2; // part of pk
+  DayHours openFrom = 3;
+  DayHours openTo = 4;
+}
+
+message DayHours {
+  uint32 hour = 1;
+  uint32 minute = 2;
+}

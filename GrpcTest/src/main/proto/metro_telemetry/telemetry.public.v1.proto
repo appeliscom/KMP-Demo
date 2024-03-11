@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metroTelemetry";
+option java_package = "metro.telemetry.v1";
+
+package metro.telemetry.v1.public;
+
+import "identity_service/common.proto";
+
+service MetroTelemetryPublic {
+    rpc RecordAppOpenEvent(
+        RecordAppOpenEventRequest
+    ) returns (
+        RecordAppOpenEventResponse
+    ) {}
+}
+
+message RecordAppOpenEventRequest {
+    appelis.identity.common.v1.Token token = 1;
+}
+message RecordAppOpenEventResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+    }
+}

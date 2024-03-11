@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+import "google/protobuf/wrappers.proto";
+
+message PageInfo {
+  bool hasNext = 1;
+  uint64 totalCount = 2;
+}
+
+message CursorForwardPagingParams {
+  // Optional after cursor. For loading first page client doesn't need to provide after cursor.
+  google.protobuf.StringValue after = 1;
+  uint32 first = 2;
+}
+
+message CursorBackwardPagingParams {
+  // Optional after cursor. For loading first page client doesn't need to provide after cursor.
+  google.protobuf.StringValue before = 1;
+  uint32 first = 2;
+}
+
+message PagingParams{
+  oneof params {
+    CursorForwardPagingParams forward = 1;
+    CursorBackwardPagingParams backward = 2;
+  }
+}
+

@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/user_service";
+option java_package = "com.appelis.userservice.groups";
+
+package appelis.userService.groups.v1;
+
+import "google/protobuf/empty.proto";
+
+service UserGroupsPrivateAdmin {
+  // Returns per user his groups array.
+  rpc UsersGroups (UserGroupsRequest) returns (UserGroupsResponse) {}
+  // Returns for group, mobile users ids.
+  rpc GroupUsers (GroupUsersRequest) returns (stream Int64Array) {}
+  rpc SetUserGroupMap (UsersGroupRequest) returns (google.protobuf.Empty) {}
+  rpc DeleteUsersGroupMap (UsersGroupRequest) returns(google.protobuf.Empty) {}
+  // Deletes all group mapping.
+  rpc ClearGroupUsers(ClearGroupUsersRequest) returns (google.protobuf.Empty) {}
+  rpc GetDistinctIcosCountByIdGroup(GetDistinctIcosCountByIdGroupRequest) returns (GetDistinctIcosCountByIdGroupResponse) {}
+}
+
+message GetDistinctIcosCountByIdGroupRequest {
+  string projectId = 1;
+  string groupId = 2;
+}
+
+message GetDistinctIcosCountByIdGroupResponse {
+  uint32 count = 1;
+}
+
+message ClearGroupUsersRequest {
+  string projectId = 1;
+  int64 groupId = 2;
+}
+
+
+message GroupMapInput {
+  int64 userId = 1;
+  int64 groupId = 2;
+}
+
+message UsersGroupRequest {
+  repeated GroupMapInput input = 1;
+  string projectId = 2;
+}
+
+message GroupUsersRequest {
+  int64 groupId = 1;
+}
+
+message UserGroupsRequest {
+  repeated int64 userIds = 1;
+}
+
+message Int64Array {
+  repeated int64 data = 1;
+}
+
+message UserGroupsResponse {
+  map<int64, Int64Array> data = 1;
+}

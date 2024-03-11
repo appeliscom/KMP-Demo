@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_signIn_service";
+option java_package = "com.appelis.metro.signin";
+
+package appelis.metro.signIn.v1;
+
+import "identity_service/common.proto";
+import "user_service/userService.proto";
+
+service CardParser {
+  rpc GetCardUsers(GetCardUsersRequest) returns (GetCardUsersResponse) {}
+}
+
+message GetCardUsersRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string cardEan = 2;
+}
+
+message GetCardUsersResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.userService.users.v1.MobileUsersArray data = 2;
+    CardParsingError cardErr = 3;
+  }
+}
+
+enum CardParsingError {
+  UNKNOWN_CARD_PARSING_ERROR = 0;
+  PARSING_INVALID_CARD = 1;
+  PARSING_WRONG_CARD_VERSION = 2;
+  PARSING_DATA_NOT_FOUND = 3;
+}

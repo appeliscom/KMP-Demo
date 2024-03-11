@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+option go_package = "appelis/delivery_v1";
+
+import "google/protobuf/wrappers.proto";
+
+package appelis.order.delivery.v1;
+
+import "appelis/location.proto";
+import "identity_service/common.proto";
+
+// Service for drivers delivery.
+service Delivery {
+    // Returns orders ready for delivery but order is not assigned to any driver.
+    rpc GetOrdersReadyForDelivery (GetOrdersRequest) returns (GetOrdersReadyForDeliveryResponse) {
+    }
+    // Returns array of orders assigned to user. Sorted by order key.
+    rpc MyOrders (appelis.identity.common.v1.Token) returns (MyOrdersResponse) {
+    }
+    // Add order to my group. Orders assigned to web user id.
+    rpc AddOrderToMyOrders (UpdateRequest) returns (UpdateOrdersResponse) {
+
+    }
+    rpc RemoveFromMyOrders (UpdateRequest) returns (UpdateOrdersResponse) {
+    }
+    // Update orderIndex for selected orders
+    rpc UpdateOrdersSorting (UpdateOrdersSortingRequest) returns (UpdateOrdersResponse) {
+    }
+    // Set delivering flag to true. With provided location orders tracking will be populated.
+    // When stream will be committed then delivering will be disabled.
+    // Token will be checked only with first message in stream.
+    rpc StartDelivering (stream StartDeliveringRequest) returns (StartDeliveringResponse) {
+    }
+    // Set Order as delivered and remove order from "MyOrders" group. Also tracking will be disabled.
+    rpc FinishOrders (UpdateRequest) returns (UpdateOrdersResponse) {
+    }
+}
+
+message GetOrdersRequest {
+    appelis.identity.common.v1.Token token = 1;
+    google.protobuf.StringValue businessId = 2;
+}
+
+message StartDeliveringRequest {
+    appelis.identity.common.v1.Token token = 1;
+    appelis.Location loc = 2;
+}
+
+message StartDeliveringResponse {
+    enum DeliveryError {
+        UNKNOWN = 0;
+        EMPTY_ORDERS = 1;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError error = 1;
+        DeliveryError deliveryError = 2;
+    }
+}
+
+message UpdateOrdersResponse {
+    enum UpdateError {
+        UNKNOWN = 0;
+        ORDER_NOT_FOUND = 1;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError error = 1;
+        UpdateError updateError = 2;
+    }
+}
+
+message UpdateOrdersSortingRequest {
+    appelis.identity.common.v1.Token token = 1;
+    repeated OrderItem data = 2;
+}
+
+message UpdateRequest {
+    appelis.identity.common.v1.Token token = 1;
+    repeated string ids = 2;
+}
+
+message OrderIds {
+    repeated string data = 1;
+}
+
+message GetOrdersReadyForDeliveryResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError error = 1;
+        OrderIds data = 2;
+    }
+}
+
+
+message OrderItem {
+    uint32 orderIndex = 1;
+    string orderId = 2;
+}
+
+message MyOrders {
+    bool delivering = 1;
+    repeated OrderItem items = 2;
+}
+
+message MyOrdersResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError error = 1;
+        MyOrders data = 2;
+    }
+}
+
+

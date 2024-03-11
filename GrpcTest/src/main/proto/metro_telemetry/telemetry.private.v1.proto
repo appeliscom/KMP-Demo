@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metroTelemetry";
+option java_package = "metro.telemetry.v1";
+
+package metro.telemetry.v1.private;
+
+import "appelis/timerange.proto";
+import "metro_telemetry/telemetry.data.v1.proto";
+
+service MetroTelemetryPrivate {
+    rpc GetAppOpenedDaily(GetAppOpenedDailyRequest) returns (GetAppOpenedDailyResponse) {}
+}
+
+message GetAppOpenedDailyRequest {
+    string id_project = 1;
+    appelis.TimeRange timerange = 2;
+}
+
+message GetAppOpenedDailyResponse {
+    repeated metro.telemetry.v1.data.AppOpenedDaily data = 1;
+}

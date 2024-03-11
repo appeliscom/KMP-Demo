@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/business_service_v2";
+
+package appelis.business.admin.v2;
+//
+
+import "google/protobuf/field_mask.proto";
+import "identity_service/common.proto";
+import "appelis/paging.proto";
+import "business_service_v2/business.data.v2.proto";
+import "appelis/sort.proto";
+
+service BusinessAdmin {
+  // Gets business by ID. Admin detail view.
+  rpc GetBusinessByID(GetBusinessRequest) returns (GetBusinessResponse) {}
+
+  // Gets range of businesses filtered and sorted by request. Usable for admin preview.
+  rpc GetBusinesses(GetBusinessesRequest) returns (GetBusinessesResponse) {}
+
+  // Gets all businesses sorted by index. Usable for admin select boxes.
+  rpc GetAllBusinesses(GetAllBusinessesRequest) returns (GetBusinessesPreviewResponse) {}
+
+  // Deletes business by ID.
+  rpc DeleteBusinessByID(GetBusinessRequest) returns (DeleteBusinessResponse) {}
+
+  // Create or update business if ID is presented.
+  rpc CreateOrUpdateBusiness(CreateBusinessRequest) returns (GetBusinessResponse) {}
+}
+
+message CreateBusinessRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.business.v2.Business business = 2;
+}
+
+message DeleteBusinessResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message GetAllBusinessesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 2;
+}
+
+message GetBusinessesPreviewResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    appelis.business.v2.BusinessArray businesses = 3;
+  }
+}
+
+message GetBusinessRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string businessId = 2;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 3;
+}
+
+message GetBusinessResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    appelis.business.v2.Business business = 3;
+  }
+}
+
+message GetBusinessesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  Filter filter = 2;
+  SortBy sort = 3;
+  appelis.PagingParams paging = 4;
+  // Field mask will be applied to whole response.
+  google.protobuf.FieldMask field_mask = 5;
+}
+
+message Filter {
+  string keyword = 1;
+}
+
+message SortBy {
+  appelis.business.v2.SortKey key = 1;
+  appelis.SortOrder order = 2;
+}
+
+message GetBusinessesResponse {
+  message Node {
+    string cursor = 1;
+    appelis.business.v2.Business business = 2;
+  }
+
+  message Page {
+    appelis.PageInfo pageInfo = 1;
+    repeated Node nodes = 2;
+  }
+
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    Page page = 3;
+  }
+}

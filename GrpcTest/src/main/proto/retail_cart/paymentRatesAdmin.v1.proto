@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/retail_cart_service";
+
+package appelis.retail.cart.v1;
+
+import "identity_service/common.proto";
+import "appelis/price.proto";
+import "google/protobuf/wrappers.proto";
+
+// Service will be enforcing web user token claims.
+service PaymentRateAdmin {
+  // Rpc gets all Payment rates from database.
+  rpc GetRates(GetPaymentRatesRequest) returns (GetPaymentRatesResponse) {}
+  // Set rate. If id exists data will be updated.
+  rpc SetRate (SetPaymentRateRequest) returns (SetPaymentRateResponse) {}
+  // Deletes rate when exists.
+  rpc DeleteRate (DeletePaymentRateRequest) returns (DeletePaymentRateResponse) {}
+}
+
+message GetPaymentRatesRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+enum PaymentType {
+  UNKNOWN_PAYMENT_TYPE = 0;
+  CASH_ON_DELIVERY = 1;
+  PAY_GATE = 2;
+}
+
+message PaymentRate {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  PaymentType type = 4;
+  PriceValue price = 5;
+  google.protobuf.StringValue gatewayId = 6;
+}
+
+message PaymentArray {
+  repeated PaymentRate array = 1;
+}
+
+message GetPaymentRatesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+    PaymentArray data = 3;
+  }
+}
+
+message SetPaymentRateRequest {
+  appelis.identity.common.v1.Token token = 1;
+  PaymentRate rate = 2;
+}
+
+message SetPaymentRateResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message DeletePaymentRateRequest {
+  appelis.identity.common.v1.Token token = 1;
+  string id = 2;
+}
+
+message DeletePaymentRateResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError err = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}

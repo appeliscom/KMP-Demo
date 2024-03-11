@@ -1,9 +1,26 @@
 plugins {
-    id("java-library")
     alias(libs.plugins.jetbrainsKotlinJvm)
+    alias(libs.plugins.wire)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+kotlin {
+    dependencies {
+        implementation(libs.wire.runtime)
+        implementation(libs.wire.grpc.client)
+    }
+}
+
+wire {
+    protoLibrary = true
+    sourcePath {
+        srcDir("src/main/proto")
+    }
+
+    kotlin {
+        rpcCallStyle = "suspending"
+        rpcRole = "client"
+        singleMethodServices = false
+        android = false
+        javaInterop = false
+    }
 }

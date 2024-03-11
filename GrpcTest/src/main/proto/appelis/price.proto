@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+// PriceValue defines value of price stored as integer = float with 3 decimal places.
+// double(85542.456) = PriceValue(85542456).
+// Usage of this message must be used in financial transactions.
+message PriceValue {
+  int64 value = 1;
+}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_bonus_module_service";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+package cz.makro.bonus.v1;
+
+message BonusModule {
+  int64 idBonusModule = 1;
+  int64 idCompany = 2;
+  bool emailing = 3;
+  bool maxBonusAchieved = 4;
+  int32 toSpend = 5;
+
+  int32 actualBonusPrice = 6;
+  int32 actualBonusPercentage = 7;
+  google.protobuf.Timestamp actualBonusTime = 8;
+  google.protobuf.StringValue actualBonusUrl = 9;
+
+  int32 nextBonusPrice = 10;
+  int32 nextBonusPercentage = 11;
+  google.protobuf.Timestamp nextBonusTime = 12;
+  int64 nominalTurnover = 13;
+  int64 bonusTurnover = 14;
+  google.protobuf.Timestamp timeAvailableBonus = 15;
+  int32 bonusAvailableAmount = 16;
+  int64 usedBonus = 17;
+
+  google.protobuf.Timestamp timeEnter = 18; 
+  optional google.protobuf.Timestamp timeExit = 19;
+}
+
+message BonusModuleArray {
+  repeated BonusModule data = 1;
+}
+
+message BonusHistory {
+  int64 idBonusHistory = 1;
+  int64 idBonusModule = 2;
+  int64 payedPrice = 3;
+  int64 bonusLevel = 4;
+  int64 finalBonusLevel = 5;
+  google.protobuf.Timestamp timeCreate = 6;
+}
+
+message BonusHistoryArray {
+  repeated BonusHistory data = 1;
+}

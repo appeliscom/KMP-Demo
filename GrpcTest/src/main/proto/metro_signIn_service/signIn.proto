@@ -1,0 +1,212 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_signIn_service";
+option java_package = "com.appelis.metro.signin";
+
+package appelis.metro.signIn.v1;
+
+import "google/protobuf/timestamp.proto";
+
+service CardUpdater {
+  rpc UpdateUsersCards(UpdateUsersCardsRequest) returns (UpdateUsersCardsResponse) {}
+}
+
+message UpdateUsersCardsRequest {
+  AipToken token = 1;
+  // Ids of users for which cards will be updated, and bool for logic when user will be logged out.
+  map<int64, bool> mobileUserIds = 2;
+}
+
+message UpdateUsersCardsResponse {
+  oneof payload{
+    ExportLoginResponse.Error error = 1;
+  }
+}
+
+service Export {
+  rpc ExportLogin (AipToken) returns (stream ExportLoginResponse) {
+  }
+}
+
+message LoginData {
+  int64 id = 1;
+  string idProject = 2;
+  string storeNo = 3;
+  string custNo = 4;
+  string chNo = 5;
+  string advisorId = 6;
+  string branchId = 7;
+  google.protobuf.Timestamp createdAt = 8;
+}
+
+message ArrayLoginData {
+  repeated LoginData data = 1;
+}
+
+message ExportLoginResponse {
+  enum Error {
+    UNKNOWN = 0;
+    INVALID_TOKEN = 1;
+  }
+
+  oneof payload {
+    Error error = 1;
+    ArrayLoginData data = 2;
+  }
+}
+
+service Verification {
+  // Sends verification code to email.
+  rpc emailVerify (EmailVerifyRequest) returns (EmailVerifyResponse) {
+    option deprecated = true;
+  }
+  // Sends verification code to phone number in mobileUser data.
+  rpc phoneVerify (PhoneVerifyRequest) returns (PhoneVerifyResponse) {
+    option deprecated = true;
+  }
+}
+
+message EmailVerifyRequest {
+  PhoneVerifyRequest req = 1;
+  // Selected businessId in device. For first login and business setup from email link.
+  int64 businessId = 2;
+}
+
+message PhoneVerifyRequest {
+  // MobileUser id that is bind to card.
+  int64 mobileUserId = 1;
+  // CardEan scanned by device.
+  string cardEan = 3;
+  // AccessToken
+  AipToken token = 4;
+  // if true -> email/sms won't be send.
+  bool dryRun = 5;
+}
+
+message PhoneVerifyResponse {
+  enum Error {
+    UNKNOWN = 0;
+    // Invalid token or bad claims.
+    INVALID_TOKEN = 1;
+    // cardEan can't be parsed or have bad data.
+    INVALID_CARD = 2;
+    // Selected mobile user was not found.
+    MOBILE_USER_NOT_FOUND = 3;
+    // When phone number is set to "" or some bad value...
+    PHONE_NUMBER_NOT_FOUND = 4;
+    // Cardholder version doesn't match version on scanned card.
+    WRONG_CARD_VERSION = 5;
+    // Error occurs when sending sms to external service.
+    FAILED_TO_SEND_SMS = 6;
+    // Block codes are set.
+    USER_BLOCKED = 7;
+  }
+
+  oneof payload {
+    // Error is optional can be null
+    Error error = 1;
+  }
+}
+
+message EmailVerifyResponse {
+  enum Error {
+    UNKNOWN = 0;
+    // Invalid token or bad claims.
+    INVALID_TOKEN = 1;
+    // cardEan can't be parsed or have bad data.
+    INVALID_CARD = 2;
+    // Selected mobile user was not found.
+    MOBILE_USER_NOT_FOUND = 3;
+    // When email is set to "" or some bad value...
+    EMAIL_NOT_FOUND = 4;
+    // Cardholder version doesn't match version on scanned card.
+    WRONG_CARD_VERSION = 5;
+    // Block codes are set.
+    USER_BLOCKED = 6;
+  }
+
+  oneof payload {
+    // Error is optional can be null
+    Error error = 1;
+  }
+}
+
+// Logs user directly on AIP service...
+service DirectLogin {
+  // Login using verification code from sms/email
+  rpc Login (LoginRequest) returns (LoginResponse) {
+  }
+  // Login using firebase id token.
+  rpc FirebaseLogin (FirebaseLoginRequest) returns (FirebaseLoginResponse) {
+  }
+}
+
+message FirebaseLoginRequest {
+  PhoneVerifyRequest req = 1;
+  string firebaseIdToken = 2;
+}
+
+message FirebaseLoginResponse {
+  enum Error {
+    UNKNOWN = 0;
+    // Invalid token or bad claims.
+    INVALID_TOKEN = 1;
+    // cardEan can't be parsed or have bad data.
+    INVALID_CARD = 2;
+    // Selected mobile user was not found.
+    MOBILE_USER_NOT_FOUND = 3;
+    // Firebase sdk returns error when verifying id token.
+    INVALID_FIREBASE_TOKEN = 4;
+    // Cardholder version doesn't match version on scanned card.
+    WRONG_CARD_VERSION = 5;
+    // Block codes are set.
+    USER_BLOCKED = 6;
+  }
+
+  oneof payload {
+    Error error = 1;
+  }
+}
+
+message LoginRequest {
+  PhoneVerifyRequest req = 1;
+  // Code sent by verifyEmail/phoneVerify
+  string verificationCode = 2;
+}
+
+message LoginResponse {
+  enum Error {
+    UNKNOWN = 0;
+    // Invalid token or bad claims.
+    INVALID_TOKEN = 1;
+    // cardEan can't be parsed or have bad data.
+    INVALID_CARD = 2;
+    // Selected mobile user was not found.
+    MOBILE_USER_NOT_FOUND = 3;
+    // Verification code was not found or belongs to other user.
+    INVALID_VERIFICATION_CODE = 4;
+    // Cardholder version doesn't match version on scanned card.
+    WRONG_CARD_VERSION = 5;
+    // Block codes are set.
+    USER_BLOCKED = 6;
+  }
+
+  oneof payload {
+    Error error = 1;
+  }
+}
+
+// Service for creating profiles in MultiProfile service
+service MultiProfileLogin {
+  // Login using verification code from sms/email
+  rpc Login (LoginRequest) returns (LoginResponse) {
+  }
+  // Login using firebase id token.
+  rpc FirebaseLogin (FirebaseLoginRequest) returns (FirebaseLoginResponse) {
+  }
+}
+
+// Token from new AIP service, will be used in stateless verification flow.
+message AipToken {
+  string data = 1;
+}

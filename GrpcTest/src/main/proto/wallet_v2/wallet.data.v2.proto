@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/wallet_v2";
+
+package metro.wallet.data.v2;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+message FundExpiration {
+    double value = 1;
+    google.protobuf.Timestamp date = 2;
+}
+
+enum FundActivityType {
+  UNKNOWN_ACTIVITY_TYPE = 0;
+  CREDITED = 1;
+  SPENDING = 2;
+  EXPIRATION = 3;
+  CORRECTION = 4;
+}
+
+message FundActivity {
+    string id = 1;
+    FundActivityType type = 2;
+    string fund_name = 3;
+    double amount = 4;
+    google.protobuf.StringValue user = 5;
+    google.protobuf.StringValue business = 6;
+    google.protobuf.StringValue id_cash_register = 7;
+    google.protobuf.Timestamp date = 8;
+    google.protobuf.Timestamp expiration_date = 9;
+    string cursor = 10;
+}
+
+enum WalletFundType {
+    UNKNOWN_FUND_TYPE = 0;
+    MANIA = 1;
+}
+
+message WalletFund {
+    string id = 1;
+    WalletFundType type = 2;
+    string name = 3;
+    double balance = 4;
+    repeated FundExpiration expiration = 5;
+}
+
+message WalletOverview {
+    double total_balance = 1;
+    repeated WalletFund funds = 2;
+}
+
+enum SpendResultError {
+    UNKNOWN_SPEND_RESULT = 0;
+    INSUFFICIENT_FUNDS = 1;
+    BUSINESS_NOT_FOUND = 2;
+    FUND_NOT_FOUND = 3;
+}
+
+message SpendResultData {
+    google.protobuf.StringValue fund_name = 1;
+    double amount = 2;
+    google.protobuf.StringValue business = 3;
+    string id_cash_register = 4;
+    google.protobuf.Timestamp date = 5;
+}
+
+enum SpendingReportOutputFormat {
+    UNKNOWN_SPENDING_REPORT_OUTPUT_FORMAT = 0;
+    CSV = 1;
+    ROWS = 2;
+}
+
+message SpendingsReportRow {
+    string id_company_ext = 1;
+    string id_business_ext = 2;
+    string id_cardholder = 3;
+    uint32 amount = 4;
+    google.protobuf.Timestamp date = 5;
+    string business = 6;
+    string id_cash_register = 7;
+}

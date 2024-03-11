@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+
+option go_package = "GoServerCore/proto-storage/generated/go/identity_service";
+
+import "identity_service/common.proto";
+import "google/protobuf/timestamp.proto";
+
+package appelis.identity.v1;
+
+service DeviceEvents {
+  rpc GetDeviceEvents(GetDeviceEventsRequest) returns (GetDeviceEventsResponse) {
+  }
+}
+
+
+message GetDeviceEventsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  // count of last events ordered by createdAt.
+  uint32 size = 2;
+}
+
+message GetDeviceEventsResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    DeviceEventsArray data = 2;
+  }
+}
+
+message DeviceEventsArray {
+  repeated DeviceEvent data = 1;
+}
+
+
+message DeviceEvent {
+  string id = 1;
+
+  DeviceEventType type = 2;
+  // Translated text for mobile device.
+  string text = 3;
+
+  google.protobuf.Timestamp createdAt = 4;
+}
+
+enum DeviceEventType {
+  UNKNOWN_DEVICE_EVENT_TYPE = 0;
+  LOGOUT = 2;
+}
+
+

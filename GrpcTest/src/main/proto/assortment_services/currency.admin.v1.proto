@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/assortment_services";
+
+import "identity_service/common.proto";
+import "appelis/currency.proto";
+
+package appelis.assortment.v1;
+
+service CurrencyAdmin {
+  // Sets currency on project defined in token
+  rpc SetCurrency(SetCurrencyRequest) returns (SetCurrencyResponse) {}
+  // Gets currency from project. If currency was not set returns empty response.
+  rpc GetCurrency(GetCurrencyRequest) returns (GetCurrencyResponse) {}
+}
+
+message SetCurrencyRequest {
+  appelis.identity.common.v1.Token token = 1;
+  appelis.Currency currency = 2;
+}
+
+message SetCurrencyResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.identity.common.v1.PermissionError permErr = 2;
+  }
+}
+
+message GetCurrencyRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message GetCurrencyResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    appelis.Currency currency = 2;
+  }
+}

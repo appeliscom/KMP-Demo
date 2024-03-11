@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+option java_package = "com.appelis";
+option java_outer_classname = "appelisObjectId";
+
+package appelis;
+
+// ObjectId is a unique identifier in MongoDB.
+// It is used as primitive.ObjectId, alias for [12]byte in Go. 
+message ObjectId {
+  bytes value = 1;
+}

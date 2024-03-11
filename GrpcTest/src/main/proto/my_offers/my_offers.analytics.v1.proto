@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/my_offers";
+
+package appelis.my_offers.v1;
+
+import "appelis/timerange.proto";
+
+service Analytics {
+    rpc GetAnalytics(GetAnalyticsRequest) returns (GetAnalyticsResponse) {}
+}
+
+message GetAnalyticsRequest {
+    string id_project = 1;
+    appelis.TimeRange timerange = 2;
+}
+
+message GetAnalyticsResponse {
+    repeated AnalyticsData groupMapped = 1;
+    repeated AnalyticsData notGroupMapped = 2;
+    repeated AnalyticsData limited = 3;
+}
+
+message AnalyticsData {
+    enum OfferType {
+        UNKNOWN = 0;
+        ONCE = 1;
+        PER_COUNT = 2;
+        INFINITY = 3;
+    }
+
+    uint32 used_count = 1;
+    uint32 assigned_count = 2;
+    OfferType type = 3;
+    string id = 4;
+    string ean = 5;
+    string name = 6;
+    string offer_category_id_group = 7;
+    appelis.TimeRange validity = 8;
+}

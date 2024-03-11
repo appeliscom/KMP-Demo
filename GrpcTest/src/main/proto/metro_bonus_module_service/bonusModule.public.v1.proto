@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_bonus_module_service";
+
+import "identity_service/common.proto";
+import "metro_bonus_module_service/bonusModule.data.v1.proto";
+
+package cz.makro.bonus.v1;
+
+
+service BonusModulePublicAdmin {
+  rpc SetBonusModules(SetBonusModulesRequest) returns (SetBonusModulesResponse){}
+  rpc SetBonusHistories(SetBonusHistoriesRequest) returns (SetBonusHistoriesResponse){}
+  rpc DeleteBonusHistories(DeleteBonusHistoriesRequest) returns (DeleteBonusHistoriesResponse) {}
+  rpc StreamCompaniesBonusModulesMapped(StreamCompaniesBonusModulesMappedRequest) returns (stream StreamCompaniesBonusModulesMappedResponse) {}
+  rpc StreamBonusHistoriesModuleMapped(StreamBonusHistoriesModuleMappedRequest) returns (stream StreamBonusHistoriesModuleMappedResponse) {}
+}
+
+message SetBonusModulesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  BonusModuleArray data = 2;
+}
+
+message SetBonusModulesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+    BonusModuleArray data = 2;
+  } 
+}
+
+message SetBonusHistoriesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  BonusHistoryArray data = 2;
+}
+
+message SetBonusHistoriesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+  } 
+}
+
+message DeleteBonusHistoriesRequest{
+  appelis.identity.common.v1.Token token = 1;
+  repeated int64 bonusHistoriesIds = 2;
+}
+
+message DeleteBonusHistoriesResponse {
+  oneof payload{
+    appelis.identity.common.v1.TokenError error = 1;
+  }
+}
+
+message StreamCompaniesBonusModulesMappedRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated int64 companyIds = 2;
+}
+
+message StreamCompaniesBonusModulesMappedResponse {
+  message Data {
+    map<int64, BonusModule> data = 1;
+  }
+
+  oneof payload{
+    appelis.identity.common.v1.TokenError error = 1;
+    Data data = 2;
+  }
+}
+
+message StreamBonusHistoriesModuleMappedRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated int64 moduleIds = 2;
+}
+
+message StreamBonusHistoriesModuleMappedResponse {
+  message Data {
+    map<int64, BonusHistoryArray> data = 1;
+  }
+
+  oneof payload{
+    appelis.identity.common.v1.TokenError error = 1;
+    Data data = 2;
+  }
+}

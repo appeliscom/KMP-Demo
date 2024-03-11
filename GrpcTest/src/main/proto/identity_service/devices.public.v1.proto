@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/identity_service";
+option java_package = "com.appelis.identity";
+
+import "identity_service/devices.v1.proto";
+import "identity_service/common.proto";
+import "google/protobuf/wrappers.proto";
+
+package appelis.identity.v1;
+
+service DeviceService {
+  // RPC updates data on device claimed by token. Updated are only lang and notification token.
+  rpc UpdateTokenDevice(UpdateTokenDeviceRequest) returns (UpdateTokenDeviceResponse) {}
+
+  rpc GetTokenDevice(GetTokenDeviceRequest) returns (GetTokenDeviceResponse) {}
+  // Rpc sets idMobileUser on device to null. Device is picked from token claims.
+  rpc LogoutUser(LogoutUserRequest) returns(LogoutUserResponse) {}
+}
+
+
+message GetTokenDeviceRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message GetTokenDeviceResponse {
+  oneof payload{
+    appelis.identity.common.v1.TokenError error = 1;
+    // can be null even when you have correct token claims, but devices was deleted in DB.
+    MobileDevice device = 2;
+  }
+}
+
+message LogoutUserResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+  }
+}
+
+message LogoutUserRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message UpdateTokenDeviceResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+    MobileDevice device = 2;
+  }
+}
+
+message UpdateTokenDeviceRequest {
+  appelis.identity.common.v1.Token token = 1;
+  DeviceLang lang = 2;
+  google.protobuf.StringValue notificationToken = 3;
+}
+
+service DeviceRegistration {
+  // TODO resolve public mutation rpc that is not throttled and can potentially create unlimited count of devices...
+  // Registers new device to the system. Unique id is some kind of generated identifier for device.
+  rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse) {}
+}
+
+message RegisterDeviceRequest {
+  string appKey = 1;
+  string uniqId = 2;
+  // IF type won't be set ANDROID_V5 will be used.
+  RegisterDeviceType type = 3;
+
+  DeviceLang lang = 4;
+}
+
+
+enum RegisterDeviceType {
+  UNKNOWN_REGISTER_TYPE = 0;
+  REGISTER_ANDROID_V5 = 1;
+  REGISTER_IOS_V5 = 2;
+  REGISTER_WEB_V1 = 3;
+}
+
+enum RegisterError {
+  UNKNOWN_REGISTER_ERROR = 0;
+  UNIQUE_ID_ALREADY_REGISTERED = 1;
+  ACCOUNT_SETTINGS_NOT_FOUND = 2;
+}
+
+message RegisterDeviceResponse {
+  oneof payload {
+    RegisterError err = 1;
+    MobileDevice device = 2;
+  }
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/article_package_service";
+
+import "appelis/price.proto";
+import "appelis/picture.proto";
+
+package appelis.article_package.data.v1;
+
+message Package {
+  string id = 1;
+  appelis.PriceValue price = 2;
+  appelis.PriceValue priceTax = 3;
+  optional appelis.Picture picture = 4;
+  string name = 5;
+  optional int64 idBusiness = 6;
+  float percentageTax = 7;
+}

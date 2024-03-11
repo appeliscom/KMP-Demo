@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/newsfeed_service";
+
+package appelis.newsfeed.v1;
+
+import "identity_service/common.proto";
+import "newsfeed_service/newsfeedService.data.v1.proto";
+import "appelis/objectid.proto";
+import "appelis/paging.proto";
+
+service Public {
+    rpc GetNewsFeed (GetNewsFeedRequest) returns (GetNewsFeedResponse) {}
+    rpc GetNewsFeedItem (GetNewsFeedItemRequest) returns (GetNewsFeedItemResponse) {}
+}
+
+message GetNewsFeedRequest {
+    appelis.identity.common.v1.Token token = 1;
+    appelis.PagingParams paging = 2;
+    string idBusiness = 3;
+}
+
+message GetNewsFeedResponse {
+    message Node {
+        string cursor = 1;
+        appelis.newsfeed.data.v1.NewsFeedItem data = 2;
+    }
+
+    message Page {
+        PageInfo info = 1;
+        repeated Node node = 2;
+    }
+
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        Page page = 2;
+    }
+}
+
+message GetNewsFeedItemRequest {
+    appelis.identity.common.v1.Token token = 1;
+    appelis.ObjectId id = 2;
+}
+
+message GetNewsFeedItemResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        appelis.newsfeed.data.v1.NewsFeedItem data = 2;
+    }
+}

@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+option go_package="appelis/bmpl_v1";
+option java_package = "com.appelis.bmplservice";
+
+package appelis.bmpl.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+
+service PriceAdmin {
+    rpc GetAllPrices (Token) returns (stream PricesResponse) {
+    }
+
+    rpc CreateOrUpdatePrices (CreateOrUpdatePricesRequest) returns (PricesResponse) {
+
+    }
+
+    rpc DeletePrices (DeletePricesRequest) returns (DeletePricesResponse) {
+
+    }
+}
+
+
+service DevicePrices {
+    rpc GetArticlePrices (GetArticlePricesRequest) returns (GetArticlePricesResponse) {
+    }
+}
+
+message DeletePricesResponse {
+    enum Error {
+        UNKNOWN = 0;
+        INVALID_TOKEN = 1;
+    }
+
+    oneof payload {
+        Error error = 1;
+    }
+}
+
+message DeletePricesRequest {
+    Token token = 1;
+    repeated int64 ids = 2;
+}
+
+
+message CreateOrUpdatePricesRequest {
+    Token token = 1;
+    BmplPriceInputs prices = 2;
+}
+
+message PricesResponse {
+    enum Error {
+        UNKNOWN = 0;
+        INVALID_TOKEN = 1;
+    }
+
+    oneof payload {
+        Error error = 1;
+        BmplPrices data = 2;
+    }
+}
+
+message BmplPrices {
+    repeated BmplPrice price = 1;
+}
+
+enum ConditionType {
+    UNKNOWN_CONDITION_TYPE = 0;
+    ARTICLE_QUANTITY = 1;
+    // nakup v hodnote???
+}
+
+enum DiscountType {
+    UNKNOWN_DISCOUNT_TYPE = 0;
+    PERCENT = 1;
+    DISCOUNT = 2;
+    FIXED = 3;
+}
+
+message PriceData {
+    string idArticle = 2;
+    google.protobuf.Int64Value idGroup = 4;
+    google.protobuf.StringValue idBusiness = 5;
+    google.protobuf.Timestamp validityFrom = 6;
+    google.protobuf.Timestamp validityTo = 7;
+    ConditionType conditionType = 8;
+    double conditionValue = 9;
+    DiscountType discountType = 10;
+    double discountValue = 11;
+}
+
+message BmplPrice {
+    int64 id = 1;
+    PriceData data = 2;
+}
+
+message PriceInput {
+    google.protobuf.Int64Value updateId = 1;
+    PriceData data = 2;
+}
+
+message BmplPriceInputs {
+    repeated PriceInput data = 1;
+}
+
+message GetArticlePricesResponse {
+    enum Error {
+        UNKNOWN = 0;
+        INVALID_TOKEN = 1;
+    }
+
+    message ArticlePrices {
+        map<string, BmplPrices> data = 1;
+    }
+
+    oneof payload {
+        Error error = 1;
+        ArticlePrices data = 2;
+    }
+}
+
+
+message GetArticlePricesRequest {
+    Token token = 1;
+    repeated string articleIds = 2;
+    string businessId = 3;
+}
+
+message Token {
+    string data = 1;
+}

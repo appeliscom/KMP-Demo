@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "appelis/delivery_v1";
+
+package appelis.order.delivery.v1;
+
+import "delivery_service/deliveryBusinessHoursData.proto";
+
+service DeliveryHoursPrivate {
+  // Gets business delivery hours. Rpc is used in private services communication.
+  rpc GetHours(GetHoursRequest) returns (GetHoursResponse) {}
+}
+
+
+message GetHoursRequest {
+  string projectId = 1;
+  repeated string businessId = 2;
+}
+
+message GetHoursResponse {
+  delivery.v1.DeliveryHours hours = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_registration_metadata";
+
+import "metro_common/metroCommon.data.v1.proto";
+import "google/protobuf/wrappers.proto";
+
+package metro.cardholder.v1;
+
+service CardholderMetadataService {
+  rpc GetCardholderMetadata(GetCardholderMetadataRequest) returns (GetCardholderMetadataResponse) {}
+}
+
+message GetCardholderMetadataRequest{
+  metro.common.data.v1.CardholderId cardholderId = 1;
+  string projectId = 2;
+}
+
+message GetCardholderMetadataResponse {
+  CardholderData data = 1;
+}
+
+message CardholderData {
+  metro.common.data.v1.CardholderId id = 1;
+  // Flag can be null -> optional
+  google.protobuf.Int32Value itf22 = 2;
+  string name = 3;
+  string mobilePhoneNo = 4;
+  string emailAddr = 5;
+}

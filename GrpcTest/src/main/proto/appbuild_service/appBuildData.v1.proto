@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appbuild";
+
+package appelis.appbuild.v1;
+
+import "appelis/hexColor.proto";
+
+enum TemplateName {
+  UNKNOWN_TEMPLATE = 0;
+  SOLARIS_1_0 = 1;
+  FLAVOR_1_0 = 2;
+  ORION_1_0 = 3;
+  JANTAR_1_0 = 4;
+}
+
+// Will be shown in administration
+message TemplateV1 {
+  // Name is like ID of template
+  TemplateName name = 1;
+  // Template should say which assets needs to be provided.
+  repeated string wantedAssets = 2;
+}
+
+// Output. Usage in build step.
+message TemplateDataV1 {
+  // Name is like ID of template
+  TemplateName name = 1;
+  // Color palette which application build must use.
+  AppTheme theme = 2;
+  // Color palette which will be used to colorize assets.
+  AssetsTheme assetsTheme = 3;
+  // Url of assets that will be downloaded during build.
+  string assetsUrl = 4;
+  // Environment settings.
+  TemplateEnvironment env = 5;
+
+  string appKey = 6;
+  // Nice, formatted name of app.
+  string appName = 7;
+  // AppName used in magic links
+  string serviceAppName = 8;
+
+  string mapsApiKey = 9;
+
+  string googleLoginApiKey = 10;
+}
+
+enum TemplateEnvironment {
+  UNKNOWN_ENV = 0;
+  PRD = 1;
+  DEV = 2;
+}
+
+message AppTheme {
+  appelis.HexColor primary = 1;
+  appelis.HexColor primaryVariant = 2;
+  appelis.HexColor onPrimaryH = 3;
+  appelis.HexColor onPrimaryP = 4;
+
+  appelis.HexColor secondary = 5;
+  appelis.HexColor secondaryVariant = 6;
+  appelis.HexColor onSecondaryH = 7;
+  appelis.HexColor onSecondaryP = 8;
+
+  appelis.HexColor appBackground = 9;
+  appelis.HexColor onBackgroundH = 10;
+  appelis.HexColor onBackgroundP = 11;
+
+  appelis.HexColor surface = 12;
+  appelis.HexColor onSurfaceH = 13;
+  appelis.HexColor onSurfaceP = 14;
+
+  appelis.HexColor badge = 15;
+  appelis.HexColor onBadge = 16;
+
+  appelis.HexColor error = 17;
+  appelis.HexColor hintColor = 18;
+  appelis.HexColor dividerColor = 19;
+  appelis.HexColor specialGreen = 20;
+}
+
+message AssetsTheme {
+  appelis.HexColor baseColor = 1;
+  appelis.HexColor baseLight = 2;
+  appelis.HexColor baseDark = 3;
+  appelis.HexColor black = 4;
+  appelis.HexColor white = 5;
+  appelis.HexColor success = 6;
+  appelis.HexColor error = 7;
+  appelis.HexColor badge = 8;
+}

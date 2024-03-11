@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/assortment_services";
+
+package appelis.assortment.data.v1;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "article_service/article.v1.proto";
+import "appelis/picture.proto";
+import "appelis/price.proto";
+import "appelis/currency.proto";
+import "assortment_services/attributes.data.v1.proto";
+
+message AdminPrice {
+  Price data = 1;
+  // Price level of user and price must match to use correct price.
+  google.protobuf.StringValue priceLevel = 2;
+}
+
+message AdminArticle {
+  ArticleData data = 1;
+  // Prices data message to use by client apps.
+  repeated AdminPrice prices = 2;
+  // Non-unique attribute values (by value) showed as tags in UI. Provide only ids of attribute values.
+  repeated string attributeValues = 3;
+  // Mapped categories to article.
+  repeated CategoryMapping categories = 4;
+  // Static priority when sorting articles in assortment catalog
+  double staticPriority = 5;
+  // Extra articles mapped to this article. Used for article addons in restaurants.
+  repeated string extras = 6;
+  // Html encoded description for article
+  bytes htmlDescription = 7;
+  // Should be used when article have to be found by other keywords not only by name.
+  string searchKeywords = 8;
+}
+
+enum CreateType {
+  UNKNOWN_CREATE_TYPE = 0;
+  AUTOMATIC = 1;
+  MANUAL = 2;
+}
+
+message CategoryMapping {
+  // Id of category.
+  int64 id = 1;
+  // Flag describes if mapping was created automatically from script or manually from administration.
+  CreateType type = 2;
+}
+
+enum PriceType {
+  UNKNOWN_PRICE_TYPE = 0;
+  UNIT = 1;
+  PACKAGE = 2;
+  MINIMAL_PACKAGE = 3;
+}
+
+message Price {
+  PriceType type = 1;
+  // Price is strictly defined on business.
+  string businessId = 2;
+  // Price for one piece of Article
+  appelis.Currency currency = 3;
+  appelis.PriceValue value = 4;
+  appelis.PriceValue valueTax = 5;
+  // validity of price
+  google.protobuf.Timestamp validityFrom = 6;
+  google.protobuf.Timestamp validityTo = 7;
+  appelis.articles.v1.PriceType priceType = 8;
+}
+
+enum StockStatus {
+  UNKNOWN_STATUS = 0;
+  AVAILABLE = 1;
+  TEMPORARILY_UNAVAILABLE = 2;
+  LONGTERM_UNAVAILABLE = 3;
+  ORDER = 4;
+  CLEARANCE_SALE = 5;
+  UNLIMITED = 6;
+}
+
+message Availability {
+  // Availability is strictly defined on business.
+  string businessId = 1;
+  // How many items are available
+  int64 quantity = 2;
+  // Status of article on defined business.
+  StockStatus status = 3;
+  // Time when availability was changed.
+  google.protobuf.Timestamp lastChange = 4;
+}
+
+message ArticleData {
+  // main id or article
+  string id = 1;
+  // default article name
+  string name = 2;
+  // Description of article without html formatting.
+  string shortDescription = 3;
+  // external id of article. optional id.
+  google.protobuf.StringValue externalId = 4;
+  // Tax for article, for showing in UI. (0-100%)
+  uint32 tax = 5;
+  // EAN codes for article. (Will be used for searching.)
+  repeated string eans = 6;
+  // Flag that describes if article is weighted article. (Price is defined by weight.)
+  bool weightIndicator = 7;
+  // Flag that describes if article needs shipping in cart.
+  bool needShipping = 8;
+  // Selected first picture from pictures field.
+  appelis.Picture topPicture = 9;
+  // Pictures of article
+  repeated appelis.Picture pictures = 10;
+  // Availabilities of article per business.
+  repeated Availability availabilities = 11;
+  // Time when article was created in system.
+  google.protobuf.Timestamp createdAt = 12;
+}
+
+message ArticleArray {
+  repeated Article array = 1;
+}
+
+message AdminArticleArray {
+  repeated AdminArticle array = 1;
+}
+message Article {
+  ArticleData data = 1;
+  // Prices data message to use by client apps.
+  repeated Price prices = 2;
+  // Unique attribute values (by value) showed as tags in UI.
+  repeated appelis.assortment.data.v1.AttributeValue attributes = 3;
+  repeated CategoryMapping categories = 4;
+}
+
+message StringArray {
+  repeated string data = 1;
+}

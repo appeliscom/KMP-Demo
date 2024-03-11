@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/translation_service";
+
+package appelis.translations.v1;
+
+import "identity_service/common.proto";
+import "appelis/language.proto";
+
+service Admin {
+    rpc DeleteTranslations (DeleteTranslationsRequest) returns (DeleteTranslationsResponse) {
+    }
+    rpc SetTranslations (SetTranslationsRequest) returns (SetTranslationsResponse) {
+    }
+    rpc GetTranslations (GetTranslationsRequest) returns (GetTranslationsResponse) {
+    }
+}
+
+message GetTranslationsRequest {
+    appelis.identity.common.v1.Token token = 1;
+    // Optional filter
+    Filter filter = 2;
+    PagingParameters paging = 3;
+
+    message Filter {
+        // is ingored if <3, prefix(key,value)
+        string keyword = 1;
+        appelis.Language lang = 2;
+        string project_id = 3;
+    }
+
+    message PagingParameters {
+        // Number of items in single page
+        int64 first = 1;
+        // Optional after/before. Because first page doesn't need after.
+        oneof cursor {
+            string before = 2;
+            string after = 3;
+        }
+    }
+}
+
+message GetTranslationsResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        appelis.identity.common.v1.PermissionError permErr = 2;
+        NodesPage page = 3;
+    }
+    
+    message NodesPage {
+        repeated Node nodes = 1;
+        int64 totalCount = 2;
+    }
+    
+    message Node {
+        TranslationGroup translation = 1;
+        string cursor = 2;
+    }
+}
+
+message TranslationGroup {
+    string key = 1;
+    repeated ProjectGroup project = 2;
+
+    message ProjectGroup {
+        repeated Data data = 1;
+        string id = 2;
+    }
+
+    message Data {
+        int64 id = 1;
+        appelis.Language lang = 2;
+        string value = 3;
+    }
+}
+
+message DeleteTranslationsRequest {
+    appelis.identity.common.v1.Token token = 1;
+    repeated int64 ids = 2;
+}
+
+message DeleteTranslationsResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        appelis.identity.common.v1.PermissionError permErr = 2;
+        bool data = 3;
+    }
+}
+
+message SetTranslationsRequest {
+    appelis.identity.common.v1.Token token = 1;
+    repeated Translation translations = 2;
+}
+
+message SetTranslationsResponse {
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        appelis.identity.common.v1.PermissionError permErr = 2;
+        TranslationsPayload translations = 3;
+    }
+
+    message TranslationsPayload {
+        repeated Translation translations = 1;
+    }
+}
+
+message Translation {
+    int64 translation_id = 1;
+    string key = 2;
+    string value = 3;
+    string project_id = 4;
+    appelis.Language lang = 5;
+}
