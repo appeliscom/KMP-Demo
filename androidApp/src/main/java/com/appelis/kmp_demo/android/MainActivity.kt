@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.appelis.LeafletRepository
+import com.appelis.LeafletSuspendClientImpl
 import com.appelis.RegisterDeviceRepositoryImpl
 import com.appelis.kmp_demo.Greeting
 import com.example.common.Test
@@ -25,11 +27,14 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     LaunchedEffect(key1 = true) {
+                        val leafletClient = LeafletSuspendClientImpl()
+                        val repository = LeafletRepository(leafletClient)
+
                         withContext(Dispatchers.IO) {
-                            RegisterDeviceRepositoryImpl().getLeaflets()
+                            val response = repository.getLeaflets()
+                            println("Response from android view: ${response}")
                         }
                     }
-
 
                     GreetingView(Test().sayHello())
                 }

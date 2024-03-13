@@ -7,7 +7,7 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-public struct LeafletGrpcClientImpl {
+public class LeafletGrpcClientImpl: LeafletCallBackClient {
     let client: Metro_Leaflet_V1_PublicAsyncClientProtocol
 
     public init() {
@@ -25,16 +25,20 @@ public struct LeafletGrpcClientImpl {
             defaultCallOptions: callOptions
         )
     }
-
-    public func getLeaflets() async throws {
-        let response = try await client.getLeaflets(
-            .with {
-                $0.token = .with { $0.data = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTAzMzE1MjcsImlhdCI6MTcxMDMzMTIyNywiaXNzIjoiQXBwZWxpc0lkZW50aXR5UHJvdmlkZXIiLCJjbGFpbXMiOnsiYXBwZWxpcy5kZXZpY2VJZCI6IjE2NzYwIiwiYXBwZWxpcy5tb2JpbGVVc2VySWQiOiIxODU5MTcxOSIsImFwcGVsaXMucHJvamVjdElkIjoiMSJ9fQ.UsHLhOZ3pluhw9K_wIciNbqNYlIVwj_SGTPY-vkb2h3_qY0t2vvtxX2VCaR-P86UcS7RM9ITWsVjccmWP2Mieg" }
-                $0.business = "Brno"
-            }
-        )
-
-        print(response)
+    
+    public func getLeaflets(request: GetLeafletsRequest, responseCallback: @escaping (GetLeafletsResponse?, KotlinException?) -> Void) {
+        Task {
+            let response = try await client.getLeaflets(
+                .with {
+                    $0.token = .with { $0.data = request.token?.data_ ?? "" }
+                    $0.business = request.business
+                }
+            )
+            print(response)
+            
+            let (wireResponse, error) = response.toWireMessage(adapter: GetLeafletsResponse.companion.ADAPTER)
+            responseCallback(wireResponse, error)
+        }
     }
 }
 
