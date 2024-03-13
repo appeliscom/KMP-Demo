@@ -26,6 +26,7 @@ kotlin {
             baseName="Shared"
             isStatic = true
             export(projects.featureA)
+//            export(projects.grpcTest)
             xc.add(this)
         }
     }
