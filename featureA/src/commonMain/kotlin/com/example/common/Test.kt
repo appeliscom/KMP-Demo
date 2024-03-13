@@ -5,9 +5,11 @@ class Test {
         return hello()
     }
 
-    fun alternativeX(): String {
+    fun alternativeXXX(): String {
         return "alternative"
     }
 }
 
-expect fun hello(): String
+fun hello(): String {
+    return "hello"
+}
