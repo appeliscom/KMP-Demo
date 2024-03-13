@@ -6,10 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.appelis.RegisterDeviceRepositoryImpl
 import com.appelis.kmp_demo.Greeting
 import com.example.common.Test
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +24,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    LaunchedEffect(key1 = true) {
+                        withContext(Dispatchers.IO) {
+                            RegisterDeviceRepositoryImpl().getLeaflets()
+                        }
+                    }
+
+
                     GreetingView(Test().sayHello())
                 }
             }
