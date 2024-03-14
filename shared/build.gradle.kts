@@ -35,9 +35,14 @@ kotlin {
         commonMain.dependencies {
             api(projects.featureA)
             api(projects.grpcTest)
+            implementation(libs.koin.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+
+        commonTest.dependencies {
+            
         }
     }
 }

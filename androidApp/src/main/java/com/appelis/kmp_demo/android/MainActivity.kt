@@ -13,13 +13,21 @@ import com.appelis.LeafletRepository
 import com.appelis.LeafletSuspendClientImpl
 import com.appelis.RegisterDeviceRepositoryImpl
 import com.appelis.kmp_demo.Greeting
+import com.appelis.kmp_demo.android.di.nativeModule
+import com.appelis.kmp_demo.di.DI
 import com.example.common.Test
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
+    private val greeting: Greeting by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        DI.initDI(nativeModule)
+
         setContent {
             MyApplicationTheme {
                 Surface(
@@ -36,7 +44,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                    GreetingView(Test().sayHello())
+                    GreetingView(greeting.greet())
                 }
             }
         }

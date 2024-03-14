@@ -7,6 +7,7 @@ compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 jetbrainsKotlinJvm = "1.9.20"
 wire = "4.9.7"
+koin = "3.5.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -18,6 +19,8 @@ compose-foundation = { module = "androidx.compose.foundation:foundation", versio
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
 wire-runtime = { module = "com.squareup.wire:wire-runtime", version.ref = "wire" }
 wire-grpc-client = { module = "com.squareup.wire:wire-grpc-client", version.ref = "wire" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
