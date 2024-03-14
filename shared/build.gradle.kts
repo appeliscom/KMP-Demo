@@ -26,6 +26,7 @@ kotlin {
             baseName="Shared"
             isStatic = true
             export(projects.featureA)
+            export(projects.grpcTest)
             xc.add(this)
         }
     }
@@ -33,6 +34,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(projects.featureA)
+            api(projects.grpcTest)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

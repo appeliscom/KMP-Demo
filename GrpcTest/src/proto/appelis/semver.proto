@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+option java_outer_classname = "appelisSemVer";
+// The semantic version structure.
+//    <valid semver> ::= <version core>
+//                     | <version core> "-" <pre-release>
+//                     | <version core> "+" <build>
+//                     | <version core> "-" <pre-release> "+" <build>
+message SemVer {
+  // The major version, e.g 10 for 10.2.3.
+  int32 major = 1;
+  // The minor version, e.g. 2 for 10.2.3.
+  int32 minor = 2;
+  // The patch version, e.g 3 for 10.2.3.
+  int32 patch = 3;
+  // Suffix after version core
+  string preRelease = 4;
+
+  string build = 5;
+}

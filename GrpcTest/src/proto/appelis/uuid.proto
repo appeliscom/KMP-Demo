@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+option java_package = "com.appelis";
+option java_outer_classname = "appelisUuid";
+
+
+package appelis;
+
+message UUID {
+  bytes value = 1;
+}

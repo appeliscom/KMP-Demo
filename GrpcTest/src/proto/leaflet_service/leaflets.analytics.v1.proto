@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/leaflet_service";
+
+package metro.leaflet.v1;
+
+import "identity_service/common.proto";
+import "appelis/timerange.proto";
+
+service Analytics {
+    rpc GetMostOpenedLeaflets(GetMostOpenedLeafletsRequest) returns (GetMostOpenedLeafletsResponse) {}
+}
+
+message GetMostOpenedLeafletsRequest {
+    appelis.identity.common.v1.Token token = 1;
+    appelis.TimeRange timerange = 2;
+}
+
+message GetMostOpenedLeafletsResponse {
+    message OpenedLeaflet {
+        string id = 1;
+        string name = 2;
+        int64 count = 3;
+    }
+
+    message OpenedLeaflets {
+        appelis.TimeRange timerange = 1;
+        repeated OpenedLeaflet openedLeaflets = 2;
+    }
+    
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        OpenedLeaflets data = 2;
+    }
+}

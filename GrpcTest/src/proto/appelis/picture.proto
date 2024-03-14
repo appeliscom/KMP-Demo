@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+// Message for representing standard pictures.
+message Picture {
+  string id = 1;
+  string url = 2;
+
+  uint32 height = 3;
+  uint32 width = 4;
+}

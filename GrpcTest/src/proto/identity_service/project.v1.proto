@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/identity_service";
+option java_package = "com.appelis.identity";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "identity_service/common.proto";
+
+package appelis.identity.v1;
+
+// Public api with tokens.
+service ProjectSettingsService {
+  rpc GetAllowedProjects (appelis.identity.common.v1.Token) returns (ProjectsResponse) {
+  }
+
+  rpc ProjectSettings (ProjectSettingsRequest) returns (ProjectsResponse) {
+  }
+}
+
+message ProjectSettingsRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated string projectIds = 2;
+}
+
+
+message ProjectSettingsArray {
+  repeated ProjectSettings data = 1;
+}
+
+message ProjectsResponse {
+  oneof payload {
+    // If token is wrong, INVALID_TOKEN will be returned.
+    appelis.identity.common.v1.TokenError error = 1;
+    // Returns all allowed project settings
+    ProjectSettingsArray data = 3;
+  }
+}
+
+// Private api without tokens and auth logic. Work with basic data of account settings.
+service ProjectSettingsAdmin {
+  // Returns settings by appKey field.
+  rpc SettingsByAppKey(SettingsByAppKeyRequest) returns (SettingsResponse) {}
+  // Gets settings by id.
+  rpc Settings (ProjectRequest) returns (SettingsResponse) {}
+  // Gets firebase config json by project id.
+  rpc FirebaseConfig (ProjectRequest) returns (FirebaseConfigResponse) {}
+  // Rpc will add or update project settings. Update will be on projectId.
+  // Content of projectId must be number.
+  rpc AddOrUpdateSettings(AddOrUpdateSettingsRequest) returns (SettingsResponse) {}
+}
+
+message AddOrUpdateSettingsRequest{
+  ProjectSettings data = 1;
+}
+
+message SettingsByAppKeyRequest {
+  string appKey = 1;
+}
+
+message ProjectSettings {
+  string projectId = 1;
+  string applicationKey = 2;
+  string applicationName = 3;
+  // Optional value
+  google.protobuf.StringValue googleKey = 4;
+  // This field represents timestamp when project was created. On update it won't be changed.
+  google.protobuf.Timestamp createdAt = 5;
+}
+
+message SettingsResponse {
+  oneof payload {
+    ProjectSettings settings = 1;
+  }
+}
+
+message ProjectRequest {
+  string projectId = 1;
+}
+
+message FirebaseConfigResponse {
+  // Config is optional... May be null
+  oneof payload {
+    bytes configJson = 1;
+  }
+}

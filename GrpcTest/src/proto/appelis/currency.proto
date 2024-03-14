@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/appelis";
+
+package appelis;
+
+enum Currency {
+    CURRENCY_UNKNOWN = 0;
+    CZK = 1;
+    EUR = 2;
+    USD = 3;
+}
+

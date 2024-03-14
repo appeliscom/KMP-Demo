@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/identity_service";
+option java_package = "com.appelis.identity";
+
+package appelis.identity.webUser.v2;
+
+import "identity_service/webUsersService.proto";
+
+service WebUsersPrivateServiceV2 {
+  // Add or update user in database. If is will be 0 new user will be added.
+  // Rpc will respect unique login field across all users.
+  rpc AddOrUpdateUser(AddOrUpdateUserRequestV2) returns (AddOrUpdateUserResponseV2) {
+  }
+}
+
+message AddOrUpdateUserRequestV2 {
+  // User to be updated or added.
+  appelis.identity.webUser.v1.WebUser user = 1;
+}
+
+message AddOrUpdateUserResponseV2 {
+  enum AddUserError {
+    UNKNOWN_ADD_USER_ERROR = 0;
+    DUPLICATED_EMAIL = 1;
+  }
+
+  oneof payload {
+    appelis.identity.webUser.v1.WebUser user = 1;
+    AddUserError error = 2;
+  }
+}

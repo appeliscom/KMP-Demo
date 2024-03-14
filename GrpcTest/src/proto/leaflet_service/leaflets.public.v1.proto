@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/leaflet_service";
+
+package metro.leaflet.v1;
+
+import "identity_service/common.proto";
+import "appelis/timerange.proto";
+
+service Public {
+    rpc GetLeaflets(GetLeafletsRequest) returns (GetLeafletsResponse) {}
+}
+
+message GetLeafletsRequest {
+    appelis.identity.common.v1.Token token = 1;
+    string business = 2;
+}
+
+message GetLeafletsResponse {
+    message Leaflets {
+        repeated Leaflet leaflets = 1;
+    }
+
+    // repeated Leaflet data = 1;
+    oneof payload {
+        appelis.identity.common.v1.TokenError tokenErr = 1;
+        Leaflets data = 2;
+    }
+}
+
+message Leaflet {
+    string id = 1;
+    string title = 2;
+    string imageUrl = 3;
+    string url = 4;
+    appelis.TimeRange timerange = 5;
+}
