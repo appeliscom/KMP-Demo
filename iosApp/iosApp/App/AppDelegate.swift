@@ -9,9 +9,16 @@
 import Foundation
 import SwiftUI
 import Shared
+import KoinHelpers
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    var nativeModule: Koin_coreModule = NativeModuleKt.makeNativeModule()
+    var nativeModule: Koin_coreModule
+    
+    override init() {
+        self.nativeModule = NativeModuleKt.makeNativeModule(
+            nativeTestDependency: { resolver in TestSwiftDependency(greetings: resolver.get()) }
+        )
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         DI().doInitDI(nativeModule: nativeModule, appDeclaration: { _ in })

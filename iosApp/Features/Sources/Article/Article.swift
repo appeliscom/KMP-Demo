@@ -6,13 +6,18 @@ import SwiftUI
 import KoinHelpers
 
 public struct ArticleView: View {
-    let greeting: Greeting = inject()
+    let greeting: NativeTestDependency = inject()
+    let greeting2: NativeTestDependency = inject()
     
     public init() {
         
     }
     
     public var body: some View {
-        Text(greeting.greet())
+        VStack{
+            Text(greeting.greet())
+            Text(greeting2.greet())
+        }
+        
     }
 }

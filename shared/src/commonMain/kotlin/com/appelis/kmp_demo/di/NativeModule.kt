@@ -7,44 +7,9 @@ import org.koin.dsl.module
 
 typealias NativeInjectionFactory<T> = Scope.() -> T
 fun makeNativeModule(
-   // todo add services using native libs
+   nativeTestDependency: NativeInjectionFactory<NativeTestDependency>
 ): Module {
     return module {
-        // todo register them into native module
+        single { nativeTestDependency() }
     }
 }
-
-// example
-//    fun makeNativeModule(
-//        analytic: NativeInjectionFactory<Analytic>
-//    ): Module {
-//        return module {
-//            single { analytic() }
-//        }
-//    }
-
-//usage android
-//class MainActivity : ComponentActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        val nativeModule = makeNativeModule(
-//            analytic = { AnalyticImpl( get() ) }
-//        )
-//        startDI(nativeModule) { androidContext(this@MainActivity) }
-//    }
-//}
-
-//usage ios
-//struct iOSApp: App {
-//    init() {
-//        let nativeModule: Koin_coreModule = MakeNativeModuleKt.makeNativeModule(
-//            analytic: { scope in
-//                return AnalyticImpl(logger: scope.get())
-//        }
-//        )
-//
-//        StartDIKt.startDI(
-//            nativeModule: nativeModule,
-//            appDeclaration: { _ in }
-//        )
-//    }
-//}

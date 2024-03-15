@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedWire_runtimeProtoAdapter<E>, SharedOkioByteString, SharedKotlinByteArray, SharedWire_runtimeMessage<M, B>, SharedLocation, SharedAddressCompanion, SharedAddress, SharedKotlinNothing, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedCurrencyCompanion, SharedCurrency, SharedKotlinArray<T>, SharedCursorBackwardPagingParamsCompanion, SharedCursorBackwardPagingParams, SharedCursorForwardPagingParamsCompanion, SharedCursorForwardPagingParams, SharedFileCompanion, SharedFile, SharedHexColorCompanion, SharedHexColor, SharedLanguageCompanion, SharedLanguage, SharedLocationCompanion, SharedPageInfoCompanion, SharedPageInfo, SharedPagingParamsCompanion, SharedPagingParams, SharedPictureCompanion, SharedPicture, SharedPriceValueCompanion, SharedPriceValue, SharedSemVerCompanion, SharedSemVer, SharedSortOrderCompanion, SharedSortOrder, SharedWire_runtimeInstant, SharedTimeRangeCompanion, SharedTimeRange, SharedDeviceEventType, SharedDeviceEventCompanion, SharedDeviceEvent, SharedDeviceEventTypeCompanion, SharedDeviceEventsArrayCompanion, SharedDeviceEventsArray, SharedToken, SharedGetDeviceEventsRequestCompanion, SharedGetDeviceEventsRequest, SharedTokenError, SharedGetDeviceEventsResponseCompanion, SharedGetDeviceEventsResponse, SharedWire_grpc_clientGrpcClient, SharedGetLeafletsRequest, SharedGetLeafletsResponse, SharedKotlinException, SharedObjectIdCompanion, SharedObjectId, SharedUUIDCompanion, SharedUUID, SharedWeekDayCompanion, SharedWeekDay, SharedProjectSettings, SharedAddOrUpdateSettingsRequestCompanion, SharedAddOrUpdateSettingsRequest, SharedWebUser, SharedAddOrUpdateUserRequestCompanion, SharedAddOrUpdateUserRequest, SharedAddOrUpdateUserRequestV2Companion, SharedAddOrUpdateUserRequestV2, SharedAddOrUpdateUserResponseV2AddUserError, SharedAddOrUpdateUserResponseV2Companion, SharedAddOrUpdateUserResponseV2, SharedAddOrUpdateUserResponseV2AddUserErrorCompanion, SharedCreateRequestCredentials, SharedCreateRequestProjectUserLoginToken, SharedCreateRequestDeviceKey, SharedCreateRequestUserLoginToken, SharedCreateRequestCompanion, SharedCreateRequest, SharedCreateRequestCredentialsCompanion, SharedCreateRequestDeviceKeyCompanion, SharedCreateRequestProjectUserLoginTokenCompanion, SharedCreateRequestUserLoginTokenCompanion, SharedTokenPayload, SharedCreateResponseError, SharedCreateResponseCompanion, SharedCreateResponse, SharedCreateResponseErrorCompanion, SharedDeleteUserRequestCompanion, SharedDeleteUserRequest, SharedDeviceLang, SharedDeviceType, SharedDeviceDataCompanion, SharedDeviceData, SharedDeviceLangCompanion, SharedDeviceResponseError, SharedMobileDevice, SharedDeviceResponseCompanion, SharedDeviceResponse, SharedDeviceResponseErrorCompanion, SharedDeviceTypeCompanion, SharedDevicesResponseCompanion, SharedDevicesResponse, SharedFirebaseConfigResponseCompanion, SharedFirebaseConfigResponse, SharedGetDeviceByTemporaryIdRequestCompanion, SharedGetDeviceByTemporaryIdRequest, SharedGetDeviceRequestCompanion, SharedGetDeviceRequest, SharedGetDevicesRequestCompanion, SharedGetDevicesRequest, SharedGetTokenDeviceRequestCompanion, SharedGetTokenDeviceRequest, SharedGetTokenDeviceResponseCompanion, SharedGetTokenDeviceResponse, SharedGetTokenUserResponseCompanion, SharedGetTokenUserResponse, SharedGetUserForLoginRequestCompanion, SharedGetUserForLoginRequest, SharedGetUserForLoginTokenRequestCompanion, SharedGetUserForLoginTokenRequest, SharedGetUsersDevicesRequestCompanion, SharedGetUsersDevicesRequest, SharedMobileDevicesArray, SharedGetUsersDevicesResponseCompanion, SharedGetUsersDevicesResponse, SharedGetUsersRequestCompanion, SharedGetUsersRequest, SharedGetUsersResponseCompanion, SharedGetUsersResponse, SharedLogoutUserRequestCompanion, SharedLogoutUserRequest, SharedLogoutUserResponseCompanion, SharedLogoutUserResponse, SharedLogoutUsersRequestCompanion, SharedLogoutUsersRequest, SharedMobileDeviceCompanion, SharedMobileDevicesArrayCompanion, SharedPermissionErrorCompanion, SharedPermissionError, SharedProjectRequestCompanion, SharedProjectRequest, SharedProjectSettingsCompanion, SharedProjectSettingsArrayCompanion, SharedProjectSettingsArray, SharedProjectSettingsRequestCompanion, SharedProjectSettingsRequest, SharedProjectsResponseCompanion, SharedProjectsResponse, SharedRefreshRequestCompanion, SharedRefreshRequest, SharedRefreshResponseError, SharedRefreshResponseCompanion, SharedRefreshResponse, SharedRefreshResponseErrorCompanion, SharedRegisterDeviceType, SharedRegisterDeviceRequestCompanion, SharedRegisterDeviceRequest, SharedRegisterError, SharedRegisterDeviceResponseCompanion, SharedRegisterDeviceResponse, SharedRegisterDeviceTypeCompanion, SharedRegisterErrorCompanion, SharedSettingsByAppKeyRequestCompanion, SharedSettingsByAppKeyRequest, SharedSettingsResponseCompanion, SharedSettingsResponse, SharedTokenCompanion, SharedTokenErrorCompanion, SharedTokenPayloadCompanion, SharedUpdateDeviceDataCompanion, SharedUpdateDeviceData, SharedUpdateDeviceRequestCompanion, SharedUpdateDeviceRequest, SharedUpdateTokenDeviceRequestCompanion, SharedUpdateTokenDeviceRequest, SharedUpdateTokenDeviceResponseCompanion, SharedUpdateTokenDeviceResponse, SharedUserResponseCompanion, SharedUserResponse, SharedWebUserData, SharedWebUserCredentials, SharedWebUserCompanion, SharedWebUserCredentialsData, SharedWebUserCredentialsCompanion, SharedWebUserCredentialsDataCompanion, SharedWebUserDataCompanion, SharedDI, SharedKoin_coreModule, SharedKoin_coreKoinApplication, SharedSwiftType, SharedGetLeafletsRequestCompanion, SharedGetLeafletsResponseLeaflets, SharedGetLeafletsResponseCompanion, SharedLeaflet, SharedGetLeafletsResponseLeafletsCompanion, SharedGetMostOpenedLeafletsRequestCompanion, SharedGetMostOpenedLeafletsRequest, SharedGetMostOpenedLeafletsResponseOpenedLeaflets, SharedGetMostOpenedLeafletsResponseCompanion, SharedGetMostOpenedLeafletsResponse, SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflet, SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion, SharedLeafletCompanion, SharedKoin_coreParametersHolder, SharedWire_runtimeFieldEncoding, SharedWire_runtimeSyntax, SharedWire_runtimeProtoAdapterCompanion, SharedWire_runtimeProtoReader, SharedWire_runtimeProtoWriter, SharedWire_runtimeReverseProtoWriter, SharedOkioByteStringCompanion, SharedKotlinByteIterator, SharedOkioBuffer, SharedOkioTimeout, SharedWire_grpc_clientGrpcMethod<S, R>, SharedKotlinThrowable, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreScope, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedWire_runtimeFieldEncodingCompanion, SharedWire_runtimeSyntaxCompanion, SharedKotlinDoubleArray, SharedWire_runtimeDuration, SharedKotlinUnit, SharedKotlinIntArray, SharedKotlinLongArray, SharedKotlinFloatArray, SharedWire_runtimeProtoReaderCompanion, SharedWire_runtimeProtoWriterCompanion, NSData, SharedOkioBufferUnsafeCursor, SharedOkioTimeoutCompanion, SharedOkioIOException, SharedKotlinCancellationException, SharedKoin_coreLockable, SharedKotlinLazyThreadSafetyMode, SharedStately_concurrencyThreadLocalRef<T>, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreInstanceContext, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKotlinDoubleIterator, SharedKotlinIntIterator, SharedKotlinLongIterator, SharedKotlinFloatIterator, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKoin_coreScopeRegistryCompanion;
+@class SharedWire_runtimeProtoAdapter<E>, SharedOkioByteString, SharedKotlinByteArray, SharedWire_runtimeMessage<M, B>, SharedLocation, SharedAddressCompanion, SharedAddress, SharedKotlinNothing, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedCurrencyCompanion, SharedCurrency, SharedKotlinArray<T>, SharedCursorBackwardPagingParamsCompanion, SharedCursorBackwardPagingParams, SharedCursorForwardPagingParamsCompanion, SharedCursorForwardPagingParams, SharedFileCompanion, SharedFile, SharedHexColorCompanion, SharedHexColor, SharedLanguageCompanion, SharedLanguage, SharedLocationCompanion, SharedPageInfoCompanion, SharedPageInfo, SharedPagingParamsCompanion, SharedPagingParams, SharedPictureCompanion, SharedPicture, SharedPriceValueCompanion, SharedPriceValue, SharedSemVerCompanion, SharedSemVer, SharedSortOrderCompanion, SharedSortOrder, SharedWire_runtimeInstant, SharedTimeRangeCompanion, SharedTimeRange, SharedDeviceEventType, SharedDeviceEventCompanion, SharedDeviceEvent, SharedDeviceEventTypeCompanion, SharedDeviceEventsArrayCompanion, SharedDeviceEventsArray, SharedToken, SharedGetDeviceEventsRequestCompanion, SharedGetDeviceEventsRequest, SharedTokenError, SharedGetDeviceEventsResponseCompanion, SharedGetDeviceEventsResponse, SharedWire_grpc_clientGrpcClient, SharedGetLeafletsRequest, SharedGetLeafletsResponse, SharedKotlinException, SharedObjectIdCompanion, SharedObjectId, SharedUUIDCompanion, SharedUUID, SharedWeekDayCompanion, SharedWeekDay, SharedProjectSettings, SharedAddOrUpdateSettingsRequestCompanion, SharedAddOrUpdateSettingsRequest, SharedWebUser, SharedAddOrUpdateUserRequestCompanion, SharedAddOrUpdateUserRequest, SharedAddOrUpdateUserRequestV2Companion, SharedAddOrUpdateUserRequestV2, SharedAddOrUpdateUserResponseV2AddUserError, SharedAddOrUpdateUserResponseV2Companion, SharedAddOrUpdateUserResponseV2, SharedAddOrUpdateUserResponseV2AddUserErrorCompanion, SharedCreateRequestCredentials, SharedCreateRequestProjectUserLoginToken, SharedCreateRequestDeviceKey, SharedCreateRequestUserLoginToken, SharedCreateRequestCompanion, SharedCreateRequest, SharedCreateRequestCredentialsCompanion, SharedCreateRequestDeviceKeyCompanion, SharedCreateRequestProjectUserLoginTokenCompanion, SharedCreateRequestUserLoginTokenCompanion, SharedTokenPayload, SharedCreateResponseError, SharedCreateResponseCompanion, SharedCreateResponse, SharedCreateResponseErrorCompanion, SharedDeleteUserRequestCompanion, SharedDeleteUserRequest, SharedDeviceLang, SharedDeviceType, SharedDeviceDataCompanion, SharedDeviceData, SharedDeviceLangCompanion, SharedDeviceResponseError, SharedMobileDevice, SharedDeviceResponseCompanion, SharedDeviceResponse, SharedDeviceResponseErrorCompanion, SharedDeviceTypeCompanion, SharedDevicesResponseCompanion, SharedDevicesResponse, SharedFirebaseConfigResponseCompanion, SharedFirebaseConfigResponse, SharedGetDeviceByTemporaryIdRequestCompanion, SharedGetDeviceByTemporaryIdRequest, SharedGetDeviceRequestCompanion, SharedGetDeviceRequest, SharedGetDevicesRequestCompanion, SharedGetDevicesRequest, SharedGetTokenDeviceRequestCompanion, SharedGetTokenDeviceRequest, SharedGetTokenDeviceResponseCompanion, SharedGetTokenDeviceResponse, SharedGetTokenUserResponseCompanion, SharedGetTokenUserResponse, SharedGetUserForLoginRequestCompanion, SharedGetUserForLoginRequest, SharedGetUserForLoginTokenRequestCompanion, SharedGetUserForLoginTokenRequest, SharedGetUsersDevicesRequestCompanion, SharedGetUsersDevicesRequest, SharedMobileDevicesArray, SharedGetUsersDevicesResponseCompanion, SharedGetUsersDevicesResponse, SharedGetUsersRequestCompanion, SharedGetUsersRequest, SharedGetUsersResponseCompanion, SharedGetUsersResponse, SharedLogoutUserRequestCompanion, SharedLogoutUserRequest, SharedLogoutUserResponseCompanion, SharedLogoutUserResponse, SharedLogoutUsersRequestCompanion, SharedLogoutUsersRequest, SharedMobileDeviceCompanion, SharedMobileDevicesArrayCompanion, SharedPermissionErrorCompanion, SharedPermissionError, SharedProjectRequestCompanion, SharedProjectRequest, SharedProjectSettingsCompanion, SharedProjectSettingsArrayCompanion, SharedProjectSettingsArray, SharedProjectSettingsRequestCompanion, SharedProjectSettingsRequest, SharedProjectsResponseCompanion, SharedProjectsResponse, SharedRefreshRequestCompanion, SharedRefreshRequest, SharedRefreshResponseError, SharedRefreshResponseCompanion, SharedRefreshResponse, SharedRefreshResponseErrorCompanion, SharedRegisterDeviceType, SharedRegisterDeviceRequestCompanion, SharedRegisterDeviceRequest, SharedRegisterError, SharedRegisterDeviceResponseCompanion, SharedRegisterDeviceResponse, SharedRegisterDeviceTypeCompanion, SharedRegisterErrorCompanion, SharedSettingsByAppKeyRequestCompanion, SharedSettingsByAppKeyRequest, SharedSettingsResponseCompanion, SharedSettingsResponse, SharedTokenCompanion, SharedTokenErrorCompanion, SharedTokenPayloadCompanion, SharedUpdateDeviceDataCompanion, SharedUpdateDeviceData, SharedUpdateDeviceRequestCompanion, SharedUpdateDeviceRequest, SharedUpdateTokenDeviceRequestCompanion, SharedUpdateTokenDeviceRequest, SharedUpdateTokenDeviceResponseCompanion, SharedUpdateTokenDeviceResponse, SharedUserResponseCompanion, SharedUserResponse, SharedWebUserData, SharedWebUserCredentials, SharedWebUserCompanion, SharedWebUserCredentialsData, SharedWebUserCredentialsCompanion, SharedWebUserCredentialsDataCompanion, SharedWebUserDataCompanion, SharedDI, SharedKoin_coreModule, SharedKoin_coreKoinApplication, SharedSwiftType, SharedGetLeafletsRequestCompanion, SharedGetLeafletsResponseLeaflets, SharedGetLeafletsResponseCompanion, SharedLeaflet, SharedGetLeafletsResponseLeafletsCompanion, SharedGetMostOpenedLeafletsRequestCompanion, SharedGetMostOpenedLeafletsRequest, SharedGetMostOpenedLeafletsResponseOpenedLeaflets, SharedGetMostOpenedLeafletsResponseCompanion, SharedGetMostOpenedLeafletsResponse, SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflet, SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion, SharedLeafletCompanion, SharedKoin_coreParametersHolder, SharedKoin_coreScope, SharedWire_runtimeFieldEncoding, SharedWire_runtimeSyntax, SharedWire_runtimeProtoAdapterCompanion, SharedWire_runtimeProtoReader, SharedWire_runtimeProtoWriter, SharedWire_runtimeReverseProtoWriter, SharedOkioByteStringCompanion, SharedKotlinByteIterator, SharedOkioBuffer, SharedOkioTimeout, SharedWire_grpc_clientGrpcMethod<S, R>, SharedKotlinThrowable, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreLockable, SharedKotlinLazyThreadSafetyMode, SharedStately_concurrencyThreadLocalRef<T>, SharedWire_runtimeFieldEncodingCompanion, SharedWire_runtimeSyntaxCompanion, SharedKotlinDoubleArray, SharedWire_runtimeDuration, SharedKotlinUnit, SharedKotlinIntArray, SharedKotlinLongArray, SharedKotlinFloatArray, SharedWire_runtimeProtoReaderCompanion, SharedWire_runtimeProtoWriterCompanion, NSData, SharedOkioBufferUnsafeCursor, SharedOkioTimeoutCompanion, SharedOkioIOException, SharedKotlinCancellationException, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreInstanceContext, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKotlinDoubleIterator, SharedKotlinIntIterator, SharedKotlinLongIterator, SharedKotlinFloatIterator, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKoin_coreScopeRegistryCompanion;
 
-@protocol SharedOkioBufferedSink, SharedKotlinComparable, SharedWire_runtimeWireEnum, SharedWire_grpc_clientGrpcCall, SharedWire_runtimeService, SharedDeviceEventsClient, SharedLeafletSuspendClient, SharedLeafletCallBackClient, SharedWire_grpc_clientGrpcStreamingCall, SharedDeviceAdminClient, SharedDeviceRegistrationClient, SharedDeviceServiceClient, SharedIdentityServiceClient, SharedProjectSettingsAdminClient, SharedProjectSettingsServiceClient, SharedWebUsersPrivateServiceClient, SharedWebUsersPrivateServiceV2Client, SharedWebUsersServiceClient, SharedPlatform, SharedKotlinKClass, SharedAnalyticsClient, SharedPublicClient, SharedKoin_coreQualifier, SharedOkioBufferedSource, SharedOkioSource, SharedOkioCloseable, SharedOkioSink, SharedKotlinIterator, SharedWire_grpc_clientGrpcCallCallback, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreReceiveChannel, SharedWire_runtimeMessageSink, SharedWire_runtimeMessageSource, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinCoroutineContext, SharedKotlinLazy, SharedKoin_coreScopeCallback, SharedKoin_coreKoinScopeComponent, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreSelectClause, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKoin_coreKoinComponent, SharedKoin_coreKoinExtension, SharedKotlinx_coroutines_coreDisposableHandle;
+@protocol SharedOkioBufferedSink, SharedKotlinComparable, SharedWire_runtimeWireEnum, SharedWire_grpc_clientGrpcCall, SharedWire_runtimeService, SharedDeviceEventsClient, SharedLeafletSuspendClient, SharedLeafletCallBackClient, SharedWire_grpc_clientGrpcStreamingCall, SharedDeviceAdminClient, SharedDeviceRegistrationClient, SharedDeviceServiceClient, SharedIdentityServiceClient, SharedProjectSettingsAdminClient, SharedProjectSettingsServiceClient, SharedWebUsersPrivateServiceClient, SharedWebUsersPrivateServiceV2Client, SharedWebUsersServiceClient, SharedPlatform, SharedKotlinKClass, SharedAnalyticsClient, SharedPublicClient, SharedKoin_coreQualifier, SharedNativeTestDependency, SharedOkioBufferedSource, SharedOkioSource, SharedOkioCloseable, SharedOkioSink, SharedKotlinIterator, SharedWire_grpc_clientGrpcCallCallback, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreReceiveChannel, SharedWire_runtimeMessageSink, SharedWire_runtimeMessageSource, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinLazy, SharedKoin_coreScopeCallback, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinCoroutineContext, SharedKoin_coreKoinScopeComponent, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreSelectClause, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKoin_coreKoinComponent, SharedKoin_coreKoinExtension, SharedKotlinx_coroutines_coreDisposableHandle;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -2928,6 +2928,12 @@ __attribute__((swift_name("DI")))
 - (void)doInitDINativeModule:(SharedKoin_coreModule *)nativeModule appDeclaration:(void (^)(SharedKoin_coreKoinApplication *))appDeclaration __attribute__((swift_name("doInitDI(nativeModule:appDeclaration:)")));
 @end
 
+__attribute__((swift_name("NativeTestDependency")))
+@protocol SharedNativeTestDependency
+@required
+- (NSString *)greet __attribute__((swift_name("greet()")));
+@end
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SwiftType")))
 @interface SharedSwiftType : SharedBase
@@ -3223,7 +3229,7 @@ __attribute__((swift_name("DIHelpersKt")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("NativeModuleKt")))
 @interface SharedNativeModuleKt : SharedBase
-+ (SharedKoin_coreModule *)makeNativeModule __attribute__((swift_name("makeNativeModule()")));
++ (SharedKoin_coreModule *)makeNativeModuleNativeTestDependency:(id<SharedNativeTestDependency> (^)(SharedKoin_coreScope *))nativeTestDependency __attribute__((swift_name("makeNativeModule(nativeTestDependency:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3626,6 +3632,48 @@ __attribute__((swift_name("Koin_coreParametersHolder")))
 @property int32_t index __attribute__((swift_name("index")));
 @property (readonly) SharedBoolean * _Nullable useIndexedValues __attribute__((swift_name("useIndexedValues")));
 @property (readonly) NSArray<id> *values __attribute__((swift_name("values")));
+@end
+
+__attribute__((swift_name("Koin_coreLockable")))
+@interface SharedKoin_coreLockable : SharedBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreScope")))
+@interface SharedKoin_coreScope : SharedKoin_coreLockable
+- (instancetype)initWithScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier id:(NSString *)id isRoot:(BOOL)isRoot _koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(scopeQualifier:id:isRoot:_koin:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+- (void)close __attribute__((swift_name("close()")));
+- (void)declareInstance:(id _Nullable)instance qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes allowOverride:(BOOL)allowOverride __attribute__((swift_name("declare(instance:qualifier:secondaryTypes:allowOverride:)")));
+- (id)getQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(qualifier:parameters:)")));
+- (id _Nullable)getClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(clazz:qualifier:parameters:)")));
+- (NSArray<id> *)getAll __attribute__((swift_name("getAll()")));
+- (NSArray<id> *)getAllClazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("getAll(clazz:)")));
+- (SharedKoin_coreKoin *)getKoin __attribute__((swift_name("getKoin()")));
+- (id _Nullable)getOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(qualifier:parameters:)")));
+- (id _Nullable)getOrNullClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(clazz:qualifier:parameters:)")));
+- (id)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
+- (id)getPropertyKey:(NSString *)key defaultValue:(id)defaultValue __attribute__((swift_name("getProperty(key:defaultValue:)")));
+- (id _Nullable)getPropertyOrNullKey:(NSString *)key __attribute__((swift_name("getPropertyOrNull(key:)")));
+- (SharedKoin_coreScope *)getScopeScopeID:(NSString *)scopeID __attribute__((swift_name("getScope(scopeID:)")));
+- (id _Nullable)getSource __attribute__((swift_name("getSource()")));
+- (id<SharedKotlinLazy>)injectQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("inject(qualifier:mode:parameters:)")));
+- (id<SharedKotlinLazy>)injectOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("injectOrNull(qualifier:mode:parameters:)")));
+- (BOOL)isNotClosed __attribute__((swift_name("isNotClosed()")));
+- (void)linkToScopes:(SharedKotlinArray<SharedKoin_coreScope *> *)scopes __attribute__((swift_name("linkTo(scopes:)")));
+- (void)registerCallbackCallback:(id<SharedKoin_coreScopeCallback>)callback __attribute__((swift_name("registerCallback(callback:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+- (void)unlinkScopes:(SharedKotlinArray<SharedKoin_coreScope *> *)scopes __attribute__((swift_name("unlink(scopes:)")));
+@property (readonly) SharedStately_concurrencyThreadLocalRef<NSMutableArray<SharedKoin_coreParametersHolder *> *> *_parameterStackLocal __attribute__((swift_name("_parameterStackLocal")));
+@property id _Nullable _source __attribute__((swift_name("_source")));
+@property (readonly) BOOL closed __attribute__((swift_name("closed")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) BOOL isRoot __attribute__((swift_name("isRoot")));
+@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
+@property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4112,48 +4160,6 @@ __attribute__((swift_name("Koin_coreKoinDefinition")))
 @property (readonly) SharedKoin_coreModule *module __attribute__((swift_name("module")));
 @end
 
-__attribute__((swift_name("Koin_coreLockable")))
-@interface SharedKoin_coreLockable : SharedBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreScope")))
-@interface SharedKoin_coreScope : SharedKoin_coreLockable
-- (instancetype)initWithScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier id:(NSString *)id isRoot:(BOOL)isRoot _koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(scopeQualifier:id:isRoot:_koin:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (instancetype)new __attribute__((unavailable));
-- (void)close __attribute__((swift_name("close()")));
-- (void)declareInstance:(id _Nullable)instance qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes allowOverride:(BOOL)allowOverride __attribute__((swift_name("declare(instance:qualifier:secondaryTypes:allowOverride:)")));
-- (id)getQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(qualifier:parameters:)")));
-- (id _Nullable)getClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(clazz:qualifier:parameters:)")));
-- (NSArray<id> *)getAll __attribute__((swift_name("getAll()")));
-- (NSArray<id> *)getAllClazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("getAll(clazz:)")));
-- (SharedKoin_coreKoin *)getKoin __attribute__((swift_name("getKoin()")));
-- (id _Nullable)getOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(qualifier:parameters:)")));
-- (id _Nullable)getOrNullClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(clazz:qualifier:parameters:)")));
-- (id)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
-- (id)getPropertyKey:(NSString *)key defaultValue:(id)defaultValue __attribute__((swift_name("getProperty(key:defaultValue:)")));
-- (id _Nullable)getPropertyOrNullKey:(NSString *)key __attribute__((swift_name("getPropertyOrNull(key:)")));
-- (SharedKoin_coreScope *)getScopeScopeID:(NSString *)scopeID __attribute__((swift_name("getScope(scopeID:)")));
-- (id _Nullable)getSource __attribute__((swift_name("getSource()")));
-- (id<SharedKotlinLazy>)injectQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("inject(qualifier:mode:parameters:)")));
-- (id<SharedKotlinLazy>)injectOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("injectOrNull(qualifier:mode:parameters:)")));
-- (BOOL)isNotClosed __attribute__((swift_name("isNotClosed()")));
-- (void)linkToScopes:(SharedKotlinArray<SharedKoin_coreScope *> *)scopes __attribute__((swift_name("linkTo(scopes:)")));
-- (void)registerCallbackCallback:(id<SharedKoin_coreScopeCallback>)callback __attribute__((swift_name("registerCallback(callback:)")));
-- (NSString *)description __attribute__((swift_name("description()")));
-- (void)unlinkScopes:(SharedKotlinArray<SharedKoin_coreScope *> *)scopes __attribute__((swift_name("unlink(scopes:)")));
-@property (readonly) SharedStately_concurrencyThreadLocalRef<NSMutableArray<SharedKoin_coreParametersHolder *> *> *_parameterStackLocal __attribute__((swift_name("_parameterStackLocal")));
-@property id _Nullable _source __attribute__((swift_name("_source")));
-@property (readonly) BOOL closed __attribute__((swift_name("closed")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) BOOL isRoot __attribute__((swift_name("isRoot")));
-@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
-@property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
-@end
-
 __attribute__((swift_name("Koin_coreInstanceFactory")))
 @interface SharedKoin_coreInstanceFactory<T> : SharedKoin_coreLockable
 - (instancetype)initWithBeanDefinition:(SharedKoin_coreBeanDefinition<T> *)beanDefinition __attribute__((swift_name("init(beanDefinition:)"))) __attribute__((objc_designated_initializer));
@@ -4266,6 +4272,41 @@ __attribute__((swift_name("Koin_coreKoin")))
 @property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
 @property (readonly) SharedKoin_corePropertyRegistry *propertyRegistry __attribute__((swift_name("propertyRegistry")));
 @property (readonly) SharedKoin_coreScopeRegistry *scopeRegistry __attribute__((swift_name("scopeRegistry")));
+@end
+
+__attribute__((swift_name("KotlinLazy")))
+@protocol SharedKotlinLazy
+@required
+- (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
+@property (readonly) id _Nullable value_ __attribute__((swift_name("value_")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinLazyThreadSafetyMode")))
+@interface SharedKotlinLazyThreadSafetyMode : SharedKotlinEnum<SharedKotlinLazyThreadSafetyMode *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) SharedKotlinLazyThreadSafetyMode *synchronized __attribute__((swift_name("synchronized")));
+@property (class, readonly) SharedKotlinLazyThreadSafetyMode *publication __attribute__((swift_name("publication")));
+@property (class, readonly) SharedKotlinLazyThreadSafetyMode *none __attribute__((swift_name("none")));
++ (SharedKotlinArray<SharedKotlinLazyThreadSafetyMode *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<SharedKotlinLazyThreadSafetyMode *> *entries __attribute__((swift_name("entries")));
+@end
+
+__attribute__((swift_name("Koin_coreScopeCallback")))
+@protocol SharedKoin_coreScopeCallback
+@required
+- (void)onScopeCloseScope:(SharedKoin_coreScope *)scope __attribute__((swift_name("onScopeClose(scope:)")));
+@end
+
+__attribute__((swift_name("Stately_concurrencyThreadLocalRef")))
+@interface SharedStately_concurrencyThreadLocalRef<T> : SharedBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (T _Nullable)get __attribute__((swift_name("get()")));
+- (void)remove __attribute__((swift_name("remove()")));
+- (void)setValue:(T _Nullable)value __attribute__((swift_name("set(value:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4452,41 +4493,6 @@ __attribute__((swift_name("KotlinCoroutineContext")))
 - (id<SharedKotlinCoroutineContextElement> _Nullable)getKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
 - (id<SharedKotlinCoroutineContext>)minusKeyKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
 - (id<SharedKotlinCoroutineContext>)plusContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
-__attribute__((swift_name("KotlinLazy")))
-@protocol SharedKotlinLazy
-@required
-- (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
-@property (readonly) id _Nullable value_ __attribute__((swift_name("value_")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinLazyThreadSafetyMode")))
-@interface SharedKotlinLazyThreadSafetyMode : SharedKotlinEnum<SharedKotlinLazyThreadSafetyMode *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) SharedKotlinLazyThreadSafetyMode *synchronized __attribute__((swift_name("synchronized")));
-@property (class, readonly) SharedKotlinLazyThreadSafetyMode *publication __attribute__((swift_name("publication")));
-@property (class, readonly) SharedKotlinLazyThreadSafetyMode *none __attribute__((swift_name("none")));
-+ (SharedKotlinArray<SharedKotlinLazyThreadSafetyMode *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<SharedKotlinLazyThreadSafetyMode *> *entries __attribute__((swift_name("entries")));
-@end
-
-__attribute__((swift_name("Koin_coreScopeCallback")))
-@protocol SharedKoin_coreScopeCallback
-@required
-- (void)onScopeCloseScope:(SharedKoin_coreScope *)scope __attribute__((swift_name("onScopeClose(scope:)")));
-@end
-
-__attribute__((swift_name("Stately_concurrencyThreadLocalRef")))
-@interface SharedStately_concurrencyThreadLocalRef<T> : SharedBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (T _Nullable)get __attribute__((swift_name("get()")));
-- (void)remove __attribute__((swift_name("remove()")));
-- (void)setValue:(T _Nullable)value __attribute__((swift_name("set(value:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
