@@ -3,13 +3,16 @@
 
 import Shared
 import SwiftUI
+import KoinHelpers
 
 public struct ArticleView: View {
+    let greeting: Greeting = inject()
+    
     public init() {
         
     }
     
     public var body: some View {
-        Text("Article")
+        Text(greeting.greet())
     }
 }
