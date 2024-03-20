@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.skie)
 }
 
 kotlin {
@@ -27,6 +28,9 @@ kotlin {
             isStatic = true
             export(projects.featureA)
             export(projects.grpcTest)
+            export(projects.homescreen.homescreenUiLogic)
+            export(libs.essenty)
+            export(libs.decompose)
             xc.add(this)
         }
     }
@@ -35,6 +39,8 @@ kotlin {
         commonMain.dependencies {
             api(projects.featureA)
             api(projects.grpcTest)
+            api(projects.homescreen.homescreenUiLogic)
+            api(libs.essenty)
             implementation(libs.koin.core)
         }
         commonTest.dependencies {
