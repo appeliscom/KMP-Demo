@@ -4,10 +4,15 @@ import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.KoinAppDeclaration
 
-object DI {
-    fun initDI(nativeModule: Module, appDeclaration: KoinAppDeclaration = {}) {
+internal object DI {
+    fun initDI(
+        nativeModule: Module,
+        appDeclaration: KoinAppDeclaration?) {
         startKoin {
-            appDeclaration()
+            if (appDeclaration != null) {
+                // AppDeclaration allows custom setup from where initDI is called
+                appDeclaration()
+            }
             modules(nativeModule, sharedModule)
         }
     }
