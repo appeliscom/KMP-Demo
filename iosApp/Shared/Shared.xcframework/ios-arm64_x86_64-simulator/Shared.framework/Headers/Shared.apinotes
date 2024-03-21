@@ -506,6 +506,58 @@ Classes:
       Type: "NSString * _Nullable"
     - Position: 1
       Type: "SharedKotlinThrowable * _Nullable"
+- Name: "SharedKotlinLazyThreadSafetyMode"
+  SwiftBridge: "KotlinLazyThreadSafetyMode"
+  SwiftName: "__KotlinLazyThreadSafetyMode"
+  SwiftPrivate: true
+  Properties:
+  - Name: "name"
+    PropertyKind: "Instance"
+    SwiftName: "name"
+    Type: "NSString * _Nonnull"
+  - Name: "ordinal"
+    PropertyKind: "Instance"
+    SwiftName: "ordinal"
+    Type: "int32_t"
+  - Name: "synchronized"
+    PropertyKind: "Class"
+    SwiftName: "synchronized"
+    Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+  - Name: "publication"
+    PropertyKind: "Class"
+    SwiftName: "publication"
+    Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+  - Name: "none"
+    PropertyKind: "Class"
+    SwiftName: "none"
+    Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+  Methods:
+  - Selector: "compareToOther:"
+    MethodKind: "Instance"
+    SwiftName: "compareTo(other:)"
+    ResultType: "int32_t"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "initWithName:ordinal:"
+    MethodKind: "Instance"
+    SwiftName: "init(name:ordinal:)"
+    Availability: "nonswift"
 - Name: "SharedKotlinByteIterator"
   SwiftName: "KotlinByteIterator"
   Methods:
@@ -583,58 +635,6 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "toString()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedKotlinLazyThreadSafetyMode"
-  SwiftBridge: "KotlinLazyThreadSafetyMode"
-  SwiftName: "__KotlinLazyThreadSafetyMode"
-  SwiftPrivate: true
-  Properties:
-  - Name: "name"
-    PropertyKind: "Instance"
-    SwiftName: "name"
-    Type: "NSString * _Nonnull"
-  - Name: "ordinal"
-    PropertyKind: "Instance"
-    SwiftName: "ordinal"
-    Type: "int32_t"
-  - Name: "synchronized"
-    PropertyKind: "Class"
-    SwiftName: "synchronized"
-    Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-  - Name: "publication"
-    PropertyKind: "Class"
-    SwiftName: "publication"
-    Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-  - Name: "none"
-    PropertyKind: "Class"
-    SwiftName: "none"
-    Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-  Methods:
-  - Selector: "compareToOther:"
-    MethodKind: "Instance"
-    SwiftName: "compareTo(other:)"
-    ResultType: "int32_t"
-    Parameters:
-    - Position: 0
-      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "initWithName:ordinal:"
-    MethodKind: "Instance"
-    SwiftName: "init(name:ordinal:)"
-    Availability: "nonswift"
 - Name: "SharedKotlinUnit"
   SwiftName: "KotlinUnit"
   Methods:
@@ -13318,6 +13318,266 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "getClazz()"
     ResultType: "id<SharedKotlinKClass> _Nonnull"
+- Name: "SharedAppStartupViewModel"
+  SwiftName: "AppStartupViewModel"
+  Properties:
+  - Name: "uiEvents"
+    PropertyKind: "Instance"
+    SwiftName: "uiEvents"
+    Type: "SharedSkieKotlinFlow<SharedKotlinNothing *> * _Nonnull"
+  - Name: "viewModelScope"
+    PropertyKind: "Instance"
+    SwiftName: "viewModelScope"
+    Type: "id<SharedKotlinx_coroutines_coreCoroutineScope> _Nonnull"
+  - Name: "viewState"
+    PropertyKind: "Instance"
+    SwiftName: "viewState"
+    Type: "SharedSkieKotlinMutableStateFlow<SharedAppStartupViewState *> * _Nonnull"
+  Methods:
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getKoin"
+    MethodKind: "Instance"
+    SwiftName: "getKoin()"
+    ResultType: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onDestroy"
+    MethodKind: "Instance"
+    SwiftName: "onDestroy()"
+    ResultType: "void"
+  - Selector: "sendUiEventEvent:"
+    MethodKind: "Instance"
+    SwiftName: "sendUiEvent(event:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinNothing * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedAppStartupViewState"
+  SwiftName: "AppStartupViewState"
+  Methods:
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootDestination"
+  SwiftName: "RootDestination"
+  Methods:
+  - Selector: "createComponentComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "createComponent(componentContext:)"
+    ResultType: "SharedRootEntry * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootDestinationAppStartup"
+  SwiftName: "RootDestination.AppStartup"
+  Methods:
+  - Selector: "createComponentComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "createComponent(componentContext:)"
+    ResultType: "SharedRootEntry * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "serializer"
+    MethodKind: "Instance"
+    SwiftName: "serializer()"
+    ResultType: "id<SharedKotlinx_serialization_coreKSerializer> _Nonnull"
+  - Selector: "serializerTypeParamsSerializers:"
+    MethodKind: "Instance"
+    SwiftName: "serializer(typeParamsSerializers:)"
+    ResultType: "id<SharedKotlinx_serialization_coreKSerializer> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<id<SharedKotlinx_serialization_coreKSerializer>> * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootDestinationCompanion"
+  SwiftName: "RootDestination.Companion"
+  Methods:
+  - Selector: "equalsOther:"
+    MethodKind: "Instance"
+    SwiftName: "equals(other:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hashCode"
+    MethodKind: "Instance"
+    SwiftName: "hashCode()"
+    ResultType: "int32_t"
+  - Selector: "serializer"
+    MethodKind: "Instance"
+    SwiftName: "serializer()"
+    ResultType: "id<SharedKotlinx_serialization_coreKSerializer> _Nonnull"
+  - Selector: "serializerTypeParamsSerializers:"
+    MethodKind: "Instance"
+    SwiftName: "serializer(typeParamsSerializers:)"
+    ResultType: "id<SharedKotlinx_serialization_coreKSerializer> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<id<SharedKotlinx_serialization_coreKSerializer>> * _Nonnull"
+  - Selector: "toString"
+    MethodKind: "Instance"
+    SwiftName: "toString()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootEntry"
+  SwiftName: "RootEntry"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootEntryAppStartup"
+  SwiftName: "RootEntry.AppStartup"
+  Properties:
+  - Name: "screen"
+    PropertyKind: "Instance"
+    SwiftName: "screen"
+    Type: "id<SharedAppStartupScreen> _Nonnull"
+  Methods:
+  - Selector: "initWithScreen:"
+    MethodKind: "Instance"
+    SwiftName: "init(screen:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedAppStartupScreen> _Nonnull"
+  - Selector: "doCopyScreen:"
+    MethodKind: "Instance"
+    SwiftName: "doCopy(screen:)"
+    ResultType: "SharedRootEntryAppStartup * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedAppStartupScreen> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootNavigationFactory"
+  SwiftName: "RootNavigationFactory"
+  Methods:
+  - Selector: "createComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "create(componentContext:)"
+    ResultType: "id<SharedRootNavigation> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootNavigationViewState"
+  SwiftName: "RootNavigationViewState"
+  Methods:
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
 - Name: "SharedPlatform_iosKt"
   SwiftName: "Platform_iosKt"
   Methods:
@@ -13356,53 +13616,71 @@ Classes:
     Parameters:
     - Position: 0
       Type: "id<SharedNativeTestDependency> _Nonnull (^ _Nonnull)(SharedKoin_coreScope * _Nonnull)"
-- Name: "SharedHomescreenTestClass"
-  SwiftName: "HomescreenTestClass"
+- Name: "SharedAppStartupModuleKt"
+  SwiftName: "AppStartupModuleKt"
+  Properties:
+  - Name: "appStartupUILogicModule"
+    PropertyKind: "Class"
+    SwiftName: "appStartupUILogicModule"
+    Type: "SharedKoin_coreModule * _Nonnull"
+- Name: "SharedNavigationRootModuleKt"
+  SwiftName: "NavigationRootModuleKt"
+  Properties:
+  - Name: "rootUILogicModule"
+    PropertyKind: "Class"
+    SwiftName: "rootUILogicModule"
+    Type: "SharedKoin_coreModule * _Nonnull"
+- Name: "SharedSharedViewModel"
+  SwiftName: "SharedViewModel"
+  Properties:
+  - Name: "uiEvents"
+    PropertyKind: "Instance"
+    SwiftName: "uiEvents"
+    Type: "SharedSkieKotlinFlow<UI_EVENT> * _Nonnull"
+  - Name: "viewModelScope"
+    PropertyKind: "Instance"
+    SwiftName: "viewModelScope"
+    Type: "id<SharedKotlinx_coroutines_coreCoroutineScope> _Nonnull"
+  - Name: "viewState"
+    PropertyKind: "Instance"
+    SwiftName: "viewState"
+    Type: "SharedSkieKotlinMutableStateFlow<VS> * _Nonnull"
   Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getKoin"
+    MethodKind: "Instance"
+    SwiftName: "getKoin()"
+    ResultType: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onDestroy"
+    MethodKind: "Instance"
+    SwiftName: "onDestroy()"
+    ResultType: "void"
+  - Selector: "sendUiEventEvent:"
+    MethodKind: "Instance"
+    SwiftName: "sendUiEvent(event:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "UI_EVENT _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
   - Selector: "init"
     MethodKind: "Instance"
     SwiftName: "init()"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedDefaultHomescreenComponent"
-  SwiftName: "DefaultHomescreenComponent"
-  Methods:
-  - Selector: "initWithComponentContext:"
-    MethodKind: "Instance"
-    SwiftName: "init(componentContext:)"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedComponentContext> _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedDefaultRootComponent"
-  SwiftName: "DefaultRootComponent"
+- Name: "SharedViewModelComponent"
+  SwiftName: "ViewModelComponent"
   Properties:
   - Name: "backHandler"
     PropertyKind: "Instance"
@@ -13416,14 +13694,14 @@ Classes:
     PropertyKind: "Instance"
     SwiftName: "lifecycle"
     Type: "id<SharedLifecycle> _Nonnull"
-  - Name: "stack"
-    PropertyKind: "Instance"
-    SwiftName: "stack"
-    Type: "SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> * _Nonnull"
   - Name: "stateKeeper"
     PropertyKind: "Instance"
     SwiftName: "stateKeeper"
     Type: "id<SharedState_keeperStateKeeper> _Nonnull"
+  - Name: "viewModel"
+    PropertyKind: "Instance"
+    SwiftName: "viewModel"
+    Type: "VM _Nonnull"
   Methods:
   - Selector: "initWithComponentContext:"
     MethodKind: "Instance"
@@ -13438,53 +13716,876 @@ Classes:
     Parameters:
     - Position: 0
       Type: "id _Nullable"
+  - Selector: "getKoin"
+    MethodKind: "Instance"
+    SwiftName: "getKoin()"
+    ResultType: "SharedKoin_coreKoin * _Nonnull"
   - Selector: "hash"
     MethodKind: "Instance"
     SwiftName: "hash()"
     ResultType: "NSUInteger"
-  - Selector: "onBackClickedToIndex:"
+  - Selector: "description"
     MethodKind: "Instance"
-    SwiftName: "onBackClicked(toIndex:)"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "viewModelQualifier:mode:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "viewModel(qualifier:mode:parameters:)"
+    ResultType: "id<SharedKotlinLazy> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+- Name: "SharedComponentContextExtKt"
+  SwiftName: "ComponentContextExtKt"
+  Methods:
+  - Selector: "componentCoroutineScope:"
+    MethodKind: "Class"
+    SwiftName: "componentCoroutineScope(_:)"
+    ResultType: "id<SharedKotlinx_coroutines_coreCoroutineScope> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+- Name: "SharedKoin_coreModule"
+  SwiftName: "Koin_coreModule"
+  Properties:
+  - Name: "eagerInstances"
+    PropertyKind: "Instance"
+    SwiftName: "eagerInstances"
+    Type: "SharedMutableSet<SharedKoin_coreSingleInstanceFactory<id> *> * _Nonnull"
+  - Name: "id"
+    PropertyKind: "Instance"
+    SwiftName: "id"
+    Type: "NSString * _Nonnull"
+  - Name: "includedModules"
+    PropertyKind: "Instance"
+    SwiftName: "includedModules"
+    Type: "NSMutableArray<SharedKoin_coreModule *> * _Nonnull"
+  - Name: "isLoaded"
+    PropertyKind: "Instance"
+    SwiftName: "isLoaded"
+    Type: "BOOL"
+  - Name: "mappings"
+    PropertyKind: "Instance"
+    SwiftName: "mappings"
+    Type: "SharedMutableDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> * _Nonnull"
+  Methods:
+  - Selector: "initWith_createdAtStart:"
+    MethodKind: "Instance"
+    SwiftName: "init(_createdAtStart:)"
+    Parameters:
+    - Position: 0
+      Type: "BOOL"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "factoryQualifier:definition:"
+    MethodKind: "Instance"
+    SwiftName: "factory(qualifier:definition:)"
+    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "includesModule:"
+    MethodKind: "Instance"
+    SwiftName: "includes(module:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<SharedKoin_coreModule *> * _Nonnull"
+  - Selector: "includesModule_:"
+    MethodKind: "Instance"
+    SwiftName: "includes(module:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "id _Nonnull"
+  - Selector: "indexPrimaryTypeInstanceFactory:"
+    MethodKind: "Instance"
+    SwiftName: "indexPrimaryType(instanceFactory:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceFactory<id> * _Nonnull"
+  - Selector: "indexSecondaryTypesInstanceFactory:"
+    MethodKind: "Instance"
+    SwiftName: "indexSecondaryTypes(instanceFactory:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceFactory<id> * _Nonnull"
+  - Selector: "plusModules:"
+    MethodKind: "Instance"
+    SwiftName: "plus(modules:)"
+    ResultType: "NSArray<SharedKoin_coreModule *> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
+  - Selector: "plusModule:"
+    MethodKind: "Instance"
+    SwiftName: "plus(module:)"
+    ResultType: "NSArray<SharedKoin_coreModule *> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreModule * _Nonnull"
+  - Selector: "prepareForCreationAtStartInstanceFactory:"
+    MethodKind: "Instance"
+    SwiftName: "prepareForCreationAtStart(instanceFactory:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreSingleInstanceFactory<id> * _Nonnull"
+  - Selector: "scopeQualifier:scopeSet:"
+    MethodKind: "Instance"
+    SwiftName: "scope(qualifier:scopeSet:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+    - Position: 1
+      Type: "void (^ _Nonnull)(SharedKoin_coreScopeDSL * _Nonnull)"
+  - Selector: "scopeScopeSet:"
+    MethodKind: "Instance"
+    SwiftName: "scope(scopeSet:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "void (^ _Nonnull)(SharedKoin_coreScopeDSL * _Nonnull)"
+  - Selector: "singleQualifier:createdAtStart:definition:"
+    MethodKind: "Instance"
+    SwiftName: "single(qualifier:createdAtStart:definition:)"
+    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "BOOL"
+    - Position: 2
+      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKoinApplication"
+  SwiftName: "Koin_coreKoinApplication"
+  Properties:
+  - Name: "koin"
+    PropertyKind: "Instance"
+    SwiftName: "koin"
+    Type: "SharedKoin_coreKoin * _Nonnull"
+  Methods:
+  - Selector: "allowOverrideOverride:"
+    MethodKind: "Instance"
+    SwiftName: "allowOverride(override:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "BOOL"
+  - Selector: "close"
+    MethodKind: "Instance"
+    SwiftName: "close()"
+    ResultType: "void"
+  - Selector: "createEagerInstances"
+    MethodKind: "Instance"
+    SwiftName: "createEagerInstances()"
+    ResultType: "void"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "loggerLogger:"
+    MethodKind: "Instance"
+    SwiftName: "logger(logger:)"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLogger * _Nonnull"
+  - Selector: "modulesModules:"
+    MethodKind: "Instance"
+    SwiftName: "modules(modules:)"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<SharedKoin_coreModule *> * _Nonnull"
+  - Selector: "modulesModules_:"
+    MethodKind: "Instance"
+    SwiftName: "modules(modules:)"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
+  - Selector: "modulesModules__:"
+    MethodKind: "Instance"
+    SwiftName: "modules(modules:)"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreModule * _Nonnull"
+  - Selector: "printLoggerLevel:"
+    MethodKind: "Instance"
+    SwiftName: "printLogger(level:)"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+  - Selector: "propertiesValues:"
+    MethodKind: "Instance"
+    SwiftName: "properties(values:)"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSDictionary<NSString *, id> * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKoinApplicationCompanion"
+  SwiftName: "Koin_coreKoinApplication.Companion"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "doInit"
+    MethodKind: "Instance"
+    SwiftName: "doInit()"
+    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKoin"
+  SwiftName: "Koin_coreKoin"
+  Properties:
+  - Name: "extensionManager"
+    PropertyKind: "Instance"
+    SwiftName: "extensionManager"
+    Type: "SharedKoin_coreExtensionManager * _Nonnull"
+  - Name: "instanceRegistry"
+    PropertyKind: "Instance"
+    SwiftName: "instanceRegistry"
+    Type: "SharedKoin_coreInstanceRegistry * _Nonnull"
+  - Name: "logger"
+    PropertyKind: "Instance"
+    SwiftName: "logger"
+    Type: "SharedKoin_coreLogger * _Nonnull"
+  - Name: "propertyRegistry"
+    PropertyKind: "Instance"
+    SwiftName: "propertyRegistry"
+    Type: "SharedKoin_corePropertyRegistry * _Nonnull"
+  - Name: "scopeRegistry"
+    PropertyKind: "Instance"
+    SwiftName: "scopeRegistry"
+    Type: "SharedKoin_coreScopeRegistry * _Nonnull"
+  Methods:
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+  - Selector: "close"
+    MethodKind: "Instance"
+    SwiftName: "close()"
+    ResultType: "void"
+  - Selector: "createEagerInstances"
+    MethodKind: "Instance"
+    SwiftName: "createEagerInstances()"
+    ResultType: "void"
+  - Selector: "createScopeT:"
+    MethodKind: "Instance"
+    SwiftName: "createScope(t:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreKoinScopeComponent> _Nonnull"
+  - Selector: "createScopeScopeId:"
+    MethodKind: "Instance"
+    SwiftName: "createScope(scopeId:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "createScopeScopeId:source:"
+    MethodKind: "Instance"
+    SwiftName: "createScope(scopeId:source:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "id _Nullable"
+  - Selector: "createScopeScopeId:qualifier:source:"
+    MethodKind: "Instance"
+    SwiftName: "createScope(scopeId:qualifier:source:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+    - Position: 2
+      Type: "id _Nullable"
+  - Selector: "declareInstance:qualifier:secondaryTypes:allowOverride:"
+    MethodKind: "Instance"
+    SwiftName: "declare(instance:qualifier:secondaryTypes:allowOverride:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
+    - Position: 3
+      Type: "BOOL"
+  - Selector: "deletePropertyKey:"
+    MethodKind: "Instance"
+    SwiftName: "deleteProperty(key:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "deleteScopeScopeId:"
+    MethodKind: "Instance"
+    SwiftName: "deleteScope(scopeId:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getClazz:qualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "get(clazz:qualifier:parameters:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getQualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "get(qualifier:parameters:)"
+    ResultType: "id _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getAll"
+    MethodKind: "Instance"
+    SwiftName: "getAll()"
+    ResultType: "NSArray<id> * _Nonnull"
+  - Selector: "getOrCreateScopeScopeId:"
+    MethodKind: "Instance"
+    SwiftName: "getOrCreateScope(scopeId:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getOrCreateScopeScopeId:qualifier:source:"
+    MethodKind: "Instance"
+    SwiftName: "getOrCreateScope(scopeId:qualifier:source:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+    - Position: 2
+      Type: "id _Nullable"
+  - Selector: "getOrNullClazz:qualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "getOrNull(clazz:qualifier:parameters:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getOrNullQualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "getOrNull(qualifier:parameters:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getPropertyKey:"
+    MethodKind: "Instance"
+    SwiftName: "getProperty(key:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getPropertyKey:defaultValue:"
+    MethodKind: "Instance"
+    SwiftName: "getProperty(key:defaultValue:)"
+    ResultType: "id _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "id _Nonnull"
+  - Selector: "getScopeScopeId:"
+    MethodKind: "Instance"
+    SwiftName: "getScope(scopeId:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getScopeOrNullScopeId:"
+    MethodKind: "Instance"
+    SwiftName: "getScopeOrNull(scopeId:)"
+    ResultType: "SharedKoin_coreScope * _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "injectQualifier:mode:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "inject(qualifier:mode:parameters:)"
+    ResultType: "id<SharedKotlinLazy> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "injectOrNullQualifier:mode:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "injectOrNull(qualifier:mode:parameters:)"
+    ResultType: "id<SharedKotlinLazy> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "loadModulesModules:allowOverride:createEagerInstances:"
+    MethodKind: "Instance"
+    SwiftName: "loadModules(modules:allowOverride:createEagerInstances:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
+    - Position: 1
+      Type: "BOOL"
+    - Position: 2
+      Type: "BOOL"
+  - Selector: "setPropertyKey:value:"
+    MethodKind: "Instance"
+    SwiftName: "setProperty(key:value:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "id _Nonnull"
+  - Selector: "setupLoggerLogger:"
+    MethodKind: "Instance"
+    SwiftName: "setupLogger(logger:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLogger * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "unloadModulesModules:"
+    MethodKind: "Instance"
+    SwiftName: "unloadModules(modules:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
+- Name: "SharedKoin_coreParametersHolder"
+  SwiftName: "Koin_coreParametersHolder"
+  Properties:
+  - Name: "index"
+    PropertyKind: "Instance"
+    SwiftName: "index"
+    Type: "int32_t"
+  - Name: "useIndexedValues"
+    PropertyKind: "Instance"
+    SwiftName: "useIndexedValues"
+    Type: "SharedBoolean * _Nullable"
+  - Name: "values"
+    PropertyKind: "Instance"
+    SwiftName: "values"
+    Type: "NSArray<id> * _Nonnull"
+  Methods:
+  - Selector: "initWith_values:useIndexedValues:"
+    MethodKind: "Instance"
+    SwiftName: "init(_values:useIndexedValues:)"
+    Parameters:
+    - Position: 0
+      Type: "NSMutableArray<id> * _Nonnull"
+    - Position: 1
+      Type: "SharedBoolean * _Nullable"
+  - Selector: "addValue:"
+    MethodKind: "Instance"
+    SwiftName: "add(value:)"
+    ResultType: "SharedKoin_coreParametersHolder * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id _Nonnull"
+  - Selector: "component1"
+    MethodKind: "Instance"
+    SwiftName: "component1()"
+    ResultType: "id _Nullable"
+  - Selector: "component2"
+    MethodKind: "Instance"
+    SwiftName: "component2()"
+    ResultType: "id _Nullable"
+  - Selector: "component3"
+    MethodKind: "Instance"
+    SwiftName: "component3()"
+    ResultType: "id _Nullable"
+  - Selector: "component4"
+    MethodKind: "Instance"
+    SwiftName: "component4()"
+    ResultType: "id _Nullable"
+  - Selector: "component5"
+    MethodKind: "Instance"
+    SwiftName: "component5()"
+    ResultType: "id _Nullable"
+  - Selector: "elementAtI:clazz:"
+    MethodKind: "Instance"
+    SwiftName: "elementAt(i:clazz:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "int32_t"
+    - Position: 1
+      Type: "id<SharedKotlinKClass> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "get"
+    MethodKind: "Instance"
+    SwiftName: "get()"
+    ResultType: "id _Nonnull"
+  - Selector: "getI:"
+    MethodKind: "Instance"
+    SwiftName: "get(i:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "int32_t"
+  - Selector: "getOrNull"
+    MethodKind: "Instance"
+    SwiftName: "getOrNull()"
+    ResultType: "id _Nullable"
+  - Selector: "getOrNullClazz:"
+    MethodKind: "Instance"
+    SwiftName: "getOrNull(clazz:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "insertIndex:value:"
+    MethodKind: "Instance"
+    SwiftName: "insert(index:value:)"
+    ResultType: "SharedKoin_coreParametersHolder * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "int32_t"
+    - Position: 1
+      Type: "id _Nonnull"
+  - Selector: "isEmpty"
+    MethodKind: "Instance"
+    SwiftName: "isEmpty()"
+    ResultType: "BOOL"
+  - Selector: "isNotEmpty"
+    MethodKind: "Instance"
+    SwiftName: "isNotEmpty()"
+    ResultType: "BOOL"
+  - Selector: "setI:t:"
+    MethodKind: "Instance"
+    SwiftName: "set(i:t:)"
     ResultType: "void"
     Parameters:
     - Position: 0
       Type: "int32_t"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedRootComponentChild"
-  SwiftName: "RootComponentChild"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
+    - Position: 1
       Type: "id _Nullable"
-  - Selector: "hash"
+  - Selector: "size"
     MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
+    SwiftName: "size()"
+    ResultType: "int32_t"
   - Selector: "description"
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedRootComponentChildHomescreenChild"
-  SwiftName: "RootComponentChild.HomescreenChild"
+- Name: "SharedKoin_coreScope"
+  SwiftName: "Koin_coreScope"
   Properties:
-  - Name: "component"
+  - Name: "_parameterStackLocal"
     PropertyKind: "Instance"
-    SwiftName: "component"
-    Type: "id<SharedHomescreenComponent> _Nonnull"
+    SwiftName: "_parameterStackLocal"
+    Type: "SharedStately_concurrencyThreadLocalRef<NSMutableArray<SharedKoin_coreParametersHolder *> *> * _Nonnull"
+  - Name: "_source"
+    PropertyKind: "Instance"
+    SwiftName: "_source"
+    Type: "id _Nullable"
+  - Name: "closed"
+    PropertyKind: "Instance"
+    SwiftName: "closed"
+    Type: "BOOL"
+  - Name: "id"
+    PropertyKind: "Instance"
+    SwiftName: "id"
+    Type: "NSString * _Nonnull"
+  - Name: "isRoot"
+    PropertyKind: "Instance"
+    SwiftName: "isRoot"
+    Type: "BOOL"
+  - Name: "logger"
+    PropertyKind: "Instance"
+    SwiftName: "logger"
+    Type: "SharedKoin_coreLogger * _Nonnull"
+  - Name: "scopeQualifier"
+    PropertyKind: "Instance"
+    SwiftName: "scopeQualifier"
+    Type: "id<SharedKoin_coreQualifier> _Nonnull"
   Methods:
-  - Selector: "initWithComponent:"
+  - Selector: "initWithScopeQualifier:id:isRoot:_koin:"
     MethodKind: "Instance"
-    SwiftName: "init(component:)"
+    SwiftName: "init(scopeQualifier:id:isRoot:_koin:)"
     Parameters:
     - Position: 0
-      Type: "id<SharedHomescreenComponent> _Nonnull"
+      Type: "Skie__TypeDef__0__id_SharedKoin_coreQualifier_"
+    - Position: 1
+      Type: "NSString * _Nonnull"
+    - Position: 2
+      Type: "BOOL"
+    - Position: 3
+      Type: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "close"
+    MethodKind: "Instance"
+    SwiftName: "close()"
+    ResultType: "void"
+  - Selector: "declareInstance:qualifier:secondaryTypes:allowOverride:"
+    MethodKind: "Instance"
+    SwiftName: "declare(instance:qualifier:secondaryTypes:allowOverride:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
+    - Position: 3
+      Type: "BOOL"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getClazz:qualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "get(clazz:qualifier:parameters:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getQualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "get(qualifier:parameters:)"
+    ResultType: "id _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getAll"
+    MethodKind: "Instance"
+    SwiftName: "getAll()"
+    ResultType: "NSArray<id> * _Nonnull"
+  - Selector: "getAllClazz:"
+    MethodKind: "Instance"
+    SwiftName: "getAll(clazz:)"
+    ResultType: "NSArray<id> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+  - Selector: "getKoin"
+    MethodKind: "Instance"
+    SwiftName: "getKoin()"
+    ResultType: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "getOrNullClazz:qualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "getOrNull(clazz:qualifier:parameters:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getOrNullQualifier:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "getOrNull(qualifier:parameters:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "getPropertyKey:"
+    MethodKind: "Instance"
+    SwiftName: "getProperty(key:)"
+    ResultType: "id _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getPropertyKey:defaultValue:"
+    MethodKind: "Instance"
+    SwiftName: "getProperty(key:defaultValue:)"
+    ResultType: "id _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "id _Nonnull"
+  - Selector: "getPropertyOrNullKey:"
+    MethodKind: "Instance"
+    SwiftName: "getPropertyOrNull(key:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getScopeScopeID:"
+    MethodKind: "Instance"
+    SwiftName: "getScope(scopeID:)"
+    ResultType: "SharedKoin_coreScope * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getSource"
+    MethodKind: "Instance"
+    SwiftName: "getSource()"
+    ResultType: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "injectQualifier:mode:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "inject(qualifier:mode:parameters:)"
+    ResultType: "id<SharedKotlinLazy> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "injectOrNullQualifier:mode:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "injectOrNull(qualifier:mode:parameters:)"
+    ResultType: "id<SharedKotlinLazy> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
+  - Selector: "isNotClosed"
+    MethodKind: "Instance"
+    SwiftName: "isNotClosed()"
+    ResultType: "BOOL"
+  - Selector: "linkToScopes:"
+    MethodKind: "Instance"
+    SwiftName: "linkTo(scopes:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<SharedKoin_coreScope *> * _Nonnull"
+  - Selector: "registerCallbackCallback:"
+    MethodKind: "Instance"
+    SwiftName: "registerCallback(callback:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreScopeCallback> _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "unlinkScopes:"
+    MethodKind: "Instance"
+    SwiftName: "unlink(scopes:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<SharedKoin_coreScope *> * _Nonnull"
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+    Availability: "nonswift"
+- Name: "SharedKoin_coreLockable"
+  SwiftName: "Koin_coreLockable"
+  Methods:
   - Selector: "isEqual:"
     MethodKind: "Instance"
     SwiftName: "isEqual(_:)"
@@ -13500,13 +14601,845 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedHomescreenUILogicModuleKt"
-  SwiftName: "HomescreenUILogicModuleKt"
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+- Name: "SharedKoin_coreKoinDefinition"
+  SwiftName: "Koin_coreKoinDefinition"
   Properties:
-  - Name: "homescreenUILogicModule"
-    PropertyKind: "Class"
-    SwiftName: "homescreenUILogicModule"
+  - Name: "factory"
+    PropertyKind: "Instance"
+    SwiftName: "factory"
+    Type: "SharedKoin_coreInstanceFactory<R> * _Nonnull"
+  - Name: "module"
+    PropertyKind: "Instance"
+    SwiftName: "module"
     Type: "SharedKoin_coreModule * _Nonnull"
+  Methods:
+  - Selector: "initWithModule:factory:"
+    MethodKind: "Instance"
+    SwiftName: "init(module:factory:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreModule * _Nonnull"
+    - Position: 1
+      Type: "SharedKoin_coreInstanceFactory<R> * _Nonnull"
+  - Selector: "doCopyModule:factory:"
+    MethodKind: "Instance"
+    SwiftName: "doCopy(module:factory:)"
+    ResultType: "SharedKoin_coreKoinDefinition<R> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreModule * _Nonnull"
+    - Position: 1
+      Type: "SharedKoin_coreInstanceFactory<R> * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreInstanceFactory"
+  SwiftName: "Koin_coreInstanceFactory"
+  Properties:
+  - Name: "beanDefinition"
+    PropertyKind: "Instance"
+    SwiftName: "beanDefinition"
+    Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
+  Methods:
+  - Selector: "initWithBeanDefinition:"
+    MethodKind: "Instance"
+    SwiftName: "init(beanDefinition:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
+  - Selector: "createContext:"
+    MethodKind: "Instance"
+    SwiftName: "create(context:)"
+    ResultType: "T _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceContext * _Nonnull"
+  - Selector: "dropScope:"
+    MethodKind: "Instance"
+    SwiftName: "drop(scope:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreScope * _Nullable"
+  - Selector: "dropAll"
+    MethodKind: "Instance"
+    SwiftName: "dropAll()"
+    ResultType: "void"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getContext:"
+    MethodKind: "Instance"
+    SwiftName: "get(context:)"
+    ResultType: "T _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceContext * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "isCreatedContext:"
+    MethodKind: "Instance"
+    SwiftName: "isCreated(context:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceContext * _Nullable"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+    Availability: "nonswift"
+- Name: "SharedKoin_coreInstanceFactoryCompanion"
+  SwiftName: "Koin_coreInstanceFactoryCompanion"
+  Properties:
+  - Name: "ERROR_SEPARATOR"
+    PropertyKind: "Instance"
+    SwiftName: "ERROR_SEPARATOR"
+    Type: "NSString * _Nonnull"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreSingleInstanceFactory"
+  SwiftName: "Koin_coreSingleInstanceFactory"
+  Properties:
+  - Name: "beanDefinition"
+    PropertyKind: "Instance"
+    SwiftName: "beanDefinition"
+    Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
+  Methods:
+  - Selector: "initWithBeanDefinition:"
+    MethodKind: "Instance"
+    SwiftName: "init(beanDefinition:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
+  - Selector: "createContext:"
+    MethodKind: "Instance"
+    SwiftName: "create(context:)"
+    ResultType: "T _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceContext * _Nonnull"
+  - Selector: "dropScope:"
+    MethodKind: "Instance"
+    SwiftName: "drop(scope:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreScope * _Nullable"
+  - Selector: "dropAll"
+    MethodKind: "Instance"
+    SwiftName: "dropAll()"
+    ResultType: "void"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getContext:"
+    MethodKind: "Instance"
+    SwiftName: "get(context:)"
+    ResultType: "T _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceContext * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "isCreatedContext:"
+    MethodKind: "Instance"
+    SwiftName: "isCreated(context:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreInstanceContext * _Nullable"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+    Availability: "nonswift"
+- Name: "SharedKoin_coreScopeDSL"
+  SwiftName: "Koin_coreScopeDSL"
+  Properties:
+  - Name: "module"
+    PropertyKind: "Instance"
+    SwiftName: "module"
+    Type: "SharedKoin_coreModule * _Nonnull"
+  - Name: "scopeQualifier"
+    PropertyKind: "Instance"
+    SwiftName: "scopeQualifier"
+    Type: "id<SharedKoin_coreQualifier> _Nonnull"
+  Methods:
+  - Selector: "initWithScopeQualifier:module:"
+    MethodKind: "Instance"
+    SwiftName: "init(scopeQualifier:module:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+    - Position: 1
+      Type: "SharedKoin_coreModule * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "factoryQualifier:definition:"
+    MethodKind: "Instance"
+    SwiftName: "factory(qualifier:definition:)"
+    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "scopedQualifier:definition:"
+    MethodKind: "Instance"
+    SwiftName: "scoped(qualifier:definition:)"
+    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 1
+      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreLogger"
+  SwiftName: "Koin_coreLogger"
+  Properties:
+  - Name: "level"
+    PropertyKind: "Instance"
+    SwiftName: "level"
+    Type: "SharedKoin_coreLevel * _Nonnull"
+  Methods:
+  - Selector: "initWithLevel:"
+    MethodKind: "Instance"
+    SwiftName: "init(level:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+  - Selector: "debugMsg:"
+    MethodKind: "Instance"
+    SwiftName: "debug(msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "displayLevel:msg:"
+    MethodKind: "Instance"
+    SwiftName: "display(level:msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+    - Position: 1
+      Type: "NSString * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "errorMsg:"
+    MethodKind: "Instance"
+    SwiftName: "error(msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "infoMsg:"
+    MethodKind: "Instance"
+    SwiftName: "info(msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "isAtLvl:"
+    MethodKind: "Instance"
+    SwiftName: "isAt(lvl:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+  - Selector: "logLvl:msg:"
+    MethodKind: "Instance"
+    SwiftName: "log(lvl:msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+    - Position: 1
+      Type: "NSString * _Nonnull (^ _Nonnull)(void)"
+  - Selector: "logLvl:msg_:"
+    MethodKind: "Instance"
+    SwiftName: "log(lvl:msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+    - Position: 1
+      Type: "NSString * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "warnMsg:"
+    MethodKind: "Instance"
+    SwiftName: "warn(msg:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+- Name: "SharedKoin_coreLevel"
+  SwiftBridge: "Koin_coreLevel"
+  SwiftName: "__Koin_coreLevel"
+  SwiftPrivate: true
+  Properties:
+  - Name: "name"
+    PropertyKind: "Instance"
+    SwiftName: "name"
+    Type: "NSString * _Nonnull"
+  - Name: "ordinal"
+    PropertyKind: "Instance"
+    SwiftName: "ordinal"
+    Type: "int32_t"
+  - Name: "debug"
+    PropertyKind: "Class"
+    SwiftName: "debug"
+    Type: "SharedKoin_coreLevel * _Nonnull"
+  - Name: "info"
+    PropertyKind: "Class"
+    SwiftName: "info"
+    Type: "SharedKoin_coreLevel * _Nonnull"
+  - Name: "warning"
+    PropertyKind: "Class"
+    SwiftName: "warning"
+    Type: "SharedKoin_coreLevel * _Nonnull"
+  - Name: "error"
+    PropertyKind: "Class"
+    SwiftName: "error"
+    Type: "SharedKoin_coreLevel * _Nonnull"
+  - Name: "none"
+    PropertyKind: "Class"
+    SwiftName: "none"
+    Type: "SharedKoin_coreLevel * _Nonnull"
+  Methods:
+  - Selector: "compareToOther:"
+    MethodKind: "Instance"
+    SwiftName: "compareTo(other:)"
+    ResultType: "int32_t"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLevel * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "initWithName:ordinal:"
+    MethodKind: "Instance"
+    SwiftName: "init(name:ordinal:)"
+    Availability: "nonswift"
+- Name: "SharedKoin_coreExtensionManager"
+  SwiftName: "Koin_coreExtensionManager"
+  Methods:
+  - Selector: "initWith_koin:"
+    MethodKind: "Instance"
+    SwiftName: "init(_koin:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "close"
+    MethodKind: "Instance"
+    SwiftName: "close()"
+    ResultType: "void"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getExtensionId:"
+    MethodKind: "Instance"
+    SwiftName: "getExtension(id:)"
+    ResultType: "Skie__TypeDef__1__id_SharedKoin_coreKoinExtension_"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "getExtensionOrNullId:"
+    MethodKind: "Instance"
+    SwiftName: "getExtensionOrNull(id:)"
+    ResultType: "Skie__TypeDef__2__id_SharedKoin_coreKoinExtension___Nullable"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "registerExtensionId:extension:"
+    MethodKind: "Instance"
+    SwiftName: "registerExtension(id:extension:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+    - Position: 1
+      Type: "Skie__TypeDef__1__id_SharedKoin_coreKoinExtension_"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreInstanceRegistry"
+  SwiftName: "Koin_coreInstanceRegistry"
+  Properties:
+  - Name: "_koin"
+    PropertyKind: "Instance"
+    SwiftName: "_koin"
+    Type: "SharedKoin_coreKoin * _Nonnull"
+  - Name: "instances"
+    PropertyKind: "Instance"
+    SwiftName: "instances"
+    Type: "NSDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> * _Nonnull"
+  Methods:
+  - Selector: "initWith_koin:"
+    MethodKind: "Instance"
+    SwiftName: "init(_koin:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "saveMappingAllowOverride:mapping:factory:logWarning:"
+    MethodKind: "Instance"
+    SwiftName: "saveMapping(allowOverride:mapping:factory:logWarning:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "BOOL"
+    - Position: 1
+      Type: "NSString * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreInstanceFactory<id> * _Nonnull"
+    - Position: 3
+      Type: "BOOL"
+  - Selector: "size"
+    MethodKind: "Instance"
+    SwiftName: "size()"
+    ResultType: "int32_t"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_corePropertyRegistry"
+  SwiftName: "Koin_corePropertyRegistry"
+  Methods:
+  - Selector: "initWith_koin:"
+    MethodKind: "Instance"
+    SwiftName: "init(_koin:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "close"
+    MethodKind: "Instance"
+    SwiftName: "close()"
+    ResultType: "void"
+  - Selector: "deletePropertyKey:"
+    MethodKind: "Instance"
+    SwiftName: "deleteProperty(key:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getPropertyKey:"
+    MethodKind: "Instance"
+    SwiftName: "getProperty(key:)"
+    ResultType: "id _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "NSString * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "savePropertiesProperties:"
+    MethodKind: "Instance"
+    SwiftName: "saveProperties(properties:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSDictionary<NSString *, id> * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreScopeRegistry"
+  SwiftName: "Koin_coreScopeRegistry"
+  Properties:
+  - Name: "rootScope"
+    PropertyKind: "Instance"
+    SwiftName: "rootScope"
+    Type: "SharedKoin_coreScope * _Nonnull"
+  - Name: "scopeDefinitions"
+    PropertyKind: "Instance"
+    SwiftName: "scopeDefinitions"
+    Type: "NSSet<id<SharedKoin_coreQualifier>> * _Nonnull"
+  Methods:
+  - Selector: "initWith_koin:"
+    MethodKind: "Instance"
+    SwiftName: "init(_koin:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "loadScopesModules:"
+    MethodKind: "Instance"
+    SwiftName: "loadScopes(modules:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSSet<SharedKoin_coreModule *> * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreScopeRegistryCompanion"
+  SwiftName: "Koin_coreScopeRegistry.Companion"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreBeanDefinition"
+  SwiftName: "Koin_coreBeanDefinition"
+  Properties:
+  - Name: "callbacks"
+    PropertyKind: "Instance"
+    SwiftName: "callbacks"
+    Type: "SharedKoin_coreCallbacks<T> * _Nonnull"
+  - Name: "definition"
+    PropertyKind: "Instance"
+    SwiftName: "definition"
+    Type: "T _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+  - Name: "kind"
+    PropertyKind: "Instance"
+    SwiftName: "kind"
+    Type: "SharedKoin_coreKind * _Nonnull"
+  - Name: "primaryType"
+    PropertyKind: "Instance"
+    SwiftName: "primaryType"
+    Type: "id<SharedKotlinKClass> _Nonnull"
+  - Name: "qualifier"
+    PropertyKind: "Instance"
+    SwiftName: "qualifier"
+    Type: "id<SharedKoin_coreQualifier> _Nullable"
+  - Name: "scopeQualifier"
+    PropertyKind: "Instance"
+    SwiftName: "scopeQualifier"
+    Type: "id<SharedKoin_coreQualifier> _Nonnull"
+  - Name: "secondaryTypes"
+    PropertyKind: "Instance"
+    SwiftName: "secondaryTypes"
+    Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
+  Methods:
+  - Selector: "initWithScopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:"
+    MethodKind: "Instance"
+    SwiftName: "init(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 2
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 3
+      Type: "T _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+    - Position: 4
+      Type: "SharedKoin_coreKind * _Nonnull"
+    - Position: 5
+      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
+  - Selector: "doCopyScopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:"
+    MethodKind: "Instance"
+    SwiftName: "doCopy(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)"
+    ResultType: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 2
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 3
+      Type: "T _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
+    - Position: 4
+      Type: "SharedKoin_coreKind * _Nonnull"
+    - Position: 5
+      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hasTypeClazz:"
+    MethodKind: "Instance"
+    SwiftName: "hasType(clazz:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "isClazz:qualifier:scopeDefinition:"
+    MethodKind: "Instance"
+    SwiftName: "is(clazz:qualifier:scopeDefinition:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+    - Position: 1
+      Type: "id<SharedKoin_coreQualifier> _Nullable"
+    - Position: 2
+      Type: "id<SharedKoin_coreQualifier> _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreInstanceContext"
+  SwiftName: "Koin_coreInstanceContext"
+  Properties:
+  - Name: "logger"
+    PropertyKind: "Instance"
+    SwiftName: "logger"
+    Type: "SharedKoin_coreLogger * _Nonnull"
+  - Name: "parameters"
+    PropertyKind: "Instance"
+    SwiftName: "parameters"
+    Type: "SharedKoin_coreParametersHolder * _Nullable"
+  - Name: "scope"
+    PropertyKind: "Instance"
+    SwiftName: "scope"
+    Type: "SharedKoin_coreScope * _Nonnull"
+  Methods:
+  - Selector: "initWithLogger:scope:parameters:"
+    MethodKind: "Instance"
+    SwiftName: "init(logger:scope:parameters:)"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreLogger * _Nonnull"
+    - Position: 1
+      Type: "SharedKoin_coreScope * _Nonnull"
+    - Position: 2
+      Type: "SharedKoin_coreParametersHolder * _Nullable"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKind"
+  SwiftBridge: "Koin_coreKind"
+  SwiftName: "__Koin_coreKind"
+  SwiftPrivate: true
+  Properties:
+  - Name: "name"
+    PropertyKind: "Instance"
+    SwiftName: "name"
+    Type: "NSString * _Nonnull"
+  - Name: "ordinal"
+    PropertyKind: "Instance"
+    SwiftName: "ordinal"
+    Type: "int32_t"
+  - Name: "singleton"
+    PropertyKind: "Class"
+    SwiftName: "singleton"
+    Type: "SharedKoin_coreKind * _Nonnull"
+  - Name: "factory"
+    PropertyKind: "Class"
+    SwiftName: "factory"
+    Type: "SharedKoin_coreKind * _Nonnull"
+  - Name: "scoped"
+    PropertyKind: "Class"
+    SwiftName: "scoped"
+    Type: "SharedKoin_coreKind * _Nonnull"
+  Methods:
+  - Selector: "compareToOther:"
+    MethodKind: "Instance"
+    SwiftName: "compareTo(other:)"
+    ResultType: "int32_t"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreKind * _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+  - Selector: "initWithName:ordinal:"
+    MethodKind: "Instance"
+    SwiftName: "init(name:ordinal:)"
+    Availability: "nonswift"
+- Name: "SharedKoin_coreCallbacks"
+  SwiftName: "Koin_coreCallbacks"
+  Properties:
+  - Name: "onClose"
+    PropertyKind: "Instance"
+    SwiftName: "onClose"
+    Type: "void (^ _Nullable)(T _Nullable)"
+  Methods:
+  - Selector: "initWithOnClose:"
+    MethodKind: "Instance"
+    SwiftName: "init(onClose:)"
+    Parameters:
+    - Position: 0
+      Type: "void (^ _Nullable)(T _Nullable)"
+  - Selector: "doCopyOnClose:"
+    MethodKind: "Instance"
+    SwiftName: "doCopy(onClose:)"
+    ResultType: "SharedKoin_coreCallbacks<T> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "void (^ _Nullable)(T _Nullable)"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
 - Name: "SharedChild"
   SwiftName: "Child"
   Properties:
@@ -14429,6 +16362,17 @@ Classes:
   - Selector: "init"
     MethodKind: "Instance"
     SwiftName: "init()"
+  - Selector: "asFlow"
+    MethodKind: "Instance"
+    SwiftName: "asFlow()"
+    ResultType: "SharedSkieKotlinFlow<id> * _Nonnull"
+  - Selector: "asStateFlowCoroutineScope:"
+    MethodKind: "Instance"
+    SwiftName: "asStateFlow(coroutineScope:)"
+    ResultType: "SharedSkieKotlinStateFlow<id> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinx_coroutines_coreCoroutineScope> _Nonnull"
   - Selector: "getValueThisRef:property:"
     MethodKind: "Instance"
     SwiftName: "getValue(thisRef:property:)"
@@ -14508,8 +16452,8 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "init(name:ordinal:)"
     Availability: "nonswift"
-- Name: "SharedComponentContextExtKt"
-  SwiftName: "ComponentContextExtKt"
+- Name: "SharedComponentContextExtKt_"
+  SwiftName: "ComponentContextExtKt_"
   Methods:
   - Selector: "childContext:key:lifecycle:"
     MethodKind: "Class"
@@ -15729,6 +17673,157 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "init(name:ordinal:)"
     Availability: "nonswift"
+- Name: "SharedHomescreenTestClass"
+  SwiftName: "HomescreenTestClass"
+  Methods:
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedDefaultHomescreenComponent"
+  SwiftName: "DefaultHomescreenComponent"
+  Methods:
+  - Selector: "initWithComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "init(componentContext:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedDefaultRootComponent"
+  SwiftName: "DefaultRootComponent"
+  Properties:
+  - Name: "backHandler"
+    PropertyKind: "Instance"
+    SwiftName: "backHandler"
+    Type: "id<SharedBack_handlerBackHandler> _Nonnull"
+  - Name: "instanceKeeper"
+    PropertyKind: "Instance"
+    SwiftName: "instanceKeeper"
+    Type: "id<SharedInstance_keeperInstanceKeeper> _Nonnull"
+  - Name: "lifecycle"
+    PropertyKind: "Instance"
+    SwiftName: "lifecycle"
+    Type: "id<SharedLifecycle> _Nonnull"
+  - Name: "stack"
+    PropertyKind: "Instance"
+    SwiftName: "stack"
+    Type: "SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> * _Nonnull"
+  - Name: "stateKeeper"
+    PropertyKind: "Instance"
+    SwiftName: "stateKeeper"
+    Type: "id<SharedState_keeperStateKeeper> _Nonnull"
+  Methods:
+  - Selector: "initWithComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "init(componentContext:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onBackClickedToIndex:"
+    MethodKind: "Instance"
+    SwiftName: "onBackClicked(toIndex:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "int32_t"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootComponentChild"
+  SwiftName: "RootComponentChild"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootComponentChildHomescreenChild"
+  SwiftName: "RootComponentChild.HomescreenChild"
+  Properties:
+  - Name: "component"
+    PropertyKind: "Instance"
+    SwiftName: "component"
+    Type: "id<SharedHomescreenComponent> _Nonnull"
+  Methods:
+  - Selector: "initWithComponent:"
+    MethodKind: "Instance"
+    SwiftName: "init(component:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedHomescreenComponent> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedHomescreenUILogicModuleKt"
+  SwiftName: "HomescreenUILogicModuleKt"
+  Properties:
+  - Name: "homescreenUILogicModule"
+    PropertyKind: "Class"
+    SwiftName: "homescreenUILogicModule"
+    Type: "SharedKoin_coreModule * _Nonnull"
 - Name: "SharedOkioByteString"
   SwiftName: "OkioByteString"
   Properties:
@@ -16818,1697 +18913,6 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreModule"
-  SwiftName: "Koin_coreModule"
-  Properties:
-  - Name: "eagerInstances"
-    PropertyKind: "Instance"
-    SwiftName: "eagerInstances"
-    Type: "SharedMutableSet<SharedKoin_coreSingleInstanceFactory<id> *> * _Nonnull"
-  - Name: "id"
-    PropertyKind: "Instance"
-    SwiftName: "id"
-    Type: "NSString * _Nonnull"
-  - Name: "includedModules"
-    PropertyKind: "Instance"
-    SwiftName: "includedModules"
-    Type: "NSMutableArray<SharedKoin_coreModule *> * _Nonnull"
-  - Name: "isLoaded"
-    PropertyKind: "Instance"
-    SwiftName: "isLoaded"
-    Type: "BOOL"
-  - Name: "mappings"
-    PropertyKind: "Instance"
-    SwiftName: "mappings"
-    Type: "SharedMutableDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> * _Nonnull"
-  Methods:
-  - Selector: "initWith_createdAtStart:"
-    MethodKind: "Instance"
-    SwiftName: "init(_createdAtStart:)"
-    Parameters:
-    - Position: 0
-      Type: "BOOL"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "factoryQualifier:definition:"
-    MethodKind: "Instance"
-    SwiftName: "factory(qualifier:definition:)"
-    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "includesModule:"
-    MethodKind: "Instance"
-    SwiftName: "includes(module:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKotlinArray<SharedKoin_coreModule *> * _Nonnull"
-  - Selector: "includesModule_:"
-    MethodKind: "Instance"
-    SwiftName: "includes(module:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id _Nonnull"
-  - Selector: "indexPrimaryTypeInstanceFactory:"
-    MethodKind: "Instance"
-    SwiftName: "indexPrimaryType(instanceFactory:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceFactory<id> * _Nonnull"
-  - Selector: "indexSecondaryTypesInstanceFactory:"
-    MethodKind: "Instance"
-    SwiftName: "indexSecondaryTypes(instanceFactory:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceFactory<id> * _Nonnull"
-  - Selector: "plusModules:"
-    MethodKind: "Instance"
-    SwiftName: "plus(modules:)"
-    ResultType: "NSArray<SharedKoin_coreModule *> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
-  - Selector: "plusModule:"
-    MethodKind: "Instance"
-    SwiftName: "plus(module:)"
-    ResultType: "NSArray<SharedKoin_coreModule *> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreModule * _Nonnull"
-  - Selector: "prepareForCreationAtStartInstanceFactory:"
-    MethodKind: "Instance"
-    SwiftName: "prepareForCreationAtStart(instanceFactory:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreSingleInstanceFactory<id> * _Nonnull"
-  - Selector: "scopeQualifier:scopeSet:"
-    MethodKind: "Instance"
-    SwiftName: "scope(qualifier:scopeSet:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-    - Position: 1
-      Type: "void (^ _Nonnull)(SharedKoin_coreScopeDSL * _Nonnull)"
-  - Selector: "scopeScopeSet:"
-    MethodKind: "Instance"
-    SwiftName: "scope(scopeSet:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "void (^ _Nonnull)(SharedKoin_coreScopeDSL * _Nonnull)"
-  - Selector: "singleQualifier:createdAtStart:definition:"
-    MethodKind: "Instance"
-    SwiftName: "single(qualifier:createdAtStart:definition:)"
-    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "BOOL"
-    - Position: 2
-      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreKoinApplication"
-  SwiftName: "Koin_coreKoinApplication"
-  Properties:
-  - Name: "koin"
-    PropertyKind: "Instance"
-    SwiftName: "koin"
-    Type: "SharedKoin_coreKoin * _Nonnull"
-  Methods:
-  - Selector: "allowOverrideOverride:"
-    MethodKind: "Instance"
-    SwiftName: "allowOverride(override:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "BOOL"
-  - Selector: "close"
-    MethodKind: "Instance"
-    SwiftName: "close()"
-    ResultType: "void"
-  - Selector: "createEagerInstances"
-    MethodKind: "Instance"
-    SwiftName: "createEagerInstances()"
-    ResultType: "void"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "loggerLogger:"
-    MethodKind: "Instance"
-    SwiftName: "logger(logger:)"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLogger * _Nonnull"
-  - Selector: "modulesModules:"
-    MethodKind: "Instance"
-    SwiftName: "modules(modules:)"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "SharedKotlinArray<SharedKoin_coreModule *> * _Nonnull"
-  - Selector: "modulesModules_:"
-    MethodKind: "Instance"
-    SwiftName: "modules(modules:)"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
-  - Selector: "modulesModules__:"
-    MethodKind: "Instance"
-    SwiftName: "modules(modules:)"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreModule * _Nonnull"
-  - Selector: "printLoggerLevel:"
-    MethodKind: "Instance"
-    SwiftName: "printLogger(level:)"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-  - Selector: "propertiesValues:"
-    MethodKind: "Instance"
-    SwiftName: "properties(values:)"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSDictionary<NSString *, id> * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreKoinApplicationCompanion"
-  SwiftName: "Koin_coreKoinApplication.Companion"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "doInit"
-    MethodKind: "Instance"
-    SwiftName: "doInit()"
-    ResultType: "SharedKoin_coreKoinApplication * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreParametersHolder"
-  SwiftName: "Koin_coreParametersHolder"
-  Properties:
-  - Name: "index"
-    PropertyKind: "Instance"
-    SwiftName: "index"
-    Type: "int32_t"
-  - Name: "useIndexedValues"
-    PropertyKind: "Instance"
-    SwiftName: "useIndexedValues"
-    Type: "SharedBoolean * _Nullable"
-  - Name: "values"
-    PropertyKind: "Instance"
-    SwiftName: "values"
-    Type: "NSArray<id> * _Nonnull"
-  Methods:
-  - Selector: "initWith_values:useIndexedValues:"
-    MethodKind: "Instance"
-    SwiftName: "init(_values:useIndexedValues:)"
-    Parameters:
-    - Position: 0
-      Type: "NSMutableArray<id> * _Nonnull"
-    - Position: 1
-      Type: "SharedBoolean * _Nullable"
-  - Selector: "addValue:"
-    MethodKind: "Instance"
-    SwiftName: "add(value:)"
-    ResultType: "SharedKoin_coreParametersHolder * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id _Nonnull"
-  - Selector: "component1"
-    MethodKind: "Instance"
-    SwiftName: "component1()"
-    ResultType: "id _Nullable"
-  - Selector: "component2"
-    MethodKind: "Instance"
-    SwiftName: "component2()"
-    ResultType: "id _Nullable"
-  - Selector: "component3"
-    MethodKind: "Instance"
-    SwiftName: "component3()"
-    ResultType: "id _Nullable"
-  - Selector: "component4"
-    MethodKind: "Instance"
-    SwiftName: "component4()"
-    ResultType: "id _Nullable"
-  - Selector: "component5"
-    MethodKind: "Instance"
-    SwiftName: "component5()"
-    ResultType: "id _Nullable"
-  - Selector: "elementAtI:clazz:"
-    MethodKind: "Instance"
-    SwiftName: "elementAt(i:clazz:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "int32_t"
-    - Position: 1
-      Type: "id<SharedKotlinKClass> _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "get"
-    MethodKind: "Instance"
-    SwiftName: "get()"
-    ResultType: "id _Nonnull"
-  - Selector: "getI:"
-    MethodKind: "Instance"
-    SwiftName: "get(i:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "int32_t"
-  - Selector: "getOrNull"
-    MethodKind: "Instance"
-    SwiftName: "getOrNull()"
-    ResultType: "id _Nullable"
-  - Selector: "getOrNullClazz:"
-    MethodKind: "Instance"
-    SwiftName: "getOrNull(clazz:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "insertIndex:value:"
-    MethodKind: "Instance"
-    SwiftName: "insert(index:value:)"
-    ResultType: "SharedKoin_coreParametersHolder * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "int32_t"
-    - Position: 1
-      Type: "id _Nonnull"
-  - Selector: "isEmpty"
-    MethodKind: "Instance"
-    SwiftName: "isEmpty()"
-    ResultType: "BOOL"
-  - Selector: "isNotEmpty"
-    MethodKind: "Instance"
-    SwiftName: "isNotEmpty()"
-    ResultType: "BOOL"
-  - Selector: "setI:t:"
-    MethodKind: "Instance"
-    SwiftName: "set(i:t:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "int32_t"
-    - Position: 1
-      Type: "id _Nullable"
-  - Selector: "size"
-    MethodKind: "Instance"
-    SwiftName: "size()"
-    ResultType: "int32_t"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreScope"
-  SwiftName: "Koin_coreScope"
-  Properties:
-  - Name: "_parameterStackLocal"
-    PropertyKind: "Instance"
-    SwiftName: "_parameterStackLocal"
-    Type: "SharedStately_concurrencyThreadLocalRef<NSMutableArray<SharedKoin_coreParametersHolder *> *> * _Nonnull"
-  - Name: "_source"
-    PropertyKind: "Instance"
-    SwiftName: "_source"
-    Type: "id _Nullable"
-  - Name: "closed"
-    PropertyKind: "Instance"
-    SwiftName: "closed"
-    Type: "BOOL"
-  - Name: "id"
-    PropertyKind: "Instance"
-    SwiftName: "id"
-    Type: "NSString * _Nonnull"
-  - Name: "isRoot"
-    PropertyKind: "Instance"
-    SwiftName: "isRoot"
-    Type: "BOOL"
-  - Name: "logger"
-    PropertyKind: "Instance"
-    SwiftName: "logger"
-    Type: "SharedKoin_coreLogger * _Nonnull"
-  - Name: "scopeQualifier"
-    PropertyKind: "Instance"
-    SwiftName: "scopeQualifier"
-    Type: "id<SharedKoin_coreQualifier> _Nonnull"
-  Methods:
-  - Selector: "initWithScopeQualifier:id:isRoot:_koin:"
-    MethodKind: "Instance"
-    SwiftName: "init(scopeQualifier:id:isRoot:_koin:)"
-    Parameters:
-    - Position: 0
-      Type: "Skie__TypeDef__0__id_SharedKoin_coreQualifier_"
-    - Position: 1
-      Type: "NSString * _Nonnull"
-    - Position: 2
-      Type: "BOOL"
-    - Position: 3
-      Type: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "close"
-    MethodKind: "Instance"
-    SwiftName: "close()"
-    ResultType: "void"
-  - Selector: "declareInstance:qualifier:secondaryTypes:allowOverride:"
-    MethodKind: "Instance"
-    SwiftName: "declare(instance:qualifier:secondaryTypes:allowOverride:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
-    - Position: 3
-      Type: "BOOL"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getClazz:qualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "get(clazz:qualifier:parameters:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getQualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "get(qualifier:parameters:)"
-    ResultType: "id _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getAll"
-    MethodKind: "Instance"
-    SwiftName: "getAll()"
-    ResultType: "NSArray<id> * _Nonnull"
-  - Selector: "getAllClazz:"
-    MethodKind: "Instance"
-    SwiftName: "getAll(clazz:)"
-    ResultType: "NSArray<id> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-  - Selector: "getKoin"
-    MethodKind: "Instance"
-    SwiftName: "getKoin()"
-    ResultType: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "getOrNullClazz:qualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "getOrNull(clazz:qualifier:parameters:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getOrNullQualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "getOrNull(qualifier:parameters:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getPropertyKey:"
-    MethodKind: "Instance"
-    SwiftName: "getProperty(key:)"
-    ResultType: "id _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getPropertyKey:defaultValue:"
-    MethodKind: "Instance"
-    SwiftName: "getProperty(key:defaultValue:)"
-    ResultType: "id _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "id _Nonnull"
-  - Selector: "getPropertyOrNullKey:"
-    MethodKind: "Instance"
-    SwiftName: "getPropertyOrNull(key:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getScopeScopeID:"
-    MethodKind: "Instance"
-    SwiftName: "getScope(scopeID:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getSource"
-    MethodKind: "Instance"
-    SwiftName: "getSource()"
-    ResultType: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "injectQualifier:mode:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "inject(qualifier:mode:parameters:)"
-    ResultType: "id<SharedKotlinLazy> _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "injectOrNullQualifier:mode:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "injectOrNull(qualifier:mode:parameters:)"
-    ResultType: "id<SharedKotlinLazy> _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "isNotClosed"
-    MethodKind: "Instance"
-    SwiftName: "isNotClosed()"
-    ResultType: "BOOL"
-  - Selector: "linkToScopes:"
-    MethodKind: "Instance"
-    SwiftName: "linkTo(scopes:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKotlinArray<SharedKoin_coreScope *> * _Nonnull"
-  - Selector: "registerCallbackCallback:"
-    MethodKind: "Instance"
-    SwiftName: "registerCallback(callback:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreScopeCallback> _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "unlinkScopes:"
-    MethodKind: "Instance"
-    SwiftName: "unlink(scopes:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKotlinArray<SharedKoin_coreScope *> * _Nonnull"
-  - Selector: "init"
-    MethodKind: "Instance"
-    SwiftName: "init()"
-    Availability: "nonswift"
-- Name: "SharedKoin_coreLockable"
-  SwiftName: "Koin_coreLockable"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "init"
-    MethodKind: "Instance"
-    SwiftName: "init()"
-- Name: "SharedKoin_coreKoinDefinition"
-  SwiftName: "Koin_coreKoinDefinition"
-  Properties:
-  - Name: "factory"
-    PropertyKind: "Instance"
-    SwiftName: "factory"
-    Type: "SharedKoin_coreInstanceFactory<R> * _Nonnull"
-  - Name: "module"
-    PropertyKind: "Instance"
-    SwiftName: "module"
-    Type: "SharedKoin_coreModule * _Nonnull"
-  Methods:
-  - Selector: "initWithModule:factory:"
-    MethodKind: "Instance"
-    SwiftName: "init(module:factory:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreModule * _Nonnull"
-    - Position: 1
-      Type: "SharedKoin_coreInstanceFactory<R> * _Nonnull"
-  - Selector: "doCopyModule:factory:"
-    MethodKind: "Instance"
-    SwiftName: "doCopy(module:factory:)"
-    ResultType: "SharedKoin_coreKoinDefinition<R> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreModule * _Nonnull"
-    - Position: 1
-      Type: "SharedKoin_coreInstanceFactory<R> * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreInstanceFactory"
-  SwiftName: "Koin_coreInstanceFactory"
-  Properties:
-  - Name: "beanDefinition"
-    PropertyKind: "Instance"
-    SwiftName: "beanDefinition"
-    Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
-  Methods:
-  - Selector: "initWithBeanDefinition:"
-    MethodKind: "Instance"
-    SwiftName: "init(beanDefinition:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
-  - Selector: "createContext:"
-    MethodKind: "Instance"
-    SwiftName: "create(context:)"
-    ResultType: "T _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceContext * _Nonnull"
-  - Selector: "dropScope:"
-    MethodKind: "Instance"
-    SwiftName: "drop(scope:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreScope * _Nullable"
-  - Selector: "dropAll"
-    MethodKind: "Instance"
-    SwiftName: "dropAll()"
-    ResultType: "void"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getContext:"
-    MethodKind: "Instance"
-    SwiftName: "get(context:)"
-    ResultType: "T _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceContext * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "isCreatedContext:"
-    MethodKind: "Instance"
-    SwiftName: "isCreated(context:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceContext * _Nullable"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "init"
-    MethodKind: "Instance"
-    SwiftName: "init()"
-    Availability: "nonswift"
-- Name: "SharedKoin_coreInstanceFactoryCompanion"
-  SwiftName: "Koin_coreInstanceFactoryCompanion"
-  Properties:
-  - Name: "ERROR_SEPARATOR"
-    PropertyKind: "Instance"
-    SwiftName: "ERROR_SEPARATOR"
-    Type: "NSString * _Nonnull"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreSingleInstanceFactory"
-  SwiftName: "Koin_coreSingleInstanceFactory"
-  Properties:
-  - Name: "beanDefinition"
-    PropertyKind: "Instance"
-    SwiftName: "beanDefinition"
-    Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
-  Methods:
-  - Selector: "initWithBeanDefinition:"
-    MethodKind: "Instance"
-    SwiftName: "init(beanDefinition:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
-  - Selector: "createContext:"
-    MethodKind: "Instance"
-    SwiftName: "create(context:)"
-    ResultType: "T _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceContext * _Nonnull"
-  - Selector: "dropScope:"
-    MethodKind: "Instance"
-    SwiftName: "drop(scope:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreScope * _Nullable"
-  - Selector: "dropAll"
-    MethodKind: "Instance"
-    SwiftName: "dropAll()"
-    ResultType: "void"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getContext:"
-    MethodKind: "Instance"
-    SwiftName: "get(context:)"
-    ResultType: "T _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceContext * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "isCreatedContext:"
-    MethodKind: "Instance"
-    SwiftName: "isCreated(context:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreInstanceContext * _Nullable"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "init"
-    MethodKind: "Instance"
-    SwiftName: "init()"
-    Availability: "nonswift"
-- Name: "SharedKoin_coreScopeDSL"
-  SwiftName: "Koin_coreScopeDSL"
-  Properties:
-  - Name: "module"
-    PropertyKind: "Instance"
-    SwiftName: "module"
-    Type: "SharedKoin_coreModule * _Nonnull"
-  - Name: "scopeQualifier"
-    PropertyKind: "Instance"
-    SwiftName: "scopeQualifier"
-    Type: "id<SharedKoin_coreQualifier> _Nonnull"
-  Methods:
-  - Selector: "initWithScopeQualifier:module:"
-    MethodKind: "Instance"
-    SwiftName: "init(scopeQualifier:module:)"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-    - Position: 1
-      Type: "SharedKoin_coreModule * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "factoryQualifier:definition:"
-    MethodKind: "Instance"
-    SwiftName: "factory(qualifier:definition:)"
-    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "scopedQualifier:definition:"
-    MethodKind: "Instance"
-    SwiftName: "scoped(qualifier:definition:)"
-    ResultType: "SharedKoin_coreKoinDefinition<id> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "id _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreLogger"
-  SwiftName: "Koin_coreLogger"
-  Properties:
-  - Name: "level"
-    PropertyKind: "Instance"
-    SwiftName: "level"
-    Type: "SharedKoin_coreLevel * _Nonnull"
-  Methods:
-  - Selector: "initWithLevel:"
-    MethodKind: "Instance"
-    SwiftName: "init(level:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-  - Selector: "debugMsg:"
-    MethodKind: "Instance"
-    SwiftName: "debug(msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "displayLevel:msg:"
-    MethodKind: "Instance"
-    SwiftName: "display(level:msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-    - Position: 1
-      Type: "NSString * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "errorMsg:"
-    MethodKind: "Instance"
-    SwiftName: "error(msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "infoMsg:"
-    MethodKind: "Instance"
-    SwiftName: "info(msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "isAtLvl:"
-    MethodKind: "Instance"
-    SwiftName: "isAt(lvl:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-  - Selector: "logLvl:msg:"
-    MethodKind: "Instance"
-    SwiftName: "log(lvl:msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-    - Position: 1
-      Type: "NSString * _Nonnull (^ _Nonnull)(void)"
-  - Selector: "logLvl:msg_:"
-    MethodKind: "Instance"
-    SwiftName: "log(lvl:msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-    - Position: 1
-      Type: "NSString * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "warnMsg:"
-    MethodKind: "Instance"
-    SwiftName: "warn(msg:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-- Name: "SharedKoin_coreLevel"
-  SwiftBridge: "Koin_coreLevel"
-  SwiftName: "__Koin_coreLevel"
-  SwiftPrivate: true
-  Properties:
-  - Name: "name"
-    PropertyKind: "Instance"
-    SwiftName: "name"
-    Type: "NSString * _Nonnull"
-  - Name: "ordinal"
-    PropertyKind: "Instance"
-    SwiftName: "ordinal"
-    Type: "int32_t"
-  - Name: "debug"
-    PropertyKind: "Class"
-    SwiftName: "debug"
-    Type: "SharedKoin_coreLevel * _Nonnull"
-  - Name: "info"
-    PropertyKind: "Class"
-    SwiftName: "info"
-    Type: "SharedKoin_coreLevel * _Nonnull"
-  - Name: "warning"
-    PropertyKind: "Class"
-    SwiftName: "warning"
-    Type: "SharedKoin_coreLevel * _Nonnull"
-  - Name: "error"
-    PropertyKind: "Class"
-    SwiftName: "error"
-    Type: "SharedKoin_coreLevel * _Nonnull"
-  - Name: "none"
-    PropertyKind: "Class"
-    SwiftName: "none"
-    Type: "SharedKoin_coreLevel * _Nonnull"
-  Methods:
-  - Selector: "compareToOther:"
-    MethodKind: "Instance"
-    SwiftName: "compareTo(other:)"
-    ResultType: "int32_t"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLevel * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "initWithName:ordinal:"
-    MethodKind: "Instance"
-    SwiftName: "init(name:ordinal:)"
-    Availability: "nonswift"
-- Name: "SharedKoin_coreKoin"
-  SwiftName: "Koin_coreKoin"
-  Properties:
-  - Name: "extensionManager"
-    PropertyKind: "Instance"
-    SwiftName: "extensionManager"
-    Type: "SharedKoin_coreExtensionManager * _Nonnull"
-  - Name: "instanceRegistry"
-    PropertyKind: "Instance"
-    SwiftName: "instanceRegistry"
-    Type: "SharedKoin_coreInstanceRegistry * _Nonnull"
-  - Name: "logger"
-    PropertyKind: "Instance"
-    SwiftName: "logger"
-    Type: "SharedKoin_coreLogger * _Nonnull"
-  - Name: "propertyRegistry"
-    PropertyKind: "Instance"
-    SwiftName: "propertyRegistry"
-    Type: "SharedKoin_corePropertyRegistry * _Nonnull"
-  - Name: "scopeRegistry"
-    PropertyKind: "Instance"
-    SwiftName: "scopeRegistry"
-    Type: "SharedKoin_coreScopeRegistry * _Nonnull"
-  Methods:
-  - Selector: "init"
-    MethodKind: "Instance"
-    SwiftName: "init()"
-  - Selector: "close"
-    MethodKind: "Instance"
-    SwiftName: "close()"
-    ResultType: "void"
-  - Selector: "createEagerInstances"
-    MethodKind: "Instance"
-    SwiftName: "createEagerInstances()"
-    ResultType: "void"
-  - Selector: "createScopeT:"
-    MethodKind: "Instance"
-    SwiftName: "createScope(t:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreKoinScopeComponent> _Nonnull"
-  - Selector: "createScopeScopeId:"
-    MethodKind: "Instance"
-    SwiftName: "createScope(scopeId:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "createScopeScopeId:source:"
-    MethodKind: "Instance"
-    SwiftName: "createScope(scopeId:source:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "id _Nullable"
-  - Selector: "createScopeScopeId:qualifier:source:"
-    MethodKind: "Instance"
-    SwiftName: "createScope(scopeId:qualifier:source:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-    - Position: 2
-      Type: "id _Nullable"
-  - Selector: "declareInstance:qualifier:secondaryTypes:allowOverride:"
-    MethodKind: "Instance"
-    SwiftName: "declare(instance:qualifier:secondaryTypes:allowOverride:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
-    - Position: 3
-      Type: "BOOL"
-  - Selector: "deletePropertyKey:"
-    MethodKind: "Instance"
-    SwiftName: "deleteProperty(key:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "deleteScopeScopeId:"
-    MethodKind: "Instance"
-    SwiftName: "deleteScope(scopeId:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getClazz:qualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "get(clazz:qualifier:parameters:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getQualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "get(qualifier:parameters:)"
-    ResultType: "id _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getAll"
-    MethodKind: "Instance"
-    SwiftName: "getAll()"
-    ResultType: "NSArray<id> * _Nonnull"
-  - Selector: "getOrCreateScopeScopeId:"
-    MethodKind: "Instance"
-    SwiftName: "getOrCreateScope(scopeId:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getOrCreateScopeScopeId:qualifier:source:"
-    MethodKind: "Instance"
-    SwiftName: "getOrCreateScope(scopeId:qualifier:source:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-    - Position: 2
-      Type: "id _Nullable"
-  - Selector: "getOrNullClazz:qualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "getOrNull(clazz:qualifier:parameters:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getOrNullQualifier:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "getOrNull(qualifier:parameters:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "getPropertyKey:"
-    MethodKind: "Instance"
-    SwiftName: "getProperty(key:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getPropertyKey:defaultValue:"
-    MethodKind: "Instance"
-    SwiftName: "getProperty(key:defaultValue:)"
-    ResultType: "id _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "id _Nonnull"
-  - Selector: "getScopeScopeId:"
-    MethodKind: "Instance"
-    SwiftName: "getScope(scopeId:)"
-    ResultType: "SharedKoin_coreScope * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getScopeOrNullScopeId:"
-    MethodKind: "Instance"
-    SwiftName: "getScopeOrNull(scopeId:)"
-    ResultType: "SharedKoin_coreScope * _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "injectQualifier:mode:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "inject(qualifier:mode:parameters:)"
-    ResultType: "id<SharedKotlinLazy> _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "injectOrNullQualifier:mode:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "injectOrNull(qualifier:mode:parameters:)"
-    ResultType: "id<SharedKotlinLazy> _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 1
-      Type: "SharedKotlinLazyThreadSafetyMode * _Nonnull"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nonnull (^ _Nullable)(void)"
-  - Selector: "loadModulesModules:allowOverride:createEagerInstances:"
-    MethodKind: "Instance"
-    SwiftName: "loadModules(modules:allowOverride:createEagerInstances:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
-    - Position: 1
-      Type: "BOOL"
-    - Position: 2
-      Type: "BOOL"
-  - Selector: "setPropertyKey:value:"
-    MethodKind: "Instance"
-    SwiftName: "setProperty(key:value:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "id _Nonnull"
-  - Selector: "setupLoggerLogger:"
-    MethodKind: "Instance"
-    SwiftName: "setupLogger(logger:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLogger * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "unloadModulesModules:"
-    MethodKind: "Instance"
-    SwiftName: "unloadModules(modules:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSArray<SharedKoin_coreModule *> * _Nonnull"
-- Name: "SharedKoin_coreBeanDefinition"
-  SwiftName: "Koin_coreBeanDefinition"
-  Properties:
-  - Name: "callbacks"
-    PropertyKind: "Instance"
-    SwiftName: "callbacks"
-    Type: "SharedKoin_coreCallbacks<T> * _Nonnull"
-  - Name: "definition"
-    PropertyKind: "Instance"
-    SwiftName: "definition"
-    Type: "T _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-  - Name: "kind"
-    PropertyKind: "Instance"
-    SwiftName: "kind"
-    Type: "SharedKoin_coreKind * _Nonnull"
-  - Name: "primaryType"
-    PropertyKind: "Instance"
-    SwiftName: "primaryType"
-    Type: "id<SharedKotlinKClass> _Nonnull"
-  - Name: "qualifier"
-    PropertyKind: "Instance"
-    SwiftName: "qualifier"
-    Type: "id<SharedKoin_coreQualifier> _Nullable"
-  - Name: "scopeQualifier"
-    PropertyKind: "Instance"
-    SwiftName: "scopeQualifier"
-    Type: "id<SharedKoin_coreQualifier> _Nonnull"
-  - Name: "secondaryTypes"
-    PropertyKind: "Instance"
-    SwiftName: "secondaryTypes"
-    Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
-  Methods:
-  - Selector: "initWithScopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:"
-    MethodKind: "Instance"
-    SwiftName: "init(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 2
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 3
-      Type: "T _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-    - Position: 4
-      Type: "SharedKoin_coreKind * _Nonnull"
-    - Position: 5
-      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
-  - Selector: "doCopyScopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:"
-    MethodKind: "Instance"
-    SwiftName: "doCopy(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)"
-    ResultType: "SharedKoin_coreBeanDefinition<T> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 2
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 3
-      Type: "T _Nullable (^ _Nonnull)(SharedKoin_coreScope * _Nonnull, SharedKoin_coreParametersHolder * _Nonnull)"
-    - Position: 4
-      Type: "SharedKoin_coreKind * _Nonnull"
-    - Position: 5
-      Type: "NSArray<id<SharedKotlinKClass>> * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hasTypeClazz:"
-    MethodKind: "Instance"
-    SwiftName: "hasType(clazz:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "isClazz:qualifier:scopeDefinition:"
-    MethodKind: "Instance"
-    SwiftName: "is(clazz:qualifier:scopeDefinition:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-    - Position: 1
-      Type: "id<SharedKoin_coreQualifier> _Nullable"
-    - Position: 2
-      Type: "id<SharedKoin_coreQualifier> _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreInstanceContext"
-  SwiftName: "Koin_coreInstanceContext"
-  Properties:
-  - Name: "logger"
-    PropertyKind: "Instance"
-    SwiftName: "logger"
-    Type: "SharedKoin_coreLogger * _Nonnull"
-  - Name: "parameters"
-    PropertyKind: "Instance"
-    SwiftName: "parameters"
-    Type: "SharedKoin_coreParametersHolder * _Nullable"
-  - Name: "scope"
-    PropertyKind: "Instance"
-    SwiftName: "scope"
-    Type: "SharedKoin_coreScope * _Nonnull"
-  Methods:
-  - Selector: "initWithLogger:scope:parameters:"
-    MethodKind: "Instance"
-    SwiftName: "init(logger:scope:parameters:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreLogger * _Nonnull"
-    - Position: 1
-      Type: "SharedKoin_coreScope * _Nonnull"
-    - Position: 2
-      Type: "SharedKoin_coreParametersHolder * _Nullable"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreExtensionManager"
-  SwiftName: "Koin_coreExtensionManager"
-  Methods:
-  - Selector: "initWith_koin:"
-    MethodKind: "Instance"
-    SwiftName: "init(_koin:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "close"
-    MethodKind: "Instance"
-    SwiftName: "close()"
-    ResultType: "void"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getExtensionId:"
-    MethodKind: "Instance"
-    SwiftName: "getExtension(id:)"
-    ResultType: "Skie__TypeDef__1__id_SharedKoin_coreKoinExtension_"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "getExtensionOrNullId:"
-    MethodKind: "Instance"
-    SwiftName: "getExtensionOrNull(id:)"
-    ResultType: "Skie__TypeDef__2__id_SharedKoin_coreKoinExtension___Nullable"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "registerExtensionId:extension:"
-    MethodKind: "Instance"
-    SwiftName: "registerExtension(id:extension:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-    - Position: 1
-      Type: "Skie__TypeDef__1__id_SharedKoin_coreKoinExtension_"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreInstanceRegistry"
-  SwiftName: "Koin_coreInstanceRegistry"
-  Properties:
-  - Name: "_koin"
-    PropertyKind: "Instance"
-    SwiftName: "_koin"
-    Type: "SharedKoin_coreKoin * _Nonnull"
-  - Name: "instances"
-    PropertyKind: "Instance"
-    SwiftName: "instances"
-    Type: "NSDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> * _Nonnull"
-  Methods:
-  - Selector: "initWith_koin:"
-    MethodKind: "Instance"
-    SwiftName: "init(_koin:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "saveMappingAllowOverride:mapping:factory:logWarning:"
-    MethodKind: "Instance"
-    SwiftName: "saveMapping(allowOverride:mapping:factory:logWarning:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "BOOL"
-    - Position: 1
-      Type: "NSString * _Nonnull"
-    - Position: 2
-      Type: "SharedKoin_coreInstanceFactory<id> * _Nonnull"
-    - Position: 3
-      Type: "BOOL"
-  - Selector: "size"
-    MethodKind: "Instance"
-    SwiftName: "size()"
-    ResultType: "int32_t"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_corePropertyRegistry"
-  SwiftName: "Koin_corePropertyRegistry"
-  Methods:
-  - Selector: "initWith_koin:"
-    MethodKind: "Instance"
-    SwiftName: "init(_koin:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "close"
-    MethodKind: "Instance"
-    SwiftName: "close()"
-    ResultType: "void"
-  - Selector: "deletePropertyKey:"
-    MethodKind: "Instance"
-    SwiftName: "deleteProperty(key:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getPropertyKey:"
-    MethodKind: "Instance"
-    SwiftName: "getProperty(key:)"
-    ResultType: "id _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "NSString * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "savePropertiesProperties:"
-    MethodKind: "Instance"
-    SwiftName: "saveProperties(properties:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSDictionary<NSString *, id> * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreScopeRegistry"
-  SwiftName: "Koin_coreScopeRegistry"
-  Properties:
-  - Name: "rootScope"
-    PropertyKind: "Instance"
-    SwiftName: "rootScope"
-    Type: "SharedKoin_coreScope * _Nonnull"
-  - Name: "scopeDefinitions"
-    PropertyKind: "Instance"
-    SwiftName: "scopeDefinitions"
-    Type: "NSSet<id<SharedKoin_coreQualifier>> * _Nonnull"
-  Methods:
-  - Selector: "initWith_koin:"
-    MethodKind: "Instance"
-    SwiftName: "init(_koin:)"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "loadScopesModules:"
-    MethodKind: "Instance"
-    SwiftName: "loadScopes(modules:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "NSSet<SharedKoin_coreModule *> * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreScopeRegistryCompanion"
-  SwiftName: "Koin_coreScopeRegistry.Companion"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreKind"
-  SwiftBridge: "Koin_coreKind"
-  SwiftName: "__Koin_coreKind"
-  SwiftPrivate: true
-  Properties:
-  - Name: "name"
-    PropertyKind: "Instance"
-    SwiftName: "name"
-    Type: "NSString * _Nonnull"
-  - Name: "ordinal"
-    PropertyKind: "Instance"
-    SwiftName: "ordinal"
-    Type: "int32_t"
-  - Name: "singleton"
-    PropertyKind: "Class"
-    SwiftName: "singleton"
-    Type: "SharedKoin_coreKind * _Nonnull"
-  - Name: "factory"
-    PropertyKind: "Class"
-    SwiftName: "factory"
-    Type: "SharedKoin_coreKind * _Nonnull"
-  - Name: "scoped"
-    PropertyKind: "Class"
-    SwiftName: "scoped"
-    Type: "SharedKoin_coreKind * _Nonnull"
-  Methods:
-  - Selector: "compareToOther:"
-    MethodKind: "Instance"
-    SwiftName: "compareTo(other:)"
-    ResultType: "int32_t"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreKind * _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-  - Selector: "initWithName:ordinal:"
-    MethodKind: "Instance"
-    SwiftName: "init(name:ordinal:)"
-    Availability: "nonswift"
-- Name: "SharedKoin_coreCallbacks"
-  SwiftName: "Koin_coreCallbacks"
-  Properties:
-  - Name: "onClose"
-    PropertyKind: "Instance"
-    SwiftName: "onClose"
-    Type: "void (^ _Nullable)(T _Nullable)"
-  Methods:
-  - Selector: "initWithOnClose:"
-    MethodKind: "Instance"
-    SwiftName: "init(onClose:)"
-    Parameters:
-    - Position: 0
-      Type: "void (^ _Nullable)(T _Nullable)"
-  - Selector: "doCopyOnClose:"
-    MethodKind: "Instance"
-    SwiftName: "doCopy(onClose:)"
-    ResultType: "SharedKoin_coreCallbacks<T> * _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "void (^ _Nullable)(T _Nullable)"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
 - Name: "SharedKotlinx_serialization_corePolymorphicKind"
   SwiftName: "Kotlinx_serialization_corePolymorphicKind"
   Methods:
@@ -19287,6 +19691,33 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
+- Name: "SharedKotlinLazy"
+  SwiftName: "KotlinLazy"
+  Properties:
+  - Name: "value_"
+    PropertyKind: "Instance"
+    SwiftName: "value"
+    Type: "id _Nullable"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "isInitialized"
+    MethodKind: "Instance"
+    SwiftName: "isInitialized()"
+    ResultType: "BOOL"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
 - Name: "SharedKotlinKProperty"
   SwiftName: "KotlinKProperty"
   Properties:
@@ -19363,64 +19794,6 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "next()"
     ResultType: "id _Nullable"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKotlinKType"
-  SwiftName: "KotlinKType"
-  Properties:
-  - Name: "arguments"
-    PropertyKind: "Instance"
-    SwiftName: "arguments"
-    Type: "NSArray<SharedKotlinKTypeProjection *> * _Nonnull"
-  - Name: "classifier"
-    PropertyKind: "Instance"
-    SwiftName: "classifier"
-    Type: "id<SharedKotlinKClassifier> _Nullable"
-  - Name: "isMarkedNullable"
-    PropertyKind: "Instance"
-    SwiftName: "isMarkedNullable"
-    Type: "BOOL"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKotlinLazy"
-  SwiftName: "KotlinLazy"
-  Properties:
-  - Name: "value_"
-    PropertyKind: "Instance"
-    SwiftName: "value"
-    Type: "id _Nullable"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "isInitialized"
-    MethodKind: "Instance"
-    SwiftName: "isInitialized()"
-    ResultType: "BOOL"
   - Selector: "description"
     MethodKind: "Instance"
     SwiftName: "description()"
@@ -19528,6 +19901,37 @@ Protocols:
     ResultType: "NSString * _Nonnull"
 - Name: "SharedKotlinCoroutineContextKey"
   SwiftName: "KotlinCoroutineContextKey"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKotlinKType"
+  SwiftName: "KotlinKType"
+  Properties:
+  - Name: "arguments"
+    PropertyKind: "Instance"
+    SwiftName: "arguments"
+    Type: "NSArray<SharedKotlinKTypeProjection *> * _Nonnull"
+  - Name: "classifier"
+    PropertyKind: "Instance"
+    SwiftName: "classifier"
+    Type: "id<SharedKotlinKClassifier> _Nullable"
+  - Name: "isMarkedNullable"
+    PropertyKind: "Instance"
+    SwiftName: "isMarkedNullable"
+    Type: "BOOL"
   Methods:
   - Selector: "isEqual:"
     MethodKind: "Instance"
@@ -20378,6 +20782,29 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
+- Name: "SharedKotlinx_coroutines_coreCoroutineScope"
+  SwiftName: "Kotlinx_coroutines_coreCoroutineScope"
+  Properties:
+  - Name: "coroutineContext"
+    PropertyKind: "Instance"
+    SwiftName: "coroutineContext"
+    Type: "id<SharedKotlinCoroutineContext> _Nonnull"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
 - Name: "SharedKotlinx_coroutines_coreReceiveChannel"
   SwiftName: "Kotlinx_coroutines_coreReceiveChannel"
   Properties:
@@ -20625,29 +21052,6 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedKotlinx_coroutines_coreCoroutineScope"
-  SwiftName: "Kotlinx_coroutines_coreCoroutineScope"
-  Properties:
-  - Name: "coroutineContext"
-    PropertyKind: "Instance"
-    SwiftName: "coroutineContext"
-    Type: "id<SharedKotlinCoroutineContext> _Nonnull"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
 - Name: "SharedKotlinx_coroutines_coreSelectClause1"
   SwiftName: "Kotlinx_coroutines_coreSelectClause1"
   Properties:
@@ -20831,8 +21235,13 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedHomescreenComponent"
-  SwiftName: "HomescreenComponent"
+- Name: "SharedAppStartupScreen"
+  SwiftName: "AppStartupScreen"
+  Properties:
+  - Name: "viewState"
+    PropertyKind: "Instance"
+    SwiftName: "viewState"
+    Type: "SharedSkieKotlinStateFlow<SharedAppStartupViewState *> * _Nonnull"
   Methods:
   - Selector: "isEqual:"
     MethodKind: "Instance"
@@ -20849,13 +21258,13 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedRootComponent"
-  SwiftName: "RootComponent"
+- Name: "SharedRootNavigation"
+  SwiftName: "RootNavigation"
   Properties:
-  - Name: "stack"
+  - Name: "slot"
     PropertyKind: "Instance"
-    SwiftName: "stack"
-    Type: "SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> * _Nonnull"
+    SwiftName: "slot"
+    Type: "SharedSkieKotlinStateFlow<SharedChildSlot<SharedRootDestination *, SharedRootEntry *> *> * _Nonnull"
   Methods:
   - Selector: "isEqual:"
     MethodKind: "Instance"
@@ -20868,13 +21277,328 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "hash()"
     ResultType: "NSUInteger"
-  - Selector: "onBackClickedToIndex:"
+  - Selector: "description"
     MethodKind: "Instance"
-    SwiftName: "onBackClicked(toIndex:)"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootSlotNavigator"
+  SwiftName: "RootSlotNavigator"
+  Methods:
+  - Selector: "createSlotComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "createSlot(componentContext:)"
+    ResultType: "SharedSkieKotlinStateFlow<SharedChildSlot<SharedRootDestination *, SharedRootEntry *> *> * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "showAppStartup"
+    MethodKind: "Instance"
+    SwiftName: "showAppStartup()"
+    ResultType: "void"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedDestination"
+  SwiftName: "Destination"
+  Methods:
+  - Selector: "createComponentComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "createComponent(componentContext:)"
+    ResultType: "id<SharedNavEntry> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedNavEntry"
+  SwiftName: "NavEntry"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedUiEvent"
+  SwiftName: "UiEvent"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedViewState"
+  SwiftName: "ViewState"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedInstance_keeperInstanceKeeper"
+  SwiftName: "Instance_keeperInstanceKeeper"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getKey:"
+    MethodKind: "Instance"
+    SwiftName: "get(key:)"
+    ResultType: "id<SharedInstance_keeperInstanceKeeperInstance> _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "putKey:instance:"
+    MethodKind: "Instance"
+    SwiftName: "put(key:instance:)"
     ResultType: "void"
     Parameters:
     - Position: 0
-      Type: "int32_t"
+      Type: "id _Nonnull"
+    - Position: 1
+      Type: "id<SharedInstance_keeperInstanceKeeperInstance> _Nonnull"
+  - Selector: "removeKey:"
+    MethodKind: "Instance"
+    SwiftName: "remove(key:)"
+    ResultType: "id<SharedInstance_keeperInstanceKeeperInstance> _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedInstance_keeperInstanceKeeperInstance"
+  SwiftName: "Instance_keeperInstanceKeeperInstance"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onDestroy"
+    MethodKind: "Instance"
+    SwiftName: "onDestroy()"
+    ResultType: "void"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedInstance_keeperInstanceKeeperOwner"
+  SwiftName: "Instance_keeperInstanceKeeperOwner"
+  Properties:
+  - Name: "instanceKeeper"
+    PropertyKind: "Instance"
+    SwiftName: "instanceKeeper"
+    Type: "id<SharedInstance_keeperInstanceKeeper> _Nonnull"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKoinComponent"
+  SwiftName: "Koin_coreKoinComponent"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getKoin"
+    MethodKind: "Instance"
+    SwiftName: "getKoin()"
+    ResultType: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreQualifier"
+  SwiftName: "Koin_coreQualifier"
+  Properties:
+  - Name: "value_"
+    PropertyKind: "Instance"
+    SwiftName: "value"
+    Type: "NSString * _Nonnull"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKoinScopeComponent"
+  SwiftName: "Koin_coreKoinScopeComponent"
+  Properties:
+  - Name: "scope"
+    PropertyKind: "Instance"
+    SwiftName: "scope"
+    Type: "SharedKoin_coreScope * _Nonnull"
+  Methods:
+  - Selector: "closeScope"
+    MethodKind: "Instance"
+    SwiftName: "closeScope()"
+    ResultType: "void"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "getKoin"
+    MethodKind: "Instance"
+    SwiftName: "getKoin()"
+    ResultType: "SharedKoin_coreKoin * _Nonnull"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreScopeCallback"
+  SwiftName: "Koin_coreScopeCallback"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onScopeCloseScope:"
+    MethodKind: "Instance"
+    SwiftName: "onScopeClose(scope:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "SharedKoin_coreScope * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedKoin_coreKoinExtension"
+  SwiftName: "Koin_coreKoinExtension"
+  Properties:
+  - Name: "koin"
+    PropertyKind: "Instance"
+    SwiftName: "koin"
+    Type: "SharedKoin_coreKoin * _Nonnull"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onClose"
+    MethodKind: "Instance"
+    SwiftName: "onClose()"
+    ResultType: "void"
   - Selector: "description"
     MethodKind: "Instance"
     SwiftName: "description()"
@@ -21710,92 +22434,6 @@ Protocols:
     Parameters:
     - Position: 0
       Type: "NSString * _Nonnull"
-- Name: "SharedInstance_keeperInstanceKeeperOwner"
-  SwiftName: "Instance_keeperInstanceKeeperOwner"
-  Properties:
-  - Name: "instanceKeeper"
-    PropertyKind: "Instance"
-    SwiftName: "instanceKeeper"
-    Type: "id<SharedInstance_keeperInstanceKeeper> _Nonnull"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedInstance_keeperInstanceKeeper"
-  SwiftName: "Instance_keeperInstanceKeeper"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getKey:"
-    MethodKind: "Instance"
-    SwiftName: "get(key:)"
-    ResultType: "id<SharedInstance_keeperInstanceKeeperInstance> _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "putKey:instance:"
-    MethodKind: "Instance"
-    SwiftName: "put(key:instance:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id _Nonnull"
-    - Position: 1
-      Type: "id<SharedInstance_keeperInstanceKeeperInstance> _Nonnull"
-  - Selector: "removeKey:"
-    MethodKind: "Instance"
-    SwiftName: "remove(key:)"
-    ResultType: "id<SharedInstance_keeperInstanceKeeperInstance> _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedInstance_keeperInstanceKeeperInstance"
-  SwiftName: "Instance_keeperInstanceKeeperInstance"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "onDestroy"
-    MethodKind: "Instance"
-    SwiftName: "onDestroy()"
-    ResultType: "void"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
 - Name: "SharedBack_handlerBackHandlerOwner"
   SwiftName: "Back_handlerBackHandlerOwner"
   Properties:
@@ -21851,6 +22489,54 @@ Protocols:
     Parameters:
     - Position: 0
       Type: "SharedBack_handlerBackCallback * _Nonnull"
+- Name: "SharedHomescreenComponent"
+  SwiftName: "HomescreenComponent"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRootComponent"
+  SwiftName: "RootComponent"
+  Properties:
+  - Name: "stack"
+    PropertyKind: "Instance"
+    SwiftName: "stack"
+    Type: "SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> * _Nonnull"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "onBackClickedToIndex:"
+    MethodKind: "Instance"
+    SwiftName: "onBackClicked(toIndex:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "int32_t"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
 - Name: "SharedOkioBufferedSink"
   SwiftName: "OkioBufferedSink"
   Properties:
@@ -22600,192 +23286,6 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "isExecuted()"
     ResultType: "BOOL"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreQualifier"
-  SwiftName: "Koin_coreQualifier"
-  Properties:
-  - Name: "value_"
-    PropertyKind: "Instance"
-    SwiftName: "value"
-    Type: "NSString * _Nonnull"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreScopeCallback"
-  SwiftName: "Koin_coreScopeCallback"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "onScopeCloseScope:"
-    MethodKind: "Instance"
-    SwiftName: "onScopeClose(scope:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "SharedKoin_coreScope * _Nonnull"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreKoinScopeComponent"
-  SwiftName: "Koin_coreKoinScopeComponent"
-  Properties:
-  - Name: "scope"
-    PropertyKind: "Instance"
-    SwiftName: "scope"
-    Type: "SharedKoin_coreScope * _Nonnull"
-  Methods:
-  - Selector: "closeScope"
-    MethodKind: "Instance"
-    SwiftName: "closeScope()"
-    ResultType: "void"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getKoin"
-    MethodKind: "Instance"
-    SwiftName: "getKoin()"
-    ResultType: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreKoinComponent"
-  SwiftName: "Koin_coreKoinComponent"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "getKoin"
-    MethodKind: "Instance"
-    SwiftName: "getKoin()"
-    ResultType: "SharedKoin_coreKoin * _Nonnull"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedKoin_coreKoinExtension"
-  SwiftName: "Koin_coreKoinExtension"
-  Properties:
-  - Name: "koin"
-    PropertyKind: "Instance"
-    SwiftName: "koin"
-    Type: "SharedKoin_coreKoin * _Nonnull"
-  Methods:
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "onClose"
-    MethodKind: "Instance"
-    SwiftName: "onClose()"
-    ResultType: "void"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedRuntimeParcelable"
-  SwiftName: "RuntimeParcelable"
-  Methods:
-  - Selector: "coding"
-    MethodKind: "Instance"
-    SwiftName: "coding()"
-    ResultType: "id<NSSecureCoding> _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "description"
-    MethodKind: "Instance"
-    SwiftName: "description()"
-    ResultType: "NSString * _Nonnull"
-- Name: "SharedParcelableParcelableContainer"
-  SwiftName: "ParcelableParcelableContainer"
-  Methods:
-  - Selector: "coding"
-    MethodKind: "Instance"
-    SwiftName: "coding()"
-    ResultType: "id<NSSecureCoding> _Nonnull"
-  - Selector: "consumeClazz:"
-    MethodKind: "Instance"
-    SwiftName: "consume(clazz:)"
-    ResultType: "id<SharedRuntimeParcelable> _Nullable"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedKotlinKClass> _Nonnull"
-  - Selector: "isEqual:"
-    MethodKind: "Instance"
-    SwiftName: "isEqual(_:)"
-    ResultType: "BOOL"
-    Parameters:
-    - Position: 0
-      Type: "id _Nullable"
-  - Selector: "hash"
-    MethodKind: "Instance"
-    SwiftName: "hash()"
-    ResultType: "NSUInteger"
-  - Selector: "setValue_:"
-    MethodKind: "Instance"
-    SwiftName: "set(value:)"
-    ResultType: "void"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedRuntimeParcelable> _Nullable"
   - Selector: "description"
     MethodKind: "Instance"
     SwiftName: "description()"
@@ -23622,6 +24122,64 @@ Protocols:
       Type: "id<SharedKotlinKClass> _Nonnull"
     - Position: 1
       Type: "id<SharedKotlinx_serialization_coreSerializationStrategy> _Nullable (^ _Nonnull)(id _Nonnull)"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedRuntimeParcelable"
+  SwiftName: "RuntimeParcelable"
+  Methods:
+  - Selector: "coding"
+    MethodKind: "Instance"
+    SwiftName: "coding()"
+    ResultType: "id<NSSecureCoding> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedParcelableParcelableContainer"
+  SwiftName: "ParcelableParcelableContainer"
+  Methods:
+  - Selector: "coding"
+    MethodKind: "Instance"
+    SwiftName: "coding()"
+    ResultType: "id<NSSecureCoding> _Nonnull"
+  - Selector: "consumeClazz:"
+    MethodKind: "Instance"
+    SwiftName: "consume(clazz:)"
+    ResultType: "id<SharedRuntimeParcelable> _Nullable"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedKotlinKClass> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "setValue_:"
+    MethodKind: "Instance"
+    SwiftName: "set(value:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedRuntimeParcelable> _Nullable"
   - Selector: "description"
     MethodKind: "Instance"
     SwiftName: "description()"

@@ -6,14 +6,77 @@
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
-import SwiftUI
 import Shared
+import SwiftUI
+import SwiftUICore
 
 struct RootView: View {
-    let root: RootComponent
+    @Environment(\.scenePhase) var scenePhase: ScenePhase
+    
+    @State private var componentHolder = ComponentHolder { componentContext in
+        RootNavigationFactory().create(componentContext: componentContext)
+    }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RootNavigationView(componentHolder.component)
+            .onChange(of: scenePhase) { newPhase in
+                switch newPhase {
+                case .background:
+                    LifecycleRegistryExtKt.stop(componentHolder.lifecycle)
+                case .inactive:
+                    LifecycleRegistryExtKt.pause(componentHolder.lifecycle)
+                case .active:
+                    LifecycleRegistryExtKt.resume(componentHolder.lifecycle)
+                @unknown default:
+                    break
+                }
+            }
     }
 }
 
+struct RootNavigationView: View {
+    @ObservedObject @StateFlowAdapter private var slot: ChildSlot<RootDestination, RootEntry>
+    
+    init(_ component: RootNavigation) {
+        self._slot = .init(component.slot)
+    }
+    
+    var body: some View {
+        ZStack {
+            if let navigationEntry = slot.child?.instance {
+                switch onEnum(of: navigationEntry) {
+                case let .appStartup(entry):
+                    AppStartupView(screen: entry.screen)
+                }
+            }
+        }
+    }
+}
+
+struct AppStartupView: View {
+    @ObservedObject @StateFlowAdapter private var viewState: AppStartupViewState
+    
+    public init(screen: AppStartupScreen) {
+        self._viewState = .init(screen.viewState)
+    }
+    
+    var body: some View {
+        VStack {
+            Text("AppStartupView")
+                .font(.title)
+            
+            Spacer()
+            
+            Button(
+                action: {
+                     // TODO: implement
+                },
+                label: {
+                    Text("continue to app")
+                }
+            )
+            
+            Spacer()
+        }
+    }
+}

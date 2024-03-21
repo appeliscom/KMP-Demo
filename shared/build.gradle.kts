@@ -4,13 +4,14 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.skie)
+    alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
 kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "11"
             }
         }
     }
@@ -25,8 +26,11 @@ kotlin {
         it.binaries.framework {
             baseName="Shared"
             isStatic = true
+
             export(projects.grpcTest)
-            export(projects.homescreen.homescreenUiLogic)
+            export(projects.features.homescreen.homescreenUiLogic)
+            export(projects.core)
+
             export(libs.essenty)
             export(libs.decompose)
             xc.add(this)
@@ -36,16 +40,14 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(projects.grpcTest)
-            api(projects.homescreen.homescreenUiLogic)
-            api(libs.essenty)
-            implementation(libs.koin.core)
-        }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
-        }
+            api(projects.features.homescreen.homescreenUiLogic)
+            api(projects.core)
 
-        commonTest.dependencies {
-            
+            api(libs.essenty)
+            api(libs.decompose)
+            implementation(libs.koin.core)
+            implementation(libs.kotlinx.coroutines.core)
+
         }
     }
 }

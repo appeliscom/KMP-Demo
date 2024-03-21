@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedBase, SharedMutableSet<E>, SharedMutableDictionary<K, V>, SharedNumber, SharedByte, SharedUByte, SharedShort, SharedUShort, SharedInt, SharedUInt, SharedLong, SharedULong, SharedFloat, SharedDouble, SharedBoolean, SharedKotlinEnum<E>, SharedKotlinEnumCompanion, SharedKotlinByteArray, SharedKotlinNothing, SharedKotlinArray<T>, SharedKotlinCancellationException, SharedKotlinIllegalStateException, SharedKotlinRuntimeException, SharedKotlinException, SharedKotlinThrowable, SharedKotlinByteIterator, SharedKotlinPair<A, B>, SharedKotlinLazyThreadSafetyMode, SharedKotlinUnit, SharedKotlinDoubleArray, SharedKotlinIntArray, SharedKotlinLongArray, SharedKotlinFloatArray, SharedKotlinKTypeProjection, SharedKotlinKTypeProjectionCompanion, SharedKotlinDoubleIterator, SharedKotlinIntIterator, SharedKotlinLongIterator, SharedKotlinFloatIterator, SharedKotlinKVariance, SharedAddress, SharedAddressCompanion, SharedCurrency, SharedCurrencyCompanion, SharedCursorBackwardPagingParams, SharedCursorBackwardPagingParamsCompanion, SharedCursorForwardPagingParams, SharedCursorForwardPagingParamsCompanion, SharedFile, SharedFileCompanion, SharedHexColor, SharedHexColorCompanion, SharedLanguage, SharedLanguageCompanion, SharedLocation, SharedLocationCompanion, SharedPageInfo, SharedPageInfoCompanion, SharedPagingParams, SharedPagingParamsCompanion, SharedPicture, SharedPictureCompanion, SharedPriceValue, SharedPriceValueCompanion, SharedSemVer, SharedSemVerCompanion, SharedSortOrder, SharedSortOrderCompanion, SharedTimeRange, SharedTimeRangeCompanion, SharedDeviceEvent, SharedDeviceEventCompanion, SharedDeviceEventType, SharedDeviceEventTypeCompanion, SharedDeviceEventsArray, SharedDeviceEventsArrayCompanion, SharedGetDeviceEventsRequest, SharedGetDeviceEventsRequestCompanion, SharedGetDeviceEventsResponse, SharedGetDeviceEventsResponseCompanion, SharedGrpcDeviceEventsClient, SharedLeafletRepository, SharedLeafletSuspendClientImpl, SharedObjectId, SharedObjectIdCompanion, SharedUUID, SharedUUIDCompanion, SharedWeekDay, SharedWeekDayCompanion, SharedAddOrUpdateSettingsRequest, SharedAddOrUpdateSettingsRequestCompanion, SharedAddOrUpdateUserRequest, SharedAddOrUpdateUserRequestCompanion, SharedAddOrUpdateUserRequestV2, SharedAddOrUpdateUserRequestV2Companion, SharedAddOrUpdateUserResponseV2, SharedAddOrUpdateUserResponseV2AddUserError, SharedAddOrUpdateUserResponseV2AddUserErrorCompanion, SharedAddOrUpdateUserResponseV2Companion, SharedCreateRequest, SharedCreateRequestCompanion, SharedCreateRequestCredentials, SharedCreateRequestCredentialsCompanion, SharedCreateRequestDeviceKey, SharedCreateRequestDeviceKeyCompanion, SharedCreateRequestProjectUserLoginToken, SharedCreateRequestProjectUserLoginTokenCompanion, SharedCreateRequestUserLoginToken, SharedCreateRequestUserLoginTokenCompanion, SharedCreateResponse, SharedCreateResponseCompanion, SharedCreateResponseError, SharedCreateResponseErrorCompanion, SharedDeleteUserRequest, SharedDeleteUserRequestCompanion, SharedDeviceData, SharedDeviceDataCompanion, SharedDeviceLang, SharedDeviceLangCompanion, SharedDeviceResponse, SharedDeviceResponseCompanion, SharedDeviceResponseError, SharedDeviceResponseErrorCompanion, SharedDeviceType, SharedDeviceTypeCompanion, SharedDevicesResponse, SharedDevicesResponseCompanion, SharedFirebaseConfigResponse, SharedFirebaseConfigResponseCompanion, SharedGetDeviceByTemporaryIdRequest, SharedGetDeviceByTemporaryIdRequestCompanion, SharedGetDeviceRequest, SharedGetDeviceRequestCompanion, SharedGetDevicesRequest, SharedGetDevicesRequestCompanion, SharedGetTokenDeviceRequest, SharedGetTokenDeviceRequestCompanion, SharedGetTokenDeviceResponse, SharedGetTokenDeviceResponseCompanion, SharedGetTokenUserResponse, SharedGetTokenUserResponseCompanion, SharedGetUserForLoginRequest, SharedGetUserForLoginRequestCompanion, SharedGetUserForLoginTokenRequest, SharedGetUserForLoginTokenRequestCompanion, SharedGetUsersDevicesRequest, SharedGetUsersDevicesRequestCompanion, SharedGetUsersDevicesResponse, SharedGetUsersDevicesResponseCompanion, SharedGetUsersRequest, SharedGetUsersRequestCompanion, SharedGetUsersResponse, SharedGetUsersResponseCompanion, SharedGrpcDeviceAdminClient, SharedGrpcDeviceRegistrationClient, SharedGrpcDeviceServiceClient, SharedGrpcIdentityServiceClient, SharedGrpcProjectSettingsAdminClient, SharedGrpcProjectSettingsServiceClient, SharedGrpcWebUsersPrivateServiceClient, SharedGrpcWebUsersPrivateServiceV2Client, SharedGrpcWebUsersServiceClient, SharedLogoutUserRequest, SharedLogoutUserRequestCompanion, SharedLogoutUserResponse, SharedLogoutUserResponseCompanion, SharedLogoutUsersRequest, SharedLogoutUsersRequestCompanion, SharedMobileDevice, SharedMobileDeviceCompanion, SharedMobileDevicesArray, SharedMobileDevicesArrayCompanion, SharedPermissionError, SharedPermissionErrorCompanion, SharedProjectRequest, SharedProjectRequestCompanion, SharedProjectSettings, SharedProjectSettingsCompanion, SharedProjectSettingsArray, SharedProjectSettingsArrayCompanion, SharedProjectSettingsRequest, SharedProjectSettingsRequestCompanion, SharedProjectsResponse, SharedProjectsResponseCompanion, SharedRefreshRequest, SharedRefreshRequestCompanion, SharedRefreshResponse, SharedRefreshResponseCompanion, SharedRefreshResponseError, SharedRefreshResponseErrorCompanion, SharedRegisterDeviceRequest, SharedRegisterDeviceRequestCompanion, SharedRegisterDeviceResponse, SharedRegisterDeviceResponseCompanion, SharedRegisterDeviceType, SharedRegisterDeviceTypeCompanion, SharedRegisterError, SharedRegisterErrorCompanion, SharedSettingsByAppKeyRequest, SharedSettingsByAppKeyRequestCompanion, SharedSettingsResponse, SharedSettingsResponseCompanion, SharedToken, SharedTokenCompanion, SharedTokenError, SharedTokenErrorCompanion, SharedTokenPayload, SharedTokenPayloadCompanion, SharedUpdateDeviceData, SharedUpdateDeviceDataCompanion, SharedUpdateDeviceRequest, SharedUpdateDeviceRequestCompanion, SharedUpdateTokenDeviceRequest, SharedUpdateTokenDeviceRequestCompanion, SharedUpdateTokenDeviceResponse, SharedUpdateTokenDeviceResponseCompanion, SharedUserResponse, SharedUserResponseCompanion, SharedWebUser, SharedWebUserCompanion, SharedWebUserCredentials, SharedWebUserCredentialsCompanion, SharedWebUserCredentialsData, SharedWebUserCredentialsDataCompanion, SharedWebUserData, SharedWebUserDataCompanion, SharedGetLeafletsRequest, SharedGetLeafletsRequestCompanion, SharedGetLeafletsResponse, SharedGetLeafletsResponseCompanion, SharedGetLeafletsResponseLeaflets, SharedGetLeafletsResponseLeafletsCompanion, SharedGetMostOpenedLeafletsRequest, SharedGetMostOpenedLeafletsRequestCompanion, SharedGetMostOpenedLeafletsResponse, SharedGetMostOpenedLeafletsResponseCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflet, SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflets, SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion, SharedGrpcAnalyticsClient, SharedGrpcPublicClient, SharedLeaflet, SharedLeafletCompanion, SharedWire_runtimeMessage<M, B>, SharedWire_runtimeMessageBuilder<M, B>, SharedWire_runtimeProtoAdapter<E>, SharedWire_runtimeProtoAdapterCompanion, SharedWire_runtimeInstant, SharedWire_runtimeFieldEncoding, SharedWire_runtimeFieldEncodingCompanion, SharedWire_runtimeSyntax, SharedWire_runtimeSyntaxCompanion, SharedWire_runtimeProtoReader, SharedWire_runtimeProtoReaderCompanion, SharedWire_runtimeProtoWriter, SharedWire_runtimeProtoWriterCompanion, SharedWire_runtimeReverseProtoWriter, SharedWire_runtimeDuration, SharedSkieColdFlowIterator<E>, SharedSkieKotlinFlow<T>, SharedSkieKotlinMutableSharedFlow<T>, SharedSkieKotlinMutableStateFlow<T>, SharedSkieKotlinOptionalFlow<T>, SharedSkieKotlinOptionalMutableSharedFlow<T>, SharedSkieKotlinOptionalMutableStateFlow<T>, SharedSkieKotlinOptionalSharedFlow<T>, SharedSkieKotlinOptionalStateFlow<T>, SharedSkieKotlinSharedFlow<T>, SharedSkieKotlinStateFlow<T>, SharedSkie_CancellationHandler, SharedSkie_SuspendHandler, SharedSkie_SuspendResult, SharedSkie_SuspendResultCanceled, SharedSkie_SuspendResultError, SharedSkie_SuspendResultSuccess, SharedGreeting, SharedIOSPlatform, SharedKmpApplication, SharedSwiftType, SharedPlatform_iosKt, SharedSharedModuleKt, SharedDIHelpersKt, SharedNativeModuleKt, SharedHomescreenTestClass, SharedDefaultHomescreenComponent, SharedDefaultRootComponent, SharedRootComponentChild, SharedRootComponentChildHomescreenChild, SharedHomescreenUILogicModuleKt, SharedChild<C, T>, SharedChildCreated<C, T>, SharedChildDestroyed<C>, SharedDefaultComponentContext, SharedRef<T>, SharedApplicationLifecycle, SharedMergedLifecycle, SharedChildNavStateStatus, SharedSimpleChildNavState<C>, SharedSimpleNavigation<T>, SharedChildOverlay<C, T>, SharedOverlayNavigationSourceEvent<C>, SharedChildPages<C, T>, SharedPages<C>, SharedPagesNavigationSourceEvent<C>, SharedChildSlot<C, T>, SharedSlotNavigationSourceEvent<C>, SharedChildStack<C, T>, SharedStackNavigationSourceEvent<C>, SharedMutableValue<T>, SharedValue<T>, SharedObserveLifecycleMode, SharedComponentContextExtKt, SharedUtilsKt, SharedErrorHandlersKt, SharedChildrenFactoryKt, SharedOverlayNavigationKt, SharedOverlayNavigatorExtKt, SharedChildOverlayFactoryKt, SharedPagesNavigationKt, SharedChildPagesFactoryKt, SharedPagesNavigatorExtKt, SharedSlotNavigationKt, SharedSlotNavigatorExtKt, SharedChildSlotFactoryKt, SharedStackNavigationKt, SharedStackNavigatorExtKt, SharedChildStackFactoryKt, SharedMutableValueBuilderKt, SharedLifecycleState, SharedLifecycleRegistryKt, SharedLifecycleRegistryExtKt, SharedLifecycleExtKt, SharedBack_handlerBackCallback, SharedBack_handlerBackCallbackCompanion, SharedBack_handlerBackEvent, SharedBack_handlerBackEventSwipeEdge, SharedOkioByteString, SharedOkioByteStringCompanion, SharedOkioBuffer, SharedOkioBufferUnsafeCursor, SharedOkioIOException, SharedOkioTimeout, SharedOkioTimeoutCompanion, SharedWire_grpc_clientGrpcClient, SharedWire_grpc_clientGrpcMethod<S, R>, SharedKoin_coreModule, SharedKoin_coreKoinApplication, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreParametersHolder, SharedKoin_coreScope, SharedKoin_coreLockable, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKoin_coreScopeRegistryCompanion, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKotlinx_serialization_corePolymorphicKind, SharedKotlinx_serialization_corePolymorphicKindOPEN, SharedKotlinx_serialization_corePolymorphicKindSEALED, SharedKotlinx_serialization_coreSerialKind, SharedKotlinx_serialization_coreSerialKindCONTEXTUAL, SharedKotlinx_serialization_coreSerialKindENUM, SharedKotlinx_serialization_corePrimitiveKind, SharedKotlinx_serialization_corePrimitiveKindBOOLEAN, SharedKotlinx_serialization_corePrimitiveKindBYTE, SharedKotlinx_serialization_corePrimitiveKindCHAR, SharedKotlinx_serialization_corePrimitiveKindDOUBLE, SharedKotlinx_serialization_corePrimitiveKindFLOAT, SharedKotlinx_serialization_corePrimitiveKindINT, SharedKotlinx_serialization_corePrimitiveKindLONG, SharedKotlinx_serialization_corePrimitiveKindSHORT, SharedKotlinx_serialization_corePrimitiveKindSTRING, SharedKotlinx_serialization_coreStructureKind, SharedKotlinx_serialization_coreStructureKindCLASS, SharedKotlinx_serialization_coreStructureKindLIST, SharedKotlinx_serialization_coreStructureKindMAP, SharedKotlinx_serialization_coreStructureKindOBJECT, SharedKotlinx_serialization_coreSerializersModule, SharedStately_concurrencyThreadLocalRef<T>, Shared__SkieSuspendWrappersKt, Shared__SkieTypeExportsKt, NSObject, NSError, NSString, NSArray<E>, NSMutableArray<E>, NSSet<E>, NSDictionary<K, V>, NSMutableSet, NSMutableDictionary, NSNumber, NSData;
+@class SharedBase, SharedMutableSet<E>, SharedMutableDictionary<K, V>, SharedNumber, SharedByte, SharedUByte, SharedShort, SharedUShort, SharedInt, SharedUInt, SharedLong, SharedULong, SharedFloat, SharedDouble, SharedBoolean, SharedKotlinEnum<E>, SharedKotlinEnumCompanion, SharedKotlinByteArray, SharedKotlinNothing, SharedKotlinArray<T>, SharedKotlinCancellationException, SharedKotlinIllegalStateException, SharedKotlinRuntimeException, SharedKotlinException, SharedKotlinThrowable, SharedKotlinLazyThreadSafetyMode, SharedKotlinByteIterator, SharedKotlinPair<A, B>, SharedKotlinUnit, SharedKotlinDoubleArray, SharedKotlinIntArray, SharedKotlinLongArray, SharedKotlinFloatArray, SharedKotlinKTypeProjection, SharedKotlinKTypeProjectionCompanion, SharedKotlinDoubleIterator, SharedKotlinIntIterator, SharedKotlinLongIterator, SharedKotlinFloatIterator, SharedKotlinKVariance, SharedAddress, SharedAddressCompanion, SharedCurrency, SharedCurrencyCompanion, SharedCursorBackwardPagingParams, SharedCursorBackwardPagingParamsCompanion, SharedCursorForwardPagingParams, SharedCursorForwardPagingParamsCompanion, SharedFile, SharedFileCompanion, SharedHexColor, SharedHexColorCompanion, SharedLanguage, SharedLanguageCompanion, SharedLocation, SharedLocationCompanion, SharedPageInfo, SharedPageInfoCompanion, SharedPagingParams, SharedPagingParamsCompanion, SharedPicture, SharedPictureCompanion, SharedPriceValue, SharedPriceValueCompanion, SharedSemVer, SharedSemVerCompanion, SharedSortOrder, SharedSortOrderCompanion, SharedTimeRange, SharedTimeRangeCompanion, SharedDeviceEvent, SharedDeviceEventCompanion, SharedDeviceEventType, SharedDeviceEventTypeCompanion, SharedDeviceEventsArray, SharedDeviceEventsArrayCompanion, SharedGetDeviceEventsRequest, SharedGetDeviceEventsRequestCompanion, SharedGetDeviceEventsResponse, SharedGetDeviceEventsResponseCompanion, SharedGrpcDeviceEventsClient, SharedLeafletRepository, SharedLeafletSuspendClientImpl, SharedObjectId, SharedObjectIdCompanion, SharedUUID, SharedUUIDCompanion, SharedWeekDay, SharedWeekDayCompanion, SharedAddOrUpdateSettingsRequest, SharedAddOrUpdateSettingsRequestCompanion, SharedAddOrUpdateUserRequest, SharedAddOrUpdateUserRequestCompanion, SharedAddOrUpdateUserRequestV2, SharedAddOrUpdateUserRequestV2Companion, SharedAddOrUpdateUserResponseV2, SharedAddOrUpdateUserResponseV2AddUserError, SharedAddOrUpdateUserResponseV2AddUserErrorCompanion, SharedAddOrUpdateUserResponseV2Companion, SharedCreateRequest, SharedCreateRequestCompanion, SharedCreateRequestCredentials, SharedCreateRequestCredentialsCompanion, SharedCreateRequestDeviceKey, SharedCreateRequestDeviceKeyCompanion, SharedCreateRequestProjectUserLoginToken, SharedCreateRequestProjectUserLoginTokenCompanion, SharedCreateRequestUserLoginToken, SharedCreateRequestUserLoginTokenCompanion, SharedCreateResponse, SharedCreateResponseCompanion, SharedCreateResponseError, SharedCreateResponseErrorCompanion, SharedDeleteUserRequest, SharedDeleteUserRequestCompanion, SharedDeviceData, SharedDeviceDataCompanion, SharedDeviceLang, SharedDeviceLangCompanion, SharedDeviceResponse, SharedDeviceResponseCompanion, SharedDeviceResponseError, SharedDeviceResponseErrorCompanion, SharedDeviceType, SharedDeviceTypeCompanion, SharedDevicesResponse, SharedDevicesResponseCompanion, SharedFirebaseConfigResponse, SharedFirebaseConfigResponseCompanion, SharedGetDeviceByTemporaryIdRequest, SharedGetDeviceByTemporaryIdRequestCompanion, SharedGetDeviceRequest, SharedGetDeviceRequestCompanion, SharedGetDevicesRequest, SharedGetDevicesRequestCompanion, SharedGetTokenDeviceRequest, SharedGetTokenDeviceRequestCompanion, SharedGetTokenDeviceResponse, SharedGetTokenDeviceResponseCompanion, SharedGetTokenUserResponse, SharedGetTokenUserResponseCompanion, SharedGetUserForLoginRequest, SharedGetUserForLoginRequestCompanion, SharedGetUserForLoginTokenRequest, SharedGetUserForLoginTokenRequestCompanion, SharedGetUsersDevicesRequest, SharedGetUsersDevicesRequestCompanion, SharedGetUsersDevicesResponse, SharedGetUsersDevicesResponseCompanion, SharedGetUsersRequest, SharedGetUsersRequestCompanion, SharedGetUsersResponse, SharedGetUsersResponseCompanion, SharedGrpcDeviceAdminClient, SharedGrpcDeviceRegistrationClient, SharedGrpcDeviceServiceClient, SharedGrpcIdentityServiceClient, SharedGrpcProjectSettingsAdminClient, SharedGrpcProjectSettingsServiceClient, SharedGrpcWebUsersPrivateServiceClient, SharedGrpcWebUsersPrivateServiceV2Client, SharedGrpcWebUsersServiceClient, SharedLogoutUserRequest, SharedLogoutUserRequestCompanion, SharedLogoutUserResponse, SharedLogoutUserResponseCompanion, SharedLogoutUsersRequest, SharedLogoutUsersRequestCompanion, SharedMobileDevice, SharedMobileDeviceCompanion, SharedMobileDevicesArray, SharedMobileDevicesArrayCompanion, SharedPermissionError, SharedPermissionErrorCompanion, SharedProjectRequest, SharedProjectRequestCompanion, SharedProjectSettings, SharedProjectSettingsCompanion, SharedProjectSettingsArray, SharedProjectSettingsArrayCompanion, SharedProjectSettingsRequest, SharedProjectSettingsRequestCompanion, SharedProjectsResponse, SharedProjectsResponseCompanion, SharedRefreshRequest, SharedRefreshRequestCompanion, SharedRefreshResponse, SharedRefreshResponseCompanion, SharedRefreshResponseError, SharedRefreshResponseErrorCompanion, SharedRegisterDeviceRequest, SharedRegisterDeviceRequestCompanion, SharedRegisterDeviceResponse, SharedRegisterDeviceResponseCompanion, SharedRegisterDeviceType, SharedRegisterDeviceTypeCompanion, SharedRegisterError, SharedRegisterErrorCompanion, SharedSettingsByAppKeyRequest, SharedSettingsByAppKeyRequestCompanion, SharedSettingsResponse, SharedSettingsResponseCompanion, SharedToken, SharedTokenCompanion, SharedTokenError, SharedTokenErrorCompanion, SharedTokenPayload, SharedTokenPayloadCompanion, SharedUpdateDeviceData, SharedUpdateDeviceDataCompanion, SharedUpdateDeviceRequest, SharedUpdateDeviceRequestCompanion, SharedUpdateTokenDeviceRequest, SharedUpdateTokenDeviceRequestCompanion, SharedUpdateTokenDeviceResponse, SharedUpdateTokenDeviceResponseCompanion, SharedUserResponse, SharedUserResponseCompanion, SharedWebUser, SharedWebUserCompanion, SharedWebUserCredentials, SharedWebUserCredentialsCompanion, SharedWebUserCredentialsData, SharedWebUserCredentialsDataCompanion, SharedWebUserData, SharedWebUserDataCompanion, SharedGetLeafletsRequest, SharedGetLeafletsRequestCompanion, SharedGetLeafletsResponse, SharedGetLeafletsResponseCompanion, SharedGetLeafletsResponseLeaflets, SharedGetLeafletsResponseLeafletsCompanion, SharedGetMostOpenedLeafletsRequest, SharedGetMostOpenedLeafletsRequestCompanion, SharedGetMostOpenedLeafletsResponse, SharedGetMostOpenedLeafletsResponseCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflet, SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflets, SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion, SharedGrpcAnalyticsClient, SharedGrpcPublicClient, SharedLeaflet, SharedLeafletCompanion, SharedWire_runtimeMessage<M, B>, SharedWire_runtimeMessageBuilder<M, B>, SharedWire_runtimeProtoAdapter<E>, SharedWire_runtimeProtoAdapterCompanion, SharedWire_runtimeInstant, SharedWire_runtimeFieldEncoding, SharedWire_runtimeFieldEncodingCompanion, SharedWire_runtimeSyntax, SharedWire_runtimeSyntaxCompanion, SharedWire_runtimeProtoReader, SharedWire_runtimeProtoReaderCompanion, SharedWire_runtimeProtoWriter, SharedWire_runtimeProtoWriterCompanion, SharedWire_runtimeReverseProtoWriter, SharedWire_runtimeDuration, SharedSkieColdFlowIterator<E>, SharedSkieKotlinFlow<T>, SharedSkieKotlinMutableSharedFlow<T>, SharedSkieKotlinMutableStateFlow<T>, SharedSkieKotlinOptionalFlow<T>, SharedSkieKotlinOptionalMutableSharedFlow<T>, SharedSkieKotlinOptionalMutableStateFlow<T>, SharedSkieKotlinOptionalSharedFlow<T>, SharedSkieKotlinOptionalStateFlow<T>, SharedSkieKotlinSharedFlow<T>, SharedSkieKotlinStateFlow<T>, SharedSkie_CancellationHandler, SharedSkie_SuspendHandler, SharedSkie_SuspendResult, SharedSkie_SuspendResultCanceled, SharedSkie_SuspendResultError, SharedSkie_SuspendResultSuccess, SharedGreeting, SharedIOSPlatform, SharedKmpApplication, SharedSwiftType, SharedAppStartupViewModel, SharedAppStartupViewState, SharedRootDestination, SharedRootDestinationAppStartup, SharedRootDestinationCompanion, SharedRootEntry, SharedRootEntryAppStartup, SharedRootNavigationFactory, SharedRootNavigationViewState, SharedPlatform_iosKt, SharedSharedModuleKt, SharedDIHelpersKt, SharedNativeModuleKt, SharedAppStartupModuleKt, SharedNavigationRootModuleKt, SharedSharedViewModel<VS, UI_EVENT>, SharedViewModelComponent<VM>, SharedComponentContextExtKt, SharedKoin_coreModule, SharedKoin_coreKoinApplication, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreKoin, SharedKoin_coreParametersHolder, SharedKoin_coreScope, SharedKoin_coreLockable, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKoin_coreScopeRegistryCompanion, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedChild<C, T>, SharedChildCreated<C, T>, SharedChildDestroyed<C>, SharedDefaultComponentContext, SharedRef<T>, SharedApplicationLifecycle, SharedMergedLifecycle, SharedChildNavStateStatus, SharedSimpleChildNavState<C>, SharedSimpleNavigation<T>, SharedChildOverlay<C, T>, SharedOverlayNavigationSourceEvent<C>, SharedChildPages<C, T>, SharedPages<C>, SharedPagesNavigationSourceEvent<C>, SharedChildSlot<C, T>, SharedSlotNavigationSourceEvent<C>, SharedChildStack<C, T>, SharedStackNavigationSourceEvent<C>, SharedMutableValue<T>, SharedValue<T>, SharedObserveLifecycleMode, SharedComponentContextExtKt_, SharedUtilsKt, SharedErrorHandlersKt, SharedChildrenFactoryKt, SharedOverlayNavigationKt, SharedOverlayNavigatorExtKt, SharedChildOverlayFactoryKt, SharedPagesNavigationKt, SharedChildPagesFactoryKt, SharedPagesNavigatorExtKt, SharedSlotNavigationKt, SharedSlotNavigatorExtKt, SharedChildSlotFactoryKt, SharedStackNavigationKt, SharedStackNavigatorExtKt, SharedChildStackFactoryKt, SharedMutableValueBuilderKt, SharedLifecycleState, SharedLifecycleRegistryKt, SharedLifecycleRegistryExtKt, SharedLifecycleExtKt, SharedBack_handlerBackCallback, SharedBack_handlerBackCallbackCompanion, SharedBack_handlerBackEvent, SharedBack_handlerBackEventSwipeEdge, SharedHomescreenTestClass, SharedDefaultHomescreenComponent, SharedDefaultRootComponent, SharedRootComponentChild, SharedRootComponentChildHomescreenChild, SharedHomescreenUILogicModuleKt, SharedOkioByteString, SharedOkioByteStringCompanion, SharedOkioBuffer, SharedOkioBufferUnsafeCursor, SharedOkioIOException, SharedOkioTimeout, SharedOkioTimeoutCompanion, SharedWire_grpc_clientGrpcClient, SharedWire_grpc_clientGrpcMethod<S, R>, SharedKotlinx_serialization_corePolymorphicKind, SharedKotlinx_serialization_corePolymorphicKindOPEN, SharedKotlinx_serialization_corePolymorphicKindSEALED, SharedKotlinx_serialization_coreSerialKind, SharedKotlinx_serialization_coreSerialKindCONTEXTUAL, SharedKotlinx_serialization_coreSerialKindENUM, SharedKotlinx_serialization_corePrimitiveKind, SharedKotlinx_serialization_corePrimitiveKindBOOLEAN, SharedKotlinx_serialization_corePrimitiveKindBYTE, SharedKotlinx_serialization_corePrimitiveKindCHAR, SharedKotlinx_serialization_corePrimitiveKindDOUBLE, SharedKotlinx_serialization_corePrimitiveKindFLOAT, SharedKotlinx_serialization_corePrimitiveKindINT, SharedKotlinx_serialization_corePrimitiveKindLONG, SharedKotlinx_serialization_corePrimitiveKindSHORT, SharedKotlinx_serialization_corePrimitiveKindSTRING, SharedKotlinx_serialization_coreStructureKind, SharedKotlinx_serialization_coreStructureKindCLASS, SharedKotlinx_serialization_coreStructureKindLIST, SharedKotlinx_serialization_coreStructureKindMAP, SharedKotlinx_serialization_coreStructureKindOBJECT, SharedKotlinx_serialization_coreSerializersModule, SharedStately_concurrencyThreadLocalRef<T>, Shared__SkieSuspendWrappersKt, Shared__SkieTypeExportsKt, NSObject, NSError, NSString, NSArray<E>, NSMutableArray<E>, NSSet<E>, NSDictionary<K, V>, NSMutableSet, NSMutableDictionary, NSNumber, NSData;
 
-@protocol SharedKotlinComparable, SharedKotlinKClass, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinKProperty, SharedKotlinKCallable, SharedKotlinIterator, SharedKotlinKType, SharedKotlinLazy, SharedKotlinCoroutineContext, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinAnnotation, SharedDeviceEventsClient, SharedLeafletCallBackClient, SharedLeafletSuspendClient, SharedRegisterDeviceRepository, SharedDeviceAdminClient, SharedDeviceRegistrationClient, SharedDeviceServiceClient, SharedIdentityServiceClient, SharedProjectSettingsAdminClient, SharedProjectSettingsServiceClient, SharedWebUsersPrivateServiceClient, SharedWebUsersPrivateServiceV2Client, SharedWebUsersServiceClient, SharedAnalyticsClient, SharedPublicClient, SharedWire_runtimeWireEnum, SharedWire_runtimeService, SharedWire_runtimeMessageSink, SharedWire_runtimeMessageSource, SharedSkie_DispatcherDelegate, SharedKotlinx_coroutines_coreFlow, SharedKotlinx_coroutines_coreMutableSharedFlow, SharedKotlinx_coroutines_coreSharedFlow, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinx_coroutines_coreMutableStateFlow, SharedKotlinx_coroutines_coreStateFlow, SharedKotlinx_coroutines_coreRunnable, SharedKotlinx_coroutines_coreReceiveChannel, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinx_coroutines_coreSelectClause, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreDisposableHandle, SharedPlatform, SharedNativeTestDependency, SharedHomescreenComponent, SharedRootComponent, SharedComponentContext, SharedCancellation, SharedChildNavState, SharedNavState, SharedNavigationSource, SharedOverlayNavigation, SharedOverlayNavigator, SharedOverlayNavigationSource, SharedPagesNavigation, SharedPagesNavigator, SharedPagesNavigationSource, SharedSlotNavigation, SharedSlotNavigator, SharedSlotNavigationSource, SharedStackNavigation, SharedStackNavigator, SharedStackNavigationSource, SharedWebHistoryController, SharedLifecycleOwner, SharedLifecycle, SharedLifecycleCallbacks, SharedLifecycleRegistry, SharedState_keeperStateKeeperOwner, SharedState_keeperStateKeeper, SharedInstance_keeperInstanceKeeperOwner, SharedInstance_keeperInstanceKeeper, SharedInstance_keeperInstanceKeeperInstance, SharedBack_handlerBackHandlerOwner, SharedBack_handlerBackHandler, SharedOkioBufferedSink, SharedOkioSink, SharedOkioCloseable, SharedOkioBufferedSource, SharedOkioSource, SharedWire_grpc_clientGrpcCall, SharedWire_grpc_clientGrpcCallCallback, SharedWire_grpc_clientGrpcStreamingCall, SharedKoin_coreQualifier, SharedKoin_coreScopeCallback, SharedKoin_coreKoinScopeComponent, SharedKoin_coreKoinComponent, SharedKoin_coreKoinExtension, SharedRuntimeParcelable, SharedParcelableParcelableContainer, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_serialization_coreSerializersModuleCollector, NSCopying, NSSecureCoding;
+@protocol SharedKotlinComparable, SharedKotlinKClass, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinLazy, SharedKotlinKProperty, SharedKotlinKCallable, SharedKotlinIterator, SharedKotlinCoroutineContext, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinKType, SharedKotlinAnnotation, SharedDeviceEventsClient, SharedLeafletCallBackClient, SharedLeafletSuspendClient, SharedRegisterDeviceRepository, SharedDeviceAdminClient, SharedDeviceRegistrationClient, SharedDeviceServiceClient, SharedIdentityServiceClient, SharedProjectSettingsAdminClient, SharedProjectSettingsServiceClient, SharedWebUsersPrivateServiceClient, SharedWebUsersPrivateServiceV2Client, SharedWebUsersServiceClient, SharedAnalyticsClient, SharedPublicClient, SharedWire_runtimeWireEnum, SharedWire_runtimeService, SharedWire_runtimeMessageSink, SharedWire_runtimeMessageSource, SharedSkie_DispatcherDelegate, SharedKotlinx_coroutines_coreFlow, SharedKotlinx_coroutines_coreMutableSharedFlow, SharedKotlinx_coroutines_coreSharedFlow, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinx_coroutines_coreMutableStateFlow, SharedKotlinx_coroutines_coreStateFlow, SharedKotlinx_coroutines_coreRunnable, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreReceiveChannel, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinx_coroutines_coreSelectClause, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreDisposableHandle, SharedPlatform, SharedNativeTestDependency, SharedAppStartupScreen, SharedRootNavigation, SharedRootSlotNavigator, SharedDestination, SharedNavEntry, SharedUiEvent, SharedViewState, SharedInstance_keeperInstanceKeeper, SharedInstance_keeperInstanceKeeperInstance, SharedInstance_keeperInstanceKeeperOwner, SharedKoin_coreKoinComponent, SharedKoin_coreQualifier, SharedKoin_coreKoinScopeComponent, SharedKoin_coreScopeCallback, SharedKoin_coreKoinExtension, SharedComponentContext, SharedCancellation, SharedChildNavState, SharedNavState, SharedNavigationSource, SharedOverlayNavigation, SharedOverlayNavigator, SharedOverlayNavigationSource, SharedPagesNavigation, SharedPagesNavigator, SharedPagesNavigationSource, SharedSlotNavigation, SharedSlotNavigator, SharedSlotNavigationSource, SharedStackNavigation, SharedStackNavigator, SharedStackNavigationSource, SharedWebHistoryController, SharedLifecycleOwner, SharedLifecycle, SharedLifecycleCallbacks, SharedLifecycleRegistry, SharedState_keeperStateKeeperOwner, SharedState_keeperStateKeeper, SharedBack_handlerBackHandlerOwner, SharedBack_handlerBackHandler, SharedHomescreenComponent, SharedRootComponent, SharedOkioBufferedSink, SharedOkioSink, SharedOkioCloseable, SharedOkioBufferedSource, SharedOkioSource, SharedWire_grpc_clientGrpcCall, SharedWire_grpc_clientGrpcCallCallback, SharedWire_grpc_clientGrpcStreamingCall, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedRuntimeParcelable, SharedParcelableParcelableContainer, NSCopying, NSSecureCoding;
 
 // Due to an Obj-C/Swift interop limitation, SKIE cannot generate Swift types with a lambda type argument.
 // Example of such type is: A<() -> Unit> where A<T> is a generic class.
@@ -3266,47 +3266,43 @@ __attribute__((swift_name("KmpApplication")))
 - (void)test __attribute__((swift_name("test()")));
 @end
 
-__attribute__((swift_name("NativeTestDependency")))
-@protocol SharedNativeTestDependency
+__attribute__((swift_name("Destination")))
+@protocol SharedDestination
 @required
-- (NSString *)greet __attribute__((swift_name("greet()")));
+- (id<SharedNavEntry>)createComponentComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("createComponent(componentContext:)")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("SwiftType")))
-@interface SharedSwiftType : SharedBase
-@property (readonly) id<SharedKotlinKClass> swiftClazz __attribute__((swift_name("swiftClazz")));
-@property (readonly) id type __attribute__((swift_name("type")));
-- (instancetype)initWithType:(id)type swiftClazz:(id<SharedKotlinKClass>)swiftClazz __attribute__((swift_name("init(type:swiftClazz:)"))) __attribute__((objc_designated_initializer));
-- (SharedSwiftType *)doCopyType:(id)type swiftClazz:(id<SharedKotlinKClass>)swiftClazz __attribute__((swift_name("doCopy(type:swiftClazz:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
+__attribute__((swift_name("NavEntry")))
+@protocol SharedNavEntry
+@required
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("HomescreenTestClass")))
-@interface SharedHomescreenTestClass : SharedBase
+__attribute__((swift_name("Instance_keeperInstanceKeeperInstance")))
+@protocol SharedInstance_keeperInstanceKeeperInstance
+@required
+- (void)onDestroy __attribute__((swift_name("onDestroy()")));
+@end
+
+__attribute__((swift_name("Koin_coreKoinComponent")))
+@protocol SharedKoin_coreKoinComponent
+@required
+- (SharedKoin_coreKoin *)getKoin __attribute__((swift_name("getKoin()")));
+@end
+
+__attribute__((swift_name("SharedViewModel")))
+@interface SharedSharedViewModel<VS, UI_EVENT> : SharedBase <SharedInstance_keeperInstanceKeeperInstance, SharedKoin_coreKoinComponent>
+@property (readonly) id<SharedKotlinx_coroutines_coreFlow> uiEvents __attribute__((swift_name("uiEvents")));
+@property (readonly) id<SharedKotlinx_coroutines_coreCoroutineScope> viewModelScope __attribute__((swift_name("viewModelScope")));
+@property (readonly) id<SharedKotlinx_coroutines_coreMutableStateFlow> viewState __attribute__((swift_name("viewState")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (void)onDestroy __attribute__((swift_name("onDestroy()")));
+- (void)sendUiEventEvent:(UI_EVENT)event __attribute__((swift_name("sendUiEvent(event:)")));
 @end
 
-__attribute__((swift_name("HomescreenComponent")))
-@protocol SharedHomescreenComponent
+__attribute__((swift_name("UiEvent")))
+@protocol SharedUiEvent
 @required
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DefaultHomescreenComponent")))
-@interface SharedDefaultHomescreenComponent : SharedBase <SharedHomescreenComponent>
-- (instancetype)initWithComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("init(componentContext:)"))) __attribute__((objc_designated_initializer));
-@end
-
-__attribute__((swift_name("RootComponent")))
-@protocol SharedRootComponent
-@required
-- (void)onBackClickedToIndex:(int32_t)toIndex __attribute__((swift_name("onBackClicked(toIndex:)")));
-@property (readonly) SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> *stack __attribute__((swift_name("stack")));
 @end
 
 __attribute__((swift_name("LifecycleOwner")))
@@ -3336,6 +3332,171 @@ __attribute__((swift_name("Back_handlerBackHandlerOwner")))
 __attribute__((swift_name("ComponentContext")))
 @protocol SharedComponentContext <SharedLifecycleOwner, SharedState_keeperStateKeeperOwner, SharedInstance_keeperInstanceKeeperOwner, SharedBack_handlerBackHandlerOwner>
 @required
+@end
+
+__attribute__((swift_name("ViewModelComponent")))
+@interface SharedViewModelComponent<VM> : SharedBase <SharedComponentContext, SharedKoin_coreKoinComponent>
+@property (readonly) id<SharedBack_handlerBackHandler> backHandler __attribute__((swift_name("backHandler")));
+@property (readonly) id<SharedInstance_keeperInstanceKeeper> instanceKeeper __attribute__((swift_name("instanceKeeper")));
+@property (readonly) id<SharedLifecycle> lifecycle __attribute__((swift_name("lifecycle")));
+@property (readonly) id<SharedState_keeperStateKeeper> stateKeeper __attribute__((swift_name("stateKeeper")));
+@property (readonly) VM viewModel __attribute__((swift_name("viewModel")));
+- (instancetype)initWithComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("init(componentContext:)"))) __attribute__((objc_designated_initializer));
+@end
+
+__attribute__((swift_name("ViewState")))
+@protocol SharedViewState
+@required
+@end
+
+__attribute__((swift_name("NativeTestDependency")))
+@protocol SharedNativeTestDependency
+@required
+- (NSString *)greet __attribute__((swift_name("greet()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SwiftType")))
+@interface SharedSwiftType : SharedBase
+@property (readonly) id<SharedKotlinKClass> swiftClazz __attribute__((swift_name("swiftClazz")));
+@property (readonly) id type __attribute__((swift_name("type")));
+- (instancetype)initWithType:(id)type swiftClazz:(id<SharedKotlinKClass>)swiftClazz __attribute__((swift_name("init(type:swiftClazz:)"))) __attribute__((objc_designated_initializer));
+- (SharedSwiftType *)doCopyType:(id)type swiftClazz:(id<SharedKotlinKClass>)swiftClazz __attribute__((swift_name("doCopy(type:swiftClazz:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("AppStartupScreen")))
+@protocol SharedAppStartupScreen
+@required
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> viewState __attribute__((swift_name("viewState")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("AppStartupViewModel")))
+@interface SharedAppStartupViewModel : SharedSharedViewModel<SharedAppStartupViewState *, SharedKotlinNothing *>
+@property (readonly) id<SharedKotlinx_coroutines_coreMutableStateFlow> viewState __attribute__((swift_name("viewState")));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("AppStartupViewState")))
+@interface SharedAppStartupViewState : SharedBase <SharedViewState>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((swift_name("RootDestination")))
+@interface SharedRootDestination : SharedBase <SharedDestination>
+@property (class, readonly, getter=companion) SharedRootDestinationCompanion *companion __attribute__((swift_name("companion")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RootDestination.AppStartup")))
+@interface SharedRootDestinationAppStartup : SharedRootDestination
+@property (class, readonly, getter=shared) SharedRootDestinationAppStartup *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)appStartup __attribute__((swift_name("init()")));
+- (SharedRootEntry *)createComponentComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("createComponent(componentContext:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (id<SharedKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+- (id<SharedKotlinx_serialization_coreKSerializer>)serializerTypeParamsSerializers:(SharedKotlinArray<id<SharedKotlinx_serialization_coreKSerializer>> *)typeParamsSerializers __attribute__((swift_name("serializer(typeParamsSerializers:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RootDestination.Companion")))
+@interface SharedRootDestinationCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRootDestinationCompanion *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<SharedKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+- (id<SharedKotlinx_serialization_coreKSerializer>)serializerTypeParamsSerializers:(SharedKotlinArray<id<SharedKotlinx_serialization_coreKSerializer>> *)typeParamsSerializers __attribute__((swift_name("serializer(typeParamsSerializers:)")));
+@end
+
+__attribute__((swift_name("RootEntry")))
+@interface SharedRootEntry : SharedBase <SharedNavEntry>
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RootEntry.AppStartup")))
+@interface SharedRootEntryAppStartup : SharedRootEntry
+@property (readonly) id<SharedAppStartupScreen> screen __attribute__((swift_name("screen")));
+- (instancetype)initWithScreen:(id<SharedAppStartupScreen>)screen __attribute__((swift_name("init(screen:)"))) __attribute__((objc_designated_initializer));
+- (SharedRootEntryAppStartup *)doCopyScreen:(id<SharedAppStartupScreen>)screen __attribute__((swift_name("doCopy(screen:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("RootNavigation")))
+@protocol SharedRootNavigation
+@required
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> slot __attribute__((swift_name("slot")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RootNavigationFactory")))
+@interface SharedRootNavigationFactory : SharedBase
+@property (class, readonly, getter=shared) SharedRootNavigationFactory *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)rootNavigationFactory __attribute__((swift_name("init()")));
+- (id<SharedRootNavigation>)createComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("create(componentContext:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("RootNavigationViewState")))
+@interface SharedRootNavigationViewState : SharedBase <SharedViewState>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+__attribute__((swift_name("RootSlotNavigator")))
+@protocol SharedRootSlotNavigator
+@required
+- (id<SharedKotlinx_coroutines_coreStateFlow>)createSlotComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("createSlot(componentContext:)")));
+- (void)showAppStartup __attribute__((swift_name("showAppStartup()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HomescreenTestClass")))
+@interface SharedHomescreenTestClass : SharedBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end
+
+__attribute__((swift_name("HomescreenComponent")))
+@protocol SharedHomescreenComponent
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DefaultHomescreenComponent")))
+@interface SharedDefaultHomescreenComponent : SharedBase <SharedHomescreenComponent>
+- (instancetype)initWithComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("init(componentContext:)"))) __attribute__((objc_designated_initializer));
+@end
+
+__attribute__((swift_name("RootComponent")))
+@protocol SharedRootComponent
+@required
+- (void)onBackClickedToIndex:(int32_t)toIndex __attribute__((swift_name("onBackClicked(toIndex:)")));
+@property (readonly) SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> *stack __attribute__((swift_name("stack")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3987,6 +4148,10 @@ __attribute__((swift_name("Leaflet.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @end
 
+@interface SharedViewModelComponent (Extensions)
+- (id<SharedKotlinLazy>)viewModelQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("viewModel(qualifier:mode:parameters:)")));
+@end
+
 @interface SharedSwiftType (Extensions)
 - (id<SharedKotlinKClass>)getClazz __attribute__((swift_name("getClazz()")));
 @end
@@ -4003,9 +4168,17 @@ __attribute__((swift_name("Leaflet.Companion")))
 @property (readonly) SharedChildCreated<id, id> * _Nullable child __attribute__((swift_name("child")));
 @property (readonly) NSArray<SharedChildCreated<id, id> *> *items __attribute__((swift_name("items")));
 @property (readonly) SharedChildCreated<id, id> * _Nullable overlay __attribute__((swift_name("overlay"))) __attribute__((deprecated("Please use Child Slot API")));
+- (id<SharedKotlinx_coroutines_coreFlow>)asFlow __attribute__((swift_name("asFlow()")));
+- (id<SharedKotlinx_coroutines_coreStateFlow>)asStateFlowCoroutineScope:(id<SharedKotlinx_coroutines_coreCoroutineScope>)coroutineScope __attribute__((swift_name("asStateFlow(coroutineScope:)")));
 - (id)getValueThisRef:(id _Nullable)thisRef property:(id<SharedKotlinKProperty>)property __attribute__((swift_name("getValue(thisRef:property:)")));
 - (SharedValue<id> *)mapMapper:(id (^)(id))mapper __attribute__((swift_name("map(mapper:)")));
 - (void)observeLifecycle:(id<SharedLifecycle>)lifecycle mode:(SharedObserveLifecycleMode *)mode observer:(void (^)(id))observer __attribute__((swift_name("observe(lifecycle:mode:observer:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("AppStartupModuleKt")))
+@interface SharedAppStartupModuleKt : SharedBase
+@property (class, readonly) SharedKoin_coreModule *appStartupUILogicModule __attribute__((swift_name("appStartupUILogicModule")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4056,6 +4229,12 @@ __attribute__((swift_name("ChildrenFactoryKt")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ComponentContextExtKt")))
 @interface SharedComponentContextExtKt : SharedBase
++ (id<SharedKotlinx_coroutines_coreCoroutineScope>)componentCoroutineScope:(id<SharedComponentContext>)receiver __attribute__((swift_name("componentCoroutineScope(_:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ComponentContextExtKt_")))
+@interface SharedComponentContextExtKt_ : SharedBase
 + (id<SharedComponentContext>)childContext:(id<SharedComponentContext>)receiver key:(NSString *)key lifecycle:(id<SharedLifecycle> _Nullable)lifecycle __attribute__((swift_name("childContext(_:key:lifecycle:)")));
 @end
 
@@ -4123,6 +4302,12 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("NativeModuleKt")))
 @interface SharedNativeModuleKt : SharedBase
 + (SharedKoin_coreModule *)makeNativeModuleNativeTestDependency:(id<SharedNativeTestDependency> (^)(SharedKoin_coreScope *))nativeTestDependency __attribute__((swift_name("makeNativeModule(nativeTestDependency:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NavigationRootModuleKt")))
+@interface SharedNavigationRootModuleKt : SharedBase
+@property (class, readonly) SharedKoin_coreModule *rootUILogicModule __attribute__((swift_name("rootUILogicModule")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4560,6 +4745,76 @@ __attribute__((swift_name("Koin_coreKoinApplication")))
 - (SharedKoin_coreKoinApplication *)propertiesValues:(NSDictionary<NSString *, id> *)values __attribute__((swift_name("properties(values:)")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreKoin")))
+@interface SharedKoin_coreKoin : SharedBase
+@property (readonly) SharedKoin_coreExtensionManager *extensionManager __attribute__((swift_name("extensionManager")));
+@property (readonly) SharedKoin_coreInstanceRegistry *instanceRegistry __attribute__((swift_name("instanceRegistry")));
+@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
+@property (readonly) SharedKoin_corePropertyRegistry *propertyRegistry __attribute__((swift_name("propertyRegistry")));
+@property (readonly) SharedKoin_coreScopeRegistry *scopeRegistry __attribute__((swift_name("scopeRegistry")));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (void)close __attribute__((swift_name("close()")));
+- (void)createEagerInstances __attribute__((swift_name("createEagerInstances()")));
+- (SharedKoin_coreScope *)createScopeT:(id<SharedKoin_coreKoinScopeComponent>)t __attribute__((swift_name("createScope(t:)")));
+- (SharedKoin_coreScope *)createScopeScopeId:(NSString *)scopeId __attribute__((swift_name("createScope(scopeId:)")));
+- (SharedKoin_coreScope *)createScopeScopeId:(NSString *)scopeId source:(id _Nullable)source __attribute__((swift_name("createScope(scopeId:source:)")));
+- (SharedKoin_coreScope *)createScopeScopeId:(NSString *)scopeId qualifier:(id<SharedKoin_coreQualifier>)qualifier source:(id _Nullable)source __attribute__((swift_name("createScope(scopeId:qualifier:source:)")));
+- (void)declareInstance:(id _Nullable)instance qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes allowOverride:(BOOL)allowOverride __attribute__((swift_name("declare(instance:qualifier:secondaryTypes:allowOverride:)")));
+- (void)deletePropertyKey:(NSString *)key __attribute__((swift_name("deleteProperty(key:)")));
+- (void)deleteScopeScopeId:(NSString *)scopeId __attribute__((swift_name("deleteScope(scopeId:)")));
+- (id)getQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(qualifier:parameters:)")));
+- (id _Nullable)getClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(clazz:qualifier:parameters:)")));
+- (NSArray<id> *)getAll __attribute__((swift_name("getAll()")));
+- (SharedKoin_coreScope *)getOrCreateScopeScopeId:(NSString *)scopeId __attribute__((swift_name("getOrCreateScope(scopeId:)")));
+- (SharedKoin_coreScope *)getOrCreateScopeScopeId:(NSString *)scopeId qualifier:(id<SharedKoin_coreQualifier>)qualifier source:(id _Nullable)source __attribute__((swift_name("getOrCreateScope(scopeId:qualifier:source:)")));
+- (id _Nullable)getOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(qualifier:parameters:)")));
+- (id _Nullable)getOrNullClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(clazz:qualifier:parameters:)")));
+- (id _Nullable)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
+- (id)getPropertyKey:(NSString *)key defaultValue:(id)defaultValue __attribute__((swift_name("getProperty(key:defaultValue:)")));
+- (SharedKoin_coreScope *)getScopeScopeId:(NSString *)scopeId __attribute__((swift_name("getScope(scopeId:)")));
+- (SharedKoin_coreScope * _Nullable)getScopeOrNullScopeId:(NSString *)scopeId __attribute__((swift_name("getScopeOrNull(scopeId:)")));
+- (id<SharedKotlinLazy>)injectQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("inject(qualifier:mode:parameters:)")));
+- (id<SharedKotlinLazy>)injectOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("injectOrNull(qualifier:mode:parameters:)")));
+- (void)loadModulesModules:(NSArray<SharedKoin_coreModule *> *)modules allowOverride:(BOOL)allowOverride createEagerInstances:(BOOL)createEagerInstances __attribute__((swift_name("loadModules(modules:allowOverride:createEagerInstances:)")));
+- (void)setPropertyKey:(NSString *)key value:(id)value __attribute__((swift_name("setProperty(key:value:)")));
+- (void)setupLoggerLogger:(SharedKoin_coreLogger *)logger __attribute__((swift_name("setupLogger(logger:)")));
+- (void)unloadModulesModules:(NSArray<SharedKoin_coreModule *> *)modules __attribute__((swift_name("unloadModules(modules:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
+@protocol SharedKotlinx_coroutines_coreCoroutineScope
+@required
+@property (readonly) id<SharedKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@end
+
+__attribute__((swift_name("State_keeperStateKeeper")))
+@protocol SharedState_keeperStateKeeper
+@required
+- (id<SharedRuntimeParcelable> _Nullable)consumeKey:(NSString *)key clazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("consume(key:clazz:)"))) __attribute__((deprecated("Parcelize compiler plugin will not work with KMP and K2 compiler. Please use similar API based on kotlinx-serialization.")));
+- (id _Nullable)consumeKey:(NSString *)key strategy:(id<SharedKotlinx_serialization_coreDeserializationStrategy>)strategy __attribute__((swift_name("consume(key:strategy:)")));
+- (BOOL)isRegisteredKey:(NSString *)key __attribute__((swift_name("isRegistered(key:)")));
+- (void)registerKey:(NSString *)key supplier:(id<SharedRuntimeParcelable> _Nullable (^)(void))supplier __attribute__((swift_name("register(key:supplier:)"))) __attribute__((deprecated("Parcelize compiler plugin will not work with KMP and K2 compiler. Please use similar API based on kotlinx-serialization.")));
+- (void)registerKey:(NSString *)key strategy:(id<SharedKotlinx_serialization_coreSerializationStrategy>)strategy supplier:(id _Nullable (^)(void))supplier __attribute__((swift_name("register(key:strategy:supplier:)")));
+- (void)unregisterKey:(NSString *)key __attribute__((swift_name("unregister(key:)")));
+@end
+
+__attribute__((swift_name("Instance_keeperInstanceKeeper")))
+@protocol SharedInstance_keeperInstanceKeeper
+@required
+- (id<SharedInstance_keeperInstanceKeeperInstance> _Nullable)getKey:(id)key __attribute__((swift_name("get(key:)")));
+- (void)putKey:(id)key instance:(id<SharedInstance_keeperInstanceKeeperInstance>)instance __attribute__((swift_name("put(key:instance:)")));
+- (id<SharedInstance_keeperInstanceKeeperInstance> _Nullable)removeKey:(id)key __attribute__((swift_name("remove(key:)")));
+@end
+
+__attribute__((swift_name("Back_handlerBackHandler")))
+@protocol SharedBack_handlerBackHandler
+@required
+- (void)registerCallback:(SharedBack_handlerBackCallback *)callback __attribute__((swift_name("register(callback:)")));
+- (void)unregisterCallback:(SharedBack_handlerBackCallback *)callback __attribute__((swift_name("unregister(callback:)")));
+@end
+
 __attribute__((swift_name("KotlinKDeclarationContainer")))
 @protocol SharedKotlinKDeclarationContainer
 @required
@@ -4593,57 +4848,6 @@ __attribute__((swift_name("KotlinKClass")))
 @property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
 @end
 
-__attribute__((swift_name("State_keeperStateKeeper")))
-@protocol SharedState_keeperStateKeeper
-@required
-- (id<SharedRuntimeParcelable> _Nullable)consumeKey:(NSString *)key clazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("consume(key:clazz:)"))) __attribute__((deprecated("Parcelize compiler plugin will not work with KMP and K2 compiler. Please use similar API based on kotlinx-serialization.")));
-- (id _Nullable)consumeKey:(NSString *)key strategy:(id<SharedKotlinx_serialization_coreDeserializationStrategy>)strategy __attribute__((swift_name("consume(key:strategy:)")));
-- (BOOL)isRegisteredKey:(NSString *)key __attribute__((swift_name("isRegistered(key:)")));
-- (void)registerKey:(NSString *)key supplier:(id<SharedRuntimeParcelable> _Nullable (^)(void))supplier __attribute__((swift_name("register(key:supplier:)"))) __attribute__((deprecated("Parcelize compiler plugin will not work with KMP and K2 compiler. Please use similar API based on kotlinx-serialization.")));
-- (void)registerKey:(NSString *)key strategy:(id<SharedKotlinx_serialization_coreSerializationStrategy>)strategy supplier:(id _Nullable (^)(void))supplier __attribute__((swift_name("register(key:strategy:supplier:)")));
-- (void)unregisterKey:(NSString *)key __attribute__((swift_name("unregister(key:)")));
-@end
-
-__attribute__((swift_name("Instance_keeperInstanceKeeper")))
-@protocol SharedInstance_keeperInstanceKeeper
-@required
-- (id<SharedInstance_keeperInstanceKeeperInstance> _Nullable)getKey:(id)key __attribute__((swift_name("get(key:)")));
-- (void)putKey:(id)key instance:(id<SharedInstance_keeperInstanceKeeperInstance>)instance __attribute__((swift_name("put(key:instance:)")));
-- (id<SharedInstance_keeperInstanceKeeperInstance> _Nullable)removeKey:(id)key __attribute__((swift_name("remove(key:)")));
-@end
-
-__attribute__((swift_name("Back_handlerBackHandler")))
-@protocol SharedBack_handlerBackHandler
-@required
-- (void)registerCallback:(SharedBack_handlerBackCallback *)callback __attribute__((swift_name("register(callback:)")));
-- (void)unregisterCallback:(SharedBack_handlerBackCallback *)callback __attribute__((swift_name("unregister(callback:)")));
-@end
-
-__attribute__((swift_name("KotlinKCallable")))
-@protocol SharedKotlinKCallable <SharedKotlinKAnnotatedElement>
-@required
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) id<SharedKotlinKType> returnType __attribute__((swift_name("returnType")));
-@end
-
-__attribute__((swift_name("KotlinKProperty")))
-@protocol SharedKotlinKProperty <SharedKotlinKCallable>
-@required
-@end
-
-__attribute__((swift_name("RuntimeParcelable")))
-@protocol SharedRuntimeParcelable
-@required
-- (id<NSSecureCoding>)coding __attribute__((swift_name("coding()")));
-@end
-
-__attribute__((swift_name("ParcelableParcelableContainer")))
-@protocol SharedParcelableParcelableContainer <SharedRuntimeParcelable>
-@required
-- (id<SharedRuntimeParcelable> _Nullable)consumeClazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("consume(clazz:)")));
-- (void)setValue_:(id<SharedRuntimeParcelable> _Nullable)value __attribute__((swift_name("set(value:)")));
-@end
-
 __attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
 @protocol SharedKotlinx_serialization_coreSerializationStrategy
 @required
@@ -4663,10 +4867,30 @@ __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @required
 @end
 
+__attribute__((swift_name("KotlinLazy")))
+@protocol SharedKotlinLazy
+@required
+- (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
+@property (readonly) id _Nullable value_ __attribute__((swift_name("value_")));
+@end
+
 __attribute__((swift_name("Koin_coreQualifier")))
 @protocol SharedKoin_coreQualifier
 @required
 @property (readonly) NSString *value_ __attribute__((swift_name("value_")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinLazyThreadSafetyMode")))
+@interface SharedKotlinLazyThreadSafetyMode : SharedKotlinEnum<SharedKotlinLazyThreadSafetyMode *>
+@property (class, readonly) SharedKotlinLazyThreadSafetyMode *synchronized __attribute__((swift_name("synchronized")));
+@property (class, readonly) SharedKotlinLazyThreadSafetyMode *publication __attribute__((swift_name("publication")));
+@property (class, readonly) SharedKotlinLazyThreadSafetyMode *none __attribute__((swift_name("none")));
+@property (class, readonly) NSArray<SharedKotlinLazyThreadSafetyMode *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedKotlinLazyThreadSafetyMode *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((swift_name("Koin_coreParametersHolder")))
@@ -4692,6 +4916,31 @@ __attribute__((swift_name("Koin_coreParametersHolder")))
 - (void)setI:(int32_t)i t:(id _Nullable)t __attribute__((swift_name("set(i:t:)")));
 - (int32_t)size __attribute__((swift_name("size()")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("KotlinKCallable")))
+@protocol SharedKotlinKCallable <SharedKotlinKAnnotatedElement>
+@required
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@property (readonly) id<SharedKotlinKType> returnType __attribute__((swift_name("returnType")));
+@end
+
+__attribute__((swift_name("KotlinKProperty")))
+@protocol SharedKotlinKProperty <SharedKotlinKCallable>
+@required
+@end
+
+__attribute__((swift_name("RuntimeParcelable")))
+@protocol SharedRuntimeParcelable
+@required
+- (id<NSSecureCoding>)coding __attribute__((swift_name("coding()")));
+@end
+
+__attribute__((swift_name("ParcelableParcelableContainer")))
+@protocol SharedParcelableParcelableContainer <SharedRuntimeParcelable>
+@required
+- (id<SharedRuntimeParcelable> _Nullable)consumeClazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("consume(clazz:)")));
+- (void)setValue_:(id<SharedRuntimeParcelable> _Nullable)value __attribute__((swift_name("set(value:)")));
 @end
 
 __attribute__((swift_name("Koin_coreLockable")))
@@ -5439,12 +5688,6 @@ __attribute__((swift_name("Wire_runtimeMessageSource")))
 - (id _Nullable)read __attribute__((swift_name("read()")));
 @end
 
-__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
-@protocol SharedKotlinx_coroutines_coreCoroutineScope
-@required
-@property (readonly) id<SharedKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKoinDefinition")))
 @interface SharedKoin_coreKoinDefinition<R> : SharedBase
@@ -5533,48 +5776,65 @@ __attribute__((swift_name("Koin_coreLevel")))
 + (SharedKotlinArray<SharedKoin_coreLevel *> *)values __attribute__((swift_name("values()")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreKoin")))
-@interface SharedKoin_coreKoin : SharedBase
-@property (readonly) SharedKoin_coreExtensionManager *extensionManager __attribute__((swift_name("extensionManager")));
-@property (readonly) SharedKoin_coreInstanceRegistry *instanceRegistry __attribute__((swift_name("instanceRegistry")));
-@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
-@property (readonly) SharedKoin_corePropertyRegistry *propertyRegistry __attribute__((swift_name("propertyRegistry")));
-@property (readonly) SharedKoin_coreScopeRegistry *scopeRegistry __attribute__((swift_name("scopeRegistry")));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (void)close __attribute__((swift_name("close()")));
-- (void)createEagerInstances __attribute__((swift_name("createEagerInstances()")));
-- (SharedKoin_coreScope *)createScopeT:(id<SharedKoin_coreKoinScopeComponent>)t __attribute__((swift_name("createScope(t:)")));
-- (SharedKoin_coreScope *)createScopeScopeId:(NSString *)scopeId __attribute__((swift_name("createScope(scopeId:)")));
-- (SharedKoin_coreScope *)createScopeScopeId:(NSString *)scopeId source:(id _Nullable)source __attribute__((swift_name("createScope(scopeId:source:)")));
-- (SharedKoin_coreScope *)createScopeScopeId:(NSString *)scopeId qualifier:(id<SharedKoin_coreQualifier>)qualifier source:(id _Nullable)source __attribute__((swift_name("createScope(scopeId:qualifier:source:)")));
-- (void)declareInstance:(id _Nullable)instance qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes allowOverride:(BOOL)allowOverride __attribute__((swift_name("declare(instance:qualifier:secondaryTypes:allowOverride:)")));
-- (void)deletePropertyKey:(NSString *)key __attribute__((swift_name("deleteProperty(key:)")));
-- (void)deleteScopeScopeId:(NSString *)scopeId __attribute__((swift_name("deleteScope(scopeId:)")));
-- (id)getQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(qualifier:parameters:)")));
-- (id _Nullable)getClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("get(clazz:qualifier:parameters:)")));
-- (NSArray<id> *)getAll __attribute__((swift_name("getAll()")));
-- (SharedKoin_coreScope *)getOrCreateScopeScopeId:(NSString *)scopeId __attribute__((swift_name("getOrCreateScope(scopeId:)")));
-- (SharedKoin_coreScope *)getOrCreateScopeScopeId:(NSString *)scopeId qualifier:(id<SharedKoin_coreQualifier>)qualifier source:(id _Nullable)source __attribute__((swift_name("getOrCreateScope(scopeId:qualifier:source:)")));
-- (id _Nullable)getOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(qualifier:parameters:)")));
-- (id _Nullable)getOrNullClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("getOrNull(clazz:qualifier:parameters:)")));
-- (id _Nullable)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
-- (id)getPropertyKey:(NSString *)key defaultValue:(id)defaultValue __attribute__((swift_name("getProperty(key:defaultValue:)")));
-- (SharedKoin_coreScope *)getScopeScopeId:(NSString *)scopeId __attribute__((swift_name("getScope(scopeId:)")));
-- (SharedKoin_coreScope * _Nullable)getScopeOrNullScopeId:(NSString *)scopeId __attribute__((swift_name("getScopeOrNull(scopeId:)")));
-- (id<SharedKotlinLazy>)injectQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("inject(qualifier:mode:parameters:)")));
-- (id<SharedKotlinLazy>)injectOrNullQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier mode:(SharedKotlinLazyThreadSafetyMode *)mode parameters:(SharedKoin_coreParametersHolder *(^ _Nullable)(void))parameters __attribute__((swift_name("injectOrNull(qualifier:mode:parameters:)")));
-- (void)loadModulesModules:(NSArray<SharedKoin_coreModule *> *)modules allowOverride:(BOOL)allowOverride createEagerInstances:(BOOL)createEagerInstances __attribute__((swift_name("loadModules(modules:allowOverride:createEagerInstances:)")));
-- (void)setPropertyKey:(NSString *)key value:(id)value __attribute__((swift_name("setProperty(key:value:)")));
-- (void)setupLoggerLogger:(SharedKoin_coreLogger *)logger __attribute__((swift_name("setupLogger(logger:)")));
-- (void)unloadModulesModules:(NSArray<SharedKoin_coreModule *> *)modules __attribute__((swift_name("unloadModules(modules:)")));
+__attribute__((swift_name("Koin_coreKoinScopeComponent")))
+@protocol SharedKoin_coreKoinScopeComponent <SharedKoin_coreKoinComponent>
+@required
+- (void)closeScope __attribute__((swift_name("closeScope()"))) __attribute__((deprecated("not used internaly anymore")));
+@property (readonly) SharedKoin_coreScope *scope __attribute__((swift_name("scope")));
 @end
 
-__attribute__((swift_name("Instance_keeperInstanceKeeperInstance")))
-@protocol SharedInstance_keeperInstanceKeeperInstance
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreExtensionManager")))
+@interface SharedKoin_coreExtensionManager : SharedBase
+- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
+- (void)close __attribute__((swift_name("close()")));
+- (id<SharedKoin_coreKoinExtension>)getExtensionId:(NSString *)id __attribute__((swift_name("getExtension(id:)")));
+- (id<SharedKoin_coreKoinExtension> _Nullable)getExtensionOrNullId:(NSString *)id __attribute__((swift_name("getExtensionOrNull(id:)")));
+- (void)registerExtensionId:(NSString *)id extension:(id<SharedKoin_coreKoinExtension>)extension __attribute__((swift_name("registerExtension(id:extension:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreInstanceRegistry")))
+@interface SharedKoin_coreInstanceRegistry : SharedBase
+@property (readonly) SharedKoin_coreKoin *_koin __attribute__((swift_name("_koin")));
+@property (readonly) NSDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> *instances __attribute__((swift_name("instances")));
+- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
+- (void)saveMappingAllowOverride:(BOOL)allowOverride mapping:(NSString *)mapping factory:(SharedKoin_coreInstanceFactory<id> *)factory logWarning:(BOOL)logWarning __attribute__((swift_name("saveMapping(allowOverride:mapping:factory:logWarning:)")));
+- (int32_t)size __attribute__((swift_name("size()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_corePropertyRegistry")))
+@interface SharedKoin_corePropertyRegistry : SharedBase
+- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
+- (void)close __attribute__((swift_name("close()")));
+- (void)deletePropertyKey:(NSString *)key __attribute__((swift_name("deleteProperty(key:)")));
+- (id _Nullable)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
+- (void)savePropertiesProperties:(NSDictionary<NSString *, id> *)properties __attribute__((swift_name("saveProperties(properties:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreScopeRegistry")))
+@interface SharedKoin_coreScopeRegistry : SharedBase
+@property (class, readonly, getter=companion) SharedKoin_coreScopeRegistryCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedKoin_coreScope *rootScope __attribute__((swift_name("rootScope")));
+@property (readonly) NSSet<id<SharedKoin_coreQualifier>> *scopeDefinitions __attribute__((swift_name("scopeDefinitions")));
+- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
+- (void)loadScopesModules:(NSSet<SharedKoin_coreModule *> *)modules __attribute__((swift_name("loadScopes(modules:)")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.3")
+*/
+__attribute__((swift_name("KotlinCoroutineContext")))
+@protocol SharedKotlinCoroutineContext
 @required
-- (void)onDestroy __attribute__((swift_name("onDestroy()")));
+- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<SharedKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
+- (id<SharedKotlinCoroutineContextElement> _Nullable)getKey_:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key_:)")));
+- (id<SharedKotlinCoroutineContext>)minusKeyKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
+- (id<SharedKotlinCoroutineContext>)plusContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
 @end
 
 __attribute__((swift_name("Back_handlerBackCallback")))
@@ -5589,24 +5849,6 @@ __attribute__((swift_name("Back_handlerBackCallback")))
 - (void)onBackProgressedBackEvent:(SharedBack_handlerBackEvent *)backEvent __attribute__((swift_name("onBackProgressed(backEvent:)")));
 - (void)onBackStartedBackEvent:(SharedBack_handlerBackEvent *)backEvent __attribute__((swift_name("onBackStarted(backEvent:)")));
 - (void)removeEnabledChangedListenerListener:(void (^)(SharedBoolean *))listener __attribute__((swift_name("removeEnabledChangedListener(listener:)")));
-@end
-
-__attribute__((swift_name("KotlinKType")))
-@protocol SharedKotlinKType
-@required
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-@property (readonly) NSArray<SharedKotlinKTypeProjection *> *arguments __attribute__((swift_name("arguments")));
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-@property (readonly) id<SharedKotlinKClassifier> _Nullable classifier __attribute__((swift_name("classifier")));
-@property (readonly) BOOL isMarkedNullable __attribute__((swift_name("isMarkedNullable")));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
@@ -5750,24 +5992,22 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 @property (readonly) SharedKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
-__attribute__((swift_name("KotlinLazy")))
-@protocol SharedKotlinLazy
+__attribute__((swift_name("KotlinKType")))
+@protocol SharedKotlinKType
 @required
-- (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
-@property (readonly) id _Nullable value_ __attribute__((swift_name("value_")));
-@end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinLazyThreadSafetyMode")))
-@interface SharedKotlinLazyThreadSafetyMode : SharedKotlinEnum<SharedKotlinLazyThreadSafetyMode *>
-@property (class, readonly) SharedKotlinLazyThreadSafetyMode *synchronized __attribute__((swift_name("synchronized")));
-@property (class, readonly) SharedKotlinLazyThreadSafetyMode *publication __attribute__((swift_name("publication")));
-@property (class, readonly) SharedKotlinLazyThreadSafetyMode *none __attribute__((swift_name("none")));
-@property (class, readonly) NSArray<SharedKotlinLazyThreadSafetyMode *> *entries __attribute__((swift_name("entries")));
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (SharedKotlinArray<SharedKotlinLazyThreadSafetyMode *> *)values __attribute__((swift_name("values()")));
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+@property (readonly) NSArray<SharedKotlinKTypeProjection *> *arguments __attribute__((swift_name("arguments")));
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+@property (readonly) id<SharedKotlinKClassifier> _Nullable classifier __attribute__((swift_name("classifier")));
+@property (readonly) BOOL isMarkedNullable __attribute__((swift_name("isMarkedNullable")));
 @end
 
 __attribute__((swift_name("Koin_coreScopeCallback")))
@@ -5945,20 +6185,6 @@ __attribute__((swift_name("OkioTimeout.Companion")))
 + (instancetype)companion __attribute__((swift_name("init()")));
 @end
 
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.3")
-*/
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol SharedKotlinCoroutineContext
-@required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<SharedKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<SharedKotlinCoroutineContextElement> _Nullable)getKey_:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key_:)")));
-- (id<SharedKotlinCoroutineContext>)minusKeyKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<SharedKotlinCoroutineContext>)plusContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreBeanDefinition")))
 @interface SharedKoin_coreBeanDefinition<T> : SharedBase
@@ -5997,57 +6223,31 @@ __attribute__((swift_name("Koin_coreInstanceContext")))
 - (instancetype)initWithLogger:(SharedKoin_coreLogger *)logger scope:(SharedKoin_coreScope *)scope parameters:(SharedKoin_coreParametersHolder * _Nullable)parameters __attribute__((swift_name("init(logger:scope:parameters:)"))) __attribute__((objc_designated_initializer));
 @end
 
-__attribute__((swift_name("Koin_coreKoinComponent")))
-@protocol SharedKoin_coreKoinComponent
+__attribute__((swift_name("Koin_coreKoinExtension")))
+@protocol SharedKoin_coreKoinExtension
 @required
-- (SharedKoin_coreKoin *)getKoin __attribute__((swift_name("getKoin()")));
+- (void)onClose __attribute__((swift_name("onClose()")));
+@property SharedKoin_coreKoin *koin __attribute__((swift_name("koin")));
 @end
 
-__attribute__((swift_name("Koin_coreKoinScopeComponent")))
-@protocol SharedKoin_coreKoinScopeComponent <SharedKoin_coreKoinComponent>
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Koin_coreScopeRegistry.Companion")))
+@interface SharedKoin_coreScopeRegistryCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedKoin_coreScopeRegistryCompanion *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@end
+
+__attribute__((swift_name("KotlinCoroutineContextElement")))
+@protocol SharedKotlinCoroutineContextElement <SharedKotlinCoroutineContext>
 @required
-- (void)closeScope __attribute__((swift_name("closeScope()"))) __attribute__((deprecated("not used internaly anymore")));
-@property (readonly) SharedKoin_coreScope *scope __attribute__((swift_name("scope")));
+@property (readonly) id<SharedKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreExtensionManager")))
-@interface SharedKoin_coreExtensionManager : SharedBase
-- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
-- (void)close __attribute__((swift_name("close()")));
-- (id<SharedKoin_coreKoinExtension>)getExtensionId:(NSString *)id __attribute__((swift_name("getExtension(id:)")));
-- (id<SharedKoin_coreKoinExtension> _Nullable)getExtensionOrNullId:(NSString *)id __attribute__((swift_name("getExtensionOrNull(id:)")));
-- (void)registerExtensionId:(NSString *)id extension:(id<SharedKoin_coreKoinExtension>)extension __attribute__((swift_name("registerExtension(id:extension:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreInstanceRegistry")))
-@interface SharedKoin_coreInstanceRegistry : SharedBase
-@property (readonly) SharedKoin_coreKoin *_koin __attribute__((swift_name("_koin")));
-@property (readonly) NSDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> *instances __attribute__((swift_name("instances")));
-- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
-- (void)saveMappingAllowOverride:(BOOL)allowOverride mapping:(NSString *)mapping factory:(SharedKoin_coreInstanceFactory<id> *)factory logWarning:(BOOL)logWarning __attribute__((swift_name("saveMapping(allowOverride:mapping:factory:logWarning:)")));
-- (int32_t)size __attribute__((swift_name("size()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_corePropertyRegistry")))
-@interface SharedKoin_corePropertyRegistry : SharedBase
-- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
-- (void)close __attribute__((swift_name("close()")));
-- (void)deletePropertyKey:(NSString *)key __attribute__((swift_name("deleteProperty(key:)")));
-- (id _Nullable)getPropertyKey:(NSString *)key __attribute__((swift_name("getProperty(key:)")));
-- (void)savePropertiesProperties:(NSDictionary<NSString *, id> *)properties __attribute__((swift_name("saveProperties(properties:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreScopeRegistry")))
-@interface SharedKoin_coreScopeRegistry : SharedBase
-@property (class, readonly, getter=companion) SharedKoin_coreScopeRegistryCompanion *companion __attribute__((swift_name("companion")));
-@property (readonly) SharedKoin_coreScope *rootScope __attribute__((swift_name("rootScope")));
-@property (readonly) NSSet<id<SharedKoin_coreQualifier>> *scopeDefinitions __attribute__((swift_name("scopeDefinitions")));
-- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
-- (void)loadScopesModules:(NSSet<SharedKoin_coreModule *> *)modules __attribute__((swift_name("loadScopes(modules:)")));
+__attribute__((swift_name("KotlinCoroutineContextKey")))
+@protocol SharedKotlinCoroutineContextKey
+@required
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -6070,24 +6270,6 @@ __attribute__((swift_name("Back_handlerBackEvent")))
 @property (readonly) float touchX __attribute__((swift_name("touchX")));
 @property (readonly) float touchY __attribute__((swift_name("touchY")));
 - (instancetype)initWithProgress:(float)progress swipeEdge:(SharedBack_handlerBackEventSwipeEdge *)swipeEdge touchX:(float)touchX touchY:(float)touchY __attribute__((swift_name("init(progress:swipeEdge:touchX:touchY:)"))) __attribute__((objc_designated_initializer));
-@end
-
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinKTypeProjection")))
-@interface SharedKotlinKTypeProjection : SharedBase
-@property (class, readonly, getter=companion) SharedKotlinKTypeProjectionCompanion *companion __attribute__((swift_name("companion")));
-@property (readonly) id<SharedKotlinKType> _Nullable type __attribute__((swift_name("type")));
-@property (readonly) SharedKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
-- (instancetype)initWithVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
-- (SharedKotlinKTypeProjection *)doCopyVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("doCopy(variance:type:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
@@ -6185,6 +6367,24 @@ __attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
 @property (readonly) SharedKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinKTypeProjection")))
+@interface SharedKotlinKTypeProjection : SharedBase
+@property (class, readonly, getter=companion) SharedKotlinKTypeProjectionCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) id<SharedKotlinKType> _Nullable type __attribute__((swift_name("type")));
+@property (readonly) SharedKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
+- (instancetype)initWithVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
+- (SharedKotlinKTypeProjection *)doCopyVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("doCopy(variance:type:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
 __attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
 @protocol SharedKotlinx_coroutines_coreDisposableHandle
 @required
@@ -6223,17 +6423,6 @@ __attribute__((swift_name("KotlinFloatIterator")))
 - (float)nextFloat __attribute__((swift_name("nextFloat()")));
 @end
 
-__attribute__((swift_name("KotlinCoroutineContextElement")))
-@protocol SharedKotlinCoroutineContextElement <SharedKotlinCoroutineContext>
-@required
-@property (readonly) id<SharedKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
-@end
-
-__attribute__((swift_name("KotlinCoroutineContextKey")))
-@protocol SharedKotlinCoroutineContextKey
-@required
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKind")))
 @interface SharedKoin_coreKind : SharedKotlinEnum<SharedKoin_coreKind *>
@@ -6258,22 +6447,6 @@ __attribute__((swift_name("Koin_coreCallbacks")))
 - (NSString *)description __attribute__((swift_name("description()")));
 @end
 
-__attribute__((swift_name("Koin_coreKoinExtension")))
-@protocol SharedKoin_coreKoinExtension
-@required
-- (void)onClose __attribute__((swift_name("onClose()")));
-@property SharedKoin_coreKoin *koin __attribute__((swift_name("koin")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Koin_coreScopeRegistry.Companion")))
-@interface SharedKoin_coreScopeRegistryCompanion : SharedBase
-@property (class, readonly, getter=shared) SharedKoin_coreScopeRegistryCompanion *shared __attribute__((swift_name("shared")));
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Back_handlerBackEvent.SwipeEdge")))
 @interface SharedBack_handlerBackEventSwipeEdge : SharedKotlinEnum<SharedBack_handlerBackEventSwipeEdge *>
@@ -6285,6 +6458,22 @@ __attribute__((swift_name("Back_handlerBackEvent.SwipeEdge")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (SharedKotlinArray<SharedBack_handlerBackEventSwipeEdge *> *)values __attribute__((swift_name("values()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
+@protocol SharedKotlinx_serialization_coreSerializersModuleCollector
+@required
+- (void)contextualKClass:(id<SharedKotlinKClass>)kClass provider:(id<SharedKotlinx_serialization_coreKSerializer> (^)(NSArray<id<SharedKotlinx_serialization_coreKSerializer>> *))provider __attribute__((swift_name("contextual(kClass:provider:)")));
+- (void)contextualKClass:(id<SharedKotlinKClass>)kClass serializer:(id<SharedKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("contextual(kClass:serializer:)")));
+- (void)polymorphicBaseClass:(id<SharedKotlinKClass>)baseClass actualClass:(id<SharedKotlinKClass>)actualClass actualSerializer:(id<SharedKotlinx_serialization_coreKSerializer>)actualSerializer __attribute__((swift_name("polymorphic(baseClass:actualClass:actualSerializer:)")));
+- (void)polymorphicDefaultBaseClass:(id<SharedKotlinKClass>)baseClass defaultDeserializerProvider:(id<SharedKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefault(baseClass:defaultDeserializerProvider:)"))) __attribute__((deprecated("Deprecated in favor of function with more precise name: polymorphicDefaultDeserializer")));
+- (void)polymorphicDefaultDeserializerBaseClass:(id<SharedKotlinKClass>)baseClass defaultDeserializerProvider:(id<SharedKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefaultDeserializer(baseClass:defaultDeserializerProvider:)")));
+- (void)polymorphicDefaultSerializerBaseClass:(id<SharedKotlinKClass>)baseClass defaultSerializerProvider:(id<SharedKotlinx_serialization_coreSerializationStrategy> _Nullable (^)(id))defaultSerializerProvider __attribute__((swift_name("polymorphicDefaultSerializer(baseClass:defaultSerializerProvider:)")));
 @end
 
 
@@ -6331,22 +6520,6 @@ __attribute__((swift_name("KotlinKTypeProjection.Companion")))
  *   kotlin.jvm.JvmStatic
 */
 - (SharedKotlinKTypeProjection *)invariantType:(id<SharedKotlinKType>)type __attribute__((swift_name("invariant(type:)")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-__attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
-@protocol SharedKotlinx_serialization_coreSerializersModuleCollector
-@required
-- (void)contextualKClass:(id<SharedKotlinKClass>)kClass provider:(id<SharedKotlinx_serialization_coreKSerializer> (^)(NSArray<id<SharedKotlinx_serialization_coreKSerializer>> *))provider __attribute__((swift_name("contextual(kClass:provider:)")));
-- (void)contextualKClass:(id<SharedKotlinKClass>)kClass serializer:(id<SharedKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("contextual(kClass:serializer:)")));
-- (void)polymorphicBaseClass:(id<SharedKotlinKClass>)baseClass actualClass:(id<SharedKotlinKClass>)actualClass actualSerializer:(id<SharedKotlinx_serialization_coreKSerializer>)actualSerializer __attribute__((swift_name("polymorphic(baseClass:actualClass:actualSerializer:)")));
-- (void)polymorphicDefaultBaseClass:(id<SharedKotlinKClass>)baseClass defaultDeserializerProvider:(id<SharedKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefault(baseClass:defaultDeserializerProvider:)"))) __attribute__((deprecated("Deprecated in favor of function with more precise name: polymorphicDefaultDeserializer")));
-- (void)polymorphicDefaultDeserializerBaseClass:(id<SharedKotlinKClass>)baseClass defaultDeserializerProvider:(id<SharedKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefaultDeserializer(baseClass:defaultDeserializerProvider:)")));
-- (void)polymorphicDefaultSerializerBaseClass:(id<SharedKotlinKClass>)baseClass defaultSerializerProvider:(id<SharedKotlinx_serialization_coreSerializationStrategy> _Nullable (^)(id))defaultSerializerProvider __attribute__((swift_name("polymorphicDefaultSerializer(baseClass:defaultSerializerProvider:)")));
 @end
 
 #pragma pop_macro("_Nullable_result")

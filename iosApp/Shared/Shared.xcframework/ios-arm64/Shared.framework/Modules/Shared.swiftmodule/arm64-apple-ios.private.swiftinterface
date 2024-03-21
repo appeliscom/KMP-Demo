@@ -7,11 +7,41 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+extension Shared.Skie.KMP_Demo__shared.RootDestination {
+  @frozen public enum __Sealed : Swift.Hashable {
+    case appStartup(Shared.RootDestination.AppStartup)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed, b: Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public func onEnum<__Sealed>(of sealed: __Sealed) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed where __Sealed : Shared.RootDestination
+@_disfavoredOverload public func onEnum<__Sealed>(of sealed: __Sealed?) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed? where __Sealed : Shared.RootDestination
 public func koinGet(clazz: any Shared.KotlinKClass, qualifier: (any Shared.Koin_coreQualifier)?, parameters: (() -> Shared.Koin_coreParametersHolder)?) -> Any?
+public var appStartupUILogicModule: Shared.Koin_coreModule {
+  get
+}
 public var sharedModule: Shared.Koin_coreModule {
   get
 }
 public func getPlatform() -> any Shared.Platform
+public var rootUILogicModule: Shared.Koin_coreModule {
+  get
+}
+extension Shared.Skie.KMP_Demo__shared.RootEntry {
+  @frozen public enum __Sealed : Swift.Hashable {
+    case appStartup(Shared.RootEntry.AppStartup)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed, b: Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public func onEnum<__Sealed>(of sealed: __Sealed) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed where __Sealed : Shared.RootEntry
+@_disfavoredOverload public func onEnum<__Sealed>(of sealed: __Sealed?) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed? where __Sealed : Shared.RootEntry
 public func makeNativeModule(nativeTestDependency: @escaping (Shared.Koin_coreScope) -> any Shared.NativeTestDependency) -> Shared.Koin_coreModule
 extension Shared.Skie.Okio.BufferedSource {
   @frozen public enum __Sealed : Swift.Hashable {
@@ -834,18 +864,25 @@ public enum Skie {
     }
   }
   public typealias org_jetbrains_kotlinx__kotlinx_coroutines_core = Shared.Skie.KotlinxCoroutinesCore
+  public enum KMP_Demo__shared {
+    public enum RootDestination {
+    }
+    public enum RootEntry {
+    }
+  }
+  public typealias KMP_Demo__shared_ = Shared.Skie.KMP_Demo__shared
+  public enum Decompose {
+    public enum Child {
+    }
+  }
+  public typealias com_arkivanov_decompose__decompose = Shared.Skie.Decompose
   public enum HomescreenUiLogic {
     public enum RootComponent {
       public enum Child {
       }
     }
   }
-  public typealias KMP_Demo_homescreen__homescreen_ui_logic = Shared.Skie.HomescreenUiLogic
-  public enum Decompose {
-    public enum Child {
-    }
-  }
-  public typealias com_arkivanov_decompose__decompose = Shared.Skie.Decompose
+  public typealias KMP_Demo_features_homescreen__homescreen_ui_logic = Shared.Skie.HomescreenUiLogic
   public enum Okio {
     public enum BufferedSink {
     }
@@ -1955,6 +1992,7 @@ public func PagesNavigation() -> any Shared.PagesNavigation
 public func StackNavigation() -> any Shared.StackNavigation
 public func MutableValue(initialValue: Any) -> Shared.MutableValue<Swift.AnyObject>
 extension Shared.ComponentContext {
+  public func componentCoroutineScope() -> any Shared.Kotlinx_coroutines_coreCoroutineScope
   public func childContext(key: Swift.String, lifecycle: (any Shared.Lifecycle)?) -> any Shared.ComponentContext
   public func children(source: any Shared.NavigationSource, key: Swift.String, initialState: @escaping () -> any Shared.NavState, saveState: @escaping (any Shared.NavState) -> (any Shared.ParcelableParcelableContainer)?, restoreState: @escaping (any Shared.ParcelableParcelableContainer) -> (any Shared.NavState)?, navTransformer: @escaping (any Shared.NavState, Any) -> any Shared.NavState, stateMapper: @escaping (any Shared.NavState, [Shared.Child<Swift.AnyObject, Swift.AnyObject>]) -> Any, onStateChanged: @escaping (any Shared.NavState, (any Shared.NavState)?) -> Swift.Void, onEventComplete: @escaping (Any, any Shared.NavState, any Shared.NavState) -> Swift.Void, backTransformer: @escaping (any Shared.NavState) -> (() -> any Shared.NavState)?, childFactory: @escaping (Any, any Shared.ComponentContext) -> Any) -> Shared.Value<Swift.AnyObject>
   @available(*, deprecated, message: "Parcelize compiler plugin will not work with KMP and K2 compiler. Please use similar API based on kotlinx-serialization.")
