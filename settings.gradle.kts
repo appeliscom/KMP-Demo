@@ -17,7 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "KMP-Demo"
 include(":androidApp")
 include(":shared")
-include(":featureA")
+//include(":featureA")
 include(":GrpcTest")
 include(":commonMain")
 include(":homescreen:homescreen-ui-logic")

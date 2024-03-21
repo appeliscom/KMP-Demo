@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.codegen.StackValue.Shared
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
@@ -26,7 +25,6 @@ kotlin {
         it.binaries.framework {
             baseName="Shared"
             isStatic = true
-            export(projects.featureA)
             export(projects.grpcTest)
             export(projects.homescreen.homescreenUiLogic)
             export(libs.essenty)
@@ -37,7 +35,6 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            api(projects.featureA)
             api(projects.grpcTest)
             api(projects.homescreen.homescreenUiLogic)
             api(libs.essenty)
@@ -60,8 +57,8 @@ android {
         minSdk = 26
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 

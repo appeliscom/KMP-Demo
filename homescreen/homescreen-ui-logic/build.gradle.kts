@@ -29,19 +29,20 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(libs.decompose)
+                implementation(libs.koin.core)
             }
         }
     }
 }
 
 android {
-    namespace = "com.appelis.kmm_demo.homescreen.homescreen-ui-logic"
+    namespace = "com.appelis.kmm_demo.homescreen.homescreenUiLogic"
     compileSdk = 34
     defaultConfig {
         minSdk = 26
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }

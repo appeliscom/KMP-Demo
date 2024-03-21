@@ -6,9 +6,33 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedWire_runtimeProtoAdapter<E>, SharedOkioByteString, SharedKotlinByteArray, SharedWire_runtimeMessage<M, B>, SharedLocation, SharedAddressCompanion, SharedAddress, SharedKotlinNothing, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedCurrencyCompanion, SharedCurrency, SharedKotlinArray<T>, SharedCursorBackwardPagingParamsCompanion, SharedCursorBackwardPagingParams, SharedCursorForwardPagingParamsCompanion, SharedCursorForwardPagingParams, SharedFileCompanion, SharedFile, SharedHexColorCompanion, SharedHexColor, SharedLanguageCompanion, SharedLanguage, SharedLocationCompanion, SharedPageInfoCompanion, SharedPageInfo, SharedPagingParamsCompanion, SharedPagingParams, SharedPictureCompanion, SharedPicture, SharedPriceValueCompanion, SharedPriceValue, SharedSemVerCompanion, SharedSemVer, SharedSortOrderCompanion, SharedSortOrder, SharedWire_runtimeInstant, SharedTimeRangeCompanion, SharedTimeRange, SharedDeviceEventType, SharedDeviceEventCompanion, SharedDeviceEvent, SharedDeviceEventTypeCompanion, SharedDeviceEventsArrayCompanion, SharedDeviceEventsArray, SharedToken, SharedGetDeviceEventsRequestCompanion, SharedGetDeviceEventsRequest, SharedTokenError, SharedGetDeviceEventsResponseCompanion, SharedGetDeviceEventsResponse, SharedWire_grpc_clientGrpcClient, SharedGetLeafletsRequest, SharedGetLeafletsResponse, SharedKotlinException, SharedObjectIdCompanion, SharedObjectId, SharedUUIDCompanion, SharedUUID, SharedWeekDayCompanion, SharedWeekDay, SharedProjectSettings, SharedAddOrUpdateSettingsRequestCompanion, SharedAddOrUpdateSettingsRequest, SharedWebUser, SharedAddOrUpdateUserRequestCompanion, SharedAddOrUpdateUserRequest, SharedAddOrUpdateUserRequestV2Companion, SharedAddOrUpdateUserRequestV2, SharedAddOrUpdateUserResponseV2AddUserError, SharedAddOrUpdateUserResponseV2Companion, SharedAddOrUpdateUserResponseV2, SharedAddOrUpdateUserResponseV2AddUserErrorCompanion, SharedCreateRequestCredentials, SharedCreateRequestProjectUserLoginToken, SharedCreateRequestDeviceKey, SharedCreateRequestUserLoginToken, SharedCreateRequestCompanion, SharedCreateRequest, SharedCreateRequestCredentialsCompanion, SharedCreateRequestDeviceKeyCompanion, SharedCreateRequestProjectUserLoginTokenCompanion, SharedCreateRequestUserLoginTokenCompanion, SharedTokenPayload, SharedCreateResponseError, SharedCreateResponseCompanion, SharedCreateResponse, SharedCreateResponseErrorCompanion, SharedDeleteUserRequestCompanion, SharedDeleteUserRequest, SharedDeviceLang, SharedDeviceType, SharedDeviceDataCompanion, SharedDeviceData, SharedDeviceLangCompanion, SharedDeviceResponseError, SharedMobileDevice, SharedDeviceResponseCompanion, SharedDeviceResponse, SharedDeviceResponseErrorCompanion, SharedDeviceTypeCompanion, SharedDevicesResponseCompanion, SharedDevicesResponse, SharedFirebaseConfigResponseCompanion, SharedFirebaseConfigResponse, SharedGetDeviceByTemporaryIdRequestCompanion, SharedGetDeviceByTemporaryIdRequest, SharedGetDeviceRequestCompanion, SharedGetDeviceRequest, SharedGetDevicesRequestCompanion, SharedGetDevicesRequest, SharedGetTokenDeviceRequestCompanion, SharedGetTokenDeviceRequest, SharedGetTokenDeviceResponseCompanion, SharedGetTokenDeviceResponse, SharedGetTokenUserResponseCompanion, SharedGetTokenUserResponse, SharedGetUserForLoginRequestCompanion, SharedGetUserForLoginRequest, SharedGetUserForLoginTokenRequestCompanion, SharedGetUserForLoginTokenRequest, SharedGetUsersDevicesRequestCompanion, SharedGetUsersDevicesRequest, SharedMobileDevicesArray, SharedGetUsersDevicesResponseCompanion, SharedGetUsersDevicesResponse, SharedGetUsersRequestCompanion, SharedGetUsersRequest, SharedGetUsersResponseCompanion, SharedGetUsersResponse, SharedLogoutUserRequestCompanion, SharedLogoutUserRequest, SharedLogoutUserResponseCompanion, SharedLogoutUserResponse, SharedLogoutUsersRequestCompanion, SharedLogoutUsersRequest, SharedMobileDeviceCompanion, SharedMobileDevicesArrayCompanion, SharedPermissionErrorCompanion, SharedPermissionError, SharedProjectRequestCompanion, SharedProjectRequest, SharedProjectSettingsCompanion, SharedProjectSettingsArrayCompanion, SharedProjectSettingsArray, SharedProjectSettingsRequestCompanion, SharedProjectSettingsRequest, SharedProjectsResponseCompanion, SharedProjectsResponse, SharedRefreshRequestCompanion, SharedRefreshRequest, SharedRefreshResponseError, SharedRefreshResponseCompanion, SharedRefreshResponse, SharedRefreshResponseErrorCompanion, SharedRegisterDeviceType, SharedRegisterDeviceRequestCompanion, SharedRegisterDeviceRequest, SharedRegisterError, SharedRegisterDeviceResponseCompanion, SharedRegisterDeviceResponse, SharedRegisterDeviceTypeCompanion, SharedRegisterErrorCompanion, SharedSettingsByAppKeyRequestCompanion, SharedSettingsByAppKeyRequest, SharedSettingsResponseCompanion, SharedSettingsResponse, SharedTokenCompanion, SharedTokenErrorCompanion, SharedTokenPayloadCompanion, SharedUpdateDeviceDataCompanion, SharedUpdateDeviceData, SharedUpdateDeviceRequestCompanion, SharedUpdateDeviceRequest, SharedUpdateTokenDeviceRequestCompanion, SharedUpdateTokenDeviceRequest, SharedUpdateTokenDeviceResponseCompanion, SharedUpdateTokenDeviceResponse, SharedUserResponseCompanion, SharedUserResponse, SharedWebUserData, SharedWebUserCredentials, SharedWebUserCompanion, SharedWebUserCredentialsData, SharedWebUserCredentialsCompanion, SharedWebUserCredentialsDataCompanion, SharedWebUserDataCompanion, SharedDI, SharedKoin_coreModule, SharedKoin_coreKoinApplication, SharedSwiftType, SharedRootComponentChild, SharedChildStack<__covariant C, __covariant T>, SharedValue<__covariant T>, SharedChild<__covariant C, __covariant T>, SharedChildCreated<__covariant C, __covariant T>, SharedChildDestroyed<__covariant C>, SharedLifecycleState, SharedChildNavStateStatus, SharedSimpleChildNavState<__covariant C>, SharedChildOverlay<__covariant C, __covariant T>, SharedChildPages<__covariant C, __covariant T>, SharedPages<__covariant C>, SharedChildSlot<__covariant C, __covariant T>, SharedObserveLifecycleMode, SharedGetLeafletsRequestCompanion, SharedGetLeafletsResponseLeaflets, SharedGetLeafletsResponseCompanion, SharedLeaflet, SharedGetLeafletsResponseLeafletsCompanion, SharedGetMostOpenedLeafletsRequestCompanion, SharedGetMostOpenedLeafletsRequest, SharedGetMostOpenedLeafletsResponseOpenedLeaflets, SharedGetMostOpenedLeafletsResponseCompanion, SharedGetMostOpenedLeafletsResponse, SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflet, SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion, SharedLeafletCompanion, SharedMutableValue<T>, SharedKoin_coreParametersHolder, SharedKoin_coreScope, SharedWire_runtimeFieldEncoding, SharedWire_runtimeSyntax, SharedWire_runtimeProtoAdapterCompanion, SharedWire_runtimeProtoReader, SharedWire_runtimeProtoWriter, SharedWire_runtimeReverseProtoWriter, SharedOkioByteStringCompanion, SharedKotlinByteIterator, SharedOkioBuffer, SharedOkioTimeout, SharedWire_grpc_clientGrpcMethod<S, R>, SharedKotlinThrowable, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKotlinPair<__covariant A, __covariant B>, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedBack_handlerBackCallback, SharedKoin_coreLockable, SharedKotlinLazyThreadSafetyMode, SharedStately_concurrencyThreadLocalRef<T>, SharedWire_runtimeFieldEncodingCompanion, SharedWire_runtimeSyntaxCompanion, SharedKotlinDoubleArray, SharedWire_runtimeDuration, SharedKotlinUnit, SharedKotlinIntArray, SharedKotlinLongArray, SharedKotlinFloatArray, SharedWire_runtimeProtoReaderCompanion, SharedWire_runtimeProtoWriterCompanion, NSData, SharedOkioBufferUnsafeCursor, SharedOkioTimeoutCompanion, SharedOkioIOException, SharedKotlinCancellationException, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreInstanceContext, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedBack_handlerBackCallbackCompanion, SharedBack_handlerBackEvent, SharedKotlinKTypeProjection, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_coreSerialKind, SharedKotlinDoubleIterator, SharedKotlinIntIterator, SharedKotlinLongIterator, SharedKotlinFloatIterator, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKoin_coreScopeRegistryCompanion, SharedBack_handlerBackEventSwipeEdge, SharedKotlinKVariance, SharedKotlinKTypeProjectionCompanion;
+@class SharedBase, SharedMutableSet<E>, SharedMutableDictionary<K, V>, SharedNumber, SharedByte, SharedUByte, SharedShort, SharedUShort, SharedInt, SharedUInt, SharedLong, SharedULong, SharedFloat, SharedDouble, SharedBoolean, SharedKotlinEnum<E>, SharedKotlinEnumCompanion, SharedKotlinByteArray, SharedKotlinNothing, SharedKotlinArray<T>, SharedKotlinCancellationException, SharedKotlinIllegalStateException, SharedKotlinRuntimeException, SharedKotlinException, SharedKotlinThrowable, SharedKotlinByteIterator, SharedKotlinPair<A, B>, SharedKotlinLazyThreadSafetyMode, SharedKotlinUnit, SharedKotlinDoubleArray, SharedKotlinIntArray, SharedKotlinLongArray, SharedKotlinFloatArray, SharedKotlinKTypeProjection, SharedKotlinKTypeProjectionCompanion, SharedKotlinDoubleIterator, SharedKotlinIntIterator, SharedKotlinLongIterator, SharedKotlinFloatIterator, SharedKotlinKVariance, SharedAddress, SharedAddressCompanion, SharedCurrency, SharedCurrencyCompanion, SharedCursorBackwardPagingParams, SharedCursorBackwardPagingParamsCompanion, SharedCursorForwardPagingParams, SharedCursorForwardPagingParamsCompanion, SharedFile, SharedFileCompanion, SharedHexColor, SharedHexColorCompanion, SharedLanguage, SharedLanguageCompanion, SharedLocation, SharedLocationCompanion, SharedPageInfo, SharedPageInfoCompanion, SharedPagingParams, SharedPagingParamsCompanion, SharedPicture, SharedPictureCompanion, SharedPriceValue, SharedPriceValueCompanion, SharedSemVer, SharedSemVerCompanion, SharedSortOrder, SharedSortOrderCompanion, SharedTimeRange, SharedTimeRangeCompanion, SharedDeviceEvent, SharedDeviceEventCompanion, SharedDeviceEventType, SharedDeviceEventTypeCompanion, SharedDeviceEventsArray, SharedDeviceEventsArrayCompanion, SharedGetDeviceEventsRequest, SharedGetDeviceEventsRequestCompanion, SharedGetDeviceEventsResponse, SharedGetDeviceEventsResponseCompanion, SharedGrpcDeviceEventsClient, SharedLeafletRepository, SharedLeafletSuspendClientImpl, SharedObjectId, SharedObjectIdCompanion, SharedUUID, SharedUUIDCompanion, SharedWeekDay, SharedWeekDayCompanion, SharedAddOrUpdateSettingsRequest, SharedAddOrUpdateSettingsRequestCompanion, SharedAddOrUpdateUserRequest, SharedAddOrUpdateUserRequestCompanion, SharedAddOrUpdateUserRequestV2, SharedAddOrUpdateUserRequestV2Companion, SharedAddOrUpdateUserResponseV2, SharedAddOrUpdateUserResponseV2AddUserError, SharedAddOrUpdateUserResponseV2AddUserErrorCompanion, SharedAddOrUpdateUserResponseV2Companion, SharedCreateRequest, SharedCreateRequestCompanion, SharedCreateRequestCredentials, SharedCreateRequestCredentialsCompanion, SharedCreateRequestDeviceKey, SharedCreateRequestDeviceKeyCompanion, SharedCreateRequestProjectUserLoginToken, SharedCreateRequestProjectUserLoginTokenCompanion, SharedCreateRequestUserLoginToken, SharedCreateRequestUserLoginTokenCompanion, SharedCreateResponse, SharedCreateResponseCompanion, SharedCreateResponseError, SharedCreateResponseErrorCompanion, SharedDeleteUserRequest, SharedDeleteUserRequestCompanion, SharedDeviceData, SharedDeviceDataCompanion, SharedDeviceLang, SharedDeviceLangCompanion, SharedDeviceResponse, SharedDeviceResponseCompanion, SharedDeviceResponseError, SharedDeviceResponseErrorCompanion, SharedDeviceType, SharedDeviceTypeCompanion, SharedDevicesResponse, SharedDevicesResponseCompanion, SharedFirebaseConfigResponse, SharedFirebaseConfigResponseCompanion, SharedGetDeviceByTemporaryIdRequest, SharedGetDeviceByTemporaryIdRequestCompanion, SharedGetDeviceRequest, SharedGetDeviceRequestCompanion, SharedGetDevicesRequest, SharedGetDevicesRequestCompanion, SharedGetTokenDeviceRequest, SharedGetTokenDeviceRequestCompanion, SharedGetTokenDeviceResponse, SharedGetTokenDeviceResponseCompanion, SharedGetTokenUserResponse, SharedGetTokenUserResponseCompanion, SharedGetUserForLoginRequest, SharedGetUserForLoginRequestCompanion, SharedGetUserForLoginTokenRequest, SharedGetUserForLoginTokenRequestCompanion, SharedGetUsersDevicesRequest, SharedGetUsersDevicesRequestCompanion, SharedGetUsersDevicesResponse, SharedGetUsersDevicesResponseCompanion, SharedGetUsersRequest, SharedGetUsersRequestCompanion, SharedGetUsersResponse, SharedGetUsersResponseCompanion, SharedGrpcDeviceAdminClient, SharedGrpcDeviceRegistrationClient, SharedGrpcDeviceServiceClient, SharedGrpcIdentityServiceClient, SharedGrpcProjectSettingsAdminClient, SharedGrpcProjectSettingsServiceClient, SharedGrpcWebUsersPrivateServiceClient, SharedGrpcWebUsersPrivateServiceV2Client, SharedGrpcWebUsersServiceClient, SharedLogoutUserRequest, SharedLogoutUserRequestCompanion, SharedLogoutUserResponse, SharedLogoutUserResponseCompanion, SharedLogoutUsersRequest, SharedLogoutUsersRequestCompanion, SharedMobileDevice, SharedMobileDeviceCompanion, SharedMobileDevicesArray, SharedMobileDevicesArrayCompanion, SharedPermissionError, SharedPermissionErrorCompanion, SharedProjectRequest, SharedProjectRequestCompanion, SharedProjectSettings, SharedProjectSettingsCompanion, SharedProjectSettingsArray, SharedProjectSettingsArrayCompanion, SharedProjectSettingsRequest, SharedProjectSettingsRequestCompanion, SharedProjectsResponse, SharedProjectsResponseCompanion, SharedRefreshRequest, SharedRefreshRequestCompanion, SharedRefreshResponse, SharedRefreshResponseCompanion, SharedRefreshResponseError, SharedRefreshResponseErrorCompanion, SharedRegisterDeviceRequest, SharedRegisterDeviceRequestCompanion, SharedRegisterDeviceResponse, SharedRegisterDeviceResponseCompanion, SharedRegisterDeviceType, SharedRegisterDeviceTypeCompanion, SharedRegisterError, SharedRegisterErrorCompanion, SharedSettingsByAppKeyRequest, SharedSettingsByAppKeyRequestCompanion, SharedSettingsResponse, SharedSettingsResponseCompanion, SharedToken, SharedTokenCompanion, SharedTokenError, SharedTokenErrorCompanion, SharedTokenPayload, SharedTokenPayloadCompanion, SharedUpdateDeviceData, SharedUpdateDeviceDataCompanion, SharedUpdateDeviceRequest, SharedUpdateDeviceRequestCompanion, SharedUpdateTokenDeviceRequest, SharedUpdateTokenDeviceRequestCompanion, SharedUpdateTokenDeviceResponse, SharedUpdateTokenDeviceResponseCompanion, SharedUserResponse, SharedUserResponseCompanion, SharedWebUser, SharedWebUserCompanion, SharedWebUserCredentials, SharedWebUserCredentialsCompanion, SharedWebUserCredentialsData, SharedWebUserCredentialsDataCompanion, SharedWebUserData, SharedWebUserDataCompanion, SharedGetLeafletsRequest, SharedGetLeafletsRequestCompanion, SharedGetLeafletsResponse, SharedGetLeafletsResponseCompanion, SharedGetLeafletsResponseLeaflets, SharedGetLeafletsResponseLeafletsCompanion, SharedGetMostOpenedLeafletsRequest, SharedGetMostOpenedLeafletsRequestCompanion, SharedGetMostOpenedLeafletsResponse, SharedGetMostOpenedLeafletsResponseCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflet, SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion, SharedGetMostOpenedLeafletsResponseOpenedLeaflets, SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion, SharedGrpcAnalyticsClient, SharedGrpcPublicClient, SharedLeaflet, SharedLeafletCompanion, SharedWire_runtimeMessage<M, B>, SharedWire_runtimeMessageBuilder<M, B>, SharedWire_runtimeProtoAdapter<E>, SharedWire_runtimeProtoAdapterCompanion, SharedWire_runtimeInstant, SharedWire_runtimeFieldEncoding, SharedWire_runtimeFieldEncodingCompanion, SharedWire_runtimeSyntax, SharedWire_runtimeSyntaxCompanion, SharedWire_runtimeProtoReader, SharedWire_runtimeProtoReaderCompanion, SharedWire_runtimeProtoWriter, SharedWire_runtimeProtoWriterCompanion, SharedWire_runtimeReverseProtoWriter, SharedWire_runtimeDuration, SharedSkieColdFlowIterator<E>, SharedSkieKotlinFlow<T>, SharedSkieKotlinMutableSharedFlow<T>, SharedSkieKotlinMutableStateFlow<T>, SharedSkieKotlinOptionalFlow<T>, SharedSkieKotlinOptionalMutableSharedFlow<T>, SharedSkieKotlinOptionalMutableStateFlow<T>, SharedSkieKotlinOptionalSharedFlow<T>, SharedSkieKotlinOptionalStateFlow<T>, SharedSkieKotlinSharedFlow<T>, SharedSkieKotlinStateFlow<T>, SharedSkie_CancellationHandler, SharedSkie_SuspendHandler, SharedSkie_SuspendResult, SharedSkie_SuspendResultCanceled, SharedSkie_SuspendResultError, SharedSkie_SuspendResultSuccess, SharedGreeting, SharedIOSPlatform, SharedKmpApplication, SharedSwiftType, SharedPlatform_iosKt, SharedSharedModuleKt, SharedDIHelpersKt, SharedNativeModuleKt, SharedHomescreenTestClass, SharedDefaultHomescreenComponent, SharedDefaultRootComponent, SharedRootComponentChild, SharedRootComponentChildHomescreenChild, SharedHomescreenUILogicModuleKt, SharedChild<C, T>, SharedChildCreated<C, T>, SharedChildDestroyed<C>, SharedDefaultComponentContext, SharedRef<T>, SharedApplicationLifecycle, SharedMergedLifecycle, SharedChildNavStateStatus, SharedSimpleChildNavState<C>, SharedSimpleNavigation<T>, SharedChildOverlay<C, T>, SharedOverlayNavigationSourceEvent<C>, SharedChildPages<C, T>, SharedPages<C>, SharedPagesNavigationSourceEvent<C>, SharedChildSlot<C, T>, SharedSlotNavigationSourceEvent<C>, SharedChildStack<C, T>, SharedStackNavigationSourceEvent<C>, SharedMutableValue<T>, SharedValue<T>, SharedObserveLifecycleMode, SharedComponentContextExtKt, SharedUtilsKt, SharedErrorHandlersKt, SharedChildrenFactoryKt, SharedOverlayNavigationKt, SharedOverlayNavigatorExtKt, SharedChildOverlayFactoryKt, SharedPagesNavigationKt, SharedChildPagesFactoryKt, SharedPagesNavigatorExtKt, SharedSlotNavigationKt, SharedSlotNavigatorExtKt, SharedChildSlotFactoryKt, SharedStackNavigationKt, SharedStackNavigatorExtKt, SharedChildStackFactoryKt, SharedMutableValueBuilderKt, SharedLifecycleState, SharedLifecycleRegistryKt, SharedLifecycleRegistryExtKt, SharedLifecycleExtKt, SharedBack_handlerBackCallback, SharedBack_handlerBackCallbackCompanion, SharedBack_handlerBackEvent, SharedBack_handlerBackEventSwipeEdge, SharedOkioByteString, SharedOkioByteStringCompanion, SharedOkioBuffer, SharedOkioBufferUnsafeCursor, SharedOkioIOException, SharedOkioTimeout, SharedOkioTimeoutCompanion, SharedWire_grpc_clientGrpcClient, SharedWire_grpc_clientGrpcMethod<S, R>, SharedKoin_coreModule, SharedKoin_coreKoinApplication, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreParametersHolder, SharedKoin_coreScope, SharedKoin_coreLockable, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceContext, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKoin_coreScopeRegistryCompanion, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>, SharedKotlinx_serialization_corePolymorphicKind, SharedKotlinx_serialization_corePolymorphicKindOPEN, SharedKotlinx_serialization_corePolymorphicKindSEALED, SharedKotlinx_serialization_coreSerialKind, SharedKotlinx_serialization_coreSerialKindCONTEXTUAL, SharedKotlinx_serialization_coreSerialKindENUM, SharedKotlinx_serialization_corePrimitiveKind, SharedKotlinx_serialization_corePrimitiveKindBOOLEAN, SharedKotlinx_serialization_corePrimitiveKindBYTE, SharedKotlinx_serialization_corePrimitiveKindCHAR, SharedKotlinx_serialization_corePrimitiveKindDOUBLE, SharedKotlinx_serialization_corePrimitiveKindFLOAT, SharedKotlinx_serialization_corePrimitiveKindINT, SharedKotlinx_serialization_corePrimitiveKindLONG, SharedKotlinx_serialization_corePrimitiveKindSHORT, SharedKotlinx_serialization_corePrimitiveKindSTRING, SharedKotlinx_serialization_coreStructureKind, SharedKotlinx_serialization_coreStructureKindCLASS, SharedKotlinx_serialization_coreStructureKindLIST, SharedKotlinx_serialization_coreStructureKindMAP, SharedKotlinx_serialization_coreStructureKindOBJECT, SharedKotlinx_serialization_coreSerializersModule, SharedStately_concurrencyThreadLocalRef<T>, Shared__SkieSuspendWrappersKt, Shared__SkieTypeExportsKt, NSObject, NSError, NSString, NSArray<E>, NSMutableArray<E>, NSSet<E>, NSDictionary<K, V>, NSMutableSet, NSMutableDictionary, NSNumber, NSData;
 
-@protocol SharedOkioBufferedSink, SharedKotlinComparable, SharedWire_runtimeWireEnum, SharedWire_grpc_clientGrpcCall, SharedWire_runtimeService, SharedDeviceEventsClient, SharedLeafletSuspendClient, SharedLeafletCallBackClient, SharedWire_grpc_clientGrpcStreamingCall, SharedDeviceAdminClient, SharedDeviceRegistrationClient, SharedDeviceServiceClient, SharedIdentityServiceClient, SharedProjectSettingsAdminClient, SharedProjectSettingsServiceClient, SharedWebUsersPrivateServiceClient, SharedWebUsersPrivateServiceV2Client, SharedWebUsersServiceClient, SharedPlatform, SharedKotlinKClass, SharedHomescreenComponent, SharedComponentContext, SharedRootComponent, SharedLifecycle, SharedLifecycleOwner, SharedState_keeperStateKeeper, SharedState_keeperStateKeeperOwner, SharedInstance_keeperInstanceKeeper, SharedInstance_keeperInstanceKeeperOwner, SharedBack_handlerBackHandler, SharedBack_handlerBackHandlerOwner, SharedLifecycleCallbacks, SharedChildNavState, SharedNavigationSource, SharedOverlayNavigator, SharedOverlayNavigationSource, SharedPagesNavigator, SharedPagesNavigationSource, SharedSlotNavigator, SharedSlotNavigationSource, SharedStackNavigator, SharedStackNavigationSource, SharedCancellation, SharedAnalyticsClient, SharedPublicClient, SharedKotlinKProperty, SharedRuntimeParcelable, SharedParcelableParcelableContainer, SharedKotlinx_serialization_coreKSerializer, SharedNavState, SharedKoin_coreQualifier, SharedLifecycleRegistry, SharedNativeTestDependency, SharedOverlayNavigation, SharedPagesNavigation, SharedSlotNavigation, SharedStackNavigation, SharedOkioBufferedSource, SharedOkioSource, SharedOkioCloseable, SharedOkioSink, SharedKotlinIterator, SharedWire_grpc_clientGrpcCallCallback, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreReceiveChannel, SharedWire_runtimeMessageSink, SharedWire_runtimeMessageSource, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreSerializationStrategy, SharedInstance_keeperInstanceKeeperInstance, SharedKotlinKType, SharedKotlinKCallable, NSSecureCoding, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreDecoder, SharedKotlinLazy, SharedKoin_coreScopeCallback, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinCoroutineContext, SharedKoin_coreKoinScopeComponent, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreSelectClause, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKoin_coreKoinComponent, SharedKoin_coreKoinExtension, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKotlinx_coroutines_coreDisposableHandle;
+@protocol SharedKotlinComparable, SharedKotlinKClass, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKotlinKProperty, SharedKotlinKCallable, SharedKotlinIterator, SharedKotlinKType, SharedKotlinLazy, SharedKotlinCoroutineContext, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinAnnotation, SharedDeviceEventsClient, SharedLeafletCallBackClient, SharedLeafletSuspendClient, SharedRegisterDeviceRepository, SharedDeviceAdminClient, SharedDeviceRegistrationClient, SharedDeviceServiceClient, SharedIdentityServiceClient, SharedProjectSettingsAdminClient, SharedProjectSettingsServiceClient, SharedWebUsersPrivateServiceClient, SharedWebUsersPrivateServiceV2Client, SharedWebUsersServiceClient, SharedAnalyticsClient, SharedPublicClient, SharedWire_runtimeWireEnum, SharedWire_runtimeService, SharedWire_runtimeMessageSink, SharedWire_runtimeMessageSource, SharedSkie_DispatcherDelegate, SharedKotlinx_coroutines_coreFlow, SharedKotlinx_coroutines_coreMutableSharedFlow, SharedKotlinx_coroutines_coreSharedFlow, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinx_coroutines_coreMutableStateFlow, SharedKotlinx_coroutines_coreStateFlow, SharedKotlinx_coroutines_coreRunnable, SharedKotlinx_coroutines_coreReceiveChannel, SharedKotlinx_coroutines_coreChannelIterator, SharedKotlinx_coroutines_coreSendChannel, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinx_coroutines_coreSelectClause, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreSelectClause1, SharedKotlinx_coroutines_coreSelectClause2, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreDisposableHandle, SharedPlatform, SharedNativeTestDependency, SharedHomescreenComponent, SharedRootComponent, SharedComponentContext, SharedCancellation, SharedChildNavState, SharedNavState, SharedNavigationSource, SharedOverlayNavigation, SharedOverlayNavigator, SharedOverlayNavigationSource, SharedPagesNavigation, SharedPagesNavigator, SharedPagesNavigationSource, SharedSlotNavigation, SharedSlotNavigator, SharedSlotNavigationSource, SharedStackNavigation, SharedStackNavigator, SharedStackNavigationSource, SharedWebHistoryController, SharedLifecycleOwner, SharedLifecycle, SharedLifecycleCallbacks, SharedLifecycleRegistry, SharedState_keeperStateKeeperOwner, SharedState_keeperStateKeeper, SharedInstance_keeperInstanceKeeperOwner, SharedInstance_keeperInstanceKeeper, SharedInstance_keeperInstanceKeeperInstance, SharedBack_handlerBackHandlerOwner, SharedBack_handlerBackHandler, SharedOkioBufferedSink, SharedOkioSink, SharedOkioCloseable, SharedOkioBufferedSource, SharedOkioSource, SharedWire_grpc_clientGrpcCall, SharedWire_grpc_clientGrpcCallCallback, SharedWire_grpc_clientGrpcStreamingCall, SharedKoin_coreQualifier, SharedKoin_coreScopeCallback, SharedKoin_coreKoinScopeComponent, SharedKoin_coreKoinComponent, SharedKoin_coreKoinExtension, SharedRuntimeParcelable, SharedParcelableParcelableContainer, SharedKotlinx_serialization_coreKSerializer, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_serialization_coreSerializersModuleCollector, NSCopying, NSSecureCoding;
+
+// Due to an Obj-C/Swift interop limitation, SKIE cannot generate Swift types with a lambda type argument.
+// Example of such type is: A<() -> Unit> where A<T> is a generic class.
+// To avoid compilation errors SKIE replaces these type arguments with __SkieLambdaErrorType, resulting in A<__SkieLambdaErrorType>.
+// Generated declarations that reference __SkieLambdaErrorType cannot be called in any way and the __SkieLambdaErrorType class cannot be used.
+// The original declarations can still be used in the same way as other declarations hidden by SKIE (and with the same limitations as without SKIE).
+@interface __SkieLambdaErrorType : NSObject
+- (instancetype _Nonnull)init __attribute__((unavailable));
++ (instancetype _Nonnull)new __attribute__((unavailable));
+@end
+
+// Due to an Obj-C/Swift interop limitation, SKIE cannot generate Swift code that uses external Obj-C types for which SKIE doesn't know a fully qualified name.
+// This problem occurs when custom Cinterop bindings are used because those do not contain the name of the Framework that provides implementation for those binding.
+// The name can be configured manually using the SKIE Gradle configuration key 'ClassInterop.CInteropFrameworkName' in the same way as other SKIE features.
+// To avoid compilation errors SKIE replaces types with unknown Framework name with __SkieUnknownCInteropFrameworkErrorType.
+// Generated declarations that reference __SkieUnknownCInteropFrameworkErrorType cannot be called in any way and the __SkieUnknownCInteropFrameworkErrorType class cannot be used.
+@interface __SkieUnknownCInteropFrameworkErrorType : NSObject
+- (instancetype _Nonnull)init __attribute__((unavailable));
++ (instancetype _Nonnull)new __attribute__((unavailable));
+@end
+
+typedef id<SharedKoin_coreQualifier> _Nonnull Skie__TypeDef__0__id_SharedKoin_coreQualifier_ __attribute__((__swift_private__));
+typedef id<SharedKoin_coreKoinExtension> _Nonnull Skie__TypeDef__1__id_SharedKoin_coreKoinExtension_ __attribute__((__swift_private__));
+typedef id<SharedKoin_coreKoinExtension> _Nullable Skie__TypeDef__2__id_SharedKoin_coreKoinExtension___Nullable __attribute__((__swift_private__));
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -146,6 +170,9 @@ __attribute__((swift_name("KotlinBoolean")))
 
 __attribute__((swift_name("Wire_runtimeMessage")))
 @interface SharedWire_runtimeMessage<M, B> : SharedBase
+@property (readonly) SharedWire_runtimeProtoAdapter<M> *adapter __attribute__((swift_name("adapter")));
+@property int32_t hashCode __attribute__((swift_name("hashCode")));
+@property (readonly) SharedOkioByteString *unknownFields __attribute__((swift_name("unknownFields")));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
@@ -155,46 +182,43 @@ __attribute__((swift_name("Wire_runtimeMessage")))
 - (void)encodeSink:(id<SharedOkioBufferedSink>)sink __attribute__((swift_name("encode(sink:)")));
 - (SharedOkioByteString *)encodeByteString __attribute__((swift_name("encodeByteString()")));
 - (B)doNewBuilder __attribute__((swift_name("doNewBuilder()")));
-@property (readonly) SharedWire_runtimeProtoAdapter<M> *adapter __attribute__((swift_name("adapter")));
 
 /**
  * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
-@property int32_t hashCode __attribute__((swift_name("hashCode")));
-@property (readonly) SharedOkioByteString *unknownFields __attribute__((swift_name("unknownFields")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Address")))
 @interface SharedAddress : SharedWire_runtimeMessage<SharedAddress *, SharedKotlinNothing *>
-- (instancetype)initWithAddress:(NSString *)address address2:(NSString *)address2 city:(NSString *)city zipCode:(NSString *)zipCode country:(NSString *)country location:(SharedLocation * _Nullable)location unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(address:address2:city:zipCode:country:location:unknownFields:)"))) __attribute__((objc_designated_initializer));
-
-/**
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedAddressCompanion *companion __attribute__((swift_name("companion")));
-- (SharedAddress *)doCopyAddress:(NSString *)address address2:(NSString *)address2 city:(NSString *)city zipCode:(NSString *)zipCode country:(NSString *)country location:(SharedLocation * _Nullable)location unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(address:address2:city:zipCode:country:location:unknownFields:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
-- (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *address __attribute__((swift_name("address")));
 @property (readonly) NSString *address2 __attribute__((swift_name("address2")));
 @property (readonly) NSString *city __attribute__((swift_name("city")));
 @property (readonly) NSString *country __attribute__((swift_name("country")));
 @property (readonly) SharedLocation * _Nullable location __attribute__((swift_name("location")));
 @property (readonly) NSString *zipCode __attribute__((swift_name("zipCode")));
+- (instancetype)initWithAddress:(NSString *)address address2:(NSString *)address2 city:(NSString *)city zipCode:(NSString *)zipCode country:(NSString *)country location:(SharedLocation * _Nullable)location unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(address:address2:city:zipCode:country:location:unknownFields:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (SharedAddress *)doCopyAddress:(NSString *)address address2:(NSString *)address2 city:(NSString *)city zipCode:(NSString *)zipCode country:(NSString *)country location:(SharedLocation * _Nullable)location unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(address:address2:city:zipCode:country:location:unknownFields:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Address.Companion")))
 @interface SharedAddressCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedAddressCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddress *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedAddressCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddress *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((swift_name("KotlinComparable")))
@@ -205,14 +229,14 @@ __attribute__((swift_name("KotlinComparable")))
 
 __attribute__((swift_name("KotlinEnum")))
 @interface SharedKotlinEnum<E> : SharedBase <SharedKotlinComparable>
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedKotlinEnumCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@property (readonly) int32_t ordinal __attribute__((swift_name("ordinal")));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer));
 - (int32_t)compareToOther:(E)other __attribute__((swift_name("compareTo(other:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) int32_t ordinal __attribute__((swift_name("ordinal")));
 @end
 
 __attribute__((swift_name("Wire_runtimeWireEnum")))
@@ -224,488 +248,488 @@ __attribute__((swift_name("Wire_runtimeWireEnum")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Currency")))
 @interface SharedCurrency : SharedKotlinEnum<SharedCurrency *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedCurrencyCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedCurrency *currencyUnknown __attribute__((swift_name("currencyUnknown")));
 @property (class, readonly) SharedCurrency *czk __attribute__((swift_name("czk")));
 @property (class, readonly) SharedCurrency *eur __attribute__((swift_name("eur")));
 @property (class, readonly) SharedCurrency *usd __attribute__((swift_name("usd")));
-+ (SharedKotlinArray<SharedCurrency *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedCurrency *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedCurrency *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Currency.Companion")))
 @interface SharedCurrencyCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCurrencyCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCurrency *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCurrencyCompanion *shared __attribute__((swift_name("shared")));
 - (SharedCurrency * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCurrency *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CursorBackwardPagingParams")))
 @interface SharedCursorBackwardPagingParams : SharedWire_runtimeMessage<SharedCursorBackwardPagingParams *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCursorBackwardPagingParamsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString * _Nullable before __attribute__((swift_name("before")));
+@property (readonly) int32_t first __attribute__((swift_name("first")));
 - (instancetype)initWithBefore:(NSString * _Nullable)before first:(int32_t)first unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(before:first:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCursorBackwardPagingParamsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCursorBackwardPagingParams *)doCopyBefore:(NSString * _Nullable)before first:(int32_t)first unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(before:first:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString * _Nullable before __attribute__((swift_name("before")));
-@property (readonly) int32_t first __attribute__((swift_name("first")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CursorBackwardPagingParams.Companion")))
 @interface SharedCursorBackwardPagingParamsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCursorBackwardPagingParamsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCursorBackwardPagingParams *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCursorBackwardPagingParamsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCursorBackwardPagingParams *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CursorForwardPagingParams")))
 @interface SharedCursorForwardPagingParams : SharedWire_runtimeMessage<SharedCursorForwardPagingParams *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCursorForwardPagingParamsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString * _Nullable after __attribute__((swift_name("after")));
+@property (readonly) int32_t first __attribute__((swift_name("first")));
 - (instancetype)initWithAfter:(NSString * _Nullable)after first:(int32_t)first unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(after:first:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCursorForwardPagingParamsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCursorForwardPagingParams *)doCopyAfter:(NSString * _Nullable)after first:(int32_t)first unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(after:first:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString * _Nullable after __attribute__((swift_name("after")));
-@property (readonly) int32_t first __attribute__((swift_name("first")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CursorForwardPagingParams.Companion")))
 @interface SharedCursorForwardPagingParamsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCursorForwardPagingParamsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCursorForwardPagingParams *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCursorForwardPagingParamsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCursorForwardPagingParams *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("File")))
 @interface SharedFile : SharedWire_runtimeMessage<SharedFile *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedFileCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedOkioByteString *content __attribute__((swift_name("content")));
+@property (readonly) NSString *mimeType __attribute__((swift_name("mimeType")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
 - (instancetype)initWithName:(NSString *)name mimeType:(NSString *)mimeType content:(SharedOkioByteString *)content unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(name:mimeType:content:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedFileCompanion *companion __attribute__((swift_name("companion")));
 - (SharedFile *)doCopyName:(NSString *)name mimeType:(NSString *)mimeType content:(SharedOkioByteString *)content unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(name:mimeType:content:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedOkioByteString *content __attribute__((swift_name("content")));
-@property (readonly) NSString *mimeType __attribute__((swift_name("mimeType")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("File.Companion")))
 @interface SharedFileCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedFileCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedFile *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedFileCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedFile *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("HexColor")))
 @interface SharedHexColor : SharedWire_runtimeMessage<SharedHexColor *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedHexColorCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *value_ __attribute__((swift_name("value_")));
 - (instancetype)initWithValue_:(NSString *)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(value_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedHexColorCompanion *companion __attribute__((swift_name("companion")));
 - (SharedHexColor *)doCopyValue_:(NSString *)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(value_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *value_ __attribute__((swift_name("value_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("HexColor.Companion")))
 @interface SharedHexColorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedHexColorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedHexColor *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedHexColorCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedHexColor *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Language")))
 @interface SharedLanguage : SharedKotlinEnum<SharedLanguage *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedLanguageCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedLanguage *unknown __attribute__((swift_name("unknown")));
 @property (class, readonly) SharedLanguage *cs __attribute__((swift_name("cs")));
 @property (class, readonly) SharedLanguage *sk __attribute__((swift_name("sk")));
 @property (class, readonly) SharedLanguage *en __attribute__((swift_name("en")));
-+ (SharedKotlinArray<SharedLanguage *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedLanguage *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedLanguage *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Language.Companion")))
 @interface SharedLanguageCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedLanguageCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedLanguage *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedLanguageCompanion *shared __attribute__((swift_name("shared")));
 - (SharedLanguage * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedLanguage *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Location")))
 @interface SharedLocation : SharedWire_runtimeMessage<SharedLocation *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedLocationCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) double latitude __attribute__((swift_name("latitude")));
+@property (readonly) double longitude __attribute__((swift_name("longitude")));
 - (instancetype)initWithLatitude:(double)latitude longitude:(double)longitude unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(latitude:longitude:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedLocationCompanion *companion __attribute__((swift_name("companion")));
 - (SharedLocation *)doCopyLatitude:(double)latitude longitude:(double)longitude unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(latitude:longitude:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) double latitude __attribute__((swift_name("latitude")));
-@property (readonly) double longitude __attribute__((swift_name("longitude")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Location.Companion")))
 @interface SharedLocationCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedLocationCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedLocation *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedLocationCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedLocation *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PageInfo")))
 @interface SharedPageInfo : SharedWire_runtimeMessage<SharedPageInfo *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedPageInfoCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) BOOL hasNext __attribute__((swift_name("hasNext")));
+@property (readonly) int64_t totalCount __attribute__((swift_name("totalCount")));
 - (instancetype)initWithHasNext:(BOOL)hasNext totalCount:(int64_t)totalCount unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(hasNext:totalCount:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedPageInfoCompanion *companion __attribute__((swift_name("companion")));
 - (SharedPageInfo *)doCopyHasNext:(BOOL)hasNext totalCount:(int64_t)totalCount unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(hasNext:totalCount:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) BOOL hasNext __attribute__((swift_name("hasNext")));
-@property (readonly) int64_t totalCount __attribute__((swift_name("totalCount")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PageInfo.Companion")))
 @interface SharedPageInfoCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedPageInfoCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedPageInfo *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedPageInfoCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedPageInfo *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PagingParams")))
 @interface SharedPagingParams : SharedWire_runtimeMessage<SharedPagingParams *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedPagingParamsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedCursorBackwardPagingParams * _Nullable backward __attribute__((swift_name("backward")));
+@property (readonly) SharedCursorForwardPagingParams * _Nullable forward __attribute__((swift_name("forward")));
 - (instancetype)initWithForward:(SharedCursorForwardPagingParams * _Nullable)forward backward:(SharedCursorBackwardPagingParams * _Nullable)backward unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(forward:backward:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedPagingParamsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedPagingParams *)doCopyForward:(SharedCursorForwardPagingParams * _Nullable)forward backward:(SharedCursorBackwardPagingParams * _Nullable)backward unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(forward:backward:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedCursorBackwardPagingParams * _Nullable backward __attribute__((swift_name("backward")));
-@property (readonly) SharedCursorForwardPagingParams * _Nullable forward __attribute__((swift_name("forward")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PagingParams.Companion")))
 @interface SharedPagingParamsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedPagingParamsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedPagingParams *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedPagingParamsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedPagingParams *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Picture")))
 @interface SharedPicture : SharedWire_runtimeMessage<SharedPicture *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedPictureCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) int32_t height __attribute__((swift_name("height")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSString *url __attribute__((swift_name("url")));
+@property (readonly) int32_t width __attribute__((swift_name("width")));
 - (instancetype)initWithId:(NSString *)id url:(NSString *)url height:(int32_t)height width:(int32_t)width unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(id:url:height:width:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedPictureCompanion *companion __attribute__((swift_name("companion")));
 - (SharedPicture *)doCopyId:(NSString *)id url:(NSString *)url height:(int32_t)height width:(int32_t)width unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(id:url:height:width:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int32_t height __attribute__((swift_name("height")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSString *url __attribute__((swift_name("url")));
-@property (readonly) int32_t width __attribute__((swift_name("width")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Picture.Companion")))
 @interface SharedPictureCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedPictureCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedPicture *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedPictureCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedPicture *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PriceValue")))
 @interface SharedPriceValue : SharedWire_runtimeMessage<SharedPriceValue *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedPriceValueCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) int64_t value_ __attribute__((swift_name("value_")));
 - (instancetype)initWithValue_:(int64_t)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(value_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedPriceValueCompanion *companion __attribute__((swift_name("companion")));
 - (SharedPriceValue *)doCopyValue_:(int64_t)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(value_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int64_t value_ __attribute__((swift_name("value_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PriceValue.Companion")))
 @interface SharedPriceValueCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedPriceValueCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedPriceValue *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedPriceValueCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedPriceValue *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SemVer")))
 @interface SharedSemVer : SharedWire_runtimeMessage<SharedSemVer *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedSemVerCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *build __attribute__((swift_name("build")));
+@property (readonly) int32_t major __attribute__((swift_name("major")));
+@property (readonly) int32_t minor __attribute__((swift_name("minor")));
+@property (readonly) int32_t patch __attribute__((swift_name("patch")));
+@property (readonly) NSString *preRelease __attribute__((swift_name("preRelease")));
 - (instancetype)initWithMajor:(int32_t)major minor:(int32_t)minor patch:(int32_t)patch preRelease:(NSString *)preRelease build:(NSString *)build unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(major:minor:patch:preRelease:build:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedSemVerCompanion *companion __attribute__((swift_name("companion")));
 - (SharedSemVer *)doCopyMajor:(int32_t)major minor:(int32_t)minor patch:(int32_t)patch preRelease:(NSString *)preRelease build:(NSString *)build unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(major:minor:patch:preRelease:build:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *build __attribute__((swift_name("build")));
-@property (readonly) int32_t major __attribute__((swift_name("major")));
-@property (readonly) int32_t minor __attribute__((swift_name("minor")));
-@property (readonly) int32_t patch __attribute__((swift_name("patch")));
-@property (readonly) NSString *preRelease __attribute__((swift_name("preRelease")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SemVer.Companion")))
 @interface SharedSemVerCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedSemVerCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedSemVer *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedSemVerCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedSemVer *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SortOrder")))
 @interface SharedSortOrder : SharedKotlinEnum<SharedSortOrder *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedSortOrderCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedSortOrder *unknownSort __attribute__((swift_name("unknownSort")));
 @property (class, readonly) SharedSortOrder *asc __attribute__((swift_name("asc")));
 @property (class, readonly) SharedSortOrder *desc __attribute__((swift_name("desc")));
-+ (SharedKotlinArray<SharedSortOrder *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedSortOrder *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedSortOrder *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SortOrder.Companion")))
 @interface SharedSortOrderCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedSortOrderCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedSortOrder *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedSortOrderCompanion *shared __attribute__((swift_name("shared")));
 - (SharedSortOrder * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedSortOrder *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TimeRange")))
 @interface SharedTimeRange : SharedWire_runtimeMessage<SharedTimeRange *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedTimeRangeCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWire_runtimeInstant * _Nullable from __attribute__((swift_name("from")));
+@property (readonly) SharedWire_runtimeInstant * _Nullable to __attribute__((swift_name("to")));
 - (instancetype)initWithFrom:(SharedWire_runtimeInstant * _Nullable)from to:(SharedWire_runtimeInstant * _Nullable)to unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(from:to:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedTimeRangeCompanion *companion __attribute__((swift_name("companion")));
 - (SharedTimeRange *)doCopyFrom:(SharedWire_runtimeInstant * _Nullable)from to:(SharedWire_runtimeInstant * _Nullable)to unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(from:to:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWire_runtimeInstant * _Nullable from __attribute__((swift_name("from")));
-@property (readonly) SharedWire_runtimeInstant * _Nullable to __attribute__((swift_name("to")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TimeRange.Companion")))
 @interface SharedTimeRangeCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedTimeRangeCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedTimeRange *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedTimeRangeCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedTimeRange *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceEvent")))
 @interface SharedDeviceEvent : SharedWire_runtimeMessage<SharedDeviceEvent *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedDeviceEventCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWire_runtimeInstant * _Nullable createdAt __attribute__((swift_name("createdAt")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSString *text __attribute__((swift_name("text")));
+@property (readonly) SharedDeviceEventType *type __attribute__((swift_name("type")));
 - (instancetype)initWithId:(NSString *)id type:(SharedDeviceEventType *)type text:(NSString *)text createdAt:(SharedWire_runtimeInstant * _Nullable)createdAt unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(id:type:text:createdAt:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedDeviceEventCompanion *companion __attribute__((swift_name("companion")));
 - (SharedDeviceEvent *)doCopyId:(NSString *)id type:(SharedDeviceEventType *)type text:(NSString *)text createdAt:(SharedWire_runtimeInstant * _Nullable)createdAt unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(id:type:text:createdAt:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWire_runtimeInstant * _Nullable createdAt __attribute__((swift_name("createdAt")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSString *text __attribute__((swift_name("text")));
-@property (readonly) SharedDeviceEventType *type __attribute__((swift_name("type")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceEvent.Companion")))
 @interface SharedDeviceEventCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceEventCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceEvent *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceEventCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceEvent *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceEventType")))
 @interface SharedDeviceEventType : SharedKotlinEnum<SharedDeviceEventType *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedDeviceEventTypeCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedDeviceEventType *unknownDeviceEventType __attribute__((swift_name("unknownDeviceEventType")));
 @property (class, readonly) SharedDeviceEventType *logout __attribute__((swift_name("logout")));
-+ (SharedKotlinArray<SharedDeviceEventType *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedDeviceEventType *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedDeviceEventType *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceEventType.Companion")))
 @interface SharedDeviceEventTypeCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceEventTypeCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceEventType *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceEventTypeCompanion *shared __attribute__((swift_name("shared")));
 - (SharedDeviceEventType * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceEventType *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceEventsArray")))
 @interface SharedDeviceEventsArray : SharedWire_runtimeMessage<SharedDeviceEventsArray *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedDeviceEventsArrayCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedDeviceEvent *> *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSArray<SharedDeviceEvent *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedDeviceEventsArrayCompanion *companion __attribute__((swift_name("companion")));
 - (SharedDeviceEventsArray *)doCopyData_:(NSArray<SharedDeviceEvent *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedDeviceEvent *> *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceEventsArray.Companion")))
 @interface SharedDeviceEventsArrayCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceEventsArrayCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceEventsArray *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceEventsArrayCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceEventsArray *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((swift_name("Wire_runtimeService")))
@@ -722,59 +746,59 @@ __attribute__((swift_name("DeviceEventsClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceEventsRequest")))
 @interface SharedGetDeviceEventsRequest : SharedWire_runtimeMessage<SharedGetDeviceEventsRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetDeviceEventsRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) int32_t size __attribute__((swift_name("size")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token size:(int32_t)size unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:size:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetDeviceEventsRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetDeviceEventsRequest *)doCopyToken:(SharedToken * _Nullable)token size:(int32_t)size unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:size:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceEventsRequest.Companion")))
 @interface SharedGetDeviceEventsRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetDeviceEventsRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceEventsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetDeviceEventsRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceEventsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceEventsResponse")))
 @interface SharedGetDeviceEventsResponse : SharedWire_runtimeMessage<SharedGetDeviceEventsResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetDeviceEventsResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedDeviceEventsArray * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedTokenError * _Nullable tokenErr __attribute__((swift_name("tokenErr")));
 - (instancetype)initWithTokenErr:(SharedTokenError * _Nullable)tokenErr data_:(SharedDeviceEventsArray * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(tokenErr:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetDeviceEventsResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetDeviceEventsResponse *)doCopyTokenErr:(SharedTokenError * _Nullable)tokenErr data_:(SharedDeviceEventsArray * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(tokenErr:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedDeviceEventsArray * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedTokenError * _Nullable tokenErr __attribute__((swift_name("tokenErr")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceEventsResponse.Companion")))
 @interface SharedGetDeviceEventsResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetDeviceEventsResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceEventsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetDeviceEventsResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceEventsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -782,6 +806,319 @@ __attribute__((swift_name("GrpcDeviceEventsClient")))
 @interface SharedGrpcDeviceEventsClient : SharedBase <SharedDeviceEventsClient>
 - (instancetype)initWithClient:(SharedWire_grpc_clientGrpcClient *)client __attribute__((swift_name("init(client:)"))) __attribute__((objc_designated_initializer));
 - (id<SharedWire_grpc_clientGrpcCall>)GetDeviceEvents __attribute__((swift_name("GetDeviceEvents()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieColdFlowIterator")))
+@interface SharedSkieColdFlowIterator<E> : SharedBase
+- (instancetype)initWithFlow:(id<SharedKotlinx_coroutines_coreFlow>)flow __attribute__((swift_name("init(flow:)"))) __attribute__((objc_designated_initializer));
+- (void)cancel __attribute__((swift_name("cancel()")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)hasNextWithCompletionHandler:(void (^)(SharedBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("hasNext(completionHandler:)")));
+- (E _Nullable)next __attribute__((swift_name("next()")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
+@protocol SharedKotlinx_coroutines_coreFlow
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinFlow")))
+@interface SharedSkieKotlinFlow<__covariant T> : SharedBase <SharedKotlinx_coroutines_coreFlow>
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSharedFlow")))
+@protocol SharedKotlinx_coroutines_coreSharedFlow <SharedKotlinx_coroutines_coreFlow>
+@required
+@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
+@protocol SharedKotlinx_coroutines_coreFlowCollector
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreMutableSharedFlow")))
+@protocol SharedKotlinx_coroutines_coreMutableSharedFlow <SharedKotlinx_coroutines_coreSharedFlow, SharedKotlinx_coroutines_coreFlowCollector>
+@required
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
+- (BOOL)tryEmitValue:(id _Nullable)value __attribute__((swift_name("tryEmit(value:)")));
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinMutableSharedFlow")))
+@interface SharedSkieKotlinMutableSharedFlow<T> : SharedBase <SharedKotlinx_coroutines_coreMutableSharedFlow>
+@property (readonly) NSArray<T> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreMutableSharedFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(T)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
+- (BOOL)tryEmitValue:(T)value __attribute__((swift_name("tryEmit(value:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreStateFlow")))
+@protocol SharedKotlinx_coroutines_coreStateFlow <SharedKotlinx_coroutines_coreSharedFlow>
+@required
+@property (readonly) id _Nullable value_ __attribute__((swift_name("value_")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreMutableStateFlow")))
+@protocol SharedKotlinx_coroutines_coreMutableStateFlow <SharedKotlinx_coroutines_coreStateFlow, SharedKotlinx_coroutines_coreMutableSharedFlow>
+@required
+- (void)setValue:(id _Nullable)value __attribute__((swift_name("setValue(_:)")));
+- (BOOL)compareAndSetExpect:(id _Nullable)expect update:(id _Nullable)update __attribute__((swift_name("compareAndSet(expect:update:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinMutableStateFlow")))
+@interface SharedSkieKotlinMutableStateFlow<T> : SharedBase <SharedKotlinx_coroutines_coreMutableStateFlow>
+@property (readonly) NSArray<T> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
+@property (setter=setValue:) T value_ __attribute__((swift_name("value_")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreMutableStateFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+- (BOOL)compareAndSetExpect:(T)expect update:(T)update __attribute__((swift_name("compareAndSet(expect:update:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(T)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
+- (BOOL)tryEmitValue:(T)value __attribute__((swift_name("tryEmit(value:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinOptionalFlow")))
+@interface SharedSkieKotlinOptionalFlow<__covariant T> : SharedBase <SharedKotlinx_coroutines_coreFlow>
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinOptionalMutableSharedFlow")))
+@interface SharedSkieKotlinOptionalMutableSharedFlow<T> : SharedBase <SharedKotlinx_coroutines_coreMutableSharedFlow>
+@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreMutableSharedFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(T _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
+- (BOOL)tryEmitValue:(T _Nullable)value __attribute__((swift_name("tryEmit(value:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinOptionalMutableStateFlow")))
+@interface SharedSkieKotlinOptionalMutableStateFlow<T> : SharedBase <SharedKotlinx_coroutines_coreMutableStateFlow>
+@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) id<SharedKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
+@property (setter=setValue:) T _Nullable value_ __attribute__((swift_name("value_")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreMutableStateFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+- (BOOL)compareAndSetExpect:(T _Nullable)expect update:(T _Nullable)update __attribute__((swift_name("compareAndSet(expect:update:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(T _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
+- (BOOL)tryEmitValue:(T _Nullable)value __attribute__((swift_name("tryEmit(value:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinOptionalSharedFlow")))
+@interface SharedSkieKotlinOptionalSharedFlow<__covariant T> : SharedBase <SharedKotlinx_coroutines_coreSharedFlow>
+@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreSharedFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinOptionalStateFlow")))
+@interface SharedSkieKotlinOptionalStateFlow<__covariant T> : SharedBase <SharedKotlinx_coroutines_coreStateFlow>
+@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) T _Nullable value_ __attribute__((swift_name("value_")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreStateFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinSharedFlow")))
+@interface SharedSkieKotlinSharedFlow<__covariant T> : SharedBase <SharedKotlinx_coroutines_coreSharedFlow>
+@property (readonly) NSArray<T> *replayCache __attribute__((swift_name("replayCache")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreSharedFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("SkieKotlinStateFlow")))
+@interface SharedSkieKotlinStateFlow<__covariant T> : SharedBase <SharedKotlinx_coroutines_coreStateFlow>
+@property (readonly) NSArray<T> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) T value_ __attribute__((swift_name("value_")));
+- (instancetype)initWithDelegate:(id<SharedKotlinx_coroutines_coreStateFlow>)delegate __attribute__((swift_name("init(_:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Skie_CancellationHandler")))
+@interface SharedSkie_CancellationHandler : SharedBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (void)cancel __attribute__((swift_name("cancel()")));
+@end
+
+__attribute__((swift_name("Skie_DispatcherDelegate")))
+@protocol SharedSkie_DispatcherDelegate
+@required
+- (void)dispatchBlock:(id<SharedKotlinx_coroutines_coreRunnable>)block __attribute__((swift_name("dispatch(block:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Skie_SuspendHandler")))
+@interface SharedSkie_SuspendHandler : SharedBase
+- (instancetype)initWithCancellationHandler:(SharedSkie_CancellationHandler *)cancellationHandler dispatcherDelegate:(id<SharedSkie_DispatcherDelegate>)dispatcherDelegate onResult:(void (^)(SharedSkie_SuspendResult *))onResult __attribute__((swift_name("init(cancellationHandler:dispatcherDelegate:onResult:)"))) __attribute__((objc_designated_initializer));
+@end
+
+__attribute__((swift_name("Skie_SuspendResult")))
+@interface SharedSkie_SuspendResult : SharedBase
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Skie_SuspendResult.Canceled")))
+@interface SharedSkie_SuspendResultCanceled : SharedSkie_SuspendResult
+@property (class, readonly, getter=shared) SharedSkie_SuspendResultCanceled *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)canceled __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Skie_SuspendResult.Error")))
+@interface SharedSkie_SuspendResultError : SharedSkie_SuspendResult
+@property (readonly) NSError *error __attribute__((swift_name("error")));
+- (instancetype)initWithError:(NSError *)error __attribute__((swift_name("init(error:)"))) __attribute__((objc_designated_initializer));
+- (SharedSkie_SuspendResultError *)doCopyError:(NSError *)error __attribute__((swift_name("doCopy(error:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Skie_SuspendResult.Success")))
+@interface SharedSkie_SuspendResultSuccess : SharedSkie_SuspendResult
+@property (readonly) id _Nullable value __attribute__((swift_name("value")));
+- (instancetype)initWithValue:(id _Nullable)value __attribute__((swift_name("init(value:)"))) __attribute__((objc_designated_initializer));
+- (SharedSkie_SuspendResultSuccess *)doCopyValue:(id _Nullable)value __attribute__((swift_name("doCopy(value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((swift_name("LeafletCallBackClient")))
@@ -834,29 +1171,29 @@ __attribute__((swift_name("LeafletSuspendClientImpl")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ObjectId")))
 @interface SharedObjectId : SharedWire_runtimeMessage<SharedObjectId *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedObjectIdCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedOkioByteString *value_ __attribute__((swift_name("value_")));
 - (instancetype)initWithValue_:(SharedOkioByteString *)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(value_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedObjectIdCompanion *companion __attribute__((swift_name("companion")));
 - (SharedObjectId *)doCopyValue_:(SharedOkioByteString *)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(value_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedOkioByteString *value_ __attribute__((swift_name("value_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ObjectId.Companion")))
 @interface SharedObjectIdCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedObjectIdCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedObjectId *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedObjectIdCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedObjectId *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((swift_name("RegisterDeviceRepository")))
@@ -873,37 +1210,34 @@ __attribute__((swift_name("RegisterDeviceRepository")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UUID")))
 @interface SharedUUID : SharedWire_runtimeMessage<SharedUUID *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedUUIDCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedOkioByteString *value_ __attribute__((swift_name("value_")));
 - (instancetype)initWithValue_:(SharedOkioByteString *)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(value_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedUUIDCompanion *companion __attribute__((swift_name("companion")));
 - (SharedUUID *)doCopyValue_:(SharedOkioByteString *)value_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(value_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedOkioByteString *value_ __attribute__((swift_name("value_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UUID.Companion")))
 @interface SharedUUIDCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedUUIDCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedUUID *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedUUIDCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedUUID *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeekDay")))
 @interface SharedWeekDay : SharedKotlinEnum<SharedWeekDay *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedWeekDayCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedWeekDay *unknownWeekDay __attribute__((swift_name("unknownWeekDay")));
 @property (class, readonly) SharedWeekDay *monday __attribute__((swift_name("monday")));
@@ -913,387 +1247,390 @@ __attribute__((swift_name("WeekDay")))
 @property (class, readonly) SharedWeekDay *friday __attribute__((swift_name("friday")));
 @property (class, readonly) SharedWeekDay *saturday __attribute__((swift_name("saturday")));
 @property (class, readonly) SharedWeekDay *sunday __attribute__((swift_name("sunday")));
-+ (SharedKotlinArray<SharedWeekDay *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedWeekDay *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedWeekDay *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WeekDay.Companion")))
 @interface SharedWeekDayCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWeekDayCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedWeekDay *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWeekDayCompanion *shared __attribute__((swift_name("shared")));
 - (SharedWeekDay * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedWeekDay *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateSettingsRequest")))
 @interface SharedAddOrUpdateSettingsRequest : SharedWire_runtimeMessage<SharedAddOrUpdateSettingsRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedAddOrUpdateSettingsRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedProjectSettings * _Nullable data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(SharedProjectSettings * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedAddOrUpdateSettingsRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedAddOrUpdateSettingsRequest *)doCopyData_:(SharedProjectSettings * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedProjectSettings * _Nullable data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateSettingsRequest.Companion")))
 @interface SharedAddOrUpdateSettingsRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedAddOrUpdateSettingsRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateSettingsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedAddOrUpdateSettingsRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateSettingsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserRequest")))
 @interface SharedAddOrUpdateUserRequest : SharedWire_runtimeMessage<SharedAddOrUpdateUserRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedAddOrUpdateUserRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 - (instancetype)initWithUser:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(user:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedAddOrUpdateUserRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedAddOrUpdateUserRequest *)doCopyUser:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(user:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserRequest.Companion")))
 @interface SharedAddOrUpdateUserRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedAddOrUpdateUserRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedAddOrUpdateUserRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserRequestV2")))
 @interface SharedAddOrUpdateUserRequestV2 : SharedWire_runtimeMessage<SharedAddOrUpdateUserRequestV2 *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedAddOrUpdateUserRequestV2Companion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 - (instancetype)initWithUser:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(user:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedAddOrUpdateUserRequestV2Companion *companion __attribute__((swift_name("companion")));
 - (SharedAddOrUpdateUserRequestV2 *)doCopyUser:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(user:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserRequestV2.Companion")))
 @interface SharedAddOrUpdateUserRequestV2Companion : SharedBase
+@property (class, readonly, getter=shared) SharedAddOrUpdateUserRequestV2Companion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserRequestV2 *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedAddOrUpdateUserRequestV2Companion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserRequestV2 *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserResponseV2")))
 @interface SharedAddOrUpdateUserResponseV2 : SharedWire_runtimeMessage<SharedAddOrUpdateUserResponseV2 *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedAddOrUpdateUserResponseV2Companion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedAddOrUpdateUserResponseV2AddUserError * _Nullable error __attribute__((swift_name("error")));
+@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 - (instancetype)initWithUser:(SharedWebUser * _Nullable)user error:(SharedAddOrUpdateUserResponseV2AddUserError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(user:error:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedAddOrUpdateUserResponseV2Companion *companion __attribute__((swift_name("companion")));
 - (SharedAddOrUpdateUserResponseV2 *)doCopyUser:(SharedWebUser * _Nullable)user error:(SharedAddOrUpdateUserResponseV2AddUserError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(user:error:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedAddOrUpdateUserResponseV2AddUserError * _Nullable error __attribute__((swift_name("error")));
-@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserResponseV2.AddUserError")))
 @interface SharedAddOrUpdateUserResponseV2AddUserError : SharedKotlinEnum<SharedAddOrUpdateUserResponseV2AddUserError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedAddOrUpdateUserResponseV2AddUserErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedAddOrUpdateUserResponseV2AddUserError *unknownAddUserError __attribute__((swift_name("unknownAddUserError")));
 @property (class, readonly) SharedAddOrUpdateUserResponseV2AddUserError *duplicatedEmail __attribute__((swift_name("duplicatedEmail")));
-+ (SharedKotlinArray<SharedAddOrUpdateUserResponseV2AddUserError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedAddOrUpdateUserResponseV2AddUserError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedAddOrUpdateUserResponseV2AddUserError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserResponseV2.AddUserErrorCompanion")))
 @interface SharedAddOrUpdateUserResponseV2AddUserErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedAddOrUpdateUserResponseV2AddUserErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserResponseV2AddUserError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedAddOrUpdateUserResponseV2AddUserErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedAddOrUpdateUserResponseV2AddUserError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserResponseV2AddUserError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AddOrUpdateUserResponseV2.Companion")))
 @interface SharedAddOrUpdateUserResponseV2Companion : SharedBase
+@property (class, readonly, getter=shared) SharedAddOrUpdateUserResponseV2Companion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserResponseV2 *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedAddOrUpdateUserResponseV2Companion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedAddOrUpdateUserResponseV2 *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest")))
 @interface SharedCreateRequest : SharedWire_runtimeMessage<SharedCreateRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCreateRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString * _Nullable appKey __attribute__((swift_name("appKey")));
+@property (readonly) SharedCreateRequestCredentials * _Nullable credentials __attribute__((swift_name("credentials")));
+@property (readonly) SharedCreateRequestUserLoginToken * _Nullable defaultLoginToken __attribute__((swift_name("defaultLoginToken")));
+@property (readonly) SharedCreateRequestDeviceKey * _Nullable deviceKey __attribute__((swift_name("deviceKey")));
+@property (readonly) SharedCreateRequestProjectUserLoginToken * _Nullable loginToken __attribute__((swift_name("loginToken")));
 - (instancetype)initWithCredentials:(SharedCreateRequestCredentials * _Nullable)credentials appKey:(NSString * _Nullable)appKey loginToken:(SharedCreateRequestProjectUserLoginToken * _Nullable)loginToken deviceKey:(SharedCreateRequestDeviceKey * _Nullable)deviceKey defaultLoginToken:(SharedCreateRequestUserLoginToken * _Nullable)defaultLoginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(credentials:appKey:loginToken:deviceKey:defaultLoginToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCreateRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCreateRequest *)doCopyCredentials:(SharedCreateRequestCredentials * _Nullable)credentials appKey:(NSString * _Nullable)appKey loginToken:(SharedCreateRequestProjectUserLoginToken * _Nullable)loginToken deviceKey:(SharedCreateRequestDeviceKey * _Nullable)deviceKey defaultLoginToken:(SharedCreateRequestUserLoginToken * _Nullable)defaultLoginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(credentials:appKey:loginToken:deviceKey:defaultLoginToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString * _Nullable appKey __attribute__((swift_name("appKey")));
-@property (readonly) SharedCreateRequestCredentials * _Nullable credentials __attribute__((swift_name("credentials")));
-@property (readonly) SharedCreateRequestUserLoginToken * _Nullable defaultLoginToken __attribute__((swift_name("defaultLoginToken")));
-@property (readonly) SharedCreateRequestDeviceKey * _Nullable deviceKey __attribute__((swift_name("deviceKey")));
-@property (readonly) SharedCreateRequestProjectUserLoginToken * _Nullable loginToken __attribute__((swift_name("loginToken")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.Companion")))
 @interface SharedCreateRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.Credentials")))
 @interface SharedCreateRequestCredentials : SharedWire_runtimeMessage<SharedCreateRequestCredentials *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCreateRequestCredentialsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *pass __attribute__((swift_name("pass")));
+@property (readonly) NSString *username __attribute__((swift_name("username")));
 - (instancetype)initWithUsername:(NSString *)username pass:(NSString *)pass unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(username:pass:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCreateRequestCredentialsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCreateRequestCredentials *)doCopyUsername:(NSString *)username pass:(NSString *)pass unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(username:pass:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *pass __attribute__((swift_name("pass")));
-@property (readonly) NSString *username __attribute__((swift_name("username")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.CredentialsCompanion")))
 @interface SharedCreateRequestCredentialsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateRequestCredentialsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestCredentials *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateRequestCredentialsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestCredentials *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.DeviceKey")))
 @interface SharedCreateRequestDeviceKey : SharedWire_runtimeMessage<SharedCreateRequestDeviceKey *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCreateRequestDeviceKeyCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *appKey __attribute__((swift_name("appKey")));
+@property (readonly) NSString *deviceUuid __attribute__((swift_name("deviceUuid")));
 - (instancetype)initWithAppKey:(NSString *)appKey deviceUuid:(NSString *)deviceUuid unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(appKey:deviceUuid:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCreateRequestDeviceKeyCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCreateRequestDeviceKey *)doCopyAppKey:(NSString *)appKey deviceUuid:(NSString *)deviceUuid unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(appKey:deviceUuid:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *appKey __attribute__((swift_name("appKey")));
-@property (readonly) NSString *deviceUuid __attribute__((swift_name("deviceUuid")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.DeviceKeyCompanion")))
 @interface SharedCreateRequestDeviceKeyCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateRequestDeviceKeyCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestDeviceKey *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateRequestDeviceKeyCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestDeviceKey *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.ProjectUserLoginToken")))
 @interface SharedCreateRequestProjectUserLoginToken : SharedWire_runtimeMessage<SharedCreateRequestProjectUserLoginToken *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCreateRequestProjectUserLoginTokenCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
+@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
 - (instancetype)initWithLoginToken:(NSString *)loginToken projectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(loginToken:projectId:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCreateRequestProjectUserLoginTokenCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCreateRequestProjectUserLoginToken *)doCopyLoginToken:(NSString *)loginToken projectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(loginToken:projectId:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
-@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.ProjectUserLoginTokenCompanion")))
 @interface SharedCreateRequestProjectUserLoginTokenCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateRequestProjectUserLoginTokenCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestProjectUserLoginToken *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateRequestProjectUserLoginTokenCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestProjectUserLoginToken *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.UserLoginToken")))
 @interface SharedCreateRequestUserLoginToken : SharedWire_runtimeMessage<SharedCreateRequestUserLoginToken *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCreateRequestUserLoginTokenCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
 - (instancetype)initWithLoginToken:(NSString *)loginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(loginToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCreateRequestUserLoginTokenCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCreateRequestUserLoginToken *)doCopyLoginToken:(NSString *)loginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(loginToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateRequest.UserLoginTokenCompanion")))
 @interface SharedCreateRequestUserLoginTokenCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateRequestUserLoginTokenCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestUserLoginToken *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateRequestUserLoginTokenCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateRequestUserLoginToken *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateResponse")))
 @interface SharedCreateResponse : SharedWire_runtimeMessage<SharedCreateResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedCreateResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedTokenPayload * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedCreateResponseError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithData_:(SharedTokenPayload * _Nullable)data_ error:(SharedCreateResponseError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:error:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedCreateResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedCreateResponse *)doCopyData_:(SharedTokenPayload * _Nullable)data_ error:(SharedCreateResponseError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:error:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedTokenPayload * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedCreateResponseError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateResponse.Companion")))
 @interface SharedCreateResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateResponse.Error")))
 @interface SharedCreateResponseError : SharedKotlinEnum<SharedCreateResponseError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedCreateResponseErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedCreateResponseError *unspecified __attribute__((swift_name("unspecified")));
 @property (class, readonly) SharedCreateResponseError *wrongPayload __attribute__((swift_name("wrongPayload")));
-+ (SharedKotlinArray<SharedCreateResponseError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedCreateResponseError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedCreateResponseError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("CreateResponse.ErrorCompanion")))
 @interface SharedCreateResponseErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedCreateResponseErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateResponseError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedCreateResponseErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedCreateResponseError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedCreateResponseError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeleteUserRequest")))
 @interface SharedDeleteUserRequest : SharedWire_runtimeMessage<SharedDeleteUserRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedDeleteUserRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedLong *> *userIds __attribute__((swift_name("userIds")));
 - (instancetype)initWithUserIds:(NSArray<SharedLong *> *)userIds unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(userIds:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedDeleteUserRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedDeleteUserRequest *)doCopyUserIds:(NSArray<SharedLong *> *)userIds unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(userIds:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedLong *> *userIds __attribute__((swift_name("userIds")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeleteUserRequest.Companion")))
 @interface SharedDeleteUserRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeleteUserRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeleteUserRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeleteUserRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeleteUserRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((swift_name("DeviceAdminClient")))
@@ -1311,18 +1648,7 @@ __attribute__((swift_name("DeviceAdminClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceData")))
 @interface SharedDeviceData : SharedWire_runtimeMessage<SharedDeviceData *, SharedKotlinNothing *>
-- (instancetype)initWithIdCustomer:(int32_t)idCustomer deviceTemporaryId:(NSString *)deviceTemporaryId timeCreate:(SharedWire_runtimeInstant * _Nullable)timeCreate lang:(SharedDeviceLang *)lang deviceType:(SharedDeviceType *)deviceType idMobileUser:(SharedLong * _Nullable)idMobileUser notificationToken:(NSString * _Nullable)notificationToken notificationTokenLastUpdate:(SharedWire_runtimeInstant * _Nullable)notificationTokenLastUpdate unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idCustomer:deviceTemporaryId:timeCreate:lang:deviceType:idMobileUser:notificationToken:notificationTokenLastUpdate:unknownFields:)"))) __attribute__((objc_designated_initializer));
-
-/**
- * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
-*/
-- (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedDeviceDataCompanion *companion __attribute__((swift_name("companion")));
-- (SharedDeviceData *)doCopyIdCustomer:(int32_t)idCustomer deviceTemporaryId:(NSString *)deviceTemporaryId timeCreate:(SharedWire_runtimeInstant * _Nullable)timeCreate lang:(SharedDeviceLang *)lang deviceType:(SharedDeviceType *)deviceType idMobileUser:(SharedLong * _Nullable)idMobileUser notificationToken:(NSString * _Nullable)notificationToken notificationTokenLastUpdate:(SharedWire_runtimeInstant * _Nullable)notificationTokenLastUpdate unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idCustomer:deviceTemporaryId:timeCreate:lang:deviceType:idMobileUser:notificationToken:notificationTokenLastUpdate:unknownFields:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
-- (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *deviceTemporaryId __attribute__((swift_name("deviceTemporaryId")));
 @property (readonly) SharedDeviceType *deviceType __attribute__((swift_name("deviceType")));
 @property (readonly) int32_t idCustomer __attribute__((swift_name("idCustomer")));
@@ -1331,43 +1657,54 @@ __attribute__((swift_name("DeviceData")))
 @property (readonly) NSString * _Nullable notificationToken __attribute__((swift_name("notificationToken")));
 @property (readonly) SharedWire_runtimeInstant * _Nullable notificationTokenLastUpdate __attribute__((swift_name("notificationTokenLastUpdate")));
 @property (readonly) SharedWire_runtimeInstant * _Nullable timeCreate __attribute__((swift_name("timeCreate")));
+- (instancetype)initWithIdCustomer:(int32_t)idCustomer deviceTemporaryId:(NSString *)deviceTemporaryId timeCreate:(SharedWire_runtimeInstant * _Nullable)timeCreate lang:(SharedDeviceLang *)lang deviceType:(SharedDeviceType *)deviceType idMobileUser:(SharedLong * _Nullable)idMobileUser notificationToken:(NSString * _Nullable)notificationToken notificationTokenLastUpdate:(SharedWire_runtimeInstant * _Nullable)notificationTokenLastUpdate unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idCustomer:deviceTemporaryId:timeCreate:lang:deviceType:idMobileUser:notificationToken:notificationTokenLastUpdate:unknownFields:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (SharedDeviceData *)doCopyIdCustomer:(int32_t)idCustomer deviceTemporaryId:(NSString *)deviceTemporaryId timeCreate:(SharedWire_runtimeInstant * _Nullable)timeCreate lang:(SharedDeviceLang *)lang deviceType:(SharedDeviceType *)deviceType idMobileUser:(SharedLong * _Nullable)idMobileUser notificationToken:(NSString * _Nullable)notificationToken notificationTokenLastUpdate:(SharedWire_runtimeInstant * _Nullable)notificationTokenLastUpdate unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idCustomer:deviceTemporaryId:timeCreate:lang:deviceType:idMobileUser:notificationToken:notificationTokenLastUpdate:unknownFields:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceData.Companion")))
 @interface SharedDeviceDataCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceDataCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceDataCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceLang")))
 @interface SharedDeviceLang : SharedKotlinEnum<SharedDeviceLang *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedDeviceLangCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedDeviceLang *unknown __attribute__((swift_name("unknown")));
 @property (class, readonly) SharedDeviceLang *en __attribute__((swift_name("en")));
 @property (class, readonly) SharedDeviceLang *sk __attribute__((swift_name("sk")));
 @property (class, readonly) SharedDeviceLang *cz __attribute__((swift_name("cz")));
-+ (SharedKotlinArray<SharedDeviceLang *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedDeviceLang *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedDeviceLang *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceLang.Companion")))
 @interface SharedDeviceLangCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceLangCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceLang *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceLangCompanion *shared __attribute__((swift_name("shared")));
 - (SharedDeviceLang * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceLang *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((swift_name("DeviceRegistrationClient")))
@@ -1379,55 +1716,55 @@ __attribute__((swift_name("DeviceRegistrationClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceResponse")))
 @interface SharedDeviceResponse : SharedWire_runtimeMessage<SharedDeviceResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedMobileDevice * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedDeviceResponseError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithError:(SharedDeviceResponseError * _Nullable)error data_:(SharedMobileDevice * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(error:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedDeviceResponse *)doCopyError:(SharedDeviceResponseError * _Nullable)error data_:(SharedMobileDevice * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(error:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedMobileDevice * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedDeviceResponseError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceResponse.Companion")))
 @interface SharedDeviceResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceResponse.Error")))
 @interface SharedDeviceResponseError : SharedKotlinEnum<SharedDeviceResponseError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedDeviceResponseErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedDeviceResponseError *unknown __attribute__((swift_name("unknown")));
 @property (class, readonly) SharedDeviceResponseError *notFound __attribute__((swift_name("notFound")));
-+ (SharedKotlinArray<SharedDeviceResponseError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedDeviceResponseError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedDeviceResponseError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceResponse.ErrorCompanion")))
 @interface SharedDeviceResponseErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceResponseErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceResponseError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceResponseErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedDeviceResponseError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceResponseError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((swift_name("DeviceServiceClient")))
@@ -1441,423 +1778,423 @@ __attribute__((swift_name("DeviceServiceClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceType")))
 @interface SharedDeviceType : SharedKotlinEnum<SharedDeviceType *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedDeviceTypeCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedDeviceType *unknownDeviceType __attribute__((swift_name("unknownDeviceType")));
 @property (class, readonly) SharedDeviceType *androidV5 __attribute__((swift_name("androidV5")));
 @property (class, readonly) SharedDeviceType *iosV5 __attribute__((swift_name("iosV5")));
 @property (class, readonly) SharedDeviceType *webV1 __attribute__((swift_name("webV1")));
-+ (SharedKotlinArray<SharedDeviceType *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedDeviceType *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedDeviceType *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceType.Companion")))
 @interface SharedDeviceTypeCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDeviceTypeCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceType *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDeviceTypeCompanion *shared __attribute__((swift_name("shared")));
 - (SharedDeviceType * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDeviceType *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DevicesResponse")))
 @interface SharedDevicesResponse : SharedWire_runtimeMessage<SharedDevicesResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedDevicesResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSDictionary<SharedLong *, SharedMobileDevice *> *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSDictionary<SharedLong *, SharedMobileDevice *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedDevicesResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedDevicesResponse *)doCopyData_:(NSDictionary<SharedLong *, SharedMobileDevice *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSDictionary<SharedLong *, SharedMobileDevice *> *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DevicesResponse.Companion")))
 @interface SharedDevicesResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedDevicesResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedDevicesResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDevicesResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedDevicesResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("FirebaseConfigResponse")))
 @interface SharedFirebaseConfigResponse : SharedWire_runtimeMessage<SharedFirebaseConfigResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedFirebaseConfigResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedOkioByteString * _Nullable configJson __attribute__((swift_name("configJson")));
 - (instancetype)initWithConfigJson:(SharedOkioByteString * _Nullable)configJson unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(configJson:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedFirebaseConfigResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedFirebaseConfigResponse *)doCopyConfigJson:(SharedOkioByteString * _Nullable)configJson unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(configJson:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedOkioByteString * _Nullable configJson __attribute__((swift_name("configJson")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("FirebaseConfigResponse.Companion")))
 @interface SharedFirebaseConfigResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedFirebaseConfigResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedFirebaseConfigResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedFirebaseConfigResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedFirebaseConfigResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceByTemporaryIdRequest")))
 @interface SharedGetDeviceByTemporaryIdRequest : SharedWire_runtimeMessage<SharedGetDeviceByTemporaryIdRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetDeviceByTemporaryIdRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
+@property (readonly) NSString *temporaryId __attribute__((swift_name("temporaryId")));
 - (instancetype)initWithTemporaryId:(NSString *)temporaryId projectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(temporaryId:projectId:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetDeviceByTemporaryIdRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetDeviceByTemporaryIdRequest *)doCopyTemporaryId:(NSString *)temporaryId projectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(temporaryId:projectId:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
-@property (readonly) NSString *temporaryId __attribute__((swift_name("temporaryId")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceByTemporaryIdRequest.Companion")))
 @interface SharedGetDeviceByTemporaryIdRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetDeviceByTemporaryIdRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceByTemporaryIdRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetDeviceByTemporaryIdRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceByTemporaryIdRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceRequest")))
 @interface SharedGetDeviceRequest : SharedWire_runtimeMessage<SharedGetDeviceRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) int64_t idMobileDevice __attribute__((swift_name("idMobileDevice")));
 - (instancetype)initWithIdMobileDevice:(int64_t)idMobileDevice unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idMobileDevice:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetDeviceRequest *)doCopyIdMobileDevice:(int64_t)idMobileDevice unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idMobileDevice:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int64_t idMobileDevice __attribute__((swift_name("idMobileDevice")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDeviceRequest.Companion")))
 @interface SharedGetDeviceRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDevicesRequest")))
 @interface SharedGetDevicesRequest : SharedWire_runtimeMessage<SharedGetDevicesRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetDevicesRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedLong *> *idMobileDevice __attribute__((swift_name("idMobileDevice")));
 - (instancetype)initWithIdMobileDevice:(NSArray<SharedLong *> *)idMobileDevice unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idMobileDevice:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetDevicesRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetDevicesRequest *)doCopyIdMobileDevice:(NSArray<SharedLong *> *)idMobileDevice unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idMobileDevice:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedLong *> *idMobileDevice __attribute__((swift_name("idMobileDevice")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetDevicesRequest.Companion")))
 @interface SharedGetDevicesRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetDevicesRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDevicesRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetDevicesRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetDevicesRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetTokenDeviceRequest")))
 @interface SharedGetTokenDeviceRequest : SharedWire_runtimeMessage<SharedGetTokenDeviceRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetTokenDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetTokenDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetTokenDeviceRequest *)doCopyToken:(SharedToken * _Nullable)token unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetTokenDeviceRequest.Companion")))
 @interface SharedGetTokenDeviceRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetTokenDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetTokenDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetTokenDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetTokenDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetTokenDeviceResponse")))
 @interface SharedGetTokenDeviceResponse : SharedWire_runtimeMessage<SharedGetTokenDeviceResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetTokenDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedMobileDevice * _Nullable device __attribute__((swift_name("device")));
+@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithError:(SharedTokenError * _Nullable)error device:(SharedMobileDevice * _Nullable)device unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(error:device:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetTokenDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetTokenDeviceResponse *)doCopyError:(SharedTokenError * _Nullable)error device:(SharedMobileDevice * _Nullable)device unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(error:device:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedMobileDevice * _Nullable device __attribute__((swift_name("device")));
-@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetTokenDeviceResponse.Companion")))
 @interface SharedGetTokenDeviceResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetTokenDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetTokenDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetTokenDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetTokenDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetTokenUserResponse")))
 @interface SharedGetTokenUserResponse : SharedWire_runtimeMessage<SharedGetTokenUserResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetTokenUserResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
+@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 - (instancetype)initWithError:(SharedTokenError * _Nullable)error user:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(error:user:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetTokenUserResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetTokenUserResponse *)doCopyError:(SharedTokenError * _Nullable)error user:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(error:user:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
-@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetTokenUserResponse.Companion")))
 @interface SharedGetTokenUserResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetTokenUserResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetTokenUserResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetTokenUserResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetTokenUserResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUserForLoginRequest")))
 @interface SharedGetUserForLoginRequest : SharedWire_runtimeMessage<SharedGetUserForLoginRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetUserForLoginRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *login __attribute__((swift_name("login")));
 - (instancetype)initWithLogin:(NSString *)login unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(login:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetUserForLoginRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetUserForLoginRequest *)doCopyLogin:(NSString *)login unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(login:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *login __attribute__((swift_name("login")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUserForLoginRequest.Companion")))
 @interface SharedGetUserForLoginRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetUserForLoginRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUserForLoginRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetUserForLoginRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUserForLoginRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUserForLoginTokenRequest")))
 @interface SharedGetUserForLoginTokenRequest : SharedWire_runtimeMessage<SharedGetUserForLoginTokenRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetUserForLoginTokenRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
 - (instancetype)initWithLoginToken:(NSString *)loginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(loginToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetUserForLoginTokenRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetUserForLoginTokenRequest *)doCopyLoginToken:(NSString *)loginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(loginToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUserForLoginTokenRequest.Companion")))
 @interface SharedGetUserForLoginTokenRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetUserForLoginTokenRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUserForLoginTokenRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetUserForLoginTokenRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUserForLoginTokenRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersDevicesRequest")))
 @interface SharedGetUsersDevicesRequest : SharedWire_runtimeMessage<SharedGetUsersDevicesRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetUsersDevicesRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedLong *> *users __attribute__((swift_name("users")));
 - (instancetype)initWithUsers:(NSArray<SharedLong *> *)users unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(users:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetUsersDevicesRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetUsersDevicesRequest *)doCopyUsers:(NSArray<SharedLong *> *)users unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(users:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedLong *> *users __attribute__((swift_name("users")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersDevicesRequest.Companion")))
 @interface SharedGetUsersDevicesRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetUsersDevicesRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersDevicesRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetUsersDevicesRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersDevicesRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersDevicesResponse")))
 @interface SharedGetUsersDevicesResponse : SharedWire_runtimeMessage<SharedGetUsersDevicesResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetUsersDevicesResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSDictionary<SharedLong *, SharedMobileDevicesArray *> *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSDictionary<SharedLong *, SharedMobileDevicesArray *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetUsersDevicesResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetUsersDevicesResponse *)doCopyData_:(NSDictionary<SharedLong *, SharedMobileDevicesArray *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSDictionary<SharedLong *, SharedMobileDevicesArray *> *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersDevicesResponse.Companion")))
 @interface SharedGetUsersDevicesResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetUsersDevicesResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersDevicesResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetUsersDevicesResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersDevicesResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersRequest")))
 @interface SharedGetUsersRequest : SharedWire_runtimeMessage<SharedGetUsersRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetUsersRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedLong *> *ids __attribute__((swift_name("ids")));
 - (instancetype)initWithIds:(NSArray<SharedLong *> *)ids unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(ids:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetUsersRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetUsersRequest *)doCopyIds:(NSArray<SharedLong *> *)ids unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(ids:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedLong *> *ids __attribute__((swift_name("ids")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersRequest.Companion")))
 @interface SharedGetUsersRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetUsersRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetUsersRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersResponse")))
 @interface SharedGetUsersResponse : SharedWire_runtimeMessage<SharedGetUsersResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetUsersResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSDictionary<SharedLong *, SharedWebUser *> *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSDictionary<SharedLong *, SharedWebUser *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetUsersResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetUsersResponse *)doCopyData_:(NSDictionary<SharedLong *, SharedWebUser *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSDictionary<SharedLong *, SharedWebUser *> *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetUsersResponse.Companion")))
 @interface SharedGetUsersResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetUsersResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetUsersResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetUsersResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1988,911 +2325,911 @@ __attribute__((swift_name("GrpcWebUsersServiceClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LogoutUserRequest")))
 @interface SharedLogoutUserRequest : SharedWire_runtimeMessage<SharedLogoutUserRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedLogoutUserRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedLogoutUserRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedLogoutUserRequest *)doCopyToken:(SharedToken * _Nullable)token unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LogoutUserRequest.Companion")))
 @interface SharedLogoutUserRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedLogoutUserRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedLogoutUserRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedLogoutUserRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedLogoutUserRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LogoutUserResponse")))
 @interface SharedLogoutUserResponse : SharedWire_runtimeMessage<SharedLogoutUserResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedLogoutUserResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithError:(SharedTokenError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(error:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedLogoutUserResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedLogoutUserResponse *)doCopyError:(SharedTokenError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(error:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LogoutUserResponse.Companion")))
 @interface SharedLogoutUserResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedLogoutUserResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedLogoutUserResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedLogoutUserResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedLogoutUserResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LogoutUsersRequest")))
 @interface SharedLogoutUsersRequest : SharedWire_runtimeMessage<SharedLogoutUsersRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedLogoutUsersRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *reason __attribute__((swift_name("reason")));
+@property (readonly) NSArray<SharedLong *> *userIds __attribute__((swift_name("userIds")));
 - (instancetype)initWithUserIds:(NSArray<SharedLong *> *)userIds reason:(NSString *)reason unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(userIds:reason:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedLogoutUsersRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedLogoutUsersRequest *)doCopyUserIds:(NSArray<SharedLong *> *)userIds reason:(NSString *)reason unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(userIds:reason:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *reason __attribute__((swift_name("reason")));
-@property (readonly) NSArray<SharedLong *> *userIds __attribute__((swift_name("userIds")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LogoutUsersRequest.Companion")))
 @interface SharedLogoutUsersRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedLogoutUsersRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedLogoutUsersRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedLogoutUsersRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedLogoutUsersRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MobileDevice")))
 @interface SharedMobileDevice : SharedWire_runtimeMessage<SharedMobileDevice *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedMobileDeviceCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedDeviceData * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) int64_t idMobileDevice __attribute__((swift_name("idMobileDevice")));
 - (instancetype)initWithIdMobileDevice:(int64_t)idMobileDevice data_:(SharedDeviceData * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idMobileDevice:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedMobileDeviceCompanion *companion __attribute__((swift_name("companion")));
 - (SharedMobileDevice *)doCopyIdMobileDevice:(int64_t)idMobileDevice data_:(SharedDeviceData * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idMobileDevice:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedDeviceData * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) int64_t idMobileDevice __attribute__((swift_name("idMobileDevice")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MobileDevice.Companion")))
 @interface SharedMobileDeviceCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedMobileDeviceCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedMobileDevice *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedMobileDeviceCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedMobileDevice *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MobileDevicesArray")))
 @interface SharedMobileDevicesArray : SharedWire_runtimeMessage<SharedMobileDevicesArray *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedMobileDevicesArrayCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedMobileDevice *> *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSArray<SharedMobileDevice *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedMobileDevicesArrayCompanion *companion __attribute__((swift_name("companion")));
 - (SharedMobileDevicesArray *)doCopyData_:(NSArray<SharedMobileDevice *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedMobileDevice *> *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MobileDevicesArray.Companion")))
 @interface SharedMobileDevicesArrayCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedMobileDevicesArrayCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedMobileDevicesArray *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedMobileDevicesArrayCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedMobileDevicesArray *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PermissionError")))
 @interface SharedPermissionError : SharedKotlinEnum<SharedPermissionError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedPermissionErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedPermissionError *unknownPermissionError __attribute__((swift_name("unknownPermissionError")));
 @property (class, readonly) SharedPermissionError *unauthorized __attribute__((swift_name("unauthorized")));
-+ (SharedKotlinArray<SharedPermissionError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedPermissionError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedPermissionError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PermissionError.Companion")))
 @interface SharedPermissionErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedPermissionErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedPermissionError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedPermissionErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedPermissionError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedPermissionError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectRequest")))
 @interface SharedProjectRequest : SharedWire_runtimeMessage<SharedProjectRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedProjectRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
 - (instancetype)initWithProjectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(projectId:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedProjectRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedProjectRequest *)doCopyProjectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(projectId:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectRequest.Companion")))
 @interface SharedProjectRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedProjectRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedProjectRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectSettings")))
 @interface SharedProjectSettings : SharedWire_runtimeMessage<SharedProjectSettings *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedProjectSettingsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *applicationKey __attribute__((swift_name("applicationKey")));
+@property (readonly) NSString *applicationName __attribute__((swift_name("applicationName")));
+@property (readonly) SharedWire_runtimeInstant * _Nullable createdAt __attribute__((swift_name("createdAt")));
+@property (readonly) NSString * _Nullable googleKey __attribute__((swift_name("googleKey")));
+@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
 - (instancetype)initWithProjectId:(NSString *)projectId applicationKey:(NSString *)applicationKey applicationName:(NSString *)applicationName googleKey:(NSString * _Nullable)googleKey createdAt:(SharedWire_runtimeInstant * _Nullable)createdAt unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(projectId:applicationKey:applicationName:googleKey:createdAt:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedProjectSettingsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedProjectSettings *)doCopyProjectId:(NSString *)projectId applicationKey:(NSString *)applicationKey applicationName:(NSString *)applicationName googleKey:(NSString * _Nullable)googleKey createdAt:(SharedWire_runtimeInstant * _Nullable)createdAt unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(projectId:applicationKey:applicationName:googleKey:createdAt:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *applicationKey __attribute__((swift_name("applicationKey")));
-@property (readonly) NSString *applicationName __attribute__((swift_name("applicationName")));
-@property (readonly) SharedWire_runtimeInstant * _Nullable createdAt __attribute__((swift_name("createdAt")));
-@property (readonly) NSString * _Nullable googleKey __attribute__((swift_name("googleKey")));
-@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectSettings.Companion")))
 @interface SharedProjectSettingsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedProjectSettingsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectSettings *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedProjectSettingsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectSettings *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectSettingsArray")))
 @interface SharedProjectSettingsArray : SharedWire_runtimeMessage<SharedProjectSettingsArray *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedProjectSettingsArrayCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedProjectSettings *> *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSArray<SharedProjectSettings *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedProjectSettingsArrayCompanion *companion __attribute__((swift_name("companion")));
 - (SharedProjectSettingsArray *)doCopyData_:(NSArray<SharedProjectSettings *> *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedProjectSettings *> *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectSettingsArray.Companion")))
 @interface SharedProjectSettingsArrayCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedProjectSettingsArrayCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectSettingsArray *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedProjectSettingsArrayCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectSettingsArray *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectSettingsRequest")))
 @interface SharedProjectSettingsRequest : SharedWire_runtimeMessage<SharedProjectSettingsRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedProjectSettingsRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<NSString *> *projectIds __attribute__((swift_name("projectIds")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token projectIds:(NSArray<NSString *> *)projectIds unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:projectIds:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedProjectSettingsRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedProjectSettingsRequest *)doCopyToken:(SharedToken * _Nullable)token projectIds:(NSArray<NSString *> *)projectIds unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:projectIds:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<NSString *> *projectIds __attribute__((swift_name("projectIds")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectSettingsRequest.Companion")))
 @interface SharedProjectSettingsRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedProjectSettingsRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectSettingsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedProjectSettingsRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectSettingsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectsResponse")))
 @interface SharedProjectsResponse : SharedWire_runtimeMessage<SharedProjectsResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedProjectsResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedProjectSettingsArray * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithError:(SharedTokenError * _Nullable)error data_:(SharedProjectSettingsArray * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(error:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedProjectsResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedProjectsResponse *)doCopyError:(SharedTokenError * _Nullable)error data_:(SharedProjectSettingsArray * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(error:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedProjectSettingsArray * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ProjectsResponse.Companion")))
 @interface SharedProjectsResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedProjectsResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedProjectsResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedProjectsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RefreshRequest")))
 @interface SharedRefreshRequest : SharedWire_runtimeMessage<SharedRefreshRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedRefreshRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *refreshToken __attribute__((swift_name("refreshToken")));
 - (instancetype)initWithRefreshToken:(NSString *)refreshToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(refreshToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedRefreshRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedRefreshRequest *)doCopyRefreshToken:(NSString *)refreshToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(refreshToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *refreshToken __attribute__((swift_name("refreshToken")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RefreshRequest.Companion")))
 @interface SharedRefreshRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRefreshRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRefreshRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRefreshRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRefreshRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RefreshResponse")))
 @interface SharedRefreshResponse : SharedWire_runtimeMessage<SharedRefreshResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedRefreshResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedTokenPayload * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedRefreshResponseError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithData_:(SharedTokenPayload * _Nullable)data_ error:(SharedRefreshResponseError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:error:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedRefreshResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedRefreshResponse *)doCopyData_:(SharedTokenPayload * _Nullable)data_ error:(SharedRefreshResponseError * _Nullable)error unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:error:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedTokenPayload * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedRefreshResponseError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RefreshResponse.Companion")))
 @interface SharedRefreshResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRefreshResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRefreshResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRefreshResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRefreshResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RefreshResponse.Error")))
 @interface SharedRefreshResponseError : SharedKotlinEnum<SharedRefreshResponseError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedRefreshResponseErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedRefreshResponseError *unspecified __attribute__((swift_name("unspecified")));
 @property (class, readonly) SharedRefreshResponseError *invalidToken __attribute__((swift_name("invalidToken")));
-+ (SharedKotlinArray<SharedRefreshResponseError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedRefreshResponseError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedRefreshResponseError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RefreshResponse.ErrorCompanion")))
 @interface SharedRefreshResponseErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRefreshResponseErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRefreshResponseError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRefreshResponseErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedRefreshResponseError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRefreshResponseError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterDeviceRequest")))
 @interface SharedRegisterDeviceRequest : SharedWire_runtimeMessage<SharedRegisterDeviceRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedRegisterDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *appKey __attribute__((swift_name("appKey")));
+@property (readonly) SharedDeviceLang *lang __attribute__((swift_name("lang")));
+@property (readonly) SharedRegisterDeviceType *type __attribute__((swift_name("type")));
+@property (readonly) NSString *uniqId __attribute__((swift_name("uniqId")));
 - (instancetype)initWithAppKey:(NSString *)appKey uniqId:(NSString *)uniqId type:(SharedRegisterDeviceType *)type lang:(SharedDeviceLang *)lang unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(appKey:uniqId:type:lang:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedRegisterDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedRegisterDeviceRequest *)doCopyAppKey:(NSString *)appKey uniqId:(NSString *)uniqId type:(SharedRegisterDeviceType *)type lang:(SharedDeviceLang *)lang unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(appKey:uniqId:type:lang:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *appKey __attribute__((swift_name("appKey")));
-@property (readonly) SharedDeviceLang *lang __attribute__((swift_name("lang")));
-@property (readonly) SharedRegisterDeviceType *type __attribute__((swift_name("type")));
-@property (readonly) NSString *uniqId __attribute__((swift_name("uniqId")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterDeviceRequest.Companion")))
 @interface SharedRegisterDeviceRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRegisterDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRegisterDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterDeviceResponse")))
 @interface SharedRegisterDeviceResponse : SharedWire_runtimeMessage<SharedRegisterDeviceResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedRegisterDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedMobileDevice * _Nullable device __attribute__((swift_name("device")));
+@property (readonly) SharedRegisterError * _Nullable err __attribute__((swift_name("err")));
 - (instancetype)initWithErr:(SharedRegisterError * _Nullable)err device:(SharedMobileDevice * _Nullable)device unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(err:device:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedRegisterDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedRegisterDeviceResponse *)doCopyErr:(SharedRegisterError * _Nullable)err device:(SharedMobileDevice * _Nullable)device unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(err:device:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedMobileDevice * _Nullable device __attribute__((swift_name("device")));
-@property (readonly) SharedRegisterError * _Nullable err __attribute__((swift_name("err")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterDeviceResponse.Companion")))
 @interface SharedRegisterDeviceResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRegisterDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRegisterDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterDeviceType")))
 @interface SharedRegisterDeviceType : SharedKotlinEnum<SharedRegisterDeviceType *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedRegisterDeviceTypeCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedRegisterDeviceType *unknownRegisterType __attribute__((swift_name("unknownRegisterType")));
 @property (class, readonly) SharedRegisterDeviceType *registerAndroidV5 __attribute__((swift_name("registerAndroidV5")));
 @property (class, readonly) SharedRegisterDeviceType *registerIosV5 __attribute__((swift_name("registerIosV5")));
 @property (class, readonly) SharedRegisterDeviceType *registerWebV1 __attribute__((swift_name("registerWebV1")));
-+ (SharedKotlinArray<SharedRegisterDeviceType *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedRegisterDeviceType *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedRegisterDeviceType *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterDeviceType.Companion")))
 @interface SharedRegisterDeviceTypeCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRegisterDeviceTypeCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterDeviceType *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRegisterDeviceTypeCompanion *shared __attribute__((swift_name("shared")));
 - (SharedRegisterDeviceType * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterDeviceType *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterError")))
 @interface SharedRegisterError : SharedKotlinEnum<SharedRegisterError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedRegisterErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedRegisterError *unknownRegisterError __attribute__((swift_name("unknownRegisterError")));
 @property (class, readonly) SharedRegisterError *uniqueIdAlreadyRegistered __attribute__((swift_name("uniqueIdAlreadyRegistered")));
 @property (class, readonly) SharedRegisterError *accountSettingsNotFound __attribute__((swift_name("accountSettingsNotFound")));
-+ (SharedKotlinArray<SharedRegisterError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedRegisterError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedRegisterError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegisterError.Companion")))
 @interface SharedRegisterErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedRegisterErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedRegisterErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedRegisterError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedRegisterError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SettingsByAppKeyRequest")))
 @interface SharedSettingsByAppKeyRequest : SharedWire_runtimeMessage<SharedSettingsByAppKeyRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedSettingsByAppKeyRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *appKey __attribute__((swift_name("appKey")));
 - (instancetype)initWithAppKey:(NSString *)appKey unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(appKey:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedSettingsByAppKeyRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedSettingsByAppKeyRequest *)doCopyAppKey:(NSString *)appKey unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(appKey:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *appKey __attribute__((swift_name("appKey")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SettingsByAppKeyRequest.Companion")))
 @interface SharedSettingsByAppKeyRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedSettingsByAppKeyRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedSettingsByAppKeyRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedSettingsByAppKeyRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedSettingsByAppKeyRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SettingsResponse")))
 @interface SharedSettingsResponse : SharedWire_runtimeMessage<SharedSettingsResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedSettingsResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedProjectSettings * _Nullable settings __attribute__((swift_name("settings")));
 - (instancetype)initWithSettings:(SharedProjectSettings * _Nullable)settings unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(settings:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedSettingsResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedSettingsResponse *)doCopySettings:(SharedProjectSettings * _Nullable)settings unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(settings:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedProjectSettings * _Nullable settings __attribute__((swift_name("settings")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SettingsResponse.Companion")))
 @interface SharedSettingsResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedSettingsResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedSettingsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedSettingsResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedSettingsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Token")))
 @interface SharedToken : SharedWire_runtimeMessage<SharedToken *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedTokenCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *data_ __attribute__((swift_name("data_")));
 - (instancetype)initWithData_:(NSString *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedTokenCompanion *companion __attribute__((swift_name("companion")));
 - (SharedToken *)doCopyData_:(NSString *)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *data_ __attribute__((swift_name("data_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Token.Companion")))
 @interface SharedTokenCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedTokenCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedToken *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedTokenCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedToken *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TokenError")))
 @interface SharedTokenError : SharedKotlinEnum<SharedTokenError *> <SharedWire_runtimeWireEnum>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedTokenErrorCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedTokenError *unknownTokenError __attribute__((swift_name("unknownTokenError")));
 @property (class, readonly) SharedTokenError *invalidToken __attribute__((swift_name("invalidToken")));
-+ (SharedKotlinArray<SharedTokenError *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedTokenError *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedTokenError *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TokenError.Companion")))
 @interface SharedTokenErrorCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedTokenErrorCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedTokenError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedTokenErrorCompanion *shared __attribute__((swift_name("shared")));
 - (SharedTokenError * _Nullable)fromValueValue:(int32_t)value __attribute__((swift_name("fromValue(value:)")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedTokenError *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TokenPayload")))
 @interface SharedTokenPayload : SharedWire_runtimeMessage<SharedTokenPayload *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedTokenPayloadCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *accessToken __attribute__((swift_name("accessToken")));
+@property (readonly) NSString *refreshToken __attribute__((swift_name("refreshToken")));
 - (instancetype)initWithRefreshToken:(NSString *)refreshToken accessToken:(NSString *)accessToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(refreshToken:accessToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedTokenPayloadCompanion *companion __attribute__((swift_name("companion")));
 - (SharedTokenPayload *)doCopyRefreshToken:(NSString *)refreshToken accessToken:(NSString *)accessToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(refreshToken:accessToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *accessToken __attribute__((swift_name("accessToken")));
-@property (readonly) NSString *refreshToken __attribute__((swift_name("refreshToken")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("TokenPayload.Companion")))
 @interface SharedTokenPayloadCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedTokenPayloadCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedTokenPayload *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedTokenPayloadCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedTokenPayload *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateDeviceData")))
 @interface SharedUpdateDeviceData : SharedWire_runtimeMessage<SharedUpdateDeviceData *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedUpdateDeviceDataCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedLong * _Nullable idMobileUser __attribute__((swift_name("idMobileUser")));
 - (instancetype)initWithIdMobileUser:(SharedLong * _Nullable)idMobileUser unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idMobileUser:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedUpdateDeviceDataCompanion *companion __attribute__((swift_name("companion")));
 - (SharedUpdateDeviceData *)doCopyIdMobileUser:(SharedLong * _Nullable)idMobileUser unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idMobileUser:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedLong * _Nullable idMobileUser __attribute__((swift_name("idMobileUser")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateDeviceData.Companion")))
 @interface SharedUpdateDeviceDataCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedUpdateDeviceDataCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateDeviceData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedUpdateDeviceDataCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateDeviceData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateDeviceRequest")))
 @interface SharedUpdateDeviceRequest : SharedWire_runtimeMessage<SharedUpdateDeviceRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedUpdateDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedUpdateDeviceData * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) int64_t idMobileDevice __attribute__((swift_name("idMobileDevice")));
+@property (readonly) NSString *reason __attribute__((swift_name("reason")));
 - (instancetype)initWithIdMobileDevice:(int64_t)idMobileDevice data_:(SharedUpdateDeviceData * _Nullable)data_ reason:(NSString *)reason unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idMobileDevice:data_:reason:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedUpdateDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedUpdateDeviceRequest *)doCopyIdMobileDevice:(int64_t)idMobileDevice data_:(SharedUpdateDeviceData * _Nullable)data_ reason:(NSString *)reason unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idMobileDevice:data_:reason:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedUpdateDeviceData * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) int64_t idMobileDevice __attribute__((swift_name("idMobileDevice")));
-@property (readonly) NSString *reason __attribute__((swift_name("reason")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateDeviceRequest.Companion")))
 @interface SharedUpdateDeviceRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedUpdateDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedUpdateDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateTokenDeviceRequest")))
 @interface SharedUpdateTokenDeviceRequest : SharedWire_runtimeMessage<SharedUpdateTokenDeviceRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedUpdateTokenDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedDeviceLang *lang __attribute__((swift_name("lang")));
+@property (readonly) NSString * _Nullable notificationToken __attribute__((swift_name("notificationToken")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token lang:(SharedDeviceLang *)lang notificationToken:(NSString * _Nullable)notificationToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:lang:notificationToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedUpdateTokenDeviceRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedUpdateTokenDeviceRequest *)doCopyToken:(SharedToken * _Nullable)token lang:(SharedDeviceLang *)lang notificationToken:(NSString * _Nullable)notificationToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:lang:notificationToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedDeviceLang *lang __attribute__((swift_name("lang")));
-@property (readonly) NSString * _Nullable notificationToken __attribute__((swift_name("notificationToken")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateTokenDeviceRequest.Companion")))
 @interface SharedUpdateTokenDeviceRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedUpdateTokenDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateTokenDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedUpdateTokenDeviceRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateTokenDeviceRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateTokenDeviceResponse")))
 @interface SharedUpdateTokenDeviceResponse : SharedWire_runtimeMessage<SharedUpdateTokenDeviceResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedUpdateTokenDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedMobileDevice * _Nullable device __attribute__((swift_name("device")));
+@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 - (instancetype)initWithError:(SharedTokenError * _Nullable)error device:(SharedMobileDevice * _Nullable)device unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(error:device:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedUpdateTokenDeviceResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedUpdateTokenDeviceResponse *)doCopyError:(SharedTokenError * _Nullable)error device:(SharedMobileDevice * _Nullable)device unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(error:device:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedMobileDevice * _Nullable device __attribute__((swift_name("device")));
-@property (readonly) SharedTokenError * _Nullable error __attribute__((swift_name("error")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UpdateTokenDeviceResponse.Companion")))
 @interface SharedUpdateTokenDeviceResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedUpdateTokenDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateTokenDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedUpdateTokenDeviceResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedUpdateTokenDeviceResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UserResponse")))
 @interface SharedUserResponse : SharedWire_runtimeMessage<SharedUserResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedUserResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 - (instancetype)initWithUser:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(user:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedUserResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedUserResponse *)doCopyUser:(SharedWebUser * _Nullable)user unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(user:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWebUser * _Nullable user __attribute__((swift_name("user")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UserResponse.Companion")))
 @interface SharedUserResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedUserResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedUserResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedUserResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedUserResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUser")))
 @interface SharedWebUser : SharedWire_runtimeMessage<SharedWebUser *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedWebUserCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWebUserCredentials * _Nullable credentials __attribute__((swift_name("credentials")));
+@property (readonly) SharedWebUserData * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) int64_t idUser __attribute__((swift_name("idUser")));
 - (instancetype)initWithIdUser:(int64_t)idUser data_:(SharedWebUserData * _Nullable)data_ credentials:(SharedWebUserCredentials * _Nullable)credentials unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idUser:data_:credentials:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedWebUserCompanion *companion __attribute__((swift_name("companion")));
 - (SharedWebUser *)doCopyIdUser:(int64_t)idUser data_:(SharedWebUserData * _Nullable)data_ credentials:(SharedWebUserCredentials * _Nullable)credentials unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idUser:data_:credentials:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWebUserCredentials * _Nullable credentials __attribute__((swift_name("credentials")));
-@property (readonly) SharedWebUserData * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) int64_t idUser __attribute__((swift_name("idUser")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUser.Companion")))
 @interface SharedWebUserCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWebUserCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUser *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWebUserCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUser *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUserCredentials")))
 @interface SharedWebUserCredentials : SharedWire_runtimeMessage<SharedWebUserCredentials *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedWebUserCredentialsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedWebUserCredentialsData * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) int64_t idCredentials __attribute__((swift_name("idCredentials")));
 - (instancetype)initWithIdCredentials:(int64_t)idCredentials data_:(SharedWebUserCredentialsData * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(idCredentials:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedWebUserCredentialsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedWebUserCredentials *)doCopyIdCredentials:(int64_t)idCredentials data_:(SharedWebUserCredentialsData * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(idCredentials:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedWebUserCredentialsData * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) int64_t idCredentials __attribute__((swift_name("idCredentials")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUserCredentials.Companion")))
 @interface SharedWebUserCredentialsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWebUserCredentialsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUserCredentials *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWebUserCredentialsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUserCredentials *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUserCredentialsData")))
 @interface SharedWebUserCredentialsData : SharedWire_runtimeMessage<SharedWebUserCredentialsData *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedWebUserCredentialsDataCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *login __attribute__((swift_name("login")));
+@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
+@property (readonly) NSString *pass __attribute__((swift_name("pass")));
 - (instancetype)initWithLogin:(NSString *)login pass:(NSString *)pass loginToken:(NSString *)loginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(login:pass:loginToken:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedWebUserCredentialsDataCompanion *companion __attribute__((swift_name("companion")));
 - (SharedWebUserCredentialsData *)doCopyLogin:(NSString *)login pass:(NSString *)pass loginToken:(NSString *)loginToken unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(login:pass:loginToken:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *login __attribute__((swift_name("login")));
-@property (readonly) NSString *loginToken __attribute__((swift_name("loginToken")));
-@property (readonly) NSString *pass __attribute__((swift_name("pass")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUserCredentialsData.Companion")))
 @interface SharedWebUserCredentialsDataCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWebUserCredentialsDataCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUserCredentialsData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWebUserCredentialsDataCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUserCredentialsData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUserData")))
 @interface SharedWebUserData : SharedWire_runtimeMessage<SharedWebUserData *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedWebUserDataCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
+@property (readonly) NSString *surname __attribute__((swift_name("surname")));
 - (instancetype)initWithName:(NSString *)name surname:(NSString *)surname projectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(name:surname:projectId:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedWebUserDataCompanion *companion __attribute__((swift_name("companion")));
 - (SharedWebUserData *)doCopyName:(NSString *)name surname:(NSString *)surname projectId:(NSString *)projectId unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(name:surname:projectId:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) NSString *projectId __attribute__((swift_name("projectId")));
-@property (readonly) NSString *surname __attribute__((swift_name("surname")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("WebUserData.Companion")))
 @interface SharedWebUserDataCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWebUserDataCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUserData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWebUserDataCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedWebUserData *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -2913,19 +3250,20 @@ __attribute__((swift_name("Platform")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("IOSPlatform")))
 @interface SharedIOSPlatform : SharedBase <SharedPlatform>
+@property (readonly) NSString *name __attribute__((swift_name("name")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DI")))
-@interface SharedDI : SharedBase
+__attribute__((swift_name("KmpApplication")))
+@interface SharedKmpApplication : SharedBase
+@property (class, readonly, getter=shared) SharedKmpApplication *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)dI __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedDI *shared __attribute__((swift_name("shared")));
-- (void)doInitDINativeModule:(SharedKoin_coreModule *)nativeModule appDeclaration:(void (^)(SharedKoin_coreKoinApplication *))appDeclaration __attribute__((swift_name("doInitDI(nativeModule:appDeclaration:)")));
++ (instancetype)kmpApplication __attribute__((swift_name("init()")));
+- (void)doInitSharedModuleNativeModule:(SharedKoin_coreModule *)nativeModule appDeclaration:(void (^ _Nullable)(SharedKoin_coreKoinApplication *))appDeclaration __attribute__((swift_name("doInitSharedModule(nativeModule:appDeclaration:)")));
+- (void)test __attribute__((swift_name("test()")));
 @end
 
 __attribute__((swift_name("NativeTestDependency")))
@@ -2937,13 +3275,13 @@ __attribute__((swift_name("NativeTestDependency")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SwiftType")))
 @interface SharedSwiftType : SharedBase
+@property (readonly) id<SharedKotlinKClass> swiftClazz __attribute__((swift_name("swiftClazz")));
+@property (readonly) id type __attribute__((swift_name("type")));
 - (instancetype)initWithType:(id)type swiftClazz:(id<SharedKotlinKClass>)swiftClazz __attribute__((swift_name("init(type:swiftClazz:)"))) __attribute__((objc_designated_initializer));
 - (SharedSwiftType *)doCopyType:(id)type swiftClazz:(id<SharedKotlinKClass>)swiftClazz __attribute__((swift_name("doCopy(type:swiftClazz:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) id<SharedKotlinKClass> swiftClazz __attribute__((swift_name("swiftClazz")));
-@property (readonly) id type __attribute__((swift_name("type")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3003,13 +3341,13 @@ __attribute__((swift_name("ComponentContext")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DefaultRootComponent")))
 @interface SharedDefaultRootComponent : SharedBase <SharedRootComponent, SharedComponentContext>
-- (instancetype)initWithComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("init(componentContext:)"))) __attribute__((objc_designated_initializer));
-- (void)onBackClickedToIndex:(int32_t)toIndex __attribute__((swift_name("onBackClicked(toIndex:)")));
 @property (readonly) id<SharedBack_handlerBackHandler> backHandler __attribute__((swift_name("backHandler")));
 @property (readonly) id<SharedInstance_keeperInstanceKeeper> instanceKeeper __attribute__((swift_name("instanceKeeper")));
 @property (readonly) id<SharedLifecycle> lifecycle __attribute__((swift_name("lifecycle")));
 @property (readonly) SharedValue<SharedChildStack<id, SharedRootComponentChild *> *> *stack __attribute__((swift_name("stack")));
 @property (readonly) id<SharedState_keeperStateKeeper> stateKeeper __attribute__((swift_name("stateKeeper")));
+- (instancetype)initWithComponentContext:(id<SharedComponentContext>)componentContext __attribute__((swift_name("init(componentContext:)"))) __attribute__((objc_designated_initializer));
+- (void)onBackClickedToIndex:(int32_t)toIndex __attribute__((swift_name("onBackClicked(toIndex:)")));
 @end
 
 __attribute__((swift_name("RootComponentChild")))
@@ -3019,8 +3357,8 @@ __attribute__((swift_name("RootComponentChild")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RootComponentChild.HomescreenChild")))
 @interface SharedRootComponentChildHomescreenChild : SharedRootComponentChild
-- (instancetype)initWithComponent:(id<SharedHomescreenComponent>)component __attribute__((swift_name("init(component:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) id<SharedHomescreenComponent> component __attribute__((swift_name("component")));
+- (instancetype)initWithComponent:(id<SharedHomescreenComponent>)component __attribute__((swift_name("init(component:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((swift_name("Cancellation")))
@@ -3038,43 +3376,43 @@ __attribute__((swift_name("Child")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildCreated")))
 @interface SharedChildCreated<__covariant C, __covariant T> : SharedChild<C, T>
+@property (readonly) C configuration __attribute__((swift_name("configuration")));
+@property (readonly) T instance __attribute__((swift_name("instance")));
 - (instancetype)initWithConfiguration:(C)configuration instance:(T)instance __attribute__((swift_name("init(configuration:instance:)"))) __attribute__((objc_designated_initializer));
 - (SharedChildCreated<C, T> *)doCopyConfiguration:(C)configuration instance:(T)instance __attribute__((swift_name("doCopy(configuration:instance:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) C configuration __attribute__((swift_name("configuration")));
-@property (readonly) T instance __attribute__((swift_name("instance")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildDestroyed")))
 @interface SharedChildDestroyed<__covariant C> : SharedChild<C, SharedKotlinNothing *>
+@property (readonly) C configuration __attribute__((swift_name("configuration")));
+@property (readonly) SharedKotlinNothing * _Nullable instance __attribute__((swift_name("instance")));
 - (instancetype)initWithConfiguration:(C)configuration __attribute__((swift_name("init(configuration:)"))) __attribute__((objc_designated_initializer));
 - (SharedChildDestroyed<C> *)doCopyConfiguration:(C)configuration __attribute__((swift_name("doCopy(configuration:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) C configuration __attribute__((swift_name("configuration")));
-@property (readonly) SharedKotlinNothing * _Nullable instance __attribute__((swift_name("instance")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DefaultComponentContext")))
 @interface SharedDefaultComponentContext : SharedBase <SharedComponentContext>
-- (instancetype)initWithLifecycle:(id<SharedLifecycle>)lifecycle __attribute__((swift_name("init(lifecycle:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithLifecycle:(id<SharedLifecycle>)lifecycle stateKeeper:(id<SharedState_keeperStateKeeper> _Nullable)stateKeeper instanceKeeper:(id<SharedInstance_keeperInstanceKeeper> _Nullable)instanceKeeper backHandler:(id<SharedBack_handlerBackHandler> _Nullable)backHandler __attribute__((swift_name("init(lifecycle:stateKeeper:instanceKeeper:backHandler:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) id<SharedBack_handlerBackHandler> backHandler __attribute__((swift_name("backHandler")));
 @property (readonly) id<SharedInstance_keeperInstanceKeeper> instanceKeeper __attribute__((swift_name("instanceKeeper")));
 @property (readonly) id<SharedLifecycle> lifecycle __attribute__((swift_name("lifecycle")));
 @property (readonly) id<SharedState_keeperStateKeeper> stateKeeper __attribute__((swift_name("stateKeeper")));
+- (instancetype)initWithLifecycle:(id<SharedLifecycle>)lifecycle __attribute__((swift_name("init(lifecycle:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithLifecycle:(id<SharedLifecycle>)lifecycle stateKeeper:(id<SharedState_keeperStateKeeper> _Nullable)stateKeeper instanceKeeper:(id<SharedInstance_keeperInstanceKeeper> _Nullable)instanceKeeper backHandler:(id<SharedBack_handlerBackHandler> _Nullable)backHandler __attribute__((swift_name("init(lifecycle:stateKeeper:instanceKeeper:backHandler:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Ref")))
 @interface SharedRef<T> : SharedBase
-- (instancetype)initWithValue:(T _Nullable)value __attribute__((swift_name("init(value:)"))) __attribute__((objc_designated_initializer));
 @property T _Nullable value __attribute__((swift_name("value")));
+- (instancetype)initWithValue:(T _Nullable)value __attribute__((swift_name("init(value:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((swift_name("Lifecycle")))
@@ -3088,20 +3426,20 @@ __attribute__((swift_name("Lifecycle")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ApplicationLifecycle")))
 @interface SharedApplicationLifecycle : SharedBase <SharedLifecycle>
+@property (readonly) SharedLifecycleState *state __attribute__((swift_name("state")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (void)subscribeCallbacks:(id<SharedLifecycleCallbacks>)callbacks __attribute__((swift_name("subscribe(callbacks:)")));
 - (void)unsubscribeCallbacks:(id<SharedLifecycleCallbacks>)callbacks __attribute__((swift_name("unsubscribe(callbacks:)")));
-@property (readonly) SharedLifecycleState *state __attribute__((swift_name("state")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MergedLifecycle")))
 @interface SharedMergedLifecycle : SharedBase <SharedLifecycle>
+@property (readonly) SharedLifecycleState *state __attribute__((swift_name("state")));
 - (instancetype)initWithLifecycle1:(id<SharedLifecycle>)lifecycle1 lifecycle2:(id<SharedLifecycle>)lifecycle2 __attribute__((swift_name("init(lifecycle1:lifecycle2:)"))) __attribute__((objc_designated_initializer));
 - (void)subscribeCallbacks:(id<SharedLifecycleCallbacks>)callbacks __attribute__((swift_name("subscribe(callbacks:)")));
 - (void)unsubscribeCallbacks:(id<SharedLifecycleCallbacks>)callbacks __attribute__((swift_name("unsubscribe(callbacks:)")));
-@property (readonly) SharedLifecycleState *state __attribute__((swift_name("state")));
 @end
 
 __attribute__((swift_name("ChildNavState")))
@@ -3114,14 +3452,14 @@ __attribute__((swift_name("ChildNavState")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildNavStateStatus")))
 @interface SharedChildNavStateStatus : SharedKotlinEnum<SharedChildNavStateStatus *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedChildNavStateStatus *destroyed __attribute__((swift_name("destroyed")));
 @property (class, readonly) SharedChildNavStateStatus *inactive __attribute__((swift_name("inactive")));
 @property (class, readonly) SharedChildNavStateStatus *active __attribute__((swift_name("active")));
-+ (SharedKotlinArray<SharedChildNavStateStatus *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedChildNavStateStatus *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedChildNavStateStatus *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((swift_name("NavState")))
@@ -3140,13 +3478,13 @@ __attribute__((swift_name("NavigationSource")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SimpleChildNavState")))
 @interface SharedSimpleChildNavState<__covariant C> : SharedBase <SharedChildNavState>
+@property (readonly) C configuration __attribute__((swift_name("configuration")));
+@property (readonly) SharedChildNavStateStatus *status __attribute__((swift_name("status")));
 - (instancetype)initWithConfiguration:(C)configuration status:(SharedChildNavStateStatus *)status __attribute__((swift_name("init(configuration:status:)"))) __attribute__((objc_designated_initializer));
 - (SharedSimpleChildNavState<C> *)doCopyConfiguration:(C)configuration status:(SharedChildNavStateStatus *)status __attribute__((swift_name("doCopy(configuration:status:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) C configuration __attribute__((swift_name("configuration")));
-@property (readonly) SharedChildNavStateStatus *status __attribute__((swift_name("status")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3162,12 +3500,12 @@ __attribute__((swift_name("SimpleNavigation")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildOverlay")))
 @interface SharedChildOverlay<__covariant C, __covariant T> : SharedBase
+@property (readonly) SharedChildCreated<C, T> * _Nullable overlay __attribute__((swift_name("overlay")));
 - (instancetype)initWithOverlay:(SharedChildCreated<C, T> * _Nullable)overlay __attribute__((swift_name("init(overlay:)"))) __attribute__((objc_designated_initializer)) __attribute__((deprecated("Please use Child Slot API")));
 - (SharedChildOverlay<C, T> *)doCopyOverlay:(SharedChildCreated<C, T> * _Nullable)overlay __attribute__((swift_name("doCopy(overlay:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedChildCreated<C, T> * _Nullable overlay __attribute__((swift_name("overlay")));
 @end
 
 __attribute__((swift_name("OverlayNavigator")))
@@ -3189,14 +3527,16 @@ __attribute__((swift_name("OverlayNavigation")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("OverlayNavigationSourceEvent")))
 @interface SharedOverlayNavigationSourceEvent<C> : SharedBase
-- (instancetype)initWithTransformer:(C _Nullable (^)(C _Nullable))transformer onComplete:(void (^)(C _Nullable, C _Nullable))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) void (^onComplete)(C _Nullable, C _Nullable) __attribute__((swift_name("onComplete")));
 @property (readonly) C _Nullable (^transformer)(C _Nullable) __attribute__((swift_name("transformer")));
+- (instancetype)initWithTransformer:(C _Nullable (^)(C _Nullable))transformer onComplete:(void (^)(C _Nullable, C _Nullable))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildPages")))
 @interface SharedChildPages<__covariant C, __covariant T> : SharedBase
+@property (readonly) NSArray<SharedChild<C, T> *> *items __attribute__((swift_name("items")));
+@property (readonly) int32_t selectedIndex __attribute__((swift_name("selectedIndex")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (instancetype)initWithItems:(NSArray<SharedChild<C, T> *> *)items selectedIndex:(int32_t)selectedIndex __attribute__((swift_name("init(items:selectedIndex:)"))) __attribute__((objc_designated_initializer));
@@ -3204,13 +3544,13 @@ __attribute__((swift_name("ChildPages")))
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedChild<C, T> *> *items __attribute__((swift_name("items")));
-@property (readonly) int32_t selectedIndex __attribute__((swift_name("selectedIndex")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Pages")))
 @interface SharedPages<__covariant C> : SharedBase
+@property (readonly) NSArray<C> *items __attribute__((swift_name("items")));
+@property (readonly) int32_t selectedIndex __attribute__((swift_name("selectedIndex")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (instancetype)initWithItems:(NSArray<C> *)items selectedIndex:(int32_t)selectedIndex __attribute__((swift_name("init(items:selectedIndex:)"))) __attribute__((objc_designated_initializer));
@@ -3218,8 +3558,6 @@ __attribute__((swift_name("Pages")))
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<C> *items __attribute__((swift_name("items")));
-@property (readonly) int32_t selectedIndex __attribute__((swift_name("selectedIndex")));
 @end
 
 __attribute__((swift_name("PagesNavigator")))
@@ -3241,20 +3579,20 @@ __attribute__((swift_name("PagesNavigation")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PagesNavigationSourceEvent")))
 @interface SharedPagesNavigationSourceEvent<C> : SharedBase
-- (instancetype)initWithTransformer:(SharedPages<C> *(^)(SharedPages<C> *))transformer onComplete:(void (^)(SharedPages<C> *, SharedPages<C> *))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) void (^onComplete)(SharedPages<C> *, SharedPages<C> *) __attribute__((swift_name("onComplete")));
 @property (readonly) SharedPages<C> *(^transformer)(SharedPages<C> *) __attribute__((swift_name("transformer")));
+- (instancetype)initWithTransformer:(SharedPages<C> *(^)(SharedPages<C> *))transformer onComplete:(void (^)(SharedPages<C> *, SharedPages<C> *))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildSlot")))
 @interface SharedChildSlot<__covariant C, __covariant T> : SharedBase
+@property (readonly) SharedChildCreated<C, T> * _Nullable child __attribute__((swift_name("child")));
 - (instancetype)initWithChild:(SharedChildCreated<C, T> * _Nullable)child __attribute__((swift_name("init(child:)"))) __attribute__((objc_designated_initializer));
 - (SharedChildSlot<C, T> *)doCopyChild:(SharedChildCreated<C, T> * _Nullable)child __attribute__((swift_name("doCopy(child:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedChildCreated<C, T> * _Nullable child __attribute__((swift_name("child")));
 @end
 
 __attribute__((swift_name("SlotNavigator")))
@@ -3276,23 +3614,23 @@ __attribute__((swift_name("SlotNavigation")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SlotNavigationSourceEvent")))
 @interface SharedSlotNavigationSourceEvent<C> : SharedBase
-- (instancetype)initWithTransformer:(C _Nullable (^)(C _Nullable))transformer onComplete:(void (^)(C _Nullable, C _Nullable))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) void (^onComplete)(C _Nullable, C _Nullable) __attribute__((swift_name("onComplete")));
 @property (readonly) C _Nullable (^transformer)(C _Nullable) __attribute__((swift_name("transformer")));
+- (instancetype)initWithTransformer:(C _Nullable (^)(C _Nullable))transformer onComplete:(void (^)(C _Nullable, C _Nullable))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ChildStack")))
 @interface SharedChildStack<__covariant C, __covariant T> : SharedBase
+@property (readonly) SharedChildCreated<C, T> *active __attribute__((swift_name("active")));
+@property (readonly) NSArray<SharedChildCreated<C, T> *> *backStack __attribute__((swift_name("backStack")));
+@property (readonly) NSArray<SharedChildCreated<C, T> *> *items __attribute__((swift_name("items")));
 - (instancetype)initWithConfiguration:(C)configuration instance:(T)instance __attribute__((swift_name("init(configuration:instance:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)initWithActive:(SharedChildCreated<C, T> *)active backStack:(NSArray<SharedChildCreated<C, T> *> *)backStack __attribute__((swift_name("init(active:backStack:)"))) __attribute__((objc_designated_initializer));
 - (SharedChildStack<C, T> *)doCopyActive:(SharedChildCreated<C, T> *)active backStack:(NSArray<SharedChildCreated<C, T> *> *)backStack __attribute__((swift_name("doCopy(active:backStack:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedChildCreated<C, T> *active __attribute__((swift_name("active")));
-@property (readonly) NSArray<SharedChildCreated<C, T> *> *backStack __attribute__((swift_name("backStack")));
-@property (readonly) NSArray<SharedChildCreated<C, T> *> *items __attribute__((swift_name("items")));
 @end
 
 __attribute__((swift_name("StackNavigator")))
@@ -3314,9 +3652,9 @@ __attribute__((swift_name("StackNavigation")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("StackNavigationSourceEvent")))
 @interface SharedStackNavigationSourceEvent<C> : SharedBase
-- (instancetype)initWithTransformer:(NSArray<C> *(^)(NSArray<C> *))transformer onComplete:(void (^)(NSArray<C> *, NSArray<C> *))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) void (^onComplete)(NSArray<C> *, NSArray<C> *) __attribute__((swift_name("onComplete")));
 @property (readonly) NSArray<C> *(^transformer)(NSArray<C> *) __attribute__((swift_name("transformer")));
+- (instancetype)initWithTransformer:(NSArray<C> *(^)(NSArray<C> *))transformer onComplete:(void (^)(NSArray<C> *, NSArray<C> *))onComplete __attribute__((swift_name("init(transformer:onComplete:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((swift_name("WebHistoryController")))
@@ -3328,33 +3666,33 @@ __attribute__((swift_name("WebHistoryController")))
 
 __attribute__((swift_name("Value")))
 @interface SharedValue<__covariant T> : SharedBase
+@property (readonly) T value_ __attribute__((swift_name("value_")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (id<SharedCancellation>)observeObserver:(void (^)(T))observer __attribute__((swift_name("observe(observer:)")));
 - (void)subscribeObserver_:(void (^)(T))observer __attribute__((swift_name("subscribe(observer_:)"))) __attribute__((deprecated("Calling this method from Swift leaks the observer, because Kotlin wraps the function passed from Swift every time the method is called. Please use the new `observe` method which returns `Disposable`.")));
 - (void)unsubscribeObserver_:(void (^)(T))observer __attribute__((swift_name("unsubscribe(observer_:)"))) __attribute__((deprecated("Calling this method from Swift doesn't have any effect, because Kotlin wraps the function passed from Swift every time the method is called. Please use the new `observe` method which returns `Disposable`.")));
-@property (readonly) T value_ __attribute__((swift_name("value_")));
 @end
 
 __attribute__((swift_name("MutableValue")))
 @interface SharedMutableValue<T> : SharedValue<T>
+@property (setter=setValue:) T value_ __attribute__((swift_name("value_")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (BOOL)compareAndSetExpected:(T)expected new:(T)new_ __attribute__((swift_name("compareAndSet(expected:new:)")));
-@property (setter=setValue:) T value_ __attribute__((swift_name("value_")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ObserveLifecycleMode")))
 @interface SharedObserveLifecycleMode : SharedKotlinEnum<SharedObserveLifecycleMode *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedObserveLifecycleMode *createDestroy __attribute__((swift_name("createDestroy")));
 @property (class, readonly) SharedObserveLifecycleMode *startStop __attribute__((swift_name("startStop")));
 @property (class, readonly) SharedObserveLifecycleMode *resumePause __attribute__((swift_name("resumePause")));
-+ (SharedKotlinArray<SharedObserveLifecycleMode *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedObserveLifecycleMode *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedObserveLifecycleMode *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((swift_name("LifecycleCallbacks")))
@@ -3371,30 +3709,21 @@ __attribute__((swift_name("LifecycleCallbacks")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LifecycleState")))
 @interface SharedLifecycleState : SharedKotlinEnum<SharedLifecycleState *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedLifecycleState *destroyed __attribute__((swift_name("destroyed")));
 @property (class, readonly) SharedLifecycleState *initialized __attribute__((swift_name("initialized")));
 @property (class, readonly) SharedLifecycleState *created __attribute__((swift_name("created")));
 @property (class, readonly) SharedLifecycleState *started __attribute__((swift_name("started")));
 @property (class, readonly) SharedLifecycleState *resumed __attribute__((swift_name("resumed")));
-+ (SharedKotlinArray<SharedLifecycleState *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedLifecycleState *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedLifecycleState *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((swift_name("LifecycleRegistry")))
 @protocol SharedLifecycleRegistry <SharedLifecycle, SharedLifecycleCallbacks>
 @required
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Test")))
-@interface SharedTest : SharedBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (NSString *)alternativeXXX __attribute__((swift_name("alternativeXXX()")));
-- (NSString *)sayHello __attribute__((swift_name("sayHello()")));
 @end
 
 __attribute__((swift_name("AnalyticsClient")))
@@ -3406,204 +3735,204 @@ __attribute__((swift_name("AnalyticsClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetLeafletsRequest")))
 @interface SharedGetLeafletsRequest : SharedWire_runtimeMessage<SharedGetLeafletsRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetLeafletsRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *business __attribute__((swift_name("business")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token business:(NSString *)business unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:business:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetLeafletsRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetLeafletsRequest *)doCopyToken:(SharedToken * _Nullable)token business:(NSString *)business unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:business:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *business __attribute__((swift_name("business")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetLeafletsRequest.Companion")))
 @interface SharedGetLeafletsRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetLeafletsRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetLeafletsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetLeafletsRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetLeafletsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetLeafletsResponse")))
 @interface SharedGetLeafletsResponse : SharedWire_runtimeMessage<SharedGetLeafletsResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetLeafletsResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedGetLeafletsResponseLeaflets * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedTokenError * _Nullable tokenErr __attribute__((swift_name("tokenErr")));
 - (instancetype)initWithTokenErr:(SharedTokenError * _Nullable)tokenErr data_:(SharedGetLeafletsResponseLeaflets * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(tokenErr:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetLeafletsResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetLeafletsResponse *)doCopyTokenErr:(SharedTokenError * _Nullable)tokenErr data_:(SharedGetLeafletsResponseLeaflets * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(tokenErr:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedGetLeafletsResponseLeaflets * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedTokenError * _Nullable tokenErr __attribute__((swift_name("tokenErr")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetLeafletsResponse.Companion")))
 @interface SharedGetLeafletsResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetLeafletsResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetLeafletsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetLeafletsResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetLeafletsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetLeafletsResponse.Leaflets")))
 @interface SharedGetLeafletsResponseLeaflets : SharedWire_runtimeMessage<SharedGetLeafletsResponseLeaflets *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetLeafletsResponseLeafletsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedLeaflet *> *leaflets __attribute__((swift_name("leaflets")));
 - (instancetype)initWithLeaflets:(NSArray<SharedLeaflet *> *)leaflets unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(leaflets:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetLeafletsResponseLeafletsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetLeafletsResponseLeaflets *)doCopyLeaflets:(NSArray<SharedLeaflet *> *)leaflets unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(leaflets:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedLeaflet *> *leaflets __attribute__((swift_name("leaflets")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetLeafletsResponse.LeafletsCompanion")))
 @interface SharedGetLeafletsResponseLeafletsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetLeafletsResponseLeafletsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetLeafletsResponseLeaflets *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetLeafletsResponseLeafletsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetLeafletsResponseLeaflets *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsRequest")))
 @interface SharedGetMostOpenedLeafletsRequest : SharedWire_runtimeMessage<SharedGetMostOpenedLeafletsRequest *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsRequestCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedTimeRange * _Nullable timerange __attribute__((swift_name("timerange")));
+@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 - (instancetype)initWithToken:(SharedToken * _Nullable)token timerange:(SharedTimeRange * _Nullable)timerange unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(token:timerange:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsRequestCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetMostOpenedLeafletsRequest *)doCopyToken:(SharedToken * _Nullable)token timerange:(SharedTimeRange * _Nullable)timerange unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(token:timerange:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedTimeRange * _Nullable timerange __attribute__((swift_name("timerange")));
-@property (readonly) SharedToken * _Nullable token __attribute__((swift_name("token")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsRequest.Companion")))
 @interface SharedGetMostOpenedLeafletsRequestCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsRequestCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsRequestCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsRequest *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsResponse")))
 @interface SharedGetMostOpenedLeafletsResponse : SharedWire_runtimeMessage<SharedGetMostOpenedLeafletsResponse *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsResponseCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedGetMostOpenedLeafletsResponseOpenedLeaflets * _Nullable data_ __attribute__((swift_name("data_")));
+@property (readonly) SharedTokenError * _Nullable tokenErr __attribute__((swift_name("tokenErr")));
 - (instancetype)initWithTokenErr:(SharedTokenError * _Nullable)tokenErr data_:(SharedGetMostOpenedLeafletsResponseOpenedLeaflets * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(tokenErr:data_:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsResponseCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetMostOpenedLeafletsResponse *)doCopyTokenErr:(SharedTokenError * _Nullable)tokenErr data_:(SharedGetMostOpenedLeafletsResponseOpenedLeaflets * _Nullable)data_ unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(tokenErr:data_:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedGetMostOpenedLeafletsResponseOpenedLeaflets * _Nullable data_ __attribute__((swift_name("data_")));
-@property (readonly) SharedTokenError * _Nullable tokenErr __attribute__((swift_name("tokenErr")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsResponse.Companion")))
 @interface SharedGetMostOpenedLeafletsResponseCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsResponseCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsResponse *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsResponse.OpenedLeaflet")))
 @interface SharedGetMostOpenedLeafletsResponseOpenedLeaflet : SharedWire_runtimeMessage<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) int64_t count __attribute__((swift_name("count")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
 - (instancetype)initWithId:(NSString *)id name:(NSString *)name count:(int64_t)count unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(id:name:count:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetMostOpenedLeafletsResponseOpenedLeaflet *)doCopyId:(NSString *)id name:(NSString *)name count:(int64_t)count unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(id:name:count:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int64_t count __attribute__((swift_name("count")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsResponse.OpenedLeafletCompanion")))
 @interface SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsResponseOpenedLeafletCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsResponse.OpenedLeaflets")))
 @interface SharedGetMostOpenedLeafletsResponseOpenedLeaflets : SharedWire_runtimeMessage<SharedGetMostOpenedLeafletsResponseOpenedLeaflets *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSArray<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *> *openedLeaflets __attribute__((swift_name("openedLeaflets")));
+@property (readonly) SharedTimeRange * _Nullable timerange __attribute__((swift_name("timerange")));
 - (instancetype)initWithTimerange:(SharedTimeRange * _Nullable)timerange openedLeaflets:(NSArray<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *> *)openedLeaflets unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(timerange:openedLeaflets:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion *companion __attribute__((swift_name("companion")));
 - (SharedGetMostOpenedLeafletsResponseOpenedLeaflets *)doCopyTimerange:(SharedTimeRange * _Nullable)timerange openedLeaflets:(NSArray<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *> *)openedLeaflets unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(timerange:openedLeaflets:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<SharedGetMostOpenedLeafletsResponseOpenedLeaflet *> *openedLeaflets __attribute__((swift_name("openedLeaflets")));
-@property (readonly) SharedTimeRange * _Nullable timerange __attribute__((swift_name("timerange")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("GetMostOpenedLeafletsResponse.OpenedLeafletsCompanion")))
 @interface SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsResponseOpenedLeaflets *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedGetMostOpenedLeafletsResponseOpenedLeafletsCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedGetMostOpenedLeafletsResponseOpenedLeaflets *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3629,33 +3958,33 @@ __attribute__((swift_name("GrpcPublicClient")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Leaflet")))
 @interface SharedLeaflet : SharedWire_runtimeMessage<SharedLeaflet *, SharedKotlinNothing *>
+@property (class, readonly, getter=companion) SharedLeafletCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSString *imageUrl __attribute__((swift_name("imageUrl")));
+@property (readonly) SharedTimeRange * _Nullable timerange __attribute__((swift_name("timerange")));
+@property (readonly) NSString *title __attribute__((swift_name("title")));
+@property (readonly) NSString *url __attribute__((swift_name("url")));
 - (instancetype)initWithId:(NSString *)id title:(NSString *)title imageUrl:(NSString *)imageUrl url:(NSString *)url timerange:(SharedTimeRange * _Nullable)timerange unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(id:title:imageUrl:url:timerange:unknownFields:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
 */
 - (instancetype)initWithAdapter:(SharedWire_runtimeProtoAdapter<SharedWire_runtimeMessage *> *)adapter unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("init(adapter:unknownFields:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedLeafletCompanion *companion __attribute__((swift_name("companion")));
 - (SharedLeaflet *)doCopyId:(NSString *)id title:(NSString *)title imageUrl:(NSString *)imageUrl url:(NSString *)url timerange:(SharedTimeRange * _Nullable)timerange unknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("doCopy(id:title:imageUrl:url:timerange:unknownFields:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (SharedKotlinNothing *)doNewBuilder __attribute__((swift_name("doNewBuilder()"))) __attribute__((unavailable("Shouldn't be used in Kotlin")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSString *imageUrl __attribute__((swift_name("imageUrl")));
-@property (readonly) SharedTimeRange * _Nullable timerange __attribute__((swift_name("timerange")));
-@property (readonly) NSString *title __attribute__((swift_name("title")));
-@property (readonly) NSString *url __attribute__((swift_name("url")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Leaflet.Companion")))
 @interface SharedLeafletCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedLeafletCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedWire_runtimeProtoAdapter<SharedLeaflet *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedLeafletCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedWire_runtimeProtoAdapter<SharedLeaflet *> *ADAPTER __attribute__((swift_name("ADAPTER")));
 @end
 
 @interface SharedSwiftType (Extensions)
@@ -3669,14 +3998,14 @@ __attribute__((swift_name("Leaflet.Companion")))
 @end
 
 @interface SharedValue (Extensions)
-- (id)getValueThisRef:(id _Nullable)thisRef property:(id<SharedKotlinKProperty>)property __attribute__((swift_name("getValue(thisRef:property:)")));
-- (SharedValue<id> *)mapMapper:(id (^)(id))mapper __attribute__((swift_name("map(mapper:)")));
-- (void)observeLifecycle:(id<SharedLifecycle>)lifecycle mode:(SharedObserveLifecycleMode *)mode observer:(void (^)(id))observer __attribute__((swift_name("observe(lifecycle:mode:observer:)")));
 @property (readonly) SharedChildCreated<id, id> *active __attribute__((swift_name("active")));
 @property (readonly) NSArray<SharedChildCreated<id, id> *> *backStack __attribute__((swift_name("backStack")));
 @property (readonly) SharedChildCreated<id, id> * _Nullable child __attribute__((swift_name("child")));
 @property (readonly) NSArray<SharedChildCreated<id, id> *> *items __attribute__((swift_name("items")));
 @property (readonly) SharedChildCreated<id, id> * _Nullable overlay __attribute__((swift_name("overlay"))) __attribute__((deprecated("Please use Child Slot API")));
+- (id)getValueThisRef:(id _Nullable)thisRef property:(id<SharedKotlinKProperty>)property __attribute__((swift_name("getValue(thisRef:property:)")));
+- (SharedValue<id> *)mapMapper:(id (^)(id))mapper __attribute__((swift_name("map(mapper:)")));
+- (void)observeLifecycle:(id<SharedLifecycle>)lifecycle mode:(SharedObserveLifecycleMode *)mode observer:(void (^)(id))observer __attribute__((swift_name("observe(lifecycle:mode:observer:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3740,6 +4069,12 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ErrorHandlersKt")))
 @interface SharedErrorHandlersKt : SharedBase
 @property (class) void (^onDecomposeError)(SharedKotlinException *) __attribute__((swift_name("onDecomposeError")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HomescreenUILogicModuleKt")))
+@interface SharedHomescreenUILogicModuleKt : SharedBase
+@property (class, readonly) SharedKoin_coreModule *homescreenUILogicModule __attribute__((swift_name("homescreenUILogicModule")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -3870,21 +4205,44 @@ __attribute__((swift_name("StackNavigatorExtKt")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("TestKt")))
-@interface SharedTestKt : SharedBase
-+ (NSString *)hello __attribute__((swift_name("hello()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UtilsKt")))
 @interface SharedUtilsKt : SharedBase
 + (NSString *)hashString:(id)receiver __attribute__((swift_name("hashString(_:)")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("__SkieSuspendWrappersKt")))
+@interface Shared__SkieSuspendWrappersKt : SharedBase
++ (void)Skie_Suspend__0__hasNextDispatchReceiver:(SharedSkieColdFlowIterator<id> *)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__0__hasNext(dispatchReceiver:suspendHandler:)")));
++ (void)Skie_Suspend__10__receiveCatchingDispatchReceiver:(id<SharedKotlinx_coroutines_coreReceiveChannel>)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__10__receiveCatching(dispatchReceiver:suspendHandler:)")));
++ (void)Skie_Suspend__11__receiveOrNullDispatchReceiver:(id<SharedKotlinx_coroutines_coreReceiveChannel>)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__11__receiveOrNull(dispatchReceiver:suspendHandler:)")));
++ (void)Skie_Suspend__12__hasNextDispatchReceiver:(id<SharedKotlinx_coroutines_coreChannelIterator>)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__12__hasNext(dispatchReceiver:suspendHandler:)")));
++ (void)Skie_Suspend__1__collectDispatchReceiver:(id<SharedKotlinx_coroutines_coreFlow>)dispatchReceiver collector:(id<SharedKotlinx_coroutines_coreFlowCollector>)collector suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__1__collect(dispatchReceiver:collector:suspendHandler:)")));
++ (void)Skie_Suspend__2__emitDispatchReceiver:(id<SharedKotlinx_coroutines_coreFlowCollector>)dispatchReceiver value:(id _Nullable)value suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__2__emit(dispatchReceiver:value:suspendHandler:)")));
++ (void)Skie_Suspend__3__getLeafletsDispatchReceiver:(SharedLeafletRepository *)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__3__getLeaflets(dispatchReceiver:suspendHandler:)")));
++ (void)Skie_Suspend__4__getLeafletsWithTokenDispatchReceiver:(SharedLeafletRepository *)dispatchReceiver token:(NSString *)token suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__4__getLeafletsWithToken(dispatchReceiver:token:suspendHandler:)")));
++ (void)Skie_Suspend__5__getLeafletsDispatchReceiver:(id<SharedLeafletSuspendClient>)dispatchReceiver request:(SharedGetLeafletsRequest *)request suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__5__getLeaflets(dispatchReceiver:request:suspendHandler:)")));
++ (void)Skie_Suspend__6__registerDeviceDispatchReceiver:(id<SharedRegisterDeviceRepository>)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__6__registerDevice(dispatchReceiver:suspendHandler:)")));
++ (void)Skie_Suspend__7__executeDispatchReceiver:(id<SharedWire_grpc_clientGrpcCall>)dispatchReceiver request:(id)request suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__7__execute(dispatchReceiver:request:suspendHandler:)")));
++ (void)Skie_Suspend__8__sendDispatchReceiver:(id<SharedKotlinx_coroutines_coreSendChannel>)dispatchReceiver element:(id _Nullable)element suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__8__send(dispatchReceiver:element:suspendHandler:)")));
++ (void)Skie_Suspend__9__receiveDispatchReceiver:(id<SharedKotlinx_coroutines_coreReceiveChannel>)dispatchReceiver suspendHandler:(SharedSkie_SuspendHandler *)suspendHandler __attribute__((swift_name("Skie_Suspend__9__receive(dispatchReceiver:suspendHandler:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("__SkieTypeExportsKt")))
+@interface Shared__SkieTypeExportsKt : SharedBase
++ (void)skieTypeExports_0P0:(SharedWire_runtimeMessageBuilder<id, id> *)p0 p1:(id<SharedKotlinx_coroutines_coreSelectClause0>)p1 p2:(SharedKotlinx_serialization_corePolymorphicKind *)p2 p3:(SharedKotlinx_serialization_corePrimitiveKind *)p3 p4:(SharedKotlinx_serialization_coreSerialKindCONTEXTUAL *)p4 p5:(SharedKotlinx_serialization_coreSerialKindENUM *)p5 p6:(SharedKotlinx_serialization_coreStructureKind *)p6 p7:(SharedKotlinx_serialization_corePolymorphicKindOPEN *)p7 p8:(SharedKotlinx_serialization_corePolymorphicKindSEALED *)p8 p9:(SharedKotlinx_serialization_corePrimitiveKindBOOLEAN *)p9 p10:(SharedKotlinx_serialization_corePrimitiveKindBYTE *)p10 p11:(SharedKotlinx_serialization_corePrimitiveKindCHAR *)p11 p12:(SharedKotlinx_serialization_corePrimitiveKindDOUBLE *)p12 p13:(SharedKotlinx_serialization_corePrimitiveKindFLOAT *)p13 p14:(SharedKotlinx_serialization_corePrimitiveKindINT *)p14 p15:(SharedKotlinx_serialization_corePrimitiveKindLONG *)p15 p16:(SharedKotlinx_serialization_corePrimitiveKindSHORT *)p16 p17:(SharedKotlinx_serialization_corePrimitiveKindSTRING *)p17 p18:(SharedKotlinx_serialization_coreStructureKindCLASS *)p18 p19:(SharedKotlinx_serialization_coreStructureKindLIST *)p19 p20:(SharedKotlinx_serialization_coreStructureKindMAP *)p20 p21:(SharedKotlinx_serialization_coreStructureKindOBJECT *)p21 __attribute__((swift_name("skieTypeExports_0(p0:p1:p2:p3:p4:p5:p6:p7:p8:p9:p10:p11:p12:p13:p14:p15:p16:p17:p18:p19:p20:p21:)")));
+@end
+
 __attribute__((swift_name("Wire_runtimeProtoAdapter")))
 @interface SharedWire_runtimeProtoAdapter<E> : SharedBase
-- (instancetype)initWithFieldEncoding:(SharedWire_runtimeFieldEncoding *)fieldEncoding type:(id<SharedKotlinKClass> _Nullable)type typeUrl:(NSString * _Nullable)typeUrl syntax:(SharedWire_runtimeSyntax *)syntax identity:(E _Nullable)identity sourceFile:(NSString * _Nullable)sourceFile __attribute__((swift_name("init(fieldEncoding:type:typeUrl:syntax:identity:sourceFile:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedWire_runtimeProtoAdapterCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) E _Nullable identity __attribute__((swift_name("identity")));
+@property (readonly) NSString * _Nullable sourceFile __attribute__((swift_name("sourceFile")));
+@property (readonly) SharedWire_runtimeSyntax *syntax __attribute__((swift_name("syntax")));
+@property (readonly) id<SharedKotlinKClass> _Nullable type __attribute__((swift_name("type")));
+@property (readonly) NSString * _Nullable typeUrl __attribute__((swift_name("typeUrl")));
+- (instancetype)initWithFieldEncoding:(SharedWire_runtimeFieldEncoding *)fieldEncoding type:(id<SharedKotlinKClass> _Nullable)type typeUrl:(NSString * _Nullable)typeUrl syntax:(SharedWire_runtimeSyntax *)syntax identity:(E _Nullable)identity sourceFile:(NSString * _Nullable)sourceFile __attribute__((swift_name("init(fieldEncoding:type:typeUrl:syntax:identity:sourceFile:)"))) __attribute__((objc_designated_initializer));
 - (SharedWire_runtimeProtoAdapter<NSArray<id> *> *)asPacked __attribute__((swift_name("asPacked()")));
 - (SharedWire_runtimeProtoAdapter<NSArray<id> *> *)asRepeated __attribute__((swift_name("asRepeated()")));
 - (E _Nullable)decodeReader:(SharedWire_runtimeProtoReader *)reader __attribute__((swift_name("decode(reader:)")));
@@ -3903,16 +4261,12 @@ __attribute__((swift_name("Wire_runtimeProtoAdapter")))
 - (E _Nullable)redactValue:(E _Nullable)value __attribute__((swift_name("redact(value:)")));
 - (NSString *)toStringValue:(E _Nullable)value __attribute__((swift_name("toString(value:)")));
 - (void)tryDecodeReader:(SharedWire_runtimeProtoReader *)reader destination:(NSMutableArray<id> *)destination __attribute__((swift_name("tryDecode(reader:destination:)")));
-@property (readonly) E _Nullable identity __attribute__((swift_name("identity")));
-@property (readonly) NSString * _Nullable sourceFile __attribute__((swift_name("sourceFile")));
-@property (readonly) SharedWire_runtimeSyntax *syntax __attribute__((swift_name("syntax")));
-@property (readonly) id<SharedKotlinKClass> _Nullable type __attribute__((swift_name("type")));
-@property (readonly) NSString * _Nullable typeUrl __attribute__((swift_name("typeUrl")));
 @end
 
 __attribute__((swift_name("OkioByteString")))
 @interface SharedOkioByteString : SharedBase <SharedKotlinComparable>
 @property (class, readonly, getter=companion) SharedOkioByteStringCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 - (NSString *)base64 __attribute__((swift_name("base64()")));
 - (NSString *)base64Url __attribute__((swift_name("base64Url()")));
 - (int32_t)compareToOther:(SharedOkioByteString *)other __attribute__((swift_name("compareTo(other:)")));
@@ -3944,12 +4298,12 @@ __attribute__((swift_name("OkioByteString")))
 - (SharedKotlinByteArray *)toByteArray __attribute__((swift_name("toByteArray()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 - (NSString *)utf8 __attribute__((swift_name("utf8()")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinByteArray")))
 @interface SharedKotlinByteArray : SharedBase
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 + (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
 + (instancetype)arrayWithSize:(int32_t)size init:(SharedByte *(^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
 + (instancetype)alloc __attribute__((unavailable));
@@ -3957,7 +4311,6 @@ __attribute__((swift_name("KotlinByteArray")))
 - (int8_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
 - (SharedKotlinByteIterator *)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(int8_t)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((swift_name("OkioCloseable")))
@@ -4023,22 +4376,22 @@ __attribute__((swift_name("KotlinNothing")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinEnumCompanion")))
 @interface SharedKotlinEnumCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedKotlinEnumCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedKotlinEnumCompanion *shared __attribute__((swift_name("shared")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinArray")))
 @interface SharedKotlinArray<T> : SharedBase
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 + (instancetype)arrayWithSize:(int32_t)size init:(T _Nullable (^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 - (T _Nullable)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
 - (id<SharedKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(T _Nullable)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4086,6 +4439,8 @@ __attribute__((swift_name("Wire_grpc_clientGrpcClient")))
 
 __attribute__((swift_name("KotlinThrowable")))
 @interface SharedKotlinThrowable : SharedBase
+@property (readonly) SharedKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
@@ -4099,8 +4454,6 @@ __attribute__((swift_name("KotlinThrowable")))
 - (SharedKotlinArray<NSString *> *)getStackTrace __attribute__((swift_name("getStackTrace()")));
 - (void)printStackTrace __attribute__((swift_name("printStackTrace()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
-@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
 - (NSError *)asError __attribute__((swift_name("asError()")));
 @end
 
@@ -4145,6 +4498,12 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
+__attribute__((swift_name("Kotlinx_coroutines_coreRunnable")))
+@protocol SharedKotlinx_coroutines_coreRunnable
+@required
+- (void)run __attribute__((swift_name("run()")));
+@end
+
 __attribute__((swift_name("Wire_grpc_clientGrpcStreamingCall")))
 @protocol SharedWire_grpc_clientGrpcStreamingCall
 @required
@@ -4164,6 +4523,11 @@ __attribute__((swift_name("Wire_grpc_clientGrpcStreamingCall")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreModule")))
 @interface SharedKoin_coreModule : SharedBase
+@property (readonly) SharedMutableSet<SharedKoin_coreSingleInstanceFactory<id> *> *eagerInstances __attribute__((swift_name("eagerInstances")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSMutableArray<SharedKoin_coreModule *> *includedModules __attribute__((swift_name("includedModules")));
+@property (readonly) BOOL isLoaded __attribute__((swift_name("isLoaded")));
+@property (readonly) SharedMutableDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> *mappings __attribute__((swift_name("mappings")));
 - (instancetype)initWith_createdAtStart:(BOOL)_createdAtStart __attribute__((swift_name("init(_createdAtStart:)"))) __attribute__((objc_designated_initializer));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (SharedKoin_coreKoinDefinition<id> *)factoryQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(id _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition __attribute__((swift_name("factory(qualifier:definition:)")));
@@ -4178,17 +4542,13 @@ __attribute__((swift_name("Koin_coreModule")))
 - (void)scopeScopeSet:(void (^)(SharedKoin_coreScopeDSL *))scopeSet __attribute__((swift_name("scope(scopeSet:)")));
 - (void)scopeQualifier:(id<SharedKoin_coreQualifier>)qualifier scopeSet:(void (^)(SharedKoin_coreScopeDSL *))scopeSet __attribute__((swift_name("scope(qualifier:scopeSet:)")));
 - (SharedKoin_coreKoinDefinition<id> *)singleQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier createdAtStart:(BOOL)createdAtStart definition:(id _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition __attribute__((swift_name("single(qualifier:createdAtStart:definition:)")));
-@property (readonly) SharedMutableSet<SharedKoin_coreSingleInstanceFactory<id> *> *eagerInstances __attribute__((swift_name("eagerInstances")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSMutableArray<SharedKoin_coreModule *> *includedModules __attribute__((swift_name("includedModules")));
-@property (readonly) BOOL isLoaded __attribute__((swift_name("isLoaded")));
-@property (readonly) SharedMutableDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> *mappings __attribute__((swift_name("mappings")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKoinApplication")))
 @interface SharedKoin_coreKoinApplication : SharedBase
 @property (class, readonly, getter=companion) SharedKoin_coreKoinApplicationCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedKoin_coreKoin *koin __attribute__((swift_name("koin")));
 - (void)allowOverrideOverride:(BOOL)override __attribute__((swift_name("allowOverride(override:)")));
 - (void)close __attribute__((swift_name("close()")));
 - (void)createEagerInstances __attribute__((swift_name("createEagerInstances()")));
@@ -4198,7 +4558,6 @@ __attribute__((swift_name("Koin_coreKoinApplication")))
 - (SharedKoin_coreKoinApplication *)modulesModules__:(SharedKoin_coreModule *)modules __attribute__((swift_name("modules(modules__:)")));
 - (SharedKoin_coreKoinApplication *)printLoggerLevel:(SharedKoin_coreLevel *)level __attribute__((swift_name("printLogger(level:)")));
 - (SharedKoin_coreKoinApplication *)propertiesValues:(NSDictionary<NSString *, id> *)values __attribute__((swift_name("properties(values:)")));
-@property (readonly) SharedKoin_coreKoin *koin __attribute__((swift_name("koin")));
 @end
 
 __attribute__((swift_name("KotlinKDeclarationContainer")))
@@ -4312,6 +4671,9 @@ __attribute__((swift_name("Koin_coreQualifier")))
 
 __attribute__((swift_name("Koin_coreParametersHolder")))
 @interface SharedKoin_coreParametersHolder : SharedBase
+@property int32_t index __attribute__((swift_name("index")));
+@property (readonly) SharedBoolean * _Nullable useIndexedValues __attribute__((swift_name("useIndexedValues")));
+@property (readonly) NSArray<id> *values __attribute__((swift_name("values")));
 - (instancetype)initWith_values:(NSMutableArray<id> *)_values useIndexedValues:(SharedBoolean * _Nullable)useIndexedValues __attribute__((swift_name("init(_values:useIndexedValues:)"))) __attribute__((objc_designated_initializer));
 - (SharedKoin_coreParametersHolder *)addValue:(id)value __attribute__((swift_name("add(value:)")));
 - (id _Nullable)component1 __attribute__((swift_name("component1()")));
@@ -4330,9 +4692,6 @@ __attribute__((swift_name("Koin_coreParametersHolder")))
 - (void)setI:(int32_t)i t:(id _Nullable)t __attribute__((swift_name("set(i:t:)")));
 - (int32_t)size __attribute__((swift_name("size()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property int32_t index __attribute__((swift_name("index")));
-@property (readonly) SharedBoolean * _Nullable useIndexedValues __attribute__((swift_name("useIndexedValues")));
-@property (readonly) NSArray<id> *values __attribute__((swift_name("values")));
 @end
 
 __attribute__((swift_name("Koin_coreLockable")))
@@ -4344,6 +4703,13 @@ __attribute__((swift_name("Koin_coreLockable")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreScope")))
 @interface SharedKoin_coreScope : SharedKoin_coreLockable
+@property (readonly) SharedStately_concurrencyThreadLocalRef<NSMutableArray<SharedKoin_coreParametersHolder *> *> *_parameterStackLocal __attribute__((swift_name("_parameterStackLocal")));
+@property id _Nullable _source __attribute__((swift_name("_source")));
+@property (readonly) BOOL closed __attribute__((swift_name("closed")));
+@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) BOOL isRoot __attribute__((swift_name("isRoot")));
+@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
+@property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
 - (instancetype)initWithScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier id:(NSString *)id isRoot:(BOOL)isRoot _koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(scopeQualifier:id:isRoot:_koin:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
@@ -4368,53 +4734,343 @@ __attribute__((swift_name("Koin_coreScope")))
 - (void)registerCallbackCallback:(id<SharedKoin_coreScopeCallback>)callback __attribute__((swift_name("registerCallback(callback:)")));
 - (NSString *)description __attribute__((swift_name("description()")));
 - (void)unlinkScopes:(SharedKotlinArray<SharedKoin_coreScope *> *)scopes __attribute__((swift_name("unlink(scopes:)")));
-@property (readonly) SharedStately_concurrencyThreadLocalRef<NSMutableArray<SharedKoin_coreParametersHolder *> *> *_parameterStackLocal __attribute__((swift_name("_parameterStackLocal")));
-@property id _Nullable _source __attribute__((swift_name("_source")));
-@property (readonly) BOOL closed __attribute__((swift_name("closed")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) BOOL isRoot __attribute__((swift_name("isRoot")));
-@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
-@property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreReceiveChannel")))
+@protocol SharedKotlinx_coroutines_coreReceiveChannel
+@required
+- (void)cancelCause:(SharedKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
+- (id<SharedKotlinx_coroutines_coreChannelIterator>)iterator __attribute__((swift_name("iterator()")));
+- (id _Nullable)poll __attribute__((swift_name("poll()"))) __attribute__((unavailable("Deprecated in the favour of 'tryReceive'. Please note that the provided replacement does not rethrow channel's close cause as 'poll' did, for the precise replacement please refer to the 'poll' documentation")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)receiveWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("receive(completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)receiveCatchingWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveCatching(completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)receiveOrNullWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveOrNull(completionHandler:)"))) __attribute__((unavailable("Deprecated in favor of 'receiveCatching'. Please note that the provided replacement does not rethrow channel's close cause as 'receiveOrNull' did, for the detailed replacement please refer to the 'receiveOrNull' documentation")));
+- (id _Nullable)tryReceive __attribute__((swift_name("tryReceive()")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.DelicateCoroutinesApi
+*/
+@property (readonly) BOOL isClosedForReceive __attribute__((swift_name("isClosedForReceive")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+@property (readonly, getter=isEmpty_) BOOL isEmpty __attribute__((swift_name("isEmpty")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceive __attribute__((swift_name("onReceive")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveCatching __attribute__((swift_name("onReceiveCatching")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveOrNull __attribute__((swift_name("onReceiveOrNull"))) __attribute__((unavailable("Deprecated in favor of onReceiveCatching extension")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreChannelIterator")))
+@protocol SharedKotlinx_coroutines_coreChannelIterator
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)hasNextWithCompletionHandler:(void (^)(SharedBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("hasNext(completionHandler:)")));
+- (id _Nullable)next __attribute__((swift_name("next()")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSendChannel")))
+@protocol SharedKotlinx_coroutines_coreSendChannel
+@required
+- (BOOL)closeCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("close(cause:)")));
+- (void)invokeOnCloseHandler:(void (^)(SharedKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnClose(handler:)")));
+- (BOOL)offerElement:(id _Nullable)element __attribute__((swift_name("offer(element:)"))) __attribute__((unavailable("Deprecated in the favour of 'trySend' method")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)sendElement:(id _Nullable)element completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("send(element:completionHandler:)")));
+- (id _Nullable)trySendElement:(id _Nullable)element __attribute__((swift_name("trySend(element:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.DelicateCoroutinesApi
+*/
+@property (readonly) BOOL isClosedForSend __attribute__((swift_name("isClosedForSend")));
+@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause2> onSend __attribute__((swift_name("onSend")));
+@end
+
+__attribute__((swift_name("Wire_runtimeMessageBuilder")))
+@interface SharedWire_runtimeMessageBuilder<M, B> : SharedBase
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (SharedWire_runtimeMessageBuilder<M, B> *)addUnknownFieldTag:(int32_t)tag fieldEncoding:(SharedWire_runtimeFieldEncoding *)fieldEncoding value:(id _Nullable)value __attribute__((swift_name("addUnknownField(tag:fieldEncoding:value:)")));
+- (SharedWire_runtimeMessageBuilder<M, B> *)addUnknownFieldsUnknownFields:(SharedOkioByteString *)unknownFields __attribute__((swift_name("addUnknownFields(unknownFields:)")));
+- (M)build __attribute__((swift_name("build()")));
+- (SharedOkioByteString *)buildUnknownFields __attribute__((swift_name("buildUnknownFields()")));
+- (SharedWire_runtimeMessageBuilder<M, B> *)clearUnknownFields __attribute__((swift_name("clearUnknownFields()")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
+@protocol SharedKotlinx_coroutines_coreSelectClause
+@required
+@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
+@property (readonly) SharedKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<SharedKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(SharedKotlinThrowable *) __attribute__((swift_name("onCancellationConstructor")));
+@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
+@property (readonly) void (^regFunc)(id, id<SharedKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
+@protocol SharedKotlinx_coroutines_coreSelectClause0 <SharedKotlinx_coroutines_coreSelectClause>
+@required
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((swift_name("Kotlinx_serialization_coreSerialKind")))
+@interface SharedKotlinx_serialization_coreSerialKind : SharedBase
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((swift_name("Kotlinx_serialization_corePolymorphicKind")))
+@interface SharedKotlinx_serialization_corePolymorphicKind : SharedKotlinx_serialization_coreSerialKind
+@end
+
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind")))
+@interface SharedKotlinx_serialization_corePrimitiveKind : SharedKotlinx_serialization_coreSerialKind
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_coreSerialKind.CONTEXTUAL")))
+@interface SharedKotlinx_serialization_coreSerialKindCONTEXTUAL : SharedKotlinx_serialization_coreSerialKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_coreSerialKindCONTEXTUAL *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)cONTEXTUAL __attribute__((swift_name("init()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_coreSerialKind.ENUM")))
+@interface SharedKotlinx_serialization_coreSerialKindENUM : SharedKotlinx_serialization_coreSerialKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_coreSerialKindENUM *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)eNUM __attribute__((swift_name("init()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((swift_name("Kotlinx_serialization_coreStructureKind")))
+@interface SharedKotlinx_serialization_coreStructureKind : SharedKotlinx_serialization_coreSerialKind
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePolymorphicKind.OPEN")))
+@interface SharedKotlinx_serialization_corePolymorphicKindOPEN : SharedKotlinx_serialization_corePolymorphicKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePolymorphicKindOPEN *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)oPEN __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePolymorphicKind.SEALED")))
+@interface SharedKotlinx_serialization_corePolymorphicKindSEALED : SharedKotlinx_serialization_corePolymorphicKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePolymorphicKindSEALED *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)sEALED __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.BOOLEAN")))
+@interface SharedKotlinx_serialization_corePrimitiveKindBOOLEAN : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindBOOLEAN *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)bOOLEAN __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.BYTE")))
+@interface SharedKotlinx_serialization_corePrimitiveKindBYTE : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindBYTE *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)bYTE __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.CHAR")))
+@interface SharedKotlinx_serialization_corePrimitiveKindCHAR : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindCHAR *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)cHAR __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.DOUBLE")))
+@interface SharedKotlinx_serialization_corePrimitiveKindDOUBLE : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindDOUBLE *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)dOUBLE __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.FLOAT")))
+@interface SharedKotlinx_serialization_corePrimitiveKindFLOAT : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindFLOAT *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)fLOAT __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.INT")))
+@interface SharedKotlinx_serialization_corePrimitiveKindINT : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindINT *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)iNT __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.LONG")))
+@interface SharedKotlinx_serialization_corePrimitiveKindLONG : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindLONG *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)lONG __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.SHORT")))
+@interface SharedKotlinx_serialization_corePrimitiveKindSHORT : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindSHORT *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)sHORT __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_corePrimitiveKind.STRING")))
+@interface SharedKotlinx_serialization_corePrimitiveKindSTRING : SharedKotlinx_serialization_corePrimitiveKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_corePrimitiveKindSTRING *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)sTRING __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_coreStructureKind.CLASS")))
+@interface SharedKotlinx_serialization_coreStructureKindCLASS : SharedKotlinx_serialization_coreStructureKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_coreStructureKindCLASS *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)cLASS __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_coreStructureKind.LIST")))
+@interface SharedKotlinx_serialization_coreStructureKindLIST : SharedKotlinx_serialization_coreStructureKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_coreStructureKindLIST *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)lIST __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_coreStructureKind.MAP")))
+@interface SharedKotlinx_serialization_coreStructureKindMAP : SharedKotlinx_serialization_coreStructureKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_coreStructureKindMAP *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)mAP __attribute__((swift_name("init()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kotlinx_serialization_coreStructureKind.OBJECT")))
+@interface SharedKotlinx_serialization_coreStructureKindOBJECT : SharedKotlinx_serialization_coreStructureKind
+@property (class, readonly, getter=shared) SharedKotlinx_serialization_coreStructureKindOBJECT *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)oBJECT __attribute__((swift_name("init()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeFieldEncoding")))
 @interface SharedWire_runtimeFieldEncoding : SharedKotlinEnum<SharedWire_runtimeFieldEncoding *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedWire_runtimeFieldEncodingCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedWire_runtimeFieldEncoding *varint __attribute__((swift_name("varint")));
 @property (class, readonly) SharedWire_runtimeFieldEncoding *fixed64 __attribute__((swift_name("fixed64")));
 @property (class, readonly) SharedWire_runtimeFieldEncoding *lengthDelimited __attribute__((swift_name("lengthDelimited")));
 @property (class, readonly) SharedWire_runtimeFieldEncoding *fixed32 __attribute__((swift_name("fixed32")));
-+ (SharedKotlinArray<SharedWire_runtimeFieldEncoding *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedWire_runtimeFieldEncoding *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedWire_runtimeFieldEncoding *> *)values __attribute__((swift_name("values()")));
 - (SharedWire_runtimeProtoAdapter<id> *)rawProtoAdapter __attribute__((swift_name("rawProtoAdapter()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeSyntax")))
 @interface SharedWire_runtimeSyntax : SharedKotlinEnum<SharedWire_runtimeSyntax *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SharedWire_runtimeSyntaxCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SharedWire_runtimeSyntax *proto2 __attribute__((swift_name("proto2")));
 @property (class, readonly) SharedWire_runtimeSyntax *proto3 __attribute__((swift_name("proto3")));
-+ (SharedKotlinArray<SharedWire_runtimeSyntax *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedWire_runtimeSyntax *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedWire_runtimeSyntax *> *)values __attribute__((swift_name("values()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeProtoAdapterCompanion")))
 @interface SharedWire_runtimeProtoAdapterCompanion : SharedBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) SharedWire_runtimeProtoAdapterCompanion *shared __attribute__((swift_name("shared")));
-- (SharedWire_runtimeProtoAdapter<NSDictionary<id, id> *> *)doNewMapAdapterKeyAdapter:(SharedWire_runtimeProtoAdapter<id> *)keyAdapter valueAdapter:(SharedWire_runtimeProtoAdapter<id> *)valueAdapter __attribute__((swift_name("doNewMapAdapter(keyAdapter:valueAdapter:)")));
 @property (readonly) SharedWire_runtimeProtoAdapter<SharedBoolean *> *BOOL __attribute__((swift_name("BOOL")));
 @property (readonly) SharedWire_runtimeProtoAdapter<SharedBoolean *> *BOOL_VALUE __attribute__((swift_name("BOOL_VALUE")));
 @property (readonly) SharedWire_runtimeProtoAdapter<SharedOkioByteString *> *BYTES __attribute__((swift_name("BYTES")));
@@ -4458,13 +5114,17 @@ __attribute__((swift_name("Wire_runtimeProtoAdapterCompanion")))
 @property (readonly) SharedWire_runtimeProtoAdapter<SharedLong *> *UINT64 __attribute__((swift_name("UINT64")));
 @property (readonly) SharedWire_runtimeProtoAdapter<SharedKotlinLongArray *> *UINT64_ARRAY __attribute__((swift_name("UINT64_ARRAY")));
 @property (readonly) SharedWire_runtimeProtoAdapter<SharedLong *> *UINT64_VALUE __attribute__((swift_name("UINT64_VALUE")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (SharedWire_runtimeProtoAdapter<NSDictionary<id, id> *> *)doNewMapAdapterKeyAdapter:(SharedWire_runtimeProtoAdapter<id> *)keyAdapter valueAdapter:(SharedWire_runtimeProtoAdapter<id> *)valueAdapter __attribute__((swift_name("doNewMapAdapter(keyAdapter:valueAdapter:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeProtoReader")))
 @interface SharedWire_runtimeProtoReader : SharedBase
-- (instancetype)initWithSource:(id<SharedOkioBufferedSource>)source __attribute__((swift_name("init(source:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedWire_runtimeProtoReaderCompanion *companion __attribute__((swift_name("companion")));
+- (instancetype)initWithSource:(id<SharedOkioBufferedSource>)source __attribute__((swift_name("init(source:)"))) __attribute__((objc_designated_initializer));
 - (void)addUnknownFieldTag:(int32_t)tag fieldEncoding:(SharedWire_runtimeFieldEncoding *)fieldEncoding value:(id _Nullable)value __attribute__((swift_name("addUnknownField(tag:fieldEncoding:value:)")));
 - (int64_t)beginMessage __attribute__((swift_name("beginMessage()")));
 - (void)endMessageToken:(int64_t)token __attribute__((swift_name("endMessage(token:)"))) __attribute__((deprecated("prefer endMessageAndGetUnknownFields()")));
@@ -4549,8 +5209,8 @@ __attribute__((swift_name("OkioBufferedSource")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeProtoWriter")))
 @interface SharedWire_runtimeProtoWriter : SharedBase
-- (instancetype)initWithSink:(id<SharedOkioBufferedSink>)sink __attribute__((swift_name("init(sink:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedWire_runtimeProtoWriterCompanion *companion __attribute__((swift_name("companion")));
+- (instancetype)initWithSink:(id<SharedOkioBufferedSink>)sink __attribute__((swift_name("init(sink:)"))) __attribute__((objc_designated_initializer));
 - (void)writeBytesValue:(SharedOkioByteString *)value __attribute__((swift_name("writeBytes(value:)")));
 - (void)writeFixed32Value:(int32_t)value __attribute__((swift_name("writeFixed32(value:)")));
 - (void)writeFixed64Value:(int64_t)value __attribute__((swift_name("writeFixed64(value:)")));
@@ -4563,6 +5223,7 @@ __attribute__((swift_name("Wire_runtimeProtoWriter")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeReverseProtoWriter")))
 @interface SharedWire_runtimeReverseProtoWriter : SharedBase
+@property (readonly) int32_t byteCount __attribute__((swift_name("byteCount")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (void)writeBytesValue:(SharedOkioByteString *)value __attribute__((swift_name("writeBytes(value:)")));
@@ -4573,23 +5234,22 @@ __attribute__((swift_name("Wire_runtimeReverseProtoWriter")))
 - (void)writeToSink:(id<SharedOkioBufferedSink>)sink __attribute__((swift_name("writeTo(sink:)")));
 - (void)writeVarint32Value:(int32_t)value __attribute__((swift_name("writeVarint32(value:)")));
 - (void)writeVarint64Value:(int64_t)value __attribute__((swift_name("writeVarint64(value:)")));
-@property (readonly) int32_t byteCount __attribute__((swift_name("byteCount")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("OkioByteString.Companion")))
 @interface SharedOkioByteStringCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedOkioByteStringCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedOkioByteString *EMPTY __attribute__((swift_name("EMPTY")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedOkioByteStringCompanion *shared __attribute__((swift_name("shared")));
 - (SharedOkioByteString * _Nullable)decodeBase64:(NSString *)receiver __attribute__((swift_name("decodeBase64(_:)")));
 - (SharedOkioByteString *)decodeHex:(NSString *)receiver __attribute__((swift_name("decodeHex(_:)")));
 - (SharedOkioByteString *)encodeUtf8:(NSString *)receiver __attribute__((swift_name("encodeUtf8(_:)")));
 - (SharedOkioByteString *)ofData:(SharedKotlinByteArray *)data __attribute__((swift_name("of(data:)")));
 - (SharedOkioByteString *)toByteString:(NSData *)receiver __attribute__((swift_name("toByteString(_:)")));
 - (SharedOkioByteString *)toByteString:(SharedKotlinByteArray *)receiver offset:(int32_t)offset byteCount:(int32_t)byteCount __attribute__((swift_name("toByteString(_:offset:byteCount:)")));
-@property (readonly) SharedOkioByteString *EMPTY __attribute__((swift_name("EMPTY")));
 @end
 
 __attribute__((swift_name("KotlinIterator")))
@@ -4610,6 +5270,8 @@ __attribute__((swift_name("KotlinByteIterator")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("OkioBuffer")))
 @interface SharedOkioBuffer : SharedBase <SharedOkioBufferedSource, SharedOkioBufferedSink>
+@property (readonly) SharedOkioBuffer *buffer __attribute__((swift_name("buffer")));
+@property (readonly) int64_t size __attribute__((swift_name("size")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (void)clear __attribute__((swift_name("clear()")));
@@ -4716,8 +5378,6 @@ __attribute__((swift_name("OkioBuffer")))
 - (SharedOkioBuffer *)writeUtf8String:(NSString *)string __attribute__((swift_name("writeUtf8(string:)")));
 - (SharedOkioBuffer *)writeUtf8String:(NSString *)string beginIndex:(int32_t)beginIndex endIndex:(int32_t)endIndex __attribute__((swift_name("writeUtf8(string:beginIndex:endIndex:)")));
 - (SharedOkioBuffer *)writeUtf8CodePointCodePoint:(int32_t)codePoint __attribute__((swift_name("writeUtf8CodePoint(codePoint:)")));
-@property (readonly) SharedOkioBuffer *buffer __attribute__((swift_name("buffer")));
-@property (readonly) int64_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((swift_name("OkioIOException")))
@@ -4731,9 +5391,9 @@ __attribute__((swift_name("OkioIOException")))
 
 __attribute__((swift_name("OkioTimeout")))
 @interface SharedOkioTimeout : SharedBase
+@property (class, readonly, getter=companion) SharedOkioTimeoutCompanion *companion __attribute__((swift_name("companion")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-@property (class, readonly, getter=companion) SharedOkioTimeoutCompanion *companion __attribute__((swift_name("companion")));
 @end
 
 __attribute__((swift_name("Wire_grpc_clientGrpcCallCallback")))
@@ -4746,86 +5406,22 @@ __attribute__((swift_name("Wire_grpc_clientGrpcCallCallback")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_grpc_clientGrpcMethod")))
 @interface SharedWire_grpc_clientGrpcMethod<S, R> : SharedBase
-- (instancetype)initWithPath:(NSString *)path requestAdapter:(SharedWire_runtimeProtoAdapter<S> *)requestAdapter responseAdapter:(SharedWire_runtimeProtoAdapter<R> *)responseAdapter __attribute__((swift_name("init(path:requestAdapter:responseAdapter:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) NSString *path __attribute__((swift_name("path")));
 @property (readonly) SharedWire_runtimeProtoAdapter<S> *requestAdapter __attribute__((swift_name("requestAdapter")));
 @property (readonly) SharedWire_runtimeProtoAdapter<R> *responseAdapter __attribute__((swift_name("responseAdapter")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSendChannel")))
-@protocol SharedKotlinx_coroutines_coreSendChannel
-@required
-- (BOOL)closeCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("close(cause:)")));
-- (void)invokeOnCloseHandler:(void (^)(SharedKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnClose(handler:)")));
-- (BOOL)offerElement:(id _Nullable)element __attribute__((swift_name("offer(element:)"))) __attribute__((unavailable("Deprecated in the favour of 'trySend' method")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)sendElement:(id _Nullable)element completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("send(element:completionHandler:)")));
-- (id _Nullable)trySendElement:(id _Nullable)element __attribute__((swift_name("trySend(element:)")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.DelicateCoroutinesApi
-*/
-@property (readonly) BOOL isClosedForSend __attribute__((swift_name("isClosedForSend")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause2> onSend __attribute__((swift_name("onSend")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreReceiveChannel")))
-@protocol SharedKotlinx_coroutines_coreReceiveChannel
-@required
-- (void)cancelCause:(SharedKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
-- (id<SharedKotlinx_coroutines_coreChannelIterator>)iterator __attribute__((swift_name("iterator()")));
-- (id _Nullable)poll __attribute__((swift_name("poll()"))) __attribute__((unavailable("Deprecated in the favour of 'tryReceive'. Please note that the provided replacement does not rethrow channel's close cause as 'poll' did, for the precise replacement please refer to the 'poll' documentation")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)receiveWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("receive(completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)receiveCatchingWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveCatching(completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)receiveOrNullWithCompletionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("receiveOrNull(completionHandler:)"))) __attribute__((unavailable("Deprecated in favor of 'receiveCatching'. Please note that the provided replacement does not rethrow channel's close cause as 'receiveOrNull' did, for the detailed replacement please refer to the 'receiveOrNull' documentation")));
-- (id _Nullable)tryReceive __attribute__((swift_name("tryReceive()")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.DelicateCoroutinesApi
-*/
-@property (readonly) BOOL isClosedForReceive __attribute__((swift_name("isClosedForReceive")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.ExperimentalCoroutinesApi
-*/
-@property (readonly, getter=isEmpty_) BOOL isEmpty __attribute__((swift_name("isEmpty")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceive __attribute__((swift_name("onReceive")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveCatching __attribute__((swift_name("onReceiveCatching")));
-@property (readonly) id<SharedKotlinx_coroutines_coreSelectClause1> onReceiveOrNull __attribute__((swift_name("onReceiveOrNull"))) __attribute__((unavailable("Deprecated in favor of onReceiveCatching extension")));
+- (instancetype)initWithPath:(NSString *)path requestAdapter:(SharedWire_runtimeProtoAdapter<S> *)requestAdapter responseAdapter:(SharedWire_runtimeProtoAdapter<R> *)responseAdapter __attribute__((swift_name("init(path:requestAdapter:responseAdapter:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinPair")))
 @interface SharedKotlinPair<__covariant A, __covariant B> : SharedBase
+@property (readonly) A _Nullable first __attribute__((swift_name("first")));
+@property (readonly) B _Nullable second __attribute__((swift_name("second")));
 - (instancetype)initWithFirst:(A _Nullable)first second:(B _Nullable)second __attribute__((swift_name("init(first:second:)"))) __attribute__((objc_designated_initializer));
 - (SharedKotlinPair<A, B> *)doCopyFirst:(A _Nullable)first second:(B _Nullable)second __attribute__((swift_name("doCopy(first:second:)")));
 - (BOOL)equalsOther:(id _Nullable)other __attribute__((swift_name("equals(other:)")));
 - (int32_t)hashCode __attribute__((swift_name("hashCode()")));
 - (NSString *)toString __attribute__((swift_name("toString()")));
-@property (readonly) A _Nullable first __attribute__((swift_name("first")));
-@property (readonly) B _Nullable second __attribute__((swift_name("second")));
 @end
 
 __attribute__((swift_name("Wire_runtimeMessageSink")))
@@ -4852,21 +5448,22 @@ __attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKoinDefinition")))
 @interface SharedKoin_coreKoinDefinition<R> : SharedBase
+@property (readonly) SharedKoin_coreInstanceFactory<R> *factory __attribute__((swift_name("factory")));
+@property (readonly) SharedKoin_coreModule *module __attribute__((swift_name("module")));
 - (instancetype)initWithModule:(SharedKoin_coreModule *)module factory:(SharedKoin_coreInstanceFactory<R> *)factory __attribute__((swift_name("init(module:factory:)"))) __attribute__((objc_designated_initializer));
 - (SharedKoin_coreKoinDefinition<R> *)doCopyModule:(SharedKoin_coreModule *)module factory:(SharedKoin_coreInstanceFactory<R> *)factory __attribute__((swift_name("doCopy(module:factory:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) SharedKoin_coreInstanceFactory<R> *factory __attribute__((swift_name("factory")));
-@property (readonly) SharedKoin_coreModule *module __attribute__((swift_name("module")));
 @end
 
 __attribute__((swift_name("Koin_coreInstanceFactory")))
 @interface SharedKoin_coreInstanceFactory<T> : SharedKoin_coreLockable
+@property (class, readonly, getter=companion) SharedKoin_coreInstanceFactoryCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) SharedKoin_coreBeanDefinition<T> *beanDefinition __attribute__((swift_name("beanDefinition")));
 - (instancetype)initWithBeanDefinition:(SharedKoin_coreBeanDefinition<T> *)beanDefinition __attribute__((swift_name("init(beanDefinition:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
-@property (class, readonly, getter=companion) SharedKoin_coreInstanceFactoryCompanion *companion __attribute__((swift_name("companion")));
 - (T _Nullable)createContext:(SharedKoin_coreInstanceContext *)context __attribute__((swift_name("create(context:)")));
 - (void)dropScope:(SharedKoin_coreScope * _Nullable)scope __attribute__((swift_name("drop(scope:)")));
 - (void)dropAll __attribute__((swift_name("dropAll()")));
@@ -4874,7 +5471,6 @@ __attribute__((swift_name("Koin_coreInstanceFactory")))
 - (T _Nullable)getContext:(SharedKoin_coreInstanceContext *)context __attribute__((swift_name("get(context:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (BOOL)isCreatedContext:(SharedKoin_coreInstanceContext * _Nullable)context __attribute__((swift_name("isCreated(context:)")));
-@property (readonly) SharedKoin_coreBeanDefinition<T> *beanDefinition __attribute__((swift_name("beanDefinition")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -4891,25 +5487,26 @@ __attribute__((swift_name("Koin_coreSingleInstanceFactory")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreScopeDSL")))
 @interface SharedKoin_coreScopeDSL : SharedBase
+@property (readonly) SharedKoin_coreModule *module __attribute__((swift_name("module")));
+@property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
 - (instancetype)initWithScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier module:(SharedKoin_coreModule *)module __attribute__((swift_name("init(scopeQualifier:module:)"))) __attribute__((objc_designated_initializer));
 - (SharedKoin_coreKoinDefinition<id> *)factoryQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(id _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition __attribute__((swift_name("factory(qualifier:definition:)")));
 - (SharedKoin_coreKoinDefinition<id> *)scopedQualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(id _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition __attribute__((swift_name("scoped(qualifier:definition:)")));
-@property (readonly) SharedKoin_coreModule *module __attribute__((swift_name("module")));
-@property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKoinApplication.Companion")))
 @interface SharedKoin_coreKoinApplicationCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedKoin_coreKoinApplicationCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedKoin_coreKoinApplicationCompanion *shared __attribute__((swift_name("shared")));
 - (SharedKoin_coreKoinApplication *)doInit __attribute__((swift_name("doInit()")));
 @end
 
 __attribute__((swift_name("Koin_coreLogger")))
 @interface SharedKoin_coreLogger : SharedBase
+@property SharedKoin_coreLevel *level __attribute__((swift_name("level")));
 - (instancetype)initWithLevel:(SharedKoin_coreLevel *)level __attribute__((swift_name("init(level:)"))) __attribute__((objc_designated_initializer));
 - (void)debugMsg:(NSString *)msg __attribute__((swift_name("debug(msg:)")));
 - (void)displayLevel:(SharedKoin_coreLevel *)level msg:(NSString *)msg __attribute__((swift_name("display(level:msg:)")));
@@ -4919,27 +5516,31 @@ __attribute__((swift_name("Koin_coreLogger")))
 - (void)logLvl:(SharedKoin_coreLevel *)lvl msg:(NSString *(^)(void))msg __attribute__((swift_name("log(lvl:msg:)")));
 - (void)logLvl:(SharedKoin_coreLevel *)lvl msg_:(NSString *)msg __attribute__((swift_name("log(lvl:msg_:)")));
 - (void)warnMsg:(NSString *)msg __attribute__((swift_name("warn(msg:)")));
-@property SharedKoin_coreLevel *level __attribute__((swift_name("level")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreLevel")))
 @interface SharedKoin_coreLevel : SharedKotlinEnum<SharedKoin_coreLevel *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedKoin_coreLevel *debug __attribute__((swift_name("debug")));
 @property (class, readonly) SharedKoin_coreLevel *info __attribute__((swift_name("info")));
 @property (class, readonly) SharedKoin_coreLevel *warning __attribute__((swift_name("warning")));
 @property (class, readonly) SharedKoin_coreLevel *error __attribute__((swift_name("error")));
 @property (class, readonly) SharedKoin_coreLevel *none __attribute__((swift_name("none")));
-+ (SharedKotlinArray<SharedKoin_coreLevel *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedKoin_coreLevel *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedKoin_coreLevel *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKoin")))
 @interface SharedKoin_coreKoin : SharedBase
+@property (readonly) SharedKoin_coreExtensionManager *extensionManager __attribute__((swift_name("extensionManager")));
+@property (readonly) SharedKoin_coreInstanceRegistry *instanceRegistry __attribute__((swift_name("instanceRegistry")));
+@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
+@property (readonly) SharedKoin_corePropertyRegistry *propertyRegistry __attribute__((swift_name("propertyRegistry")));
+@property (readonly) SharedKoin_coreScopeRegistry *scopeRegistry __attribute__((swift_name("scopeRegistry")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (void)close __attribute__((swift_name("close()")));
@@ -4968,11 +5569,6 @@ __attribute__((swift_name("Koin_coreKoin")))
 - (void)setPropertyKey:(NSString *)key value:(id)value __attribute__((swift_name("setProperty(key:value:)")));
 - (void)setupLoggerLogger:(SharedKoin_coreLogger *)logger __attribute__((swift_name("setupLogger(logger:)")));
 - (void)unloadModulesModules:(NSArray<SharedKoin_coreModule *> *)modules __attribute__((swift_name("unloadModules(modules:)")));
-@property (readonly) SharedKoin_coreExtensionManager *extensionManager __attribute__((swift_name("extensionManager")));
-@property (readonly) SharedKoin_coreInstanceRegistry *instanceRegistry __attribute__((swift_name("instanceRegistry")));
-@property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
-@property (readonly) SharedKoin_corePropertyRegistry *propertyRegistry __attribute__((swift_name("propertyRegistry")));
-@property (readonly) SharedKoin_coreScopeRegistry *scopeRegistry __attribute__((swift_name("scopeRegistry")));
 @end
 
 __attribute__((swift_name("Instance_keeperInstanceKeeperInstance")))
@@ -4983,16 +5579,16 @@ __attribute__((swift_name("Instance_keeperInstanceKeeperInstance")))
 
 __attribute__((swift_name("Back_handlerBackCallback")))
 @interface SharedBack_handlerBackCallback : SharedBase
-- (instancetype)initWithIsEnabled:(BOOL)isEnabled priority:(int32_t)priority __attribute__((swift_name("init(isEnabled:priority:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedBack_handlerBackCallbackCompanion *companion __attribute__((swift_name("companion")));
+@property BOOL isEnabled __attribute__((swift_name("isEnabled")));
+@property int32_t priority __attribute__((swift_name("priority")));
+- (instancetype)initWithIsEnabled:(BOOL)isEnabled priority:(int32_t)priority __attribute__((swift_name("init(isEnabled:priority:)"))) __attribute__((objc_designated_initializer));
 - (void)addEnabledChangedListenerListener:(void (^)(SharedBoolean *))listener __attribute__((swift_name("addEnabledChangedListener(listener:)")));
 - (void)onBack __attribute__((swift_name("onBack()")));
 - (void)onBackCancelled __attribute__((swift_name("onBackCancelled()")));
 - (void)onBackProgressedBackEvent:(SharedBack_handlerBackEvent *)backEvent __attribute__((swift_name("onBackProgressed(backEvent:)")));
 - (void)onBackStartedBackEvent:(SharedBack_handlerBackEvent *)backEvent __attribute__((swift_name("onBackStarted(backEvent:)")));
 - (void)removeEnabledChangedListenerListener:(void (^)(SharedBoolean *))listener __attribute__((swift_name("removeEnabledChangedListener(listener:)")));
-@property BOOL isEnabled __attribute__((swift_name("isEnabled")));
-@property int32_t priority __attribute__((swift_name("priority")));
 @end
 
 __attribute__((swift_name("KotlinKType")))
@@ -5164,14 +5760,14 @@ __attribute__((swift_name("KotlinLazy")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinLazyThreadSafetyMode")))
 @interface SharedKotlinLazyThreadSafetyMode : SharedKotlinEnum<SharedKotlinLazyThreadSafetyMode *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedKotlinLazyThreadSafetyMode *synchronized __attribute__((swift_name("synchronized")));
 @property (class, readonly) SharedKotlinLazyThreadSafetyMode *publication __attribute__((swift_name("publication")));
 @property (class, readonly) SharedKotlinLazyThreadSafetyMode *none __attribute__((swift_name("none")));
-+ (SharedKotlinArray<SharedKotlinLazyThreadSafetyMode *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedKotlinLazyThreadSafetyMode *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedKotlinLazyThreadSafetyMode *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((swift_name("Koin_coreScopeCallback")))
@@ -5186,31 +5782,61 @@ __attribute__((swift_name("Stately_concurrencyThreadLocalRef")))
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (T _Nullable)get __attribute__((swift_name("get()")));
 - (void)remove __attribute__((swift_name("remove()")));
-- (void)setValue:(T _Nullable)value __attribute__((swift_name("set(value_:)")));
+- (void)setValue__:(T _Nullable)value __attribute__((swift_name("set(value_:)")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
+@protocol SharedKotlinx_coroutines_coreSelectClause1 <SharedKotlinx_coroutines_coreSelectClause>
+@required
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause2")))
+@protocol SharedKotlinx_coroutines_coreSelectClause2 <SharedKotlinx_coroutines_coreSelectClause>
+@required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinUnit")))
+@interface SharedKotlinUnit : SharedBase
+@property (class, readonly, getter=shared) SharedKotlinUnit *shared __attribute__((swift_name("shared")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)unit __attribute__((swift_name("init()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))
+@protocol SharedKotlinx_coroutines_coreSelectInstance
+@required
+- (void)disposeOnCompletionDisposableHandle:(id<SharedKotlinx_coroutines_coreDisposableHandle>)disposableHandle __attribute__((swift_name("disposeOnCompletion(disposableHandle:)")));
+- (void)selectInRegistrationPhaseInternalResult:(id _Nullable)internalResult __attribute__((swift_name("selectInRegistrationPhase(internalResult:)")));
+- (BOOL)trySelectClauseObject:(id)clauseObject result:(id _Nullable)result __attribute__((swift_name("trySelect(clauseObject:result:)")));
+@property (readonly) id<SharedKotlinCoroutineContext> context __attribute__((swift_name("context")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeFieldEncoding.Companion")))
 @interface SharedWire_runtimeFieldEncodingCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWire_runtimeFieldEncodingCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWire_runtimeFieldEncodingCompanion *shared __attribute__((swift_name("shared")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeSyntax.Companion")))
 @interface SharedWire_runtimeSyntaxCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWire_runtimeSyntaxCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWire_runtimeSyntaxCompanion *shared __attribute__((swift_name("shared")));
 - (SharedWire_runtimeSyntax *)getString:(NSString *)string __attribute__((swift_name("get(string:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinDoubleArray")))
 @interface SharedKotlinDoubleArray : SharedBase
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 + (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
 + (instancetype)arrayWithSize:(int32_t)size init:(SharedDouble *(^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
 + (instancetype)alloc __attribute__((unavailable));
@@ -5218,7 +5844,6 @@ __attribute__((swift_name("KotlinDoubleArray")))
 - (double)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
 - (SharedKotlinDoubleIterator *)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(double)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -5231,18 +5856,9 @@ __attribute__((swift_name("Wire_runtimeDuration")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinUnit")))
-@interface SharedKotlinUnit : SharedBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)unit __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedKotlinUnit *shared __attribute__((swift_name("shared")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinIntArray")))
 @interface SharedKotlinIntArray : SharedBase
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 + (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
 + (instancetype)arrayWithSize:(int32_t)size init:(SharedInt *(^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
 + (instancetype)alloc __attribute__((unavailable));
@@ -5250,12 +5866,12 @@ __attribute__((swift_name("KotlinIntArray")))
 - (int32_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
 - (SharedKotlinIntIterator *)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(int32_t)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinLongArray")))
 @interface SharedKotlinLongArray : SharedBase
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 + (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
 + (instancetype)arrayWithSize:(int32_t)size init:(SharedLong *(^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
 + (instancetype)alloc __attribute__((unavailable));
@@ -5263,12 +5879,12 @@ __attribute__((swift_name("KotlinLongArray")))
 - (int64_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
 - (SharedKotlinLongIterator *)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(int64_t)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinFloatArray")))
 @interface SharedKotlinFloatArray : SharedBase
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 + (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
 + (instancetype)arrayWithSize:(int32_t)size init:(SharedFloat *(^)(SharedInt *))init __attribute__((swift_name("init(size:init:)")));
 + (instancetype)alloc __attribute__((unavailable));
@@ -5276,30 +5892,35 @@ __attribute__((swift_name("KotlinFloatArray")))
 - (float)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
 - (SharedKotlinFloatIterator *)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(float)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeProtoReader.Companion")))
 @interface SharedWire_runtimeProtoReaderCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWire_runtimeProtoReaderCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWire_runtimeProtoReaderCompanion *shared __attribute__((swift_name("shared")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Wire_runtimeProtoWriter.Companion")))
 @interface SharedWire_runtimeProtoWriterCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedWire_runtimeProtoWriterCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedWire_runtimeProtoWriterCompanion *shared __attribute__((swift_name("shared")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("OkioBuffer.UnsafeCursor")))
 @interface SharedOkioBufferUnsafeCursor : SharedBase <SharedOkioCloseable>
+@property SharedOkioBuffer * _Nullable buffer __attribute__((swift_name("buffer")));
+@property SharedKotlinByteArray * _Nullable data __attribute__((swift_name("data")));
+@property int32_t end __attribute__((swift_name("end")));
+@property int64_t offset __attribute__((swift_name("offset")));
+@property BOOL readWrite __attribute__((swift_name("readWrite")));
+@property int32_t start __attribute__((swift_name("start")));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 
@@ -5312,53 +5933,16 @@ __attribute__((swift_name("OkioBuffer.UnsafeCursor")))
 - (int32_t)next __attribute__((swift_name("next()")));
 - (int64_t)resizeBufferNewSize:(int64_t)newSize __attribute__((swift_name("resizeBuffer(newSize:)")));
 - (int32_t)seekOffset:(int64_t)offset __attribute__((swift_name("seek(offset:)")));
-@property SharedOkioBuffer * _Nullable buffer __attribute__((swift_name("buffer")));
-@property SharedKotlinByteArray * _Nullable data __attribute__((swift_name("data")));
-@property int32_t end __attribute__((swift_name("end")));
-@property int64_t offset __attribute__((swift_name("offset")));
-@property BOOL readWrite __attribute__((swift_name("readWrite")));
-@property int32_t start __attribute__((swift_name("start")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("OkioTimeout.Companion")))
 @interface SharedOkioTimeoutCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedOkioTimeoutCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedOkioTimeout *NONE __attribute__((swift_name("NONE")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedOkioTimeoutCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) SharedOkioTimeout *NONE __attribute__((swift_name("NONE")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
-@protocol SharedKotlinx_coroutines_coreSelectClause
-@required
-@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
-@property (readonly) SharedKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<SharedKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(SharedKotlinThrowable *) __attribute__((swift_name("onCancellationConstructor")));
-@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
-@property (readonly) void (^regFunc)(id, id<SharedKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause2")))
-@protocol SharedKotlinx_coroutines_coreSelectClause2 <SharedKotlinx_coroutines_coreSelectClause>
-@required
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreChannelIterator")))
-@protocol SharedKotlinx_coroutines_coreChannelIterator
-@required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)hasNextWithCompletionHandler:(void (^)(SharedBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("hasNext(completionHandler:)")));
-- (id _Nullable)next __attribute__((swift_name("next()")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
-@protocol SharedKotlinx_coroutines_coreSelectClause1 <SharedKotlinx_coroutines_coreSelectClause>
-@required
 @end
 
 
@@ -5378,13 +5962,6 @@ __attribute__((swift_name("KotlinCoroutineContext")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreBeanDefinition")))
 @interface SharedKoin_coreBeanDefinition<T> : SharedBase
-- (instancetype)initWithScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier primaryType:(id<SharedKotlinKClass>)primaryType qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(T _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition kind:(SharedKoin_coreKind *)kind secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes __attribute__((swift_name("init(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)"))) __attribute__((objc_designated_initializer));
-- (SharedKoin_coreBeanDefinition<T> *)doCopyScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier primaryType:(id<SharedKotlinKClass>)primaryType qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(T _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition kind:(SharedKoin_coreKind *)kind secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes __attribute__((swift_name("doCopy(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (BOOL)hasTypeClazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("hasType(clazz:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (BOOL)isClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier scopeDefinition:(id<SharedKoin_coreQualifier>)scopeDefinition __attribute__((swift_name("is(clazz:qualifier:scopeDefinition:)")));
-- (NSString *)description __attribute__((swift_name("description()")));
 @property SharedKoin_coreCallbacks<T> *callbacks __attribute__((swift_name("callbacks")));
 @property (readonly) T _Nullable (^definition)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *) __attribute__((swift_name("definition")));
 @property (readonly) SharedKoin_coreKind *kind __attribute__((swift_name("kind")));
@@ -5392,25 +5969,32 @@ __attribute__((swift_name("Koin_coreBeanDefinition")))
 @property id<SharedKoin_coreQualifier> _Nullable qualifier __attribute__((swift_name("qualifier")));
 @property (readonly) id<SharedKoin_coreQualifier> scopeQualifier __attribute__((swift_name("scopeQualifier")));
 @property NSArray<id<SharedKotlinKClass>> *secondaryTypes __attribute__((swift_name("secondaryTypes")));
+- (instancetype)initWithScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier primaryType:(id<SharedKotlinKClass>)primaryType qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(T _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition kind:(SharedKoin_coreKind *)kind secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes __attribute__((swift_name("init(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)"))) __attribute__((objc_designated_initializer));
+- (SharedKoin_coreBeanDefinition<T> *)doCopyScopeQualifier:(id<SharedKoin_coreQualifier>)scopeQualifier primaryType:(id<SharedKotlinKClass>)primaryType qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier definition:(T _Nullable (^)(SharedKoin_coreScope *, SharedKoin_coreParametersHolder *))definition kind:(SharedKoin_coreKind *)kind secondaryTypes:(NSArray<id<SharedKotlinKClass>> *)secondaryTypes __attribute__((swift_name("doCopy(scopeQualifier:primaryType:qualifier:definition:kind:secondaryTypes:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (BOOL)hasTypeClazz:(id<SharedKotlinKClass>)clazz __attribute__((swift_name("hasType(clazz:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (BOOL)isClazz:(id<SharedKotlinKClass>)clazz qualifier:(id<SharedKoin_coreQualifier> _Nullable)qualifier scopeDefinition:(id<SharedKoin_coreQualifier>)scopeDefinition __attribute__((swift_name("is(clazz:qualifier:scopeDefinition:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreInstanceFactoryCompanion")))
 @interface SharedKoin_coreInstanceFactoryCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedKoin_coreInstanceFactoryCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) NSString *ERROR_SEPARATOR __attribute__((swift_name("ERROR_SEPARATOR")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedKoin_coreInstanceFactoryCompanion *shared __attribute__((swift_name("shared")));
-@property (readonly) NSString *ERROR_SEPARATOR __attribute__((swift_name("ERROR_SEPARATOR")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreInstanceContext")))
 @interface SharedKoin_coreInstanceContext : SharedBase
-- (instancetype)initWithLogger:(SharedKoin_coreLogger *)logger scope:(SharedKoin_coreScope *)scope parameters:(SharedKoin_coreParametersHolder * _Nullable)parameters __attribute__((swift_name("init(logger:scope:parameters:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) SharedKoin_coreLogger *logger __attribute__((swift_name("logger")));
 @property (readonly) SharedKoin_coreParametersHolder * _Nullable parameters __attribute__((swift_name("parameters")));
 @property (readonly) SharedKoin_coreScope *scope __attribute__((swift_name("scope")));
+- (instancetype)initWithLogger:(SharedKoin_coreLogger *)logger scope:(SharedKoin_coreScope *)scope parameters:(SharedKoin_coreParametersHolder * _Nullable)parameters __attribute__((swift_name("init(logger:scope:parameters:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((swift_name("Koin_coreKoinComponent")))
@@ -5439,11 +6023,11 @@ __attribute__((swift_name("Koin_coreExtensionManager")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreInstanceRegistry")))
 @interface SharedKoin_coreInstanceRegistry : SharedBase
+@property (readonly) SharedKoin_coreKoin *_koin __attribute__((swift_name("_koin")));
+@property (readonly) NSDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> *instances __attribute__((swift_name("instances")));
 - (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
 - (void)saveMappingAllowOverride:(BOOL)allowOverride mapping:(NSString *)mapping factory:(SharedKoin_coreInstanceFactory<id> *)factory logWarning:(BOOL)logWarning __attribute__((swift_name("saveMapping(allowOverride:mapping:factory:logWarning:)")));
 - (int32_t)size __attribute__((swift_name("size()")));
-@property (readonly) SharedKoin_coreKoin *_koin __attribute__((swift_name("_koin")));
-@property (readonly) NSDictionary<NSString *, SharedKoin_coreInstanceFactory<id> *> *instances __attribute__((swift_name("instances")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -5459,33 +6043,33 @@ __attribute__((swift_name("Koin_corePropertyRegistry")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreScopeRegistry")))
 @interface SharedKoin_coreScopeRegistry : SharedBase
-- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedKoin_coreScopeRegistryCompanion *companion __attribute__((swift_name("companion")));
-- (void)loadScopesModules:(NSSet<SharedKoin_coreModule *> *)modules __attribute__((swift_name("loadScopes(modules:)")));
 @property (readonly) SharedKoin_coreScope *rootScope __attribute__((swift_name("rootScope")));
 @property (readonly) NSSet<id<SharedKoin_coreQualifier>> *scopeDefinitions __attribute__((swift_name("scopeDefinitions")));
+- (instancetype)initWith_koin:(SharedKoin_coreKoin *)_koin __attribute__((swift_name("init(_koin:)"))) __attribute__((objc_designated_initializer));
+- (void)loadScopesModules:(NSSet<SharedKoin_coreModule *> *)modules __attribute__((swift_name("loadScopes(modules:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Back_handlerBackCallback.Companion")))
 @interface SharedBack_handlerBackCallbackCompanion : SharedBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) SharedBack_handlerBackCallbackCompanion *shared __attribute__((swift_name("shared")));
 @property (readonly) int32_t PRIORITY_DEFAULT __attribute__((swift_name("PRIORITY_DEFAULT")));
 @property (readonly) int32_t PRIORITY_MAX __attribute__((swift_name("PRIORITY_MAX")));
 @property (readonly) int32_t PRIORITY_MIN __attribute__((swift_name("PRIORITY_MIN")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Back_handlerBackEvent")))
 @interface SharedBack_handlerBackEvent : SharedBase
-- (instancetype)initWithProgress:(float)progress swipeEdge:(SharedBack_handlerBackEventSwipeEdge *)swipeEdge touchX:(float)touchX touchY:(float)touchY __attribute__((swift_name("init(progress:swipeEdge:touchX:touchY:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) float progress __attribute__((swift_name("progress")));
 @property (readonly) SharedBack_handlerBackEventSwipeEdge *swipeEdge __attribute__((swift_name("swipeEdge")));
 @property (readonly) float touchX __attribute__((swift_name("touchX")));
 @property (readonly) float touchY __attribute__((swift_name("touchY")));
+- (instancetype)initWithProgress:(float)progress swipeEdge:(SharedBack_handlerBackEventSwipeEdge *)swipeEdge touchX:(float)touchX touchY:(float)touchY __attribute__((swift_name("init(progress:swipeEdge:touchX:touchY:)"))) __attribute__((objc_designated_initializer));
 @end
 
 
@@ -5496,14 +6080,14 @@ __attribute__((swift_name("Back_handlerBackEvent")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinKTypeProjection")))
 @interface SharedKotlinKTypeProjection : SharedBase
-- (instancetype)initWithVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SharedKotlinKTypeProjectionCompanion *companion __attribute__((swift_name("companion")));
+@property (readonly) id<SharedKotlinKType> _Nullable type __attribute__((swift_name("type")));
+@property (readonly) SharedKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
+- (instancetype)initWithVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("init(variance:type:)"))) __attribute__((objc_designated_initializer));
 - (SharedKotlinKTypeProjection *)doCopyVariance:(SharedKotlinKVariance * _Nullable)variance type:(id<SharedKotlinKType> _Nullable)type __attribute__((swift_name("doCopy(variance:type:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) id<SharedKotlinKType> _Nullable type __attribute__((swift_name("type")));
-@property (readonly) SharedKotlinKVariance * _Nullable variance __attribute__((swift_name("variance")));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
@@ -5569,17 +6153,6 @@ __attribute__((swift_name("KotlinAnnotation")))
 @required
 @end
 
-
-/**
- * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
-*/
-__attribute__((swift_name("Kotlinx_serialization_coreSerialKind")))
-@interface SharedKotlinx_serialization_coreSerialKind : SharedBase
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end
-
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
 @protocol SharedKotlinx_serialization_coreCompositeDecoder
 @required
@@ -5610,6 +6183,12 @@ __attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
 - (NSString *)decodeStringElementDescriptor:(id<SharedKotlinx_serialization_coreSerialDescriptor>)descriptor index:(int32_t)index __attribute__((swift_name("decodeStringElement(descriptor:index:)")));
 - (void)endStructureDescriptor:(id<SharedKotlinx_serialization_coreSerialDescriptor>)descriptor __attribute__((swift_name("endStructure(descriptor:)")));
 @property (readonly) SharedKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
+@protocol SharedKotlinx_coroutines_coreDisposableHandle
+@required
+- (void)dispose __attribute__((swift_name("dispose()")));
 @end
 
 __attribute__((swift_name("KotlinDoubleIterator")))
@@ -5644,15 +6223,6 @@ __attribute__((swift_name("KotlinFloatIterator")))
 - (float)nextFloat __attribute__((swift_name("nextFloat()")));
 @end
 
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))
-@protocol SharedKotlinx_coroutines_coreSelectInstance
-@required
-- (void)disposeOnCompletionDisposableHandle:(id<SharedKotlinx_coroutines_coreDisposableHandle>)disposableHandle __attribute__((swift_name("disposeOnCompletion(disposableHandle:)")));
-- (void)selectInRegistrationPhaseInternalResult:(id _Nullable)internalResult __attribute__((swift_name("selectInRegistrationPhase(internalResult:)")));
-- (BOOL)trySelectClauseObject:(id)clauseObject result:(id _Nullable)result __attribute__((swift_name("trySelect(clauseObject:result:)")));
-@property (readonly) id<SharedKotlinCoroutineContext> context __attribute__((swift_name("context")));
-@end
-
 __attribute__((swift_name("KotlinCoroutineContextElement")))
 @protocol SharedKotlinCoroutineContextElement <SharedKotlinCoroutineContext>
 @required
@@ -5667,25 +6237,25 @@ __attribute__((swift_name("KotlinCoroutineContextKey")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreKind")))
 @interface SharedKoin_coreKind : SharedKotlinEnum<SharedKoin_coreKind *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedKoin_coreKind *singleton __attribute__((swift_name("singleton")));
 @property (class, readonly) SharedKoin_coreKind *factory __attribute__((swift_name("factory")));
 @property (class, readonly) SharedKoin_coreKind *scoped __attribute__((swift_name("scoped")));
-+ (SharedKotlinArray<SharedKoin_coreKind *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedKoin_coreKind *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedKoin_coreKind *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreCallbacks")))
 @interface SharedKoin_coreCallbacks<T> : SharedBase
+@property (readonly) void (^ _Nullable onClose)(T _Nullable) __attribute__((swift_name("onClose")));
 - (instancetype)initWithOnClose:(void (^ _Nullable)(T _Nullable))onClose __attribute__((swift_name("init(onClose:)"))) __attribute__((objc_designated_initializer));
 - (SharedKoin_coreCallbacks<T> *)doCopyOnClose:(void (^ _Nullable)(T _Nullable))onClose __attribute__((swift_name("doCopy(onClose:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) void (^ _Nullable onClose)(T _Nullable) __attribute__((swift_name("onClose")));
 @end
 
 __attribute__((swift_name("Koin_coreKoinExtension")))
@@ -5698,23 +6268,23 @@ __attribute__((swift_name("Koin_coreKoinExtension")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Koin_coreScopeRegistry.Companion")))
 @interface SharedKoin_coreScopeRegistryCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedKoin_coreScopeRegistryCompanion *shared __attribute__((swift_name("shared")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedKoin_coreScopeRegistryCompanion *shared __attribute__((swift_name("shared")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Back_handlerBackEvent.SwipeEdge")))
 @interface SharedBack_handlerBackEventSwipeEdge : SharedKotlinEnum<SharedBack_handlerBackEventSwipeEdge *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedBack_handlerBackEventSwipeEdge *unknown __attribute__((swift_name("unknown")));
 @property (class, readonly) SharedBack_handlerBackEventSwipeEdge *left __attribute__((swift_name("left")));
 @property (class, readonly) SharedBack_handlerBackEventSwipeEdge *right __attribute__((swift_name("right")));
-+ (SharedKotlinArray<SharedBack_handlerBackEventSwipeEdge *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedBack_handlerBackEventSwipeEdge *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedBack_handlerBackEventSwipeEdge *> *)values __attribute__((swift_name("values()")));
 @end
 
 
@@ -5725,23 +6295,24 @@ __attribute__((swift_name("Back_handlerBackEvent.SwipeEdge")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinKVariance")))
 @interface SharedKotlinKVariance : SharedKotlinEnum<SharedKotlinKVariance *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly) SharedKotlinKVariance *invariant __attribute__((swift_name("invariant")));
 @property (class, readonly) SharedKotlinKVariance *in __attribute__((swift_name("in")));
 @property (class, readonly) SharedKotlinKVariance *out __attribute__((swift_name("out")));
-+ (SharedKotlinArray<SharedKotlinKVariance *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SharedKotlinKVariance *> *entries __attribute__((swift_name("entries")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (SharedKotlinArray<SharedKotlinKVariance *> *)values __attribute__((swift_name("values()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinKTypeProjection.Companion")))
 @interface SharedKotlinKTypeProjectionCompanion : SharedBase
+@property (class, readonly, getter=shared) SharedKotlinKTypeProjectionCompanion *shared __attribute__((swift_name("shared")));
+@property (readonly) SharedKotlinKTypeProjection *STAR __attribute__((swift_name("STAR")));
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) SharedKotlinKTypeProjectionCompanion *shared __attribute__((swift_name("shared")));
 
 /**
  * @note annotations
@@ -5760,7 +6331,6 @@ __attribute__((swift_name("KotlinKTypeProjection.Companion")))
  *   kotlin.jvm.JvmStatic
 */
 - (SharedKotlinKTypeProjection *)invariantType:(id<SharedKotlinKType>)type __attribute__((swift_name("invariant(type:)")));
-@property (readonly) SharedKotlinKTypeProjection *STAR __attribute__((swift_name("STAR")));
 @end
 
 
@@ -5777,12 +6347,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector"
 - (void)polymorphicDefaultBaseClass:(id<SharedKotlinKClass>)baseClass defaultDeserializerProvider:(id<SharedKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefault(baseClass:defaultDeserializerProvider:)"))) __attribute__((deprecated("Deprecated in favor of function with more precise name: polymorphicDefaultDeserializer")));
 - (void)polymorphicDefaultDeserializerBaseClass:(id<SharedKotlinKClass>)baseClass defaultDeserializerProvider:(id<SharedKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefaultDeserializer(baseClass:defaultDeserializerProvider:)")));
 - (void)polymorphicDefaultSerializerBaseClass:(id<SharedKotlinKClass>)baseClass defaultSerializerProvider:(id<SharedKotlinx_serialization_coreSerializationStrategy> _Nullable (^)(id))defaultSerializerProvider __attribute__((swift_name("polymorphicDefaultSerializer(baseClass:defaultSerializerProvider:)")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
-@protocol SharedKotlinx_coroutines_coreDisposableHandle
-@required
-- (void)dispose __attribute__((swift_name("dispose()")));
 @end
 
 #pragma pop_macro("_Nullable_result")

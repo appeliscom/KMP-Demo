@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.kotlinAndroid).apply(false)
     alias(libs.plugins.kotlinMultiplatform).apply(false)
     alias(libs.plugins.jetbrainsKotlinJvm) apply false
+    alias(libs.plugins.skie) apply false
 }

@@ -14,4 +14,6 @@ object KmpApplication {
 
         // Do other stuff like analytics, logging, crashlytics etc.
     }
+
+    fun test() {}
 }
