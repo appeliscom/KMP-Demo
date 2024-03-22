@@ -16,9 +16,17 @@ sealed class RootDestination: Destination<RootEntry> {
         }
 
     }
+
+    @Serializable
+    data object MainNavigation: RootDestination() {
+        override fun createComponent(componentContext: ComponentContext): RootEntry {
+            TODO("Not yet implemented")
+        }
+    }
 }
 
 
 sealed class RootEntry : NavEntry {
     data class AppStartup(val screen: AppStartupScreen) : RootEntry()
+    data object MainAppNavigation: RootEntry()
 }

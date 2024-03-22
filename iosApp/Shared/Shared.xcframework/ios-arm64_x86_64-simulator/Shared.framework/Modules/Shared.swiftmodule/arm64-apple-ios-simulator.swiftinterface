@@ -10,6 +10,7 @@ import _SwiftConcurrencyShims
 extension Shared.Skie.KMP_Demo__shared.RootDestination {
   @frozen public enum __Sealed : Swift.Hashable {
     case appStartup(Shared.RootDestination.AppStartup)
+    case mainNavigation(Shared.RootDestination.MainNavigation)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed, b: Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed) -> Swift.Bool
     public var hashValue: Swift.Int {
@@ -33,6 +34,7 @@ public var rootUILogicModule: Shared.Koin_coreModule {
 extension Shared.Skie.KMP_Demo__shared.RootEntry {
   @frozen public enum __Sealed : Swift.Hashable {
     case appStartup(Shared.RootEntry.AppStartup)
+    case mainAppNavigation(Shared.RootEntry.MainAppNavigation)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed, b: Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed) -> Swift.Bool
     public var hashValue: Swift.Int {

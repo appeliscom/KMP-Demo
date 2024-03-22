@@ -13334,9 +13334,12 @@ Classes:
     SwiftName: "viewState"
     Type: "SharedSkieKotlinMutableStateFlow<SharedAppStartupViewState *> * _Nonnull"
   Methods:
-  - Selector: "init"
+  - Selector: "initWithNavigator:"
     MethodKind: "Instance"
-    SwiftName: "init()"
+    SwiftName: "init(navigator:)"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedRootSlotNavigator> _Nonnull"
   - Selector: "isEqual:"
     MethodKind: "Instance"
     SwiftName: "isEqual(_:)"
@@ -13344,6 +13347,10 @@ Classes:
     Parameters:
     - Position: 0
       Type: "id _Nullable"
+  - Selector: "finishStartup"
+    MethodKind: "Instance"
+    SwiftName: "finishStartup()"
+    ResultType: "void"
   - Selector: "getKoin"
     MethodKind: "Instance"
     SwiftName: "getKoin()"
@@ -13367,6 +13374,10 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
+  - Selector: "init"
+    MethodKind: "Instance"
+    SwiftName: "init()"
+    Availability: "nonswift"
 - Name: "SharedAppStartupViewState"
   SwiftName: "AppStartupViewState"
   Methods:
@@ -13478,6 +13489,42 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "toString()"
     ResultType: "NSString * _Nonnull"
+- Name: "SharedRootDestinationMainNavigation"
+  SwiftName: "RootDestination.MainNavigation"
+  Methods:
+  - Selector: "createComponentComponentContext:"
+    MethodKind: "Instance"
+    SwiftName: "createComponent(componentContext:)"
+    ResultType: "SharedRootEntry * _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "serializer"
+    MethodKind: "Instance"
+    SwiftName: "serializer()"
+    ResultType: "id<SharedKotlinx_serialization_coreKSerializer> _Nonnull"
+  - Selector: "serializerTypeParamsSerializers:"
+    MethodKind: "Instance"
+    SwiftName: "serializer(typeParamsSerializers:)"
+    ResultType: "id<SharedKotlinx_serialization_coreKSerializer> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "SharedKotlinArray<id<SharedKotlinx_serialization_coreKSerializer>> * _Nonnull"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
 - Name: "SharedRootEntry"
   SwiftName: "RootEntry"
   Methods:
@@ -13532,16 +13579,9 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedRootNavigationFactory"
-  SwiftName: "RootNavigationFactory"
+- Name: "SharedRootEntryMainAppNavigation"
+  SwiftName: "RootEntry.MainAppNavigation"
   Methods:
-  - Selector: "createComponentContext:"
-    MethodKind: "Instance"
-    SwiftName: "create(componentContext:)"
-    ResultType: "id<SharedRootNavigation> _Nonnull"
-    Parameters:
-    - Position: 0
-      Type: "id<SharedComponentContext> _Nonnull"
   - Selector: "isEqual:"
     MethodKind: "Instance"
     SwiftName: "isEqual(_:)"
@@ -13557,12 +13597,16 @@ Classes:
     MethodKind: "Instance"
     SwiftName: "description()"
     ResultType: "NSString * _Nonnull"
-- Name: "SharedRootNavigationViewState"
-  SwiftName: "RootNavigationViewState"
+- Name: "SharedRootNavigationFactory"
+  SwiftName: "RootNavigationFactory"
   Methods:
-  - Selector: "init"
+  - Selector: "createComponentContext:"
     MethodKind: "Instance"
-    SwiftName: "init()"
+    SwiftName: "create(componentContext:)"
+    ResultType: "id<SharedRootNavigation> _Nonnull"
+    Parameters:
+    - Position: 0
+      Type: "id<SharedComponentContext> _Nonnull"
   - Selector: "isEqual:"
     MethodKind: "Instance"
     SwiftName: "isEqual(_:)"
@@ -21238,6 +21282,10 @@ Protocols:
 - Name: "SharedAppStartupScreen"
   SwiftName: "AppStartupScreen"
   Properties:
+  - Name: "actions"
+    PropertyKind: "Instance"
+    SwiftName: "actions"
+    Type: "id<SharedAppStartupScreenActions> _Nonnull"
   - Name: "viewState"
     PropertyKind: "Instance"
     SwiftName: "viewState"
@@ -21250,6 +21298,28 @@ Protocols:
     Parameters:
     - Position: 0
       Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedAppStartupScreenActions"
+  SwiftName: "AppStartupScreenActions"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "finishStartup"
+    MethodKind: "Instance"
+    SwiftName: "finishStartup()"
+    ResultType: "void"
   - Selector: "hash"
     MethodKind: "Instance"
     SwiftName: "hash()"
@@ -21305,6 +21375,10 @@ Protocols:
   - Selector: "showAppStartup"
     MethodKind: "Instance"
     SwiftName: "showAppStartup()"
+    ResultType: "void"
+  - Selector: "showMainAppNavigation"
+    MethodKind: "Instance"
+    SwiftName: "showMainAppNavigation()"
     ResultType: "void"
   - Selector: "description"
     MethodKind: "Instance"

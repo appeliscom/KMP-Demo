@@ -17194,6 +17194,57 @@
                       },
                       {
                         "kind": "Var",
+                        "name": "mainNavigation",
+                        "printedName": "mainNavigation",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed.Type) -> (Shared.RootDestination.MainNavigation) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(Shared.RootDestination.MainNavigation) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "MainNavigation",
+                                    "printedName": "Shared.RootDestination.MainNavigation",
+                                    "usr": "c:objc(cs)SharedRootDestinationMainNavigation"
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Metatype",
+                                "printedName": "Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed.Type",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "EnumElement",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO14mainNavigationyAISo0afg4MainJ0CcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO14mainNavigationyAISo0afg4MainJ0CcAImF",
+                        "moduleName": "Shared",
+                        "fixedbinaryorder": 1
+                      },
+                      {
+                        "kind": "Var",
                         "name": "hashValue",
                         "printedName": "hashValue",
                         "children": [
@@ -17384,6 +17435,57 @@
                         "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO10appStartupyAISo0afg3AppJ0CcAImF",
                         "moduleName": "Shared",
                         "fixedbinaryorder": 0
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "mainAppNavigation",
+                        "printedName": "mainAppNavigation",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed.Type) -> (Shared.RootEntry.MainAppNavigation) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(Shared.RootEntry.MainAppNavigation) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "MainAppNavigation",
+                                    "printedName": "Shared.RootEntry.MainAppNavigation",
+                                    "usr": "c:objc(cs)SharedRootEntryMainAppNavigation"
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Metatype",
+                                "printedName": "Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed.Type",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "EnumElement",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO17mainAppNavigationyAISo0afg4MainjK0CcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO17mainAppNavigationyAISo0afg4MainjK0CcAImF",
+                        "moduleName": "Shared",
+                        "fixedbinaryorder": 1
                       },
                       {
                         "kind": "Var",

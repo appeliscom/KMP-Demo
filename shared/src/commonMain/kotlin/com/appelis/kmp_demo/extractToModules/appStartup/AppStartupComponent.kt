@@ -10,4 +10,5 @@ internal class AppStartupComponent(
 ): ViewModelComponent<AppStartupViewModel>(componentContext), AppStartupScreen {
     override val viewModel: AppStartupViewModel by viewModel()
     override val viewState: StateFlow<AppStartupViewState> = viewModel.viewState
+    override val actions: AppStartupScreen.Actions = viewModel
 }

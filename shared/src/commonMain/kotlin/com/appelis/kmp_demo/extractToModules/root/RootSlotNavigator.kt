@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 interface RootSlotNavigator {
     fun createSlot(componentContext: ComponentContext): StateFlow<ChildSlot<RootDestination, RootEntry>>
     fun showAppStartup()
-//    fun showHomescreen()
+    fun showMainAppNavigation()
 }
 
 internal class RootSlotNavigatorImpl: RootSlotNavigator {
@@ -29,4 +29,9 @@ internal class RootSlotNavigatorImpl: RootSlotNavigator {
     ).asStateFlow(componentContext.componentCoroutineScope())
 
     override fun showAppStartup() = slotNavigator.activate(RootDestination.AppStartup)
+    override fun showMainAppNavigation() {
+        TODO("Not yet implemented")
+    }
+
+
 }
