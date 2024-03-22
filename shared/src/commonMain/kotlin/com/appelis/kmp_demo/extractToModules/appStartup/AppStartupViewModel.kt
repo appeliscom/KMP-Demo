@@ -13,6 +13,6 @@ class AppStartupViewModel(
     )
 
     override fun finishStartup() {
-        TODO("Not yet implemented")
+       navigator.showMainAppNavigation()
     }
 }

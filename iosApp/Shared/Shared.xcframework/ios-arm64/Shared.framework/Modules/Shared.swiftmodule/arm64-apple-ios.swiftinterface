@@ -10,7 +10,7 @@ import _SwiftConcurrencyShims
 extension Shared.Skie.KMP_Demo__shared.RootDestination {
   @frozen public enum __Sealed : Swift.Hashable {
     case appStartup(Shared.RootDestination.AppStartup)
-    case mainNavigation(Shared.RootDestination.MainNavigation)
+    case mainAppFlow(Shared.RootDestination.MainAppFlow)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed, b: Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed) -> Swift.Bool
     public var hashValue: Swift.Int {
@@ -21,6 +21,12 @@ extension Shared.Skie.KMP_Demo__shared.RootDestination {
 public func onEnum<__Sealed>(of sealed: __Sealed) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed where __Sealed : Shared.RootDestination
 @_disfavoredOverload public func onEnum<__Sealed>(of sealed: __Sealed?) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed? where __Sealed : Shared.RootDestination
 public func koinGet(clazz: any Shared.KotlinKClass, qualifier: (any Shared.Koin_coreQualifier)?, parameters: (() -> Shared.Koin_coreParametersHolder)?) -> Any?
+public var homescreenUILogicModule_: Shared.Koin_coreModule {
+  get
+}
+public var mainAppFlowModule: Shared.Koin_coreModule {
+  get
+}
 public var appStartupUILogicModule: Shared.Koin_coreModule {
   get
 }
@@ -28,13 +34,37 @@ public var sharedModule: Shared.Koin_coreModule {
   get
 }
 public func getPlatform() -> any Shared.Platform
+extension Shared.Skie.KMP_Demo__shared.MainFlowEntry {
+  @frozen public enum __Sealed : Swift.Hashable {
+    case homescreen(Shared.MainFlowEntry.Homescreen)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed, b: Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public func onEnum<__Sealed>(of sealed: __Sealed) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed where __Sealed : Shared.MainFlowEntry
+@_disfavoredOverload public func onEnum<__Sealed>(of sealed: __Sealed?) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed? where __Sealed : Shared.MainFlowEntry
+extension Shared.Skie.KMP_Demo__shared.MainFlowDestination {
+  @frozen public enum __Sealed : Swift.Hashable {
+    case homescreen(Shared.MainFlowDestination.Homescreen)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed, b: Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public func onEnum<__Sealed>(of sealed: __Sealed) -> Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed where __Sealed : Shared.MainFlowDestination
+@_disfavoredOverload public func onEnum<__Sealed>(of sealed: __Sealed?) -> Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed? where __Sealed : Shared.MainFlowDestination
 public var rootUILogicModule: Shared.Koin_coreModule {
   get
 }
 extension Shared.Skie.KMP_Demo__shared.RootEntry {
   @frozen public enum __Sealed : Swift.Hashable {
     case appStartup(Shared.RootEntry.AppStartup)
-    case mainAppNavigation(Shared.RootEntry.MainAppNavigation)
+    case mainAppFlow(Shared.RootEntry.MainAppFlow)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed, b: Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed) -> Swift.Bool
     public var hashValue: Swift.Int {
@@ -867,6 +897,10 @@ public enum Skie {
   }
   public typealias org_jetbrains_kotlinx__kotlinx_coroutines_core = Shared.Skie.KotlinxCoroutinesCore
   public enum KMP_Demo__shared {
+    public enum MainFlowDestination {
+    }
+    public enum MainFlowEntry {
+    }
     public enum RootDestination {
     }
     public enum RootEntry {

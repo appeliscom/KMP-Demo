@@ -174,6 +174,100 @@
       },
       {
         "kind": "Var",
+        "name": "homescreenUILogicModule_",
+        "printedName": "homescreenUILogicModule_",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Koin_coreModule",
+            "printedName": "Shared.Koin_coreModule",
+            "usr": "c:objc(cs)SharedKoin_coreModule"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:6Shared24homescreenUILogicModule_So0a9Koin_coreD0Cvp",
+        "mangledName": "$s6Shared24homescreenUILogicModule_So0a9Koin_coreD0Cvp",
+        "moduleName": "Shared",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Koin_coreModule",
+                "printedName": "Shared.Koin_coreModule",
+                "usr": "c:objc(cs)SharedKoin_coreModule"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:6Shared24homescreenUILogicModule_So0a9Koin_coreD0Cvg",
+            "mangledName": "$s6Shared24homescreenUILogicModule_So0a9Koin_coreD0Cvg",
+            "moduleName": "Shared",
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Shared"
+      },
+      {
+        "kind": "Var",
+        "name": "mainAppFlowModule",
+        "printedName": "mainAppFlowModule",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Koin_coreModule",
+            "printedName": "Shared.Koin_coreModule",
+            "usr": "c:objc(cs)SharedKoin_coreModule"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:6Shared17mainAppFlowModuleSo0a9Koin_coreE0Cvp",
+        "mangledName": "$s6Shared17mainAppFlowModuleSo0a9Koin_coreE0Cvp",
+        "moduleName": "Shared",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Koin_coreModule",
+                "printedName": "Shared.Koin_coreModule",
+                "usr": "c:objc(cs)SharedKoin_coreModule"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:6Shared17mainAppFlowModuleSo0a9Koin_coreE0Cvg",
+            "mangledName": "$s6Shared17mainAppFlowModuleSo0a9Koin_coreE0Cvg",
+            "moduleName": "Shared",
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Shared"
+      },
+      {
+        "kind": "Var",
         "name": "appStartupUILogicModule",
         "printedName": "appStartupUILogicModule",
         "children": [
@@ -284,6 +378,166 @@
         "moduleName": "Shared",
         "declAttributes": [
           "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Shared"
+      },
+      {
+        "kind": "Function",
+        "name": "onEnum",
+        "printedName": "onEnum(of:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "__Sealed",
+            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "GenericTypeParam",
+            "printedName": "τ_0_0"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedOx_tSo0aijK0CRbzlF",
+        "mangledName": "$s6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedOx_tSo0aijK0CRbzlF",
+        "moduleName": "Shared",
+        "genericSig": "<τ_0_0 where τ_0_0 : Shared.MainFlowEntry>",
+        "sugared_genericSig": "<__Sealed where __Sealed : Shared.MainFlowEntry>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "onEnum",
+        "printedName": "onEnum(of:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "__Sealed",
+                "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "τ_0_0?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "usr": "s:Sq"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedOSgxSg_tSo0aijK0CRbzlF",
+        "mangledName": "$s6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedOSgxSg_tSo0aijK0CRbzlF",
+        "moduleName": "Shared",
+        "genericSig": "<τ_0_0 where τ_0_0 : Shared.MainFlowEntry>",
+        "sugared_genericSig": "<__Sealed where __Sealed : Shared.MainFlowEntry>",
+        "declAttributes": [
+          "AccessControl",
+          "DisfavoredOverload"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Shared"
+      },
+      {
+        "kind": "Function",
+        "name": "onEnum",
+        "printedName": "onEnum(of:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "__Sealed",
+            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "GenericTypeParam",
+            "printedName": "τ_0_0"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedOx_tSo0aijK0CRbzlF",
+        "mangledName": "$s6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedOx_tSo0aijK0CRbzlF",
+        "moduleName": "Shared",
+        "genericSig": "<τ_0_0 where τ_0_0 : Shared.MainFlowDestination>",
+        "sugared_genericSig": "<__Sealed where __Sealed : Shared.MainFlowDestination>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "onEnum",
+        "printedName": "onEnum(of:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "__Sealed",
+                "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "τ_0_0?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "usr": "s:Sq"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedOSgxSg_tSo0aijK0CRbzlF",
+        "mangledName": "$s6Shared6onEnum2ofAA4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedOSgxSg_tSo0aijK0CRbzlF",
+        "moduleName": "Shared",
+        "genericSig": "<τ_0_0 where τ_0_0 : Shared.MainFlowDestination>",
+        "sugared_genericSig": "<__Sealed where __Sealed : Shared.MainFlowDestination>",
+        "declAttributes": [
+          "AccessControl",
+          "DisfavoredOverload"
         ],
         "funcSelfKind": "NonMutating"
       },
@@ -17133,6 +17387,392 @@
             "children": [
               {
                 "kind": "TypeDecl",
+                "name": "MainFlowDestination",
+                "printedName": "MainFlowDestination",
+                "children": [
+                  {
+                    "kind": "TypeDecl",
+                    "name": "__Sealed",
+                    "printedName": "__Sealed",
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "name": "homescreen",
+                        "printedName": "homescreen",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed.Type) -> (Shared.MainFlowDestination.Homescreen) -> Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(Shared.MainFlowDestination.Homescreen) -> Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Homescreen",
+                                    "printedName": "Shared.MainFlowDestination.Homescreen",
+                                    "usr": "c:objc(cs)SharedMainFlowDestinationHomescreen"
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Metatype",
+                                "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed.Type",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "EnumElement",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
+                        "moduleName": "Shared",
+                        "fixedbinaryorder": 0
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "hashValue",
+                        "printedName": "hashValue",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO9hashValueSivp",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO9hashValueSivp",
+                        "moduleName": "Shared",
+                        "implicit": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO9hashValueSivg",
+                            "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO9hashValueSivg",
+                            "moduleName": "Shared",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "hash",
+                        "printedName": "hash(into:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Hasher",
+                            "printedName": "Swift.Hasher",
+                            "paramValueOwnership": "InOut",
+                            "usr": "s:s6HasherV"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO4hash4intoys6HasherVz_tF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO4hash4intoys6HasherVz_tF",
+                        "moduleName": "Shared",
+                        "implicit": true,
+                        "funcSelfKind": "NonMutating"
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "==",
+                        "printedName": "==(_:_:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "__Sealed",
+                            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "__Sealed",
+                            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO2eeoiySbAI_AItFZ",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO2eeoiySbAI_AItFZ",
+                        "moduleName": "Shared",
+                        "static": true,
+                        "implicit": true,
+                        "funcSelfKind": "NonMutating"
+                      }
+                    ],
+                    "declKind": "Enum",
+                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO",
+                    "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO",
+                    "moduleName": "Shared",
+                    "declAttributes": [
+                      "Frozen"
+                    ],
+                    "isFromExtension": true,
+                    "isEnumExhaustive": true,
+                    "conformances": [
+                      {
+                        "kind": "Conformance",
+                        "name": "Hashable",
+                        "printedName": "Hashable",
+                        "usr": "s:SH",
+                        "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Equatable",
+                        "printedName": "Equatable",
+                        "usr": "s:SQ",
+                        "mangledName": "$sSQ"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Enum",
+                "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO",
+                "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO",
+                "moduleName": "Shared",
+                "declAttributes": [
+                  "AccessControl"
+                ]
+              },
+              {
+                "kind": "TypeDecl",
+                "name": "MainFlowEntry",
+                "printedName": "MainFlowEntry",
+                "children": [
+                  {
+                    "kind": "TypeDecl",
+                    "name": "__Sealed",
+                    "printedName": "__Sealed",
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "name": "homescreen",
+                        "printedName": "homescreen",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed.Type) -> (Shared.MainFlowEntry.Homescreen) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(Shared.MainFlowEntry.Homescreen) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Homescreen",
+                                    "printedName": "Shared.MainFlowEntry.Homescreen",
+                                    "usr": "c:objc(cs)SharedMainFlowEntryHomescreen"
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Metatype",
+                                "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed.Type",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "EnumElement",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
+                        "moduleName": "Shared",
+                        "fixedbinaryorder": 0
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "hashValue",
+                        "printedName": "hashValue",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO9hashValueSivp",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO9hashValueSivp",
+                        "moduleName": "Shared",
+                        "implicit": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO9hashValueSivg",
+                            "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO9hashValueSivg",
+                            "moduleName": "Shared",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "hash",
+                        "printedName": "hash(into:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Hasher",
+                            "printedName": "Swift.Hasher",
+                            "paramValueOwnership": "InOut",
+                            "usr": "s:s6HasherV"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO4hash4intoys6HasherVz_tF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO4hash4intoys6HasherVz_tF",
+                        "moduleName": "Shared",
+                        "implicit": true,
+                        "funcSelfKind": "NonMutating"
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "==",
+                        "printedName": "==(_:_:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "__Sealed",
+                            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "__Sealed",
+                            "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                            "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO2eeoiySbAI_AItFZ",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO2eeoiySbAI_AItFZ",
+                        "moduleName": "Shared",
+                        "static": true,
+                        "implicit": true,
+                        "funcSelfKind": "NonMutating"
+                      }
+                    ],
+                    "declKind": "Enum",
+                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO",
+                    "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO",
+                    "moduleName": "Shared",
+                    "declAttributes": [
+                      "Frozen"
+                    ],
+                    "isFromExtension": true,
+                    "isEnumExhaustive": true,
+                    "conformances": [
+                      {
+                        "kind": "Conformance",
+                        "name": "Hashable",
+                        "printedName": "Hashable",
+                        "usr": "s:SH",
+                        "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Equatable",
+                        "printedName": "Equatable",
+                        "usr": "s:SQ",
+                        "mangledName": "$sSQ"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Enum",
+                "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO",
+                "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO",
+                "moduleName": "Shared",
+                "declAttributes": [
+                  "AccessControl"
+                ]
+              },
+              {
+                "kind": "TypeDecl",
                 "name": "RootDestination",
                 "printedName": "RootDestination",
                 "children": [
@@ -17194,18 +17834,18 @@
                       },
                       {
                         "kind": "Var",
-                        "name": "mainNavigation",
-                        "printedName": "mainNavigation",
+                        "name": "mainAppFlow",
+                        "printedName": "mainAppFlow",
                         "children": [
                           {
                             "kind": "TypeFunc",
                             "name": "Function",
-                            "printedName": "(Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed.Type) -> (Shared.RootDestination.MainNavigation) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed.Type) -> (Shared.RootDestination.MainAppFlow) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
                             "children": [
                               {
                                 "kind": "TypeFunc",
                                 "name": "Function",
-                                "printedName": "(Shared.RootDestination.MainNavigation) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
+                                "printedName": "(Shared.RootDestination.MainAppFlow) -> Shared.Skie.KMP_Demo__shared.RootDestination.__Sealed",
                                 "children": [
                                   {
                                     "kind": "TypeNominal",
@@ -17215,9 +17855,9 @@
                                   },
                                   {
                                     "kind": "TypeNominal",
-                                    "name": "MainNavigation",
-                                    "printedName": "Shared.RootDestination.MainNavigation",
-                                    "usr": "c:objc(cs)SharedRootDestinationMainNavigation"
+                                    "name": "MainAppFlow",
+                                    "printedName": "Shared.RootDestination.MainAppFlow",
+                                    "usr": "c:objc(cs)SharedRootDestinationMainAppFlow"
                                   }
                                 ]
                               },
@@ -17238,8 +17878,8 @@
                           }
                         ],
                         "declKind": "EnumElement",
-                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO14mainNavigationyAISo0afg4MainJ0CcAImF",
-                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO14mainNavigationyAISo0afg4MainJ0CcAImF",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO11mainAppFlowyAISo0afg4MainjK0CcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO15RootDestinationO8__SealedO11mainAppFlowyAISo0afg4MainjK0CcAImF",
                         "moduleName": "Shared",
                         "fixedbinaryorder": 1
                       },
@@ -17438,18 +18078,18 @@
                       },
                       {
                         "kind": "Var",
-                        "name": "mainAppNavigation",
-                        "printedName": "mainAppNavigation",
+                        "name": "mainAppFlow",
+                        "printedName": "mainAppFlow",
                         "children": [
                           {
                             "kind": "TypeFunc",
                             "name": "Function",
-                            "printedName": "(Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed.Type) -> (Shared.RootEntry.MainAppNavigation) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed.Type) -> (Shared.RootEntry.MainAppFlow) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
                             "children": [
                               {
                                 "kind": "TypeFunc",
                                 "name": "Function",
-                                "printedName": "(Shared.RootEntry.MainAppNavigation) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
+                                "printedName": "(Shared.RootEntry.MainAppFlow) -> Shared.Skie.KMP_Demo__shared.RootEntry.__Sealed",
                                 "children": [
                                   {
                                     "kind": "TypeNominal",
@@ -17459,9 +18099,9 @@
                                   },
                                   {
                                     "kind": "TypeNominal",
-                                    "name": "MainAppNavigation",
-                                    "printedName": "Shared.RootEntry.MainAppNavigation",
-                                    "usr": "c:objc(cs)SharedRootEntryMainAppNavigation"
+                                    "name": "MainAppFlow",
+                                    "printedName": "Shared.RootEntry.MainAppFlow",
+                                    "usr": "c:objc(cs)SharedRootEntryMainAppFlow"
                                   }
                                 ]
                               },
@@ -17482,8 +18122,8 @@
                           }
                         ],
                         "declKind": "EnumElement",
-                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO17mainAppNavigationyAISo0afg4MainjK0CcAImF",
-                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO17mainAppNavigationyAISo0afg4MainjK0CcAImF",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO11mainAppFlowyAISo0afg4MainjK0CcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO9RootEntryO8__SealedO11mainAppFlowyAISo0afg4MainjK0CcAImF",
                         "moduleName": "Shared",
                         "fixedbinaryorder": 1
                       },

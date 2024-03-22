@@ -47,6 +47,8 @@ struct RootNavigationView: View {
                 switch onEnum(of: navigationEntry) {
                 case let .appStartup(entry):
                     AppStartupView(screen: entry.screen)
+                case let .mainAppFlow(entry):
+                    MainFlowNavigationView()
                 }
             }
         }
@@ -54,10 +56,15 @@ struct RootNavigationView: View {
 }
 
 struct AppStartupView: View {
-    @ObservedObject @StateFlowAdapter private var viewState: AppStartupViewState
+    @ObservedObject 
+    @StateFlowAdapter
+    private var viewState: AppStartupViewState
+    
+    private let actions: AppStartupScreenActions
     
     public init(screen: AppStartupScreen) {
         self._viewState = .init(screen.viewState)
+        self.actions = screen.actions
     }
     
     var body: some View {
@@ -69,7 +76,7 @@ struct AppStartupView: View {
             
             Button(
                 action: {
-                     // TODO: implement
+                    actions.finishStartup()
                 },
                 label: {
                     Text("continue to app")

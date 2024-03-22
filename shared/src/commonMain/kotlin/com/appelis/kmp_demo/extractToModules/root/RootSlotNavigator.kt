@@ -29,9 +29,5 @@ internal class RootSlotNavigatorImpl: RootSlotNavigator {
     ).asStateFlow(componentContext.componentCoroutineScope())
 
     override fun showAppStartup() = slotNavigator.activate(RootDestination.AppStartup)
-    override fun showMainAppNavigation() {
-        TODO("Not yet implemented")
-    }
-
-
+    override fun showMainAppNavigation() = slotNavigator.activate(RootDestination.MainAppFlow)
 }

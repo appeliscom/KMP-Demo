@@ -4,6 +4,8 @@ import com.appelis.kmp_demo.core.Destination
 import com.appelis.kmp_demo.core.NavEntry
 import com.appelis.kmp_demo.extractToModules.appStartup.AppStartupComponent
 import com.appelis.kmp_demo.extractToModules.appStartup.AppStartupScreen
+import com.appelis.kmp_demo.extractToModules.mainAppFlow.MainNavigation
+import com.appelis.kmp_demo.extractToModules.mainAppFlow.MainNavigationComponent
 import com.arkivanov.decompose.ComponentContext
 import kotlinx.serialization.Serializable
 
@@ -18,9 +20,9 @@ sealed class RootDestination: Destination<RootEntry> {
     }
 
     @Serializable
-    data object MainNavigation: RootDestination() {
+    data object MainAppFlow: RootDestination() {
         override fun createComponent(componentContext: ComponentContext): RootEntry {
-            TODO("Not yet implemented")
+            return RootEntry.MainAppFlow(MainNavigationComponent(componentContext))
         }
     }
 }
@@ -28,5 +30,5 @@ sealed class RootDestination: Destination<RootEntry> {
 
 sealed class RootEntry : NavEntry {
     data class AppStartup(val screen: AppStartupScreen) : RootEntry()
-    data object MainAppNavigation: RootEntry()
+    data class MainAppFlow(val navigation: MainNavigation): RootEntry()
 }
