@@ -48,7 +48,7 @@ struct RootNavigationView: View {
                 case let .appStartup(entry):
                     AppStartupView(screen: entry.screen)
                 case let .mainAppFlow(entry):
-                    MainFlowNavigationView()
+                    MainFlowNavigationView(component: entry.navigation)
                 }
             }
         }

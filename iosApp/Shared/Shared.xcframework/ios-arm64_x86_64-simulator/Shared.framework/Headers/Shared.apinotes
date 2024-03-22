@@ -21600,6 +21600,10 @@ Protocols:
 - Name: "SharedMainNavigation"
   SwiftName: "MainNavigation"
   Properties:
+  - Name: "actions"
+    PropertyKind: "Instance"
+    SwiftName: "actions"
+    Type: "id<SharedMainNavigationActions> _Nonnull"
   - Name: "stack"
     PropertyKind: "Instance"
     SwiftName: "stack"
@@ -21616,6 +21620,31 @@ Protocols:
     MethodKind: "Instance"
     SwiftName: "hash()"
     ResultType: "NSUInteger"
+  - Selector: "description"
+    MethodKind: "Instance"
+    SwiftName: "description()"
+    ResultType: "NSString * _Nonnull"
+- Name: "SharedMainNavigationActions"
+  SwiftName: "MainNavigationActions"
+  Methods:
+  - Selector: "isEqual:"
+    MethodKind: "Instance"
+    SwiftName: "isEqual(_:)"
+    ResultType: "BOOL"
+    Parameters:
+    - Position: 0
+      Type: "id _Nullable"
+  - Selector: "hash"
+    MethodKind: "Instance"
+    SwiftName: "hash()"
+    ResultType: "NSUInteger"
+  - Selector: "iosPopToNewStack:"
+    MethodKind: "Instance"
+    SwiftName: "iosPopTo(newStack:)"
+    ResultType: "void"
+    Parameters:
+    - Position: 0
+      Type: "NSArray<SharedChild<SharedMainFlowDestination *, SharedMainFlowEntry *> *> * _Nonnull"
   - Selector: "description"
     MethodKind: "Instance"
     SwiftName: "description()"

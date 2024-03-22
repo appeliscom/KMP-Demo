@@ -7,11 +7,28 @@
 //
 
 import Foundation
+import Shared
 import SwiftUI
 import SwiftUICore
 
 struct MainFlowNavigationView: View {
+    private let stack: SkieSwiftStateFlow<ChildStack<MainFlowDestination, MainFlowEntry>>
+    private let actions: MainNavigationActions
+
+    init(component: MainNavigation) {
+        self.stack = component.stack
+        self.actions = component.actions
+    }
+
     var body: some View {
-        Text("Main flow")
+        DecomposeNavigationStack(
+            kotlinStack: stack,
+            setPath: actions.iosPopTo
+        ) { entry in
+            switch onEnum(of: entry) {
+            case let .homescreen(entry):
+                HomescreenView(screen: entry.screen)
+            }
+        }
     }
 }

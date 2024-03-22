@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7EC2C3332BAAF378004DE4FF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC2C3322BAAF378004DE4FF /* RootView.swift */; };
 		7EC2C3352BADC564004DE4FF /* MainFlowNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC2C3342BADC564004DE4FF /* MainFlowNavigationView.swift */; };
+		7EC2C3372BADCB07004DE4FF /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC2C3362BADCB07004DE4FF /* HomescreenView.swift */; };
 		7EFC09EC2B9B19D800F0BBB0 /* SolarisTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = 7EFC09EB2B9B19D800F0BBB0 /* SolarisTemplate */; };
 		7EFC09EF2BA1C9B000F0BBB0 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 7EFC09EE2BA1C9B000F0BBB0 /* Shared */; };
 		7EFC09F22BA41EB700F0BBB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC09F12BA41EB700F0BBB0 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EC2C3322BAAF378004DE4FF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7EC2C3342BADC564004DE4FF /* MainFlowNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowNavigationView.swift; sourceTree = "<group>"; };
+		7EC2C3362BADCB07004DE4FF /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
 		7EF03B7C2B9AFB4700C9C57A /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = SOURCE_ROOT; };
 		7EFC09E62B9B134600F0BBB0 /* Template */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Template; sourceTree = SOURCE_ROOT; };
 		7EFC09E82B9B16DB00F0BBB0 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = SOURCE_ROOT; };
@@ -110,6 +112,7 @@
 				7EFC09F12BA41EB700F0BBB0 /* AppDelegate.swift */,
 				7EC2C3322BAAF378004DE4FF /* RootView.swift */,
 				7EC2C3342BADC564004DE4FF /* MainFlowNavigationView.swift */,
+				7EC2C3362BADCB07004DE4FF /* HomescreenView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				7EFC09F22BA41EB700F0BBB0 /* AppDelegate.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7EC2C3332BAAF378004DE4FF /* RootView.swift in Sources */,
+				7EC2C3372BADCB07004DE4FF /* HomescreenView.swift in Sources */,
 				7EC2C3352BADC564004DE4FF /* MainFlowNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
