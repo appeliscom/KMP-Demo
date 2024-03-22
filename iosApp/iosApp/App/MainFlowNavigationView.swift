@@ -28,6 +28,8 @@ struct MainFlowNavigationView: View {
             switch onEnum(of: entry) {
             case let .homescreen(entry):
                 HomescreenView(screen: entry.screen)
+            case let .category(entry):
+                CategoryView(screen: entry.screen)
             }
         }
     }

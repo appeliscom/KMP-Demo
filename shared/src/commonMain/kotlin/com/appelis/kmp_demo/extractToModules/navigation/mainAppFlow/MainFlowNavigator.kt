@@ -8,12 +8,15 @@ import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.navigate
+import com.arkivanov.decompose.router.stack.push
 import kotlinx.coroutines.flow.StateFlow
 
 internal interface  MainFlowNavigator {
     fun createStack(
         componentContext: ComponentContext
     ) : StateFlow<ChildStack<MainFlowDestination, MainFlowEntry>>
+
+    fun navigateToCategory()
 
     fun iosPop(newStack: List<Child<MainFlowDestination, MainFlowEntry>>)
 }
@@ -36,4 +39,8 @@ internal class MainFlowNavigatorImpl(
 
     override fun iosPop(newStack: List<Child<MainFlowDestination, MainFlowEntry>>) =
         stackNavigator.navigate { newStack.map { it.configuration } }
+
+    override fun navigateToCategory() {
+        stackNavigator.push(MainFlowDestination.Category)
+    }
 }

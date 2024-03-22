@@ -10,4 +10,5 @@ internal class HomescreenComponent(
 ) : ViewModelComponent<HomescreenViewModel>(componentContext), HomescreenScreen {
     override val viewModel: HomescreenViewModel by viewModel()
     override val viewState: StateFlow<HomescreenViewState> = viewModel.viewState
+    override val actions: HomescreenScreen.Actions = viewModel
 }

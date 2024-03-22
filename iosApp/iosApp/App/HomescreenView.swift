@@ -14,9 +14,11 @@ struct HomescreenView: View {
     @ObservedObject
     @StateFlowAdapter
     private var viewState: HomescreenViewState
+    private let actions: HomescreenScreenActions
     
     public init(screen: HomescreenScreen) {
         self._viewState = .init(screen.viewState)
+        self.actions = screen.actions
     }
     
     var body: some View {
@@ -26,14 +28,14 @@ struct HomescreenView: View {
             
             Spacer()
             
-//            Button(
-//                action: {
-//                    actions.finishStartup()
-//                },
-//                label: {
-//                    Text("continue to app")
-//                }
-//            )
+            Button(
+                action: {
+                    actions.navigateToCategory()
+                },
+                label: {
+                    Text("open category")
+                }
+            )
             
             Spacer()
         }

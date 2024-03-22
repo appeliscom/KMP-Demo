@@ -24,6 +24,9 @@ public func koinGet(clazz: any Shared.KotlinKClass, qualifier: (any Shared.Koin_
 public var homescreenUILogicModule_: Shared.Koin_coreModule {
   get
 }
+public var categoryUILogicModule: Shared.Koin_coreModule {
+  get
+}
 public var mainAppFlowModule: Shared.Koin_coreModule {
   get
 }
@@ -36,6 +39,7 @@ public var sharedModule: Shared.Koin_coreModule {
 public func getPlatform() -> any Shared.Platform
 extension Shared.Skie.KMP_Demo__shared.MainFlowEntry {
   @frozen public enum __Sealed : Swift.Hashable {
+    case category(Shared.MainFlowEntry.Category)
     case homescreen(Shared.MainFlowEntry.Homescreen)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed, b: Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed) -> Swift.Bool
@@ -48,6 +52,7 @@ public func onEnum<__Sealed>(of sealed: __Sealed) -> Shared.Skie.KMP_Demo__share
 @_disfavoredOverload public func onEnum<__Sealed>(of sealed: __Sealed?) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed? where __Sealed : Shared.MainFlowEntry
 extension Shared.Skie.KMP_Demo__shared.MainFlowDestination {
   @frozen public enum __Sealed : Swift.Hashable {
+    case category(Shared.MainFlowDestination.Category)
     case homescreen(Shared.MainFlowDestination.Homescreen)
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed, b: Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed) -> Swift.Bool

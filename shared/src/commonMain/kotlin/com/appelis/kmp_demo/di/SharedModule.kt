@@ -2,6 +2,7 @@ package com.appelis.kmp_demo.di
 
 import com.appelis.kmp_demo.Greeting
 import com.appelis.kmp_demo.extractToModules.features.appStartup.di.appStartupUILogicModule
+import com.appelis.kmp_demo.extractToModules.features.category.di.categoryUILogicModule
 import com.appelis.kmp_demo.extractToModules.features.homescreen.di.homescreenUILogicModule
 import com.appelis.kmp_demo.extractToModules.navigation.mainAppFlow.di.mainAppFlowModule
 import com.appelis.kmp_demo.extractToModules.navigation.root.di.rootUILogicModule
@@ -14,6 +15,7 @@ val sharedModule: Module = module {
         rootUILogicModule,
         appStartupUILogicModule,
         homescreenUILogicModule,
+        categoryUILogicModule,
         mainAppFlowModule
     )
 

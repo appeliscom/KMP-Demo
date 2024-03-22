@@ -4,4 +4,9 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface HomescreenScreen {
     val viewState: StateFlow<HomescreenViewState>
+    val actions: Actions
+
+    interface Actions {
+        fun navigateToCategory()
+    }
 }

@@ -221,6 +221,53 @@
       },
       {
         "kind": "Var",
+        "name": "categoryUILogicModule",
+        "printedName": "categoryUILogicModule",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Koin_coreModule",
+            "printedName": "Shared.Koin_coreModule",
+            "usr": "c:objc(cs)SharedKoin_coreModule"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:6Shared21categoryUILogicModuleSo0a9Koin_coreD0Cvp",
+        "mangledName": "$s6Shared21categoryUILogicModuleSo0a9Koin_coreD0Cvp",
+        "moduleName": "Shared",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Koin_coreModule",
+                "printedName": "Shared.Koin_coreModule",
+                "usr": "c:objc(cs)SharedKoin_coreModule"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:6Shared21categoryUILogicModuleSo0a9Koin_coreD0Cvg",
+            "mangledName": "$s6Shared21categoryUILogicModuleSo0a9Koin_coreD0Cvg",
+            "moduleName": "Shared",
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Shared"
+      },
+      {
+        "kind": "Var",
         "name": "mainAppFlowModule",
         "printedName": "mainAppFlowModule",
         "children": [
@@ -17397,6 +17444,57 @@
                     "children": [
                       {
                         "kind": "Var",
+                        "name": "category",
+                        "printedName": "category",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed.Type) -> (Shared.MainFlowDestination.Category) -> Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(Shared.MainFlowDestination.Category) -> Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Category",
+                                    "printedName": "Shared.MainFlowDestination.Category",
+                                    "usr": "c:objc(cs)SharedMainFlowDestinationCategory"
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Metatype",
+                                "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed.Type",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowDestination.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "EnumElement",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO8categoryyAISo0afgH8CategoryCcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO8categoryyAISo0afgH8CategoryCcAImF",
+                        "moduleName": "Shared",
+                        "fixedbinaryorder": 0
+                      },
+                      {
+                        "kind": "Var",
                         "name": "homescreen",
                         "printedName": "homescreen",
                         "children": [
@@ -17444,7 +17542,7 @@
                         "usr": "s:6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
                         "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO19MainFlowDestinationO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
                         "moduleName": "Shared",
-                        "fixedbinaryorder": 0
+                        "fixedbinaryorder": 1
                       },
                       {
                         "kind": "Var",
@@ -17590,6 +17688,57 @@
                     "children": [
                       {
                         "kind": "Var",
+                        "name": "category",
+                        "printedName": "category",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed.Type) -> (Shared.MainFlowEntry.Category) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(Shared.MainFlowEntry.Category) -> Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Category",
+                                    "printedName": "Shared.MainFlowEntry.Category",
+                                    "usr": "c:objc(cs)SharedMainFlowEntryCategory"
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Metatype",
+                                "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed.Type",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "__Sealed",
+                                    "printedName": "Shared.Skie.KMP_Demo__shared.MainFlowEntry.__Sealed",
+                                    "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "EnumElement",
+                        "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO8categoryyAISo0afgH8CategoryCcAImF",
+                        "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO8categoryyAISo0afgH8CategoryCcAImF",
+                        "moduleName": "Shared",
+                        "fixedbinaryorder": 0
+                      },
+                      {
+                        "kind": "Var",
                         "name": "homescreen",
                         "printedName": "homescreen",
                         "children": [
@@ -17637,7 +17786,7 @@
                         "usr": "s:6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
                         "mangledName": "$s6Shared4SkieO16KMP_Demo__sharedO13MainFlowEntryO8__SealedO10homescreenyAISo0afgH10HomescreenCcAImF",
                         "moduleName": "Shared",
-                        "fixedbinaryorder": 0
+                        "fixedbinaryorder": 1
                       },
                       {
                         "kind": "Var",
