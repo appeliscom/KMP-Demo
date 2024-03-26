@@ -1,22 +1,21 @@
 package com.appelis.kmp_demo.extractToModules.navigation.mainAppFlow
 
-import com.appelis.kmp_demo.core.extensions.asStateFlow
-import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.arkivanov.decompose.Child
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.navigate
+import com.arkivanov.decompose.router.stack.popTo
 import com.arkivanov.decompose.router.stack.push
-import kotlinx.coroutines.flow.StateFlow
+import com.arkivanov.decompose.value.Value
 
 internal interface  MainFlowNavigator {
     fun createStack(
         componentContext: ComponentContext
-    ) : StateFlow<ChildStack<MainFlowDestination, MainFlowEntry>>
+    ) : Value<ChildStack<MainFlowDestination, MainFlowEntry>>
 
-    fun iosPop(newStack: List<Child<MainFlowDestination, MainFlowEntry>>)
+    fun onBackClicked(toIndex: Int)
     fun navigateToCategory(id: String)
 }
 
@@ -24,7 +23,7 @@ internal class MainFlowNavigatorImpl(
 
 ) : MainFlowNavigator {
     private var stackNavigator: StackNavigation<MainFlowDestination> = StackNavigation()
-    override fun createStack(componentContext: ComponentContext): StateFlow<ChildStack<MainFlowDestination, MainFlowEntry>> = componentContext.childStack(
+    override fun createStack(componentContext: ComponentContext): Value<ChildStack<MainFlowDestination, MainFlowEntry>> = componentContext.childStack(
         source = stackNavigator,
         serializer = MainFlowDestination.serializer(),
         key = this::class.simpleName.toString(),
@@ -34,10 +33,10 @@ internal class MainFlowNavigatorImpl(
         handleBackButton = true,
         childFactory = { destination, childContext -> destination.createComponent(childContext) },
     )
-        .asStateFlow(componentContext.componentCoroutineScope())
 
-    override fun iosPop(newStack: List<Child<MainFlowDestination, MainFlowEntry>>) =
-        stackNavigator.navigate { newStack.map { it.configuration } }
+    override fun onBackClicked(toIndex: Int) {
+        stackNavigator.popTo(index = toIndex)
+    }
 
     override fun navigateToCategory(id: String) {
         stackNavigator.push(MainFlowDestination.Category(id))

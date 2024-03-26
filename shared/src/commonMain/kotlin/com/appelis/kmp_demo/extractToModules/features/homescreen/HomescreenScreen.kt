@@ -1,9 +1,9 @@
 package com.appelis.kmp_demo.extractToModules.features.homescreen
 
-import kotlinx.coroutines.flow.StateFlow
+import com.arkivanov.decompose.value.Value
 
 interface HomescreenScreen {
-    val viewState: StateFlow<HomescreenViewState>
+    val viewState: Value<HomescreenViewState>
     val actions: Actions
 
     interface Actions {

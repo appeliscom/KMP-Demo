@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.core
 
+import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.instancekeeper.InstanceKeeper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -23,7 +24,7 @@ abstract class SharedViewModel<VS : ViewState, UI_EVENT : UiEvent<VS>> :
     InstanceKeeper.Instance,
     KoinComponent {
 
-    abstract val viewState: MutableStateFlow<VS>
+    abstract val viewState: Value<VS>
 
     // region Lifecycle
 

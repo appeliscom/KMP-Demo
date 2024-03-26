@@ -12,25 +12,23 @@ import SwiftUI
 import SwiftUICore
 
 struct MainFlowNavigationView: View {
-    private let stack: SkieSwiftStateFlow<ChildStack<MainFlowDestination, MainFlowEntry>>
-    private let actions: MainNavigationActions
+    private let component: MainNavigation
 
     init(component: MainNavigation) {
-        self.stack = component.stack
-        self.actions = component.actions
+        self.component = component
     }
 
     var body: some View {
-        DecomposeNavigationStack(
-            kotlinStack: stack,
-            setPath: actions.iosPopTo
-        ) { entry in
-            switch onEnum(of: entry) {
-            case let .homescreen(entry):
-                HomescreenView(screen: entry.screen)
-            case let .category(entry):
-                CategoryView(screen: entry.screen)
+        StackView(
+            stackValue: StateValue(component.stack),
+            onBack: { index in component.onBackClicked(toIndex: index) }
+        ){ entry in
+                switch onEnum(of: entry) {
+                case let .homescreen(entry):
+                    HomescreenView(screen: entry.screen)
+                case let .category(entry):
+                    CategoryView(screen: entry.screen)
+                }
             }
-        }
     }
 }

@@ -11,13 +11,12 @@ import Shared
 import SwiftUICore
 
 struct HomescreenView: View {
-    @ObservedObject
-    @StateFlowAdapter
+    @StateValue
     private var viewState: HomescreenViewState
     private let actions: HomescreenScreenActions
     
     public init(screen: HomescreenScreen) {
-        self._viewState = .init(screen.viewState)
+        self._viewState = StateValue(screen.viewState)
         self.actions = screen.actions
     }
     

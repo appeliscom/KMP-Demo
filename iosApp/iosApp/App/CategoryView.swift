@@ -11,12 +11,11 @@ import Shared
 import SwiftUICore
 
 struct CategoryView: View {
-    @ObservedObject
-    @StateFlowAdapter
+    @StateValue
     private var viewState: CategoryViewState
     
     public init(screen: CategoryScreen) {
-        self._viewState = .init(screen.viewState)
+        self._viewState = StateValue(screen.viewState)
     }
     
     var body: some View {

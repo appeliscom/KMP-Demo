@@ -35,10 +35,11 @@ struct RootView: View {
 }
 
 struct RootNavigationView: View {
-    @ObservedObject @StateFlowAdapter private var slot: ChildSlot<RootDestination, RootEntry>
+    @StateValue
+    private var slot: ChildSlot<RootDestination, RootEntry>
     
     init(_ component: RootNavigation) {
-        self._slot = .init(component.slot)
+        self._slot = StateValue(component.slot)
     }
     
     var body: some View {
@@ -56,14 +57,13 @@ struct RootNavigationView: View {
 }
 
 struct AppStartupView: View {
-    @ObservedObject 
-    @StateFlowAdapter
+    @StateValue
     private var viewState: AppStartupViewState
     
     private let actions: AppStartupScreenActions
     
     public init(screen: AppStartupScreen) {
-        self._viewState = .init(screen.viewState)
+        self._viewState = StateValue(screen.viewState)
         self.actions = screen.actions
     }
     

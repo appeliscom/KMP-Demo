@@ -7,10 +7,11 @@ import com.arkivanov.decompose.router.slot.ChildSlot
 import com.arkivanov.decompose.router.slot.SlotNavigation
 import com.arkivanov.decompose.router.slot.activate
 import com.arkivanov.decompose.router.slot.childSlot
+import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.flow.StateFlow
 
 interface RootSlotNavigator {
-    fun createSlot(componentContext: ComponentContext): StateFlow<ChildSlot<RootDestination, RootEntry>>
+    fun createSlot(componentContext: ComponentContext): Value<ChildSlot<RootDestination, RootEntry>>
     fun showAppStartup()
     fun showMainAppNavigation()
 }
@@ -26,7 +27,7 @@ internal class RootSlotNavigatorImpl: RootSlotNavigator {
         childFactory = { destination, childContext ->
             destination.createComponent(childContext)
         },
-    ).asStateFlow(componentContext.componentCoroutineScope())
+    )
 
     override fun showAppStartup() = slotNavigator.activate(RootDestination.AppStartup)
     override fun showMainAppNavigation() = slotNavigator.activate(RootDestination.MainAppFlow)
