@@ -16,5 +16,4 @@ internal class HomescreenViewModel(
         mainFlowNavigator.navigateToCategory(id)
     }
 }
-
 class HomescreenViewState: ViewState
