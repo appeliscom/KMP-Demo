@@ -20,9 +20,9 @@ sealed class MainFlowDestination: Destination<MainFlowEntry> {
     }
 
     @Serializable
-    data object Category: MainFlowDestination() {
+    data class Category(private val id: String): MainFlowDestination() {
         override fun createComponent(componentContext: ComponentContext): MainFlowEntry {
-            return MainFlowEntry.Category(CategoryComponent(componentContext))
+            return MainFlowEntry.Category(CategoryComponent(componentContext, id))
         }
     }
 }

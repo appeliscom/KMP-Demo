@@ -5,9 +5,11 @@ import com.appelis.kmp_demo.extractToModules.navigation.mainAppFlow.MainFlowNavi
 import kotlinx.coroutines.flow.MutableStateFlow
 
 internal class CategoryViewModel(
-    private val mainFlowNavigator: MainFlowNavigator
+    private val mainFlowNavigator: MainFlowNavigator,
+    private val args: Args
 ) :SharedViewModel<CategoryViewState, Nothing>() {
-    override val viewState: MutableStateFlow<CategoryViewState> = MutableStateFlow(CategoryViewState())
+    override val viewState: MutableStateFlow<CategoryViewState> = MutableStateFlow(CategoryViewState(args.id))
 
 
+    data class Args(val id: String)
 }

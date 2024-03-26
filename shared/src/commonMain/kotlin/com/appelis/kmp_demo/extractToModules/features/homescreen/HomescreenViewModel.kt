@@ -12,8 +12,8 @@ internal class HomescreenViewModel(
         HomescreenViewState()
     )
 
-    override fun navigateToCategory() {
-        mainFlowNavigator.navigateToCategory()
+    override fun navigateToCategory(id: String) {
+        mainFlowNavigator.navigateToCategory(id)
     }
 }
 

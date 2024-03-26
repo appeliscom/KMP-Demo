@@ -7,6 +7,6 @@ interface HomescreenScreen {
     val actions: Actions
 
     interface Actions {
-        fun navigateToCategory()
+        fun navigateToCategory(id: String)
     }
 }

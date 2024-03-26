@@ -16,9 +16,8 @@ internal interface  MainFlowNavigator {
         componentContext: ComponentContext
     ) : StateFlow<ChildStack<MainFlowDestination, MainFlowEntry>>
 
-    fun navigateToCategory()
-
     fun iosPop(newStack: List<Child<MainFlowDestination, MainFlowEntry>>)
+    fun navigateToCategory(id: String)
 }
 
 internal class MainFlowNavigatorImpl(
@@ -40,7 +39,7 @@ internal class MainFlowNavigatorImpl(
     override fun iosPop(newStack: List<Child<MainFlowDestination, MainFlowEntry>>) =
         stackNavigator.navigate { newStack.map { it.configuration } }
 
-    override fun navigateToCategory() {
-        stackNavigator.push(MainFlowDestination.Category)
+    override fun navigateToCategory(id: String) {
+        stackNavigator.push(MainFlowDestination.Category(id))
     }
 }

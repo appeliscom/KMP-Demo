@@ -24,16 +24,7 @@ struct CategoryView: View {
             Text("Category")
                 .font(.title)
             
-            Spacer()
-            
-//            Button(
-//                action: {
-//                    actions.finishStartup()
-//                },
-//                label: {
-//                    Text("continue to app")
-//                }
-//            )
+            Text("id: \(viewState.id)")
             
             Spacer()
         }

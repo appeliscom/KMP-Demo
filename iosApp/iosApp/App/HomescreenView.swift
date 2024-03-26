@@ -30,7 +30,7 @@ struct HomescreenView: View {
             
             Button(
                 action: {
-                    actions.navigateToCategory()
+                    actions.navigateToCategory(id: "123456")
                 },
                 label: {
                     Text("open category")
