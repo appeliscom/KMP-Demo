@@ -18,7 +18,7 @@ struct iOSApp: App {
 //                    print("Response from iOS \(response)")
 //                }
             
-            RootView()
+            RootNavigationView(appDelegate.rootComponent)
 		}
 	}
 }

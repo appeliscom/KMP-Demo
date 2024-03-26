@@ -10,30 +10,6 @@ import Shared
 import SwiftUI
 import SwiftUICore
 
-struct RootView: View {
-    @Environment(\.scenePhase) var scenePhase: ScenePhase
-    
-    @State private var componentHolder = ComponentHolder { componentContext in
-        RootNavigationFactory().create(componentContext: componentContext)
-    }
-    
-    var body: some View {
-        RootNavigationView(componentHolder.component)
-            .onChange(of: scenePhase) { newPhase in
-                switch newPhase {
-                case .background:
-                    LifecycleRegistryExtKt.stop(componentHolder.lifecycle)
-                case .inactive:
-                    LifecycleRegistryExtKt.pause(componentHolder.lifecycle)
-                case .active:
-                    LifecycleRegistryExtKt.resume(componentHolder.lifecycle)
-                @unknown default:
-                    break
-                }
-            }
-    }
-}
-
 struct RootNavigationView: View {
     @StateValue
     private var slot: ChildSlot<RootDestination, RootEntry>

@@ -13,6 +13,9 @@ import KoinHelpers
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var nativeModule: Koin_coreModule
+    lazy var rootComponent = RootNavigationComponent(
+        componentContext: DefaultComponentContext(lifecycle: ApplicationLifecycle())
+    )
     
     override init() {
         self.nativeModule = NativeModuleKt.makeNativeModule(

@@ -9,10 +9,9 @@ import com.arkivanov.decompose.value.Value
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-internal class RootNavigationComponent(
+class RootNavigationComponent(
     componentContext: ComponentContext
 ) : ComponentContext by componentContext, KoinComponent, RootNavigation {
     private val rootNavigator: RootSlotNavigator by inject()
-
     override val slot: Value<ChildSlot<RootDestination, RootEntry>> = rootNavigator.createSlot(componentContext)
 }
