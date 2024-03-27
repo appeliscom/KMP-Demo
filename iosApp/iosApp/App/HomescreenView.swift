@@ -9,15 +9,16 @@
 import SwiftUI
 import Shared
 import SwiftUICore
+import KoinHelpers
 
 struct HomescreenView: View {
     @StateValue
     private var viewState: HomescreenViewState
-    private let actions: HomescreenScreenActions
     
-    public init(screen: HomescreenScreen) {
-        self._viewState = StateValue(screen.viewState)
-        self.actions = screen.actions
+    private var router: HomescreenRouter = inject()
+    
+    public init(component: HomescreenCompoment) {
+        self._viewState = StateValue(component.viewState)
     }
     
     var body: some View {
@@ -29,7 +30,7 @@ struct HomescreenView: View {
             
             Button(
                 action: {
-                    actions.navigateToCategory(id: "123456")
+                    router.navigateTo(route: .Category(id: "321654"))
                 },
                 label: {
                     Text("open category")

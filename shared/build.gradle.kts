@@ -28,8 +28,12 @@ kotlin {
             isStatic = true
 
             export(projects.grpcTest)
-            export(projects.features.homescreen.homescreenUiLogic)
+
             export(projects.core)
+            export(projects.features.homescreen.homescreenUiLogic)
+            export(projects.features.startup.startupUiLogic)
+            export(projects.features.category.categoryUiLogic)
+
 
             export(libs.essenty)
             export(libs.decompose)
@@ -40,14 +44,16 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(projects.grpcTest)
-            api(projects.features.homescreen.homescreenUiLogic)
             api(projects.core)
+
+            api(projects.features.homescreen.homescreenUiLogic)
+            api(projects.features.startup.startupUiLogic)
+            api(projects.features.category.categoryUiLogic)
 
             api(libs.essenty)
             api(libs.decompose)
             implementation(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
-
         }
     }
 }

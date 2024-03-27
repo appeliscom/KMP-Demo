@@ -14,8 +14,8 @@ struct CategoryView: View {
     @StateValue
     private var viewState: CategoryViewState
     
-    public init(screen: CategoryScreen) {
-        self._viewState = StateValue(screen.viewState)
+    public init(component: CategoryComponent) {
+        self._viewState = StateValue(component.viewState)
     }
     
     var body: some View {

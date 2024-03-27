@@ -13,7 +13,7 @@ import KoinHelpers
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var nativeModule: Koin_coreModule
-    lazy var rootComponent = RootNavigationComponent(
+    lazy var rootComponent: RootNavigationComponent = RootNavigationComponentImpl(
         componentContext: DefaultComponentContext(lifecycle: ApplicationLifecycle())
     )
     

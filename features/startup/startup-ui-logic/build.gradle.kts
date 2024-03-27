@@ -20,7 +20,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "HomescreenUILogic"
+            baseName = "StartupUILogic"
             isStatic = true
         }
     }
@@ -38,7 +38,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.appelis.kmm_demo.homescreen.homescreenUiLogic"
+    namespace = "com.appelis.kmm_demo.startup.startupUiLogic"
     compileSdk = 34
     defaultConfig {
         minSdk = 26

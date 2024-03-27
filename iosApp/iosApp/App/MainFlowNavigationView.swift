@@ -12,9 +12,9 @@ import SwiftUI
 import SwiftUICore
 
 struct MainFlowNavigationView: View {
-    private let component: MainNavigation
+    private let component: MainNavigationComponent
 
-    init(component: MainNavigation) {
+    init(component: MainNavigationComponent) {
         self.component = component
     }
 
@@ -25,9 +25,9 @@ struct MainFlowNavigationView: View {
         ){ entry in
                 switch onEnum(of: entry) {
                 case let .homescreen(entry):
-                    HomescreenView(screen: entry.screen)
+                    HomescreenView(component: entry.component)
                 case let .category(entry):
-                    CategoryView(screen: entry.screen)
+                    CategoryView(component: entry.component)
                 }
             }
     }

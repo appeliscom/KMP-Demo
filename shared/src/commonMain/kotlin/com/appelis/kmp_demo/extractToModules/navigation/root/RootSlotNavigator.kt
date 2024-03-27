@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.extractToModules.navigation.root
 
+import com.appelis.kmp_demo.core.Destination
 import com.appelis.kmp_demo.core.extensions.asStateFlow
 import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.arkivanov.decompose.ComponentContext
@@ -8,7 +9,6 @@ import com.arkivanov.decompose.router.slot.SlotNavigation
 import com.arkivanov.decompose.router.slot.activate
 import com.arkivanov.decompose.router.slot.childSlot
 import com.arkivanov.decompose.value.Value
-import kotlinx.coroutines.flow.StateFlow
 
 interface RootSlotNavigator {
     fun createSlot(componentContext: ComponentContext): Value<ChildSlot<RootDestination, RootEntry>>

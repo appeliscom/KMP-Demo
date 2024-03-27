@@ -9,12 +9,13 @@
 import Shared
 import SwiftUI
 import SwiftUICore
+import KoinHelpers
 
 struct RootNavigationView: View {
     @StateValue
     private var slot: ChildSlot<RootDestination, RootEntry>
     
-    init(_ component: RootNavigation) {
+    init(_ component: RootNavigationComponent) {
         self._slot = StateValue(component.slot)
     }
     
@@ -36,9 +37,10 @@ struct AppStartupView: View {
     @StateValue
     private var viewState: AppStartupViewState
     
-    private let actions: AppStartupScreenActions
+    private var router: AppStartupRouter = inject()
+    private let actions: AppStartupComponentActions
     
-    public init(screen: AppStartupScreen) {
+    public init(screen: AppStartupComponent) {
         self._viewState = StateValue(screen.viewState)
         self.actions = screen.actions
     }
@@ -52,7 +54,7 @@ struct AppStartupView: View {
             
             Button(
                 action: {
-                    actions.finishStartup()
+                    router.navigateTo(route: .MainAppFlow())
                 },
                 label: {
                     Text("continue to app")
