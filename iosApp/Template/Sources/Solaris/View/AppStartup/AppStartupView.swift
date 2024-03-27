@@ -1,36 +1,13 @@
 //
-//  RootView.swift
-//  iosApp
+//  AppStartupView.swift
 //
-//  Created by Jan Maloušek on 20.03.2024.
-//  Copyright © 2024 orgName. All rights reserved.
+//
+//  Created by Jan Maloušek on 27.03.2024.
 //
 
 import Shared
 import SwiftUI
 import SwiftUICore
-
-struct RootNavigationView: View {
-    @StateValue
-    private var slot: ChildSlot<RootDestination, RootEntry>
-    
-    init(_ component: RootNavigationComponent) {
-        self._slot = StateValue(component.slot)
-    }
-    
-    var body: some View {
-        ZStack {
-            if let navigationEntry = slot.child?.instance {
-                switch onEnum(of: navigationEntry) {
-                case let .appStartup(entry):
-                    AppStartupView(screen: entry.screen)
-                case let .mainAppFlow(entry):
-                    MainFlowNavigationView(component: entry.navigation)
-                }
-            }
-        }
-    }
-}
 
 struct AppStartupView: View {
     @StateValue
@@ -64,3 +41,4 @@ struct AppStartupView: View {
         }
     }
 }
+
