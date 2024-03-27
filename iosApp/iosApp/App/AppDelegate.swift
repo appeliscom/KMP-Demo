@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 import Shared
-import KoinHelpers
+import SwiftUICore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var nativeModule: Koin_coreModule

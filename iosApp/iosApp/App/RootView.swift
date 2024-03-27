@@ -9,7 +9,6 @@
 import Shared
 import SwiftUI
 import SwiftUICore
-import KoinHelpers
 
 struct RootNavigationView: View {
     @StateValue

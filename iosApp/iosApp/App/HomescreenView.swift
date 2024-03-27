@@ -9,7 +9,6 @@
 import SwiftUI
 import Shared
 import SwiftUICore
-import KoinHelpers
 
 struct HomescreenView: View {
     @StateValue
