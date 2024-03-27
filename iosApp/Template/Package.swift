@@ -19,11 +19,6 @@ private extension Target.Dependency {
     // MARK: - Core
     
     static let shared = product(name: "Shared", package: "Shared")
-    
-    // MARK: - Feature
-
-    private static let packageFeature = "Features"
-    static let article = product(name: "Article", package: packageFeature)
 }
 
 // MARK: - Products - external -
@@ -41,7 +36,6 @@ let package = Package(
         .library(name: .solaris, targets: [.solaris])
     ],
     dependencies: [
-        .package(path: "../Features"),
         .package(path: "../Shared"),
         .package(
             url: "https://github.com/onevcat/Kingfisher.git",
@@ -53,8 +47,7 @@ let package = Package(
             name: .solaris,
             dependencies: [
                 .kingfisher,
-                .shared,
-                .article
+                .shared
             ],
             path: "Sources/Solaris"
         )
