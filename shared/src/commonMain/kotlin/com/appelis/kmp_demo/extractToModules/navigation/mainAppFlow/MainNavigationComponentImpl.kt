@@ -11,6 +11,6 @@ internal class MainNavigationComponentImpl (
 ) : MainNavigationComponent, ComponentContext by componentContext, KoinComponent {
 
     private val mainFlowNavigator: MainFlowNavigator by inject()
-    override val stack: Value<ChildStack<*, MainFlowEntry>> = mainFlowNavigator.createStack(componentContext)
+    override val stack: Value<ChildStack<*, MainFlowNavigationChild>> = mainFlowNavigator.createStack(componentContext)
     override fun onBackClicked(toIndex: Int) = mainFlowNavigator.onBackClicked(toIndex)
 }

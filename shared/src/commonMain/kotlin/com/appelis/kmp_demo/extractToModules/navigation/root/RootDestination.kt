@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.extractToModules.navigation.root
 
 import com.appelis.kmp_demo.core.Destination
-import com.appelis.kmp_demo.core.NavEntry
+import com.appelis.kmp_demo.core.NavigationChild
 import com.appelis.kmp_demo.extractToModules.navigation.mainAppFlow.MainNavigationComponent
 import com.appelis.kmp_demo.extractToModules.navigation.mainAppFlow.MainNavigationComponentImpl
 import com.appelis.kmp_demo.startup_ui_logic.AppStartupComponent
@@ -28,7 +28,7 @@ sealed class RootDestination: Destination<RootEntry> {
 }
 
 
-sealed class RootEntry : NavEntry {
+sealed class RootEntry : NavigationChild {
     data class AppStartup(val screen: AppStartupComponent) : RootEntry()
     data class MainAppFlow(val navigation: MainNavigationComponent): RootEntry()
 }

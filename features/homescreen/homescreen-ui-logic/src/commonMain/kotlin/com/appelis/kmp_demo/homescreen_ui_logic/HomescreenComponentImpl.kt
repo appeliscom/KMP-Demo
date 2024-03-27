@@ -7,8 +7,8 @@ import com.arkivanov.decompose.value.Value
 
 class HomescreenComponentImpl(
     componentContext: ComponentContext
-) : ViewModelComponent<HomescreenViewModel>(componentContext), HomescreenCompoment {
+) : ViewModelComponent<HomescreenViewModel>(componentContext), HomescreenComponent {
     override val viewModel: HomescreenViewModel by viewModel()
     override val viewState: Value<HomescreenViewState> = viewModel.viewState
-    override val actions: HomescreenCompoment.Actions = viewModel
+    override val actions: HomescreenComponent.Actions = viewModel
 }

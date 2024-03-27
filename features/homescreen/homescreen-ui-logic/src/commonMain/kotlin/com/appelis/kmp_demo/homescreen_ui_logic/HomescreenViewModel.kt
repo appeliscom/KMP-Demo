@@ -7,7 +7,7 @@ import com.arkivanov.decompose.value.Value
 
 class HomescreenViewModel(
 
-): SharedViewModel<HomescreenViewState, Nothing>(), HomescreenCompoment.Actions {
+): SharedViewModel<HomescreenViewState, Nothing>(), HomescreenComponent.Actions {
     private val _viewState:  MutableValue<HomescreenViewState> = MutableValue(
         HomescreenViewState()
     )

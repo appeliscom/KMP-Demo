@@ -1,8 +1,5 @@
 package com.appelis.kmp_demo.extractToModules.navigation.root
 
-import com.appelis.kmp_demo.core.Destination
-import com.appelis.kmp_demo.core.extensions.asStateFlow
-import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.slot.ChildSlot
 import com.arkivanov.decompose.router.slot.SlotNavigation

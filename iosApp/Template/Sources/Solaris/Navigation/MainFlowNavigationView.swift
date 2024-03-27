@@ -22,12 +22,12 @@ struct MainFlowNavigationView: View {
         StackView(
             stackValue: StateValue(component.stack),
             onBack: { index in component.onBackClicked(toIndex: index) }
-        ){ entry in
-                switch onEnum(of: entry) {
-                case let .homescreen(entry):
-                    HomescreenView(component: entry.component)
-                case let .category(entry):
-                    CategoryView(component: entry.component)
+        ){ mainFlowNavigationChild in
+                switch onEnum(of: mainFlowNavigationChild) {
+                case let .homescreen(child):
+                    HomescreenView(component: child.component)
+                case let .category(child):
+                    CategoryView(component: child.component)
                 }
             }
     }

@@ -16,7 +16,7 @@ struct HomescreenView: View {
     
     private var router: HomescreenRouter = inject()
     
-    public init(component: HomescreenCompoment) {
+    public init(component: HomescreenComponent) {
         self._viewState = StateValue(component.viewState)
     }
     
