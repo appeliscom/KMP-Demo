@@ -6,7 +6,7 @@ import PackageDescription
 private extension String {
     static let shared = "Shared"
     static let grpcIOS = "GrpcIOS"
-    static let koinHelpers = "KoinHelpers"
+    static let swiftUICore = "SwiftUICore"
 }
 
 private extension Target.Dependency {
@@ -22,7 +22,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Shared",
-            targets: [.shared, .grpcIOS, .koinHelpers]),
+            targets: [.shared, .grpcIOS, .swiftUICore]),
     ],
     dependencies: [
         .package(url: "https://github.com/grpc/grpc-swift.git", exact: Version(1, 21, 0)),
@@ -37,8 +37,8 @@ let package = Package(
             path: "Sources/GrpcIOS"
         ),
         .target(
-            name: .koinHelpers,
+            name: .swiftUICore,
             dependencies: [.shared],
-            path: "Sources/KoinHelpers"
+            path: "Sources/\(String.swiftUICore)"
         ),
     ])

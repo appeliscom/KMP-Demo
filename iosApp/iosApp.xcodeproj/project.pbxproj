@@ -36,7 +36,6 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF03B7C2B9AFB4700C9C57A /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = SOURCE_ROOT; };
 		7EFC09E62B9B134600F0BBB0 /* Template */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Template; sourceTree = SOURCE_ROOT; };
-		7EFC09E82B9B16DB00F0BBB0 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = SOURCE_ROOT; };
 		7EFC09F12BA41EB700F0BBB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				7EFC09F02BA41E9D00F0BBB0 /* App */,
-				7EFC09E82B9B16DB00F0BBB0 /* Features */,
 				7EFC09E62B9B134600F0BBB0 /* Template */,
 				7EF03B7C2B9AFB4700C9C57A /* Shared */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
@@ -184,6 +182,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		7555FFB5242A651A00829871 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

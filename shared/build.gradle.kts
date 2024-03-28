@@ -1,16 +1,17 @@
-import org.jetbrains.kotlin.codegen.StackValue.Shared
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.skie)
+    alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
 kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "11"
             }
         }
     }
@@ -25,24 +26,34 @@ kotlin {
         it.binaries.framework {
             baseName="Shared"
             isStatic = true
-            export(projects.featureA)
+
             export(projects.grpcTest)
+
+            export(projects.core)
+            export(projects.features.homescreen.homescreenUiLogic)
+            export(projects.features.startup.startupUiLogic)
+            export(projects.features.category.categoryUiLogic)
+
+
+            export(libs.essenty)
+            export(libs.decompose)
             xc.add(this)
         }
     }
 
     sourceSets {
         commonMain.dependencies {
-            api(projects.featureA)
             api(projects.grpcTest)
-            implementation(libs.koin.core)
-        }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
-        }
+            api(projects.core)
 
-        commonTest.dependencies {
-            
+            api(projects.features.homescreen.homescreenUiLogic)
+            api(projects.features.startup.startupUiLogic)
+            api(projects.features.category.categoryUiLogic)
+
+            api(libs.essenty)
+            api(libs.decompose)
+            implementation(libs.koin.core)
+            implementation(libs.kotlinx.coroutines.core)
         }
     }
 }
@@ -54,8 +65,8 @@ android {
         minSdk = 26
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
