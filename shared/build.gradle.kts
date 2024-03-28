@@ -32,8 +32,9 @@ kotlin {
             export(projects.core)
             export(projects.features.homescreen.homescreenUiLogic)
             export(projects.features.startup.startupUiLogic)
-            export(projects.features.category.categoryUiLogic)
-
+            export(projects.features.assortment.assortmentUiLogic)
+            export(projects.features.leaflet.leafletUiLogic)
+            export(projects.features.leaflet.leafletDomain)
 
             export(libs.essenty)
             export(libs.decompose)
@@ -48,7 +49,11 @@ kotlin {
 
             api(projects.features.homescreen.homescreenUiLogic)
             api(projects.features.startup.startupUiLogic)
-            api(projects.features.category.categoryUiLogic)
+            api(projects.features.assortment.assortmentUiLogic)
+
+            api(projects.features.leaflet.leafletUiLogic)
+            api(projects.features.leaflet.leafletDomain)
+            implementation(projects.features.leaflet.leafletData)
 
             api(libs.essenty)
             api(libs.decompose)

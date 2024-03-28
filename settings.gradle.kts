@@ -16,10 +16,18 @@ dependencyResolutionManagement {
 
 rootProject.name = "KMP-Demo"
 include(":androidApp")
-include(":shared")
 include(":GrpcTest")
 include(":commonMain")
+
+include(":shared")
 include(":features:homescreen:homescreen-ui-logic")
+
 include(":features:startup:startup-ui-logic")
-include(":features:category:category-ui-logic")
+
+include(":features:assortment:assortment-ui-logic")
+
+include(":features:leaflet:leaflet-ui-logic")
+include(":features:leaflet:leaflet-domain")
+include(":features:leaflet:leaflet-data")
+
 include(":core")

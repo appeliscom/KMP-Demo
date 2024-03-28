@@ -20,7 +20,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "CategoryUILogic"
+            baseName = "LeafletData"
             isStatic = true
         }
     }
@@ -32,13 +32,15 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.kotlinx.coroutines.core)
                 api(projects.core)
+
+                api(projects.features.leaflet.leafletDomain)
             }
         }
     }
 }
 
 android {
-    namespace = "com.appelis.kmm_demo.category.categoryUiLogic"
+    namespace = "com.appelis.kmm_demo.leaflet.leafletData"
     compileSdk = 34
     defaultConfig {
         minSdk = 26
