@@ -35,6 +35,16 @@ struct HomescreenView: View {
                     Text("open category")
                 }
             )
+            .padding(.bottom, 16)
+            
+            Button(
+                action: {
+                    router.navigateTo(route: .LeafletCollection())
+                },
+                label: {
+                    Text("open leaflets")
+                }
+            )
             
             Spacer()
         }

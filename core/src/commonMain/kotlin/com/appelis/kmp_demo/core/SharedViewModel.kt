@@ -20,7 +20,7 @@ import org.koin.core.component.KoinComponent
  * The ViewModel implements an [InstanceKeeper.Instance] and can be retained
  * across configuration changes on Android using Decompose APIs.
  */
-abstract class SharedViewModel<VS : ViewState, UI_EVENT : UiEvent<VS>> :
+abstract class SharedViewModel<VS : ViewState, UI_EVENT : UiEvent> :
     InstanceKeeper.Instance,
     KoinComponent {
 

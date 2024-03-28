@@ -32,6 +32,7 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.kotlinx.coroutines.core)
                 api(projects.core)
+                implementation(projects.features.leaflet.leafletDomain)
             }
         }
     }

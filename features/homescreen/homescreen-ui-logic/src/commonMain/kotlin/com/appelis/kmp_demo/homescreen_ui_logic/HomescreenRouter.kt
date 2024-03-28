@@ -6,4 +6,5 @@ interface HomescreenRouter {
 
 sealed class HomescreenRoute {
     data class Category(val id: String): HomescreenRoute()
+    data object LeafletCollection: HomescreenRoute()
 }

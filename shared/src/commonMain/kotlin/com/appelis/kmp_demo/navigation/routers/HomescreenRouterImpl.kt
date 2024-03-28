@@ -18,6 +18,10 @@ class HomescreenRouterImpl : HomescreenRouter, KoinComponent {
                     id = route.id
                 )
             )
+
+            HomescreenRoute.LeafletCollection -> navigation.push(
+                MainFlowChildConfig.LeafletCollection
+            )
         }
     }
 }
