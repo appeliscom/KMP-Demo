@@ -12,13 +12,10 @@ import SwiftUICore
 struct AppStartupView: View {
     @StateValue
     private var viewState: AppStartupViewState
-    
     private var router: AppStartupRouter = inject()
-    private let actions: AppStartupComponentActions
     
-    public init(screen: AppStartupComponent) {
-        self._viewState = StateValue(screen.viewState)
-        self.actions = screen.actions
+    public init(component: AppStartupComponent) {
+        self._viewState = StateValue(component.viewState)
     }
     
     var body: some View {

@@ -11,6 +11,6 @@ interface NavigationChild
 /**
  * A base interface for destinations used in Decompose navigation.
  */
-interface Destination<out C : NavigationChild> {
-    fun createComponent(componentContext: ComponentContext): C
+interface ChildConfig<out C : NavigationChild> {
+    fun createChild(componentContext: ComponentContext): C
 }
