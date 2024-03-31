@@ -6,9 +6,12 @@ import com.appelis.kmp_demo.leaflet_ui_logic.viewModel.LeafletCollectionViewStat
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.value.Value
 import com.appelis.kmp_demo.core.extensions.viewModel
+import com.appelis.kmp_demo.leaflet_ui_logic.viewModel.LeafletCollectionUIEvent
+import kotlinx.coroutines.flow.Flow
 
 interface LeafletCollectionComponent {
     val viewState: Value<LeafletCollectionViewState>
+    val uiEvents: Flow<LeafletCollectionUIEvent>
     val viewModel: ViewModel
 
     interface ViewModel {
@@ -22,4 +25,5 @@ class LeafletCollectionComponentImpl(
 ): ViewModelComponent<LeafletCollectionViewModel>(componentContext), LeafletCollectionComponent {
     override val viewModel: LeafletCollectionViewModel by viewModel()
     override val viewState: Value<LeafletCollectionViewState> = viewModel.viewState
+    override val uiEvents: Flow<LeafletCollectionUIEvent> = viewModel.uiEvents
 }

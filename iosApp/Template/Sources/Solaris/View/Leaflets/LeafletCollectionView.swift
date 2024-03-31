@@ -13,12 +13,15 @@ struct LeafletCollectionView: View {
     @StateValue
     private var viewState: LeafletCollectionViewState
     
+    private let uiEvents: SkieSwiftFlow<LeafletCollectionUIEvent>
+    
     private var router: LeafletCollectionRouter = inject()
     private let viewModel: LeafletCollectionComponentViewModel
     
     public init(component: LeafletCollectionComponent) {
         self._viewState = StateValue(component.viewState)
         self.viewModel = component.viewModel
+        self.uiEvents = component.uiEvents
     }
     
     var body: some View {
@@ -48,6 +51,14 @@ struct LeafletCollectionView: View {
         }
         .onAppear {
             viewModel.setup(token: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTE5MDIwOTMsImlhdCI6MTcxMTkwMTc5MywiaXNzIjoiQXBwZWxpc0lkZW50aXR5UHJvdmlkZXIiLCJjbGFpbXMiOnsiYXBwZWxpcy5kZXZpY2VJZCI6IjE2OTg2IiwiYXBwZWxpcy5tb2JpbGVVc2VySWQiOiIxODU5MTcxOSIsImFwcGVsaXMucHJvamVjdElkIjoiMSJ9fQ.9RtVp_JZCnIa3CdUugNkMqGzesSQgv9G46Vqe63T9t1EvMMmoqwGRN5owChZP8I3oTcsNI_fnuT91lCC-w3bCw")
+        }
+        .task {
+            for await uiEvent in uiEvents {
+                switch onEnum(of: uiEvent) {
+                case .closeScreen:
+                    router.navigateTo(route: .Pop())
+                }
+            }
         }
     }
     
