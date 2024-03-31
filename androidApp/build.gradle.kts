@@ -40,7 +40,6 @@ android {
 
 dependencies {
     implementation(projects.shared)
-    implementation(projects.grpcTest)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)

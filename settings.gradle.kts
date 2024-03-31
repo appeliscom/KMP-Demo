@@ -16,7 +16,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "KMP-Demo"
 include(":androidApp")
-include(":GrpcTest")
+include(":GrpcProto")
 include(":commonMain")
 
 include(":shared")

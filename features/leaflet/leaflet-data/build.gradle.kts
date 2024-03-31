@@ -34,7 +34,7 @@ kotlin {
                 api(projects.core)
 
                 api(projects.features.leaflet.leafletDomain)
-                implementation(projects.grpcTest)
+                implementation(projects.grpcProto)
                 implementation(libs.wire.runtime)
                 implementation(libs.wire.grpc.client)
             }
@@ -54,5 +54,5 @@ android {
     }
 }
 dependencies {
-    implementation(project(":GrpcTest"))
+    implementation(project(":GrpcProto"))
 }

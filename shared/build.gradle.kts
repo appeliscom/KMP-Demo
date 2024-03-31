@@ -27,7 +27,7 @@ kotlin {
             baseName="Shared"
             isStatic = true
 
-            export(projects.grpcTest)
+            export(projects.grpcProto)
 
             export(projects.core)
             export(projects.features.homescreen.homescreenUiLogic)
@@ -45,7 +45,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            api(projects.grpcTest)
+            api(projects.grpcProto)
             api(projects.core)
 
             api(projects.features.homescreen.homescreenUiLogic)
