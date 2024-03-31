@@ -34,6 +34,9 @@ kotlin {
                 api(projects.core)
 
                 api(projects.features.leaflet.leafletDomain)
+                implementation(projects.grpcTest)
+                implementation(libs.wire.runtime)
+                implementation(libs.wire.grpc.client)
             }
         }
     }
@@ -49,4 +52,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+}
+dependencies {
+    implementation(project(":GrpcTest"))
 }

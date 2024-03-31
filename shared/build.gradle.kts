@@ -35,6 +35,7 @@ kotlin {
             export(projects.features.assortment.assortmentUiLogic)
             export(projects.features.leaflet.leafletUiLogic)
             export(projects.features.leaflet.leafletDomain)
+            export(projects.features.leaflet.leafletData)
 
             export(libs.essenty)
             export(libs.decompose)
@@ -53,7 +54,7 @@ kotlin {
 
             api(projects.features.leaflet.leafletUiLogic)
             api(projects.features.leaflet.leafletDomain)
-            implementation(projects.features.leaflet.leafletData)
+            api(projects.features.leaflet.leafletData)
 
             api(libs.essenty)
             api(libs.decompose)

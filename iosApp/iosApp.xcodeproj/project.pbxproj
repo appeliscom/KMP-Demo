@@ -196,7 +196,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/..\"\n# ./gradlew :shared:embedAndSignAppleFrameworkForXcode\n\nROOT_DIR=$(dirname \"$SRCROOT\")\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n    ./gradlew :shared:assembleSharedDebugXCFramework\n    cp -Rf \"${ROOT_DIR}/shared/build/XCFrameworks/debug/Shared.xcframework\" \"${ROOT_DIR}/iosApp/Shared\"\nelse\n    ./gradlew :shared:assembleSharedReleaseXCFramework\n    cp -Rf \"${ROOT_DIR}/shared/build/XCFrameworks/release/Shared.xcframework\" \"${ROOT_DIR}/iosApp/Shared\"\nfi\n";
+			shellScript = "#cd \"$SRCROOT/..\"\n# ./gradlew :shared:embedAndSignAppleFrameworkForXcode\n\n#ROOT_DIR=$(dirname \"$SRCROOT\")\n#if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n #   ./gradlew :shared:assembleSharedDebugXCFramework\n  #  cp -Rf \"${ROOT_DIR}/shared/build/XCFrameworks/debug/Shared.xcframework\" \"${ROOT_DIR}/iosApp/Shared\"\n#else\n #   ./gradlew :shared:assembleSharedReleaseXCFramework\n  #  cp -Rf \"${ROOT_DIR}/shared/build/XCFrameworks/release/Shared.xcframework\" \"${ROOT_DIR}/iosApp/Shared\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

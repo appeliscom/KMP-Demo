@@ -23,7 +23,6 @@ class LeafletCollectionViewModel(
     override fun setup(token: String) {
         viewModelScope.launch {
             try {
-                delay(2000)
                 val leaflets = getLeafletsUseCase.execute(storeName = "Brno", token = token)
                 _viewState.value = LeafletCollectionViewState.Success(leaflets = leaflets)
             } catch (exception: CancellationException) {
