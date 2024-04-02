@@ -7,7 +7,7 @@ import com.appelis.kmp_demo.navigation.routers.HomescreenRouterImpl
 import com.appelis.kmp_demo.homescreen_ui_logic.HomescreenRouter
 import com.appelis.kmp_demo.leaflet_ui_logic.router.LeafletCollectionRouter
 import com.appelis.kmp_demo.navigation.routers.LeafletCollectionRouterImpl
-import com.appelis.kmp_demo.startup_ui_logic.AppStartupRouter
+import com.appelis.kmp_demo.startup_ui_logic.router.AppStartupRouter
 import com.arkivanov.decompose.router.slot.SlotNavigation
 import com.arkivanov.decompose.router.stack.StackNavigation
 import org.koin.core.module.Module

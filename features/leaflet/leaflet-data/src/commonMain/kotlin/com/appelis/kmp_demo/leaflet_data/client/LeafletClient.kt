@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.leaflet_data.repository
+package com.appelis.kmp_demo.leaflet_data.client
 
 import metro.leaflet.v1.GetLeafletsRequest
 import metro.leaflet.v1.GetLeafletsResponse

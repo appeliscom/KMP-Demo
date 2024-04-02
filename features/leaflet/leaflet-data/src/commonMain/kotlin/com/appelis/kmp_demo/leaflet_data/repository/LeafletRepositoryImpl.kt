@@ -1,6 +1,7 @@
 package com.appelis.kmp_demo.leaflet_data.repository
 
 import com.appelis.identity.Token
+import com.appelis.kmp_demo.leaflet_data.client.LeafletSuspendClient
 import com.appelis.kmp_demo.leaflet_data.mapper.LeafletMapper
 import com.appelis.kmp_demo.leaflet_domain.model.LeafletModel
 import com.appelis.kmp_demo.leaflet_domain.repository.LeafletRepository

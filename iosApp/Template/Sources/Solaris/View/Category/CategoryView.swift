@@ -13,9 +13,11 @@ import SwiftUICore
 struct CategoryView: View {
     @StateValue
     private var viewState: CategoryViewState
+    private let viewModel: CategoryComponentViewModel
     
     public init(component: CategoryComponent) {
-        self._viewState = StateValue(component.viewState)
+        self.viewModel = component.viewModel
+        self._viewState = StateValue(viewModel.viewState)
     }
     
     var body: some View {

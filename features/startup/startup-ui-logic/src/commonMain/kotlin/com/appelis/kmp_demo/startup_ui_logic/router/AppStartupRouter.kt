@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.startup_ui_logic
+package com.appelis.kmp_demo.startup_ui_logic.router
 
 interface AppStartupRouter {
     fun navigateTo(route: AppStartupRoute)
