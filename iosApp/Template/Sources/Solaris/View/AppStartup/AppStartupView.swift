@@ -13,9 +13,11 @@ struct AppStartupView: View {
     @StateValue
     private var viewState: AppStartupViewState
     private var router: AppStartupRouter = inject()
+    private let viewModel: AppStartupComponentViewModel
     
     public init(component: AppStartupComponent) {
-        self._viewState = StateValue(component.viewState)
+        self.viewModel = component.viewModel
+        self._viewState = StateValue(component.viewModel.viewState)
     }
     
     var body: some View {

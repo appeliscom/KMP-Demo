@@ -28,6 +28,8 @@ struct MainFlowNavigationView: View {
                     HomescreenView(component: child.component)
                 case let .category(child):
                     CategoryView(component: child.component)
+                case let .leafletCollection(child):
+                    LeafletCollectionView(component: child.component)
                 }
             }
     }

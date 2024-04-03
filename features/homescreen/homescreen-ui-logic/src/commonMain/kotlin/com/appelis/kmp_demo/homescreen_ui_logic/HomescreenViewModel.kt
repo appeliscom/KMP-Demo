@@ -7,14 +7,10 @@ import com.arkivanov.decompose.value.Value
 
 class HomescreenViewModel(
 
-): SharedViewModel<HomescreenViewState, Nothing>(), HomescreenComponent.Actions {
+): SharedViewModel<HomescreenViewState, Nothing>(), HomescreenComponent.ViewModel {
     private val _viewState:  MutableValue<HomescreenViewState> = MutableValue(
         HomescreenViewState()
     )
     override val viewState: Value<HomescreenViewState> = _viewState
-
-    override fun navigateToCategory(id: String) {
-//        mainFlowNavigator.navigateToCategory(id)
-    }
 }
 class HomescreenViewState: ViewState

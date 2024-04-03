@@ -7,13 +7,14 @@ import org.koin.dsl.KoinAppDeclaration
 internal object DI {
     fun initDI(
         nativeModule: Module,
+        platformGrpcClientModule: Module,
         appDeclaration: KoinAppDeclaration?) {
         startKoin {
             if (appDeclaration != null) {
                 // AppDeclaration allows custom setup from where initDI is called
                 appDeclaration()
             }
-            modules(nativeModule, sharedModule)
+            modules(nativeModule, platformGrpcClientModule, sharedModule)
         }
     }
 }

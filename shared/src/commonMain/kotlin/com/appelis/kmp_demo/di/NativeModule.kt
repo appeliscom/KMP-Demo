@@ -1,6 +1,5 @@
 package com.appelis.kmp_demo.di
 
-import org.koin.core.KoinApplication.Companion.init
 import org.koin.core.module.Module
 import org.koin.core.scope.Scope
 import org.koin.dsl.module
@@ -12,4 +11,8 @@ fun makeNativeModule(
     return module {
         single { nativeTestDependency() }
     }
+}
+
+interface NativeTestDependency {
+    fun greet(): String
 }

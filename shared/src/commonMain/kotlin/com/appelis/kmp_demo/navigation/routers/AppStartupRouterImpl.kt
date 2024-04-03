@@ -1,8 +1,8 @@
 package com.appelis.kmp_demo.navigation.routers
 
 import com.appelis.kmp_demo.navigation.navigationComponents.root.RootSlotChildConfig
-import com.appelis.kmp_demo.startup_ui_logic.AppStartupRoute
-import com.appelis.kmp_demo.startup_ui_logic.AppStartupRouter
+import com.appelis.kmp_demo.startup_ui_logic.router.AppStartupRoute
+import com.appelis.kmp_demo.startup_ui_logic.router.AppStartupRouter
 import com.arkivanov.decompose.router.slot.SlotNavigation
 import com.arkivanov.decompose.router.slot.activate
 import org.koin.core.component.KoinComponent

@@ -6,4 +6,4 @@ package com.appelis.kmp_demo.core
  * Event is guaranteed to be delivered just once even if screen rotation or a similar
  * operation is in progress.
  */
-interface UiEvent<VS : ViewState>
+interface UiEvent

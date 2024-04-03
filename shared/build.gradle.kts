@@ -27,13 +27,15 @@ kotlin {
             baseName="Shared"
             isStatic = true
 
-            export(projects.grpcTest)
+            export(projects.grpcProto)
 
             export(projects.core)
             export(projects.features.homescreen.homescreenUiLogic)
             export(projects.features.startup.startupUiLogic)
-            export(projects.features.category.categoryUiLogic)
-
+            export(projects.features.assortment.assortmentUiLogic)
+            export(projects.features.leaflet.leafletUiLogic)
+            export(projects.features.leaflet.leafletDomain)
+            export(projects.features.leaflet.leafletData)
 
             export(libs.essenty)
             export(libs.decompose)
@@ -43,12 +45,16 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            api(projects.grpcTest)
+            api(projects.grpcProto)
             api(projects.core)
 
             api(projects.features.homescreen.homescreenUiLogic)
             api(projects.features.startup.startupUiLogic)
-            api(projects.features.category.categoryUiLogic)
+            api(projects.features.assortment.assortmentUiLogic)
+
+            api(projects.features.leaflet.leafletUiLogic)
+            api(projects.features.leaflet.leafletDomain)
+            api(projects.features.leaflet.leafletData)
 
             api(libs.essenty)
             api(libs.decompose)

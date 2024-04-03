@@ -16,8 +16,11 @@ struct HomescreenView: View {
     
     private var router: HomescreenRouter = inject()
     
+    private let viewModel: HomescreenComponentViewModel
+    
     public init(component: HomescreenComponent) {
-        self._viewState = StateValue(component.viewState)
+        self.viewModel = component.viewModel
+        self._viewState = StateValue(viewModel.viewState)
     }
     
     var body: some View {
@@ -33,6 +36,16 @@ struct HomescreenView: View {
                 },
                 label: {
                     Text("open category")
+                }
+            )
+            .padding(.bottom, 16)
+            
+            Button(
+                action: {
+                    router.navigateTo(route: .LeafletCollection())
+                },
+                label: {
+                    Text("open leaflets")
                 }
             )
             

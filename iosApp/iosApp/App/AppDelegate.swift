@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import Shared
 import SwiftUICore
+import GrpcIOS
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var nativeModule: Koin_coreModule
@@ -24,7 +25,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        KmpApplication().doInitSharedModule(nativeModule: nativeModule)
+        KmpApplication().doInitSharedModule(
+            nativeModule: nativeModule,
+            platformGrpcClientModule: makePlatformGrpcClientModule(
+                leafletSuspendClient: GrpcClientFactory.leafletClient()
+            )
+        )
         return true
     }
 }
