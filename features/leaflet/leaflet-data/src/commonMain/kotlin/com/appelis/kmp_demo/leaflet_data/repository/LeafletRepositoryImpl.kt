@@ -6,7 +6,9 @@ import com.appelis.kmp_demo.leaflet_data.mapper.LeafletMapper
 import com.appelis.kmp_demo.leaflet_domain.model.LeafletModel
 import com.appelis.kmp_demo.leaflet_domain.repository.LeafletRepository
 import metro.leaflet.v1.GetLeafletsRequest
+import org.koin.core.annotation.Single
 
+@Single
 class LeafletRepositoryImpl(
     private val leafletSuspendClient: LeafletSuspendClient,
     private val leafletMapper: LeafletMapper

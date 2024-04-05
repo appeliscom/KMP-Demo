@@ -2,7 +2,9 @@ package com.appelis.kmp_demo.leaflet_data.mapper
 
 import com.appelis.kmp_demo.leaflet_domain.model.LeafletModel
 import metro.leaflet.v1.GetLeafletsResponse
+import org.koin.core.annotation.Single
 
+@Single
 class LeafletMapper {
     fun mapFromDTO(response: GetLeafletsResponse): ArrayList<LeafletModel> {
         if (response.tokenErr != null) {

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinSerialization)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -29,8 +30,10 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(libs.decompose)
+                implementation(project.dependencies.platform(libs.koin.bom))
                 implementation(libs.koin.core)
                 implementation(libs.kotlinx.coroutines.core)
+
                 api(projects.core)
                 implementation(projects.features.leaflet.leafletDomain)
             }
