@@ -12,8 +12,8 @@ object ProjectSettings {
 
         const val ApplicationId = "com.appelis.kmm_demo.android"
 
-        val VersionCode = System.getenv("BUILD_NUMBER")?.toInt() ?: 1
-        val VersionName = System.getenv("VERSION_NAME") ?: "1.0.0"
+        val VersionCode = 1
+        val VersionName = "1.0.0"
 
         val JavaCompatibility = JavaVersion.VERSION_17
         const val KotlinJvmTarget = "17"
