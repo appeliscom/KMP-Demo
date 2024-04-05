@@ -6,8 +6,8 @@ import com.appelis.kmp_demo.core.ChildConfig
 import com.appelis.kmp_demo.core.NavigationChild
 import com.appelis.kmp_demo.homescreen_ui_logic.HomescreenComponent
 import com.appelis.kmp_demo.homescreen_ui_logic.HomescreenComponentImpl
-import com.appelis.kmp_demo.leaflet_ui_logic.component.LeafletCollectionComponent
-import com.appelis.kmp_demo.leaflet_ui_logic.component.LeafletCollectionComponentImpl
+import com.appelis.kmp_demo.leaflet_data.uiLogic.component.LeafletCollectionComponent
+import com.appelis.kmp_demo.leaflet_data.uiLogic.component.LeafletCollectionComponentImpl
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation

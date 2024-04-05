@@ -1,6 +1,6 @@
 package com.appelis.kmp_demo.di
 
-import com.appelis.kmp_demo.leaflet_data.client.LeafletSuspendClient
+import com.appelis.kmp_demo.leaflet_data.data.client.LeafletSuspendClient
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
