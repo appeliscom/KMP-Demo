@@ -20,11 +20,10 @@ include(":GrpcProto")
 include(":commonMain")
 
 include(":shared")
-include(":features:homescreen:homescreen-ui-logic")
 
-include(":features:startup:startup-ui-logic")
-
-include(":features:assortment:assortment-ui-logic")
+include(":features:homescreen")
+include(":features:startup")
+include(":features:assortment")
 include(":features:leaflet")
 
 include(":core")

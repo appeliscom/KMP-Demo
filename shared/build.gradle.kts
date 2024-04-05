@@ -30,9 +30,9 @@ kotlin {
             export(projects.grpcProto)
 
             export(projects.core)
-            export(projects.features.homescreen.homescreenUiLogic)
-            export(projects.features.startup.startupUiLogic)
-            export(projects.features.assortment.assortmentUiLogic)
+            export(projects.features.homescreen)
+            export(projects.features.startup)
+            export(projects.features.assortment)
             export(projects.features.leaflet)
 
             export(libs.essenty)
@@ -46,9 +46,9 @@ kotlin {
             api(projects.grpcProto)
             api(projects.core)
 
-            api(projects.features.homescreen.homescreenUiLogic)
-            api(projects.features.startup.startupUiLogic)
-            api(projects.features.assortment.assortmentUiLogic)
+            api(projects.features.homescreen)
+            api(projects.features.startup)
+            api(projects.features.assortment)
 
             api(projects.features.leaflet)
 
