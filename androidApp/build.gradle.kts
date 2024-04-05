@@ -1,18 +1,20 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    id(libs.plugins.androidApplication.get().pluginId)
+    id(libs.plugins.kotlinAndroid.get().pluginId)
 }
 
 android {
     namespace = "com.appelis.kmp_demo.android"
-    compileSdk = 34
+    compileSdk = ProjectSettings.Android.CompileSdkVersion
+
     defaultConfig {
-        applicationId = "com.appelis.kmp_demo.android"
-        minSdk = 26
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = ProjectSettings.Android.ApplicationId
+        minSdk = ProjectSettings.Android.MinSdkVersion
+        targetSdk = ProjectSettings.Android.TargetSdkVersion
+        versionCode = ProjectSettings.Android.VersionCode
+        versionName = ProjectSettings.Android.VersionName
     }
+
     buildFeatures {
         compose = true
     }
@@ -30,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = ProjectSettings.Android.JavaCompatibility
+        targetCompatibility = ProjectSettings.Android.JavaCompatibility
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = ProjectSettings.Android.KotlinJvmTarget
     }
 }
 

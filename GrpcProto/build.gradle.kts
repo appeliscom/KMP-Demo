@@ -1,14 +1,14 @@
 plugins {
     kotlin("multiplatform")
     alias(libs.plugins.wire)
-    alias(libs.plugins.androidLibrary)
+    id(libs.plugins.androidLibrary.get().pluginId)
 }
 
 kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "11"
+                jvmTarget = ProjectSettings.Android.KotlinJvmTarget
             }
         }
     }
@@ -51,12 +51,12 @@ wire {
 
 android {
     namespace = "com.appelis.kmm_demo.grpcTest"
-    compileSdk = 34
+    compileSdk = ProjectSettings.Android.CompileSdkVersion
     defaultConfig {
-        minSdk = 26
+        minSdk = ProjectSettings.Android.MinSdkVersion
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = ProjectSettings.Android.JavaCompatibility
+        targetCompatibility = ProjectSettings.Android.JavaCompatibility
     }
 }
