@@ -1,13 +1,13 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 
-import com.appelis.kmp_demo.category_ui_logic.CategoryComponent
-import com.appelis.kmp_demo.category_ui_logic.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.CategoryComponent
+import com.appelis.kmp_demo.assortment.CategoryComponentImpl
 import com.appelis.kmp_demo.core.ChildConfig
 import com.appelis.kmp_demo.core.NavigationChild
-import com.appelis.kmp_demo.homescreen_ui_logic.HomescreenComponent
-import com.appelis.kmp_demo.homescreen_ui_logic.HomescreenComponentImpl
-import com.appelis.kmp_demo.leaflet_ui_logic.component.LeafletCollectionComponent
-import com.appelis.kmp_demo.leaflet_ui_logic.component.LeafletCollectionComponentImpl
+import com.appelis.kmp_demo.homescreen.HomescreenComponent
+import com.appelis.kmp_demo.homescreen.HomescreenComponentImpl
+import com.appelis.kmp_demo.leaflet.uiLogic.component.LeafletCollectionComponent
+import com.appelis.kmp_demo.leaflet.uiLogic.component.LeafletCollectionComponentImpl
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation

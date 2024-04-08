@@ -4,8 +4,8 @@ import com.appelis.kmp_demo.core.ChildConfig
 import com.appelis.kmp_demo.core.NavigationChild
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainNavigationComponent
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainNavigationComponentImpl
-import com.appelis.kmp_demo.startup_ui_logic.component.AppStartupComponent
-import com.appelis.kmp_demo.startup_ui_logic.component.AppStartupComponentImpl
+import com.appelis.kmp_demo.startup.component.AppStartupComponent
+import com.appelis.kmp_demo.startup.component.AppStartupComponentImpl
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.slot.ChildSlot
 import com.arkivanov.decompose.router.slot.SlotNavigation

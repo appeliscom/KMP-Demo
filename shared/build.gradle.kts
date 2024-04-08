@@ -1,41 +1,36 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    id(libs.plugins.kotlinMultiplatform.get().pluginId)
+    id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.skie)
     alias(libs.plugins.jetbrainsKotlinSerialization)
+    id(libs.plugins.koin.annotations.plugin.get().pluginId)
 }
 
 kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "11"
+                jvmTarget = ProjectSettings.Android.KotlinJvmTarget
             }
         }
     }
 
     val xc = XCFramework(xcFrameworkName = "Shared")
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
+    iosTargets {
         it.binaries.framework {
-            baseName="Shared"
+            baseName = "Shared"
             isStatic = true
 
             export(projects.grpcProto)
 
             export(projects.core)
-            export(projects.features.homescreen.homescreenUiLogic)
-            export(projects.features.startup.startupUiLogic)
-            export(projects.features.assortment.assortmentUiLogic)
-            export(projects.features.leaflet.leafletUiLogic)
-            export(projects.features.leaflet.leafletDomain)
-            export(projects.features.leaflet.leafletData)
+            export(projects.features.homescreen)
+            export(projects.features.startup)
+            export(projects.features.assortment)
+            export(projects.features.leaflet)
 
             export(libs.essenty)
             export(libs.decompose)
@@ -44,35 +39,37 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
-            api(projects.grpcProto)
-            api(projects.core)
+        val commonMain by getting {
+            kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
+            dependencies {
+                api(projects.grpcProto)
+                api(projects.core)
 
-            api(projects.features.homescreen.homescreenUiLogic)
-            api(projects.features.startup.startupUiLogic)
-            api(projects.features.assortment.assortmentUiLogic)
+                api(projects.features.homescreen)
+                api(projects.features.startup)
+                api(projects.features.assortment)
 
-            api(projects.features.leaflet.leafletUiLogic)
-            api(projects.features.leaflet.leafletDomain)
-            api(projects.features.leaflet.leafletData)
+                api(projects.features.leaflet)
 
-            api(libs.essenty)
-            api(libs.decompose)
-            implementation(libs.koin.core)
-            implementation(libs.kotlinx.coroutines.core)
+                api(libs.essenty)
+                api(libs.decompose)
+
+                implementation(project.dependencies.platform(libs.koin.bom))
+                implementation(libs.bundles.common)
+            }
         }
     }
 }
 
 android {
-    namespace = "com.appelis.kmp_demo"
-    compileSdk = 34
+    namespace = libs.versions.namespace.shared.get()
+    compileSdk = ProjectSettings.Android.CompileSdkVersion
     defaultConfig {
-        minSdk = 26
+        minSdk = ProjectSettings.Android.MinSdkVersion
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = ProjectSettings.Android.JavaCompatibility
+        targetCompatibility = ProjectSettings.Android.JavaCompatibility
     }
 }
 
