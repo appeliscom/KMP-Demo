@@ -19,6 +19,7 @@ kotlin {
 
     sourceSets {
         val commonMain by getting {
+            kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
                 implementation(project.dependencies.platform(libs.koin.bom))
                 implementation(libs.bundles.common)

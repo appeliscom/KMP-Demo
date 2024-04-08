@@ -1,9 +1,9 @@
-package com.appelis.kmp_demo.startup_ui_logic.component
+package com.appelis.kmp_demo.startup.component
 
 import com.appelis.kmp_demo.core.ViewModelComponent
 import com.appelis.kmp_demo.core.extensions.viewModel
-import com.appelis.kmp_demo.startup_ui_logic.viewModel.AppStartupViewModel
-import com.appelis.kmp_demo.startup_ui_logic.viewModel.AppStartupViewState
+import com.appelis.kmp_demo.startup.viewModel.AppStartupViewModel
+import com.appelis.kmp_demo.startup.viewModel.AppStartupViewState
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.value.Value
 

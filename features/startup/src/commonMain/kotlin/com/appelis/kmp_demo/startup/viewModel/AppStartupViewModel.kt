@@ -1,12 +1,13 @@
-package com.appelis.kmp_demo.startup_ui_logic.viewModel
+package com.appelis.kmp_demo.startup.viewModel
 
 import com.appelis.kmp_demo.core.SharedViewModel
 import com.appelis.kmp_demo.core.ViewState
-import com.appelis.kmp_demo.startup_ui_logic.component.AppStartupComponent
+import com.appelis.kmp_demo.startup.component.AppStartupComponent
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
+import org.koin.core.annotation.Factory
 
-
+@Factory
 class AppStartupViewModel(
 ): SharedViewModel<AppStartupViewState, Nothing>(), AppStartupComponent.ViewModel {
     private val _viewState: MutableValue<AppStartupViewState> = MutableValue(AppStartupViewState())

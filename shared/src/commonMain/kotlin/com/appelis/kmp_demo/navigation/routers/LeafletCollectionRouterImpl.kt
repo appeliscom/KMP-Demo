@@ -5,9 +5,11 @@ import com.appelis.kmp_demo.leaflet.uiLogic.router.LeafletCollectionRouter
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainFlowChildConfig
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.pop
+import org.koin.core.annotation.Single
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
+@Single
 class LeafletCollectionRouterImpl: LeafletCollectionRouter, KoinComponent {
     private val navigation: StackNavigation<MainFlowChildConfig> by inject()
 
