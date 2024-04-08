@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.di
 
 import com.appelis.kmp_demo.Greeting
-import com.appelis.kmp_demo.category_ui_logic.di.categoryUILogicModule
+import com.appelis.kmp_demo.assortment.di.AssortmentModule
 import com.appelis.kmp_demo.homescreen.di.HomescreenModule
 import com.appelis.kmp_demo.leaflet.di.LeafletModule
 import com.appelis.kmp_demo.navigation.di.NavigationModule
@@ -16,7 +16,7 @@ val sharedModule: Module = module {
         NavigationModule().module,
         AppStartupModule().module,
         HomescreenModule().module,
-        categoryUILogicModule,
+        AssortmentModule().module,
         LeafletModule().module
     )
 

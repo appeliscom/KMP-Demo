@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.category_ui_logic
+package com.appelis.kmp_demo.assortment
 
 import com.appelis.kmp_demo.core.ViewModelComponent
 import com.appelis.kmp_demo.core.extensions.viewModel

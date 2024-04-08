@@ -1,10 +1,12 @@
-package com.appelis.kmp_demo.category_ui_logic
+package com.appelis.kmp_demo.assortment
 
 import com.appelis.kmp_demo.core.SharedViewModel
 import com.appelis.kmp_demo.core.ViewState
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
+import org.koin.core.annotation.Factory
 
+@Factory
 class CategoryViewModel(
     private val args: Args
 ) :SharedViewModel<CategoryViewState, Nothing>(), CategoryComponent.ViewModel {

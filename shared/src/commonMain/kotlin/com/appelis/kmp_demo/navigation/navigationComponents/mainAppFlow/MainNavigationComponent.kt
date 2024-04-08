@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 
-import com.appelis.kmp_demo.category_ui_logic.CategoryComponent
-import com.appelis.kmp_demo.category_ui_logic.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.CategoryComponent
+import com.appelis.kmp_demo.assortment.CategoryComponentImpl
 import com.appelis.kmp_demo.core.ChildConfig
 import com.appelis.kmp_demo.core.NavigationChild
 import com.appelis.kmp_demo.homescreen.HomescreenComponent

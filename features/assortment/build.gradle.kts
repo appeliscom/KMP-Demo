@@ -2,6 +2,7 @@ plugins {
     id(libs.plugins.kotlinMultiplatform.get().pluginId)
     id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
+    id(libs.plugins.koin.annotations.plugin.get().pluginId)
 }
 
 kotlin {
@@ -14,24 +15,14 @@ kotlin {
         }
     }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "AssortmentUILogic"
-            isStatic = true
-        }
-    }
+    iosTargets()
 
     sourceSets {
         val commonMain by getting {
+            kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
-                implementation(libs.decompose)
                 implementation(project.dependencies.platform(libs.koin.bom))
-                implementation(libs.koin.core)
-                implementation(libs.kotlinx.coroutines.core)
+                implementation(libs.bundles.common)
                 api(projects.core)
             }
         }
@@ -39,7 +30,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.appelis.kmm_demo.assortment.assortmentUiLogic"
+    namespace = libs.versions.namespace.feature.assortment.get()
     compileSdk = ProjectSettings.Android.CompileSdkVersion
     defaultConfig {
         minSdk = ProjectSettings.Android.MinSdkVersion
