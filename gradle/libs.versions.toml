@@ -28,6 +28,7 @@ namespace-core = "com.appelis.kmm_demo.core.android"
 namespace-feature-assortment = "com.appelis.kmm_demo.feature.assortment.android"
 namespace-feature-homescreen = "com.appelis.kmm_demo.feature.homescreen.android"
 namespace-feature-leaflet = "com.appelis.kmm_demo.feature.leaflet.android"
+namespace-feature-startup = "com.appelis.kmm_demo.feature.startup.android"
 namespace-shared = "com.appelis.kmm_demo.shared.android"
 
 [libraries]
@@ -64,6 +65,7 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 # Gradle Plugins used in buildSrc
 gradlePlugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 gradlePlugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+gradlePlugin-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 # appModules
 
@@ -78,6 +80,10 @@ jetbrainsKotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization
 wire = { id = "com.squareup.wire", version.ref = "wire" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Precompiled script plugins
+koin-annotations-plugin = { id = "koin-annotations" }
+
 
 [bundles]
 common = [

@@ -1,8 +1,8 @@
 plugins {
     id(libs.plugins.kotlinMultiplatform.get().pluginId)
     id(libs.plugins.androidLibrary.get().pluginId)
+    id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
-    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -42,20 +42,5 @@ android {
     compileOptions {
         sourceCompatibility = ProjectSettings.Android.JavaCompatibility
         targetCompatibility = ProjectSettings.Android.JavaCompatibility
-    }
-}
-
-ksp {
-    arg("KOIN_DEFAULT_MODULE","false")
-}
-
-dependencies {
-    implementation(project(":GrpcProto"))
-    add("kspCommonMainMetadata", libs.koin.ksp.compiler)
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
-    if (name != "kspCommonMainKotlinMetadata") {
-        dependsOn("kspCommonMainKotlinMetadata")
     }
 }
