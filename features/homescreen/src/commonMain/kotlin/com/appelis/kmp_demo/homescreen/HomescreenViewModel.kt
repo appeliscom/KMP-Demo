@@ -1,10 +1,12 @@
-package com.appelis.kmp_demo.homescreen_ui_logic
+package com.appelis.kmp_demo.homescreen
 
 import com.appelis.kmp_demo.core.SharedViewModel
 import com.appelis.kmp_demo.core.ViewState
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
+import org.koin.core.annotation.Factory
 
+@Factory
 class HomescreenViewModel(
 
 ): SharedViewModel<HomescreenViewState, Nothing>(), HomescreenComponent.ViewModel {
