@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.navigation.routers
 
-import com.appelis.kmp_demo.leaflet_data.uiLogic.router.LeafletCollectionRoute
-import com.appelis.kmp_demo.leaflet_data.uiLogic.router.LeafletCollectionRouter
+import com.appelis.kmp_demo.leaflet.uiLogic.router.LeafletCollectionRoute
+import com.appelis.kmp_demo.leaflet.uiLogic.router.LeafletCollectionRouter
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainFlowChildConfig
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.pop

@@ -1,8 +1,8 @@
-package com.appelis.kmp_demo.leaflet_data.data.repository
+package com.appelis.kmp_demo.leaflet.data.repository
 
 import com.appelis.identity.Token
-import com.appelis.kmp_demo.leaflet_data.data.client.LeafletSuspendClient
-import com.appelis.kmp_demo.leaflet_data.data.mapper.LeafletMapper
+import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendClient
+import com.appelis.kmp_demo.leaflet.data.mapper.LeafletMapper
 import com.appelis.kmp_demo.leaflet_domain.model.LeafletModel
 import com.appelis.kmp_demo.leaflet_domain.repository.LeafletRepository
 import metro.leaflet.v1.GetLeafletsRequest

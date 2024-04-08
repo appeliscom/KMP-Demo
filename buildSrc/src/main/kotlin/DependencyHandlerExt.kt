@@ -1,5 +1,7 @@
 import org.gradle.api.artifacts.Dependency
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.getByType
 
 fun DependencyHandler.implementation(dependency: String) {
     add("implementation", dependency)
@@ -20,3 +22,6 @@ fun DependencyHandler.api(dependency: Dependency) {
 fun DependencyHandler.ksp(dependency: String) {
     add("implementation", dependency)
 }
+
+// TODO: If we can somehow reference versions.toml from here, we can
+//  define dependencies much more freely

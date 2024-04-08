@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.leaflet_data.repository
 
-import com.appelis.kmp_demo.leaflet_data.data.client.LeafletCallBackClient
-import com.appelis.kmp_demo.leaflet_data.data.client.LeafletSuspendClient
+import com.appelis.kmp_demo.leaflet.data.client.LeafletCallBackClient
+import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendClient
 import metro.leaflet.v1.GetLeafletsRequest
 import metro.leaflet.v1.GetLeafletsResponse
 import kotlin.coroutines.suspendCoroutine

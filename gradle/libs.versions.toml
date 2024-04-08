@@ -22,11 +22,13 @@ skie = "0.6.2"
 kotlinx-coroutines = "1.8.0"
 ksp = "1.9.22-1.0.16"
 
-project-shared-core-namespace = "com.appelis.kmm_demo.core.android"
-project-shared-feature-assortment-namespace = "com.appelis.kmm_demo.feature.assortment.android"
-project-shared-feature-homescreen-namespace = "com.appelis.kmm_demo.feature.homescreen.android"
-project-shared-feature-leaflet-namespace = "com.appelis.kmm_demo.feature.leaflet.android"
-project-shared-namespace = "com.appelis.kmm_demo.shared.android"
+
+
+namespace-core = "com.appelis.kmm_demo.core.android"
+namespace-feature-assortment = "com.appelis.kmm_demo.feature.assortment.android"
+namespace-feature-homescreen = "com.appelis.kmm_demo.feature.homescreen.android"
+namespace-feature-leaflet = "com.appelis.kmm_demo.feature.leaflet.android"
+namespace-shared = "com.appelis.kmm_demo.shared.android"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -63,6 +65,9 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 gradlePlugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 gradlePlugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 
+# appModules
+
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -73,4 +78,14 @@ jetbrainsKotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization
 wire = { id = "com.squareup.wire", version.ref = "wire" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+[bundles]
+common = [
+    "koin-core",
+    "koin-annotations",
+    "decompose",
+    "kotlinx-coroutines-core",
+    "wire-grpc-client",
+    "wire-runtime"
+]
 

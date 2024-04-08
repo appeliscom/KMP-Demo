@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.leaflet_data.data.mapper
+package com.appelis.kmp_demo.leaflet.data.mapper
 
 import com.appelis.kmp_demo.leaflet_domain.model.LeafletModel
 import metro.leaflet.v1.GetLeafletsResponse

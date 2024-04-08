@@ -1,6 +1,6 @@
 package com.appelis.kmp_demo.leaflet_data
 
-import com.appelis.kmp_demo.leaflet_data.data.client.LeafletSuspendClient
+import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendClient
 import com.squareup.wire.GrpcClient
 import metro.leaflet.v1.GetLeafletsRequest
 import metro.leaflet.v1.GetLeafletsResponse

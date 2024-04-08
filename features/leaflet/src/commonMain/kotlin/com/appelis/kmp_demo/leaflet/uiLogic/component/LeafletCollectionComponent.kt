@@ -1,12 +1,12 @@
-package com.appelis.kmp_demo.leaflet_data.uiLogic.component
+package com.appelis.kmp_demo.leaflet.uiLogic.component
 
 import com.appelis.kmp_demo.core.ViewModelComponent
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.value.Value
 import com.appelis.kmp_demo.core.extensions.viewModel
-import com.appelis.kmp_demo.leaflet_data.uiLogic.viewModel.LeafletCollectionUIEvent
-import com.appelis.kmp_demo.leaflet_data.uiLogic.viewModel.LeafletCollectionViewModel
-import com.appelis.kmp_demo.leaflet_data.uiLogic.viewModel.LeafletCollectionViewState
+import com.appelis.kmp_demo.leaflet.uiLogic.viewModel.LeafletCollectionUIEvent
+import com.appelis.kmp_demo.leaflet.uiLogic.viewModel.LeafletCollectionViewModel
+import com.appelis.kmp_demo.leaflet.uiLogic.viewModel.LeafletCollectionViewState
 import kotlinx.coroutines.flow.Flow
 
 interface LeafletCollectionComponent {

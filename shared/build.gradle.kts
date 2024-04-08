@@ -18,13 +18,9 @@ kotlin {
 
     val xc = XCFramework(xcFrameworkName = "Shared")
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
+    iosTargets {
         it.binaries.framework {
-            baseName="Shared"
+            baseName = "Shared"
             isStatic = true
 
             export(projects.grpcProto)
