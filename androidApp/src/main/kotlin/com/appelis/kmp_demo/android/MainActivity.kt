@@ -10,6 +10,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.appelis.kmp_demo.Greeting
+import com.appelis.kmp_demo.android.navigation.RootNavigationGraph
+import com.appelis.kmp_demo.navigation.navigationComponents.root.RootNavigationComponentImpl
+import com.arkivanov.decompose.defaultComponentContext
 import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +21,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        DI.initDI(nativeModule)
+        val rootComponent = RootNavigationComponentImpl(
+            componentContext = defaultComponentContext()
+        )
 
         setContent {
             MyApplicationTheme {
@@ -26,17 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LaunchedEffect(key1 = true) {
-//                        val leafletClient = LeafletSuspendClientImpl()
-//                        val repository = LeafletRepositoryImpl(leafletClient)
-//
-//                        withContext(Dispatchers.IO) {
-//                            val response = repository.getLeaflets()
-//                            println("Response from android view: ${response}")
-//                        }
-                    }
-
-                    GreetingView(greeting.greet())
+                    RootNavigationGraph(rootComponent, Modifier.fillMaxSize())
                 }
             }
         }

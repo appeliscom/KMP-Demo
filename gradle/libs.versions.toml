@@ -46,12 +46,14 @@ wire-grpc-client = { module = "com.squareup.wire:wire-grpc-client", version.ref 
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
 koin-core = { module = "io.insert-koin:koin-core" }
 koin-android = { module = "io.insert-koin:koin-android" }
+koin-android-compose = { module = "io.insert-koin:koin-androidx-compose" }
 
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
 koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations" }
 
 essenty = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essenty" }
 decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-compose-extensions = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
