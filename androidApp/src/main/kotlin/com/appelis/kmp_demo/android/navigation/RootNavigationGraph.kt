@@ -20,7 +20,7 @@ fun RootNavigationGraph(
 
     when(val slotInstance = slot.child?.instance) {
         is RootSlotNavigationChild.AppStartup -> AppStartupView(component = slotInstance.component, modifier)
-        is RootSlotNavigationChild.MainAppFlow -> Text("MainFlow")
+        is RootSlotNavigationChild.MainAppFlow -> MainFlowNavigationGraph(component = slotInstance.component, modifier)
         else -> Unit
     }
 }
