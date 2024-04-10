@@ -57,7 +57,7 @@ sealed class MainFlowChildConfig: ChildConfig<MainFlowNavigationChild> {
     @Serializable
     data class Category(private val id: String): MainFlowChildConfig() {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
-            return MainFlowNavigationChild.Category(CategoryComponentImpl(componentContext, id))
+            return MainFlowNavigationChild.Category(CategoryComponentImpl(componentContext, id), sheetRoot = true)
         }
     }
 
@@ -72,8 +72,11 @@ sealed class MainFlowChildConfig: ChildConfig<MainFlowNavigationChild> {
 /**
  * Represents item in navigation stack from which view can be generated
  */
+
 sealed class MainFlowNavigationChild: NavigationChild {
     data class Homescreen(val component: HomescreenComponent): MainFlowNavigationChild()
-    data class Category(val component: CategoryComponent): MainFlowNavigationChild()
+    data class Category(val component: CategoryComponent, val sheetRoot: Boolean): MainFlowNavigationChild() {
+        override fun isNewSheetRoot(): Boolean = sheetRoot
+    }
     data class LeafletCollection(val component: LeafletCollectionComponent): MainFlowNavigationChild()
 }
