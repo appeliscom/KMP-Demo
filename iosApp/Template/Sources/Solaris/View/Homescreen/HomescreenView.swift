@@ -25,14 +25,11 @@ struct HomescreenView: View {
     
     var body: some View {
         VStack {
-            Text("Homescreen")
-                .font(.title)
-            
             Spacer()
             
             Button(
                 action: {
-                    router.navigateTo(route: .Category(id: "321654"))
+                    router.navigateTo(route: .Category(id: "1"))
                 },
                 label: {
                     Text("open category")
@@ -51,5 +48,6 @@ struct HomescreenView: View {
             
             Spacer()
         }
+        .navigationTitle("Homescreen")
     }
 }

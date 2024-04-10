@@ -38,6 +38,7 @@ struct AppStartupView: View {
             
             Spacer()
         }
+        .navigationTitle("AppStartupView")
     }
 }
 
