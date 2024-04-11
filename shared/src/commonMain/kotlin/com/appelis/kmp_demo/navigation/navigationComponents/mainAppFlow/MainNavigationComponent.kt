@@ -20,7 +20,7 @@ import org.koin.core.component.inject
 
 interface MainNavigationComponent {
     val stack: Value<ChildStack<*, MainFlowNavigationChild>>
-    fun onBackClicked(toIndex: Int)
+    fun pop(toIndex: Int)
 }
 
 internal class MainNavigationComponentImpl(
@@ -39,7 +39,7 @@ internal class MainNavigationComponentImpl(
         childFactory = { childConfig, childContext -> childConfig.createChild(childContext) }
     )
 
-    override fun onBackClicked(toIndex: Int) = navigation.popTo(toIndex)
+    override fun pop(toIndex: Int) = navigation.popTo(toIndex)
 }
 
 /***

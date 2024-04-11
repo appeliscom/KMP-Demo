@@ -19,10 +19,14 @@ struct MainFlowNavigationView: View {
     }
 
     var body: some View {
-        StackView(
-            stackValue: StateValue(component.stack),
-            onBack: { index in component.onBackClicked(toIndex: index) }
-        ){ mainFlowNavigationChild in
+        
+        SheetStackView(
+            stack: StateValue(component.stack),
+            popStackToIndex: { index in
+                print("poptoindex \(index)")
+                component.pop(toIndex: Int32(index))
+            },
+            childViewBuilder: { mainFlowNavigationChild in
                 switch onEnum(of: mainFlowNavigationChild) {
                 case let .homescreen(child):
                     HomescreenView(component: child.component)
@@ -32,5 +36,6 @@ struct MainFlowNavigationView: View {
                     LeafletCollectionView(component: child.component)
                 }
             }
+        )
     }
 }
