@@ -19,23 +19,18 @@ struct MainFlowNavigationView: View {
     }
 
     var body: some View {
-        
         SheetStackView(
             stack: StateValue(component.stack),
-            popStackToIndex: { index in
-                print("poptoindex \(index)")
-                component.pop(toIndex: Int32(index))
-            },
-            childViewBuilder: { mainFlowNavigationChild in
-                switch onEnum(of: mainFlowNavigationChild) {
-                case let .homescreen(child):
-                    HomescreenView(component: child.component)
-                case let .category(child):
-                    CategoryView(component: child.component)
-                case let .leafletCollection(child):
-                    LeafletCollectionView(component: child.component)
-                }
+            popStackToIndex: { index in component.pop(toIndex: Int32(index)) }
+        ) { mainFlowNavigationChild in
+            switch onEnum(of: mainFlowNavigationChild) {
+            case let .homescreen(child):
+                HomescreenView(component: child.component)
+            case let .category(child):
+                CategoryView(component: child.component)
+            case let .leafletCollection(child):
+                LeafletCollectionView(component: child.component)
             }
-        )
+        }
     }
 }

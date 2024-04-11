@@ -55,9 +55,9 @@ sealed class MainFlowChildConfig: ChildConfig<MainFlowNavigationChild> {
     }
 
     @Serializable
-    data class Category(private val id: String): MainFlowChildConfig() {
+    data class Category(private val id: String, private val isSheetRoot: Boolean = false): MainFlowChildConfig() {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
-            return MainFlowNavigationChild.Category(CategoryComponentImpl(componentContext, id), sheetRoot = true)
+            return MainFlowNavigationChild.Category(CategoryComponentImpl(componentContext, id), sheetRoot = isSheetRoot)
         }
     }
 

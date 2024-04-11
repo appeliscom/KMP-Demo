@@ -5,5 +5,5 @@ interface CategoryRouter {
 }
 
 sealed class CategoryRoute {
-    data class Category(val id: String): CategoryRoute()
+    data class Category(val id: String, val isSheetRoot: Boolean = false): CategoryRoute()
 }

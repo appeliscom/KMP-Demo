@@ -66,10 +66,7 @@ public struct SheetStackView<NAV_CHILD: NavigationChild, Content: View>: View {
     public var body: some View {
         NavigationStack(
             path: Binding(
-                get: {
-                    print("hit")
-                    return substack
-                },
+                get: { substack },
                 set: { updatedPath in
                     popStackToIndex(updatedPath.endIndex + rootIndex)
                 }
