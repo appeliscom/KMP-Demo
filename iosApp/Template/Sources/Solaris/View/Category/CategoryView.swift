@@ -6,13 +6,15 @@
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
-import SwiftUI
 import Shared
+import SwiftUI
 import SwiftUICore
 
 struct CategoryView: View {
     @StateValue
     private var viewState: CategoryViewState
+    
+    private var router: CategoryRouter = inject()
     private let viewModel: CategoryComponentViewModel
     
     public init(component: CategoryComponent) {
@@ -22,13 +24,28 @@ struct CategoryView: View {
     
     var body: some View {
         VStack {
-            Text("Category")
-                .font(.title)
-            
             Text("id: \(viewState.id)")
             
             Spacer()
+            
+            Button(
+                action: {
+                    router.navigateTo(route: .Category(id: viewState.id + "1", isSheetRoot: false))
+                }, label: {
+                    Text("NavigateToInnerCategory")
+                }
+            )
+            .padding(.bottom, 40)
+            
+            Button(
+                action: {
+                    router.navigateTo(route: .Category(id: viewState.id + "1", isSheetRoot: true))
+                }, label: {
+                    Text("NavigateToInnerCategory in sheet")
+                }
+            )
+            .padding(.bottom, 40)
         }
+        .navigationTitle("Category \(viewState.id)")
     }
 }
-
