@@ -1,7 +1,9 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 
-import com.appelis.kmp_demo.assortment.CategoryComponent
-import com.appelis.kmp_demo.assortment.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.articleDetail.ArticleDetailComponent
+import com.appelis.kmp_demo.assortment.articleDetail.ArticleDetailComponentImpl
+import com.appelis.kmp_demo.assortment.category.CategoryComponent
+import com.appelis.kmp_demo.assortment.category.CategoryComponentImpl
 import com.appelis.kmp_demo.core.ChildConfig
 import com.appelis.kmp_demo.core.NavigationChild
 import com.appelis.kmp_demo.core.extensions.asStateFlow
@@ -15,7 +17,6 @@ import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.popTo
-import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.serialization.Serializable
 import org.koin.core.component.KoinComponent
@@ -70,6 +71,13 @@ sealed class MainFlowChildConfig: ChildConfig<MainFlowNavigationChild> {
             return MainFlowNavigationChild.LeafletCollection(LeafletCollectionComponentImpl(componentContext))
         }
     }
+
+    @Serializable
+    data class ArticleDetail(private val id: String): MainFlowChildConfig() {
+        override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
+            return MainFlowNavigationChild.ArticleDetail(ArticleDetailComponentImpl(componentContext, id))
+        }
+    }
 }
 
 /**
@@ -82,4 +90,5 @@ sealed class MainFlowNavigationChild: NavigationChild {
         override fun isNewSheetRoot(): Boolean = sheetRoot
     }
     data class LeafletCollection(val component: LeafletCollectionComponent): MainFlowNavigationChild()
+    data class ArticleDetail(val component: ArticleDetailComponent): MainFlowNavigationChild()
 }

@@ -68,7 +68,7 @@ struct LeafletCollectionView: View {
     
     private func layoutLeaflets(leaflets: [LeafletModel]) -> some View {
         VStack{
-            Text("leaflte collection: ")
+            Text("leaflet collection: ")
                 .font(.caption)
             
             ForEach(leaflets, id: \.title) { leaflet in

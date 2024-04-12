@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.navigation.routers
 
-import com.appelis.kmp_demo.assortment.CategoryRoute
-import com.appelis.kmp_demo.assortment.CategoryRouter
+import com.appelis.kmp_demo.assortment.category.CategoryRoute
+import com.appelis.kmp_demo.assortment.category.CategoryRouter
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainFlowChildConfig
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.push
@@ -19,6 +19,12 @@ class CategoryRouterImpl : CategoryRouter, KoinComponent {
                 MainFlowChildConfig.Category(
                     id = route.id,
                     isSheetRoot = route.isSheetRoot
+                )
+            )
+
+            is CategoryRoute.ArticleDetail -> navigation.push(
+                MainFlowChildConfig.ArticleDetail(
+                    id = route.id
                 )
             )
         }

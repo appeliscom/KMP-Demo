@@ -11,10 +11,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.appelis.kmp_demo.assortment.CategoryComponent
-import com.appelis.kmp_demo.assortment.CategoryRoute
-import com.appelis.kmp_demo.assortment.CategoryRouter
-import com.appelis.kmp_demo.assortment.CategoryViewState
+import com.appelis.kmp_demo.assortment.category.CategoryComponent
+import com.appelis.kmp_demo.assortment.category.CategoryRoute
+import com.appelis.kmp_demo.assortment.category.CategoryRouter
+import com.appelis.kmp_demo.assortment.category.CategoryViewState
 import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
 import org.koin.compose.koinInject
 

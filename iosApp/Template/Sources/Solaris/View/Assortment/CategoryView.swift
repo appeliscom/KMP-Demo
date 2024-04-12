@@ -30,6 +30,15 @@ struct CategoryView: View {
             
             Button(
                 action: {
+                    router.navigateTo(route: .ArticleDetail(id: "123456"))
+                }, label: {
+                    Text("Navigate to article")
+                }
+            )
+            .padding(.bottom, 40)
+            
+            Button(
+                action: {
                     router.navigateTo(route: .Category(id: viewState.id + "1", isSheetRoot: false))
                 }, label: {
                     Text("NavigateToInnerCategory")
