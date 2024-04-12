@@ -15,8 +15,6 @@ import com.appelis.kmp_demo.assortment.CategoryComponent
 import com.appelis.kmp_demo.assortment.CategoryRoute
 import com.appelis.kmp_demo.assortment.CategoryRouter
 import com.appelis.kmp_demo.assortment.CategoryViewState
-import com.appelis.kmp_demo.homescreen.HomescreenRoute
-import com.appelis.kmp_demo.homescreen.HomescreenRouter
 import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
 import org.koin.compose.koinInject
 

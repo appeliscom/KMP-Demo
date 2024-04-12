@@ -20,7 +20,7 @@ struct MainFlowNavigationView: View {
 
     var body: some View {
         SheetStackView(
-            stack: StateValue(component.stack),
+            stack: component.stack,
             popStackToIndex: { index in component.pop(toIndex: Int32(index)) }
         ) { mainFlowNavigationChild in
             switch onEnum(of: mainFlowNavigationChild) {

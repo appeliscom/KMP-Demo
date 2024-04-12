@@ -4,6 +4,8 @@ import com.appelis.kmp_demo.assortment.CategoryComponent
 import com.appelis.kmp_demo.assortment.CategoryComponentImpl
 import com.appelis.kmp_demo.core.ChildConfig
 import com.appelis.kmp_demo.core.NavigationChild
+import com.appelis.kmp_demo.core.extensions.asStateFlow
+import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.appelis.kmp_demo.homescreen.HomescreenComponent
 import com.appelis.kmp_demo.homescreen.HomescreenComponentImpl
 import com.appelis.kmp_demo.leaflet.uiLogic.component.LeafletCollectionComponent
@@ -14,12 +16,13 @@ import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.popTo
 import com.arkivanov.decompose.value.Value
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.serialization.Serializable
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 interface MainNavigationComponent {
-    val stack: Value<ChildStack<*, MainFlowNavigationChild>>
+    val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
     fun pop(toIndex: Int)
 }
 
@@ -28,7 +31,7 @@ internal class MainNavigationComponentImpl(
 ) : MainNavigationComponent, ComponentContext by componentContext, KoinComponent {
     private val navigation: StackNavigation<MainFlowChildConfig> by inject()
 
-    override val stack: Value<ChildStack<*, MainFlowNavigationChild>> = childStack(
+    override val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>> = childStack(
         source = navigation,
         serializer = MainFlowChildConfig.serializer(),
         key = this::class.simpleName.toString(),
@@ -37,7 +40,7 @@ internal class MainNavigationComponentImpl(
         },
         handleBackButton = true,
         childFactory = { childConfig, childContext -> childConfig.createChild(childContext) }
-    )
+    ).asStateFlow(componentContext.componentCoroutineScope())
 
     override fun pop(toIndex: Int) = navigation.popTo(toIndex)
 }
