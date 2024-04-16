@@ -3,6 +3,7 @@ package com.appelis.kmp_demo.android.navigation
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -38,6 +39,7 @@ fun MainFlowNavigationGraph(
                 is MainFlowNavigationChild.Homescreen -> HomescreenView(component = childInstance.component, modifier)
                 is MainFlowNavigationChild.Category -> CategoryView(component = childInstance.component, modifier)
                 is MainFlowNavigationChild.LeafletCollection -> LeafletCollectionView(component = childInstance.component, modifier)
+                is MainFlowNavigationChild.ArticleDetail -> Text("articledetail")
             }
         }
     }

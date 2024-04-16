@@ -9,10 +9,13 @@ import org.koin.core.parameter.parametersOf
 interface ArticleDetailComponent {
     val viewModel: ViewModel
 
+
+
     interface ViewModel {
         val viewState: Value<ArticleDetailViewState>
 
         fun setup()
+        fun fillInVoucherCode(code: String)
     }
 }
 

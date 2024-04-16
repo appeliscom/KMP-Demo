@@ -56,6 +56,10 @@ struct ArticleDetailView: View {
                 .font(.caption)
             
             Spacer()
+            
+            Text("Voucher: \(data.voucher ?? "none")")
+            
+            Spacer()
         }
     }
 }

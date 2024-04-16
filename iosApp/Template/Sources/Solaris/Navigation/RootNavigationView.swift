@@ -13,8 +13,10 @@ import SwiftUICore
 public struct RootNavigationView: View {
     @StateValue
     private var slot: ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>
+    private let component: RootNavigationComponent
     
     public init(_ component: RootNavigationComponent) {
+        self.component = component
         self._slot = StateValue(component.slot)
     }
     
@@ -28,6 +30,23 @@ public struct RootNavigationView: View {
                     MainFlowNavigationView(component: child.component)
                 }
             }
+            
+            Circle()
+                .fill(.black)
+                .overlay(
+                    Text("deeplink")
+                        .foregroundColor(.white)
+                )
+                .frame(width: 80, height: 80)
+                .padding()
+                .onTapGesture {
+                    Task{ @MainActor in
+//                        try await Task.sleep(nanoseconds: 5_000_000_000)
+                        
+                        component.handleDeeplink(deeplink: .ArticleDetail(id: "123", voucherCode: "voucheeeer"))
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
     }
 }

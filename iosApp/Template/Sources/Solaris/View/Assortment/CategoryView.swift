@@ -30,7 +30,7 @@ struct CategoryView: View {
             
             Button(
                 action: {
-                    router.navigateTo(route: .ArticleDetail(id: "123456"))
+                    router.navigateTo(route: .ArticleDetail(id: "123"))
                 }, label: {
                     Text("Navigate to article")
                 }

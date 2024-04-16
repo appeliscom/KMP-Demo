@@ -9,7 +9,7 @@ import Shared
 import SwiftUI
 import UIKit
 
-public struct SheetStackView<NAV_CHILD: NavigationChild, Content: View>: View {
+public struct SheetStackView<NAV_CHILD: StackNavigationChild, Content: View>: View {
     // Represents the whole stack in decompose navigation component
     private let stack: SkieSwiftStateFlow<ChildStack<AnyObject, NAV_CHILD>>
 
@@ -42,10 +42,14 @@ public struct SheetStackView<NAV_CHILD: NavigationChild, Content: View>: View {
 
     public var body: some View {
         NavigationStack(path: $substack) {
-            childViewBuilder(stack.value.items.suffix(from: rootIndex).first!.instance)
-                .navigationDestination(for: Child<AnyObject, NAV_CHILD>.self) {
-                    childViewBuilder($0.instance!)
+            ZStack{
+                if let rootChild = stack.value.items.suffix(from: rootIndex).first?.instance {
+                    childViewBuilder(rootChild)
+                        .navigationDestination(for: Child<AnyObject, NAV_CHILD>.self) {
+                            childViewBuilder($0.instance!)
+                        }
                 }
+            }
         }
         .sheet(isPresented: .init(
             get: { nextSheetRootIndex != nil },
@@ -79,6 +83,9 @@ public struct SheetStackView<NAV_CHILD: NavigationChild, Content: View>: View {
              )
              */
             for await stackValue in stack {
+                // When deeplink closes sheet, stackValue.items.count can be lower than rootIndex (iteration is called on right now closing sheet), so ignore it
+                guard stackValue.items.count >= rootIndex else { return }
+                
                 substack = stackValue
                     .items
                     .suffix(from: rootIndex)
