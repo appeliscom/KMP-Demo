@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.assortment
+package com.appelis.kmp_demo.assortment.category
 
 import com.appelis.kmp_demo.core.SharedViewModel
 import com.appelis.kmp_demo.core.ViewState

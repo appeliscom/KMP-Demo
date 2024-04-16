@@ -14,6 +14,9 @@ struct HomescreenView: View {
     @StateValue
     private var viewState: HomescreenViewState
     
+    @State
+    private var counter: Int = 0
+    
     private var router: HomescreenRouter = inject()
     
     private let viewModel: HomescreenComponentViewModel
@@ -26,6 +29,12 @@ struct HomescreenView: View {
     var body: some View {
         VStack {
             Spacer()
+            
+            Text("counter: \(counter)")
+                .onTapGesture {
+                    counter += 1
+                }
+                .padding(.bottom, 16)
             
             Button(
                 action: {
