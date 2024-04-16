@@ -19,10 +19,8 @@ import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.navigate
 import com.arkivanov.decompose.router.stack.popTo
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -30,7 +28,7 @@ import org.koin.core.component.inject
 interface MainNavigationComponent {
     val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
     fun pop(toIndex: Int)
-    fun handleDeeplink(deeplink: Deeplink): Boolean
+    suspend fun handleDeeplink(deeplink: Deeplink): Boolean
 }
 
 internal class MainNavigationComponentImpl(
@@ -51,34 +49,27 @@ internal class MainNavigationComponentImpl(
 
     override fun pop(toIndex: Int) = navigation.popTo(toIndex)
 
-    override fun handleDeeplink(deeplink: Deeplink): Boolean {
-        val currentConfigs = ArrayList(stack.value.items.mapNotNull { it.configuration as? MainFlowChildConfig })
+    override suspend fun handleDeeplink(deeplink: Deeplink): Boolean {
+        val currentConfigs =
+            ArrayList(stack.value.items.mapNotNull { it.configuration as? MainFlowChildConfig })
+        var newConfigs: ArrayList<MainFlowChildConfig>? = null
 
-        var newConfig: ArrayList<MainFlowChildConfig>? = null
-
+        // Get new configs -> current configs up to config that can handle deeplink + appended configs from it
         for (config in currentConfigs.reversed()) {
-            println("checking whether $config can handle deeplink")
             val appendedChildren = config.getDeeplinkChildren(deeplink)
             if (appendedChildren != null) {
                 val index = currentConfigs.lastIndexOf(config)
-                newConfig = ArrayList(currentConfigs.subList(0, index + 1))
-                newConfig.addAll(appendedChildren)
-                println("$config can handle deeplink ending loop")
+                newConfigs = ArrayList(currentConfigs.subList(0, index + 1))
+                newConfigs.addAll(appendedChildren)
                 break
-            } else {
-                println("$config can't handle deeplink")
             }
         }
 
-        newConfig?.let { newConfigs ->
+        newConfigs?.let {
             navigation.navigate { newConfigs }
             // wait until active child is the requested one (the onComplete lambda in navigate function was not dependable)
-            MainScope().launch {
-                stack.first { stack -> stack.active.configuration == newConfigs.last() }
-                println("Navigation to deeplinked screen complete, passing deeplink to screen ${stack.value.active.instance}")
-                stack.value.active.instance.handleDeeplink(deeplink)
-            }
-
+            stack.first { stack -> stack.active.configuration == newConfigs.last() }
+            stack.value.active.instance.handleDeeplink(deeplink)
             return true
         } ?: return false
     }
@@ -89,6 +80,7 @@ internal class MainNavigationComponentImpl(
  */
 @Serializable
 sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
+    // if it can handle deeplink, it will return array of configs, if not it will return null
     open fun getDeeplinkChildren(deeplink: Deeplink): List<MainFlowChildConfig>? = null
 
     @Serializable
@@ -140,12 +132,8 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
         override fun getDeeplinkChildren(deeplink: Deeplink): List<MainFlowChildConfig>? {
             return when (deeplink) {
                 is Deeplink.ArticleDetail -> {
-                    if (deeplink.id == id) {
-                        println("articleid: ${id} deeplinkid: ${deeplink.id}")
-                        emptyList()
-                    } else {
-                        null
-                    }
+                    if (deeplink.id == id) emptyList()
+                    else null
                 }
             }
         }
@@ -167,9 +155,8 @@ sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig>
         MainFlowNavigationChild()
 
     data class ArticleDetail(val component: ArticleDetailComponent) : MainFlowNavigationChild() {
-        override fun handleDeeplink(deeplink: Deeplink) {
-            println("ArticleDetail Child is handling deeplink")
-            when(deeplink){
+        override suspend fun handleDeeplink(deeplink: Deeplink) {
+            when (deeplink) {
                 is Deeplink.ArticleDetail -> component.viewModel.fillInVoucherCode(deeplink.voucherCode)
             }
         }

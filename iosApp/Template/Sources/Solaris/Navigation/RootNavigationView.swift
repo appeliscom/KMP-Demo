@@ -11,18 +11,21 @@ import SwiftUI
 import SwiftUICore
 
 public struct RootNavigationView: View {
-    @StateValue
-    private var slot: ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>
+    private var slotStateFlow: SkieSwiftStateFlow<ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>>
+    
+    @State
+    private var slot: ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>?
+    
     private let component: RootNavigationComponent
     
     public init(_ component: RootNavigationComponent) {
         self.component = component
-        self._slot = StateValue(component.slot)
+        self.slotStateFlow = component.slot
     }
     
     public var body: some View {
         ZStack {
-            if let rootSlotNavigationChild = slot.child?.instance {
+            if let rootSlotNavigationChild = slot?.child?.instance {
                 switch onEnum(of: rootSlotNavigationChild) {
                 case let .appStartup(child):
                     AppStartupView(component: child.component)
@@ -43,10 +46,15 @@ public struct RootNavigationView: View {
                     Task{ @MainActor in
 //                        try await Task.sleep(nanoseconds: 5_000_000_000)
                         
-                        component.handleDeeplink(deeplink: .ArticleDetail(id: "123", voucherCode: "voucheeeer"))
+                        try? await component.handleDeeplink(deeplink: .ArticleDetail(id: "123", voucherCode: "voucheeeer"))
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        }
+        .task {
+            for await slot in slotStateFlow {
+                self.slot = slot
+            }
         }
     }
 }

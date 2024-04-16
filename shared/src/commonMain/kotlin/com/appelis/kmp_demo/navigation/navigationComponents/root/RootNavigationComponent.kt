@@ -1,5 +1,7 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.root
 
+import com.appelis.kmp_demo.core.extensions.asStateFlow
+import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.appelis.kmp_demo.navigation.ChildConfig
 import com.appelis.kmp_demo.navigation.NavigationChild
 import com.appelis.kmp_demo.navigation.SlotNavigationChild
@@ -18,6 +20,8 @@ import com.arkivanov.decompose.router.slot.navigate
 import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import org.koin.core.component.KoinComponent
@@ -26,7 +30,7 @@ import kotlin.coroutines.coroutineContext
 import kotlin.coroutines.suspendCoroutine
 
 interface RootNavigationComponent {
-    val slot: Value<ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>>
+    val slot: StateFlow<ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>>
     fun handleDeeplink(deeplink: Deeplink)
 }
 
@@ -35,7 +39,7 @@ class RootNavigationComponentImpl(
 ) : ComponentContext by componentContext, KoinComponent, RootNavigationComponent {
     private val navigation: SlotNavigation<RootSlotChildConfig> by inject()
 
-    override val slot: Value<ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>> = childSlot(
+    override val slot: StateFlow<ChildSlot<RootSlotChildConfig, RootSlotNavigationChild>> = childSlot(
         source = navigation,
         serializer = RootSlotChildConfig.serializer(),
         initialConfiguration = { RootSlotChildConfig.AppStartup },
@@ -43,20 +47,21 @@ class RootNavigationComponentImpl(
         childFactory = { childConfig, childContext ->
             childConfig.createChild(childContext)
         }
-    )
+    ).asStateFlow(componentContext.componentCoroutineScope())
 
     override fun handleDeeplink(deeplink: Deeplink) {
-        // At first, try handle deeplink in active slot
-        if (slot.value.child?.instance?.handleDeeplink(deeplink) == true) return
+        componentCoroutineScope().launch {
+            // At first, try handle deeplink in active slot
+            if (slot.value.child?.instance?.handleDeeplink(deeplink) == true) return@launch
 
-        // If active slot can't handle deeplink, activate slot that can and pass deeplink to it
-        when (deeplink) {
-            is Deeplink.ArticleDetail -> {
-                navigation.activate(
-                    RootSlotChildConfig.MainAppFlow,
-                    onComplete = { slot.value.child?.instance?.handleDeeplink(deeplink) }
-                )
+            // If active slot can't handle deeplink, activate slot that can and pass deeplink to it
+            val newSlotConfig =  when (deeplink) {
+                is Deeplink.ArticleDetail -> { RootSlotChildConfig.MainAppFlow }
             }
+            // wait until requested slot is activated
+            navigation.activate(newSlotConfig)
+            slot.first { slot -> slot.child?.configuration == newSlotConfig }
+            slot.value.child?.instance?.handleDeeplink(deeplink)
         }
     }
 }
@@ -87,7 +92,7 @@ sealed class RootSlotChildConfig : ChildConfig<RootSlotNavigationChild> {
 sealed class RootSlotNavigationChild : SlotNavigationChild {
     data class AppStartup(val component: AppStartupComponent) : RootSlotNavigationChild()
     data class MainAppFlow(val component: MainNavigationComponent) : RootSlotNavigationChild() {
-        override fun handleDeeplink(deeplink: Deeplink): Boolean {
+        override suspend fun handleDeeplink(deeplink: Deeplink): Boolean {
             return component.handleDeeplink(deeplink)
         }
     }

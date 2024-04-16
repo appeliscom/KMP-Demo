@@ -30,19 +30,14 @@ class ArticleDetailViewModel(
     }
 
     override fun fillInVoucherCode(code: String) {
-        MainScope().launch {
+        viewModelScope.launch {
             // wait until article is loaded
-            println("passed code to article detail $code")
-            println("waiting for success state")
-
-            _viewState.asStateFlow(this).first { state ->
+            viewState.asStateFlow(this).first { state ->
                 return@first when (state) {
                     is ArticleDetailViewState.Success -> true
                     else -> false
                 }
             }
-
-            println("voucher set $code")
             _viewState.value = ArticleDetailViewState.Success(id = args.id, voucher = code)
         }
     }

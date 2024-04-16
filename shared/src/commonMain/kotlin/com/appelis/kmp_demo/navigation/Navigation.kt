@@ -12,11 +12,11 @@ import kotlin.coroutines.suspendCoroutine
 
 interface StackNavigationChild<T : Any> : NavigationChild {
     fun isNewSheetRoot(): Boolean = false
-    fun handleDeeplink(deeplink: Deeplink) = run { }
+    suspend fun handleDeeplink(deeplink: Deeplink) = run { }
 }
 
 interface SlotNavigationChild : NavigationChild {
-    fun handleDeeplink(deeplink: Deeplink): Boolean = false
+    suspend fun handleDeeplink(deeplink: Deeplink): Boolean = false
 }
 
 interface NavigationChild
