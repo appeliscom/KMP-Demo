@@ -30,6 +30,8 @@ struct HomescreenView: View {
         VStack {
             Spacer()
             
+            Text(R.strings().my_string.desc().localized())
+            
             Text("counter: \(counter)")
                 .onTapGesture {
                     counter += 1

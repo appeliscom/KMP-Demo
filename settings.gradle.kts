@@ -17,7 +17,6 @@ dependencyResolutionManagement {
 rootProject.name = "KMP-Demo"
 include(":androidApp")
 include(":GrpcProto")
-include(":commonMain")
 
 include(":shared")
 
@@ -29,3 +28,4 @@ include(":features:leaflet")
 include(":core")
 
 includeBuild("convention-plugins")
+
