@@ -6,8 +6,8 @@
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
-import SwiftUI
 import Shared
+import SwiftUI
 import SwiftUICore
 
 struct HomescreenView: View {
@@ -28,7 +28,10 @@ struct HomescreenView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+            Image(resource: \.test_image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 300, height: 300)
             
             Text(R.strings().my_string.desc().localized())
             
@@ -59,6 +62,10 @@ struct HomescreenView: View {
             
             Spacer()
         }
+        .frame(maxWidth: .infinity)
+        .background(
+            Color(\.appBackground)
+        )
         .navigationTitle("Homescreen")
     }
 }
