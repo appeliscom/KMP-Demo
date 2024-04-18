@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="surface">#FFFFFF</color>
+    <color name="secondary">#0064FE</color>
+    <color name="secondaryVariant">#0050CB</color>
+    <color name="onSecondary">@color/surface</color>
+    <color name="onSurfaceH">#001F2A</color>
+    <color name="onSurfaceP">#44464F</color>
+    <color name="appBackground">#F2F5F8</color>
+    <color name="onBackgroundH">@color/onSurfaceH</color>
+    <color name="onBackgroundP">@color/onSurfaceP</color>
+    <color name="hint">#788495</color>
+    <color name="divider">#E9EAF1</color>
+    <color name="badge">#AF3375</color>
+    <color name="special1">#002D72</color>
+    <color name="special2">#FFED00</color>
+    <color name="special3">#008A40</color>
+    <color name="special4">#E6F0FF</color>
+    <color name="special3Container">#C5FFCA</color>
+    <color name="onSpecial">@color/surface</color>
+    <color name="error">#C00016</color>
+    <color name="errorContainer">#FFDAD6</color>
+</resources>

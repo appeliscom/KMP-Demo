@@ -118,6 +118,8 @@
 				7555FF78242A565900829871 /* Frameworks */,
 				7555FF79242A565900829871 /* Resources */,
 				7555FFB4242A642300829871 /* Embed Frameworks */,
+				7EE330002BCFEF71001F783F /* Copy Multiplatform Resources */,
+				7E24A51B2BCFE857005A658C /* Copy Multiplatform Resources */,
 			);
 			buildRules = (
 			);
@@ -197,6 +199,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#cd \"$SRCROOT/..\"\n# ./gradlew :shared:embedAndSignAppleFrameworkForXcode\n\n#ROOT_DIR=$(dirname \"$SRCROOT\")\n#if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n #   ./gradlew :shared:assembleSharedDebugXCFramework\n  #  cp -Rf \"${ROOT_DIR}/shared/build/XCFrameworks/debug/Shared.xcframework\" \"${ROOT_DIR}/iosApp/Shared\"\n#else\n #   ./gradlew :shared:assembleSharedReleaseXCFramework\n  #  cp -Rf \"${ROOT_DIR}/shared/build/XCFrameworks/release/Shared.xcframework\" \"${ROOT_DIR}/iosApp/Shared\"\n#fi\n";
+		};
+		7E24A51B2BCFE857005A658C /* Copy Multiplatform Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Multiplatform Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" :shared:copyResourcesSharedReleaseXCFrameworkToApp \\\n    -Pmoko.resources.BUILT_PRODUCTS_DIR=$BUILT_PRODUCTS_DIR \\\n    -Pmoko.resources.CONTENTS_FOLDER_PATH=$CONTENTS_FOLDER_PATH\n";
+		};
+		7EE330002BCFEF71001F783F /* Copy Multiplatform Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Multiplatform Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" :shared:copyFrameworkResourcesToApp \\\n    -Pmoko.resources.PLATFORM_NAME=\"$PLATFORM_NAME\" \\\n    -Pmoko.resources.CONFIGURATION=\"$CONFIGURATION\" \\\n    -Pmoko.resources.ARCHS=\"$ARCHS\" \\\n    -Pmoko.resources.BUILT_PRODUCTS_DIR=\"$BUILT_PRODUCTS_DIR\" \\\n    -Pmoko.resources.CONTENTS_FOLDER_PATH=\"$CONTENTS_FOLDER_PATH\" \n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

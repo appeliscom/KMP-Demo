@@ -18,4 +18,8 @@ object ProjectSettings {
         val JavaCompatibility = JavaVersion.VERSION_17
         const val KotlinJvmTarget = "17"
     }
+
+    object IOS {
+        const val MokoBaseLocalizationRegion = "en"
+    }
 }
