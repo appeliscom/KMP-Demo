@@ -10,14 +10,14 @@ import SwiftUI
 import SwiftUICore
 
 struct AppStartupView: View {
-    @StateValue
+    @State
     private var viewState: AppStartupViewState
     private var router: AppStartupRouter = inject()
     private let viewModel: AppStartupComponentViewModel
     
     public init(component: AppStartupComponent) {
         self.viewModel = component.viewModel
-        self._viewState = StateValue(component.viewModel.viewState)
+        self.viewState = .init()
     }
     
     var body: some View {

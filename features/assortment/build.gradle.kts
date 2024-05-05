@@ -23,7 +23,9 @@ kotlin {
             dependencies {
                 implementation(project.dependencies.platform(libs.koin.bom))
                 implementation(libs.bundles.common)
+                implementation(libs.paging)
                 api(projects.core)
+                implementation(projects.grpcProto)
             }
         }
     }

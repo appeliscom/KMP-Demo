@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.assortment.category
+package com.appelis.kmp_demo.assortment.uiLogic.category
 
 interface CategoryRouter {
     fun navigateTo(route: CategoryRoute)

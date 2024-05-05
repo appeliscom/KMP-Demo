@@ -10,6 +10,8 @@ import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
 
@@ -18,9 +20,9 @@ class LeafletCollectionViewModel(
     private val getLeafletsUseCase: GetLeafletsUseCase
 ) : SharedViewModel<LeafletCollectionViewState, LeafletCollectionUIEvent>(),
     LeafletCollectionComponent.ViewModel {
-    private val _viewState: MutableValue<LeafletCollectionViewState> =
-        MutableValue(LeafletCollectionViewState.Loading)
-    override val viewState: Value<LeafletCollectionViewState> = _viewState
+    private val _viewState: MutableStateFlow<LeafletCollectionViewState> =
+        MutableStateFlow(LeafletCollectionViewState.Loading)
+    override val viewState: StateFlow<LeafletCollectionViewState> = _viewState
 
     override fun setup(token: String) {
         viewModelScope.launch {

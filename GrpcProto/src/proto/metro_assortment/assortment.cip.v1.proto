@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "identity_service/common.proto";
+import "appelis/objectid.proto";
+import "google/protobuf/timestamp.proto";
+
+// Service for handling cip prices from administration.
+service CipAdmin {
+  // Rpc will stream all of projects cip prices.
+  rpc GetAllCipPrices (appelis.identity.common.v1.Token) returns (stream CipPricesResponse) {
+  }
+  // Rpc will create prices, unique fields are IdCompany and IdArticle, if there will be more items for
+  // same combination of these fields, then they will be replaced by last value.
+  // Because of Upsert logic, rpc can't return ids of prices...
+  rpc CreateCipPrices (CreateCipPricesRequest) returns (ChangeCipPricesResponse) {
+  }
+  // Rpc will delete prices defined by their ids.
+  rpc DeleteCipPrices (DeleteCipPricesRequest) returns (ChangeCipPricesResponse) {
+  }
+}
+
+
+message ChangeCipPricesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+  }
+}
+
+message DeleteCipPricesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated appelis.ObjectId data = 2;
+}
+
+message CreateCipPricesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated CipPriceData prices = 2;
+}
+
+message CipPricesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError error = 1;
+    CipPrices data = 2;
+  }
+}
+
+message CipPrices {
+  repeated CipPrice data = 1;
+}
+
+message CipPriceData {
+  double unitTax = 1;
+  double unit = 2;
+  double munitTax = 3;
+  double munit = 4;
+  double packTax = 5;
+  double pack = 6;
+  string idArticle = 7;
+  int64 idCompany = 8;
+  google.protobuf.Timestamp validityFrom = 9;
+  google.protobuf.Timestamp validityTo = 10;
+}
+
+message CipPrice {
+  // Id for deleting whole price.
+  appelis.ObjectId idPrice = 11;
+  CipPriceData data = 1;
+}

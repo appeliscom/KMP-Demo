@@ -1,9 +1,9 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 
-import com.appelis.kmp_demo.assortment.articleDetail.ArticleDetailComponent
-import com.appelis.kmp_demo.assortment.articleDetail.ArticleDetailComponentImpl
-import com.appelis.kmp_demo.assortment.category.CategoryComponent
-import com.appelis.kmp_demo.assortment.category.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponent
+import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponent
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
 import com.appelis.kmp_demo.core.extensions.asStateFlow
 import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.appelis.kmp_demo.homescreen.HomescreenComponent

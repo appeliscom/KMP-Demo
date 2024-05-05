@@ -28,7 +28,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         KmpApplication().doInitSharedModule(
             nativeModule: nativeModule,
             platformGrpcClientModule: makePlatformGrpcClientModule(
-                leafletSuspendClient: GrpcClientFactory.leafletClient()
+                leafletSuspendClient: GrpcClientFactory.leafletClient(),
+                assortmentByCategorySuspendClient: GrpcClientFactory.assortmentByCategoryClient()
             )
         )
         return true

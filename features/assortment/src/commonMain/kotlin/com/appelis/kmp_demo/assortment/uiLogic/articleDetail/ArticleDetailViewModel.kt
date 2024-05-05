@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.assortment.articleDetail
+package com.appelis.kmp_demo.assortment.uiLogic.articleDetail
 
 import com.appelis.kmp_demo.core.SharedViewModel
 import com.appelis.kmp_demo.core.ViewState
@@ -7,17 +7,19 @@ import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
 
 @Factory
 class ArticleDetailViewModel(
-    private val args: ArticleDetailViewModel.Args
+    private val args: Args
 ) : SharedViewModel<ArticleDetailViewState, Nothing>(), ArticleDetailComponent.ViewModel {
-    private val _viewState: MutableValue<ArticleDetailViewState> =
-        MutableValue(ArticleDetailViewState.Loading)
-    override val viewState: Value<ArticleDetailViewState> = _viewState
+    private val _viewState: MutableStateFlow<ArticleDetailViewState> =
+        MutableStateFlow(ArticleDetailViewState.Loading)
+    override val viewState: StateFlow<ArticleDetailViewState> = _viewState
 
     data class Args(val id: String)
 
@@ -32,7 +34,7 @@ class ArticleDetailViewModel(
     override fun fillInVoucherCode(code: String) {
         viewModelScope.launch {
             // wait until article is loaded
-            viewState.asStateFlow(this).first { state ->
+            viewState.first { state ->
                 return@first when (state) {
                     is ArticleDetailViewState.Success -> true
                     else -> false

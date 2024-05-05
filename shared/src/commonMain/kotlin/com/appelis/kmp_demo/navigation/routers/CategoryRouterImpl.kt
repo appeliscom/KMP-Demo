@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.navigation.routers
 
-import com.appelis.kmp_demo.assortment.category.CategoryRoute
-import com.appelis.kmp_demo.assortment.category.CategoryRouter
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryRoute
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryRouter
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainFlowChildConfig
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.push

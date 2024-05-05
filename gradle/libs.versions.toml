@@ -31,6 +31,7 @@ namespace-feature-homescreen = "com.appelis.kmm_demo.feature.homescreen.android"
 namespace-feature-leaflet = "com.appelis.kmm_demo.feature.leaflet.android"
 namespace-feature-startup = "com.appelis.kmm_demo.feature.startup.android"
 namespace-shared = "com.appelis.kmm_demo.shared.android"
+recyclerview = "1.3.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -64,6 +65,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "moko-resources" }
 moko-graphics = { group = "dev.icerock.moko", name = "graphics", version.ref = "moko-graphics" }
 paging = { group = "app.cash.paging", name = "paging-common", version.ref = "paging" }
+paging-ios = { group = "app.cash.paging", name = "paging-runtime-uikit", version.ref = "paging" }
 
 # KotlinX
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
@@ -72,6 +74,7 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 gradlePlugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 gradlePlugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 gradlePlugin-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 
 # appModules
 
