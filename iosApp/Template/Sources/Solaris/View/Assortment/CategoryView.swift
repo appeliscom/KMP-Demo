@@ -83,89 +83,11 @@ struct CategoryView: View {
         .navigationTitle("Category \(String(describing: viewState?.id))")
         .task {
             await pager.initPager(
-                pagedDataStream: AsyncStream<AsyncStream<PagedData<ArticlePreviewModel>>>.fromSkieSwiftStateFlow(
+                pagedDataStream: AsyncStream<PagedData<ArticlePreviewModel>>.fromSkieSwiftStateFlow(
                     skieStateFlow: viewModel.viewState,
                     mapFunction: { $0.articles }
                 )
             )
         }
-    }
-}
-
-public extension AsyncStream {
-    static func fromSkieSwiftStateFlow<Input, Output>(
-        skieStateFlow: SkieSwiftStateFlow<Input>,
-        mapFunction: @escaping (Input) -> Output
-    ) -> AsyncStream<Output> {
-        AsyncStream<Output> { continuation in
-            Task {
-                for await item in skieStateFlow {
-                    continuation.yield(mapFunction(item))
-                }
-                continuation.finish()
-            }
-        }
-    }
-    
-    func fromSkieSwiftStateFlow<T>(skieStateFlow: SkieSwiftStateFlow<T>) -> AsyncStream<T> {
-        AsyncStream<T> { continuation in
-            Task {
-                for await item in skieStateFlow {
-                    continuation.yield(item)
-                }
-                continuation.finish()
-            }
-        }
-    }
-}
-
-public typealias PagedData = Paging_commonPagingData
-
-@MainActor
-public class Pager<T: AnyObject>: ObservableObject {
-    @Published public private(set) var items: [T] = []
-    @Published public private(set) var isLoadingNextPage: Bool = false
-    @Published public private(set) var hasNextPage: Bool = false
-    
-    private let delegate = PagingDelegate<T>()
-    
-    public init() {}
-    
-    public func initPager(pagedDataStream: AsyncStream<PagedData<T>>) async {
-        await withTaskGroup(of: Void.self) { group in
-            group.addTask { [weak self] in await self?.observeData(pagedDataStream: pagedDataStream) }
-            group.addTask { [weak self] in await self?.observeDataChanges() }
-            group.addTask { [weak self] in await self?.observeLoadState() }
-        }
-    }
-    
-    private func observeData(pagedDataStream: AsyncStream<PagedData<T>>) async {
-        for try await pagedData in pagedDataStream {
-            try? await skie(delegate).submitData(pagingData: pagedData)
-        }
-    }
-    
-    private func observeDataChanges() async {
-        for await _ in delegate.onPagesUpdatedFlow {
-            items = delegate.getItems()
-        }
-    }
-    
-    private func observeLoadState() async {
-        for await loadState in delegate.loadStateFlow {
-            switch onEnum(of: loadState.refresh) {
-            case .loading:
-                isLoadingNextPage = true
-            case let .notLoading(notLoading):
-                isLoadingNextPage = false
-                hasNextPage = !notLoading.endOfPaginationReached
-            case .error:
-                isLoadingNextPage = false
-            }
-        }
-    }
-    
-    func loadNextPage() {
-        delegate.loadNextPage()
     }
 }
