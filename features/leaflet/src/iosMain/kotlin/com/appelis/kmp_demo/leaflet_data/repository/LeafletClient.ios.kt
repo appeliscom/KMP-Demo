@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.leaflet_data.repository
 
+import com.appelis.kmp_demo.core.client.convertCallbackCallToSuspend
 import com.appelis.kmp_demo.leaflet.data.client.LeafletCallBackClient
 import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendClient
 import metro.leaflet.v1.GetLeafletsRequest
@@ -14,29 +15,6 @@ class LeafletSuspendClientImpl(
             callBackClient.getLeaflets(input, callback)
         })
     }
-
-    private suspend fun <In, Out> convertCallbackCallToSuspend(
-        input: In,
-        callbackClosure: ((In, ((Out?, Throwable?) -> Unit)) -> Unit),
-    ): Out {
-        return suspendCoroutine { continuation ->
-            callbackClosure(input) { result, error ->
-                Unit
-                when {
-                    error != null -> {
-                        continuation.resumeWith(Result.failure(error))
-                    }
-
-                    result != null -> {
-                        continuation.resumeWith(Result.success(result))
-                    }
-
-                    else -> {
-                        continuation.resumeWith(Result.failure(IllegalStateException("Incorrect grpc call processing")))
-                    }
-                }
-            }
-        }
-    }
-
 }
+
+

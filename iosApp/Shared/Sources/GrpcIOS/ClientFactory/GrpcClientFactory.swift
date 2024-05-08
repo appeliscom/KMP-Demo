@@ -13,4 +13,9 @@ public enum GrpcClientFactory {
         let leafletClient = LeafletGrpcClientImpl()
         return LeafletSuspendClientImpl(callBackClient: leafletClient)
     }
+    
+    public static func assortmentByCategoryClient() -> AssortmentByCategorySuspendClient {
+        let client = AssortmentByCategoryGrpcClientImpl()
+        return AssortmentByCategorySuspendClientImpl(callBackClient: client)
+    }
 }

@@ -10,14 +10,14 @@ import Shared
 import SwiftUICore
 
 struct LeafletCollectionView: View {
-    @StateValue
+    @State
     private var viewState: LeafletCollectionViewState
     private let viewModel: LeafletCollectionComponentViewModel
     private var router: LeafletCollectionRouter = inject()
     
     public init(component: LeafletCollectionComponent) {
         self.viewModel = component.viewModel
-        self._viewState = StateValue(viewModel.viewState)
+        self.viewState = .Loading()
     }
     
     var body: some View {

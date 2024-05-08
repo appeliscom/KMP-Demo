@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "metro_assortment/assortment.cip.v1.proto";
+
+service PrivateCip {
+  rpc GetSelectedCipPricesForCompany (GetSelectedCipPricesForCompanyRequest) returns (GetSelectedCipPricesForCompanyResponse) {
+  }
+}
+
+message GetSelectedCipPricesForCompanyRequest {
+  int64 companyId = 1;
+  repeated string articlesIds = 2;
+}
+
+message GetSelectedCipPricesForCompanyResponse {
+  repeated CipPrice data = 1;
+}

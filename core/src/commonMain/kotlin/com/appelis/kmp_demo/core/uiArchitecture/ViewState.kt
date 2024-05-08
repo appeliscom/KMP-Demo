@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core
+package com.appelis.kmp_demo.core.uiArchitecture
 
 /**
  * Holds screen's UI State.

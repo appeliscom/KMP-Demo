@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core
+package com.appelis.kmp_demo.core.uiArchitecture
 
 import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.arkivanov.decompose.ComponentContext

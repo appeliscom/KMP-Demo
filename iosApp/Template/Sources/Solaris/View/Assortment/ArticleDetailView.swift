@@ -11,14 +11,14 @@ import SwiftUI
 import SwiftUICore
 
 struct ArticleDetailView: View {
-    @StateValue
+    @State
     private var viewState: ArticleDetailViewState
     private var router: ArticleDetailRouter = inject()
     private let viewModel: ArticleDetailComponentViewModel
     
     public init(component: ArticleDetailComponent) {
         self.viewModel = component.viewModel
-        self._viewState = StateValue(viewModel.viewState)
+        self.viewState = .Loading()
     }
     
     var body: some View {

@@ -14,24 +14,23 @@ kotlin {
         }
     }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "HomescreenUILogic"
-            isStatic = true
-        }
-    }
+    iosTargets()
 
     sourceSets {
         val commonMain by getting {
+            kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
                 implementation(libs.decompose)
                 implementation(project.dependencies.platform(libs.koin.bom))
                 implementation(libs.koin.core)
                 implementation(libs.kotlinx.coroutines.core)
+                implementation(libs.paging)
+            }
+        }
+
+        iosMain {
+            dependencies {
+                implementation(libs.paging.ios)
             }
         }
     }
@@ -47,4 +46,7 @@ android {
         sourceCompatibility = ProjectSettings.Android.JavaCompatibility
         targetCompatibility = ProjectSettings.Android.JavaCompatibility
     }
+}
+dependencies {
+    implementation(libs.androidx.recyclerview)
 }

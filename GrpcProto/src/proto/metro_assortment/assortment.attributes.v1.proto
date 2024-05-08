@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "identity_service/common.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+// Service for handling attributes(and values) from administration.
+service AttributesAdmin {
+  // Gets all attributes for project. Sorted by order field.
+  rpc GetAttributes(GetAttributesRequest) returns (GetAttributesResponse) {}
+
+  rpc GetAttributesValues(GetAttributesValuesRequest) returns (GetAttributesValuesResponse) {}
+
+  rpc SetAttributes(SetAttributesRequest) returns (ChangeResponse) {}
+
+  rpc DeleteAttributes(DeleteRequest) returns (ChangeResponse) {}
+
+  rpc SetAttributeValues(SetAttributeValuesRequest) returns (ChangeResponse) {}
+
+  rpc DeleteAttributeValues(DeleteRequest) returns (ChangeResponse) {}
+}
+
+message SetAttributeValuesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated AttributeValue data = 2;
+}
+
+message SetAttributesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated Attribute data = 2;
+}
+
+message DeleteRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated int64 ids = 2;
+}
+
+message ChangeResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+  }
+}
+
+message GetAttributesValuesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated int64 attributeIds = 2;
+}
+
+message GetAttributesValuesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    AttributeValuesArray values = 3;
+  }
+}
+
+message GetAttributesRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message AttributeValuesArray {
+  repeated AttributeValue data = 1;
+}
+
+message AttributeArray {
+  repeated Attribute data = 1;
+}
+
+message GetAttributesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    AttributeArray attributes = 3;
+  }
+}
+
+enum AttributeType {
+  UNKNOWN_ATTRIBUTE_TYPE = 0;
+  NORMAL = 1;
+  INLINE = 2;
+}
+
+message Attribute {
+  int64 attributeId = 1;
+  string name = 2;
+  uint32 order = 3;
+  AttributeType type = 4;
+  google.protobuf.Timestamp createdAt = 5;
+}
+
+message AttributeValue {
+  int64 idAttributeValue = 1;
+  // Back reference to attribute
+  int64 idAttribute = 2;
+  string value = 3;
+  // Url for showing icon next to attribute text value. Optional (null is valid value).
+  google.protobuf.StringValue url = 5;
+  // Order in Attribute.
+  uint32 order = 6;
+}

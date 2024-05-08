@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.core.extensions
 
-import com.appelis.kmp_demo.core.SharedViewModel
-import com.appelis.kmp_demo.core.ViewModelComponent
+import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
+import com.appelis.kmp_demo.core.uiArchitecture.ViewModelComponent
 import com.arkivanov.essenty.instancekeeper.InstanceKeeper
 import com.arkivanov.essenty.instancekeeper.getOrCreate
 import org.koin.core.component.get

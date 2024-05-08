@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "appelis/picture.proto";
+
+service PrivateAssortment {
+  rpc GetArticlesByIds(GetArticlesByIdsRequest) returns (GetArticlesByIdsResponse){}
+}
+
+message GetArticlesByIdsRequest {
+  repeated string ids = 1;
+  string projectId = 2;
+}
+message GetArticlesByIdsResponse {
+  repeated Article articles = 1;
+}
+
+message Article {
+  string id = 1;
+  string name = 2;
+  string shortDescription = 3;
+  string description = 4 ;
+  uint32 tax = 5;
+  bool weightIndicator = 6;
+  double staticPriority = 7;
+  string searchKeywords = 8;
+  google.protobuf.Timestamp createdAt = 9;
+  google.protobuf.StringValue mutationArt = 10;
+  google.protobuf.StringValue depositArt = 11;
+  repeated string eans = 12;
+  repeated appelis.Picture pictures = 14;
+  repeated int64 attributeValuesIds = 15;
+  repeated CategoryMapping categories = 16;
+  repeated Availability availabilities = 17;
+  repeated Price prices = 18;
+}
+
+enum CreateType {
+  UNKNOWN_CREATE_TYPE = 0;
+  MANUAL = 1;
+  AUTOMATIC = 2;
+}
+
+message CategoryMapping {
+  string id = 1;
+  CreateType type = 2;
+}
+
+message Availability {
+  string businessId = 1;
+  double quantity = 2;
+  StockStatus status = 3;
+  google.protobuf.Timestamp lastChange = 4;
+}
+
+enum StockStatus {
+  UNKNOWN_STOCK_STATUS = 0;
+  AVAILABLE = 1;
+  TEMPORARILY_UNAVAILABLE = 2;
+  LONGTERM_UNAVAILABLE = 3;
+  ORDER = 4;
+  CLEARANCE_SALE = 5;
+}
+
+enum PriceType {
+  UNKNOWN_PRICE_TYPE = 0;
+  ACTION = 1;
+  STANDARD = 2;
+}
+
+message Price {
+  PriceType priceType = 1;
+  string businessId = 2;
+  double unit = 3;
+  double unitTax = 4;
+  double mUnit = 5;
+  double mUnitTax = 6;
+  double pack = 7;
+  double packTax = 8;
+  google.protobuf.Timestamp validFrom = 9;
+  google.protobuf.Timestamp validTo = 10;
+}

@@ -11,7 +11,7 @@ import SwiftUI
 import SwiftUICore
 
 struct HomescreenView: View {
-    @StateValue
+    @State
     private var viewState: HomescreenViewState
     
     @State
@@ -23,7 +23,7 @@ struct HomescreenView: View {
     
     public init(component: HomescreenComponent) {
         self.viewModel = component.viewModel
-        self._viewState = StateValue(viewModel.viewState)
+        viewState = .init()
     }
     
     var body: some View {

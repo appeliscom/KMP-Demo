@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/metro_assortment";
+
+package metro.assortment.v1;
+
+import "identity_service/common.proto";
+
+// Service for handling boosts
+service BoostAdmin {
+  rpc GetAttributeBoostValues (GetAttributeBoostValuesRequest) returns (GetAttributeBoostValuesResponse) {}
+  rpc SetAttributeBoostValues (SetAttributeBoostValuesRequest) returns (SetAttributeBoostValuesResponse) {}
+  rpc DeleteAttributeBoostValues (DeleteAttributeBoostValuesRequest) returns (DeleteAttributeBoostValuesResponse) {}
+}
+
+message DeleteAttributeBoostValuesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+  }
+}
+
+message DeleteAttributeBoostValuesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  repeated string boostIds = 2;
+}
+
+message SetAttributeBoostValuesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+  }
+}
+
+message SetAttributeBoostValuesRequest {
+  appelis.identity.common.v1.Token token = 1;
+  AttributeBoostArray data = 2;
+}
+
+message GetAttributeBoostValuesRequest {
+  appelis.identity.common.v1.Token token = 1;
+}
+
+message GetAttributeBoostValuesResponse {
+  oneof payload {
+    appelis.identity.common.v1.TokenError tokenErr = 1;
+    AttributeBoostArray data = 2;
+  }
+}
+
+message AttributeBoostArray {
+  repeated AttributeBoost data = 1;
+}
+
+message AttributeBoost {
+  string boostId = 1;
+  int64 attributeId = 2;
+  int32 branchFrom = 3;
+  int32 branchTo = 4;
+  double boost = 5;
+}

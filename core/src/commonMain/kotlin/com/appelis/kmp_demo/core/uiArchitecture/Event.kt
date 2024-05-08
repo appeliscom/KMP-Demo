@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core
+package com.appelis.kmp_demo.core.uiArchitecture
 
 /**
  * One time event sent from ViewModel to Component.
