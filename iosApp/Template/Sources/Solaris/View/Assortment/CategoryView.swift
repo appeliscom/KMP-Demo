@@ -14,14 +14,15 @@ struct CategoryView: View {
     @State
     private var viewState: CategoryViewState?
     
-    @ObservedObject
-    private var pager: CategoryPager = .init()
+    @StateObject
+    private var pager: Pager<ArticlePreviewModel>
     
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryComponentViewModel
     
     public init(component: CategoryComponent) {
         self.viewModel = component.viewModel
+        self._pager = StateObject(wrappedValue: Pager())
     }
     
     var body: some View {
@@ -81,55 +82,85 @@ struct CategoryView: View {
         }
         .navigationTitle("Category \(String(describing: viewState?.id))")
         .task {
-            for await viewState in viewModel.viewState {
-                self.viewState = viewState
-                print(viewState.articles)
-            }
+            await pager.initPager(
+                pagedDataStream: AsyncStream<AsyncStream<PagedData<ArticlePreviewModel>>>.fromSkieSwiftStateFlow(
+                    skieStateFlow: viewModel.viewState,
+                    mapFunction: { $0.articles }
+                )
+            )
         }
-        .onAppear(first: {
-            pager.initPager(flow: viewModel.viewState)
-        })
     }
 }
 
+public extension AsyncStream {
+    static func fromSkieSwiftStateFlow<Input, Output>(
+        skieStateFlow: SkieSwiftStateFlow<Input>,
+        mapFunction: @escaping (Input) -> Output
+    ) -> AsyncStream<Output> {
+        AsyncStream<Output> { continuation in
+            Task {
+                for await item in skieStateFlow {
+                    continuation.yield(mapFunction(item))
+                }
+                continuation.finish()
+            }
+        }
+    }
+    
+    func fromSkieSwiftStateFlow<T>(skieStateFlow: SkieSwiftStateFlow<T>) -> AsyncStream<T> {
+        AsyncStream<T> { continuation in
+            Task {
+                for await item in skieStateFlow {
+                    continuation.yield(item)
+                }
+                continuation.finish()
+            }
+        }
+    }
+}
+
+public typealias PagedData = Paging_commonPagingData
+
 @MainActor
-class CategoryPager: ObservableObject {
-    @Published public private(set) var items: [ArticlePreviewModel] = []
-    @Published private(set) var isLoading: Bool = false
-    @Published private(set) var hasNextPage: Bool = false
+public class Pager<T: AnyObject>: ObservableObject {
+    @Published public private(set) var items: [T] = []
+    @Published public private(set) var isLoadingNextPage: Bool = false
+    @Published public private(set) var hasNextPage: Bool = false
     
-    private var delegate = PagingDelegate<ArticlePreviewModel>()
+    private let delegate = PagingDelegate<T>()
     
-    func initPager(flow: SkieSwiftStateFlow<CategoryViewState>) {
-        Task {
-            for try await viewState in flow {
-                try? await skie(delegate).submitData(pagingData: viewState.articles)
-            }
+    public init() {}
+    
+    public func initPager(pagedDataStream: AsyncStream<PagedData<T>>) async {
+        await withTaskGroup(of: Void.self) { group in
+            group.addTask { [weak self] in await self?.observeData(pagedDataStream: pagedDataStream) }
+            group.addTask { [weak self] in await self?.observeDataChanges() }
+            group.addTask { [weak self] in await self?.observeLoadState() }
         }
-        
-        Task {
-            for await _ in delegate.onPagesUpdatedFlow {
-                items = delegate.getItems()
-            }
+    }
+    
+    private func observeData(pagedDataStream: AsyncStream<PagedData<T>>) async {
+        for try await pagedData in pagedDataStream {
+            try? await skie(delegate).submitData(pagingData: pagedData)
         }
-        
-        Task {
-            for await loadState in delegate.loadStateFlow {
-                switch onEnum(of: loadState.refresh) {
-                case .error:
-                    isLoading = false
-                case .loading:
-                    isLoading = true
-                case .notLoading:
-                    isLoading = false
-                }
-                
-                switch onEnum(of: loadState.append) {
-                case let .notLoading(notLoading):
-                    hasNextPage = !notLoading.endOfPaginationReached
-                default:
-                    break
-                }
+    }
+    
+    private func observeDataChanges() async {
+        for await _ in delegate.onPagesUpdatedFlow {
+            items = delegate.getItems()
+        }
+    }
+    
+    private func observeLoadState() async {
+        for await loadState in delegate.loadStateFlow {
+            switch onEnum(of: loadState.refresh) {
+            case .loading:
+                isLoadingNextPage = true
+            case let .notLoading(notLoading):
+                isLoadingNextPage = false
+                hasNextPage = !notLoading.endOfPaginationReached
+            case .error:
+                isLoadingNextPage = false
             }
         }
     }

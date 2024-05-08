@@ -1,11 +1,7 @@
 package com.appelis.kmp_demo.assortment.uiLogic.articleDetail
 
-import com.appelis.kmp_demo.core.SharedViewModel
-import com.appelis.kmp_demo.core.ViewState
-import com.appelis.kmp_demo.core.extensions.asStateFlow
-import com.arkivanov.decompose.value.MutableValue
-import com.arkivanov.decompose.value.Value
-import kotlinx.coroutines.MainScope
+import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
+import com.appelis.kmp_demo.core.uiArchitecture.ViewState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

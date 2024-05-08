@@ -1,13 +1,11 @@
 package com.appelis.kmp_demo.leaflet.uiLogic.viewModel
 
-import com.appelis.kmp_demo.core.SharedViewModel
-import com.appelis.kmp_demo.core.UiEvent
-import com.appelis.kmp_demo.core.ViewState
+import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
+import com.appelis.kmp_demo.core.uiArchitecture.UiEvent
+import com.appelis.kmp_demo.core.uiArchitecture.ViewState
 import com.appelis.kmp_demo.leaflet.uiLogic.component.LeafletCollectionComponent
 import com.appelis.kmp_demo.leaflet_domain.model.LeafletModel
 import com.appelis.kmp_demo.leaflet_domain.usecase.GetLeafletsUseCase
-import com.arkivanov.decompose.value.MutableValue
-import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

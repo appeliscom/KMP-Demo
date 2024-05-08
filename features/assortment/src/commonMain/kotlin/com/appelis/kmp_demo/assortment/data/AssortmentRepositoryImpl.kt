@@ -8,7 +8,7 @@ import com.appelis.core.domain.network.PageInfo
 import com.appelis.identity.Token
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
-import com.appelis.kmp_demo.core.testToken
+import com.appelis.kmp_demo.core.toClean.testToken
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
 import metro.assortment.v1.GetAssortmentRequest
@@ -43,6 +43,10 @@ class AssortmentRepositoryImpl(
                 sorting = SortingFlags(type = SortOrder.ASC, field_ = SortField.PRICE_MUNIT)
             )
         )
+
+        if (response.tokenErr != null ) {
+            println(response.tokenErr)
+        }
 
         return CursorPagingResult(
             pageInfo = PageInfo.Cursor(hasNextPage = response.page?.hasNext ?: false),

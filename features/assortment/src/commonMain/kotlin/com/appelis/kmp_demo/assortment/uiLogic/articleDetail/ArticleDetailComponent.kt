@@ -1,9 +1,8 @@
 package com.appelis.kmp_demo.assortment.uiLogic.articleDetail
 
-import com.appelis.kmp_demo.core.ViewModelComponent
+import com.appelis.kmp_demo.core.uiArchitecture.ViewModelComponent
 import com.appelis.kmp_demo.core.extensions.viewModel
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.value.Value
 import kotlinx.coroutines.flow.StateFlow
 import org.koin.core.parameter.parametersOf
 
