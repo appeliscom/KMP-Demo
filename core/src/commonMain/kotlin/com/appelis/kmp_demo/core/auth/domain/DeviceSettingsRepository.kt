@@ -10,7 +10,7 @@ interface DeviceSettingsRepository {
 //    fun getDeviceLanguageFlow(): Flow<String>
 //    suspend fun getDeviceLanguage(): String?
 //    suspend fun getDeviceSettings(): DeviceSettings?
-    suspend fun getDeviceKey(): String
+    suspend fun getDeviceUuid(): String
 //    suspend fun getMobileDeviceId(): String?
     suspend fun updateMobileDeviceId(mobileDeviceId: String)
 //    suspend fun insert(deviceSettings: DeviceSettings)

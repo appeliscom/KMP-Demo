@@ -3,27 +3,33 @@ package com.appelis.kmp_demo.core.auth.data.repository
 import com.appelis.kmp_demo.core.auth.domain.DeviceSettingsRepository
 
 class DeviceSettingsRepositoryImpl: DeviceSettingsRepository {
-    override suspend fun getDeviceKey(): String {
-        TODO("Not yet implemented")
+    // TODO: implement with sql delight
+    var deviceUuid: String = "9d6c6194-1712-48a1-b60c-ef3bf24edf85"
+    var mobileDeviceId: String = ""
+    var publicToken: String = ""
+    var refreshToken: String = ""
+
+    override suspend fun getDeviceUuid(): String {
+        return deviceUuid
     }
 
     override suspend fun updateMobileDeviceId(mobileDeviceId: String) {
-        TODO("Not yet implemented")
+        this.mobileDeviceId = mobileDeviceId
     }
 
     override suspend fun getPublicToken(): String? {
-        TODO("Not yet implemented")
+        return publicToken
     }
 
     override suspend fun updatePublicToken(token: String) {
-        TODO("Not yet implemented")
+        this.publicToken = token
     }
 
     override suspend fun getRefreshToken(): String? {
-        TODO("Not yet implemented")
+        return refreshToken
     }
 
     override suspend fun updateRefreshToken(refreshToken: String) {
-        TODO("Not yet implemented")
+        this.refreshToken = refreshToken
     }
 }
