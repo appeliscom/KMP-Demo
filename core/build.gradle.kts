@@ -2,6 +2,7 @@ plugins {
     id(libs.plugins.kotlinMultiplatform.get().pluginId)
     id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
+    id(libs.plugins.koin.annotations.plugin.get().pluginId)
 }
 
 kotlin {
@@ -25,6 +26,7 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.paging)
+                implementation(projects.grpcProto)
             }
         }
 

@@ -18,4 +18,9 @@ public enum GrpcClientFactory {
         let client = AssortmentByCategoryGrpcClientImpl()
         return AssortmentByCategorySuspendClientImpl(callBackClient: client)
     }
+    
+    public static func identityClient() -> IdentitySuspendClient {
+        let client = IdentityGrpcClientImpl()
+        return IdentitySuspendClientImpl(callBackClient: client)
+    }
 }

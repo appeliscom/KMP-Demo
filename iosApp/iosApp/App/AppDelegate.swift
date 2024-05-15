@@ -29,7 +29,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             nativeModule: nativeModule,
             platformGrpcClientModule: makePlatformGrpcClientModule(
                 leafletSuspendClient: GrpcClientFactory.leafletClient(),
-                assortmentByCategorySuspendClient: GrpcClientFactory.assortmentByCategoryClient()
+                assortmentByCategorySuspendClient: GrpcClientFactory.assortmentByCategoryClient(),
+                identitySuspendClient: GrpcClientFactory.identityClient()
             )
         )
         return true
