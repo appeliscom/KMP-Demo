@@ -1,7 +1,9 @@
 package com.appelis.kmp_demo.core.auth.data.repository
 
 import com.appelis.kmp_demo.core.auth.domain.DeviceSettingsRepository
+import org.koin.core.annotation.Single
 
+@Single
 class DeviceSettingsRepositoryImpl: DeviceSettingsRepository {
     // TODO: implement with sql delight
     var deviceUuid: String = "9d6c6194-1712-48a1-b60c-ef3bf24edf85"

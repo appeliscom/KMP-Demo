@@ -2,6 +2,8 @@ package com.appelis.kmp_demo.di
 
 import com.appelis.kmp_demo.Greeting
 import com.appelis.kmp_demo.assortment.di.AssortmentModule
+import com.appelis.kmp_demo.core.auth.data.repository.AppKey
+import com.appelis.kmp_demo.core.di.CoreModule
 import com.appelis.kmp_demo.homescreen.di.HomescreenModule
 import com.appelis.kmp_demo.leaflet.di.LeafletModule
 import com.appelis.kmp_demo.navigation.di.NavigationModule
@@ -12,7 +14,10 @@ import org.koin.dsl.module
 import org.koin.ksp.generated.module
 
 val sharedModule: Module = module {
+    single<AppKey> { "" }
+
     includes(
+        CoreModule().module,
         NavigationModule().module,
         AppStartupModule().module,
         HomescreenModule().module,

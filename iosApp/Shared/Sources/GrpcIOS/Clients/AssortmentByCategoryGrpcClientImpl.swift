@@ -11,10 +11,10 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-public class AssortmentByCategoryGrpcClientImpl: AssortmentByCategoryCallBackClient {
+public class AssortmentByCategoryGrpcClientImpl: BaseGrpcClient, AssortmentByCategoryCallBackClient {
     let client: Metro_Assortment_V1_CatalogAsyncClientProtocol
-    
-    public init() {
+
+    override public init() {
         let processorCount = ProcessInfo.processInfo.processorCount
         let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: processorCount)
         let channel = ClientConnection
@@ -28,16 +28,20 @@ public class AssortmentByCategoryGrpcClientImpl: AssortmentByCategoryCallBackCli
             channel: channel,
             defaultCallOptions: callOptions
         )
+        super.init()
     }
-    
+
     public func getArticles(request: GetAssortmentRequest, responseCallback: @escaping (GetAssortmentResponse?, KotlinException?) -> Void) {
-        Task {
-            let response = try await client.getAssortment(
+        fetch(
+            responseCallback: responseCallback,
+            wireAdapter: GetAssortmentResponse.companion.ADAPTER
+        ) { [client] in
+            try await client.getAssortment(
                 .with {
                     $0.token = .with { $0.data = request.token?.data_ ?? "" }
                     $0.filtering = .with {
                         $0.categoryID = request.filtering?.categoryId ?? ""
-                        $0.flags = .with{
+                        $0.flags = .with {
                             $0.businessID = request.filtering?.flags?.businessId ?? ""
                             $0.status = .available
                         }
@@ -54,9 +58,6 @@ public class AssortmentByCategoryGrpcClientImpl: AssortmentByCategoryCallBackCli
                     }
                 }
             )
-            
-            let (wireResponse, error) = response.toWireMessage(adapter: GetAssortmentResponse.companion.ADAPTER)
-            responseCallback(wireResponse, error)
         }
     }
 }

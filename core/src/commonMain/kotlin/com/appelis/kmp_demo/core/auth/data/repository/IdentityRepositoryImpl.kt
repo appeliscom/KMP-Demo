@@ -7,13 +7,17 @@ import com.appelis.kmp_demo.core.auth.data.mappers.IdentityMapper
 import com.appelis.kmp_demo.core.auth.data.clients.IdentitySuspendClient
 import com.appelis.kmp_demo.core.auth.domain.TokenPayload
 import com.appelis.kmp_demo.core.auth.domain.IdentityRepository
+import org.koin.core.annotation.Single
 
+typealias AppKey = String
+
+@Single
 class IdentityRepositoryImpl(
     private val client: IdentitySuspendClient,
     private val mapper: IdentityMapper,
-    private val appKey: String
+    private val appKey: AppKey
 ): IdentityRepository {
-    override suspend fun registerDevice(appKey: String, deviceKey: String): String {
+    override suspend fun registerDevice(deviceKey: String): String {
         val response = client.registerDevice(
             RegisterDeviceRequest(
                 appKey = appKey,

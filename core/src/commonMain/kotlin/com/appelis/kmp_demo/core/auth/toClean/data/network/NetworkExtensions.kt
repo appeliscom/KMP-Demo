@@ -1,19 +1,15 @@
 package com.appelis.kmp_demo.core.auth.toClean.data.network
 
-import com.appelis.core.data.network.ErrorHandlingManager
 import kotlinx.coroutines.delay
 
 suspend fun <T> queryRetry(times: Int = 3, block: suspend () -> T): T {
     fun handleError(throwable: Throwable) {
         if (throwable is NetworkException) {
             when (throwable.code) {
-                ErrorHandlingManager.ErrorCodes.AUTH_ERROR,
-                ErrorHandlingManager.ErrorCodes.AUTH_SERVER_ERROR,
-                ErrorHandlingManager.ErrorCodes.MISSING_AUTH_TOKEN -> return
-                ErrorHandlingManager.ErrorCodes.CONNECTION_TIMEOUT,
-                ErrorHandlingManager.ErrorCodes.NO_INTERNET,
-                ErrorHandlingManager.ErrorCodes.SERVER_DOWN,
-                ErrorHandlingManager.ErrorCodes.COMMAND_TIME_OUT -> return
+                NetworkException.ErrorCode.CONNECTION_TIMEOUT,
+                NetworkException.ErrorCode.NO_INTERNET,
+                NetworkException.ErrorCode.SERVER_DOWN,
+                NetworkException.ErrorCode.COMMAND_TIME_OUT -> return
                 else -> throw throwable
             }
         } else {
@@ -28,11 +24,8 @@ suspend fun <T> mutationRetry(block: suspend () -> T): T {
     fun handleError(throwable: Throwable) {
         if (throwable is NetworkException) {
             when (throwable.code) {
-                ErrorHandlingManager.ErrorCodes.AUTH_ERROR,
-                ErrorHandlingManager.ErrorCodes.AUTH_SERVER_ERROR,
-                ErrorHandlingManager.ErrorCodes.MISSING_AUTH_TOKEN -> return
-                ErrorHandlingManager.ErrorCodes.SERVER_DOWN,
-                ErrorHandlingManager.ErrorCodes.COMMAND_TIME_OUT -> return
+                NetworkException.ErrorCode.SERVER_DOWN,
+                NetworkException.ErrorCode.COMMAND_TIME_OUT -> return
                 else -> throw throwable
             }
         } else {
@@ -47,13 +40,10 @@ suspend fun <T> subscriptionRetry(block: suspend () -> T): T {
     fun handleError(throwable: Throwable) {
         if (throwable is NetworkException) {
             when (throwable.code) {
-                ErrorHandlingManager.ErrorCodes.AUTH_ERROR,
-                ErrorHandlingManager.ErrorCodes.AUTH_SERVER_ERROR,
-                ErrorHandlingManager.ErrorCodes.MISSING_AUTH_TOKEN -> return
-                ErrorHandlingManager.ErrorCodes.CONNECTION_TIMEOUT,
-                ErrorHandlingManager.ErrorCodes.NO_INTERNET,
-                ErrorHandlingManager.ErrorCodes.SERVER_DOWN,
-                ErrorHandlingManager.ErrorCodes.COMMAND_TIME_OUT -> return
+                NetworkException.ErrorCode.CONNECTION_TIMEOUT,
+                NetworkException.ErrorCode.NO_INTERNET,
+                NetworkException.ErrorCode.SERVER_DOWN,
+                NetworkException.ErrorCode.COMMAND_TIME_OUT -> return
                 else -> throw throwable
             }
         } else {
@@ -83,19 +73,4 @@ suspend fun <T> retryIO(
         currentDelay = (currentDelay * factor).toLong().coerceAtMost(maxDelay)
     }
     return block() // last attempt
-}
-
-suspend fun <T> fetchAndHandleErrors(
-    times: Int = 2,
-    block: suspend () -> T,
-    handleError: suspend (e: NetworkException) -> Unit
-): T {
-    repeat(times - 1) {
-        try {
-            return block()
-        } catch (e: NetworkException) {
-            handleError.invoke(e)
-        }
-    }
-    return block()
 }

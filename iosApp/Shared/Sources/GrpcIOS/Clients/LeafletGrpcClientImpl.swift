@@ -11,10 +11,10 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-public class LeafletGrpcClientImpl: LeafletCallBackClient {
+public class LeafletGrpcClientImpl: BaseGrpcClient, LeafletCallBackClient {
     let client: Metro_Leaflet_V1_PublicAsyncClientProtocol
 
-    public init() {
+    public override init() {
         let processorCount = ProcessInfo.processInfo.processorCount
         let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: processorCount)
         let channel = ClientConnection
@@ -31,17 +31,16 @@ public class LeafletGrpcClientImpl: LeafletCallBackClient {
     }
     
     public func getLeaflets(request: GetLeafletsRequest, responseCallback: @escaping (GetLeafletsResponse?, KotlinException?) -> Void) {
-        Task {
-            let response = try await client.getLeaflets(
+        fetch(
+            responseCallback: responseCallback,
+            wireAdapter: GetLeafletsResponse.companion.ADAPTER
+        ) { [client] in
+            try await client.getLeaflets(
                 .with {
                     $0.token = .with { $0.data = request.token?.data_ ?? "" }
                     $0.business = request.business
                 }
             )
-            print(response)
-            
-            let (wireResponse, error) = response.toWireMessage(adapter: GetLeafletsResponse.companion.ADAPTER)
-            responseCallback(wireResponse, error)
         }
     }
 }

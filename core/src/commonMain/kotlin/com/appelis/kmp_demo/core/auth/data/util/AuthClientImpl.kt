@@ -1,20 +1,20 @@
 package com.appelis.kmp_demo.core.auth.data.util
 
-import com.appelis.core.data.network.ErrorHandlingManager
 import com.appelis.kmp_demo.core.auth.toClean.data.network.NetworkException
 import com.appelis.kmp_demo.core.auth.toClean.data.network.retryIO
-import com.appelis.kmp_demo.core.auth.domain.DeviceTokenProvider
+import com.appelis.kmp_demo.core.auth.domain.AuthClient
 import com.appelis.kmp_demo.core.auth.domain.IdentityRepository
 import com.appelis.kmp_demo.core.auth.domain.DeviceSettingsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import org.koin.core.annotation.Single
 
-internal class DeviceTokenProviderImpl(
-    private val appKey: String,
+@Single
+internal class AuthClientImpl(
     private val identityRepository: IdentityRepository,
     private val deviceSettingsRepository: DeviceSettingsRepository
-) : DeviceTokenProvider {
+) : AuthClient {
     private val accessToken = MutableStateFlow("")
     private val getAccessTokenMutex = Mutex()
     private val refreshAccessTokenMutex = Mutex()
@@ -23,7 +23,7 @@ internal class DeviceTokenProviderImpl(
         getAccessTokenMutex.withLock {
             val accessToken = accessToken.value
             return accessToken.ifEmpty {
-                getRefreshedAccessToken("")
+                refreshAccessToken()
             }
         }
     }
@@ -41,7 +41,7 @@ internal class DeviceTokenProviderImpl(
                 try {
                     refreshAccessToken(refreshToken)
                 } catch (e: NetworkException) {
-                    if (e.code == ErrorHandlingManager.ErrorCodes.AUTH_ERROR) {
+                    if (e.code == NetworkException.ErrorCode.AUTH_ERROR) {
                         createToken()
                     } else {
                         throw e
@@ -53,15 +53,34 @@ internal class DeviceTokenProviderImpl(
         }
     }
 
+    private suspend fun refreshAccessToken(): String {
+        val refreshToken = deviceSettingsRepository.getRefreshToken()
+        val accessToken: String = if (refreshToken.isNullOrBlank()) {
+            createToken()
+        } else {
+            try {
+                refreshAccessToken(refreshToken)
+            } catch (e: NetworkException) {
+                if (e.code == NetworkException.ErrorCode.AUTH_ERROR) {
+                    createToken()
+                } else {
+                    throw e
+                }
+            }
+        }
+        this.accessToken.value = accessToken
+        return accessToken
+    }
+
     private suspend fun createToken(): String {
-        return retryIO(block = {
+        return retryIO(times = 3, block = {
             val deviceUuid = deviceSettingsRepository.getDeviceUuid()
             val token = identityRepository.createToken(deviceUuid = deviceUuid)
             deviceSettingsRepository.updateRefreshToken(token.refreshToken)
             return@retryIO token.accessToken
         }, handleError = { e ->
-            if (e is NetworkException && e.code == ErrorHandlingManager.ErrorCodes.MOBILE_DEVICE_NOT_FOUND) {
-                mobileDeviceNotFound(e)
+            if (e is NetworkException && e.code == NetworkException.ErrorCode.MOBILE_DEVICE_NOT_FOUND) {
+                registerDevice()
             }
         })
     }
@@ -72,41 +91,15 @@ internal class DeviceTokenProviderImpl(
             deviceSettingsRepository.updateRefreshToken(token.refreshToken)
             return@retryIO token.accessToken
         }, handleError = { e ->
-            if (e is NetworkException && e.code == ErrorHandlingManager.ErrorCodes.MOBILE_DEVICE_NOT_FOUND) {
-                mobileDeviceNotFound(e)
+            if (e is NetworkException && e.code == NetworkException.ErrorCode.MOBILE_DEVICE_NOT_FOUND) {
+                registerDevice()
             }
         })
     }
 
-//    override suspend fun handleError(e: NetworkException) {
-//        when (e.code) {
-//            ErrorHandlingManager.ErrorCodes.MISSING_AUTH_TOKEN,
-//            ErrorHandlingManager.ErrorCodes.AUTH_ERROR,
-//            ErrorHandlingManager.ErrorCodes.AUTH_SERVER_ERROR -> {
-//                mutex.withLock {
-//                    val accessToken = getRefreshedAccessToken()
-//                    if (accessToken.isBlank()) {
-//                        throw e
-//                    }
-//                }
-//            }
-//            ErrorHandlingManager.ErrorCodes.MOBILE_DEVICE_NOT_FOUND -> {
-//                mobileDeviceNotFound(e)
-//            }
-//            ErrorHandlingManager.ErrorCodes.USER_NOT_LOGGED -> {
-//                throw e
-//            }
-//            else -> ErrorHandlingManager.genericHandleError(e)
-//        }
-//    }
-
-    private suspend fun mobileDeviceNotFound(e: NetworkException) {
-        val deviceKey = deviceSettingsRepository.getDeviceUuid()
-        val response = identityRepository.registerDevice(
-            appKey,
-            deviceKey
-        )
-
+    override suspend fun registerDevice() {
+        val deviceUuid = deviceSettingsRepository.getDeviceUuid()
+        val response = identityRepository.registerDevice(deviceUuid)
         deviceSettingsRepository.updateMobileDeviceId(response)
     }
 }

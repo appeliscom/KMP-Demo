@@ -21,10 +21,8 @@ kotlin {
         val commonMain by getting {
             kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
-                implementation(libs.decompose)
                 implementation(project.dependencies.platform(libs.koin.bom))
-                implementation(libs.koin.core)
-                implementation(libs.kotlinx.coroutines.core)
+                implementation(libs.bundles.common)
                 implementation(libs.paging)
                 implementation(projects.grpcProto)
             }
