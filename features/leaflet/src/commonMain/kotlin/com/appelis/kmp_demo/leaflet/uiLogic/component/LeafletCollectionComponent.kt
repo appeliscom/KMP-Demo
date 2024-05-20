@@ -16,7 +16,7 @@ interface LeafletCollectionComponent {
         val viewState: StateFlow<LeafletCollectionViewState>
         val uiEvents: Flow<LeafletCollectionUIEvent>
 
-        fun setup(token: String)
+        fun setup()
         fun closeIn3Seconds()
     }
 }

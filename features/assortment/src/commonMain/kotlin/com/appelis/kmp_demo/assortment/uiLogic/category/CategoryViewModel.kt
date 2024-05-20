@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.assortment.uiLogic.category
 
+import androidx.paging.cachedIn
 import app.cash.paging.PagingData
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.usecase.GetAssortmentUseCase
@@ -24,7 +25,7 @@ class CategoryViewModel(
 
     fun setup() {
         viewModelScope.launch {
-            getAssortmentUseCase.execute().collect{ data ->
+            getAssortmentUseCase.execute().cachedIn(viewModelScope).collect{ data ->
                 _viewState.value = _viewState.value.copy(articles = data)
             }
         }

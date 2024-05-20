@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core.client
+package com.appelis.kmp_demo.core.network
 import kotlin.coroutines.suspendCoroutine
 
 suspend fun <In, Out> convertCallbackCallToSuspend(

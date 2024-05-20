@@ -22,10 +22,10 @@ class LeafletCollectionViewModel(
         MutableStateFlow(LeafletCollectionViewState.Loading)
     override val viewState: StateFlow<LeafletCollectionViewState> = _viewState
 
-    override fun setup(token: String) {
+    override fun setup() {
         viewModelScope.launch {
             try {
-                val leaflets = getLeafletsUseCase.execute(storeName = "Brno", token = token)
+                val leaflets = getLeafletsUseCase.execute(storeName = "Brno")
                 _viewState.value = LeafletCollectionViewState.Success(leaflets = leaflets)
             } catch (exception: CancellationException) {
                 // ignore

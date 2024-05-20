@@ -24,6 +24,7 @@ ksp = "1.9.22-1.0.16"
 moko-resources = "0.23.0"
 moko-graphics = "0.9.0"
 paging = "3.3.0-alpha02-0.5.1"
+sql-delight = "2.0.2"
 
 namespace-core = "com.appelis.kmm_demo.core.android"
 namespace-feature-assortment = "com.appelis.kmm_demo.feature.assortment.android"
@@ -49,6 +50,12 @@ koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
 koin-core = { module = "io.insert-koin:koin-core" }
 koin-android = { module = "io.insert-koin:koin-android" }
 koin-android-compose = { module = "io.insert-koin:koin-androidx-compose" }
+
+#sqlDelight
+sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sql-delight" }
+sqldelight-android = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sql-delight" }
+sqldelight-native = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "sql-delight" }
+sqldelight-coroutines = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sql-delight" }
 
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
 koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations" }
@@ -89,6 +96,7 @@ wire = { id = "com.squareup.wire", version.ref = "wire" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
+sqlDelight = { id = "app.cash.sqldelight", version.ref = "sql-delight"}
 
 # Precompiled script plugins
 koin-annotations-plugin = { id = "koin-annotations" }

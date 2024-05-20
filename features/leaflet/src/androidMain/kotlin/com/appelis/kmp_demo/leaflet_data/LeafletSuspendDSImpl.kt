@@ -1,6 +1,6 @@
 package com.appelis.kmp_demo.leaflet_data
 
-import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendClient
+import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendDS
 import com.squareup.wire.GrpcClient
 import metro.leaflet.v1.GetLeafletsRequest
 import metro.leaflet.v1.GetLeafletsResponse
@@ -8,7 +8,7 @@ import metro.leaflet.v1.PublicClient
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
-class LeafletSuspendClientImpl : LeafletSuspendClient {
+class LeafletSuspendDSImpl : LeafletSuspendDS {
     override suspend fun getLeaflets(request: GetLeafletsRequest): GetLeafletsResponse {
         val okHttpClient = OkHttpClient.Builder()
             .readTimeout(10, TimeUnit.SECONDS)

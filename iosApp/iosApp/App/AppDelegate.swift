@@ -13,7 +13,8 @@ import SwiftUICore
 import GrpcIOS
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    var nativeModule: Koin_coreModule
+    let nativeModule: Koin_coreModule
+    
     lazy var rootComponent: RootNavigationComponent = RootNavigationComponentImpl(
         componentContext: DefaultComponentContext(lifecycle: ApplicationLifecycle())
     )
@@ -27,9 +28,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         KmpApplication().doInitSharedModule(
             nativeModule: nativeModule,
-            platformGrpcClientModule: makePlatformGrpcClientModule(
-                leafletSuspendClient: GrpcClientFactory.leafletClient(),
-                assortmentByCategorySuspendClient: GrpcClientFactory.assortmentByCategoryClient()
+            platformGrpcClientModule: makePlatformGrpcDSModule(
+                grpcDsFactory: GrpcDSFactoryImpl()
             )
         )
         return true

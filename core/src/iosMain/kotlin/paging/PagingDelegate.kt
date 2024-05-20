@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core
+package com.appelis.kmp_demo.core.paging
 
 import androidx.paging.AsyncPagingDataDiffer
 import androidx.paging.CombinedLoadStates
