@@ -11,7 +11,7 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-open class BaseGrpcClient {
+open class BaseGrpcDS {
     func fetch<SwiftResponse: SwiftProtobuf.Message, WireResponse>(
         responseCallback: @escaping (WireResponse?, KotlinException?) -> Void,
         wireAdapter: Wire_runtimeProtoAdapter<WireResponse>,

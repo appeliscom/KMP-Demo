@@ -7,7 +7,7 @@ import com.appelis.identity.RefreshResponse
 import com.appelis.identity.RegisterDeviceRequest
 import com.appelis.identity.RegisterDeviceResponse
 
-interface IdentityCallBackClient {
+interface IdentityCallBackDS {
     fun registerDevice(
         request: RegisterDeviceRequest,
         responseCallBack: (RegisterDeviceResponse?, exception: Exception?) -> Unit

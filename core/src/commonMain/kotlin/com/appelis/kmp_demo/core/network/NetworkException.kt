@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core.auth.toClean.data.network
+package com.appelis.kmp_demo.core.network
 
 class NetworkException(
     var code: ErrorCode = ErrorCode.UNKNOWN,
@@ -55,7 +55,7 @@ class NetworkException(
         CANCELLED_CALL(10003);
 
         companion object {
-            fun fromInt(value: Int): ErrorCode = ErrorCode.entries.find { it.errCode == value } ?: ErrorCode.UNKNOWN
+            fun fromInt(value: Int): ErrorCode = ErrorCode.entries.find { it.errCode == value } ?: UNKNOWN
         }
     }
 }

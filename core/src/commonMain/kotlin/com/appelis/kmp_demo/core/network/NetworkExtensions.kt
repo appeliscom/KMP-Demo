@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.core.auth.toClean.data.network
+package com.appelis.kmp_demo.core.network
 
 import kotlinx.coroutines.delay
 

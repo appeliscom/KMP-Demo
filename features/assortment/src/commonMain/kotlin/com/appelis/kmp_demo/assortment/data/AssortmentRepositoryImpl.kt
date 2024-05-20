@@ -7,7 +7,7 @@ import com.appelis.core.domain.network.PageInfo
 import com.appelis.identity.Token
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
-import com.appelis.kmp_demo.core.auth.data.common.BaseRepository
+import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
@@ -20,7 +20,7 @@ import org.koin.core.annotation.Single
 
 @Single
 class AssortmentRepositoryImpl(
-    private val assortmentSuspendClient: AssortmentByCategorySuspendClient,
+    private val assortmentSuspendDS: AssortmentByCategorySuspendDS,
     authClient: AuthClient
 ) : AssortmentRepository, BaseRepository(authClient) {
     override suspend fun getArticles(
@@ -28,7 +28,7 @@ class AssortmentRepositoryImpl(
         cursor: String?
     ): CursorPagingResult<ArticlePreviewModel> {
         return fetch { accessToken ->
-            val response = assortmentSuspendClient.getArticles(
+            val response = assortmentSuspendDS.getArticles(
                 GetAssortmentRequest(
                     token = Token(accessToken),
                     paging = CursorForwardPagingParams(
@@ -65,11 +65,11 @@ class AssortmentRepositoryImpl(
     }
 }
 
-interface AssortmentByCategorySuspendClient {
+interface AssortmentByCategorySuspendDS {
     suspend fun getArticles(request: GetAssortmentRequest): GetAssortmentResponse
 }
 
-interface AssortmentByCategoryCallBackClient {
+interface AssortmentByCategoryCallBackDS {
     fun getArticles(
         request: GetAssortmentRequest,
         responseCallback: (GetAssortmentResponse?, exception: Exception?) -> Unit

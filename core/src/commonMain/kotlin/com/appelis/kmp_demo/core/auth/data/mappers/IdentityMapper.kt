@@ -5,7 +5,7 @@ import com.appelis.identity.RefreshResponse
 import com.appelis.identity.RegisterDeviceResponse
 import com.appelis.identity.RegisterError
 import com.appelis.kmp_demo.core.auth.domain.TokenPayload
-import com.appelis.kmp_demo.core.auth.toClean.data.network.NetworkException
+import com.appelis.kmp_demo.core.network.NetworkException
 import org.koin.core.annotation.Single
 
 @Single

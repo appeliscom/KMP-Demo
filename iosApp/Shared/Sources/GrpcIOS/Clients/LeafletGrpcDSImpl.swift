@@ -1,5 +1,5 @@
 //
-//  LeafletGrpcClientImpl.swift
+//  LeafletGrpcDSImpl.swift
 //
 //
 //  Created by Jan Maloušek on 28.04.2024.
@@ -11,23 +11,11 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-public class LeafletGrpcClientImpl: BaseGrpcClient, LeafletCallBackClient {
+public class LeafletGrpcDSImpl: BaseGrpcDS, LeafletCallBackDS {
     let client: Metro_Leaflet_V1_PublicAsyncClientProtocol
 
-    public override init() {
-        let processorCount = ProcessInfo.processInfo.processorCount
-        let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: processorCount)
-        let channel = ClientConnection
-            .usingTLS(with: .makeClientDefault(for: .best), on: eventLoopGroup)
-            .connect(host: "dev.leaflet.appelis.app", port: 443)
-        let callOptions = CallOptions(
-            timeLimit: .timeout(.seconds(15))
-        )
-
-        self.client = Metro_Leaflet_V1_PublicAsyncClient(
-            channel: channel,
-            defaultCallOptions: callOptions
-        )
+    public init(client: Metro_Leaflet_V1_PublicAsyncClientProtocol) {
+        self.client = client
     }
     
     public func getLeaflets(request: GetLeafletsRequest, responseCallback: @escaping (GetLeafletsResponse?, KotlinException?) -> Void) {

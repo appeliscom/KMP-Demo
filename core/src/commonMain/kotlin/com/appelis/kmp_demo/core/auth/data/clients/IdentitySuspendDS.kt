@@ -7,7 +7,7 @@ import com.appelis.identity.RefreshResponse
 import com.appelis.identity.RegisterDeviceRequest
 import com.appelis.identity.RegisterDeviceResponse
 
-interface IdentitySuspendClient {
+interface IdentitySuspendDS {
     suspend fun registerDevice(request: RegisterDeviceRequest): RegisterDeviceResponse
     suspend fun createToken(request: CreateRequest): CreateResponse
     suspend fun refreshToken(request: RefreshRequest): RefreshResponse

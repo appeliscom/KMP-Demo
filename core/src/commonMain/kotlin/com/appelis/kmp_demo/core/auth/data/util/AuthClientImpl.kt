@@ -1,7 +1,7 @@
 package com.appelis.kmp_demo.core.auth.data.util
 
-import com.appelis.kmp_demo.core.auth.toClean.data.network.NetworkException
-import com.appelis.kmp_demo.core.auth.toClean.data.network.retryIO
+import com.appelis.kmp_demo.core.network.NetworkException
+import com.appelis.kmp_demo.core.network.retryIO
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
 import com.appelis.kmp_demo.core.auth.domain.IdentityRepository
 import com.appelis.kmp_demo.core.auth.domain.DeviceSettingsRepository

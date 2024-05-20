@@ -1,7 +1,6 @@
-package com.appelis.kmp_demo.core.auth.data.common
+package com.appelis.kmp_demo.core.network
 
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
-import com.appelis.kmp_demo.core.auth.toClean.data.network.NetworkException
 
 abstract class BaseRepository(private val authClient: AuthClient) {
     suspend fun <T : Any?> fetch(block: suspend (accessToken: String) -> T): T {

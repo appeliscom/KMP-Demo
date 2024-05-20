@@ -1,5 +1,5 @@
 //
-//  AssortmentByCategoryGrpcClientImpl.swift
+//  AssortmentByCategoryGrpcDSImpl.swift
 //
 //
 //  Created by Jan Maloušek on 28.04.2024.
@@ -11,23 +11,11 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-public class AssortmentByCategoryGrpcClientImpl: BaseGrpcClient, AssortmentByCategoryCallBackClient {
+public class AssortmentByCategoryGrpcDSImpl: BaseGrpcDS, AssortmentByCategoryCallBackDS {
     let client: Metro_Assortment_V1_CatalogAsyncClientProtocol
 
-    override public init() {
-        let processorCount = ProcessInfo.processInfo.processorCount
-        let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: processorCount)
-        let channel = ClientConnection
-            .usingTLS(with: .makeClientDefault(for: .best), on: eventLoopGroup)
-            .connect(host: "dev.massortment.appelis.app", port: 443)
-        let callOptions = CallOptions(
-            timeLimit: .timeout(.seconds(15))
-        )
-
-        self.client = Metro_Assortment_V1_CatalogAsyncClient(
-            channel: channel,
-            defaultCallOptions: callOptions
-        )
+    public init(client: Metro_Assortment_V1_CatalogAsyncClientProtocol) {
+        self.client = client
         super.init()
     }
 
