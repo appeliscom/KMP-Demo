@@ -3,6 +3,7 @@ plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     id(libs.plugins.koin.annotations.plugin.get().pluginId)
+    alias(libs.plugins.room)
 }
 
 kotlin {
@@ -25,6 +26,8 @@ kotlin {
                 implementation(libs.bundles.common)
                 implementation(libs.paging)
                 implementation(projects.grpcProto)
+                api(libs.room.runtime)
+                implementation(libs.sqlite.bundled)
             }
         }
 
@@ -47,6 +50,11 @@ android {
         targetCompatibility = ProjectSettings.Android.JavaCompatibility
     }
 }
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
 dependencies {
     implementation(libs.androidx.recyclerview)
 }

@@ -1,37 +1,30 @@
 package com.appelis.kmp_demo.core.auth.data.repository
 
 import com.appelis.kmp_demo.core.auth.domain.DeviceSettingsRepository
+import com.appelis.kmp_demo.core.localDB.database.LocalDatabase
+import com.appelis.kmp_demo.core.localDB.entity.DeviceSettingsRoomDTO
 import org.koin.core.annotation.Single
 
 @Single
-class DeviceSettingsRepositoryImpl: DeviceSettingsRepository {
-    // TODO: implement with sql delight
-    var deviceUuid: String = "9d6c6194-1712-48a1-b60c-ef3bf24edf85"
-    var mobileDeviceId: String = ""
-    var publicToken: String = ""
-    var refreshToken: String = ""
+class DeviceSettingsRepositoryImpl(db: LocalDatabase): DeviceSettingsRepository {
+    private val dao = db.deviceSettingsDao()
+    override suspend fun createDevice(uuid: String) {
+        dao.insert(DeviceSettingsRoomDTO(deviceUUID = uuid))
+    }
 
-    override suspend fun getDeviceUuid(): String {
-        return deviceUuid
+    override suspend fun getDeviceUuid(): String? {
+        return dao.getDeviceUUID()
     }
 
     override suspend fun updateMobileDeviceId(mobileDeviceId: String) {
-        this.mobileDeviceId = mobileDeviceId
-    }
-
-    override suspend fun getPublicToken(): String? {
-        return publicToken
-    }
-
-    override suspend fun updatePublicToken(token: String) {
-        this.publicToken = token
+        dao.updateMobileDeviceId(mobileDeviceId)
     }
 
     override suspend fun getRefreshToken(): String? {
-        return refreshToken
+        return dao.getRefreshToken()
     }
 
     override suspend fun updateRefreshToken(refreshToken: String) {
-        this.refreshToken = refreshToken
+        dao.updateRefreshToken(refreshToken)
     }
 }
