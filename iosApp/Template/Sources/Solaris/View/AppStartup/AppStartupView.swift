@@ -17,7 +17,7 @@ struct AppStartupView: View {
     
     public init(component: AppStartupComponent) {
         self.viewModel = component.viewModel
-        self.viewState = .init()
+        self.viewState = .Loading()
     }
     
     var body: some View {
@@ -39,6 +39,6 @@ struct AppStartupView: View {
             Spacer()
         }
         .navigationTitle("AppStartupView")
+        .onAppear(first: { viewModel.start() })
     }
 }
-

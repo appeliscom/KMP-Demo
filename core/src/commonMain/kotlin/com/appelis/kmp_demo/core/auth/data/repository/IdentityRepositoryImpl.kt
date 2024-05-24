@@ -17,11 +17,11 @@ class IdentityRepositoryImpl(
     private val mapper: IdentityMapper,
     private val appKey: AppKey
 ): IdentityRepository {
-    override suspend fun registerDevice(deviceKey: String): String {
+    override suspend fun registerDevice(deviceUuid: String): String {
         val response = dataSource.registerDevice(
             RegisterDeviceRequest(
                 appKey = appKey,
-                uniqId = deviceKey
+                uniqId = deviceUuid
             )
         )
         return mapper.mapFromDTO(response)

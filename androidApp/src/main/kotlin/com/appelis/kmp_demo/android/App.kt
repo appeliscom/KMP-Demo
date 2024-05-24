@@ -3,7 +3,7 @@ package com.appelis.kmp_demo.android
 import android.app.Application
 import com.appelis.kmp_demo.KmpApplication
 import com.appelis.kmp_demo.android.di.nativeModule
-import com.appelis.kmp_demo.di.makePlatformGrpcDSModule
+import com.appelis.kmp_demo.di.makePlatformModule
 import com.appelis.kmp_demo.leaflet_data.LeafletSuspendDSImpl
 import org.koin.android.ext.koin.androidContext
 
@@ -16,7 +16,7 @@ class App : Application() {
     private fun initializeKmp() {
         KmpApplication.initSharedModule(
             nativeModule = nativeModule,
-            platformGrpcClientModule = makePlatformGrpcDSModule(
+            platformGrpcClientModule = makePlatformModule(
                 LeafletSuspendDSImpl(),
             )
         ) {

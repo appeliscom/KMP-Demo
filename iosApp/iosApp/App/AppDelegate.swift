@@ -28,8 +28,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         KmpApplication().doInitSharedModule(
             nativeModule: nativeModule,
-            platformGrpcClientModule: makePlatformGrpcDSModule(
-                grpcDsFactory: GrpcDSFactoryImpl()
+            platformModule: makePlatformModule(
+                grpcDsFactory: GrpcDSFactoryImpl(),
+                database: getDatabase()
             )
         )
         return true

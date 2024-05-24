@@ -19,11 +19,7 @@ val libs = the<LibrariesForLibs>()
 // Enable source generation by KSP to commonMain only
 dependencies {
     add("kspCommonMainMetadata", libs.koin.ksp.compiler)
-    // DO NOT add bellow dependencies
-//    add("kspAndroid", Deps.Koin.kspCompiler)
-//    add("kspIosX64", Deps.Koin.kspCompiler)
-//    add("kspIosArm64", Deps.Koin.kspCompiler)
-//    add("kspIosSimulatorArm64", Deps.Koin.kspCompiler)
+    add("kspCommonMainMetadata", libs.room.compiler)
 }
 
 // WORKAROUND: ADD this dependsOn("kspCommonMainKotlinMetadata") instead of above dependencies

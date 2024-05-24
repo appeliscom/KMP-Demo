@@ -12,7 +12,7 @@ interface AppStartupComponent {
 
     interface ViewModel {
         val viewState: StateFlow<AppStartupViewState>
-        fun finishStartup()
+        fun start()
     }
 }
 

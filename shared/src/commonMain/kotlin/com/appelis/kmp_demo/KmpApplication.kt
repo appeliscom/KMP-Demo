@@ -10,13 +10,13 @@ import org.koin.dsl.KoinAppDeclaration
 object KmpApplication {
     fun initSharedModule(
         nativeModule: Module,
-        platformGrpcClientModule: Module,
+        platformModule: Module,
         appDeclaration: KoinAppDeclaration? = null,
     ) {
         // setup DI
         DI.initDI(
             nativeModule,
-            platformGrpcClientModule,
+            platformModule,
             appDeclaration
         )
 
