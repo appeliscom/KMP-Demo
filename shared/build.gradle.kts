@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.skie)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     id(libs.plugins.koin.annotations.plugin.get().pluginId)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.moko.resources)
 }
 
@@ -81,8 +82,11 @@ android {
     }
 }
 
+dependencies {
+    ksp(libs.koin.ksp.compiler)
+}
+
 multiplatformResources {
-    multiplatformResourcesClassName = "R"
     iosBaseLocalizationRegion = ProjectSettings.IOS.MokoBaseLocalizationRegion
 }
 

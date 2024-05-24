@@ -2,6 +2,7 @@ package com.appelis.kmp_demo.android.navigation
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.appelis.kmp_demo.android.screens.AppStartupView
@@ -16,7 +17,7 @@ fun RootNavigationGraph(
     component: RootNavigationComponent,
     modifier: Modifier = Modifier
 ) {
-    val slot: ChildSlot<RootSlotChildConfig, RootSlotNavigationChild> by component.slot.subscribeAsState()
+    val slot: ChildSlot<RootSlotChildConfig, RootSlotNavigationChild> by component.slot.collectAsState()
 
     when(val slotInstance = slot.child?.instance) {
         is RootSlotNavigationChild.AppStartup -> AppStartupView(component = slotInstance.component, modifier)

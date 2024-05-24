@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     Box {
                         RootNavigationGraph(rootComponent, Modifier.fillMaxSize())
 
-                        Button(onClick = { rootComponent.handleDeeplink(Deeplink.ArticleDetail(id = "123")) }) {
+                        Button(onClick = { rootComponent.handleDeeplink(Deeplink.ArticleDetail( id = "123", voucherCode = "")) }) {
                             Text("handleDeeplink")
                         }
 

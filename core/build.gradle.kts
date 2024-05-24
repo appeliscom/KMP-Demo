@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinSerialization)
     id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.room)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -60,4 +61,5 @@ room {
 dependencies {
     implementation(libs.androidx.recyclerview)
     ksp(libs.room.compiler)
+    ksp(libs.koin.ksp.compiler)
 }

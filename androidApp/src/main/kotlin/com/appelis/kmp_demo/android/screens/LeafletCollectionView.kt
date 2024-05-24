@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -31,11 +32,11 @@ fun LeafletCollectionView(
     modifier: Modifier = Modifier
 ) {
     val viewModel = remember { component.viewModel }
-    val viewState by viewModel.viewState.subscribeAsState()
+    val viewState by viewModel.viewState.collectAsState()
     val router: LeafletCollectionRouter = koinInject()
 
     LaunchedEffect(Unit) {
-        viewModel.setup("eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTE5MDIwOTMsImlhdCI6MTcxMTkwMTc5MywiaXNzIjoiQXBwZWxpc0lkZW50aXR5UHJvdmlkZXIiLCJjbGFpbXMiOnsiYXBwZWxpcy5kZXZpY2VJZCI6IjE2OTg2IiwiYXBwZWxpcy5tb2JpbGVVc2VySWQiOiIxODU5MTcxOSIsImFwcGVsaXMucHJvamVjdElkIjoiMSJ9fQ.9RtVp_JZCnIa3CdUugNkMqGzesSQgv9G46Vqe63T9t1EvMMmoqwGRN5owChZP8I3oTcsNI_fnuT91lCC-w3bCw")
+        viewModel.setup()
         viewModel.uiEvents.collect{ uiEvent ->
             when(uiEvent) {
                 LeafletCollectionUIEvent.CloseScreen -> router.navigateTo(LeafletCollectionRoute.Pop)
