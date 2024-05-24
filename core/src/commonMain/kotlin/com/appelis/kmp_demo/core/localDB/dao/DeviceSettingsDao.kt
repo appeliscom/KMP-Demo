@@ -1,6 +1,8 @@
 package com.appelis.kmp_demo.core.localDB.dao
 
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.appelis.kmp_demo.core.localDB.entity.DeviceSettingsRoomDTO
 

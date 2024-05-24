@@ -9,6 +9,6 @@ import com.appelis.kmp_demo.core.localDB.entity.DeviceSettingsRoomDTO
     entities = [DeviceSettingsRoomDTO::class],
     version = 3
 )
-abstract class LocalDatabase: RoomDatabase() {
+abstract class AppDatabase: RoomDatabase() {
     abstract fun deviceSettingsDao(): DeviceSettingsDao
 }

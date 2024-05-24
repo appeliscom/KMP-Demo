@@ -54,7 +54,6 @@ kotlin {
                 api(projects.features.homescreen)
                 api(projects.features.startup)
                 api(projects.features.assortment)
-
                 api(projects.features.leaflet)
 
                 api(libs.essenty)

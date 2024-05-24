@@ -8,7 +8,6 @@ import androidx.room.Update
 
 @Dao
 interface GenericDao<T> {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entity: T)
 
