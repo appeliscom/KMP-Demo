@@ -87,6 +87,8 @@ dependencies {
 }
 
 multiplatformResources {
+    configureCopyXCFrameworkResources("Shared")
+    resourcesClassName = "R"
     iosBaseLocalizationRegion = ProjectSettings.IOS.MokoBaseLocalizationRegion
 }
 

@@ -3,6 +3,7 @@ plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -43,4 +44,8 @@ android {
         sourceCompatibility = ProjectSettings.Android.JavaCompatibility
         targetCompatibility = ProjectSettings.Android.JavaCompatibility
     }
+}
+
+dependencies {
+    ksp(libs.koin.ksp.compiler)
 }

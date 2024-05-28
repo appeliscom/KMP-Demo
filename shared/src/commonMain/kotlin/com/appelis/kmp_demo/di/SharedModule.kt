@@ -17,7 +17,7 @@ import org.koin.dsl.module
 import org.koin.ksp.generated.module
 
 val sharedModule: Module = module {
-    single<AppKey> { "" }
+    single<AppKey> { "uvqf6o4lkj9k79o5r" }
     single<ApiUrlProvider> { DemoAppUrlProvider(ApiType.TESTING) }
 
     includes(
