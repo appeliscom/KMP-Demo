@@ -12,17 +12,21 @@ import com.appelis.kmp_demo.core.auth.data.clients.IdentitySuspendDS
 import com.appelis.kmp_demo.core.network.ApiUrlProvider
 import com.squareup.wire.GrpcClient
 import okhttp3.OkHttpClient
+import okhttp3.Protocol
 import java.util.concurrent.TimeUnit
 
 class IdentitySuspendDSImpl(apiUrlProvider: ApiUrlProvider): IdentitySuspendDS {
-    private val okHttpClient = OkHttpClient.Builder()
-        .readTimeout(10, TimeUnit.SECONDS)
-        .writeTimeout(10, TimeUnit.SECONDS)
+    private val okHttpClient = OkHttpClient.Builder().protocols(listOf(Protocol.HTTP_1_1, Protocol.HTTP_2)).build()
+
+    private val url = okhttp3.HttpUrl.Builder()
+        .scheme("https")
+        .host(apiUrlProvider.authConnection.hostUrl)
+        .port(apiUrlProvider.authConnection.port)
         .build()
 
     private val grpcClient = GrpcClient.Builder()
         .client(okHttpClient)
-        .baseUrl("${apiUrlProvider.leafletConnection.hostUrl}:${apiUrlProvider.leafletConnection.port}")
+        .baseUrl(url)
         // our grpc doesn't support gzip compression, this will disable it in our calls
         .minMessageToCompress(Long.MAX_VALUE)
         .build()
