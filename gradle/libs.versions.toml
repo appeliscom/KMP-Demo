@@ -69,6 +69,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "moko-resources" }
 moko-graphics = { group = "dev.icerock.moko", name = "graphics", version.ref = "moko-graphics" }
 paging = { group = "app.cash.paging", name = "paging-common", version.ref = "paging" }
+paging-compose= { module = "app.cash.paging:paging-compose-common", version.ref = "paging" }
 paging-ios = { group = "app.cash.paging", name = "paging-runtime-uikit", version.ref = "paging" }
 
 # KotlinX

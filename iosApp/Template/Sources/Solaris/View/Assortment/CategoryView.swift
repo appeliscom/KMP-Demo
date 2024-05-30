@@ -83,10 +83,14 @@ struct CategoryView: View {
         .navigationTitle("Category \(String(describing: viewState?.id))")
         .task {
             await pager.initPager(
-                pagedDataStream: AsyncStream<PagedData<ArticlePreviewModel>>.fromSkieSwiftStateFlow(
-                    skieStateFlow: viewModel.viewState,
-                    mapFunction: { $0.articles }
-                )
+                pagedDataStream: .init { continuation in
+                    Task {
+                        for await item in viewModel.pagedItems {
+                            continuation.yield(item)
+                        }
+                        continuation.finish()
+                    }
+                }
             )
         }
     }
