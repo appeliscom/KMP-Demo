@@ -1,7 +1,5 @@
 import org.gradle.api.artifacts.Dependency
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.artifacts.dsl.DependencyHandler
-import org.gradle.kotlin.dsl.getByType
 
 fun DependencyHandler.implementation(dependency: String) {
     add("implementation", dependency)

@@ -6,7 +6,6 @@ plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.skie)
     alias(libs.plugins.jetbrainsKotlinSerialization)
-    id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.ksp)
     alias(libs.plugins.moko.resources)
 }

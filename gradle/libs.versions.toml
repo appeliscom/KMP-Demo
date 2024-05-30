@@ -103,10 +103,6 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 room = { id = "androidx.room", version.ref = "room" }
 
-# Precompiled script plugins
-koin-annotations-plugin = { id = "koin-annotations" }
-
-
 [bundles]
 common = [
     "koin-core",
