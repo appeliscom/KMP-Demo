@@ -5,10 +5,12 @@ import com.appelis.core.domain.network.CursorPagingResult
 import com.appelis.core.domain.network.Edge
 import com.appelis.core.domain.network.PageInfo
 import com.appelis.identity.Token
+import com.appelis.identity.TokenError
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
+import com.appelis.kmp_demo.core.network.NetworkException
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
 import metro.assortment.v1.GetAssortmentRequest
@@ -46,8 +48,10 @@ class AssortmentRepositoryImpl(
                 )
             )
 
-            if (response.tokenErr != null ) {
-                throw
+            when (response.tokenErr) {
+                TokenError.UNKNOWN_TOKEN_ERROR -> throw NetworkException(code = NetworkException.ErrorCode.UNKNOWN)
+                TokenError.INVALID_TOKEN -> throw NetworkException(code = NetworkException.ErrorCode.AUTH_ERROR)
+                null -> {}
             }
 
             return@fetch CursorPagingResult(
