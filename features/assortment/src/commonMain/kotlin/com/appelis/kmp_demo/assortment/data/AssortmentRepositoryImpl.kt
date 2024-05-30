@@ -47,7 +47,7 @@ class AssortmentRepositoryImpl(
             )
 
             if (response.tokenErr != null ) {
-                println(response.tokenErr)
+                throw
             }
 
             return@fetch CursorPagingResult(

@@ -1,22 +1,22 @@
-package com.appelis.kmp_demo.leaflet_data
-
+import com.appelis.kmp_demo.assortment.data.AssortmentByCategorySuspendDS
 import com.appelis.kmp_demo.core.network.ApiUrlProvider
-import com.appelis.kmp_demo.leaflet.data.client.LeafletSuspendDS
 import com.squareup.wire.GrpcClient
-import metro.leaflet.v1.GetLeafletsRequest
-import metro.leaflet.v1.GetLeafletsResponse
+import metro.assortment.v1.CatalogClient
+import metro.assortment.v1.GetAssortmentRequest
+import metro.assortment.v1.GetAssortmentResponse
 import metro.leaflet.v1.PublicClient
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
+import java.util.concurrent.TimeUnit
 
-class LeafletSuspendDSImpl(private val apiUrlProvider: ApiUrlProvider) : LeafletSuspendDS {
-    override suspend fun getLeaflets(request: GetLeafletsRequest): GetLeafletsResponse {
+class AssortmentSuspendClientImpl(private val apiUrlProvider: ApiUrlProvider) : AssortmentByCategorySuspendDS {
+    override suspend fun getArticles(request: GetAssortmentRequest): GetAssortmentResponse {
         val okHttpClient = OkHttpClient.Builder().protocols(listOf(Protocol.HTTP_1_1, Protocol.HTTP_2)).build()
 
         val url = okhttp3.HttpUrl.Builder()
             .scheme("https")
-            .host(apiUrlProvider.leafletConnection.hostUrl)
-            .port(apiUrlProvider.leafletConnection.port)
+            .host(apiUrlProvider.assortmentConnection.hostUrl)
+            .port(apiUrlProvider.assortmentConnection.port)
             .build()
 
         val grpcClient = GrpcClient.Builder()
@@ -26,9 +26,9 @@ class LeafletSuspendDSImpl(private val apiUrlProvider: ApiUrlProvider) : Leaflet
             .minMessageToCompress(Long.MAX_VALUE)
             .build()
 
-        val client = grpcClient.create(PublicClient::class)
+        val client = grpcClient.create(CatalogClient::class)
         return client
-            .GetLeaflets()
+            .GetAssortment()
             .execute(request)
     }
 }

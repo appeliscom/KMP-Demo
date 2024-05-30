@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.skie)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     id(libs.plugins.koin.annotations.plugin.get().pluginId)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.moko.resources)
 }
 
@@ -54,7 +55,6 @@ kotlin {
                 api(projects.features.homescreen)
                 api(projects.features.startup)
                 api(projects.features.assortment)
-
                 api(projects.features.leaflet)
 
                 api(libs.essenty)
@@ -82,8 +82,13 @@ android {
     }
 }
 
+dependencies {
+    ksp(libs.koin.ksp.compiler)
+}
+
 multiplatformResources {
-    multiplatformResourcesClassName = "R"
+    configureCopyXCFrameworkResources("Shared")
+    resourcesClassName = "R"
     iosBaseLocalizationRegion = ProjectSettings.IOS.MokoBaseLocalizationRegion
 }
 

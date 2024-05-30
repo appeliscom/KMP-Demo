@@ -1,9 +1,12 @@
+import com.android.build.gradle.internal.ide.kmp.KotlinAndroidSourceSetMarker.Companion.android
+
 plugins {
     id(libs.plugins.kotlinMultiplatform.get().pluginId)
     id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.room)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -57,4 +60,6 @@ room {
 
 dependencies {
     implementation(libs.androidx.recyclerview)
+    ksp(libs.room.compiler)
+    ksp(libs.koin.ksp.compiler)
 }

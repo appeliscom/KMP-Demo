@@ -52,4 +52,6 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
     implementation(libs.decompose.compose.extensions)
+    implementation(libs.paging)
+    implementation(libs.paging.compose)
 }

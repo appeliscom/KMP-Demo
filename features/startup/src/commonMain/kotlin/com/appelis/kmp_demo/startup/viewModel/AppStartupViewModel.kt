@@ -1,7 +1,5 @@
 package com.appelis.kmp_demo.startup.viewModel
 
-import com.appelis.kmp_demo.core.localDB.database.LocalDatabase
-import com.appelis.kmp_demo.core.localDB.entity.DeviceSettingsRoomDTO
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
 import com.appelis.kmp_demo.startup.component.AppStartupComponent

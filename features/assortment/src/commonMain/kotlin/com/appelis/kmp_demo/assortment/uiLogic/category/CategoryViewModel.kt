@@ -6,9 +6,12 @@ import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.usecase.GetAssortmentUseCase
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
+import org.koin.core.KoinApplication.Companion.init
 import org.koin.core.annotation.Factory
 
 @Factory
@@ -19,15 +22,19 @@ class CategoryViewModel(
     private val _viewState: MutableStateFlow<CategoryViewState> = MutableStateFlow(CategoryViewState(args.id, PagingData.empty()))
     override val viewState: StateFlow<CategoryViewState> = _viewState
 
+    override var pagedItems: Flow<PagingData<ArticlePreviewModel>> = flow { PagingData.empty<ArticlePreviewModel>() }
+
     init {
         setup()
     }
 
     fun setup() {
         viewModelScope.launch {
-            getAssortmentUseCase.execute().cachedIn(viewModelScope).collect{ data ->
-                _viewState.value = _viewState.value.copy(articles = data)
-            }
+            pagedItems = getAssortmentUseCase.execute()
+
+//            getAssortmentUseCase.execute().cachedIn(viewModelScope).collect{ data ->
+//                _viewState.value = _viewState.value.copy(articles = data)
+//            }
         }
     }
 
