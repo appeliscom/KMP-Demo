@@ -23,6 +23,7 @@ import org.koin.core.annotation.Single
 @Single
 class AssortmentRepositoryImpl(
     private val assortmentSuspendDS: AssortmentByCategorySuspendDS,
+    private val mapper: AssortmentMapper,
     authClient: AuthClient
 ) : AssortmentRepository, BaseRepository(authClient) {
     override suspend fun getArticles(
@@ -56,12 +57,10 @@ class AssortmentRepositoryImpl(
 
             return@fetch CursorPagingResult(
                 pageInfo = PageInfo.Cursor(hasNextPage = response.page?.hasNext ?: false),
-                edges = response.page?.nodes?.map {
+                edges = response.page?.nodes?.mapNotNull { node ->
                     Edge.Cursor(
-                        cursor = it.cursor,
-                        node = ArticlePreviewModel(
-                            name = it.data_?.data_?.name ?: ""
-                        )
+                        cursor = node.cursor,
+                        node = node.data_?.let { mapper.mapFromDTO(it) } ?: return@mapNotNull null
                     )
                 } ?: emptyList()
             )

@@ -10,7 +10,7 @@ import com.appelis.kmp_demo.core.paging.CursorPagingSource
 import kotlinx.coroutines.flow.Flow
 import org.koin.core.annotation.Single
 
-interface GetAssortmentUseCase {
+interface GetPagedAssortmentUseCase {
     fun execute(
         pageSize: Int = 20,
         initialLoadingSize: Int = 40,
@@ -19,7 +19,7 @@ interface GetAssortmentUseCase {
 }
 
 @Single
-class GetAssortmentUseCaseImpl(private val repository: AssortmentRepository): GetAssortmentUseCase {
+class GetPagedAssortmentUseCaseImpl(private val repository: AssortmentRepository): GetPagedAssortmentUseCase {
     override fun execute(
         pageSize: Int,
         initialLoadingSize: Int,
