@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
-import com.appelis.kmp_demo.Greeting
 import com.appelis.kmp_demo.android.navigation.RootNavigationGraph
 import com.appelis.kmp_demo.navigation.deeplinks.Deeplink
 import com.appelis.kmp_demo.navigation.navigationComponents.root.RootNavigationComponentImpl
@@ -22,8 +21,6 @@ import com.arkivanov.decompose.defaultComponentContext
 import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
-    private val greeting: Greeting by inject()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
