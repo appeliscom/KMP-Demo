@@ -11,6 +11,7 @@ import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
 import com.appelis.kmp_demo.core.network.NetworkException
+import kotlinx.coroutines.delay
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
 import metro.assortment.v1.GetAssortmentRequest

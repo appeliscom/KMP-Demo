@@ -37,7 +37,7 @@ fun MainFlowNavigationGraph(
         ) { child ->
             when (val childInstance = child.instance) {
                 is MainFlowNavigationChild.Homescreen -> HomescreenView(component = childInstance.component, modifier)
-                is MainFlowNavigationChild.Category -> CategoryView(component = childInstance.component, modifier)
+                is MainFlowNavigationChild.Category -> CategoryView(component = childInstance.component)
                 is MainFlowNavigationChild.LeafletCollection -> LeafletCollectionView(component = childInstance.component, modifier)
                 is MainFlowNavigationChild.ArticleDetail -> Text("articledetail")
             }
