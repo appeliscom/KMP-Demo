@@ -20,11 +20,11 @@ class AssortmentMapper {
         return ArticlePreviewModel(
             id = input.data_?.id ?: return null,
             name = input.data_?.name ?: return null,
-//            weightIndicator = input.data_?.weightIndicator ?: return null,
-//            prices = ArrayList(input.data_?.prices?.map(::mapFromDTO) ?: return null),
-//            availability = ArrayList(input.data_?.availabilities?.map(::mapFromDTO) ?: return null),
-//            tags = ArrayList(input.attributeValues?.data_?.map(::mapFromDTO) ?: return null),
-//            imageUrl = input.data_?.pictures?.first()?.url ?: return null
+            weightIndicator = input.data_?.weightIndicator ?: return null,
+            prices = ArrayList(input.data_?.prices?.map(::mapFromDTO) ?: return null),
+            availability = ArrayList(input.data_?.availabilities?.map(::mapFromDTO) ?: return null),
+            tags = ArrayList(input.attributeValues?.data_?.map(::mapFromDTO) ?: return null),
+            imageUrl = input.data_?.pictures?.firstOrNull()?.url ?: return null
         )
     }
 

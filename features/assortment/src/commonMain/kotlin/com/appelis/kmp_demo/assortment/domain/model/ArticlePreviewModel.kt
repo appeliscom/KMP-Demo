@@ -5,11 +5,11 @@ import kotlinx.datetime.Instant
 data class ArticlePreviewModel(
     val id: String,
     val name: String,
-//    val weightIndicator: Boolean,
-//    val prices: ArrayList<PriceModel>,
-//    val availability: ArrayList<AvailabilityModel>,
-//    val tags: ArrayList<TagModel>,
-//    val imageUrl: String?
+    val weightIndicator: Boolean,
+    val prices: ArrayList<PriceModel>,
+    val availability: ArrayList<AvailabilityModel>,
+    val tags: ArrayList<TagModel>,
+    val imageUrl: String?
 )
 
 data class AvailabilityModel(

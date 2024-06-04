@@ -9,14 +9,12 @@ import Foundation
 import Shared
 
 public class TestSwiftDependency: NativeTestDependency {
-    private let greetings: Greeting // dependency in shared module
     private var randomNumber: Int
     
-    public init(greetings: Greeting) {
-        self.greetings = greetings
+    public init() {
         randomNumber = Int.random(in: 1...1000)
     }
     public func greet() -> String {
-        "\(greetings.greet()) from swift test dependency\nseed: \(randomNumber)"
+        "Greetings from swift test dependency\nseed: \(randomNumber)"
     }
 }

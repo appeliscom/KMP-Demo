@@ -19,24 +19,33 @@ struct CategoryView: View {
     
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryComponentViewModel
+    private let columns: [GridItem]
     
     public init(component: CategoryComponent) {
         self.viewModel = component.viewModel
         self._pager = StateObject(wrappedValue: Pager())
+        
+        columns = Array(
+            repeating: .init(
+                .flexible(),
+                spacing: 8.0
+            ),
+            count: 2
+        )
     }
     
     var body: some View {
         VStack {
             stateView
         
-            Button(
-                action: {
-                    router.navigateTo(route: .ArticleDetail(id: "123"))
-                }, label: {
-                    Text("Navigate to article")
-                }
-            )
-            .padding(.bottom, 40)
+//            Button(
+//                action: {
+//                    router.navigateTo(route: .ArticleDetail(id: "123"))
+//                }, label: {
+//                    Text("Navigate to article")
+//                }
+//            )
+//            .padding(.bottom, 40)
             
 //            Button(
 //                action: {
@@ -56,6 +65,8 @@ struct CategoryView: View {
 //            )
 //            .padding(.bottom, 40)
         }
+        .background(Color(\.appBackground))
+        .edgesIgnoringSafeArea(.bottom)
         .navigationTitle("Category")
         .task {
             await pager.initPager(
@@ -104,17 +115,13 @@ struct CategoryView: View {
     
     private var collection: some View {
         ScrollView {
-            LazyVStack {
-                Text("Kolekce")
-                    .font(.title)
-                
+            LazyVGrid(
+                columns: columns,
+                alignment: .center,
+                spacing: 8.0
+            ) {
                 ForEach(pager.items, id: \.name) { item in
-                    Text(item.name)
-                        .frame(height: 300)
-                        .frame(maxWidth: .infinity)
-                        .background(
-                            [Color.red, Color.green, Color.blue].randomElement() ?? Color.red
-                        )
+                    ArticleCellView(article: item)
                 }
                 
                 switch pager.appendLoadState {
@@ -133,6 +140,7 @@ struct CategoryView: View {
                 }
             }
         }
+        .padding(16.0)
         .frame(maxHeight: .infinity)
     }
 }
