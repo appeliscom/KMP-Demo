@@ -122,6 +122,9 @@ struct CategoryView: View {
             ) {
                 ForEach(pager.items, id: \.name) { item in
                     ArticleCellView(article: item)
+                        .onTapGesture {
+                            router.navigateTo(route: .ArticleDetail(id: item.id))
+                        }
                 }
                 
                 switch pager.appendLoadState {
