@@ -29,7 +29,8 @@ class AssortmentRepositoryImpl(
 ) : AssortmentRepository, BaseRepository(authClient) {
     override suspend fun getArticles(
         pageSize: Int,
-        cursor: String?
+        cursor: String?,
+        categoryId: String
     ): CursorPagingResult<ArticlePreviewModel> {
         return fetch { accessToken ->
             val response = assortmentSuspendDS.getArticles(
@@ -44,7 +45,7 @@ class AssortmentRepositoryImpl(
                             businessId = "1",
                             status = StockStatus.AVAILABLE
                         ),
-                        categoryId = "37808"
+                        categoryId = categoryId
                     ) ,
                     sorting = SortingFlags(type = SortOrder.ASC, field_ = SortField.PRICE_MUNIT)
                 )

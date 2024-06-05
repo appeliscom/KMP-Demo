@@ -6,6 +6,7 @@ import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 interface AssortmentRepository {
     suspend fun getArticles(
         pageSize: Int,
-        cursor: String?
+        cursor: String?,
+        categoryId: String
     ): CursorPagingResult<ArticlePreviewModel>
 }

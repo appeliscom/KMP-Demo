@@ -12,6 +12,7 @@ import org.koin.core.annotation.Single
 
 interface GetPagedAssortmentUseCase {
     fun execute(
+        categoryId: String,
         pageSize: Int = 20,
         initialLoadingSize: Int = 40,
         placeholder: Boolean = false
@@ -21,6 +22,7 @@ interface GetPagedAssortmentUseCase {
 @Single
 class GetPagedAssortmentUseCaseImpl(private val repository: AssortmentRepository): GetPagedAssortmentUseCase {
     override fun execute(
+        categoryId: String,
         pageSize: Int,
         initialLoadingSize: Int,
         placeholder: Boolean
@@ -33,13 +35,16 @@ class GetPagedAssortmentUseCaseImpl(private val repository: AssortmentRepository
                 enablePlaceholders = placeholder
             ),
             pagingSourceFactory = {
-                AssortmentPagingSource(repository)
+                AssortmentPagingSource(repository, categoryId)
             }
         ).flow
     }
 }
 
-class AssortmentPagingSource(private val repository: AssortmentRepository): CursorPagingSource<ArticlePreviewModel>(
+class AssortmentPagingSource(
+    private val repository: AssortmentRepository,
+    private val categoryId: String
+): CursorPagingSource<ArticlePreviewModel>(
     initCursor = null
 ) {
     override suspend fun queryFactory(
@@ -47,7 +52,7 @@ class AssortmentPagingSource(private val repository: AssortmentRepository): Curs
         cursor: String?,
         itemCount: Boolean
     ): CursorPagingResult<ArticlePreviewModel> {
-        return repository.getArticles(size, cursor)
+        return repository.getArticles(size, cursor, categoryId)
     }
 }
 

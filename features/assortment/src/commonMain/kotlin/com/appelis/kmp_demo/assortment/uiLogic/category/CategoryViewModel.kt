@@ -54,7 +54,7 @@ class CategoryViewModel(
     override val viewState: StateFlow<CategoryViewState> = _viewState
 
 //    private val _pagedItems: MutableStateFlow<PagingData<ArticlePreviewModel>> = MutableStateFlow(PagingData.empty())
-    override var pagedItems = getPagedAssortmentUseCase.execute().cachedIn(viewModelScope)
+    override var pagedItems = getPagedAssortmentUseCase.execute(categoryId = args.id).cachedIn(viewModelScope)
 
     init {
         setup()
