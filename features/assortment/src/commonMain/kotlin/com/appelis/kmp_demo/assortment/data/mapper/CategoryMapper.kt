@@ -12,7 +12,8 @@ class CategoryMapper {
             parentId = dto.parentId,
             categoryKey = dto.categoryKey,
             name = dto.name,
-            imageUrl = dto.picture?.url
+            imageUrl = dto.picture?.url,
+            childCount = dto.childCount
         )
     }
 }

@@ -9,4 +9,7 @@ interface CategoryRepository {
         cursor: String? = null,
         parentId: String
     ): CursorPagingResult<CategoryModel>
+
+    suspend fun getCategoryById(id: String): CategoryModel
+    suspend fun getCategoryByKey(key: String): CategoryModel
 }

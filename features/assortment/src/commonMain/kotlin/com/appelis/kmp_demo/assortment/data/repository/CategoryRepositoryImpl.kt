@@ -1,6 +1,8 @@
 package com.appelis.kmp_demo.assortment.data.repository
 
 import appelis.CursorForwardPagingParams
+import appelis.category.v1.ByCategoryKeyRequest
+import appelis.category.v1.ByIdsRequest
 import appelis.category.v1.ChildCategoriesRequest
 import com.appelis.core.domain.network.CursorPagingResult
 import com.appelis.core.domain.network.Edge
@@ -20,7 +22,7 @@ class CategoryRepositoryImpl(
     private val categorySuspendDS: CategorySuspendDS,
     private val mapper: CategoryMapper,
     authClient: AuthClient
-): BaseRepository(authClient), CategoryRepository {
+) : BaseRepository(authClient), CategoryRepository {
     override suspend fun getCategories(
         pageSize: Int,
         cursor: String?,
@@ -39,8 +41,6 @@ class CategoryRepositoryImpl(
             )
             handleTokenError(response.tokenErr)
 
-            Napier.d(message = "response: $response count ${response.page?.nodes?.count()}")
-
             return@fetch CursorPagingResult(
                 pageInfo = PageInfo.Cursor(hasNextPage = response.page?.hasNext ?: false),
                 edges = response.page?.nodes?.mapNotNull { node ->
@@ -50,6 +50,36 @@ class CategoryRepositoryImpl(
                     )
                 } ?: emptyList()
             )
+        }
+    }
+
+    override suspend fun getCategoryById(id: String): CategoryModel {
+        return fetch { accessToken ->
+            val response = categorySuspendDS.getCategories(
+                ByIdsRequest(
+                    token = Token(accessToken),
+                    ids = listOf(id)
+                )
+            )
+            handleTokenError(response.error)
+
+            return@fetch response.data_?.data_?.get(id)?.let { mapper.mapFromDTO(it) }
+                ?: throw Exception("Category not found")
+        }
+    }
+
+    override suspend fun getCategoryByKey(key: String): CategoryModel {
+        return fetch { accessToken ->
+            val response = categorySuspendDS.getCategoryByKey(
+                ByCategoryKeyRequest(
+                    token = Token(accessToken),
+                    categoryKey = key
+                )
+            )
+            handleTokenError(response.error)
+
+            return@fetch response.category?.let { mapper.mapFromDTO(it) }
+                ?: throw Exception("Category not found")
         }
     }
 }

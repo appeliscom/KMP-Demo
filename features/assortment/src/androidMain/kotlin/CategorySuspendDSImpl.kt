@@ -1,3 +1,7 @@
+import appelis.category.v1.ByCategoryKeyRequest
+import appelis.category.v1.ByCategoryKeyResponse
+import appelis.category.v1.ByIdsRequest
+import appelis.category.v1.ByIdsResponse
 import appelis.category.v1.CategoryCatalogClient
 import appelis.category.v1.ChildCategoriesRequest
 import appelis.category.v1.ChildCategoriesResponse
@@ -27,6 +31,18 @@ class CategorySuspendDSImpl(private val apiUrlProvider: ApiUrlProvider) : Catego
     override suspend fun getChildCategories(request: ChildCategoriesRequest): ChildCategoriesResponse {
         return categoryClient.create(CategoryCatalogClient::class)
             .ChildCategories()
+            .execute(request)
+    }
+
+    override suspend fun getCategoryByKey(request: ByCategoryKeyRequest): ByCategoryKeyResponse {
+        return categoryClient.create(CategoryCatalogClient::class)
+            .ByCategoryKey()
+            .execute(request)
+    }
+
+    override suspend fun getCategories(request: ByIdsRequest): ByIdsResponse {
+        return categoryClient.create(CategoryCatalogClient::class)
+            .ByIds()
             .execute(request)
     }
 }
