@@ -48,6 +48,7 @@ public class Pager<T: AnyObject>: ObservableObject {
                 refreshLoadState = .notLoading
                 hasNextPage = !notLoading.endOfPaginationReached
             case let .error(error):
+                print(error.description())
                 if let networkException = (error.error as? NetworkException),
                    networkException.code == .connectionTimeout {
                     refreshLoadState = .networkError
@@ -63,6 +64,7 @@ public class Pager<T: AnyObject>: ObservableObject {
                 appendLoadState = .notLoading
                 hasNextPage = !notLoading.endOfPaginationReached
             case let .error(error):
+                print(error.description())
                 if let networkException = (error.error as? NetworkException),
                    networkException.code == .connectionTimeout {
                     refreshLoadState = .networkError

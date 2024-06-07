@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "GoServerCore/proto-storage/generated/go/category_service";
+
+package appelis.category.v1;
+
+import "category_service/categories.data.v1.proto";
+
+
+service PrivateSearch {
+  rpc AutoSuggest(AutoSuggestRequest) returns (AutoSuggestResponse){}
+}
+
+message AutoSuggestRequest {
+  string projectId = 1;
+  string keyword = 2;
+  int32 limit = 3;
+}
+
+message AutoSuggestResponse {
+  repeated CategoryMatch data = 1;
+}
+
+message CategoryMatch {
+  Category data = 1;
+  double score = 2;
+}

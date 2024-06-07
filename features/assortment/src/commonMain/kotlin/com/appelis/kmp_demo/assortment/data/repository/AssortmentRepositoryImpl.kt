@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.assortment.data
+package com.appelis.kmp_demo.assortment.data.repository
 import appelis.CursorForwardPagingParams
 import appelis.SortOrder
 import com.appelis.core.domain.network.CursorPagingResult
@@ -6,16 +6,16 @@ import com.appelis.core.domain.network.Edge
 import com.appelis.core.domain.network.PageInfo
 import com.appelis.identity.Token
 import com.appelis.identity.TokenError
+import com.appelis.kmp_demo.assortment.data.mapper.AssortmentMapper
+import com.appelis.kmp_demo.assortment.data.datasource.AssortmentSuspendDS
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
 import com.appelis.kmp_demo.core.network.NetworkException
-import kotlinx.coroutines.delay
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
 import metro.assortment.v1.GetAssortmentRequest
-import metro.assortment.v1.GetAssortmentResponse
 import metro.assortment.v1.SortField
 import metro.assortment.v1.SortingFlags
 import metro.assortment.v1.StockStatus
@@ -23,7 +23,7 @@ import org.koin.core.annotation.Single
 
 @Single
 class AssortmentRepositoryImpl(
-    private val assortmentSuspendDS: AssortmentByCategorySuspendDS,
+    private val assortmentSuspendDS: AssortmentSuspendDS,
     private val mapper: AssortmentMapper,
     authClient: AuthClient
 ) : AssortmentRepository, BaseRepository(authClient) {
@@ -70,14 +70,5 @@ class AssortmentRepositoryImpl(
     }
 }
 
-interface AssortmentByCategorySuspendDS {
-    suspend fun getArticles(request: GetAssortmentRequest): GetAssortmentResponse
-}
 
-interface AssortmentByCategoryCallBackDS {
-    fun getArticles(
-        request: GetAssortmentRequest,
-        responseCallback: (GetAssortmentResponse?, exception: Exception?) -> Unit
-    )
-}
 

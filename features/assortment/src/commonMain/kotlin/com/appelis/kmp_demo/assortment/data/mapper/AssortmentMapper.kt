@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.assortment.data
+package com.appelis.kmp_demo.assortment.data.mapper
 
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.model.AvailabilityModel

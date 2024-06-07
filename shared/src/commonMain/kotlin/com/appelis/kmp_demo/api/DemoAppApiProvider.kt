@@ -21,4 +21,10 @@ class DemoAppUrlProvider(override val apiType: ApiType) : ApiUrlProvider {
             ApiType.PRODUCTION -> GrpcConnection("", port = 443)
             ApiType.TESTING -> GrpcConnection("dev.auth.appelis.app", port = 443)
         }
+
+    override  val categoryConnection: GrpcConnection
+        get() = when (apiType) {
+            ApiType.PRODUCTION -> GrpcConnection("", port = 443)
+            ApiType.TESTING -> GrpcConnection("dev.categories.appelis.app", port = 443)
+        }
 }

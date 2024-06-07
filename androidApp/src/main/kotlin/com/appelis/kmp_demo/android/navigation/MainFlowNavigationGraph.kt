@@ -8,7 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.appelis.kmp_demo.android.screens.CategoryView
+import com.appelis.kmp_demo.android.screens.CategoryArticleCollectionView
+import com.appelis.kmp_demo.android.screens.CategoryCollectionView
 import com.appelis.kmp_demo.android.screens.HomescreenView
 import com.appelis.kmp_demo.android.screens.LeafletCollectionView
 import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainFlowNavigationChild
@@ -37,7 +38,7 @@ fun MainFlowNavigationGraph(
         ) { child ->
             when (val childInstance = child.instance) {
                 is MainFlowNavigationChild.Homescreen -> HomescreenView(component = childInstance.component, modifier)
-                is MainFlowNavigationChild.Category -> CategoryView(component = childInstance.component)
+                is MainFlowNavigationChild.Category -> CategoryCollectionView(component = childInstance.component) // CategoryArticleCollectionView(component = childInstance.component)
                 is MainFlowNavigationChild.LeafletCollection -> LeafletCollectionView(component = childInstance.component, modifier)
                 is MainFlowNavigationChild.ArticleDetail -> Text("articledetail")
             }

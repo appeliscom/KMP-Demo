@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.core.network
 
+import com.appelis.identity.TokenError
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
 
 abstract class BaseRepository(private val authClient: AuthClient) {
@@ -20,6 +21,14 @@ abstract class BaseRepository(private val authClient: AuthClient) {
                 }
                 else -> throw e
             }
+        }
+    }
+
+    fun handleTokenError(tokenErr: TokenError?) {
+        when (tokenErr) {
+            TokenError.UNKNOWN_TOKEN_ERROR -> throw NetworkException(code = NetworkException.ErrorCode.UNKNOWN)
+            TokenError.INVALID_TOKEN -> throw NetworkException(code = NetworkException.ErrorCode.AUTH_ERROR)
+            null -> return
         }
     }
 }

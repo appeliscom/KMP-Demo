@@ -1,4 +1,4 @@
-package com.appelis.kmp_demo.assortment.uiLogic.category
+package com.appelis.kmp_demo.assortment.uiLogic.articleCollection
 
 import app.cash.paging.PagingData
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
@@ -9,22 +9,23 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import org.koin.core.parameter.parametersOf
 
-interface CategoryComponent {
+interface CategoryArticleCollectionComponent {
     val viewModel: ViewModel
 
     interface ViewModel {
-        val viewState: StateFlow<CategoryViewState>
+        val viewState: StateFlow<CategoryArticleCollectionViewState>
         val pagedItems: Flow<PagingData<ArticlePreviewModel>>
     }
 }
 
-class CategoryComponentImpl(
+class CategoryArticleCollectionComponentImpl(
     componentContext: ComponentContext,
     id: String
-) : ViewModelComponent<CategoryViewModel>(componentContext), CategoryComponent {
-    override val viewModel: CategoryViewModel by viewModel(parameters = {
+) : ViewModelComponent<CategoryArticleCollectionViewModel>(componentContext),
+    CategoryArticleCollectionComponent {
+    override val viewModel: CategoryArticleCollectionViewModel by viewModel(parameters = {
         parametersOf(
-            CategoryViewModel.Args(id)
+            CategoryArticleCollectionViewModel.Args(id)
         )
     })
 }

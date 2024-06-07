@@ -3,8 +3,8 @@ package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 import com.appelis.UUID
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponent
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponentImpl
-import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponent
-import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponent
 import com.appelis.kmp_demo.core.extensions.asStateFlow
 import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.appelis.kmp_demo.homescreen.HomescreenComponent
@@ -104,7 +104,7 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
             println("New category child config $id")
             return MainFlowNavigationChild.Category(
-                CategoryComponentImpl(componentContext, id),
+                CategoryCollectionComponentImpl(componentContext, id),
                 sheetRoot = isSheetRoot
             )
         }
@@ -149,7 +149,7 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
 
 sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig> {
     data class Homescreen(val component: HomescreenComponent) : MainFlowNavigationChild()
-    data class Category(val component: CategoryComponent, val sheetRoot: Boolean) :
+    data class Category(val component: CategoryCollectionComponent, val sheetRoot: Boolean) :
         MainFlowNavigationChild() {
         override fun isNewSheetRoot(): Boolean = sheetRoot
     }

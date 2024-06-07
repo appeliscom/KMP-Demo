@@ -67,7 +67,7 @@ public struct ArticleCellView: View {
                     .resizable()
                     .scaledToFit()
             } else {
-                Image(resource: \.img_article_placeholder)
+                Image(resource: \.test_image)
                     .resizable()
                     .scaledToFit()
             }

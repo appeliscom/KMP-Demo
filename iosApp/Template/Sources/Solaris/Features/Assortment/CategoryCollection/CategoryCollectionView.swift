@@ -1,71 +1,29 @@
 //
-//  CategoryView.swift
-//  iosApp
+//  SwiftUIView.swift
+//  
 //
-//  Created by Jan Maloušek on 22.03.2024.
-//  Copyright © 2024 orgName. All rights reserved.
+//  Created by Jan Maloušek on 06.06.2024.
 //
 
 import Shared
 import SwiftUI
 import SwiftUICore
 
-struct CategoryView: View {
-    @State
-    private var viewState: CategoryViewState?
-    
+struct CategoryCollectionView: View {
     @StateObject
-    private var pager: Pager<ArticlePreviewModel>
-    
+    private var pager: Pager<CategoryModel>
     private var router: CategoryRouter = inject()
-    private let viewModel: CategoryComponentViewModel
-    private let columns: [GridItem]
+    private let viewModel: CategoryCollectionComponentViewModel
     
-    public init(component: CategoryComponent) {
+    public init(component: CategoryCollectionComponent) {
         self.viewModel = component.viewModel
         self._pager = StateObject(wrappedValue: Pager())
-        
-        columns = Array(
-            repeating: .init(
-                .flexible(),
-                spacing: 8.0
-            ),
-            count: 2
-        )
     }
-    
-    var body: some View {
-        VStack {
-            stateView
         
-//            Button(
-//                action: {
-//                    router.navigateTo(route: .ArticleDetail(id: "123"))
-//                }, label: {
-//                    Text("Navigate to article")
-//                }
-//            )
-//            .padding(.bottom, 40)
-            
-//            Button(
-//                action: {
-//                    router.navigateTo(route: .Category(id: viewState?.id ?? "" + "1", isSheetRoot: false))
-//                }, label: {
-//                    Text("NavigateToInnerCategory")
-//                }
-//            )
-//            .padding(.bottom, 40)
-//            
-//            Button(
-//                action: {
-//                    router.navigateTo(route: .Category(id: viewState?.id ?? "" + "1", isSheetRoot: true))
-//                }, label: {
-//                    Text("NavigateToInnerCategory in sheet")
-//                }
-//            )
-//            .padding(.bottom, 40)
+    var body: some View {
+        VStack{
+            stateView
         }
-        .background(Color(\.appBackground))
         .edgesIgnoringSafeArea(.bottom)
         .navigationTitle("Category")
         .task {
@@ -115,15 +73,12 @@ struct CategoryView: View {
     
     private var collection: some View {
         ScrollView {
-            LazyVGrid(
-                columns: columns,
-                alignment: .center,
-                spacing: 8.0
-            ) {
-                ForEach(pager.items, id: \.name) { item in
-                    ArticleCellView(article: item)
+            LazyVStack(spacing: 8.0) {
+                ForEach(pager.items, id: \.id) { item in
+                    Text(item.name)
+                        .padding(16)
                         .onTapGesture {
-                            router.navigateTo(route: .ArticleDetail(id: item.id))
+                            router.navigateTo(route: .Category(id: item.id, isSheetRoot: false))
                         }
                 }
                 

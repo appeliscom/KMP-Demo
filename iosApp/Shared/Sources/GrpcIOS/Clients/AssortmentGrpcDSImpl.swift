@@ -1,5 +1,5 @@
 //
-//  AssortmentByCategoryGrpcDSImpl.swift
+//  AssortmentGrpcDSImpl.swift
 //
 //
 //  Created by Jan Maloušek on 28.04.2024.
@@ -11,7 +11,7 @@ import NIO
 import Shared
 import SwiftProtobuf
 
-public class AssortmentByCategoryGrpcDSImpl: BaseGrpcDS, AssortmentByCategoryCallBackDS {
+public class AssortmentGrpcDSImpl: BaseGrpcDS, AssortmentCallbackDS {
     let client: Metro_Assortment_V1_CatalogAsyncClientProtocol
 
     public init(client: Metro_Assortment_V1_CatalogAsyncClientProtocol) {
@@ -39,7 +39,7 @@ public class AssortmentByCategoryGrpcDSImpl: BaseGrpcDS, AssortmentByCategoryCal
                         $0.type = .asc
                     }
                     $0.paging = .with {
-                        $0.first = UInt32(request.paging?.first ?? 1)
+                        $0.first = UInt32(request.paging?.first ?? 40)
                         if let cursor = request.paging?.after {
                             $0.after = .with { $0.value = cursor }
                         }

@@ -1,4 +1,3 @@
-import dev.icerock.gradle.MRVisibility
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
@@ -82,6 +81,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx)
     ksp(libs.koin.ksp.compiler)
 }
 
