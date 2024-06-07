@@ -37,4 +37,38 @@ public class CategoryGrpcDSImpl: BaseGrpcDS, CategoryCallbackDS {
             )
         }
     }
+    
+    public func getCategories(
+        request: ByIdsRequest,
+        responseCallback: @escaping (ByIdsResponse?, KotlinException?) -> Void
+    ) {
+        fetch(
+            responseCallback: responseCallback,
+            wireAdapter: ByIdsResponse.companion.ADAPTER
+        ) { [client] in
+            try await client.byIds(
+                .with {
+                    $0.token = .with { $0.data = request.token?.data_ ?? "" }
+                    $0.ids = request.ids
+                }
+            )
+        }
+    }
+    
+    public func getCategoryByKey(
+        request: ByCategoryKeyRequest, 
+        responseCallback: @escaping (ByCategoryKeyResponse?, KotlinException?) -> Void
+    ) {
+        fetch(
+            responseCallback: responseCallback,
+            wireAdapter: ByCategoryKeyResponse.companion.ADAPTER
+        ) { [client] in
+            try await client.byCategoryKey(
+                .with {
+                    $0.token = .with { $0.data = request.token?.data_ ?? "" }
+                    $0.categoryKey = request.categoryKey
+                }
+            )
+        }
+    }
 }
