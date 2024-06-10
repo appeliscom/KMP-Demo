@@ -8,6 +8,8 @@ import com.arkivanov.decompose.router.stack.push
 import org.koin.core.annotation.Single
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryInput
+
 
 @Single
 class HomescreenRouterImpl : HomescreenRouter, KoinComponent {
@@ -17,7 +19,7 @@ class HomescreenRouterImpl : HomescreenRouter, KoinComponent {
         when (route) {
             is HomescreenRoute.Category -> navigation.push(
                 MainFlowChildConfig.Category(
-                    id = route.id
+                    categoryInput = CategoryInput.Id(route.id)
                 )
             )
 

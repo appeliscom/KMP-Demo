@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Jan Maloušek on 06.06.2024.
 //
@@ -14,18 +14,21 @@ struct CategoryCollectionView: View {
     private var pager: Pager<CategoryModel>
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryCollectionComponentViewModel
+    private let parentId: String
     
-    public init(component: CategoryCollectionComponent) {
+    public init(component: CategoryCollectionComponent, parentId: String) {
         self.viewModel = component.viewModel
+        self.parentId = parentId
         self._pager = StateObject(wrappedValue: Pager())
     }
         
     var body: some View {
-        VStack{
+        VStack {
             stateView
         }
         .edgesIgnoringSafeArea(.bottom)
         .navigationTitle("Category")
+        .onAppear(first: { viewModel.setup(parentId: parentId) })
         .task {
             await pager.initPager(
                 pagedDataStream: .init { continuation in
@@ -78,7 +81,13 @@ struct CategoryCollectionView: View {
                     Text(item.name)
                         .padding(16)
                         .onTapGesture {
-                            router.navigateTo(route: .Category(id: item.id, isSheetRoot: false))
+                            router.navigateTo(
+                                route: .Category(
+                                    categoryInput: CategoryInput.Category(category: item),
+                                    displayOnlyArticles: false,
+                                    isSheetRoot: false
+                                )
+                            )
                         }
                 }
                 

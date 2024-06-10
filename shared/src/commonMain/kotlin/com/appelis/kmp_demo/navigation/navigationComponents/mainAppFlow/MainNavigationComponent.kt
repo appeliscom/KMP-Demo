@@ -26,6 +26,9 @@ import kotlinx.serialization.Serializable
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import kotlin.random.Random
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponent
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryInput
 
 interface MainNavigationComponent {
     val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
@@ -99,12 +102,20 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
     }
 
     @Serializable
-    data class Category(private val id: String, private val isSheetRoot: Boolean = false, private val seed: Int = Random.nextInt()) :
+    data class Category(
+        private val categoryInput: CategoryInput,
+        private val displayOnlyArticles: Boolean = false,
+        private val isSheetRoot: Boolean = false,
+        private val seed: Int = Random.nextInt()
+    ) :
         MainFlowChildConfig() {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
-            println("New category child config $id")
             return MainFlowNavigationChild.Category(
-                CategoryCollectionComponentImpl(componentContext, id),
+                CategoryComponentImpl(
+                    componentContext,
+                    categoryInput,
+                    displayOnlyArticles
+                ),
                 sheetRoot = isSheetRoot
             )
         }
@@ -149,7 +160,7 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
 
 sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig> {
     data class Homescreen(val component: HomescreenComponent) : MainFlowNavigationChild()
-    data class Category(val component: CategoryCollectionComponent, val sheetRoot: Boolean) :
+    data class Category(val component: CategoryComponent, val sheetRoot: Boolean) :
         MainFlowNavigationChild() {
         override fun isNewSheetRoot(): Boolean = sheetRoot
     }
