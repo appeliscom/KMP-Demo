@@ -16,16 +16,13 @@ interface CategoryCollectionComponent {
     interface  ViewModel {
         val viewState: StateFlow<CategoryCollectionViewState>
         val pagedItems: Flow<PagingData<CategoryModel>>
+
+        fun setup(parentId: String)
     }
 }
 
 class CategoryCollectionComponentImpl(
     componentContext: ComponentContext,
-    parentId: String
 ) : ViewModelComponent<CategoryCollectionViewModel>(componentContext), CategoryCollectionComponent {
-    override val viewModel: CategoryCollectionViewModel by viewModel(parameters = {
-        parametersOf(
-            CategoryCollectionViewModel.Args(parentId)
-        )
-    })
+    override val viewModel: CategoryCollectionViewModel by viewModel()
 }

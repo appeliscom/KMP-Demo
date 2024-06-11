@@ -20,12 +20,14 @@ struct CategoryArticleCollectionView: View {
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryArticleCollectionComponentViewModel
     private let columns: [GridItem]
+    private let categoryId: String
     
-    public init(component: CategoryArticleCollectionComponent) {
+    public init(component: CategoryArticleCollectionComponent, categoryId: String) {
         self.viewModel = component.viewModel
+        self.categoryId = categoryId
         self._pager = StateObject(wrappedValue: Pager())
         
-        columns = Array(
+        self.columns = Array(
             repeating: .init(
                 .flexible(),
                 spacing: 8.0
@@ -55,7 +57,7 @@ struct CategoryArticleCollectionView: View {
 //                }
 //            )
 //            .padding(.bottom, 40)
-//            
+//
 //            Button(
 //                action: {
 //                    router.navigateTo(route: .Category(id: viewState?.id ?? "" + "1", isSheetRoot: true))
@@ -68,6 +70,7 @@ struct CategoryArticleCollectionView: View {
         .background(Color(\.appBackground))
         .edgesIgnoringSafeArea(.bottom)
         .navigationTitle("Category")
+        .onAppear(first: { viewModel.setup(id: categoryId) })
         .task {
             await pager.initPager(
                 pagedDataStream: .init { continuation in

@@ -7,6 +7,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.paging.LoadState
@@ -19,11 +20,15 @@ import org.koin.compose.koinInject
 
 @Composable
 fun CategoryCollectionView(
-    component: CategoryCollectionComponent
+    component: CategoryCollectionComponent,
+    parentId: String
 ) {
     val viewModel = remember { component.viewModel }
-
     val pagingItems = viewModel.pagedItems.collectAsLazyPagingItems()
+
+    LaunchedEffect(Unit) {
+        viewModel.setup(parentId)
+    }
 
     when(pagingItems.loadState.refresh) {
         LoadState.Loading -> Loading()

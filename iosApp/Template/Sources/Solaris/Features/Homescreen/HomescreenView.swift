@@ -43,7 +43,7 @@ struct HomescreenView: View {
             
             Button(
                 action: {
-                    router.navigateTo(route: .Category(id: "37808"))
+                    router.navigateTo(route: .Category(id: "1"))
                 },
                 label: {
                     Text("open category")

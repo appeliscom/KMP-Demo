@@ -9,8 +9,10 @@ interface GetCategoryByKeyUseCase {
 }
 
 @Single
-class GetCategoryByKeyUseCaseImpl(private val repository: CategoryRepository) {
-    suspend fun execute(key: String): CategoryModel {
+class GetCategoryByKeyUseCaseImpl(
+    private val repository: CategoryRepository
+): GetCategoryByKeyUseCase {
+    override suspend fun execute(key: String): CategoryModel {
         return repository.getCategoryByKey(key)
     }
 }
