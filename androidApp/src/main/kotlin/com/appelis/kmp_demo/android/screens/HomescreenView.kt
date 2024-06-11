@@ -49,7 +49,7 @@ private fun Content(
 
         Button(
             onClick = {
-                router.navigateTo(HomescreenRoute.Category(id = "37808"))
+                router.navigateTo(HomescreenRoute.Category(id = "1"))
             }
         ) {
             Text("Open Category")

@@ -6,6 +6,7 @@ import com.appelis.kmp_demo.assortment.domain.usecase.GetCategoryByKeyUseCase
 import com.appelis.kmp_demo.core.network.NetworkException
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -25,18 +26,24 @@ class CategoryViewModel(
     override fun setup() {
         viewModelScope.launch {
             try {
+                Napier.d { "CategoryViewModel.setup()" }
                 val category = loadCategory()
                 _viewState.value = if (category.childCount == 0 || args.displayOnlyArticles) {
+                    Napier.d { "CategoryViewModel Article collection viewstate" }
                     CategoryViewState.ArticleCollection(category)
                 } else {
+                    Napier.d { "CategoryViewModel category collection viewstate" }
                     CategoryViewState.CategoryCollection(category)
                 }
             } catch (e: NetworkException) {
+                Napier.d { "CategoryViewModel error $e" }
                 if (e.code == NetworkException.ErrorCode.CONNECTION_TIMEOUT) {
                     _viewState.value = CategoryViewState.NetworkError
                 } else {
                     _viewState.value = CategoryViewState.GeneralError
                 }
+            } catch (e: Exception) {
+                _viewState.value = CategoryViewState.GeneralError
             }
         }
     }

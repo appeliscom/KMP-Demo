@@ -37,6 +37,8 @@ struct CategoryView: View {
                 Text("NetworkError")
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(\.appBackground))
         .onAppear(first: { viewModel.setup() })
         .task {
             for await state in viewModel.viewState {
