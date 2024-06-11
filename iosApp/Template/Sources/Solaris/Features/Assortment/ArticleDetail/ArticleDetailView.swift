@@ -9,6 +9,7 @@ import Foundation
 import Shared
 import SwiftUI
 import SwiftUICore
+import NukeUI
 
 struct ArticleDetailView: View {
     @State
@@ -18,7 +19,7 @@ struct ArticleDetailView: View {
     
     public init(component: ArticleDetailComponent) {
         self.viewModel = component.viewModel
-        self.viewState = .Loading()
+        self.viewState = ArticleDetailViewStateLoading()
     }
     
     var body: some View {
@@ -26,16 +27,23 @@ struct ArticleDetailView: View {
             switch onEnum(of: viewState) {
             case .loading:
                 loading
-            case let .error(error):
-                Text("error: \(error.description())")
             case let .success(data):
                 layoutSuccess(data: data)
+            case .generalError(_):
+                Text("GeneralError")
+            case .networkError(_):
+                Text("NetworkError")
             }
         }
         .navigationTitle("Article detail")
-        .onAppear{
-            viewModel.setup()
+        .task {
+            for await state in viewModel.viewState {
+                viewState = state
+            }
         }
+        .onAppear(first: {
+            viewModel.setup()
+        })
     }
     
     private var loading: some View {
@@ -48,12 +56,27 @@ struct ArticleDetailView: View {
         }
     }
     
-    private func layoutSuccess(data: ArticleDetailViewState.Success) -> some View {
+    @MainActor
+    private func layoutSuccess(data: ArticleDetailViewStateSuccess) -> some View {
         VStack {
-            Spacer()
+            LazyImage(
+                url: data.article.imageUrl?.url,
+                transaction: .init(animation: .easeIn)
+            ) { state in
+                if let image = state.image {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    Image(resource: \.test_image)
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
             
-            Text("ArticleId: \(data.id)")
-                .font(.caption)
+            Text(data.article.name)
+                .font(.title)
             
             Spacer()
             

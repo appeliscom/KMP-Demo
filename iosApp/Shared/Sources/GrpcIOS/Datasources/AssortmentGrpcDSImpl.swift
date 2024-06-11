@@ -18,8 +18,19 @@ public class AssortmentGrpcDSImpl: BaseGrpcDS, AssortmentCallbackDS {
         self.client = client
         super.init()
     }
+    
+    public func getArticles(request: GetArticlesRequest, responseCallback: @escaping (GetArticleResponse?, KotlinException?) -> Void) {
+        fetch(responseCallback: responseCallback, wireAdapter: GetArticleResponse.companion.ADAPTER) { [client] in
+            try await client.getArticles(
+                .with {
+                    $0.token = .with { $0.data = request.token?.data_ ?? "" }
+                    $0.articleIds = request.articleIds
+                }
+            )
+        }
+    }
 
-    public func getArticles(request: GetAssortmentRequest, responseCallback: @escaping (GetAssortmentResponse?, KotlinException?) -> Void) {
+    public func getArticlesPaged(request: GetAssortmentRequest, responseCallback: @escaping (GetAssortmentResponse?, KotlinException?) -> Void) {
         fetch(
             responseCallback: responseCallback,
             wireAdapter: GetAssortmentResponse.companion.ADAPTER

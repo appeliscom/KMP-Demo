@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.assortment.data.mapper
 
+import com.appelis.kmp_demo.assortment.domain.model.ArticleModel
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.model.AvailabilityModel
 import com.appelis.kmp_demo.assortment.domain.model.BusinessValidityModel
@@ -16,6 +17,18 @@ import org.koin.core.annotation.Single
 
 @Single
 class AssortmentMapper {
+    fun map(input: CatalogArticle): ArticleModel? {
+        return ArticleModel(
+            id = input.data_?.id ?: return null,
+            name = input.data_?.name ?: return null,
+            weightIndicator = input.data_?.weightIndicator ?: return null,
+            prices = ArrayList(input.data_?.prices?.map(::mapFromDTO) ?: return null),
+            availability = ArrayList(input.data_?.availabilities?.map(::mapFromDTO) ?: return null),
+            tags = ArrayList(input.attributeValues?.data_?.map(::mapFromDTO) ?: return null),
+            imageUrl = input.data_?.pictures?.firstOrNull()?.url ?: return null
+        )
+    }
+
     fun mapFromDTO(input: CatalogArticle): ArticlePreviewModel? {
         return ArticlePreviewModel(
             id = input.data_?.id ?: return null,

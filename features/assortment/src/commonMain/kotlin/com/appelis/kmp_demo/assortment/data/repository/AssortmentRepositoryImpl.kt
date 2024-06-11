@@ -5,16 +5,16 @@ import com.appelis.core.domain.network.CursorPagingResult
 import com.appelis.core.domain.network.Edge
 import com.appelis.core.domain.network.PageInfo
 import com.appelis.identity.Token
-import com.appelis.identity.TokenError
 import com.appelis.kmp_demo.assortment.data.mapper.AssortmentMapper
 import com.appelis.kmp_demo.assortment.data.datasource.AssortmentSuspendDS
+import com.appelis.kmp_demo.assortment.domain.model.ArticleModel
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
-import com.appelis.kmp_demo.core.network.NetworkException
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
+import metro.assortment.v1.GetArticlesRequest
 import metro.assortment.v1.GetAssortmentRequest
 import metro.assortment.v1.SortField
 import metro.assortment.v1.SortingFlags
@@ -27,13 +27,26 @@ class AssortmentRepositoryImpl(
     private val mapper: AssortmentMapper,
     authClient: AuthClient
 ) : AssortmentRepository, BaseRepository(authClient) {
+    override suspend fun getArticle(articleId: String): ArticleModel {
+        return fetch { accessToken ->
+            val response = assortmentSuspendDS.getArticles(
+                GetArticlesRequest(token = Token(accessToken), articleIds = listOf(articleId))
+            )
+            handleTokenError(response.tokenErr)
+
+            return@fetch response.data_?.array?.firstOrNull()?.let {
+                mapper.map(it)
+            } ?: throw Exception("Article with id $articleId not found")
+        }
+    }
+
     override suspend fun getArticles(
         pageSize: Int,
         cursor: String?,
         categoryId: String
     ): CursorPagingResult<ArticlePreviewModel> {
         return fetch { accessToken ->
-            val response = assortmentSuspendDS.getArticles(
+            val response = assortmentSuspendDS.getArticlesPaged(
                 GetAssortmentRequest(
                     token = Token(accessToken),
                     paging = CursorForwardPagingParams(
@@ -51,11 +64,7 @@ class AssortmentRepositoryImpl(
                 )
             )
 
-            when (response.tokenErr) {
-                TokenError.UNKNOWN_TOKEN_ERROR -> throw NetworkException(code = NetworkException.ErrorCode.UNKNOWN)
-                TokenError.INVALID_TOKEN -> throw NetworkException(code = NetworkException.ErrorCode.AUTH_ERROR)
-                null -> {}
-            }
+            handleTokenError(response.tokenErr)
 
             return@fetch CursorPagingResult(
                 pageInfo = PageInfo.Cursor(hasNextPage = response.page?.hasNext ?: false),

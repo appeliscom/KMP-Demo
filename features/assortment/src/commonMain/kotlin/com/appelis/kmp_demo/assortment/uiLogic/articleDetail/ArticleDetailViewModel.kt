@@ -1,7 +1,12 @@
 package com.appelis.kmp_demo.assortment.uiLogic.articleDetail
 
+import com.appelis.kmp_demo.assortment.domain.model.ArticleModel
+import com.appelis.kmp_demo.assortment.domain.usecase.GetArticleUseCase
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryViewState
+import com.appelis.kmp_demo.core.network.NetworkException
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +16,8 @@ import org.koin.core.annotation.Factory
 
 @Factory
 class ArticleDetailViewModel(
-    private val args: Args
+    private val args: Args,
+    private val getArticleUseCase: GetArticleUseCase
 ) : SharedViewModel<ArticleDetailViewState, Nothing>(), ArticleDetailComponent.ViewModel {
     private val _viewState: MutableStateFlow<ArticleDetailViewState> =
         MutableStateFlow(ArticleDetailViewState.Loading)
@@ -22,8 +28,18 @@ class ArticleDetailViewModel(
 
     override fun setup() {
         viewModelScope.launch {
-            delay(2000)
-            _viewState.value = ArticleDetailViewState.Success(id = args.id)
+            try {
+                val article = getArticleUseCase.execute(args.id)
+                _viewState.value = ArticleDetailViewState.Success(article)
+            } catch (e: NetworkException) {
+                if (e.code == NetworkException.ErrorCode.CONNECTION_TIMEOUT) {
+                    _viewState.value = ArticleDetailViewState.NetworkError
+                } else {
+                    _viewState.value = ArticleDetailViewState.GeneralError
+                }
+            } catch (e: Exception) {
+                _viewState.value = ArticleDetailViewState.GeneralError
+            }
         }
     }
 
@@ -36,13 +52,18 @@ class ArticleDetailViewModel(
                     else -> false
                 }
             }
-            _viewState.value = ArticleDetailViewState.Success(id = args.id, voucher = code)
+            (_viewState.value as? ArticleDetailViewState.Success)?.let {
+                _viewState.value = it.copy(voucher = code)
+            }
         }
     }
 }
 
-sealed class ArticleDetailViewState : ViewState {
-    data object Loading : ArticleDetailViewState()
-    data class Error(val error: Exception) : ArticleDetailViewState()
-    data class Success(val id: String, val voucher: String? = null) : ArticleDetailViewState()
+sealed interface ArticleDetailViewState : ViewState {
+    data object Loading : ArticleDetailViewState
+    data class Success(val article: ArticleModel, val voucher: String? = null) :
+        ArticleDetailViewState
+
+    data object GeneralError : ArticleDetailViewState
+    data object NetworkError : ArticleDetailViewState
 }
