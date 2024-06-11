@@ -13,6 +13,9 @@ import SwiftUICore
 struct CategoryCollectionView: View {
     @StateObject
     private var pager: Pager<CategoryModel>
+    
+    @State
+    private var viewState: CategoryCollectionViewState = CategoryCollectionViewState.companion.Empty
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryCollectionComponentViewModel
     private let parentId: String
@@ -41,6 +44,11 @@ struct CategoryCollectionView: View {
                     }
                 }
             )
+        }
+        .task {
+            for await state in viewModel.viewState {
+                viewState = state
+            }
         }
         .overlay(buttonOverlay)
     }
@@ -143,9 +151,13 @@ struct CategoryCollectionView: View {
     
     private var buttonOverlay: some View {
         layoutButton(
-            text: R.strings().my_string.desc().localized(),
+            text: R.strings().show_articles.desc().localized(),
             action: {
-//                router.navigateTo(route: .Category(categoryInput: , displayOnlyArticles: <#T##Bool#>, isSheetRoot: .))
+                router.navigateTo(route: .Category(
+                    categoryInput: .Id(id: viewState.parentId),
+                    displayOnlyArticles: true, 
+                    isSheetRoot: false
+                ))
             }
         )
         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -155,17 +167,19 @@ struct CategoryCollectionView: View {
     
     private func layoutButton(
         text: String,
-        action: () -> Void
+        action: @escaping () -> Void
     ) -> some View {
-        HStack{
-            Text(text)
-                .foregroundStyle(Color(\.surface))
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 54)
-        .background(
-            RoundedRectangle(cornerRadius: 28.0)
-                .fill(Color(\.secondary))
-        )
+        Button(action: action, label: {
+            HStack {
+                Text(text)
+                    .foregroundStyle(Color(\.surface))
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 54)
+            .background(
+                RoundedRectangle(cornerRadius: 28.0)
+                    .fill(Color(\.secondary))
+            )
+        })
     }
 }

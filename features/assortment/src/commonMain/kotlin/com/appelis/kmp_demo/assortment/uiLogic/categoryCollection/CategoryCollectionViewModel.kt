@@ -15,7 +15,7 @@ import org.koin.core.annotation.Factory
 class CategoryCollectionViewModel(
     private val getPagedSubCategoriesUseCase: GetPagedSubCategoriesUseCase
 ) : SharedViewModel<CategoryCollectionViewState, Nothing>(), CategoryCollectionComponent.ViewModel {
-    private val _viewState: MutableStateFlow<CategoryCollectionViewState> = MutableStateFlow(CategoryCollectionViewState(""))
+    private val _viewState: MutableStateFlow<CategoryCollectionViewState> = MutableStateFlow(CategoryCollectionViewState.Empty)
     override val viewState: StateFlow<CategoryCollectionViewState> = _viewState
 
     private val _pagedItems: MutableStateFlow<PagingData<CategoryModel>> = MutableStateFlow(PagingData.empty())
@@ -23,6 +23,8 @@ class CategoryCollectionViewModel(
 
     override fun setup(parentId: String) {
         viewModelScope.launch {
+            _viewState.value = _viewState.value.copy(parentId = parentId)
+
             getPagedSubCategoriesUseCase
                 .execute(parentId)
                 .cachedIn(viewModelScope)
@@ -33,4 +35,8 @@ class CategoryCollectionViewModel(
     }
 }
 
-data class CategoryCollectionViewState(val parentId: String): ViewState
+data class CategoryCollectionViewState(val parentId: String): ViewState {
+    companion object {
+        val Empty = CategoryCollectionViewState("")
+    }
+}

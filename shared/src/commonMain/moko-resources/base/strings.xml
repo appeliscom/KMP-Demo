@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
     <string name="my_string">My string en</string>
+    <string name="show_articles">Show articles</string>
 </resources>
