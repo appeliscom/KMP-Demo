@@ -16,6 +16,9 @@ struct CategoryCollectionView: View {
     
     @State
     private var viewState: CategoryCollectionViewState = CategoryCollectionViewState.companion.Empty
+    
+    @Environment(\.theme) private var theme: Theme
+    
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryCollectionComponentViewModel
     private let parentId: String
@@ -30,6 +33,7 @@ struct CategoryCollectionView: View {
         VStack {
             stateView
         }
+        .padding(.top, Spacing.pt16)
         .edgesIgnoringSafeArea(.bottom)
         .navigationTitle("Category")
         .onAppear(first: { viewModel.setup(parentId: parentId) })
@@ -86,10 +90,9 @@ struct CategoryCollectionView: View {
     
     private var collection: some View {
         ScrollView {
-            LazyVStack(spacing: 8.0) {
+            LazyVStack(spacing: 0) {
                 ForEach(pager.items, id: \.id) { item in
                     layoutCategoryCell(category: item)
-                        .padding(16)
                         .onTapGesture {
                             router.navigateTo(
                                 route: .Category(
@@ -99,6 +102,10 @@ struct CategoryCollectionView: View {
                                 )
                             )
                         }
+                    
+                    if pager.items.last != item {
+                        Divider()
+                    }
                 }
                 
                 switch pager.appendLoadState {
@@ -129,20 +136,22 @@ struct CategoryCollectionView: View {
     
     private func layoutCategoryCell(category: CategoryModel) -> some View {
         HStack(spacing: 16.0) {
-            LazyImage(url: category.imageUrl?.url) { state in
-                if let image = state.image {
-                    image
-                        .resizable()
-                        .scaledToFit()
+            if let url = category.imageUrl?.url {
+                LazyImage(url: url) { state in
+                    if let image = state.image {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    }
                 }
+                .frame(width: 24, height: 24)
             }
-            .frame(width: 24, height: 24)
             
             Text(category.name)
-            
+                .foregroundColor(theme.color(.onSurfaceH))
+                .font(theme.font(.titleMedium))
+                
             Spacer()
-            
-//            Text("\(viewModel.articleCountByCategoryId[category.categoryId] ?? 0)")
         }
         .padding(.horizontal, 16)
         .frame(height: 48, alignment: .center)
@@ -172,7 +181,8 @@ struct CategoryCollectionView: View {
         Button(action: action, label: {
             HStack {
                 Text(text)
-                    .foregroundStyle(Color(\.surface))
+                    .font(theme.font(.button))
+                    .foregroundStyle(theme.color(.surface))
             }
             .frame(maxWidth: .infinity)
             .frame(height: 54)
