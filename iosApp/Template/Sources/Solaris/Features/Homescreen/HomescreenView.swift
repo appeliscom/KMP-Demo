@@ -33,8 +33,6 @@ struct HomescreenView: View {
                 .scaledToFit()
                 .frame(width: 300, height: 300)
             
-            Text(R.strings().my_string.desc().localized())
-            
             Text("counter: \(counter)")
                 .onTapGesture {
                     counter += 1
@@ -47,6 +45,7 @@ struct HomescreenView: View {
                 },
                 label: {
                     Text("open category")
+                        .font(Font(R.fonts().cametro_regular.uiFont(withSize: 20)))
                 }
             )
             .padding(.bottom, 16)

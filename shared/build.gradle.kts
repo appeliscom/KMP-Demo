@@ -89,6 +89,7 @@ multiplatformResources {
     configureCopyXCFrameworkResources("Shared")
     resourcesClassName = "R"
     iosBaseLocalizationRegion = ProjectSettings.IOS.MokoBaseLocalizationRegion
+    iosMinimalDeploymentTarget = "16.0"
 }
 
 val updateSharedFramework by tasks.registering(Copy::class) {

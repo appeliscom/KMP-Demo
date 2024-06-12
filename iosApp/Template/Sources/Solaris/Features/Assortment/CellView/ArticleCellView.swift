@@ -13,6 +13,8 @@ import NukeUI
 
 @MainActor
 public struct ArticleCellView: View {
+    @Environment(\.theme) private var theme: Theme
+    
     public let article: ArticlePreviewModel
     private let type: CellType
     var cellWidth: CGFloat {
@@ -42,16 +44,19 @@ public struct ArticleCellView: View {
         VStack{
             imageSection
             
-            Spacer()
-            
             Text(article.name)
-                .font(.title3)
+                .multilineTextAlignment(.leading)
+                .lineLimit(3)
+                .fixedSize(horizontal: false, vertical: true)
+                .font(theme.font(.titleSmall))
+                .foregroundStyle(theme.color(.onSurfaceH))
+                .frame(maxWidth: .infinity, minHeight: 60, alignment: .topLeading)
             
             Spacer()
         }
-        .padding(4.0)
+        .padding(Spacing.pt4)
         .background(
-            RoundedRectangle(cornerRadius: 16.0)
+            RoundedRectangle(cornerRadius: CornerRadius.pt24)
                 .fill(Color(\.surface))
         )
         .frame(width: cellWidth, height: cellHeight)
@@ -72,8 +77,10 @@ public struct ArticleCellView: View {
                     .scaledToFit()
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .frame(maxHeight: 164.0)
+        .padding(Spacing.pt4)
+        .frame(height: 158.0)
+        .frame(maxWidth: .infinity, alignment: .center)
+        
     }
 }
 
