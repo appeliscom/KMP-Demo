@@ -2,6 +2,8 @@ import com.appelis.kmp_demo.assortment.data.datasource.AssortmentSuspendDS
 import com.appelis.kmp_demo.core.network.ApiUrlProvider
 import com.squareup.wire.GrpcClient
 import metro.assortment.v1.CatalogClient
+import metro.assortment.v1.GetArticleCountByCategoryIdsRequest
+import metro.assortment.v1.GetArticleCountByCategoryIdsResponse
 import metro.assortment.v1.GetArticleResponse
 import metro.assortment.v1.GetArticlesRequest
 import metro.assortment.v1.GetAssortmentRequest
@@ -36,5 +38,9 @@ class AssortmentSuspendDSImpl(private val apiUrlProvider: ApiUrlProvider) : Asso
 
     override suspend fun getArticlesPaged(request: GetAssortmentRequest): GetAssortmentResponse {
         return assortmentClient.GetAssortment().execute(request)
+    }
+
+    override suspend fun getArticleCountByCategoryIds(request: GetArticleCountByCategoryIdsRequest): GetArticleCountByCategoryIdsResponse {
+        return assortmentClient.GetArticleCountByCategoryIds().execute(request)
     }
 }

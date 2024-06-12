@@ -18,6 +18,7 @@ interface CategoryCollectionComponent {
         val pagedItems: Flow<PagingData<CategoryModel>>
 
         fun setup(parentId: String)
+        fun loadCategoryArticleCounts(categoryIds: List<String>)
     }
 }
 

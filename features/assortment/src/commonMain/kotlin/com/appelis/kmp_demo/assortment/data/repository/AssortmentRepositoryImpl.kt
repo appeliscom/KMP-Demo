@@ -14,6 +14,7 @@ import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
+import metro.assortment.v1.GetArticleCountByCategoryIdsRequest
 import metro.assortment.v1.GetArticlesRequest
 import metro.assortment.v1.GetAssortmentRequest
 import metro.assortment.v1.SortField
@@ -75,6 +76,19 @@ class AssortmentRepositoryImpl(
                     )
                 } ?: emptyList()
             )
+        }
+    }
+
+    override suspend fun getArticleCountByCategoryIds(categoryIds: List<String>): Map<String, Long> {
+        return fetch { accessToken ->
+            val response = assortmentSuspendDS.getArticleCountByCategoryIds(
+                GetArticleCountByCategoryIdsRequest(
+                    token = Token(accessToken),
+                    categoryIds = categoryIds
+                )
+            )
+            handleTokenError(response.tokenErr)
+            return@fetch response.data_?.articleCounts ?: emptyMap()
         }
     }
 }

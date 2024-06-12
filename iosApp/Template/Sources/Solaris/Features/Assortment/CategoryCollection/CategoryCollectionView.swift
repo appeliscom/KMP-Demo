@@ -54,6 +54,11 @@ struct CategoryCollectionView: View {
                 viewState = state
             }
         }
+        .onReceive(pager.$items) { items in
+            viewModel.loadCategoryArticleCounts(categoryIds: items.map(\.id).filter{
+                viewState.categoryArticleCounts[$0] == nil
+            })
+        }
         .overlay(buttonOverlay)
     }
     
@@ -152,6 +157,10 @@ struct CategoryCollectionView: View {
                 .font(theme.font(.titleMedium))
                 
             Spacer()
+            
+            Text("\(viewState.categoryArticleCounts[category.id] ?? 0)")
+                .font(theme.font(.labelSmall))
+                .foregroundColor(theme.color(.secondary))
         }
         .padding(.horizontal, 16)
         .frame(height: 48, alignment: .center)
@@ -160,7 +169,7 @@ struct CategoryCollectionView: View {
     
     private var buttonOverlay: some View {
         layoutButton(
-            text: R.strings().show_articles.desc().localized(),
+            text: "\(R.strings().show_articles.desc().localized()) (\(viewState.categoryArticleCounts[viewState.parentId] ?? 0))",
             action: {
                 router.navigateTo(route: .Category(
                     categoryInput: .Id(id: viewState.parentId),

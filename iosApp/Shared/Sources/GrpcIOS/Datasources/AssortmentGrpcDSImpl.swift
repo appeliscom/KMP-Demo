@@ -59,4 +59,18 @@ public class AssortmentGrpcDSImpl: BaseGrpcDS, AssortmentCallbackDS {
             )
         }
     }
+    
+    public func getArticleCountByCategoryIds(request: GetArticleCountByCategoryIdsRequest, responseCallback: @escaping (GetArticleCountByCategoryIdsResponse?, KotlinException?) -> Void) {
+        fetch(
+            responseCallback: responseCallback,
+            wireAdapter: GetArticleCountByCategoryIdsResponse.companion.ADAPTER
+        ) { [client] in
+            try await client.getArticleCountByCategoryIds(
+                .with {
+                    $0.token = .with { $0.data = request.token?.data_ ?? "" }
+                    $0.categoryIds = request.categoryIds
+                }
+            )
+        }
+    }
 }
