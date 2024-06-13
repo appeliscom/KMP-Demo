@@ -17,7 +17,8 @@ struct CategoryCollectionView: View {
     @State
     private var viewState: CategoryCollectionViewState = CategoryCollectionViewState.companion.Empty
     
-    @Environment(\.theme) private var theme: Theme
+    @Environment(\.theme) private var theme
+    @Environment(\.translations) private var translations
     
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryCollectionComponentViewModel
@@ -169,7 +170,7 @@ struct CategoryCollectionView: View {
     
     private var buttonOverlay: some View {
         layoutButton(
-            text: "\(R.strings().show_articles.desc().localized()) (\(viewState.categoryArticleCounts[viewState.parentId] ?? 0))",
+            text: "\(translations.show_articles.value) (\(viewState.categoryArticleCounts[viewState.parentId] ?? 0))",
             action: {
                 router.navigateTo(route: .Category(
                     categoryInput: .Id(id: viewState.parentId),

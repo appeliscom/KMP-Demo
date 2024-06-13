@@ -11,8 +11,8 @@ import SwiftUI
 import SwiftUICore
 
 public class Theme {
-    public init(){}
-    
+    public init() {}
+
     func color(_ type: ThemeColor) -> SwiftUI.Color {
         switch type {
         case .secondary:
@@ -96,7 +96,7 @@ public class Theme {
             return Font(R.fonts().cametro_bold.uiFont(withSize: 14))
         }
     }
-    
+
     func shadow(_ shadow: ThemeShadow) -> ShadowProperties {
         switch shadow {
         case .shadow100:
@@ -108,17 +108,6 @@ public class Theme {
         case .shadow400:
             return ShadowProperties(color: Color.black.opacity(0.1), radius: 48, y: 48)
         }
-    }
-}
-
-struct ThemeKey: EnvironmentKey {
-    static let defaultValue: Theme = Theme()
-}
-
-extension EnvironmentValues {
-    var theme: Theme {
-        get { self[ThemeKey.self] }
-        set { self[ThemeKey.self] = newValue }
     }
 }
 
