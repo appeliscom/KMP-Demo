@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import SwiftUICore
 import Shared
 import SwiftUI
-
+import SwiftUICore
 
 extension EnvironmentValues {
     var theme: Theme {
         get { self[ThemeKey.self] }
         set { self[ThemeKey.self] = newValue }
     }
-    
+
     var translations: R.strings {
         get { self[RStringKey.self] }
         set { self[RStringKey.self] = newValue }
@@ -24,11 +23,9 @@ extension EnvironmentValues {
 }
 
 struct ThemeKey: EnvironmentKey {
-    static let defaultValue: Theme = Theme()
+    static let defaultValue: Theme = .init()
 }
 
 struct RStringKey: EnvironmentKey {
-    static let defaultValue: R.strings = R.strings()
+    static let defaultValue: R.strings = .init()
 }
-
-

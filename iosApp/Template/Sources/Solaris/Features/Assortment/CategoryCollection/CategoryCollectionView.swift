@@ -56,7 +56,7 @@ struct CategoryCollectionView: View {
             }
         }
         .onReceive(pager.$items) { items in
-            viewModel.loadCategoryArticleCounts(categoryIds: items.map(\.id).filter{
+            viewModel.loadCategoryArticleCounts(categoryIds: items.map(\.id).filter {
                 viewState.categoryArticleCounts[$0] == nil
             })
         }
@@ -174,7 +174,7 @@ struct CategoryCollectionView: View {
             action: {
                 router.navigateTo(route: .Category(
                     categoryInput: .Id(id: viewState.parentId),
-                    displayOnlyArticles: true, 
+                    displayOnlyArticles: true,
                     isSheetRoot: false
                 ))
             }
