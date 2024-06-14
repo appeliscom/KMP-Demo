@@ -8,6 +8,7 @@ import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
 import com.appelis.kmp_demo.assortment.domain.model.Order
 import com.appelis.kmp_demo.assortment.domain.model.StockStatus
 import com.appelis.kmp_demo.assortment.domain.usecase.GetPagedAssortmentUseCase
+import com.appelis.kmp_demo.assortment.domain.usecase.GetPagedAssortmentUseCaseInput
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.AddArticleAsFavoriteUseCaseMock
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.AddArticleAsWatchdogUseCaseMock
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.ObserveCurrentUsersFavoritesUseCaseMock
@@ -21,9 +22,13 @@ import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromWat
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
@@ -52,21 +57,52 @@ class CategoryArticleCollectionViewModel(
         MutableStateFlow(PagingData.empty())
     override var pagedItems = _pagedItems
 
+    private val assortmentInputStateFlow: MutableStateFlow<GetPagedAssortmentUseCaseInput?> =
+        MutableStateFlow(null)
 
-    @OptIn(ExperimentalCoroutinesApi::class)
+
     override fun setup(id: String) {
         viewModelScope.launch {
-            viewState.flatMapLatest {
-                getPagedAssortmentUseCase
-                    .execute(
-                        categoryId = id,
-                        sorting = map(it)
-                    )
-            }.cachedIn(viewModelScope)
-                .collect {
-                    _pagedItems.value = it
-                }
+            val initAssortmentInputFlowTask = async { initAssortmentInputFlow(categoryId = id) }
+            val initAssortmentFlowTask = async { initAssortmentStateFlow() }
+
+            initAssortmentInputFlowTask.await()
+            initAssortmentFlowTask.await()
+
+//            assortmentInputStateFlow
+//                .filterNotNull()
+//                .flatMapLatest {
+//                    getPagedAssortmentUseCase.execute(it)
+//                }.cachedIn(viewModelScope)
+//                .collect {
+//                    _pagedItems.value = it
+//                }
         }
+    }
+
+    private suspend fun initAssortmentInputFlow(categoryId: String) {
+        viewState.map {
+            GetPagedAssortmentUseCaseInput(
+                categoryId = categoryId,
+                sorting = map(it)
+            )
+        }
+            .distinctUntilChanged()
+            .collect {
+                assortmentInputStateFlow.value = it
+            }
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private suspend fun initAssortmentStateFlow() {
+        assortmentInputStateFlow
+            .filterNotNull()
+            .flatMapLatest {
+                getPagedAssortmentUseCase.execute(it)
+            }.cachedIn(viewModelScope)
+            .collect {
+                _pagedItems.value = it
+            }
     }
 
     override fun setSortedBy(sortBy: SortedBy) {
@@ -85,7 +121,7 @@ class CategoryArticleCollectionViewModel(
                 SortedBy.PRICE_DESC -> AssortmentSortingField.PRICE_UNIT
                 SortedBy.PRICE_ASC -> AssortmentSortingField.PRICE_UNIT
             },
-            order = when(viewState.sortedBy) {
+            order = when (viewState.sortedBy) {
                 SortedBy.RELEVANCE -> Order.DESC
                 SortedBy.PRICE_DESC -> Order.DESC
                 SortedBy.PRICE_ASC -> Order.ASC

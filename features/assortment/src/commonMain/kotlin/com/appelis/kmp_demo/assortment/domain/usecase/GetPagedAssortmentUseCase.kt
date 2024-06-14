@@ -12,33 +12,29 @@ import kotlinx.coroutines.flow.Flow
 import org.koin.core.annotation.Single
 
 interface GetPagedAssortmentUseCase {
-    fun execute(
-        categoryId: String,
-        sorting: AssortmentSortingModel,
-        pageSize: Int = 20,
-        initialLoadingSize: Int = 40,
-        placeholder: Boolean = false
-    ): Flow<PagingData<ArticlePreviewModel>>
+    fun execute(input: GetPagedAssortmentUseCaseInput): Flow<PagingData<ArticlePreviewModel>>
 }
+
+data class GetPagedAssortmentUseCaseInput(
+    val categoryId: String,
+    val sorting: AssortmentSortingModel,
+    val pageSize: Int = 20,
+    val initialLoadingSize: Int = 40,
+    val placeholder: Boolean = false
+)
 
 @Single
 class GetPagedAssortmentUseCaseImpl(private val repository: AssortmentRepository): GetPagedAssortmentUseCase {
-    override fun execute(
-        categoryId: String,
-        sorting: AssortmentSortingModel,
-        pageSize: Int,
-        initialLoadingSize: Int,
-        placeholder: Boolean
-    ): Flow<PagingData<ArticlePreviewModel>> {
+    override fun execute(input: GetPagedAssortmentUseCaseInput): Flow<PagingData<ArticlePreviewModel>> {
         return Pager(
             config = PagingConfig(
-                pageSize = pageSize,
-                prefetchDistance = pageSize,
-                initialLoadSize = initialLoadingSize,
-                enablePlaceholders = placeholder
+                pageSize = input.pageSize,
+                prefetchDistance = input.pageSize,
+                initialLoadSize = input.initialLoadingSize,
+                enablePlaceholders = input.placeholder
             ),
             pagingSourceFactory = {
-                AssortmentPagingSource(repository, categoryId, sorting)
+                AssortmentPagingSource(repository, input.categoryId, input.sorting)
             }
         ).flow
     }
