@@ -19,10 +19,6 @@ data class AvailabilityModel(
     val lastChange: Instant?
 )
 
-enum class StockStatus {
-    IN_STOCK, OUT_OF_STOCK, LIMITED_STOCK // Add other statuses as required
-}
-
 data class TagModel(
     val id: Long,
     val name: String?,

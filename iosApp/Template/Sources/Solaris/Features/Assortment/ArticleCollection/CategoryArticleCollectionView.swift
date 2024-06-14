@@ -6,19 +6,20 @@
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
+import NukeUI
 import Shared
 import SwiftUI
 import SwiftUICore
 
 struct CategoryArticleCollectionView: View {
-    @State
-    private var viewState: CategoryArticleCollectionViewState?
+    @Environment(\.theme) var theme
+    @Environment(\.translations) var translations
     
-    @StateObject
-    private var pager: Pager<ArticlePreviewModel>
+    @State var viewState: CategoryArticleCollectionViewState = .init(sortedBy: .relevance, searchedAvailability: nil)
+    @StateObject var pager: Pager<ArticlePreviewModel>
     
-    private var router: CategoryRouter = inject()
-    private let viewModel: CategoryArticleCollectionComponentViewModel
+    var router: CategoryRouter = inject()
+    let viewModel: CategoryArticleCollectionComponentViewModel
     private let columns: [GridItem]
     private let categoryId: String
     
@@ -38,6 +39,8 @@ struct CategoryArticleCollectionView: View {
     
     var body: some View {
         VStack {
+            sortingWidget
+            
             stateView
         
 //            Button(
@@ -82,6 +85,11 @@ struct CategoryArticleCollectionView: View {
                     }
                 }
             )
+        }
+        .task {
+            for await state in viewModel.viewState {
+                viewState = state
+            }
         }
     }
     

@@ -11,14 +11,14 @@ import SwiftUI
 import SwiftUICore
 
 struct CategoryCollectionView: View {
+    @Environment(\.theme) private var theme
+    @Environment(\.translations) private var translations
+    
     @StateObject
     private var pager: Pager<CategoryModel>
     
     @State
     private var viewState: CategoryCollectionViewState = CategoryCollectionViewState.companion.Empty
-    
-    @Environment(\.theme) private var theme
-    @Environment(\.translations) private var translations
     
     private var router: CategoryRouter = inject()
     private let viewModel: CategoryCollectionComponentViewModel

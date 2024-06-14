@@ -2,6 +2,7 @@ package com.appelis.kmp_demo.assortment.uiLogic.articleCollection
 
 import app.cash.paging.PagingData
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.StockStatus
 import com.appelis.kmp_demo.core.uiArchitecture.ViewModelComponent
 import com.appelis.kmp_demo.core.extensions.viewModel
 import com.arkivanov.decompose.ComponentContext
@@ -18,6 +19,8 @@ interface CategoryArticleCollectionComponent {
         val pagedItems: Flow<PagingData<ArticlePreviewModel>>
 
         fun setup(id: String)
+        fun setSortedBy(sortBy: SortedBy)
+        fun setSearchedAvailability(stockStatus: StockStatus?)
     }
 }
 

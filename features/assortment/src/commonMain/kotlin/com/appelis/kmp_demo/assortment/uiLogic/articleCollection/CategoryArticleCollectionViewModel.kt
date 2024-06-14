@@ -3,6 +3,10 @@ package com.appelis.kmp_demo.assortment.uiLogic.articleCollection
 import app.cash.paging.PagingData
 import app.cash.paging.cachedIn
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingField
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
+import com.appelis.kmp_demo.assortment.domain.model.Order
+import com.appelis.kmp_demo.assortment.domain.model.StockStatus
 import com.appelis.kmp_demo.assortment.domain.usecase.GetPagedAssortmentUseCase
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.AddArticleAsFavoriteUseCaseMock
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.AddArticleAsWatchdogUseCaseMock
@@ -16,8 +20,11 @@ import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromFav
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromWatchdogUseCaseMock
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
 
@@ -41,23 +48,56 @@ class CategoryArticleCollectionViewModel(
     )
     override val viewState: StateFlow<CategoryArticleCollectionViewState> = _viewState
 
-    private val _pagedItems: MutableStateFlow<PagingData<ArticlePreviewModel>> = MutableStateFlow(PagingData.empty())
+    private val _pagedItems: MutableStateFlow<PagingData<ArticlePreviewModel>> =
+        MutableStateFlow(PagingData.empty())
     override var pagedItems = _pagedItems
 
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     override fun setup(id: String) {
         viewModelScope.launch {
-            getPagedAssortmentUseCase
-                .execute(id)
-                .cachedIn(viewModelScope)
-                .collect{
+            viewState.flatMapLatest {
+                getPagedAssortmentUseCase
+                    .execute(
+                        categoryId = id,
+                        sorting = map(it)
+                    )
+            }.cachedIn(viewModelScope)
+                .collect {
                     _pagedItems.value = it
                 }
         }
     }
+
+    override fun setSortedBy(sortBy: SortedBy) {
+        _viewState.value = _viewState.value.copy(sortedBy = sortBy)
+    }
+
+    override fun setSearchedAvailability(stockStatus: StockStatus?) {
+        _viewState.value = _viewState.value.copy(searchedAvailability = stockStatus)
+    }
+
+    private fun map(viewState: CategoryArticleCollectionViewState): AssortmentSortingModel {
+        // todo set correctly selected price type
+        return AssortmentSortingModel(
+            field = when (viewState.sortedBy) {
+                SortedBy.RELEVANCE -> AssortmentSortingField.RELEVANCE
+                SortedBy.PRICE_DESC -> AssortmentSortingField.PRICE_UNIT
+                SortedBy.PRICE_ASC -> AssortmentSortingField.PRICE_UNIT
+            },
+            order = when(viewState.sortedBy) {
+                SortedBy.RELEVANCE -> Order.DESC
+                SortedBy.PRICE_DESC -> Order.DESC
+                SortedBy.PRICE_ASC -> Order.ASC
+            }
+        )
+    }
 }
 
-data class CategoryArticleCollectionViewState(val sortedBy: SortedBy = SortedBy.RELEVANCE) : ViewState
+data class CategoryArticleCollectionViewState(
+    val sortedBy: SortedBy = SortedBy.RELEVANCE,
+    val searchedAvailability: StockStatus? = null
+) : ViewState
 
 enum class SortedBy {
     RELEVANCE,

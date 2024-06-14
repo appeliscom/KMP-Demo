@@ -9,6 +9,7 @@ import com.appelis.kmp_demo.assortment.data.mapper.AssortmentMapper
 import com.appelis.kmp_demo.assortment.data.datasource.AssortmentSuspendDS
 import com.appelis.kmp_demo.assortment.domain.model.ArticleModel
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.network.BaseRepository
 import com.appelis.kmp_demo.core.auth.domain.AuthClient
@@ -44,24 +45,17 @@ class AssortmentRepositoryImpl(
     override suspend fun getArticles(
         pageSize: Int,
         cursor: String?,
-        categoryId: String
+        categoryId: String,
+        sorting: AssortmentSortingModel
     ): CursorPagingResult<ArticlePreviewModel> {
         return fetch { accessToken ->
             val response = assortmentSuspendDS.getArticlesPaged(
-                GetAssortmentRequest(
-                    token = Token(accessToken),
-                    paging = CursorForwardPagingParams(
-                        after = cursor,
-                        first = pageSize
-                    ),
-                    filtering = FilterFlagsExt(
-                        flags = FilterFlags(
-                            businessId = "1",
-                            status = StockStatus.AVAILABLE
-                        ),
-                        categoryId = categoryId
-                    ) ,
-                    sorting = SortingFlags(type = SortOrder.ASC, field_ = SortField.PRICE_MUNIT)
+                mapper.mapToRequest(
+                    accessToken,
+                    pageSize,
+                    cursor,
+                    categoryId,
+                    sorting
                 )
             )
 

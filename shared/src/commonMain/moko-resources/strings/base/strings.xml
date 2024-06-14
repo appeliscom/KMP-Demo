@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
     <string name="show_articles">Show articles</string>
+    <string name="sorted_by_relevance">Relevance</string>
+    <string name="sorted_by_price_asc">Price asc</string>
+    <string name="sorted_by_price_desc">Price desc</string>
+    <string name="available_at_all_stores">Available at all stores</string>
+    <string name="items">Items</string>
 </resources>

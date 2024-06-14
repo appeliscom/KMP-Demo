@@ -45,10 +45,7 @@ public class AssortmentGrpcDSImpl: BaseGrpcDS, AssortmentCallbackDS {
                             $0.status = .available
                         }
                     }
-                    $0.sorting = .with {
-                        $0.field = .priceMunit
-                        $0.type = .asc
-                    }
+                    $0.sorting = self.map(request: request)
                     $0.paging = .with {
                         $0.first = UInt32(request.paging?.first ?? 40)
                         if let cursor = request.paging?.after {
@@ -71,6 +68,44 @@ public class AssortmentGrpcDSImpl: BaseGrpcDS, AssortmentCallbackDS {
                     $0.categoryIds = request.categoryIds
                 }
             )
+        }
+    }
+    
+    private func map(request: GetAssortmentRequest) -> Metro_Assortment_V1_SortingFlags {
+        let field: Metro_Assortment_V1_SortField
+        let order: Appelis_SortOrder
+        
+        switch request.sorting?.field_ ?? .relevance {
+        case .unknownSortType:
+            field = .unknownSortType
+        case .priceUnit:
+            field = .priceUnit
+        case .priceUnitTax:
+            field = .priceUnitTax
+        case .priceMunit:
+            field = .priceMunit
+        case .priceMunitTax:
+            field = .priceMunitTax
+        case .pricePack:
+            field = .pricePack
+        case .pricePackTax:
+            field = .pricePackTax
+        case .relevance:
+            field = .relevance
+        }
+        
+        switch request.sorting?.type ?? .desc {
+        case .unknownSort:
+            order = .unknownSort
+        case .asc:
+            order = .asc
+        case .desc:
+            order = .desc
+        }
+        
+        return .with {
+            $0.field = field
+            $0.type = order
         }
     }
 }
