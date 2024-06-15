@@ -1,5 +1,6 @@
 package com.appelis.kmp_demo.assortment.domain.usecase.mocks
 
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,8 +35,9 @@ class ObserveCurrentUsersFavoritesUseCaseMockImpl(
 @Single
 class AddArticleAsFavoriteUseCaseMockImpl(private val repo: FavoriteMockRepo): AddArticleAsFavoriteUseCaseMock {
     override suspend fun execute(id: String) {
-        repo.favorites.value = repo.favorites.value.apply {
-            if(!contains(id)) { add(id) }
+        val currentFavorites = repo.favorites.value
+        if(!currentFavorites.contains(id)) {
+            repo.favorites.value = ArrayList(currentFavorites + id)
         }
     }
 }
@@ -43,7 +45,10 @@ class AddArticleAsFavoriteUseCaseMockImpl(private val repo: FavoriteMockRepo): A
 @Single
 class RemoveArticleAsFavoriteUseCaseMockImpl(private val repo: FavoriteMockRepo): RemoveArticleFromFavoriteUseCaseMock {
     override suspend fun execute(id: String) {
-        repo.favorites.value = repo.favorites.value.apply { remove(id) }
+        val currentFavorites = repo.favorites.value
+        if(currentFavorites.contains(id)) {
+            repo.favorites.value = ArrayList(currentFavorites.filter { it != id })
+        }
     }
 }
 

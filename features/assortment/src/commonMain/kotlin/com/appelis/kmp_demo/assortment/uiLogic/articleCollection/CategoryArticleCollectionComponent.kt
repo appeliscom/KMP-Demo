@@ -21,6 +21,10 @@ interface CategoryArticleCollectionComponent {
         fun setup(id: String)
         fun setSortedBy(sortBy: SortedBy)
         fun setSearchedAvailability(stockStatus: StockStatus?)
+        fun addArticleToWatchdogs(articleId: String)
+        fun removeArticleFromWatchdogs(articleId: String)
+        fun addArticleToFavorites(articleId: String)
+        fun removeArticleFromFavorites(articleId: String)
     }
 }
 

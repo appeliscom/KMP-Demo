@@ -21,6 +21,7 @@ import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromFav
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromWatchdogUseCaseMock
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,7 +29,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
@@ -65,18 +65,15 @@ class CategoryArticleCollectionViewModel(
         viewModelScope.launch {
             val initAssortmentInputFlowTask = async { initAssortmentInputFlow(categoryId = id) }
             val initAssortmentFlowTask = async { initAssortmentStateFlow() }
+            val initWatchdogObservationTask = async { initWatchdogObservation() }
+            val initFavouritesObservationTask = async { initFavouritesObservation() }
+            val initLoggedUserIdObservationTask = async { initLoggedUserIdObservation() }
 
             initAssortmentInputFlowTask.await()
             initAssortmentFlowTask.await()
-
-//            assortmentInputStateFlow
-//                .filterNotNull()
-//                .flatMapLatest {
-//                    getPagedAssortmentUseCase.execute(it)
-//                }.cachedIn(viewModelScope)
-//                .collect {
-//                    _pagedItems.value = it
-//                }
+            initWatchdogObservationTask.await()
+            initFavouritesObservationTask.await()
+            initLoggedUserIdObservationTask.await()
         }
     }
 
@@ -105,12 +102,57 @@ class CategoryArticleCollectionViewModel(
             }
     }
 
+    private suspend fun initWatchdogObservation() {
+        observeCurrentUsersWatchdogsUseCase.execute()
+            .collect {
+                _viewState.value = _viewState.value.copy(usersWatchdogs = it)
+            }
+    }
+
+    private suspend fun initFavouritesObservation() {
+        observeCurrentUsersFavoritesUseCase.execute()
+            .collect {
+                _viewState.value = _viewState.value.copy(usersFavourites = it)
+            }
+    }
+
+    private suspend fun initLoggedUserIdObservation() {
+        observeLoggedUserIdUseCase.execute()
+            .collect {
+                _viewState.value = _viewState.value.copy(loggedUserId = it)
+            }
+    }
+
     override fun setSortedBy(sortBy: SortedBy) {
         _viewState.value = _viewState.value.copy(sortedBy = sortBy)
     }
 
     override fun setSearchedAvailability(stockStatus: StockStatus?) {
         _viewState.value = _viewState.value.copy(searchedAvailability = stockStatus)
+    }
+
+    override fun addArticleToWatchdogs(articleId: String) {
+        viewModelScope.launch {
+            addArticleAsWatchdogUseCase.execute(articleId)
+        }
+    }
+
+    override fun removeArticleFromWatchdogs(articleId: String) {
+        viewModelScope.launch {
+            removeArticleAsWatchdogUseCaseMock.execute(articleId)
+        }
+    }
+
+    override fun addArticleToFavorites(articleId: String) {
+        viewModelScope.launch {
+            addArticleAsFavoriteUseCase.execute(articleId)
+        }
+    }
+
+    override fun removeArticleFromFavorites(articleId: String) {
+        viewModelScope.launch {
+            removeArticleFromFavoriteUseCase.execute(articleId)
+        }
     }
 
     private fun map(viewState: CategoryArticleCollectionViewState): AssortmentSortingModel {
@@ -132,8 +174,15 @@ class CategoryArticleCollectionViewModel(
 
 data class CategoryArticleCollectionViewState(
     val sortedBy: SortedBy = SortedBy.RELEVANCE,
-    val searchedAvailability: StockStatus? = null
-) : ViewState
+    val searchedAvailability: StockStatus? = null,
+    val loggedUserId: Int? = null,
+    val usersWatchdogs: List<String> = emptyList(),
+    val usersFavourites: List<String> = emptyList()
+) : ViewState {
+    companion object {
+        val default = CategoryArticleCollectionViewState()
+    }
+}
 
 enum class SortedBy {
     RELEVANCE,

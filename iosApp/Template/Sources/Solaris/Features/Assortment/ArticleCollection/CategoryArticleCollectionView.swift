@@ -15,7 +15,7 @@ struct CategoryArticleCollectionView: View {
     @Environment(\.theme) var theme
     @Environment(\.translations) var translations
     
-    @State var viewState: CategoryArticleCollectionViewState = .init(sortedBy: .relevance, searchedAvailability: nil)
+    @State var viewState: CategoryArticleCollectionViewState = CategoryArticleCollectionViewState.companion.default
     @StateObject var pager: Pager<ArticlePreviewModel>
     
     var router: CategoryRouter = inject()
@@ -42,33 +42,6 @@ struct CategoryArticleCollectionView: View {
             sortingWidget
             
             stateView
-        
-//            Button(
-//                action: {
-//                    router.navigateTo(route: .ArticleDetail(id: "123"))
-//                }, label: {
-//                    Text("Navigate to article")
-//                }
-//            )
-//            .padding(.bottom, 40)
-            
-//            Button(
-//                action: {
-//                    router.navigateTo(route: .Category(id: viewState?.id ?? "" + "1", isSheetRoot: false))
-//                }, label: {
-//                    Text("NavigateToInnerCategory")
-//                }
-//            )
-//            .padding(.bottom, 40)
-//
-//            Button(
-//                action: {
-//                    router.navigateTo(route: .Category(id: viewState?.id ?? "" + "1", isSheetRoot: true))
-//                }, label: {
-//                    Text("NavigateToInnerCategory in sheet")
-//                }
-//            )
-//            .padding(.bottom, 40)
         }
         .background(Color(\.appBackground))
         .edgesIgnoringSafeArea(.bottom)
@@ -132,10 +105,32 @@ struct CategoryArticleCollectionView: View {
                 spacing: 8.0
             ) {
                 ForEach(pager.items, id: \.name) { item in
-                    ArticleCellView(article: item)
-                        .onTapGesture {
-                            router.navigateTo(route: .ArticleDetail(id: item.id))
-                        }
+                    ArticleCellView(
+                        article: item,
+                        isFavorite: Binding(
+                            get: { viewState.usersFavourites.contains(item.id) },
+                            set: { shouldBeFavorite in
+                                if shouldBeFavorite {
+                                    viewModel.addArticleToFavorites(articleId: item.id)
+                                } else {
+                                    viewModel.removeArticleFromFavorites(articleId: item.id)
+                                }
+                            }
+                        ),
+                        isWatchdog: Binding(
+                            get: { viewState.usersWatchdogs.contains(item.id) },
+                            set: { isWatchdog in
+                                if isWatchdog {
+                                    viewModel.addArticleToWatchdogs(articleId: item.id)
+                                } else {
+                                    viewModel.removeArticleFromWatchdogs(articleId: item.id)
+                                }
+                            }
+                        )
+                    )
+                    .onTapGesture {
+                        router.navigateTo(route: .ArticleDetail(id: item.id))
+                    }
                 }
                 
                 switch pager.appendLoadState {

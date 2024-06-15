@@ -6,15 +6,17 @@
 //
 
 import Foundation
-import SwiftUI
-import Shared
-import SwiftUICore
 import NukeUI
+import Shared
+import SwiftUI
+import SwiftUICore
 
 @MainActor
 public struct ArticleCellView: View {
     @Environment(\.theme) private var theme: Theme
-    
+    @Binding private var isWatchdog: Bool
+    @Binding private var isFavorite: Bool
+
     public let article: ArticlePreviewModel
     private let type: CellType
     var cellWidth: CGFloat {
@@ -30,20 +32,23 @@ public struct ArticleCellView: View {
         360.0
     }
 
-    
     public init(
         article: ArticlePreviewModel,
-        type: CellType = .articleVertical
+        type: CellType = .articleVertical,
+        isFavorite: Binding<Bool>,
+        isWatchdog: Binding<Bool>
     ) {
         self.article = article
         self.type = type
+        self._isFavorite = isFavorite
+        self._isWatchdog = isWatchdog
     }
-    
-    
+
     public var body: some View {
-        VStack{
+        VStack {
             imageSection
-            
+                .overlay(imageOverlay)
+
             Text(article.name)
                 .multilineTextAlignment(.leading)
                 .lineLimit(3)
@@ -51,7 +56,7 @@ public struct ArticleCellView: View {
                 .font(theme.font(.titleSmall))
                 .foregroundStyle(theme.color(.onSurfaceH))
                 .frame(maxWidth: .infinity, minHeight: 60, alignment: .topLeading)
-            
+
             Spacer()
         }
         .padding(Spacing.pt4)
@@ -61,7 +66,7 @@ public struct ArticleCellView: View {
         )
         .frame(width: cellWidth, height: cellHeight)
     }
-    
+
     private var imageSection: some View {
         LazyImage(
             url: article.imageUrl?.url,
@@ -80,7 +85,38 @@ public struct ArticleCellView: View {
         .padding(Spacing.pt4)
         .frame(height: 158.0)
         .frame(maxWidth: .infinity, alignment: .center)
-        
+    }
+
+    private var imageOverlay: some View {
+        HStack {
+            Button(
+                action: {
+                    isFavorite.toggle()
+                },
+                label: {
+                    Image(resource: isFavorite ? \.ic_favorite_active : \.ic_favorite_inactive)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(size: IconSize.pt24)
+                }
+            )
+
+            Spacer()
+
+            Button(
+                action: {
+                    isWatchdog.toggle()
+                },
+                label: {
+                    Image(resource: isWatchdog ? \.ic_watchdog_active : \.ic_watchdog_inactive)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(size: IconSize.pt24)
+                }
+            )
+        }
+        .frame(maxHeight: .infinity, alignment: .top)
+        .padding(Spacing.pt8)
     }
 }
 

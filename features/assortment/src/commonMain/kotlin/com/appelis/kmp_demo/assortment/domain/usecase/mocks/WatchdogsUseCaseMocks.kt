@@ -34,8 +34,9 @@ class ObserveCurrentUsersWatchdogsUseCaseMockImpl(
 @Single
 class AddArticleAsWatchdogUseCaseMockImpl(private val repo: WatchdogMockRepo): AddArticleAsWatchdogUseCaseMock {
     override suspend fun execute(id: String) {
-        repo.watchdogs.value = repo.watchdogs.value.apply {
-            if(!contains(id)) { add(id) }
+        val currentWatchdogs = repo.watchdogs.value
+        if(!currentWatchdogs.contains(id)) {
+            repo.watchdogs.value = ArrayList(currentWatchdogs + id)
         }
     }
 }
@@ -43,7 +44,10 @@ class AddArticleAsWatchdogUseCaseMockImpl(private val repo: WatchdogMockRepo): A
 @Single
 class RemoveArticleAsWatchdogUseCaseMockImpl(private val repo: WatchdogMockRepo): RemoveArticleFromWatchdogUseCaseMock {
     override suspend fun execute(id: String) {
-        repo.watchdogs.value = repo.watchdogs.value.apply { remove(id) }
+        val currentWatchdogs = repo.watchdogs.value
+        if(currentWatchdogs.contains(id)) {
+            repo.watchdogs.value = ArrayList(currentWatchdogs.filter { it != id })
+        }
     }
 }
 
