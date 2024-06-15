@@ -38,14 +38,16 @@ struct CategoryArticleCollectionView: View {
     }
     
     var body: some View {
-        VStack {
-            sortingWidget
-            
-            stateView
+        ScrollView {
+            VStack {
+                searchFilterWidget
+                sortingWidget
+                stateView
+            }
         }
         .background(Color(\.appBackground))
         .edgesIgnoringSafeArea(.bottom)
-        .navigationTitle("Category")
+        .navigationTitle("Articles")
         .onAppear(first: { viewModel.setup(id: categoryId) })
         .task {
             await pager.initPager(
@@ -98,58 +100,55 @@ struct CategoryArticleCollectionView: View {
     }
     
     private var collection: some View {
-        ScrollView {
-            LazyVGrid(
-                columns: columns,
-                alignment: .center,
-                spacing: 8.0
-            ) {
-                ForEach(pager.items, id: \.name) { item in
-                    ArticleCellView(
-                        article: item,
-                        isFavorite: Binding(
-                            get: { viewState.usersFavourites.contains(item.id) },
-                            set: { shouldBeFavorite in
-                                if shouldBeFavorite {
-                                    viewModel.addArticleToFavorites(articleId: item.id)
-                                } else {
-                                    viewModel.removeArticleFromFavorites(articleId: item.id)
-                                }
+        LazyVGrid(
+            columns: columns,
+            alignment: .center,
+            spacing: 8.0
+        ) {
+            ForEach(pager.items, id: \.name) { item in
+                ArticleCellView(
+                    article: item,
+                    isFavorite: Binding(
+                        get: { viewState.usersFavourites.contains(item.id) },
+                        set: { shouldBeFavorite in
+                            if shouldBeFavorite {
+                                viewModel.addArticleToFavorites(articleId: item.id)
+                            } else {
+                                viewModel.removeArticleFromFavorites(articleId: item.id)
                             }
-                        ),
-                        isWatchdog: Binding(
-                            get: { viewState.usersWatchdogs.contains(item.id) },
-                            set: { isWatchdog in
-                                if isWatchdog {
-                                    viewModel.addArticleToWatchdogs(articleId: item.id)
-                                } else {
-                                    viewModel.removeArticleFromWatchdogs(articleId: item.id)
-                                }
+                        }
+                    ),
+                    isWatchdog: Binding(
+                        get: { viewState.usersWatchdogs.contains(item.id) },
+                        set: { isWatchdog in
+                            if isWatchdog {
+                                viewModel.addArticleToWatchdogs(articleId: item.id)
+                            } else {
+                                viewModel.removeArticleFromWatchdogs(articleId: item.id)
                             }
-                        )
+                        }
                     )
-                    .onTapGesture {
-                        router.navigateTo(route: .ArticleDetail(id: item.id))
-                    }
+                )
+                .onTapGesture {
+                    router.navigateTo(route: .ArticleDetail(id: item.id))
                 }
+            }
                 
-                switch pager.appendLoadState {
-                case .loading:
-                    ProgressView()
-                case .generalError, .networkError:
-                    Text("Error loading other items")
-                case .notLoading:
-                    if pager.hasNextPage {
-                        Spacer()
-                            .frame(height: 10)
-                            .onAppear {
-                                pager.loadNextPage()
-                            }
-                    }
+            switch pager.appendLoadState {
+            case .loading:
+                ProgressView()
+            case .generalError, .networkError:
+                Text("Error loading other items")
+            case .notLoading:
+                if pager.hasNextPage {
+                    Spacer()
+                        .frame(height: 10)
+                        .onAppear {
+                            pager.loadNextPage()
+                        }
                 }
             }
         }
         .padding(16.0)
-        .frame(maxHeight: .infinity)
     }
 }

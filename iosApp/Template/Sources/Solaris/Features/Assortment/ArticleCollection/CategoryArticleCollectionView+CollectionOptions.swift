@@ -11,6 +11,26 @@ import SwiftUI
 import SwiftUICore
 
 extension CategoryArticleCollectionView {
+    var searchFilterWidget: some View {
+        HStack{
+            RoundedRectangle(cornerRadius: CornerRadius.pt28)
+                .fill(theme.color(.surface), strokeBorder: theme.color(.dividerColor))
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+            
+            Circle()
+                .fill(theme.color(.surface))
+                .frame(size: 56.cgSize)
+                .overlay(
+                    Image(resource: \.ic_filter)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(size: IconSize.pt32)
+                )
+        }
+        .padding(Spacing.pt16)
+    }
+    
     var sortingWidget: some View {
         VStack {
             HStack(alignment: .center, spacing: Spacing.pt16) {
