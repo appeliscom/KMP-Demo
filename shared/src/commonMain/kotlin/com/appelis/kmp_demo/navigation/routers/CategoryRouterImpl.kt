@@ -28,6 +28,10 @@ class CategoryRouterImpl : CategoryRouter, KoinComponent {
                     id = route.id
                 )
             )
+
+            CategoryRoute.Filter -> navigation.push(
+                MainFlowChildConfig.AssortmentFilter
+            )
         }
     }
 }

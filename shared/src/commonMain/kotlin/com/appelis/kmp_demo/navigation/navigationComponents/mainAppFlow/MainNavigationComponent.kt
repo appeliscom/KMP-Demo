@@ -28,6 +28,8 @@ import kotlin.random.Random
 import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponent
 import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
 import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryInput
+import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponent
+import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponentImpl
 
 interface MainNavigationComponent {
     val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
@@ -121,6 +123,15 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
     }
 
     @Serializable
+    data object AssortmentFilter: MainFlowChildConfig() {
+        override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
+            return MainFlowNavigationChild.AssortmentFilter(
+                FilterComponentImpl(componentContext)
+            )
+        }
+    }
+
+    @Serializable
     data object LeafletCollection : MainFlowChildConfig() {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
             return MainFlowNavigationChild.LeafletCollection(
@@ -173,5 +184,9 @@ sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig>
                 is Deeplink.ArticleDetail -> component.viewModel.fillInVoucherCode(deeplink.voucherCode)
             }
         }
+    }
+
+    data class AssortmentFilter(val component: FilterComponent) : MainFlowNavigationChild() {
+        override fun isNewSheetRoot(): Boolean = true
     }
 }

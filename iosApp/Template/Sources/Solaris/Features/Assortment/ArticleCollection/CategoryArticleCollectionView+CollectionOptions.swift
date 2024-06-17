@@ -27,6 +27,9 @@ extension CategoryArticleCollectionView {
                         .scaledToFit()
                         .frame(size: IconSize.pt32)
                 )
+                .onTapGesture {
+                    router.navigateTo(route: .Filter())
+                }
         }
         .padding(Spacing.pt16)
     }
