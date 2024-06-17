@@ -1,6 +1,5 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 
-import com.appelis.UUID
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponent
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponentImpl
 import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponentImpl
