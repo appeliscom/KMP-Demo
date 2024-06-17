@@ -43,6 +43,8 @@ public class AssortmentGrpcDSImpl: BaseGrpcDS, AssortmentCallbackDS {
                         $0.flags = .with {
                             $0.businessID = request.filtering?.flags?.businessId ?? ""
                             $0.status = .available
+                            $0.priceFrom = request.filtering?.flags?.priceFrom ?? 0
+                            $0.priceTo = request.filtering?.flags?.priceTo ?? 0
                         }
                     }
                     $0.sorting = self.map(request: request)

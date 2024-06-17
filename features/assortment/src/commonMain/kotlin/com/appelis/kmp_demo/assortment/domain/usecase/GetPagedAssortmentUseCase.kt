@@ -5,6 +5,7 @@ import app.cash.paging.Pager
 import app.cash.paging.PagingData
 import com.appelis.core.domain.network.CursorPagingResult
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentFilterModel
 import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.paging.CursorPagingSource
@@ -16,8 +17,8 @@ interface GetPagedAssortmentUseCase {
 }
 
 data class GetPagedAssortmentUseCaseInput(
-    val categoryId: String,
     val sorting: AssortmentSortingModel,
+    val filter: AssortmentFilterModel,
     val pageSize: Int = 20,
     val initialLoadingSize: Int = 40,
     val placeholder: Boolean = false
@@ -34,7 +35,7 @@ class GetPagedAssortmentUseCaseImpl(private val repository: AssortmentRepository
                 enablePlaceholders = input.placeholder
             ),
             pagingSourceFactory = {
-                AssortmentPagingSource(repository, input.categoryId, input.sorting)
+                AssortmentPagingSource(repository, input.filter, input.sorting)
             }
         ).flow
     }
@@ -42,7 +43,7 @@ class GetPagedAssortmentUseCaseImpl(private val repository: AssortmentRepository
 
 class AssortmentPagingSource(
     private val repository: AssortmentRepository,
-    private val categoryId: String,
+    private val filter: AssortmentFilterModel,
     private val sorting: AssortmentSortingModel
 ): CursorPagingSource<ArticlePreviewModel>(
     initCursor = null
@@ -52,7 +53,7 @@ class AssortmentPagingSource(
         cursor: String?,
         itemCount: Boolean
     ): CursorPagingResult<ArticlePreviewModel> {
-        return repository.getArticles(size, cursor, categoryId, sorting)
+        return repository.getArticles(size, cursor, filter, sorting)
     }
 }
 

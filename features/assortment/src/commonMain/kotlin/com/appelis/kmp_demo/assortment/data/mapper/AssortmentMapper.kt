@@ -5,6 +5,7 @@ import appelis.SortOrder
 import com.appelis.identity.Token
 import com.appelis.kmp_demo.assortment.domain.model.ArticleModel
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentFilterModel
 import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingField
 import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
 import com.appelis.kmp_demo.assortment.domain.model.AvailabilityModel
@@ -21,6 +22,7 @@ import metro.assortment.v1.Availability
 import metro.assortment.v1.CatalogArticle
 import metro.assortment.v1.FilterFlags
 import metro.assortment.v1.FilterFlagsExt
+import metro.assortment.v1.FilterPriceType
 import metro.assortment.v1.GetAssortmentRequest
 import metro.assortment.v1.Price
 import metro.assortment.v1.SortField
@@ -33,7 +35,7 @@ class AssortmentMapper {
         accessToken: String,
         pageSize: Int,
         cursor: String?,
-        categoryId: String,
+        filter: AssortmentFilterModel,
         sorting: AssortmentSortingModel
     ): GetAssortmentRequest {
         return GetAssortmentRequest(
@@ -45,9 +47,12 @@ class AssortmentMapper {
             filtering = FilterFlagsExt(
                 flags = FilterFlags(
                     businessId = "1",
-                    status = metro.assortment.v1.StockStatus.AVAILABLE
+                    status = metro.assortment.v1.StockStatus.AVAILABLE,
+                    priceFrom = filter.priceFrom ?: 0.0,
+                    priceTo = filter.priceTo ?: 0.0,
+                    priceType = FilterPriceType.FILTER_PRICE_UNIT
                 ),
-                categoryId = categoryId
+                categoryId = filter.categoryId
             ) ,
             sorting = SortingFlags(
                 type = when(sorting.order){

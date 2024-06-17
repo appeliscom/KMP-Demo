@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 import org.koin.core.annotation.Factory
 
 @Factory
-class FilterViewModel: SharedViewModel<FilterViewState, Nothing>(), FilterComponent.ViewModel {
+class FilterViewModel(): SharedViewModel<FilterViewState, Nothing>(), FilterComponent.ViewModel {
     private val _viewState: MutableStateFlow<FilterViewState> = MutableStateFlow(FilterViewState())
     override val viewState: StateFlow<FilterViewState> = _viewState
 }

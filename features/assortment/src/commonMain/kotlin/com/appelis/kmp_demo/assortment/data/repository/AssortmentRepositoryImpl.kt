@@ -9,6 +9,7 @@ import com.appelis.kmp_demo.assortment.data.mapper.AssortmentMapper
 import com.appelis.kmp_demo.assortment.data.datasource.AssortmentSuspendDS
 import com.appelis.kmp_demo.assortment.domain.model.ArticleModel
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentFilterModel
 import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
 import com.appelis.kmp_demo.assortment.domain.repository.AssortmentRepository
 import com.appelis.kmp_demo.core.network.BaseRepository
@@ -45,7 +46,7 @@ class AssortmentRepositoryImpl(
     override suspend fun getArticles(
         pageSize: Int,
         cursor: String?,
-        categoryId: String,
+        filter: AssortmentFilterModel,
         sorting: AssortmentSortingModel
     ): CursorPagingResult<ArticlePreviewModel> {
         return fetch { accessToken ->
@@ -54,7 +55,7 @@ class AssortmentRepositoryImpl(
                     accessToken,
                     pageSize,
                     cursor,
-                    categoryId,
+                    filter,
                     sorting
                 )
             )

@@ -3,12 +3,16 @@ package com.appelis.kmp_demo.assortment.uiLogic.articleCollection
 import app.cash.paging.PagingData
 import app.cash.paging.cachedIn
 import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentFilterModel
+import com.appelis.kmp_demo.assortment.domain.model.AssortmentFilterSession
 import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingField
 import com.appelis.kmp_demo.assortment.domain.model.AssortmentSortingModel
 import com.appelis.kmp_demo.assortment.domain.model.Order
 import com.appelis.kmp_demo.assortment.domain.model.StockStatus
 import com.appelis.kmp_demo.assortment.domain.usecase.GetPagedAssortmentUseCase
 import com.appelis.kmp_demo.assortment.domain.usecase.GetPagedAssortmentUseCaseInput
+import com.appelis.kmp_demo.assortment.domain.usecase.ObserveAssortmentFilterSessionUseCase
+import com.appelis.kmp_demo.assortment.domain.usecase.SetAssortmentFilterSessionUseCase
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.AddArticleAsFavoriteUseCaseMock
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.AddArticleAsWatchdogUseCaseMock
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.ObserveCurrentUsersFavoritesUseCaseMock
@@ -21,15 +25,19 @@ import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromFav
 import com.appelis.kmp_demo.assortment.domain.usecase.mocks.RemoveArticleFromWatchdogUseCaseMock
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
-import io.github.aakira.napier.Napier
+import com.benasher44.uuid.uuid4
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.mapNotNull
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.core.annotation.Factory
 
@@ -43,6 +51,8 @@ class CategoryArticleCollectionViewModel(
     private val observeCurrentUsersWatchdogsUseCase: ObserveCurrentUsersWatchdogsUseCaseMock,
     private val addArticleAsWatchdogUseCase: AddArticleAsWatchdogUseCaseMock,
     private val removeArticleAsWatchdogUseCaseMock: RemoveArticleFromWatchdogUseCaseMock,
+    private val observeAssortmentFilterSessionUseCase: ObserveAssortmentFilterSessionUseCase,
+    private val setAssortmentFilterSessionUseCase: SetAssortmentFilterSessionUseCase,
     private val observeSelectedBusinessUseCase: ObserveSelectedBusinessIdUseCaseMock,
     private val observeSelectedTaxUseCase: ObserveSelectedTaxUseCaseMock,
     private val observeSelectedPriceTypeUseCase: ObserveSelectedPriceTypeUseCaseMock
@@ -59,6 +69,8 @@ class CategoryArticleCollectionViewModel(
 
     private val assortmentInputStateFlow: MutableStateFlow<GetPagedAssortmentUseCaseInput?> =
         MutableStateFlow(null)
+
+    private val assortmentFilterSessionId: String = uuid4().toString()
 
 
     override fun setup(id: String) {
@@ -78,16 +90,38 @@ class CategoryArticleCollectionViewModel(
     }
 
     private suspend fun initAssortmentInputFlow(categoryId: String) {
-        viewState.map {
+        val assortmentSortingInputFlow = viewState.map { map(it) }.distinctUntilChanged()
+        val assortmentFilterInputFlow =
+            observeAssortmentFilterSessionUseCase.execute(assortmentFilterSessionId)
+                .onEach {
+                    if (it == null) {
+                        setAssortmentFilterSessionUseCase.execute(
+                            createNewAssortmentFilterSession(
+                                categoryId
+                            )
+                        )
+                    }
+                }
+                .mapNotNull { it?.filter }
+
+        return assortmentSortingInputFlow.combine(assortmentFilterInputFlow) { sorting, filter ->
             GetPagedAssortmentUseCaseInput(
-                categoryId = categoryId,
-                sorting = map(it)
+                sorting, filter
             )
         }
             .distinctUntilChanged()
             .collect {
                 assortmentInputStateFlow.value = it
             }
+    }
+
+    private fun createNewAssortmentFilterSession(categoryId: String): AssortmentFilterSession {
+        return AssortmentFilterSession(
+            id = assortmentFilterSessionId,
+            filter = AssortmentFilterModel(
+                categoryId = categoryId
+            )
+        )
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
