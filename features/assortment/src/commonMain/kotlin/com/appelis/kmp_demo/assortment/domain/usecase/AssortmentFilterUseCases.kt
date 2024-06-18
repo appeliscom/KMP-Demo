@@ -10,7 +10,7 @@ interface ObserveAssortmentFilterSessionUseCase {
 }
 
 interface SetAssortmentFilterSessionUseCase {
-    fun execute(filterSession: AssortmentFilterSession)
+    fun execute(filterSession: AssortmentFilterSession?)
 }
 
 @Single
@@ -26,11 +26,10 @@ class ObserveAssortmentFilterSessionUseCaseImpl(
 class SetFilterSessionUseCaseImpl(
     private val repository: FilterSessionRepository
 ): SetAssortmentFilterSessionUseCase {
-    override fun execute(filterSession: AssortmentFilterSession) {
+    override fun execute(filterSession: AssortmentFilterSession?) {
         repository.filterSession.value = filterSession
     }
 }
-
 
 @Single
 class FilterSessionRepository() {

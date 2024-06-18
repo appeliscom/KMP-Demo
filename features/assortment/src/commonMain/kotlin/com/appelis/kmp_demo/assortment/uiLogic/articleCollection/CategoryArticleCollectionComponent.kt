@@ -17,6 +17,7 @@ interface CategoryArticleCollectionComponent {
     interface ViewModel {
         val viewState: StateFlow<CategoryArticleCollectionViewState>
         val pagedItems: Flow<PagingData<ArticlePreviewModel>>
+        val assortmentFilterSessionId: String
 
         fun setup(id: String)
         fun setSortedBy(sortBy: SortedBy)

@@ -123,10 +123,13 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
     }
 
     @Serializable
-    data object AssortmentFilter: MainFlowChildConfig() {
+    data class AssortmentFilter(private val filterSessionId: String) : MainFlowChildConfig() {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
             return MainFlowNavigationChild.AssortmentFilter(
-                FilterComponentImpl(componentContext)
+                FilterComponentImpl(
+                    componentContext,
+                    filterSessionId
+                )
             )
         }
     }

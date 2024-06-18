@@ -11,5 +11,5 @@ sealed class CategoryRoute {
         val isSheetRoot: Boolean = false
     ): CategoryRoute()
     data class ArticleDetail(val id: String): CategoryRoute()
-    data object Filter: CategoryRoute()
+    data class Filter(val filterSessionId: String): CategoryRoute()
 }

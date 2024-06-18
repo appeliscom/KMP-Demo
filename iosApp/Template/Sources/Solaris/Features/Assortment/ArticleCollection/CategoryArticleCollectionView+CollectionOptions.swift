@@ -28,7 +28,7 @@ extension CategoryArticleCollectionView {
                         .frame(size: IconSize.pt32)
                 )
                 .onTapGesture {
-                    router.navigateTo(route: .Filter())
+                    router.navigateTo(route: .Filter(filterSessionId: viewModel.assortmentFilterSessionId))
                 }
         }
         .padding(Spacing.pt16)

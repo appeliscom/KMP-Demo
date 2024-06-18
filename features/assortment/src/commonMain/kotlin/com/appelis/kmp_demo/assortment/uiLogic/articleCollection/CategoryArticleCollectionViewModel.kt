@@ -70,8 +70,7 @@ class CategoryArticleCollectionViewModel(
     private val assortmentInputStateFlow: MutableStateFlow<GetPagedAssortmentUseCaseInput?> =
         MutableStateFlow(null)
 
-    private val assortmentFilterSessionId: String = uuid4().toString()
-
+    override val assortmentFilterSessionId: String = uuid4().toString()
 
     override fun setup(id: String) {
         viewModelScope.launch {

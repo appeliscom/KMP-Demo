@@ -28,13 +28,12 @@ struct MainFlowNavigationView: View {
                 HomescreenView(component: child.component)
             case let .category(child):
                 CategoryView(component: child.component)
-//                CategoryArticleCollectionView(component: child.component)
             case let .leafletCollection(child):
                 LeafletCollectionView(component: child.component)
             case let .articleDetail(child):
                 ArticleDetailView(component: child.component)
-            case .assortmentFilter(_):
-                Text("filter")
+            case let .assortmentFilter(child):
+                FilterView(component: child.component)
             }
         }
     }
