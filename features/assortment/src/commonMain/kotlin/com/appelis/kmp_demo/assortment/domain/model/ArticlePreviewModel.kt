@@ -6,7 +6,7 @@ data class ArticlePreviewModel(
     val id: String,
     val name: String,
     val weightIndicator: Boolean,
-    val prices: ArrayList<PriceModel>,
+    val prices: List<PriceModel>,
     val availability: ArrayList<AvailabilityModel>,
     val tags: ArrayList<TagModel>,
     val imageUrl: String?

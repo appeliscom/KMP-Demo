@@ -17,6 +17,11 @@ extension CategoryArticleCollectionView {
                 .fill(theme.color(.surface), strokeBorder: theme.color(.dividerColor))
                 .frame(maxWidth: .infinity)
                 .frame(height: 56)
+                .overlay(
+                    Text("Search not implemented")
+                        .font(theme.font(.bodyMedium))
+                        .foregroundStyle(theme.color(.hintColor))
+                )
             
             Circle()
                 .fill(theme.color(.surface))
@@ -36,37 +41,37 @@ extension CategoryArticleCollectionView {
     
     var sortingWidget: some View {
         VStack {
-            HStack(alignment: .center, spacing: Spacing.pt16) {
+//            HStack(alignment: .center, spacing: Spacing.pt16) {
 //                if let itemCount = articlesPagingAdapter.itemCount {
 //                    Text("\(itemCount) \(getItemsText(count: itemCount))")
 //                        .font(theme.font(.bodyMedium))
 //                        .foregroundColor(theme.color(.onSurfaceP))
 //                }
-
-                Spacer()
-
-                Text(translations.available_at_all_stores.value)
-                    .font(theme.font(.bodyMedium))
-                    .foregroundColor(theme.color(.onSurfaceP))
-
-                Image(
-                    resource: viewState.searchedAvailability == nil
-                        ? \.ic_check_box_unchecked
-                        : \.ic_checkbox_checked
-                )
-                .resizable()
-                .scaledToFit()
-                .frame(size: IconSize.pt20)
-                .animation(.default, value: viewState.searchedAvailability)
-                .onTapGesture {
-                    viewModel.setSearchedAvailability(
-                        stockStatus: viewState.searchedAvailability == nil
-                            ? .available
-                            : nil
-                    )
-                }
-            }
-            .frame(height: 40, alignment: .center)
+//
+//                Spacer()
+//
+//                Text(translations.available_at_all_stores.value)
+//                    .font(theme.font(.bodyMedium))
+//                    .foregroundColor(theme.color(.onSurfaceP))
+//
+//                Image(
+//                    resource: viewState.searchedAvailability == nil
+//                        ? \.ic_check_box_unchecked
+//                        : \.ic_checkbox_checked
+//                )
+//                .resizable()
+//                .scaledToFit()
+//                .frame(size: IconSize.pt20)
+//                .animation(.default, value: viewState.searchedAvailability)
+//                .onTapGesture {
+//                    viewModel.setSearchedAvailability(
+//                        stockStatus: viewState.searchedAvailability == nil
+//                            ? .available
+//                            : nil
+//                    )
+//                }
+//            }
+//            .frame(height: 40, alignment: .center)
 
             sortingSegmentPicker
         }

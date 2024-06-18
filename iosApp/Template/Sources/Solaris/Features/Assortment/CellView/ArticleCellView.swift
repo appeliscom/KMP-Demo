@@ -58,8 +58,16 @@ public struct ArticleCellView: View {
                 .frame(maxWidth: .infinity, minHeight: 60, alignment: .topLeading)
 
             Spacer()
+
+            Text(
+                String.localizedStringWithFormat("%.2f %@", article.prices.first(where: { $0.type == PriceType.unit })?.unit ?? 0, "Kč")
+            )
+            .font(theme.font(.labelLarge))
+            .foregroundStyle(theme.color(.special1))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom, Spacing.pt16)
         }
-        .padding(Spacing.pt4)
+        .padding(Spacing.pt8)
         .background(
             RoundedRectangle(cornerRadius: CornerRadius.pt24)
                 .fill(Color(\.surface))
