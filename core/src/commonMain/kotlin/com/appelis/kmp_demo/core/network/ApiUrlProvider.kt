@@ -5,6 +5,7 @@ interface ApiUrlProvider {
 
     val leafletConnection: GrpcConnection
     val assortmentConnection: GrpcConnection
+    val categoryConnection: GrpcConnection
     val authConnection: GrpcConnection
 }
 

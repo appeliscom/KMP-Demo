@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="show_articles">Zobrazit vše</string>
+    <string name="sorted_by_relevance">Relevance</string>
+    <string name="sorted_by_price_asc">Nejlevnější</string>
+    <string name="sorted_by_price_desc">Nejdražší</string>
+    <string name="available_at_all_stores">Na všech provozovnach</string>
+    <string name="items">Položek</string>
+</resources>

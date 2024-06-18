@@ -27,5 +27,3 @@ include(":features:leaflet")
 
 include(":core")
 
-includeBuild("convention-plugins")
-

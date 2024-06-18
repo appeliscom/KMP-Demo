@@ -1,7 +1,6 @@
 package com.appelis.kmp_demo.di
 
 import com.appelis.kmp_demo.DemoAppUrlProvider
-import com.appelis.kmp_demo.Greeting
 import com.appelis.kmp_demo.assortment.di.AssortmentModule
 import com.appelis.kmp_demo.core.auth.data.repository.AppKey
 import com.appelis.kmp_demo.core.di.CoreModule
@@ -28,6 +27,4 @@ val sharedModule: Module = module {
         AssortmentModule().module,
         LeafletModule().module
     )
-
-    singleOf(::Greeting)
 }

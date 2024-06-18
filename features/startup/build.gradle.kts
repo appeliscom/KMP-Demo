@@ -1,7 +1,6 @@
 plugins {
     id(libs.plugins.kotlinMultiplatform.get().pluginId)
     id(libs.plugins.androidLibrary.get().pluginId)
-    id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     alias(libs.plugins.ksp)
 }

@@ -32,6 +32,8 @@ struct MainFlowNavigationView: View {
                 LeafletCollectionView(component: child.component)
             case let .articleDetail(child):
                 ArticleDetailView(component: child.component)
+            case let .assortmentFilter(child):
+                FilterView(component: child.component)
             }
         }
     }

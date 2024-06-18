@@ -24,7 +24,7 @@ private extension Target.Dependency {
 // MARK: - Products - external -
 
 private extension Target.Dependency {
-    static let kingfisher = product(name: "Kingfisher", package: "Kingfisher")
+    static let nukeUI = product(name: "NukeUI", package: "Nuke")
 }
 
 // MARK: - Package -
@@ -37,16 +37,13 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Shared"),
-        .package(
-            url: "https://github.com/onevcat/Kingfisher.git",
-            .upToNextMajor(from: Version(7, 0, 0))
-        )
+        .package(url: "https://github.com/kean/Nuke.git", .upToNextMajor(from: Version(12, 0, 0)))
     ],
     targets: [
         .target(
             name: .solaris,
             dependencies: [
-                .kingfisher,
+                .nukeUI,
                 .shared
             ],
             path: "Sources/Solaris"

@@ -28,11 +28,10 @@ public class GrpcDSFactoryImpl: GrpcDSFactory {
             channel: channel,
             defaultCallOptions: callOptions
         )
-        let dataSource = LeafletGrpcDSImpl(client: client)
-        return LeafletSuspendDSImpl(callBackDS: dataSource)
+        return LeafletSuspendDSImpl(callBackDS: LeafletGrpcDSImpl(client: client))
     }
     
-    public func assortmentByCategoryDS() -> AssortmentByCategorySuspendDS {
+    public func assortmentDS() -> AssortmentSuspendDS {
         let apiUrlProvider: ApiUrlProvider = inject()
         let channel = ClientConnection
             .usingTLS(with: .makeClientDefault(for: .best), on: eventLoopGroup)
@@ -42,8 +41,21 @@ public class GrpcDSFactoryImpl: GrpcDSFactory {
             channel: channel,
             defaultCallOptions: callOptions
         )
-        let dataSource = AssortmentByCategoryGrpcDSImpl(client: client)
-        return AssortmentByCategorySuspendDSImpl(callBackDS: dataSource)
+        return AssortmentSuspendDSImpl(callBackDS: AssortmentGrpcDSImpl(client: client))
+    }
+    
+    public func categoryDS() -> CategorySuspendDS {
+        let apiUrlProvider: ApiUrlProvider = inject()
+        
+        let channel = ClientConnection
+            .usingTLS(with: .makeClientDefault(for: .best), on: eventLoopGroup)
+            .connect(host: apiUrlProvider.categoryConnection.hostUrl, port: Int(apiUrlProvider.categoryConnection.port))
+        
+        let client = Appelis_Category_V1_CategoryCatalogAsyncClient(
+            channel: channel,
+            defaultCallOptions: callOptions
+        )
+        return CategorySuspendDSImpl(callBackDS: CategoryGrpcDSImpl(client: client))
     }
     
     public func identityDS() -> IdentitySuspendDS {

@@ -21,7 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     override init() {
         self.nativeModule = NativeModuleKt.makeNativeModule(
-            nativeTestDependency: { resolver in TestSwiftDependency(greetings: resolver.get()) }
+            nativeTestDependency: { resolver in TestSwiftDependency() }
         )
     }
     

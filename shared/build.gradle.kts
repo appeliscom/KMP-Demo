@@ -1,4 +1,3 @@
-import dev.icerock.gradle.MRVisibility
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
@@ -6,7 +5,6 @@ plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     alias(libs.plugins.skie)
     alias(libs.plugins.jetbrainsKotlinSerialization)
-    id(libs.plugins.koin.annotations.plugin.get().pluginId)
     alias(libs.plugins.ksp)
     alias(libs.plugins.moko.resources)
 }
@@ -83,6 +81,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx)
     ksp(libs.koin.ksp.compiler)
 }
 
@@ -90,6 +89,7 @@ multiplatformResources {
     configureCopyXCFrameworkResources("Shared")
     resourcesClassName = "R"
     iosBaseLocalizationRegion = ProjectSettings.IOS.MokoBaseLocalizationRegion
+    iosMinimalDeploymentTarget = "16.0"
 }
 
 val updateSharedFramework by tasks.registering(Copy::class) {

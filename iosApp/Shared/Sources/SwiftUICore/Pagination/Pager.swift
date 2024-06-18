@@ -11,7 +11,8 @@ import Shared
 @MainActor
 public class Pager<T: AnyObject>: ObservableObject {
     @Published public private(set) var items: [T] = []
-    @Published public private(set) var isLoadingNextPage: Bool = false
+    @Published public private(set) var refreshLoadState: LoadState = .loading
+    @Published public private(set) var appendLoadState: LoadState = .notLoading
     @Published public private(set) var hasNextPage: Bool = false
     
     private let delegate = PagingDelegate<T>()
@@ -42,18 +43,47 @@ public class Pager<T: AnyObject>: ObservableObject {
         for await loadState in delegate.loadStateFlow {
             switch onEnum(of: loadState.refresh) {
             case .loading:
-                isLoadingNextPage = true
+                refreshLoadState = .loading
             case let .notLoading(notLoading):
-                isLoadingNextPage = false
+                refreshLoadState = .notLoading
                 hasNextPage = !notLoading.endOfPaginationReached
-            case .error:
-                isLoadingNextPage = false
+            case let .error(error):
+                print(error.description())
+                if let networkException = (error.error as? NetworkException),
+                   networkException.code == .connectionTimeout {
+                    refreshLoadState = .networkError
+                } else {
+                    refreshLoadState = .generalError
+                }
+            }
+            
+            switch onEnum(of: loadState.append) {
+            case .loading:
+                appendLoadState = .loading
+            case let .notLoading(notLoading):
+                appendLoadState = .notLoading
+                hasNextPage = !notLoading.endOfPaginationReached
+            case let .error(error):
+                print(error.description())
+                if let networkException = (error.error as? NetworkException),
+                   networkException.code == .connectionTimeout {
+                    refreshLoadState = .networkError
+                } else {
+                    refreshLoadState = .generalError
+                }
             }
         }
     }
     
     public func loadNextPage() {
         delegate.loadNextPage()
+    }
+    
+    public enum LoadState {
+        case loading
+        case generalError
+        case networkError
+        case notLoading
     }
 }
 

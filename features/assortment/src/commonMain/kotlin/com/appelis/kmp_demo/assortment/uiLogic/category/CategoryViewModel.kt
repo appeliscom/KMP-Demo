@@ -1,47 +1,83 @@
 package com.appelis.kmp_demo.assortment.uiLogic.category
 
-import androidx.paging.cachedIn
-import app.cash.paging.PagingData
-import com.appelis.kmp_demo.assortment.domain.model.ArticlePreviewModel
-import com.appelis.kmp_demo.assortment.domain.usecase.GetAssortmentUseCase
+import com.appelis.kmp_demo.assortment.domain.model.CategoryModel
+import com.appelis.kmp_demo.assortment.domain.usecase.GetCategoryByIdUseCase
+import com.appelis.kmp_demo.assortment.domain.usecase.GetCategoryByKeyUseCase
+import com.appelis.kmp_demo.core.network.NetworkException
 import com.appelis.kmp_demo.core.uiArchitecture.SharedViewModel
 import com.appelis.kmp_demo.core.uiArchitecture.ViewState
-import kotlinx.coroutines.flow.Flow
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
-import org.koin.core.KoinApplication.Companion.init
+import kotlinx.serialization.Serializable
 import org.koin.core.annotation.Factory
 
 @Factory
 class CategoryViewModel(
     private val args: Args,
-    private val getAssortmentUseCase: GetAssortmentUseCase
+    private val getCategoryByIdUseCase: GetCategoryByIdUseCase,
+    private val getCategoryByKeyUseCase: GetCategoryByKeyUseCase,
 ) : SharedViewModel<CategoryViewState, Nothing>(), CategoryComponent.ViewModel {
-    private val _viewState: MutableStateFlow<CategoryViewState> = MutableStateFlow(CategoryViewState(args.id, PagingData.empty()))
+    private val _viewState: MutableStateFlow<CategoryViewState> =
+        MutableStateFlow(CategoryViewState.Loading)
     override val viewState: StateFlow<CategoryViewState> = _viewState
 
-    override var pagedItems: Flow<PagingData<ArticlePreviewModel>> = flow { PagingData.empty<ArticlePreviewModel>() }
-
-    init {
-        setup()
-    }
-
-    fun setup() {
+    override fun setup() {
         viewModelScope.launch {
-            pagedItems = getAssortmentUseCase.execute()
-
-//            getAssortmentUseCase.execute().cachedIn(viewModelScope).collect{ data ->
-//                _viewState.value = _viewState.value.copy(articles = data)
-//            }
+            try {
+                Napier.d { "CategoryViewModel.setup()" }
+                val category = loadCategory()
+                _viewState.value = if (category.childCount == 0 || args.displayOnlyArticles) {
+                    Napier.d { "CategoryViewModel Article collection viewstate" }
+                    CategoryViewState.ArticleCollection(category)
+                } else {
+                    Napier.d { "CategoryViewModel category collection viewstate" }
+                    CategoryViewState.CategoryCollection(category)
+                }
+            } catch (e: NetworkException) {
+                Napier.d { "CategoryViewModel error $e" }
+                if (e.code == NetworkException.ErrorCode.CONNECTION_TIMEOUT) {
+                    _viewState.value = CategoryViewState.NetworkError
+                } else {
+                    _viewState.value = CategoryViewState.GeneralError
+                }
+            } catch (e: Exception) {
+                _viewState.value = CategoryViewState.GeneralError
+            }
         }
     }
 
-    data class Args(val id: String)
+    private suspend fun loadCategory(): CategoryModel {
+        return when (args.categoryInput) {
+            is CategoryInput.Id -> getCategoryByIdUseCase.execute(args.categoryInput.id)
+            is CategoryInput.Key -> getCategoryByKeyUseCase.execute(args.categoryInput.key)
+            is CategoryInput.Category -> args.categoryInput.category
+        }
+    }
+
+    data class Args(
+        val categoryInput: CategoryInput,
+        val displayOnlyArticles: Boolean = false
+    )
 }
 
-data class CategoryViewState(
-    val id: String,
-    val articles: PagingData<ArticlePreviewModel>
-): ViewState
+sealed class CategoryViewState : ViewState {
+    data object Loading : CategoryViewState()
+
+    data class ArticleCollection(val parentCategory: CategoryModel) : CategoryViewState()
+    data class CategoryCollection(val parentCategory: CategoryModel) : CategoryViewState()
+
+    data object GeneralError : CategoryViewState()
+    data object NetworkError : CategoryViewState()
+}
+
+@Serializable
+sealed class CategoryInput {
+    @Serializable
+    data class Id(val id: String) : CategoryInput()
+    @Serializable
+    data class Key(val key: String) : CategoryInput()
+    @Serializable
+    data class Category(val category: CategoryModel) : CategoryInput()
+}

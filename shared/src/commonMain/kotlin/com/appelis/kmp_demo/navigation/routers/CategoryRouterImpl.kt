@@ -17,7 +17,8 @@ class CategoryRouterImpl : CategoryRouter, KoinComponent {
         when (route) {
             is CategoryRoute.Category -> navigation.push(
                 MainFlowChildConfig.Category(
-                    id = route.id,
+                    route.categoryInput,
+                    route.displayOnlyArticles,
                     isSheetRoot = route.isSheetRoot
                 )
             )
@@ -25,6 +26,12 @@ class CategoryRouterImpl : CategoryRouter, KoinComponent {
             is CategoryRoute.ArticleDetail -> navigation.push(
                 MainFlowChildConfig.ArticleDetail(
                     id = route.id
+                )
+            )
+
+            is CategoryRoute.Filter -> navigation.push(
+                MainFlowChildConfig.AssortmentFilter(
+                    route.filterSessionId
                 )
             )
         }

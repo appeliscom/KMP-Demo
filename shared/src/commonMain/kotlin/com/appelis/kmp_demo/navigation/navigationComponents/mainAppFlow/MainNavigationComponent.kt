@@ -1,10 +1,9 @@
 package com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow
 
-import com.appelis.UUID
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponent
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponentImpl
-import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponent
-import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponent
 import com.appelis.kmp_demo.core.extensions.asStateFlow
 import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.appelis.kmp_demo.homescreen.HomescreenComponent
@@ -26,6 +25,11 @@ import kotlinx.serialization.Serializable
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import kotlin.random.Random
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponent
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
+import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryInput
+import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponent
+import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponentImpl
 
 interface MainNavigationComponent {
     val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
@@ -99,13 +103,33 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
     }
 
     @Serializable
-    data class Category(private val id: String, private val isSheetRoot: Boolean = false, private val seed: Int = Random.nextInt()) :
+    data class Category(
+        private val categoryInput: CategoryInput,
+        private val displayOnlyArticles: Boolean = false,
+        private val isSheetRoot: Boolean = false,
+        private val seed: Int = Random.nextInt()
+    ) :
         MainFlowChildConfig() {
         override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
-            println("New category child config $id")
             return MainFlowNavigationChild.Category(
-                CategoryComponentImpl(componentContext, id),
+                CategoryComponentImpl(
+                    componentContext,
+                    categoryInput,
+                    displayOnlyArticles
+                ),
                 sheetRoot = isSheetRoot
+            )
+        }
+    }
+
+    @Serializable
+    data class AssortmentFilter(private val filterSessionId: String) : MainFlowChildConfig() {
+        override fun createChild(componentContext: ComponentContext): MainFlowNavigationChild {
+            return MainFlowNavigationChild.AssortmentFilter(
+                FilterComponentImpl(
+                    componentContext,
+                    filterSessionId
+                )
             )
         }
     }
@@ -163,5 +187,9 @@ sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig>
                 is Deeplink.ArticleDetail -> component.viewModel.fillInVoucherCode(deeplink.voucherCode)
             }
         }
+    }
+
+    data class AssortmentFilter(val component: FilterComponent) : MainFlowNavigationChild() {
+        override fun isNewSheetRoot(): Boolean = true
     }
 }
