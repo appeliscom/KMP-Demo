@@ -14,11 +14,7 @@ import com.appelis.kmp_demo.navigation.deeplinks.Deeplink
 
 sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig> {
     data class Homescreen(val component: HomescreenComponent) : MainFlowNavigationChild()
-    data class Category(val component: CategoryComponent, val sheetRoot: Boolean) :
-        MainFlowNavigationChild() {
-        override fun isNewSheetRoot(): Boolean = sheetRoot
-    }
-
+    data class Category(val component: CategoryComponent) : MainFlowNavigationChild()
     data class LeafletCollection(val component: LeafletCollectionComponent) :
         MainFlowNavigationChild()
 

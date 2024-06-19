@@ -18,8 +18,7 @@ class CategoryRouterImpl : CategoryRouter, KoinComponent {
             is CategoryRoute.Category -> navigation.push(
                 MainFlowChildConfig.Category(
                     route.categoryInput,
-                    route.displayOnlyArticles,
-                    isSheetRoot = route.isSheetRoot
+                    route.displayOnlyArticles
                 )
             )
 

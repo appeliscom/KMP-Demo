@@ -37,7 +37,6 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
     data class Category(
         private val categoryInput: CategoryInput,
         private val displayOnlyArticles: Boolean = false,
-        private val isSheetRoot: Boolean = false,
         private val seed: Int = Random.nextInt()
     ) :
         MainFlowChildConfig() {
@@ -47,8 +46,7 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
                     componentContext,
                     categoryInput,
                     displayOnlyArticles
-                ),
-                sheetRoot = isSheetRoot
+                )
             )
         }
     }

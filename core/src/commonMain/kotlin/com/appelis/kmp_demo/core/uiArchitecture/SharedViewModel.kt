@@ -42,7 +42,7 @@ abstract class SharedViewModel<VS : ViewState, UI_EVENT : UiEvent> :
     /**
      * Hot buffered flow that emits UI events sent by [sendUiEvent].
      */
-    private val uiEvents: Flow<UI_EVENT> = uiEventChannel
+    val uiEvents: Flow<UI_EVENT> = uiEventChannel
         .receiveAsFlow()
         .shareIn(viewModelScope, SharingStarted.Lazily)
 
