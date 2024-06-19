@@ -1,13 +1,7 @@
 package com.appelis.kmp_demo.navigation
 
 import com.appelis.kmp_demo.navigation.deeplinks.Deeplink
-import com.appelis.kmp_demo.navigation.navigationComponents.mainAppFlow.MainFlowChildConfig
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.router.stack.StackNavigation
-import com.arkivanov.decompose.router.stack.StackNavigator
-import com.arkivanov.decompose.router.stack.pop
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 
 interface StackNavigationChild<T : Any> : NavigationChild {
