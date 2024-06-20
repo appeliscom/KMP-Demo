@@ -74,7 +74,7 @@ internal class AuthClientImpl(
     }
 
     private suspend fun refreshAccessToken(refreshToken: String): String {
-        return retryIO(block = {
+        return retryIO(times = 3, block = {
             val token = identityRepository.refreshToken(refreshToken)
             deviceSettingsRepository.updateRefreshToken(token.refreshToken)
             return@retryIO token.accessToken
@@ -86,9 +86,11 @@ internal class AuthClientImpl(
     }
 
     private suspend fun registerDevice() {
-        val deviceUuid = getOrCreateDeviceUUID()
-        val response = identityRepository.registerDevice(deviceUuid)
-        deviceSettingsRepository.updateMobileDeviceId(response)
+        return retryIO(times = 3, block = {
+            val deviceUuid = getOrCreateDeviceUUID()
+            val mobileDeviceId = identityRepository.registerDevice(deviceUuid)
+            deviceSettingsRepository.updateMobileDeviceId(mobileDeviceId)
+        }, handleError = { })
     }
 
     private suspend fun getOrCreateDeviceUUID(): String {
