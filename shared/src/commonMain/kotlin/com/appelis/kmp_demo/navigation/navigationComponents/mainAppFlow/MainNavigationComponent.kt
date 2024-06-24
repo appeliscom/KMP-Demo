@@ -4,7 +4,6 @@ import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailCompon
 import com.appelis.kmp_demo.assortment.uiLogic.articleDetail.ArticleDetailComponentImpl
 import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponentImpl
 import com.appelis.kmp_demo.assortment.uiLogic.categoryCollection.CategoryCollectionComponent
-import com.appelis.kmp_demo.core.extensions.asStateFlow
 import com.appelis.kmp_demo.core.extensions.componentCoroutineScope
 import com.appelis.kmp_demo.homescreen.HomescreenComponent
 import com.appelis.kmp_demo.homescreen.HomescreenComponentImpl
@@ -30,6 +29,7 @@ import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryComponentImpl
 import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryInput
 import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponent
 import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponentImpl
+import com.appelis.kmp_demo.core.extensions.asStateFlow
 
 interface MainNavigationComponent {
     val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
