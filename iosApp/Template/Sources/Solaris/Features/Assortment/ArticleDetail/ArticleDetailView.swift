@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import NukeUI
 import Shared
 import SwiftUI
 import SwiftUICore
-import NukeUI
 
 struct ArticleDetailView: View {
     @State
@@ -23,15 +23,15 @@ struct ArticleDetailView: View {
     }
     
     var body: some View {
-        VStack{
+        VStack {
             switch onEnum(of: viewState) {
             case .loading:
                 loading
             case let .success(data):
                 layoutSuccess(data: data)
-            case .generalError(_):
+            case .generalError:
                 Text("GeneralError")
-            case .networkError(_):
+            case .networkError:
                 Text("NetworkError")
             }
         }
@@ -83,6 +83,13 @@ struct ArticleDetailView: View {
             Text("Voucher: \(data.voucher ?? "none")")
             
             Spacer()
+            
+            Button(
+                action: { router.navigateTo(route: ArticleRoute.Home()) },
+                label: {
+                    Text("Navigate Home")
+                }
+            )
         }
     }
 }

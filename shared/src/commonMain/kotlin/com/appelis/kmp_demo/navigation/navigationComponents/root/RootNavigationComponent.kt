@@ -57,6 +57,7 @@ class RootNavigationComponentImpl(
             // If active slot can't handle deeplink, activate slot that can and pass deeplink to it
             val newSlotConfig =  when (deeplink) {
                 is Deeplink.ArticleDetail -> { RootSlotChildConfig.MainAppFlow }
+                Deeplink.InApp.Home -> { RootSlotChildConfig.MainAppFlow }
             }
             // wait until requested slot is activated
             navigation.activate(newSlotConfig)

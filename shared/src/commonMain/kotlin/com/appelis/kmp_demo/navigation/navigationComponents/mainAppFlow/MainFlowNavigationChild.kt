@@ -22,6 +22,7 @@ sealed class MainFlowNavigationChild : StackNavigationChild<MainFlowChildConfig>
         override suspend fun handleDeeplink(deeplink: Deeplink) {
             when (deeplink) {
                 is Deeplink.ArticleDetail -> component.viewModel.fillInVoucherCode(deeplink.voucherCode)
+                else -> {}
             }
         }
     }

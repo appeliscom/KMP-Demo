@@ -7,4 +7,5 @@ interface ArticleDetailRouter {
 }
 
 sealed class ArticleRoute {
+    data object Home : ArticleRoute()
 }
