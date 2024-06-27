@@ -30,6 +30,12 @@ import com.appelis.kmp_demo.assortment.uiLogic.category.CategoryInput
 import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponent
 import com.appelis.kmp_demo.assortment.uiLogic.filter.FilterComponentImpl
 import com.appelis.kmp_demo.core.extensions.asStateFlow
+import com.appelis.kmp_demo.navigation.deeplinks.InAppDeeplinkRepository
+import io.github.aakira.napier.Napier
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 interface MainNavigationComponent {
     val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>>
@@ -41,6 +47,11 @@ internal class MainNavigationComponentImpl(
     componentContext: ComponentContext,
 ) : MainNavigationComponent, ComponentContext by componentContext, KoinComponent {
     private val navigation: StackNavigation<MainFlowChildConfig> by inject()
+    private val inAppDeeplinkRepository: InAppDeeplinkRepository by inject()
+
+    init {
+        initInAppDeeplinkHandling()
+    }
 
     override val stack: StateFlow<ChildStack<*, MainFlowNavigationChild>> = childStack(
         source = navigation,
@@ -78,5 +89,14 @@ internal class MainNavigationComponentImpl(
             stack.value.active.instance.handleDeeplink(deeplink)
             return true
         } ?: return false
+    }
+
+    private fun initInAppDeeplinkHandling() {
+        CoroutineScope(Dispatchers.Main).launch {
+            inAppDeeplinkRepository.observeInAppDeeplink().collect { deeplink ->
+                Napier.v { "Handling in-app deeplink: $deeplink" }
+                handleDeeplink(deeplink)
+            }
+        }
     }
 }

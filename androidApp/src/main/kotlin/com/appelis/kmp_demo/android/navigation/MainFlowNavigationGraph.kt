@@ -42,6 +42,7 @@ fun MainFlowNavigationGraph(
                 is MainFlowNavigationChild.Category -> CategoryView(component = childInstance.component) //CategoryCollectionView(component = childInstance.component) // CategoryArticleCollectionView(component = childInstance.component)
                 is MainFlowNavigationChild.LeafletCollection -> LeafletCollectionView(component = childInstance.component, modifier)
                 is MainFlowNavigationChild.ArticleDetail -> Text("articledetail")
+                is MainFlowNavigationChild.AssortmentFilter -> Text("filter")
             }
         }
     }

@@ -29,6 +29,7 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
         override fun getDeeplinkChildren(deeplink: Deeplink): List<MainFlowChildConfig> {
             return when (deeplink) {
                 is Deeplink.ArticleDetail -> arrayListOf(ArticleDetail(deeplink.id))
+                is Deeplink.InApp.Home -> ArrayList()
             }
         }
     }
@@ -91,6 +92,7 @@ sealed class MainFlowChildConfig : ChildConfig<MainFlowNavigationChild> {
                     if (deeplink.id == id) emptyList()
                     else null
                 }
+                else -> null
             }
         }
     }
