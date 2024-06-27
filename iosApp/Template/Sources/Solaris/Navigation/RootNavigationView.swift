@@ -29,6 +29,7 @@ public struct RootNavigationView: View {
                 switch onEnum(of: rootSlotNavigationChild) {
                 case let .appStartup(child):
                     AppStartupView(component: child.component)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .overlay(
                             Circle()
                                 .fill(.black)
@@ -40,7 +41,7 @@ public struct RootNavigationView: View {
                                 .padding()
                                 .onTapGesture {
                                     component.handleDeeplink(
-                                        deeplink: .ArticleDetail(id: "123", voucherCode: "voucheeeer")
+                                        deeplink: .ArticleDetail(id: "428982", voucherCode: "voucheeeer")
                                     )
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
