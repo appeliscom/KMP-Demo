@@ -21,5 +21,6 @@ object ProjectSettings {
 
     object IOS {
         const val MokoBaseLocalizationRegion = "en"
+        const val iosMinimalDeploymentTarget = "16.0"
     }
 }

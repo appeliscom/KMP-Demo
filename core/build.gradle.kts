@@ -42,7 +42,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.appelis.kmm_demo.core"
+    namespace = libs.versions.namespace.core.get()
     compileSdk = ProjectSettings.Android.CompileSdkVersion
     defaultConfig {
         minSdk = ProjectSettings.Android.MinSdkVersion

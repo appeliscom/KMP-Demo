@@ -13,16 +13,7 @@ kotlin {
         }
     }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "grpcProto"
-            isStatic = true
-        }
-    }
+    iosTargets()
 
     sourceSets {
         val commonMain by getting {
@@ -50,7 +41,7 @@ wire {
 }
 
 android {
-    namespace = "com.appelis.kmm_demo.grpcTest"
+    namespace = libs.versions.namespace.grpc.get()
     compileSdk = ProjectSettings.Android.CompileSdkVersion
     defaultConfig {
         minSdk = ProjectSettings.Android.MinSdkVersion

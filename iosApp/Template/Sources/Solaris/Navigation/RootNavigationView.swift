@@ -29,27 +29,26 @@ public struct RootNavigationView: View {
                 switch onEnum(of: rootSlotNavigationChild) {
                 case let .appStartup(child):
                     AppStartupView(component: child.component)
+                        .overlay(
+                            Circle()
+                                .fill(.black)
+                                .overlay(
+                                    Text("deeplink")
+                                        .foregroundColor(.white)
+                                )
+                                .frame(width: 80, height: 80)
+                                .padding()
+                                .onTapGesture {
+                                    component.handleDeeplink(
+                                        deeplink: .ArticleDetail(id: "123", voucherCode: "voucheeeer")
+                                    )
+                                }
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        )
                 case let .mainAppFlow(child):
                     MainFlowNavigationView(component: child.component)
                 }
             }
-            
-//            Circle()
-//                .fill(.black)
-//                .overlay(
-//                    Text("deeplink")
-//                        .foregroundColor(.white)
-//                )
-//                .frame(width: 80, height: 80)
-//                .padding()
-//                .onTapGesture {
-//                    Task{ @MainActor in
-////                        try await Task.sleep(nanoseconds: 5_000_000_000)
-//                        
-//                        try? await component.handleDeeplink(deeplink: .ArticleDetail(id: "123", voucherCode: "voucheeeer"))
-//                    }
-//                }
-//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
         .task {
             for await slot in slotStateFlow {

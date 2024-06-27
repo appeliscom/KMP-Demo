@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.appelis.kmp_demo.android"
+    namespace = libs.versions.namespace.android.get()
     compileSdk = ProjectSettings.Android.CompileSdkVersion
 
     defaultConfig {
